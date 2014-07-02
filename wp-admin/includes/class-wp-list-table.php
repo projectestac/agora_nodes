@@ -437,11 +437,12 @@ class WP_List_Table {
 		echo "<select name='action$two' id='bulk-action-selector-" . esc_attr( $which ) . "'>\n";
 		echo "<option value='-1' selected='selected'>" . __( 'Bulk Actions' ) . "</option>\n";
 
-		foreach ( $this->_actions as $name => $title ) {
-			$class = 'edit' == $name ? ' class="hide-if-no-js"' : '';
+		foreach ($this->_actions as $name => $title) {
 
-			echo "\t<option value='$name'$class>$title</option>\n";
-		}
+            $class = 'edit' == $name ? ' class="hide-if-no-js"' : '';
+
+            echo "\t<option value='$name'$class>$title</option>\n";
+        }
 
 		echo "</select>\n";
 

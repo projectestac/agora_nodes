@@ -19,7 +19,7 @@ if ( isset($_GET['action']) ) {
 	$theme = isset($_REQUEST['theme']) ? urldecode($_REQUEST['theme']) : '';
 	$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 
-	if ( 'update-selected' == $action ) {
+    if ( 'update-selected' == $action ) {
 		if ( ! current_user_can( 'update_plugins' ) )
 			wp_die( __( 'You do not have sufficient permissions to update plugins for this site.' ) );
 
