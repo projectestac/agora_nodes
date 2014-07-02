@@ -207,6 +207,7 @@ if ( $action ) {
 			exit;
 
 		case 'delete-selected':
+
 			if ( ! current_user_can('delete_plugins') )
 				wp_die(__('You do not have sufficient permissions to delete plugins for this site.'));
 
@@ -412,6 +413,7 @@ if ( !empty($invalid) )
 
 <div class="wrap">
 <h2><?php echo esc_html( $title );
+
 if ( ( ! is_multisite() || is_network_admin() ) && current_user_can('install_plugins') ) { ?>
  <a href="<?php echo self_admin_url( 'plugin-install.php' ); ?>" class="add-new-h2"><?php echo esc_html_x('Add New', 'plugin'); ?></a>
 <?php }
