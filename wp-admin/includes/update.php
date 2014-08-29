@@ -285,7 +285,13 @@ function update_nag() {
 			$cur->current
 		);
 	}
+
+    // XTEC ************ ELIMINAT - Remove upgrade Wordpress version message
+    // 2014.09.19 @aginard
+    /*
 	echo "<div class='update-nag'>$msg</div>";
+    */
+    //************ FI
 }
 
 // Called directly from dashboard
