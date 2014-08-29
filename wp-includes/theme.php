@@ -76,6 +76,12 @@ function wp_get_themes( $args = array() ) {
 	static $_themes = array();
 
 	foreach ( $theme_directories as $theme => $theme_root ) {
+// XTEC ************ AFEGIT - Hide reactor at the theme selector
+// 2014.08.29 @sarjona
+                if ($theme == 'reactor') {
+                        break;
+                }
+//************ FI
 		if ( isset( $_themes[ $theme_root['theme_root'] . '/' . $theme ] ) ) {
 			$themes[ $theme ] = $_themes[ $theme_root['theme_root'] . '/' . $theme ];
 		} else {
