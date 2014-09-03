@@ -188,6 +188,14 @@ switch ( $wp_list_table->current_action() ) {
 		$delete_count = 0;
 
 		foreach ( $userids as $id ) {
+
+                        // XTEC ************ MODIFICAT - Xtecadmin cannot be deleted (actual remove step)
+                        // 2014.09.03 @aginard 19.03.15
+                        if ($isAgora && ($id == get_xtecadmin_id())) {
+                            wp_die(__('You do not have permission to do that.'));
+                        }
+                        //************ FI
+
 			if ( ! current_user_can( 'delete_user', $id ) ) {
 				wp_die( __( 'Sorry, you are not allowed to delete that user.' ), 403 );
 			}
@@ -332,6 +340,14 @@ switch ( $wp_list_table->current_action() ) {
 		<?php
 		$go_delete = 0;
 		foreach ( $all_userids as $id ) {
+
+                        // XTEC ************ MODIFICAT - Xtecadmin cannot be deleted (confirmation step)
+                        // 2014.09.03 @aginard
+                        if ($isAgora && ($id == get_xtecadmin_id())) {
+                            wp_die(__('You do not have permission to do that.'));
+                        }
+                        //************ FI
+
 			$user = get_userdata( $id );
 			if ( $id == $current_user->ID ) {
 				/* translators: 1: User ID, 2: User login. */
