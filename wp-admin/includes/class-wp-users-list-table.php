@@ -421,19 +421,40 @@ class WP_Users_List_Table extends WP_List_Table {
 			// Set up the user editing link
 			$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user_object->ID ) ) );
 
-			if ( current_user_can( 'edit_user', $user_object->ID ) ) {
-				$edit            = "<strong><a href=\"{$edit_link}\">{$user_object->user_login}</a>{$super_admin}</strong><br />";
-				$actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
+			if ( current_user_can( 'edit_user',  $user_object->ID ) ) {
+				$edit = "<strong><a href=\"$edit_link\">$user_object->user_login</a></strong><br />";
+
+                // XTEC ************ MODIFICAT - Do not show edit link for xtecadmin (opening if)
+                // 2014.09.03 @aginard
+                global $isAgora;
+                if ($isAgora && (($user_object->user_login != get_xtecadmin_username()) || is_xtecadmin())) {
+                //************ FI
+
+                $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
+
+                // XTEC ************ MODIFICAT - Do not show edit link for xtecadmin (closing if)
+                // 2014.09.03 @aginard
+                }
+                //************ FI
 			} else {
 				$edit = "<strong>{$user_object->user_login}{$super_admin}</strong><br />";
 			}
+			if ( !is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) )
 
-			if ( ! is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) ) {
-				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . '</a>';
-			}
-			if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) ) {
-				$actions['remove'] = "<a class='submitdelete' href='" . wp_nonce_url( $url . "action=remove&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Remove' ) . '</a>';
-			}
+                // XTEC ************ MODIFICAT - Do not show delete link for xtecadmin (opening if)
+                // 2014.09.03 @aginard
+                {
+                global $isAgora;
+                if ($isAgora && (($user_object->user_login != get_xtecadmin_username()))) {
+                //************ FI
+				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . "</a>";
+                // XTEC ************ MODIFICAT - Do not show delete link for xtecadmin (closing ifs)
+                // 2014.09.03 @aginard
+                }
+                }
+                //************ FI
+            if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) )
+				$actions['remove'] = "<a class='submitdelete' href='" . wp_nonce_url( $url."action=remove&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Remove' ) . "</a>";
 
 			// Add a link to the user's author archive, if not empty.
 			$author_posts_url = get_author_posts_url( $user_object->ID );
