@@ -76,7 +76,7 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora) { ?>
+<?php if ($isAgora && !is_xtecadmin()) { ?>
 <!--  
 <?php } ?>
 
@@ -142,7 +142,7 @@ else :
 
 <!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!--// 2014.09.09 @aginard
-<?php if ($isAgora) { ?>
+<?php if ($isAgora && !is_xtecadmin()) { ?>
 --> 
 <?php } ?>
 <!-- ************ FI -->
@@ -154,7 +154,7 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
 <!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora) { ?>
+<?php if ($isAgora && !is_xtecadmin()) { ?>
 <!--  
 <?php } ?>
 
@@ -201,7 +201,7 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
 <!-- 2014.09.09 @aginard
-<?php if ($isAgora) { ?>
+<?php if ($isAgora && !is_xtecadmin()) { ?>
 --> 
 <?php } ?>
 <!-- ************ FI -->
