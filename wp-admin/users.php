@@ -165,7 +165,7 @@ case 'dodelete':
 
 	foreach ( $userids as $id ) {
 
-        // XTEC ************ MODIFICAT - Xtecadmin cannot be deleted (actual remove step)
+        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
         // 2014.09.03 @aginard
         if ($isAgora && ($id == get_xtecadmin_id())) {
             wp_die(__('You do not have permission to do that.'));
@@ -240,7 +240,7 @@ case 'delete':
 	$go_delete = 0;
 	foreach ( $userids as $id ) {
 
-        // XTEC ************ MODIFICAT - Xtecadmin cannot be deleted (confirmation step)
+        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (confirmation step)
         // 2014.09.03 @aginard
         if ($isAgora && ($id == get_xtecadmin_id())) {
             wp_die(__('You do not have permission to do that.'));
