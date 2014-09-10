@@ -363,7 +363,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			if ( current_user_can( 'edit_user',  $user_object->ID ) ) {
 				$edit = "<strong><a href=\"$edit_link\">$user_object->user_login</a></strong><br />";
 
-                // XTEC ************ MODIFICAT - Do not show edit link for xtecadmin (opening if)
+                // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (opening if)
                 // 2014.09.03 @aginard
                 global $isAgora;
                 if ($isAgora) {
@@ -375,7 +375,7 @@ class WP_Users_List_Table extends WP_List_Table {
                     
                 $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
                 
-                // XTEC ************ MODIFICAT - Do not show edit link for xtecadmin (closing if)
+                // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
                 // 2014.09.03 @aginard
                 }
                 //************ FI
@@ -385,7 +385,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			}
 			if ( !is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) )
 
-                // XTEC ************ MODIFICAT - Do not show delete link for xtecadmin (opening if)
+                // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (opening if)
                 // 2014.09.03 @aginard
                 {
                 global $isAgora;
@@ -396,7 +396,7 @@ class WP_Users_List_Table extends WP_List_Table {
                 } else {
                 //************ FI
 				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . "</a>";
-                // XTEC ************ MODIFICAT - Do not show delete link for xtecadmin (closing ifs)
+                // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (closing ifs)
                 // 2014.09.03 @aginard
                 }
                 }
