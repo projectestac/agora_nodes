@@ -58,17 +58,17 @@ function reactor_child_theme_setup() {
 	 );
 	
 	/* Support for custom post types */
-	// remove_theme_support('reactor-post-types');
-	 add_theme_support(
+	 remove_theme_support('reactor-post-types');
+	/* add_theme_support(
 	 	'reactor-post-types',
-	 	array('slides', 'portfolio')
-	 );
+	 	array('portfolio')
+	 );*/
 	
 	/* Support for page templates */
 	//remove_theme_support('reactor-page-templates');
 	add_theme_support(
 	 	'reactor-page-templates',
-	 	array('front-page', 'news-page', 'portfolio', 'contact')
+	 	array('front-page', 'news-page')
 	);
 	
 	/* Remove support for background options in customizer */
@@ -131,20 +131,29 @@ include "custom-tac/capcalera/menu-recursos-tac.php";
 add_action( 'admin_bar_menu', 'add_recursos',2);
 
 // Eliminem icones de la barra superior
-function my_edit_toolbar($wp_toolbar) {
+function custom_toolbar($wp_toolbar) {
     $wp_toolbar->remove_node('wp-logo');
     $wp_toolbar->remove_node('updates');
     $wp_toolbar->remove_node('comments');
     $wp_toolbar->remove_node('new-content');
+    $wp_toolbar->remove_node('search');  
+    $wp_toolbar->remove_node('themes');
+    $wp_toolbar->add_node( array(
+    	'parent' => 'site-name',
+    	'id' => 'entrades', 
+    	'title' => __('Entrades'), 
+    	'href' => admin_url( 'edit.php') 
+    ));
+    $wp_toolbar->add_node( array(
+		'parent' => 'site-name',
+ 		'id' => 'pagines', 
+ 		'title' => __('Pàgines'), 
+ 		'href' => admin_url( 'edit.php?post_type=page') 
+ 	));
+
+
 }
-add_action('admin_bar_menu', 'my_edit_toolbar',98);
-
-function disable_bar_search() {  
-    global $wp_admin_bar;  
-    $wp_admin_bar->remove_menu('search');  
-}  
-add_action( 'wp_before_admin_bar_render', 'disable_bar_search' ); 
-
+add_action('admin_bar_menu', 'custom_toolbar',98);
 
 /* Camps extra per definir disposició de noticies a cada categoria*/
 
@@ -487,7 +496,6 @@ function getRow_Posts($posts_per_fila,$num_posts_n){
 
 // Zona de Ginys per categories
 if ( function_exists('register_sidebar') ) {
-	
 	register_sidebars( 1,
 	array(
 	'name'          => __( 'Barra Categories', 'custom_tac' ),
@@ -503,8 +511,8 @@ if ( function_exists('register_sidebar') ) {
 	'after_title' => '</h2>
 	'
 	));
-
 }
+
 
 /**
  * Hide widgets 
@@ -546,17 +554,164 @@ add_action( 'wp_footer', function()
 });
 */
 
-function my_remove_meta_boxes() {
 
- //if( !current_user_can('manage_options') ) {
-  remove_meta_box('trackbacksdiv', 'post', 'normal');
-  remove_meta_box('commentsdiv', 'post', 'normal');
-  remove_meta_box('layoutdiv', 'post', 'normal');
- //}
+//Amagem en les opcions de pantalla algunes opcions poc utilitzades. En usabilitat - és +
+add_filter( 'hidden_meta_boxes', 'custom_hidden_meta_boxes' );
+function custom_hidden_meta_boxes( $hidden ) {
+    $hidden[] = 'revisionsdiv';
+    $hidden[] = 'commentstatusdiv';
+    $hidden[] = 'authordiv';
+    return $hidden;
 }
 
-add_action( 'admin_menu', 'my_remove_meta_boxes' );
+//Eliminem opcions dels articles que s'utilitzen molt poc o mai
+function remove_post_meta_boxes() {
 
+	 //if(!current_user_can('administrator')) {
+	  remove_meta_box('trackbacksdiv', 'post', 'normal');
+	  remove_meta_box('trackbacksdiv', 'post', 'side');
+	  remove_meta_box('commentsdiv', 'post', 'normal');
+	  remove_meta_box('commentsdiv', 'post', 'side');
+	  remove_meta_box( 'slugdiv' , 'post' , 'normal' ); 
+	  remove_meta_box( 'slugdiv' , 'post' , 'side' );
+	  remove_meta_box('formatdiv', 'post', 'normal');
+	  remove_meta_box('formatdiv', 'post', 'side');
+	  remove_meta_box( 'postcustom' , 'post' , 'normal' ); 
+	   remove_meta_box( 'postcustom' , 'post' , 'side' );
+ 	  remove_meta_box( 'rawhtml_meta_box' , 'post' , 'side' ); 
+ 	  remove_meta_box( 'rawhtml_meta_box' , 'post' , 'normal' ); 
+ 	  remove_meta_box( 'layout_meta' , 'post' , 'side' ); 
+ 	  remove_meta_box( 'layout_meta' , 'post' , 'normal' ); 
+ 	 
+	 //}
+
+}
+add_action( 'do_meta_boxes', 'remove_post_meta_boxes' );
+
+//Eliminem opcions de les pàgines que s'utilitzen molt poc o mai
+function remove_page_meta_boxes() {
+
+	 //if(!current_user_can('administrator')) {
+	  remove_meta_box( 'commentsdiv', 'page', 'normal' );
+	  remove_meta_box( 'slugdiv' , 'page' , 'normal' ); 
+	  remove_meta_box( 'rawhtml_meta_box' , 'page' , 'side' ); 
+	  remove_meta_box( 'postcustom' , 'page' , 'normal' ); 
+ 	  remove_meta_box( 'layout_meta' , 'page' , 'side' ); 
+	  remove_meta_box( 'postimagediv', 'page', 'side' );
+	 //}
+
+}
+add_action( 'do_meta_boxes', 'remove_page_meta_boxes');
+
+
+// Eliminem moltes caixes del Tauler d'interès molt relatiu
+function remove_dashboard_widgets(){
+    //remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
+    //remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // Incoming Links
+    remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // Plugins
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Press
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');   // WordPress blog
+    remove_meta_box('dashboard_secondary', 'dashboard', 'side');   // Other WordPress News
+    remove_meta_box('bbp-dashboard-right-now', 'dashboard', 'side');   // Other WordPress News
+
+// use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
+}
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+
+/**
+ * Creates the RSS metabox
+ *
+ * @access      public
+ * @since       1.0 
+ * @return      void
+*/
+
+/*
+function rc_mdm_create_my_rss_box() {
+	
+	// Get RSS Feed(s)
+	include_once(ABSPATH . WPINC . '/feed.php');
+	
+	// My feeds list (add your own RSS feeds urls)
+	$my_feeds = array( 
+				'http://agora.xtec.cat/moodle/moodle/rss/file.php/242/3fc15f9228d855be6cfbe5bd26c6a2f5/mod_forum/62/rss.xml' 
+				);
+	
+	// Loop through Feeds
+	foreach ( $my_feeds as $feed) :
+	
+		// Get a SimplePie feed object from the specified feed source.
+		$rss = fetch_feed( $feed );
+		if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
+		    // Figure out how many total items there are, and choose a limit 
+		    $maxitems = $rss->get_item_quantity( 20 ); 
+		
+		    // Build an array of all the items, starting with element 0 (first element).
+		    $rss_items = $rss->get_items( 0, $maxitems ); 
+	
+		    // Get RSS title
+		    $rss_title = '<a href="'.$rss->get_permalink().'" target="_blank">'.strtoupper( $rss->get_title() ).'</a>'; 
+		endif;
+	
+		// Display the container
+		echo '<div class="rss-widget">';
+		echo '<strong>'.$rss_title.'</strong>';
+		echo '<hr style="border: 0; background-color: #DFDFDF; height: 1px;">';
+		
+		// Starts items listing within <ul> tag
+		echo '<ul>';
+		
+		// Check items
+		if ( $maxitems == 0 ) {
+			echo '<li>'.__( 'No item', 'rc_mdm').'.</li>';
+		} else {
+			// Loop through each feed item and display each item as a hyperlink.
+			foreach ( $rss_items as $item ) :
+				// Uncomment line below to display non human date
+				//$item_date = $item->get_date( get_option('date_format').' @ '.get_option('time_format') );
+				
+				// Get human date (comment if you want to use non human date)
+				$item_date = human_time_diff( $item->get_date('U'), current_time('timestamp')).' '.__( 'ago', 'rc_mdm' );
+				
+				// Start displaying item content within a <li> tag
+				echo '<li>';
+				// create item link
+				echo '<a href="'.esc_url( $item->get_permalink() ).'" title="'.$item_date.'">';
+				// Get item title
+				echo esc_html( $item->get_title() );
+				echo '</a>';
+				// Display date
+				echo ' <span class="rss-date">'.$item_date.'</span><br />';
+				// Get item content
+				$content = $item->get_content();
+				// Shorten content
+				$content = wp_html_excerpt($content, 120) . ' [...]';
+				// Display content
+				echo $content;
+				// End <li> tag
+				echo '</li>';
+			endforeach;
+		}
+		// End <ul> tag
+		echo '</ul></div>';
+
+	endforeach; // End foreach feed
+}
+
+function rc_mdm_register_widgets() {
+    global $wp_meta_boxes;
+    wp_add_dashboard_widget('widget_freelanceswitch', __('Fòrum suport ÀGORA', 'rc_mdm'), 'rc_mdm_create_my_rss_box');
+}
+
+add_action('wp_dashboard_setup', 'rc_mdm_register_widgets');
+*/
+
+// Tauler personalitzat 
+include "custom-tac/welcome-panel.php"; 
+add_action( 'welcome_panel', 'rc_my_welcome_panel' );
 
 /**
  * Remove option in admin bar added by the extension 'WordPress Social Login'.
