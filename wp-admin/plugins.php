@@ -18,7 +18,7 @@ if ($isAgora && !is_xtecadmin()) {
 }
 //************ FI
 
-if ( ! current_user_can('activate_plugins') )
+if ( ! current_user_can('activate_plugins') ) {
 	wp_die( __( 'Sorry, you are not allowed to manage plugins for this site.' ) );
 }
 
