@@ -263,16 +263,14 @@ if ( current_user_can( 'list_users' ) ) {
 	}
 }
 
-$menu[75]                     = array( __( 'Tools' ), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'dashicons-admin-tools' );
-	$submenu['tools.php'][5]  = array( __( 'Available Tools' ), 'edit_posts', 'tools.php' );
-	$submenu['tools.php'][10] = array( __( 'Import' ), 'import', 'import.php' );
-	$submenu['tools.php'][15] = array( __( 'Export' ), 'export', 'export.php' );
-if ( is_multisite() && ! is_main_site() ) {
-	$submenu['tools.php'][25] = array( __( 'Delete Site' ), 'delete_site', 'ms-delete-site.php' );
-}
-if ( ! is_multisite() && defined( 'WP_ALLOW_MULTISITE' ) && WP_ALLOW_MULTISITE ) {
-	$submenu['tools.php'][50] = array( __( 'Network Setup' ), 'setup_network', 'network.php' );
-}
+$menu[75] = array( __('Tools'), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'dashicons-admin-tools' );
+	$submenu['tools.php'][5] = array( __('Available Tools'), 'edit_posts', 'tools.php' );
+	$submenu['tools.php'][10] = array( __('Import'), 'import', 'import.php' );
+	$submenu['tools.php'][15] = array( __('Export'), 'export', 'export.php' );
+	if ( is_multisite() && !is_main_site() )
+		$submenu['tools.php'][25] = array( __('Delete Site'), 'delete_site', 'ms-delete-site.php' );
+	if ( ! is_multisite() && defined('WP_ALLOW_MULTISITE') && WP_ALLOW_MULTISITE )
+		$submenu['tools.php'][50] = array(__('Network Setup'), 'setup_network', 'network.php');
 
 $change_notice = '';
 if ( current_user_can( 'manage_privacy_options' ) && WP_Privacy_Policy_Content::text_change_check() ) {
@@ -281,14 +279,24 @@ if ( current_user_can( 'manage_privacy_options' ) && WP_Privacy_Policy_Content::
 
 // translators: %s is the update notification bubble, if updates are available.
 $menu[80]                               = array( sprintf( __( 'Settings %s' ), $change_notice ), 'manage_options', 'options-general.php', '', 'menu-top menu-icon-settings', 'menu-settings', 'dashicons-admin-settings' );
-	$submenu['options-general.php'][10] = array( _x( 'General', 'settings screen' ), 'manage_options', 'options-general.php' );
-	$submenu['options-general.php'][15] = array( __( 'Writing' ), 'manage_options', 'options-writing.php' );
-	$submenu['options-general.php'][20] = array( __( 'Reading' ), 'manage_options', 'options-reading.php' );
-	$submenu['options-general.php'][25] = array( __( 'Discussion' ), 'manage_options', 'options-discussion.php' );
-	$submenu['options-general.php'][30] = array( __( 'Media' ), 'manage_options', 'options-media.php' );
-	$submenu['options-general.php'][40] = array( __( 'Permalinks' ), 'manage_options', 'options-permalink.php' );
-	// translators: %s is the update notification bubble, if updates are available.
-	$submenu['options-general.php'][45] = array( sprintf( __( 'Privacy %s' ), $change_notice ), 'manage_privacy_options', 'privacy.php' );
+	$submenu['options-general.php'][10] = array(_x('General', 'settings screen'), 'manage_options', 'options-general.php');
+	$submenu['options-general.php'][15] = array(__('Writing'), 'manage_options', 'options-writing.php');
+	$submenu['options-general.php'][20] = array(__('Reading'), 'manage_options', 'options-reading.php');
+	$submenu['options-general.php'][25] = array(__('Discussion'), 'manage_options', 'options-discussion.php');
+	$submenu['options-general.php'][30] = array(__('Media'), 'manage_options', 'options-media.php');
+// XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
+// 2014.11.03 @sarjona 19.03.15 @svallde2
+global $isAgora;
+
+if ($isAgora && is_xtecadmin()) {
+//************ FI
+	$submenu['options-general.php'][40] = array(__('Permalinks'), 'manage_options', 'options-permalink.php');
+    // translators: %s is the update notification bubble, if updates are available.
+    $submenu['options-general.php'][45] = array( sprintf( __( 'Privacy %s' ), $change_notice ), 'manage_privacy_options', 'privacy.php' );
+// XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
+// 2014.11.03 @sarjona
+}
+//************ FI
 
 $_wp_last_utility_menu = 80; // The index of the last top-level menu in the utility menu group
 
