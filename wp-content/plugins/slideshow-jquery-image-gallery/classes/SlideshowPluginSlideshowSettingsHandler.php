@@ -285,15 +285,16 @@ class SlideshowPluginSlideshowSettingsHandler
                 // 2014.10.22 @jmeler && @frncesc
                 
                 $picasa_album_rss=get_post_meta($slideshowId,"picasa_album",true);
+                
                 if ($picasa_album_rss){
                     $extra_params="&imgmax=800";
                     $picasa_album_rss = str_replace("alt=rss","",$picasa_album_rss).$extra_params;
                     $picasa_album = fetch_feed($picasa_album_rss);
+                    $picasa_album->enable_order_by_date(false);
                     
                     if ( !is_wp_error( $picasa_album ) ) {
                         $picasa_items = $picasa_album->get_items();
-                        $picasa_items = array_reverse($picasa_items);
-                        
+                       
                         foreach($picasa_items as $picasa_item){
                             $enclosure=$picasa_item->get_enclosure();
                             $info=$enclosure->get_description();
