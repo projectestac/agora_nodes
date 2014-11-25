@@ -287,25 +287,29 @@ class SlideshowPluginSlideshowSettingsHandler
                 $picasa_album_rss=get_post_meta($slideshowId,"picasa_album",true);
                 
                 if ($picasa_album_rss){
-                    $extra_params="&imgmax=800";
-                    $picasa_album_rss = str_replace("alt=rss","",$picasa_album_rss).$extra_params;
-                    $picasa_album = fetch_feed($picasa_album_rss);
-                    $picasa_album->enable_order_by_date(false);
+                    //Request json format and max size image 1024px
+                    $extra_params="&alt=json&imgmax=1024&fields=entry(content,media%3Agroup(media%3Adescription),link[%40rel%3D%27alternate%27](%40href))";
+                    $picasa_album_json = str_replace("alt=rss","",$picasa_album_rss).$extra_params;
                     
-                    if ( !is_wp_error( $picasa_album ) ) {
-                        $picasa_items = $picasa_album->get_items();
-                       
-                        foreach($picasa_items as $picasa_item){
-                            $enclosure=$picasa_item->get_enclosure();
-                            $info=$enclosure->get_description();
-                            $url_img=$enclosure->get_link();
-                            $url_target=$url_img;
-                            $slides[]=array("title"=>$info,"url"=>$url_img,"urlTarget"=>$url_target,"type"=>"image");
+                    $request = new WP_Http;
+                    $result = $request->request( $picasa_album_json );
+                    
+                    if ( !is_wp_error( $result ) ) {
+                        $picasa_album=json_decode($result['body'],true);
+                        
+                        foreach( $picasa_album['feed']['entry'] as $picasa_item){
+                              $slides[]=array(
+                                        "title"     => $picasa_item['media$group']['media$description']['$t'],
+                                        "url"       => $picasa_item['content']['src'],
+                                        "urlTarget" => $picasa_item['link'][0]['href'],
+                                        "type"      => "image",
+                                        );
+                            
                         }
-                    }
-                    else{
+                    } else {
                         echo "<p>No es pot obtenir l'àlbum de picasa. <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges'>Ajuda</a>.</p>";
-                    }    
+                    }   
+                    
                 }
                 //************ FI
 		
