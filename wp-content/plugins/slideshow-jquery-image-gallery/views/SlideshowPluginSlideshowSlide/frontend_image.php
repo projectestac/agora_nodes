@@ -12,7 +12,7 @@ if (isset($properties['title']))
 if (isset($properties['url']))
 {
 	$url = htmlspecialchars($properties['url']);
-	$urlTarget = $url;
+	$urlTarget = $properties['urlTarget'];
 }
 
 if (isset($properties['alternativeText']))
@@ -30,8 +30,8 @@ $anchorTag = $endAnchorTag = $anchorTagAttributes = '';
 if (strlen($url) > 0)
 {
         $anchorTagAttributes =
-                'href="' . $url . '" ' .
-                (strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
+                'href="' . $urlTarget . '" ' .
+                (strlen($urlTarget) > 0 ? 'target="_blank"' : '') .
                 $noFollow;
 
         $anchorTag    = '<a ' . $anchorTagAttributes . '>';
