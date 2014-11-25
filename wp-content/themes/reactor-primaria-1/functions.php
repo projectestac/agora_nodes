@@ -600,10 +600,8 @@ function wsl_unregister_admin_tabs() {
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['help']);
 }
 
-global $isAgora;
-
 // Remove items for all users but xtecadmin
-if ($isAgora && !is_xtecadmin()) {
+if (!is_xtecadmin()) {
     add_action('admin_menu', 'remove_admin_menus');
     add_action('wsl_register_setting_end', 'wsl_unregister_admin_tabs');
 }
