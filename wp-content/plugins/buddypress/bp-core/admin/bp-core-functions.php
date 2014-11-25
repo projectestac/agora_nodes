@@ -401,9 +401,7 @@ function bp_core_admin_tabs( $active_tab = '' ) {
 //                            where they cannot access.
 // 2014.09.10 @aginard
 
-    global $isAgora;
-    
-    if ($isAgora && !is_xtecadmin()) {
+    if (!is_xtecadmin()) {
         unset($tabs[1]); // Pages tab
         unset($tabs[2]); // Settings tab
     }
