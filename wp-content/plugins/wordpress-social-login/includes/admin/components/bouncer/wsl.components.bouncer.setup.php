@@ -234,9 +234,7 @@ function wsl_component_bouncer_setup()
 <!-- XTEC ************ AFEGIT - Hide "Filters by profile urls" -->
 <!-- 2014.11.14 @aginard -->
 <?php 
-    global $isAgora;
-    
-    if ($isAgora && !is_xtecadmin()) {
+    if (!is_xtecadmin()) {
         echo '<!--';
     }
 //************ FI (The following close PHP tag belongs to the patch) ?>
@@ -281,7 +279,7 @@ function wsl_component_bouncer_setup()
 
 <?php // XTEC ************ AFEGIT -  Hide "Filters by profile urls"
 // 2014.11.14 @aginard
-    if ($isAgora && !is_xtecadmin()) {
+    if (!is_xtecadmin()) {
         echo '-->';
     }
 //************ FI (The following close PHP tag belongs to the patch) ?>
