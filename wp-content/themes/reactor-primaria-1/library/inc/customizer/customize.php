@@ -393,7 +393,7 @@ if ( !function_exists('reactor_customize_register') ) {
                             //"bordeus" => "Bordeus",
                             "taronges" => "Taronges",
                             "taronja-verd" => "Taronja i Verd",
-                            "taronga-gris" => "Taronga i gris",
+                            "taronja-gris" => "Taronja i gris",
                             "sienna"=> "Sienna",
                             "xocolata" => "Xocolata",
                         );
