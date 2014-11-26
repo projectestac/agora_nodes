@@ -1,0 +1,29 @@
+# Projects
+*~
+*.swp
+/nbproject/
+CVS
+.DS_Store
+/.settings/
+/.project
+/.buildpath
+/.cache
+/.settings/
+/.project
+/.buildpath
+/.cache
+sftp-config*.json
+.Trash*/*
+# Wordpress
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/*
+wp-content/wp-cache-config.php
