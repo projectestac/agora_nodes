@@ -96,6 +96,22 @@ function save_stats() {
     $wpdb->insert($table, $data, array('%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s'));
 }
 
+/**
+ * 
+ * @global type $wpdb
+ * @author Toni Ginard
+ */
+function remove_old_stats() {
+    
+    global $wpdb;
+
+    $datetime = date('Y-m-d H:i:s', time() - 15552000); // 15552000 = 6 * 30 * 24 * 60 * 60 (6 month)
+    
+    $wpdb->query( "DELETE FROM $wpdb->stats WHERE datetime < '$datetime'");
+    
+}
+
+
 function parse_cli_args() {
     global $cliargs;
     $cliargs = array();
