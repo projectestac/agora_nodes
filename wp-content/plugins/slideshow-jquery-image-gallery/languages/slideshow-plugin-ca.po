@@ -203,7 +203,7 @@ msgstr "Mostra el tauler de control (bontons de reproducció i pausa)"
 
 #: classes/SlideshowPluginPostType.php:45
 msgid "Slideshows"
-msgstr "Carrusel"
+msgstr "Carrusels"
 
 #: classes/SlideshowPluginPostType.php:46
 #: views/SlideshowPluginWidget/form.php:7
@@ -277,8 +277,7 @@ msgstr "Tanca-ho tot"
 #: views/SlideshowPluginPostType/slides.php:10
 msgid "Add slides to this slideshow by using one of the buttons above."
 msgstr ""
-"Afegeix diapositives a aquest carrusel mitjançant l'ús d'un dels botons "
-"de dalt."
+""
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
@@ -735,7 +734,7 @@ msgstr "ID del Youtube"
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:101
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:135
 msgid "Image slide"
-msgstr "Diaposivita d'imatge"
+msgstr "Diapositiva d'imatge"
 
 #: views/SlideshowPluginPostType/slides.php:171
 msgid ""
