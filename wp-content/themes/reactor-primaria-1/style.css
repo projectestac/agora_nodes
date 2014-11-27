@@ -964,7 +964,6 @@ ul.pagination li.current a {
     background: #E5E5E5;
 }
 ul.pagination li.current a:hover {
-    background: #E5E5E5;
     cursor: pointer;
 }
  
