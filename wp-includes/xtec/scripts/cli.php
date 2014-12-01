@@ -17,9 +17,9 @@ try{
 echo "End server Time: ".date('r', time())."\n";
 
 if ($success) {
-	echo 'Script '.$script.' succeed';
+	echo 'Script '.$script.' succeed'."\n";
 	exit (0);
 } else {
-	echo 'Script '.$script.' failed';
-	exit (-1);
+	echo 'Script '.$script.' failed'."\n";
+	exit ('error');
 }
