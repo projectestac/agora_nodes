@@ -42,8 +42,6 @@
         else window.onload = downloadJSAtOnload;
         
     </script>
-});
-
 
 <?php } ?>
 
