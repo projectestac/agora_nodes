@@ -45,6 +45,7 @@ a:hover{
 h1 {
     font-size:2em;
 }
+
 h2 {
     font-size:1.8em;
 }
@@ -67,7 +68,6 @@ ul.sub-menu{
     margin-left: 0em;
 }
 
-
 table thead tr th, 
 table tfoot tr th, 
 table tbody tr td, 
@@ -75,7 +75,6 @@ table tr td,
 table tfoot tr td {
     border: 1px solid silver;
 }
-
 
 .page-template-page-templatesside-menu-php 
 {
@@ -197,7 +196,6 @@ article {
 #contingut_central_frontpage .entry-title{
     margin-top: 0;
     margin-bottom: 0;
-
     padding-top: 0;
 }
 
@@ -266,7 +264,7 @@ Top header
 ******************************************************************/
 
 #wpadminbar {
-    height: 36px;
+    height: 36px !important;
 }
 
 .ab-item{
