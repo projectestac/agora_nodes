@@ -79,8 +79,8 @@ Contingut barra superior (admin bar)
 //Sempre visible
 show_admin_bar( true );
 
-include "custom-tac/capcalera/menu-gencat.php";
-add_action( 'admin_bar_menu', 'add_gencat',1 ); 
+include "custom-tac/capcalera/menu-logo.php";
+add_action( 'admin_bar_menu', 'add_logo',1 ); 
 
 include "custom-tac/capcalera/menu-recursos-tac.php";
 add_action( 'admin_bar_menu', 'add_recursos',2);
