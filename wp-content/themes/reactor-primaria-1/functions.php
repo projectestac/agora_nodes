@@ -771,4 +771,3 @@ function setTarget($link){
         return "";
 }
 
-
