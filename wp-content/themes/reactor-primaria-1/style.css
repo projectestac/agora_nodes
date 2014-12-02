@@ -42,6 +42,11 @@ a:hover{
     text-decoration: underline;
 }
 
+a.no-link:hover{
+    text-decoration: none;
+    cursor:default;
+}
+
 h1 {
     font-size:2em;
 }
