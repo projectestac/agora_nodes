@@ -771,3 +771,16 @@ function setTarget($link){
         return "";
 }
 
+/*
+ * Replace "es.scribd.com" per "www.scribd.com" cause es.scribd.com doesn't work as a oEmbed provider
+ * I try to add as a oEmbed provider via wp_oembed_add_provider but doesn't work 
+ * 
+ * @author Xavi Meler
+*/
+
+add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
+
+function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
+    $filtered_data['post_content'] = str_replace('es.scribd.com', 'www.scribd.com', $filtered_data['post_content']);
+    return $filtered_data;
+}
