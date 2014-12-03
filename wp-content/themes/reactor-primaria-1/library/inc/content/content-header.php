@@ -5,6 +5,7 @@
  *
  * @package Reactor
  * @author Anthony Wilhelm (@awshout / anthonywilhelm.com)
+ * @author Xavier Meler <jmeler@xtec.cat>
  * @since 1.0.0
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -111,16 +112,17 @@ add_action('wp_head', 'reactor_do_reactor_head', 1);
  * @since 1.0.0
  */
 function reactor_do_top_bar() {
-	if ( has_nav_menu('top-bar-l') || has_nav_menu('top-bar-r') ) {
-		$topbar_args = array(
-			'title'     => reactor_option('topbar_title', get_bloginfo('name')),
-			'title_url' => reactor_option('topbar_title_url', home_url()),
-			'fixed'     => reactor_option('topbar_fixed', 0),
-			'contained' => reactor_option('topbar_contain', 1),
-		);
-		reactor_top_bar( $topbar_args );
-	}
+    if ( has_nav_menu('top-bar-l') || has_nav_menu('top-bar-r') ) {
+            $topbar_args = array(
+                    'title'     => reactor_option('topbar_title', get_bloginfo('name')),
+                    'title_url' => reactor_option('topbar_title_url', home_url()),
+                    'fixed'     => reactor_option('topbar_fixed', 0),
+                    'contained' => reactor_option('topbar_contain', 1),
+            );
+            reactor_top_bar( $topbar_args );
+    }
 }
+
 add_action('reactor_header_before', 'reactor_do_top_bar',1);
 
 /**
