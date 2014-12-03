@@ -64,16 +64,17 @@ function reactor_child_theme_setup() {
 	
 }
 
-//Fil d'ariadna
-function add_fil_ariadna(){
-	reactor_breadcrumbs(); 
+/**
+ * Fil d'ariadna 
+ * @author Xavi Meler
+ */
+function add_breadcrumbs(){
+    reactor_breadcrumbs(); 
 }
-add_action ('reactor_content_before','add_fil_ariadna',999);
+add_action ('reactor_content_before','add_breadcrumbs',999);
 
 /**************************************************************
-
-Contingut barra superior (admin bar)
-
+* Contingut barra superior (admin bar)
 ***************************************************************/
 
 //Sempre visible
@@ -128,6 +129,7 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 
 
 <?php }
+
 add_action ( 'edit_category_form_fields', 'extra_category_fields');
 
 
@@ -163,6 +165,7 @@ function filter_by_taxonomy($query) {
         $query->set('tag', $etiqueta);
     }
 }
+
 add_action( 'pre_get_posts', 'filter_by_taxonomy');
  
 // Permet algunes etiquetes html a l'extracte d'un post
@@ -194,7 +197,9 @@ function improved_trim_excerpt($text) {
         
         return $text . $excerpt_more;
 }
+
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
 // Allow HTML in description category/tag
@@ -209,6 +214,7 @@ License: GPL2
 */
 // remove the html filtering
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
+
 remove_filter( 'term_description', 'wp_kses_data' );
 
 function cat_description($tag)
@@ -228,8 +234,8 @@ function cat_description($tag)
     </table>
     <?php
 }
-add_filter('edit_category_form_fields', 'cat_description');
 
+add_filter('edit_category_form_fields', 'cat_description');
 
 function remove_default_category_description()
 {
@@ -268,42 +274,31 @@ add_action("reactor_content_before","menu_principal");
 
 // Zona de Ginys per categories
 if ( function_exists('register_sidebar') ) {
-	register_sidebars( 1,
-	array(
-	'name'          => __( 'Categories (Barra esquerra)', 'custom_tac' ),
-	'id'            => 'categoria',
-	'description'   => 'Barra lateral a les pàgines de categories (ESO, ESO1, ESO1A...)',
-        'class'         => '',
-	'before_widget' => '
-	<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>
-	',
-	'before_title' => '
-	<h2 class="widgettitle">',
-	'after_title' => '</h2>
-	'
-	));
+    register_sidebars( 1,
+    array(
+    'name'          => __( 'Categories (Barra esquerra)', 'custom_tac' ),
+    'id'            => 'categoria',
+    'description'   => 'Barra lateral a les pàgines de categories (ESO, ESO1, ESO1A...)',
+    'class'         => '',
+    'before_widget' => '
+    <div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>
+    ',
+    'before_title' => '
+    <h2 class="widgettitle">',
+    'after_title' => '</h2>
+    '
+    ));
 }
-
 
 /**
  * Hide widgets 
  * @author Xavi Meler
  */
 function unregister_default_widgets() {
-     //unregister_widget('WP_Widget_Pages');
      unregister_widget('WP_Widget_Calendar');
-     //unregister_widget('WP_Widget_Archives');
-     //unregister_widget('WP_Widget_Links');
      unregister_widget('WP_Widget_Meta');
      unregister_widget('WP_Widget_Search');
-     //unregister_widget('WP_Widget_Text');
-     //unregister_widget('WP_Widget_Categories');
-     //unregister_widget('WP_Widget_Recent_Posts');
-     //unregister_widget('WP_Widget_Recent_Comments');
-     //unregister_widget('WP_Widget_RSS');
-     //unregister_widget('WP_Widget_Tag_Cloud');
-     //unregister_widget('WP_Nav_Menu_Widget');
      unregister_widget('BBP_Login_Widget');
      unregister_widget('BBP_Search_Widget');
      unregister_widget('BBP_Stats_Widget');
@@ -315,20 +310,10 @@ function unregister_default_widgets() {
  }
  add_action('widgets_init', 'unregister_default_widgets', 11);
 
-/*
-add_action( 'wp_footer', function()
-{
-    if ( empty ( $GLOBALS['wp_widget_factory'] ) )
-        return;
-
-    $widgets = array_keys( $GLOBALS['wp_widget_factory']->widgets );
-    print '<pre>$widgets = ' . esc_html( var_export( $widgets, TRUE ) ) . '</pre>';
-});
-*/
-
-
-//Amagem en les opcions de pantalla algunes opcions poc utilitzades. En usabilitat - és +
-add_filter( 'hidden_meta_boxes', 'custom_hidden_meta_boxes' );
+ /**
+ * Hide screen option's items. Best for usability  
+ * @author Xavi Meler
+ */
 function custom_hidden_meta_boxes( $hidden ) {
     $hidden[] = 'revisionsdiv';
     $hidden[] = 'commentstatusdiv';
@@ -338,10 +323,13 @@ function custom_hidden_meta_boxes( $hidden ) {
     return $hidden;
 }
 
-//Eliminem opcions dels articles que s'utilitzen molt poc o mai
-function remove_post_meta_boxes() {
+add_filter( 'hidden_meta_boxes', 'custom_hidden_meta_boxes' );
 
-    //if(!current_user_can('administrator')) {
+/**
+ * Eliminem opcions dels articles que s'utilitzen molt poc o mai
+ * @author Xavi Meler
+ */
+function remove_post_meta_boxes() {
      remove_meta_box('trackbacksdiv', 'post', 'normal');
      remove_meta_box('trackbacksdiv', 'post', 'side');
      remove_meta_box('commentsdiv', 'post', 'normal');
@@ -357,28 +345,28 @@ function remove_post_meta_boxes() {
      remove_meta_box( 'layout_meta' , 'post' , 'side' ); 
      remove_meta_box( 'layout_meta' , 'post' , 'normal' ); 
 
-    //}
-
 }
+
 add_action( 'do_meta_boxes', 'remove_post_meta_boxes' );
 
-//Eliminem opcions de les pàgines que s'utilitzen molt poc o mai
+/**
+ * Remove not used metabox 
+ * @author Xavi Meler
+ */
 function remove_page_meta_boxes() {
-
-	 //if(!current_user_can('administrator')) {
-	  remove_meta_box( 'commentsdiv', 'page', 'normal' );
-	  remove_meta_box( 'slugdiv' , 'page' , 'normal' ); 
-	  remove_meta_box( 'rawhtml_meta_box' , 'page' , 'side' ); 
-	  remove_meta_box( 'postcustom' , 'page' , 'normal' ); 
- 	  //remove_meta_box( 'layout_meta' , 'page' , 'side' ); 
-	  remove_meta_box( 'postimagediv', 'page', 'side' );
-	 //}
-
+    remove_meta_box( 'commentsdiv', 'page', 'normal' );
+    remove_meta_box( 'slugdiv' , 'page' , 'normal' ); 
+    remove_meta_box( 'rawhtml_meta_box' , 'page' , 'side' ); 
+    remove_meta_box( 'postcustom' , 'page' , 'normal' ); 
+    remove_meta_box( 'postimagediv', 'page', 'side' );
 }
+
 add_action( 'do_meta_boxes', 'remove_page_meta_boxes');
 
-
-// Eliminem moltes caixes del Tauler d'interès molt relatiu
+/**
+ * Remove not used dashboard metaboxes 
+ * @author Xavi Meler
+ */ 
 function remove_dashboard_widgets(){
     //remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
     //remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
@@ -389,24 +377,22 @@ function remove_dashboard_widgets(){
     remove_meta_box('dashboard_primary', 'dashboard', 'side');   // WordPress blog
     remove_meta_box('dashboard_secondary', 'dashboard', 'side');   // Other WordPress News
     remove_meta_box('bbp-dashboard-right-now', 'dashboard', 'side');   // Other WordPress News
-
-// use 'dashboard-network' as the second parameter to remove widgets from a network dashboard.
 }
+
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
 
 include "custom-tac/rss-metabox.php"; 
 
-//rss nodes 
+add_action('wp_dashboard_setup', 'rss_register_widgets');
+
 function rss_register_widgets() {
     global $wp_meta_boxes;
     wp_add_dashboard_widget('widget_rss_nodes', "Notícies", 'rss_box');
 }
 
-add_action('wp_dashboard_setup', 'rss_register_widgets');
-
-
 // Tauler personalitzat 
 include "custom-tac/welcome-panel.php"; 
+
 add_action( 'welcome_panel', 'rc_my_welcome_panel' );
 
 /**
@@ -423,8 +409,8 @@ function tweak_admin_bar() {
     $wp_admin_bar->remove_menu('wp-admin-wordpress-social-login');
 
 }
-add_action('wp_before_admin_bar_render', 'tweak_admin_bar');
 
+add_action('wp_before_admin_bar_render', 'tweak_admin_bar');
 
 /**
  * Build HTML page to centralize all BuddyPress-related stuff
@@ -611,11 +597,12 @@ add_action('admin_menu', 'rebuild_bp_menus_step_1', 1); // Priority 1 is importa
 add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is important!
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
-/*
- * @author Xavi Meler & Toni Ginard
+/**
  * Avoid delete this pages: Activitat(5), Membres(6), Nodes(sec 16,pri 141)
- * 
+ *
+ * @author Xavi Meler & Toni Ginard 
  */
+add_action('wp_trash_post', 'restrict_post_deletion', 10, 1);
 
 function restrict_post_deletion($post_ID){
    
@@ -625,9 +612,8 @@ function restrict_post_deletion($post_ID){
         exit;
     }
 }
-add_action('wp_trash_post', 'restrict_post_deletion', 10, 1);
 
-/*
+/**
  * Remove Page Templates
  * 
  * @author Xavi Meler
@@ -640,10 +626,10 @@ function remove_page_templates( $templates ) {
     unset( $templates['page-templates/news-page.php'] );
     return $templates;
 }
+
 add_filter( 'theme_page_templates', 'remove_page_templates' );
 
-
-/*
+/**
  * Menú shortcode 
  *  
  * @author Xavi Meler
@@ -677,7 +663,7 @@ add_shortcode('menu', 'menu_function');
 */
 
 
-/*
+/**
  * Determina la mida de la font de la caixa descripció en funció del nombre de 
  * paraules i de la mida de cada paraula
  * 
@@ -690,7 +676,7 @@ add_shortcode('menu', 'menu_function');
  * 
  */
  
-function getDescriptionFontSize($description){
+function get_description_font_size($description){
     
     $description_len = strlen($description);
     $aDescription = explode(" ",$description);
@@ -714,17 +700,17 @@ function getDescriptionFontSize($description){
     return $fontSize;
 }
 
-/*
+/**
  * Informació del centre al peu de la versió per imprimir
  * 
  * @author Xavi Meler
  */
 
+add_action('reactor_footer_after', 'footer_mediaprint');
+
 function footer_mediaprint(){
     echo "<div id='info-footer-mediaprint'>". reactor_option('nomCanonicCentre')." | ".  get_home_url()."</div>";
 }
-add_action('reactor_footer_after', 'footer_mediaprint');
-
 
 /* 
  * Fixem la portada amb la configuració de "pàgina" i establim la pàgina segons 
@@ -744,7 +730,7 @@ function set_page_on_front($value) {
     return reactor_option("frontpage_page");
 }
 
-/* 
+/** 
  * Canvia la galeta perquè no sigui secura (wordpress_ enlloc de wordpress_sec) per no haver de validar dues vegades en accedir al Tauler
  * 
  * @author Sara Arjona
@@ -757,21 +743,20 @@ function wpadmin_secure_cookie_filter( ) {
 	return false;
 }
 
-
-/*
- * Set target link 
+/**
+ * If external adress, open link on new window 
  * 
  * @author Xavi Meler
 */
 
-function setTarget($link){
+function set_target($link){
     if (strpos(trim($link),"http")===0)
         return "target='_blank'";
     else
         return "";
 }
 
-/*
+/**
  * Replace "es.scribd.com" per "www.scribd.com" cause es.scribd.com doesn't work as a oEmbed provider
  * I try to add as a oEmbed provider via wp_oembed_add_provider but doesn't work 
  * 
@@ -784,3 +769,4 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
     $filtered_data['post_content'] = str_replace('es.scribd.com', 'www.scribd.com', $filtered_data['post_content']);
     return $filtered_data;
 }
+
