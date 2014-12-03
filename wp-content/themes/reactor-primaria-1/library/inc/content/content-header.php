@@ -172,7 +172,7 @@ function reactor_do_title_logo() { ?>
                                              $description = esc_attr( get_bloginfo( 'description', 'display' ) );
                                     }
                                     
-                                    $descriptionFontSize=getDescriptionFontSize($description);
+                                    $descriptionFontSize=get_description_font_size($description);
                                     
                                     ?>
                                     <div style="font-size:<?php echo $descriptionFontSize;?>" id="description-box-inner" class="site-description-box-inner">
@@ -211,13 +211,13 @@ function reactor_do_title_logo() { ?>
 						<?php $options=get_option( 'my_option_name' );?>
 		
 						<!-- Fila 1 -->
-						<a title="<?php echo $options['title_icon11'];?>" href="<?php echo $options['link_icon11'];?>" <?php echo setTarget($options['link_icon11']);?>>
+						<a title="<?php echo $options['title_icon11'];?>" href="<?php echo $options['link_icon11'];?>" <?php echo set_target($options['link_icon11']);?>>
 							<div id="icon-11" class="icon-graella">
 								<div class="dashicons dashicons-<?php echo $options['icon11'];?>"></div>
 							</div>
 						</a>
                                                 
-						<a title="<?php echo $options['title_icon12'];?>" href="<?php echo $options['link_icon12'];?>" <?php echo setTarget($options['link_icon12']);?>>
+						<a title="<?php echo $options['title_icon12'];?>" href="<?php echo $options['link_icon12'];?>" <?php echo set_target($options['link_icon12']);?>>
 							<div id="icon-12" class="icon-graella">
 								<div class="dashicons dashicons-<?php echo $options['icon12'];?>"></div>
 							</div>
@@ -239,13 +239,13 @@ function reactor_do_title_logo() { ?>
                                                 </div>
                                                 
 						<!-- Fila 2 -->
-                                                <a title="<?php echo $options['title_icon21'];?>" href="<?php echo $options['link_icon21'];?>" <?php echo setTarget($options['link_icon21']);?>>
+                                                <a title="<?php echo $options['title_icon21'];?>" href="<?php echo $options['link_icon21'];?>" <?php echo set_target($options['link_icon21']);?>>
 							<div id="icon-21" class="icon-graella">
 								<div class="dashicons dashicons-<?php echo $options['icon21'];?>"></div>
 							</div>
 						</a>
 						
-						<a title="<?php echo $options['title_icon22'];?>" href="<?php echo $options['link_icon22'];?>" <?php echo setTarget($options['link_icon22']);?>>
+						<a title="<?php echo $options['title_icon22'];?>" href="<?php echo $options['link_icon22'];?>" <?php echo set_target($options['link_icon22']);?>>
 							<div id="icon-22" class="icon-graella">
 								<div class="dashicons dashicons-<?php echo $options['icon22'];?>"></div>
 							</div>
