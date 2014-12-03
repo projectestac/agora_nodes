@@ -11,13 +11,20 @@
  global $amplada;
  
  switch ($layout) {
- 	case 1: 	$amplada="large-12";            break;
- 	case 66: 	$amplada="large-8";		break;
- 	case 2: 	$amplada="large-6";		break;
- 	case 33:	$amplada="large-4";		break;
- 	case 3:		$amplada="large-4";		break;
- 	case 4:		$amplada="large-3";		break;
- 	default:	$amplada="large-6";		 
+    case 1: $amplada="large-12";            
+            break;
+    case 66:$amplada="large-8";		
+            break;
+    case 2: $amplada="large-6";		
+            break;
+    case 33:$amplada="large-4";		
+            break;
+    case 3: $amplada="large-4";		
+            break;
+    case 4: $amplada="large-3";		
+            break;
+    default:	
+            $amplada="large-6";		 
  }
 ?>
 

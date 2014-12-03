@@ -99,15 +99,23 @@ function reactor_do_meta_autor_date() {
  * @since 1.0.0
  */
 function reactor_do_standard_thumbnail() { 
-	
+
     if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on")
             return;
     
-    if ( has_post_thumbnail() && !is_single() ) { 
-        $thumb_src=wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
-        <div class="entry-thumbnail" style="background-image:url(<?php echo $thumb_src ?>)">
-        </div>
-    <?php }
+    if (has_post_thumbnail() && !is_single()) { 
+        $image_data   = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "full" );
+        $image_height = $image_data[2];
+        $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); 
+       
+        // if user check original size or image is smaller than default height's thumbnail 
+        if ((get_post_meta( get_the_ID(), '_original_size', true ) == "on") 
+           ||($image_height<=200)) {
+            echo "<div class='entry-original-featured-image'><img src='" . $thumb_src . "'></div>";
+        } else {  
+            echo "<div class='entry-thumbnail' style='background-image:url(" . $thumb_src .")'></div>";
+        }
+    }
 }
 
 //add_action('reactor_post_header', 'reactor_do_standard_thumbnail', 4);

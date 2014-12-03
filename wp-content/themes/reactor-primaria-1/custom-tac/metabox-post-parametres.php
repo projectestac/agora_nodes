@@ -1,11 +1,9 @@
 <?php
 
-/*************************************************************
-METABOX per triar títol, metadades, etc...
-**************************************************************/
-
 /**
  * Adds a box to the main column on the Post and Page edit screens.
+ * 
+ * @author Xavier Meler <jmeler@xtec.cat>
  */
 function metabox1_add() {
 
@@ -40,13 +38,10 @@ function metabox1_callback( $post ) {
 	$check1 = get_post_meta( $post->ID, '_amaga_titol', true );
 	$check2 = get_post_meta( $post->ID, '_amaga_metadata', true );
 	$check3 = get_post_meta( $post->ID, '_bloc_html', true );
-
-	/*echo '<label for="myplugin_new_field">';
-	_e( 'Mostrar títol', 'metabox1_textdomain' );
-	echo '</label> ';
-	echo '<input type="text" id="mostrar_titol" name="mostrar_titol" value="' . esc_attr( $value ) . '" size="25" /><br>';*/
-	//echo $check1;
-	echo '<input type="checkbox" id="bloc_html" name="bloc_html" '.checked( $check3,'on' ,false ).'/> Mostra el contingut sencer<br>';
+        $check4 = get_post_meta( $post->ID, '_original_size', true );
+        
+        echo '<input type="checkbox" id="original_size" name="original_size" '.checked( $check4,'on' ,false ).'/> Imatge destacada amb mida original<br>';
+	echo '<input type="checkbox" id="bloc_html" name="bloc_html" '.checked( $check3,'on' ,false ).'/> Mostra contingut sencer, no un resum<br>';
 	echo '<input type="checkbox" id="amaga_titol" name="amaga_titol" '.checked( $check1,'on', false ).' /> Amaga títol<br>';
 	echo '<input type="checkbox" id="amaga_metadata" name="amaga_metadata" '.checked( $check2,'on',false ).'/> Amaga metadades';
 	
@@ -104,11 +99,13 @@ function metabox1_savedata( $post_id ) {
 	$mostrar_titol= $_POST['amaga_titol'] ;
 	$mostrar_metadata= $_POST['amaga_metadata'] ;
 	$bloc_html= $_POST['bloc_html'] ;
+        $original_size= $_POST['original_size'] ;
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, '_amaga_titol', $mostrar_titol);
 	update_post_meta( $post_id, '_amaga_metadata', $mostrar_metadata);
 	update_post_meta( $post_id, '_bloc_html', $bloc_html);
+        update_post_meta( $post_id, '_original_size', $original_size);
 	
 }
 add_action( 'save_post', 'metabox1_savedata' );
