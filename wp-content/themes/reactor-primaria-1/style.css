@@ -230,6 +230,10 @@ article {
     margin-top: 0.5em;
 }
 
+.entry-original-featured-image{
+    text-align: center;
+}
+
 .label.secondary {
     background-color: #4ad0d2;
     color: white;

@@ -5,6 +5,7 @@
  * @package Reactor
  * @subpackge Page-Templates
  * @since 1.0.0
+ * @author Xavier Meler <jmeler@xtec.cat>
  */
 ?>
 
@@ -12,33 +13,31 @@
 
 function barra_esquerra($frontpage_layout){
 
-	$columnes=9;
-
 	switch ($frontpage_layout){
-		case "1c":
-			$columnes=12;
-			break;
-		case "2c-l":
-			get_sidebar('frontpage'); 
-			break;
-		case "2c-r":
-			$columnes=10;
-			break;
-			case "3c-c":
-			get_sidebar('frontpage'); 
-			$columnes=7;
-			break;
-		default:
-			$columnes=9;
-		}
+            case "1c":
+                $columnes=12;
+                break;
+            case "2c-l":
+                get_sidebar('frontpage'); 
+                break;
+            case "2c-r":
+                $columnes=10;
+                break;
+                case "3c-c":
+                get_sidebar('frontpage'); 
+                $columnes=7;
+                break;
+            default:
+                $columnes=9;
+        }
+        
 	return $columnes;
 }
 
 function barra_dreta($frontpage_layout){
-	$frontpage_layout = reactor_option('frontpage_layout');
-	(in_array($frontpage_layout,array("2c-r","3c-c"))) ? get_sidebar('frontpage-2'):''; 
+    $frontpage_layout = reactor_option('frontpage_layout');
+    in_array($frontpage_layout,array("2c-r","3c-c")) ? get_sidebar('frontpage-2'):''; 
 }
-
 
 global $number_posts;
 global $categoria;
@@ -63,18 +62,18 @@ get_header();
 		
         	<!-- Barra esquerra si aplica -->
 		<?php 
-			if (wp_is_mobile()){
-				echo "<div>";
-				if (in_array($frontpage_layout,array("2c-l","3c-c"))){
-					echo "<span style='float:left;margin:1em'><a href='#barra_esquerra'><span class='dashicons dashicons-arrow-down-alt2'></span> Ginys</a></span>";
-				}
-				if (in_array($frontpage_layout,array("2c-r","3c-c"))){
-					echo "<span style='float:right;margin:1em'><a href='#barra_dreta'>Ginys<span class='dashicons dashicons-arrow-down-alt2'></a></span>";
-				}
-				echo "</div>";
-			} else {
-				$columnes=barra_esquerra($frontpage_layout);
-			}
+                if (wp_is_mobile()){
+                        echo "<div>";
+                        if (in_array($frontpage_layout,array("2c-l","3c-c")))
+                                echo "<span style='float:left;margin:1em'><a href='#barra_esquerra'><span class='dashicons dashicons-arrow-down-alt2'></span> Ginys</a></span>";
+                        
+                        if (in_array($frontpage_layout,array("2c-r","3c-c")))
+                                echo "<span style='float:right;margin:1em'><a href='#barra_dreta'>Ginys<span class='dashicons dashicons-arrow-down-alt2'></a></span>";
+                        
+                        echo "</div>";
+                } else {
+                        $columnes=barra_esquerra($frontpage_layout);
+                }
         	?>
         	
 		<!-- Contingut central -->
