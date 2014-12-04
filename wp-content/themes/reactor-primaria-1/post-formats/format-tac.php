@@ -31,6 +31,7 @@
 <?php if ($amplada!="large-12") { ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class("$amplada targeta $card_bgcolor"); ?>>
             <div class="entry-body">
+                <?php echo reactor_tumblog_icon(); ?>
                 <header class="entry-header">
                     <?php reactor_post_header(); ?>
                 </header>
@@ -42,7 +43,8 @@
                 </footer>
                 </div><!-- .entry-body -->
 	</article><!-- #post -->
-<?php } else {   
+
+    <?php } else {   
     
             if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on"){
                 $bloc_html=true;
@@ -54,6 +56,7 @@
     ?> 
             <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada targeta $card_bgcolor"); ?>>
                 <div class="entry-body row">
+                    <?php echo reactor_tumblog_icon(); ?>
                     <div class="entry-summary <?php echo $ample;?> columns">
                         <?php reactor_do_standard_header_titles(); ?>
                         <?php reactor_do_meta_autor_date(); ?>
