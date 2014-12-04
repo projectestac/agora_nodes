@@ -61,6 +61,8 @@ function reactor_child_theme_setup() {
 	
 	/* Remove support for background options in customizer */
 	remove_theme_support('reactor-backgrounds');
+        
+        add_theme_support('reactor-tumblog-icons');
 	
 }
 
@@ -106,13 +108,10 @@ function custom_toolbar($wp_toolbar) {
  		'title' => __('Pàgines'), 
  		'href' => admin_url( 'edit.php?post_type=page') 
  	));
-
-
 }
 add_action('admin_bar_menu', 'custom_toolbar',98);
 
 /* Camps extra per definir disposició de noticies a cada categoria*/
-
 function extra_category_fields( $tag ) {    //check for existing featured ID
     $t_id = $tag->term_id;
     $cat_meta = get_option( "category_$t_id");
@@ -127,11 +126,9 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
      </td>
 </tr>
 
-
 <?php }
 
 add_action ( 'edit_category_form_fields', 'extra_category_fields');
-
 
 // save extra category extra fields callback function
 function save_extra_category_fields( $term_id ) {
@@ -150,7 +147,6 @@ function save_extra_category_fields( $term_id ) {
 }
 // save extra category extra fields hook
 add_action ( 'edited_category', 'save_extra_category_fields');
-
 
 //Filtre categoria 
 function filter_by_taxonomy($query) {
@@ -769,4 +765,3 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
     $filtered_data['post_content'] = str_replace('es.scribd.com', 'www.scribd.com', $filtered_data['post_content']);
     return $filtered_data;
 }
-
