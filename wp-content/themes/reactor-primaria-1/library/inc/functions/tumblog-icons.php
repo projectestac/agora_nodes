@@ -35,7 +35,7 @@ if ( !function_exists('reactor_tumblog_icon') ) {
                         $icon .= '<i style="color:red !important" class="fi-alert"></i>';
                         $title="Avís Important";
                         break;
-                    case 'music' : 
+                    case 'musica' : 
                         $icon .= '<i class="fi-music"></i>';
                         $title="Inclou música";
                         break;
