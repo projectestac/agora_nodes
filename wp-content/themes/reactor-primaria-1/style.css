@@ -227,12 +227,13 @@ article {
     background-repeat: no-repeat;
     background-position: 50% 50%; 
     display: block;
-    margin-top: 0.5em;
-}
+    /*position: relative;*/
+ }
 
 .entry-original-featured-image{
     text-align: center;
-}
+    position: relative;
+ }
 
 .label.secondary {
     background-color: #4ad0d2;
@@ -470,6 +471,15 @@ Header
     position: relative;
     z-index:10;
     padding:5px !important;
+}
+
+.entry-icon {
+    position:absolute;
+    top:0.5em;
+    left:85%;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    z-index:999;
 }
 
 .entry-date > a,
@@ -1046,19 +1056,13 @@ Media
 
 /* Large devices*/
 @media screen and (min-width: 782px) {
-
     .site-description-box{    
         display:table !important;    
-    }
-    /*Logo generalitat*/
-    #logogencat { 
-        vertical-align: baseline;
     }
 }
 
 /*TODO: Fer per a totes les resolucions*/
 @media screen and (min-width: 782px) and (device-aspect-ratio: 5/4) {
-
     .site-header,
     .site-identity,
     .site-logo,
