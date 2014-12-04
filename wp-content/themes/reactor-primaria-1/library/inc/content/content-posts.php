@@ -13,7 +13,7 @@
 /**
  * Construim l'article 
  */
- 
+//add_action('reactor_post_header', 'reactor_do_tumblog_icons', 1); 
 add_action('reactor_post_header', 'reactor_do_standard_header_titles', 1);
 add_action('reactor_post_header', 'reactor_do_meta_autor_date', 2);
 add_action('reactor_post_header', 'reactor_do_standard_thumbnail', 3);
@@ -32,7 +32,7 @@ add_action('reactor_post_after', 'reactor_do_post_comments', 1);
  * @since 1.0.0
  */
 function reactor_do_tumblog_icons() {
-    if ( reactor_option('tumblog_icons', false) && ( is_home() || is_archive() ) && current_theme_supports('reactor-tumblog-icons') ) {
+    if ( ( is_home() || is_archive() ) && current_theme_supports('reactor-tumblog-icons') ) {
             $output = reactor_tumblog_icon();
             echo $output;
     }
@@ -106,15 +106,17 @@ function reactor_do_standard_thumbnail() {
     if (has_post_thumbnail() && !is_single()) { 
         $image_data   = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "full" );
         $image_height = $image_data[2];
-        $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); 
-       
+        $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+        
         // if user check original size or image is smaller than default height's thumbnail 
         if ((get_post_meta( get_the_ID(), '_original_size', true ) == "on") 
            ||($image_height<=200)) {
-            echo "<div class='entry-original-featured-image'><img src='" . $thumb_src . "'></div>";
+            echo "<div class='entry-original-featured-image'><img src='" . $thumb_src . "'>";
         } else {  
-            echo "<div class='entry-thumbnail' style='background-image:url(" . $thumb_src .")'></div>";
+            echo "<div class='entry-thumbnail' style='background-image:url(" . $thumb_src .")'>";
         }
+        echo "</div>";
+        
     }
 }
 
