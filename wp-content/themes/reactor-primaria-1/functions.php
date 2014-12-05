@@ -732,12 +732,15 @@ function set_page_on_front($value) {
  * @author Sara Arjona
  *
 */
-
+// @aginard: Code commented because it breaks access to wp-admin in WordPress 4.0.1. Looks like
+//            it is no longer necessary. Possibly it can be removed.
+/*
 add_filter('secure_auth_cookie', 'wpadmin_secure_cookie_filter');
 
 function wpadmin_secure_cookie_filter( ) {
 	return false;
 }
+*/
 
 /**
  * If external adress, open link on new window 
