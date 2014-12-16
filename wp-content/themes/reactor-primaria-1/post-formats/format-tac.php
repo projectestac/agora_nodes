@@ -27,25 +27,24 @@
             $amplada="large-6";		 
  }
 ?>
-
+  		
 <?php if ($amplada!="large-12") { ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class("$amplada targeta $card_bgcolor"); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
             <div class="entry-body">
                 <?php echo reactor_tumblog_icon(); ?>
                 <header class="entry-header">
                     <?php reactor_post_header(); ?>
                 </header>
                 <div class="entry-summary">
-                    <?php (get_post_meta( get_the_ID(), '_bloc_html', true )!="on")? the_excerpt(): the_content(); ?>
+                    <?php (get_post_meta( get_the_ID(), '_bloc_html', true )!="on")? the_excerpt(): the_content();?>
                 </div>
                 <footer class="entry-footer">
                     <?php  reactor_post_footer();?>
                 </footer>
-                </div><!-- .entry-body -->
-	</article><!-- #post -->
-
-    <?php } else {   
-    
+             </div><!-- .entry-body -->
+ 	 </article><!-- #post -->
+   <?php } else {   
+            // Targeta ocupa tota l'amplada
             if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on"){
                 $bloc_html=true;
                 $ample="large-12";
@@ -54,7 +53,7 @@
                 $ample="large-8";
             }
     ?> 
-            <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada targeta $card_bgcolor"); ?>>
+          <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
                 <div class="entry-body row">
                     <?php echo reactor_tumblog_icon(); ?>
                     <div class="entry-summary <?php echo $ample;?> columns">
@@ -76,6 +75,5 @@
                     </footer>
                     </div>    
                 </div><!-- .entry-body -->
-            </article><!-- #post -->	
-
+           </article><!-- #post -->
 <?php } ?>

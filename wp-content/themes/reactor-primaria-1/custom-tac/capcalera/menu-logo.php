@@ -15,7 +15,7 @@ function add_logo( $wp_admin_bar ) {
         $args = array(
 		'id'     => 'gencat',    
 		'title'  => '<img src="'.get_stylesheet_directory_uri().'/custom-tac/imatges/logo_gene.png">',
-		'href' =>'http://www20.gencat.cat/portal/site/ensenyament',
+		'href' =>'http://www.gencat.cat/ensenyament/',
 		'parent' => false,
         );
     }
