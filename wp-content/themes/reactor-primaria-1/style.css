@@ -8,7 +8,6 @@ Template: reactor
 Version: 1.0.0
 */
 
-
 /*****************************************************************
 Add Custom styles below 
 ******************************************************************/
@@ -166,6 +165,7 @@ Targetes
 #contingut_central_frontpage{
     padding:0px;
 }
+
 #contingut_central_frontpage > .page{
     background-color:#e4ecf2;
     line-height: 1.2em;
@@ -214,10 +214,6 @@ article {
 
 .entry-summary > p,h2{
     padding-top:0.5em;
-}
-
-.targeta {
-    float:left;
 }
 
 .entry-thumbnail{
@@ -275,6 +271,7 @@ Top header
 
 #wpadminbar {
     height: 36px !important;
+    position:fixed;
 }
 
 .ab-item{
@@ -291,7 +288,7 @@ li#wp-admin-bar-bp-login{
 }
 
 #wpadminbar #wp-admin-bar-recursosXTEC{
-    margin: 0 2px 0 20px;
+    /*margin: 0 2px 0 0px;*/
 }
 
 #wpadminbar #wp-admin-bar-recursosXTEC >.ab-item:after{
@@ -304,7 +301,6 @@ li#wp-admin-bar-bp-login{
     color:lightgrey;
     padding-right: 4px;
 }
-
 
 #wpadminbar .quicklinks>ul>li.wp-admin-bar-gencat>a {
     padding: 0 0px 0 0px;
@@ -321,6 +317,13 @@ li#wp-admin-bar-bp-login{
     color:white;
 }
 
+@media screen and (max-width: 640px) {
+    #wpadminbar .quicklinks>ul>li>a {
+    height: 36px;
+    line-height: 36px;
+    }
+}
+
 /*****************************************************************
 Header
 ******************************************************************/
@@ -332,6 +335,7 @@ Header
 
 #header div.row > div.columns{
     padding:0px;
+    /*margin-top: 4px;*/
 }
 
 .inner-header{
@@ -349,80 +353,9 @@ Header
     margin:0;
 }
 
-.site-header,
-.site-identity,
-.site-logo,
-.site-description-box,
-.site-slider,
-.site-icones{
-    height:11.2em;
-    margin:0px !important;
-    padding:0px;
-}
-
-
-.site-header .site-logo {
-    padding: 0.5em;
-}
-
-
-#idcentre-box{
-    padding:0px;
-    background-color:#0eb1ff;
-
-}
-
-.site-logo{
-    display:table !important;
-    background-color:#0eb1ff;
-}
-
-.site-logo-inner{
-    font-size:2.5em; 
-    text-align:center;
-    font-family:'Oswald'; font-weight: 300;
-    /*font-family: 'Walter Turncoat', cursive;*/	
-    color:white; 
-    display: table-cell;
-    vertical-align:middle;
-    padding:0px;
-    overflow: hidden;
-}
-
 #img-logo{
     /*padding:1em;*/
     max-width:120px;
-}
-
-#imatge_capcalera{
-
-}
-
-.site-description-box{
-    background-color:#087eb6;
-
-}
-
-.site-description-box-inner{
-    font-size:24px;
-    text-align:center;
-    font-family:'Oswald'; font-weight: 300;
-    padding:0px;
-    color:white; 
-    display: table-cell;
-    vertical-align:middle;
-    padding:10px;
-    line-height: 1.2em;
-}
-
-.site-icones {
-    background-color:white;
-    display:table !important;
-    float:left;
-}
-
-.site-slider {
-    background-color: whitesmoke;
 }
 
 .slideshow_slide {
@@ -436,7 +369,6 @@ Header
     line-height: 5.6em;
 }
 
-
 #quick-call-box{
     background-color: white;
 }
@@ -444,6 +376,7 @@ Header
 #quick-call-box > a{
     color:black;  
 }
+
 .site-quick-map-box-inner{
     background-image:url(http://ies-sabadell.cat/webdecentre/wp-content/uploads/2014/08/googlemaps.png);
     background-size: cover;
@@ -457,21 +390,9 @@ Header
 
 }
 
-.icon-graella {   
-    background-color: white;
-    color:white;
-    height: 5.6em;
-    width: 33.3%;
-    margin: 0px;
-    text-align: center;
-    line-height: 5.6em;
-    float: left;
-    display: table-cell;
-    vertical-align: middle;
-    position: relative;
-    z-index:10;
-    padding:5px !important;
-}
+/*****************************************************************
+Posts
+******************************************************************/
 
 .entry-icon {
     position:absolute;
@@ -550,58 +471,249 @@ Header
     line-height: 2.5em;
 }
 
-#icon-11{
-    background-color:#087eb6;
+/*****************************************************************
+Header
+******************************************************************/
+
+.box-title{
+    position: relative;
+    width: 12.5%;
+    overflow: hidden;
+    float:left;
+    margin:0px;
 }
 
-#icon-11:hover{
-    background-color:#fdd300;
-
-    color: black;
+.box-title:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
 }
 
-#icon-12{
-    background-color:silver;
+.box-description{
+    position: relative;
+    width: 12.5%;
+    overflow: hidden;
+    float:left;
 }
 
-#icon-12:hover{
-    background-color:#fdd300;
-    color: black;
+.box-description:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
 }
 
-#icon-13{
-    background-color:#0eb1ff;
-    /*#4e4f54;*/
-}
-#icon-13:hover{
-    background-color:#fdd300;
-    color: black;
+.box-title .box-content a,  
+.box-description .box-content{
+    padding: 0.4em;
+    font-family:'Oswald'; font-weight: 300;
 }
 
-#icon-21{
-    background-color:#0eb1ff;
+.box-grid{
+   position: relative;
+   width: 16.65%;
+   overflow: hidden;
+   background: whitesmoke;
 }
-#icon-21:hover{
-    background-color:#fdd300;
-    color: black;
+
+@media screen and (max-width: 640px) {
+   
+    .box-grid{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: whitesmoke;
+    }  
+    .box-titlemobile{
+        width:100%;
+        overflow: hidden;
+        background-color:white;
+        padding:0.4em 0.5em 1em 0.5em;
+    }  
+    .box-titlemobile img{
+        max-height:150px; 
+        max-width:150px;
+        text-align:center;
+    }
+    div.box-titlemobile-inner{
+        
+        display: table;
+    }
+    div.box-titlemobile-logo{
+        float:left;
+        display: table-cell; 
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+    div.box-titlemobile-schoolName{
+        display: table-cell;
+        vertical-align: middle;
+        padding:0 1em;
+        font-size:1.7em;
+    }
+    #schoolCity{
+        font-size:0.8em;
+        color:#585858;
+    }
+    .site-header {
+        border-bottom: 0;
+        margin: 0;
+    }
+    .entry-body {
+        padding: 0.5em 0.5em;
+    }
+ }
+
+.box-grid:before{
+    content: "";
+    display: block;
+    padding-top: 75%;
+}
+
+.box-grid a, 
+.box-grid a:hover{
+    text-decoration: none;
+}
+
+.box-image:before{
+    content: "";
+    display: block;
+    padding-top: 21.4%;
+}
+
+.box-image{
+    position: relative;
+    width: 58.35%;
+    overflow: hidden;
+    background: silver;
+    float:left;
+}
+
+.box-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+
+.box-content div {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+
+.box-content a, .box-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white !important;
+}
+
+.box-content-grid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+
+.box-content-grid div {
+   display: table;
+   width: 33.333333333%;
+   height: 50.5%;
+   float:left;
+}
+
+.box-content-grid a:before {
+    font-size: 2.5vw;
+}
+
+.box-content-grid a {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size:1vw;
+    text-transform: lowercase;
+    color: white !important;
+}
+
+@media screen and (max-width: 640px) {
+    
+    .box-content-grid div {
+       display: table;
+       width: 33.333333333%;
+       height: 33.33%;
+       float:left;
+    }
+    
+    .box-content-grid div.topicons {
+       display: table !important;
+    }
+
+    .box-content-grid a:before {
+        font-size: 2.5em !important;
+    }
+
+    .box-content-grid a {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-size:1em !important;
+        text-transform: lowercase;
+        color: white !important;
+    }
+}
+
+.box-slider:before{
+    content: "";
+    display: block;
+    padding-top: 21.4%;
+}
+.box-slider{
+    position: relative;
+    width: 58.35%;
+    overflow: hidden;
+    background: silver;
+    float:left;
+}
+
+.box-content-slider{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);   
+    background: red;
+}
+
+.text_icon{
+    display:block;
+    padding:0 0.5em;
+    line-height: 0.8em;
+}
+
+@media screen and (max-width: 1024px) {
+    .text_icon{
+        display:none;
+    }   
 }
 
 #icon-22 {
     background-color:white;
-    color:#087eb6;
-}
-#icon-22:hover{
-    background-color:#fdd300;
-    color: black;
 }
 
-#icon-23{
-    background-color:#087eb6;
+#icon-12 {
+    background-color:silver;
 }
 
-#icon-23:hover{
+#search-panel {
+    padding:0.5em;
+}
+
+#box-grid div[id^='icon']:hover{
     background-color:#fdd300;
-    color: black;
 }
 
 .slideshow_container_slideshow-jquery-image-gallery-custom-styles_1 .slideshow_slide {
@@ -613,20 +725,14 @@ Header
     line-height: 1.2em;
 }
 
-
 #search-panel{
     display:none;
     background-color:#fdd300;
     width:100%;
  }
 
-#search-panel .search-field{
-   height: 4em;
-   margin:0;
-}
-
-#search-panel .search-form{
-    margin:0;
+#search-panel{
+   height: 3em;
 }
 
 /*****************************************************************
@@ -641,7 +747,7 @@ Menu principal
     border-bottom: 2px solid #087eb6;
 }
 
-.menu-link, .sub-menu-link {
+.menu-link,.sub-menu-link {
     color:#087eb6 !important;
 }
 
@@ -705,11 +811,9 @@ ul.breadcrumbs{
     padding:1.5em;
 }
 
-
 /*****************************************************************
 Barra lateral
 ******************************************************************/
-
 .targeta_id_centre{
     padding-top:0.8em;
 }
@@ -872,7 +976,6 @@ Categories
 Xarxa Nodes (BuddyPress & BBPress & Others)
 ******************************************************************/
 
-
 .widget.buddypress ul.item-list img.avatar{
     width:3em !important;
     height:3em !important;
@@ -984,36 +1087,19 @@ ul.pagination li.current a:hover {
     cursor: pointer;
     background: #E5E5E5;
 }
- 
 /*****************************************************************
 Footer
 ******************************************************************/
-
 #footer {
     /*margin-top: 2em;*/
     padding-top: 2em;
 }
-
 .inner-footer{
     border:0;    
 }
-
-
 .site-info{
     color:white;
 }
-
-/*.entry-comments,
-.entry-categories>a,
-.entry-tags >a, 
-.entry-comments:before,
-.entry-categories:before,
-.entry-tags:before{
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-}*/
-/*icons*/
-
 #footer a{
     text-decoration: underline;
     
@@ -1025,7 +1111,6 @@ Footer
 .fa-2-5x{
     font-size: 2.5em !important;
 }
-
 #footer  a:hover{
     opacity: 0.4;
     filter: alpha(opacity=40); 
@@ -1034,60 +1119,48 @@ Footer
     color:white !important;
 }
 
+/* Flex */
+.FlexEmbed {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.FlexEmbed:before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+.FlexEmbed--3by1:before {
+  padding-bottom: 33.33333%;
+}
+.FlexEmbed--2by1:before {
+  padding-bottom: 50%;
+}
+.FlexEmbed--16by9:before {
+  padding-bottom: 56.25%;
+}
+.FlexEmbed--4by3:before {
+  padding-bottom: 75%;
+}
+.CoverImage {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 1em;
+}
+
 /*****************************************************************
 Media
 ******************************************************************/
 
 /*Small devices*/
-@media screen and (max-width: 782px) {
-    #wp-admin-bar-recursosXTEC
-    {
+@media screen and (max-width: 782px){
+    #wp-admin-bar-recursosXTEC, #wp-admin-bar-edit {
         display: none !important;
     }
-    #content {
-        margin:0;
-    }
-    #page{
-        padding-top: 18px;
-    }
-    menu-item-depth-0 {
-        clear:both;
-    }
 }
 
-/* Large devices*/
-@media screen and (min-width: 782px) {
-    .site-description-box{    
-        display:table !important;    
-    }
-}
-
-/*TODO: Fer per a totes les resolucions*/
-@media screen and (min-width: 782px) and (device-aspect-ratio: 5/4) {
-    .site-header,
-    .site-identity,
-    .site-logo,
-    .site-description-box,
-    .site-slider,
-    #slider-box,
-    .site-icones {
-        height:10.2em;
-        overflow:hidden;
-    }
-
-    .icon-graella {
-        height:5.1em;
-    }
-
-    .icon-graella > .dashicons,
-    .site-quick-box-inner > .dashicons
-    {
-        font-size: 2em;
-        line-height: 2em;
-    }
-
-}
-
+/*Media print*/
 #info-footer-mediaprint{
     display:none;
 }
@@ -1126,3 +1199,5 @@ Media
         }    
     
 }
+
+

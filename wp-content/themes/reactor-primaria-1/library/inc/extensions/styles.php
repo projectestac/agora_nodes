@@ -29,7 +29,6 @@ function reactor_register_styles() {
 	wp_register_style('foundicons', get_template_directory_uri() . '/library/fonts/foundation-icons.css', array(), false, 'all');
 	wp_register_style('reactor', get_template_directory_uri() . '/library/css/reactor.css', array(), false, 'all');
 	wp_register_style('style', get_stylesheet_directory_uri() . '/style.css', array(), false, 'all');
-	wp_register_style('style_colors', get_stylesheet_directory_uri() . '/custom-tac/styles/style_'.reactor_option('paleta_colors','').'.css', array(), false, 'all');
 }
 
 function reactor_enqueue_styles() {
