@@ -108,7 +108,6 @@ get_header();
                         'post_type'           => 'post',
                         'posts_per_page'      => $number_posts,
                         'paged'               => $paged );
-	      	
                    
                     $wp_query = new WP_Query( $args ); 
                     
@@ -150,8 +149,5 @@ get_header();
         <?php reactor_content_after(); ?>
         
 	</div><!-- #primary -->
-<script>
-	//Mostra menu o no
-	checkMenuCookie();
-</script>
+
 <?php get_footer(); ?>
