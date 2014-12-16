@@ -56,7 +56,10 @@
 			"dashicons-editor-spellcheck",
 			"dashicons-editor-distractionfree",
 			"dashicons-editor-kitchensink",
-			"dashicons-editor-underline");
+			"dashicons-editor-underline",
+                        "dashicons-album",
+                        "dashicons-index-card");
+        
 			$dashicons2=array(
 			"dashicons-editor-justify",
 			"dashicons-editor-textcolor",
@@ -114,7 +117,11 @@
 			"dashicons-performance",
 			"dashicons-wordpress",
 			"dashicons-wordpress-alt",
-			"dashicons-pressthis");
+			"dashicons-pressthis",
+                        "dashicons-building",
+                        "dashicons-money",
+                        );
+                        
 			$dashicons3=array(
 			"dashicons-update",
 			"dashicons-screenoptions",
@@ -170,5 +177,10 @@
 			"dashicons-smartphone",
 			"dashicons-smiley",
 			"dashicons-heart",
-			);
+                        "dashicons-carrot",
+                        "dashicons-grid-view",
+                        "dashicons-phone",
+                        "dashicons-store",
+                        "dashicons-tickets-alt",
+                        );
 ?>
