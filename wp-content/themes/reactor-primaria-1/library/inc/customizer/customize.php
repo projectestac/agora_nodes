@@ -140,7 +140,7 @@ if ( !function_exists('reactor_customize_register') ) {
 					'priority' => 1,
 				 ) );
 				 
-			 $wp_customize->add_setting('reactor_options[tamany_font_nom]', array( 
+			$wp_customize->add_setting('reactor_options[tamany_font_nom]', array( 
 				'default'        => '2.5em',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
@@ -152,16 +152,16 @@ if ( !function_exists('reactor_customize_register') ) {
 				'section' => 'reactor_customizer_capcalera',
 				'type'    => 'select',
 				'choices' => array( 
-					'1.6em' => "1",
-					'1.7em' => "2",
-					'1.8em' => "3",
-					'1.9em' => "4",
-					'2em' => "5",
-					'2.1em' => "6",
-					'2.2em' => "7",
-					'2.3em' => "8",
-					'2.4em' => "9",
-					'2.5em' => "10",
+					'1.5vw' => "1",
+					'1.7vw' => "2",
+					'1.8vw' => "3",
+					'1.9vw' => "4",
+					'2vw' => "5",
+					'2.1vw' => "6",
+					'2.2vw' => "7",
+					'2.3vw' => "8",
+					'2.4vw' => "9",
+					'2.5vw' => "10",
 				),
 				'priority' => 2,
 			 ) );
@@ -223,15 +223,15 @@ if ( !function_exists('reactor_customize_register') ) {
 					
 			// Graella d'icones
 			class simpleHTML extends WP_Customize_Control {
-			  public $type = 'simpleHTML';
-			  public function render_content() {
-			  ?>
-			  <label>
-			   <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			   <a target="_blank" href="themes.php?page=my-setting-admin"> Aparença->Icones de capçalera </a>
-			  </label>
-			  <?php
-			  }
+                            public $type = 'simpleHTML';
+                            public function render_content() {
+                            ?>
+                            <label>
+                             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                             <a target="_blank" href="themes.php?page=my-setting-admin"> Aparença->Icones de capçalera </a>
+                            </label>
+                            <?php
+                            }
 			}
 
 			$wp_customize->add_setting('icones_capcalera', array( 
@@ -368,38 +368,13 @@ if ( !function_exists('reactor_customize_register') ) {
                                         'description' => 'Email o pàgina de contacte',
 					'priority' => 8,
 				 ) );
-				 				 							
-			$paletes=array(
-                            //"vermells" => "Vermells",
-                            "vermell-taronja" => "Vermell i Taronja",
-                            "vermell-verd" => "Vermell i Verd",
-                            //"vermell-groc" => "Vermell i Groc",
-                            "blau-vermell" => "Vermell i Blau",
-                            "blaus" => "Blau clar i Blau fosc",
-                            //"blau-gris" => "Blau clar i Gris",
-                            "turqueses"=>"Turqueses",
-                            "verd-rosa" => "Rosa i Verd",
-                            "verd-marro" => "Verd i Marró",
-                            //"verd-groc" => "Verd i Groc",
-                            "verds" => "Verd clar i Verd fosc",
-                            //"verd-gris" => "Verd i Gris",
-                            "roses" => "Roses",
-                            "rosa-gris" => "Rosa i Gris",
-                            //"groc-marro" => "Groc i Marró",
-                            "groc-verd" => "Groc i Verd",
-                            "groc-lila" => "Groc i Lila",
-                            //"groc-vermell"=>"Groc i Vermell",
-                            //"groc-gris"=>"Groc i Gris",
-                            "groc-blau"=>"Groc i Blau",
-                            //"groc-blaumari"=> "Groc i Blau Marí",
-                            //"bordeus" => "Bordeus",
-                            "taronges" => "Taronges",
-                            "taronja-verd" => "Taronja i Verd",
-                            "taronja-gris" => "Taronja i gris",
-                            "sienna"=> "Sienna",
-                            "xocolata" => "Xocolata",
-                        );
-
+				 	
+                        global $colors_nodes;    
+                                
+                        foreach ($colors_nodes as $color_value=>$color_properties){
+                            $paletes[$color_value]=$color_properties["nom"];  
+                        }        
+                       
 			//TODO: crear secció colors, no reaprofitar fonts q&d :S
 			$wp_customize->add_section('reactor_customizer_fonts', array( 
 					'title'          => __('Colors', 'reactor'),
@@ -568,22 +543,6 @@ if ( !function_exists('reactor_customize_register') ) {
 					'priority' => 7,
 				 ) ); 
 				 
-/*				 
-				 	 $wp_customize->add_setting('reactor_options[frontpage_link_titles]', array( 
-				'default'        => 0,
-				'type'           => 'option',
-				'capability'     => 'manage_options',
-				'theme_supports' => 'reactor-page-templates'
-			 ) );
-				$wp_customize->add_control('reactor_options[frontpage_link_titles]', array( 
-					'label'    => __('Link Post Titles', 'reactor'),
-					'section'  => 'frontpage_settings',
-					'type'     => 'checkbox',
-					'priority' => 8,
-				 ) );
-*/	
-
-
 			
 		}
 		
