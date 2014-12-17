@@ -40,12 +40,24 @@ get_header( 'buddypress' ); ?>
 
                 <?php do_action( 'bp_before_member_body' ); ?>
 
-                <div id="articles-dir-list" class="articles dir-list">
-                <?php if($bp->current_action=="new"):?>
-                    <?php social_articles_load_sub_template( array('members/single/articles/new.php') ); ?>
-                <?php else:?>
-                    <?php social_articles_load_sub_template( array('members/single/articles/loop.php') ); ?>
-                <?php endif; ?>
+                <div id="articles-dir-list" class="articles">
+                <?php
+
+                switch($bp->current_action){
+                    case 'new':
+                        social_articles_load_sub_template(array('members/single/articles/new.php'));
+                        break;
+                    case 'articles':
+                        social_articles_load_sub_template(array('members/single/articles/loop.php'));;
+                        break;
+                    case 'draft':
+                        social_articles_load_sub_template(array('members/single/articles/draft.php'));
+                        break;
+                    case 'under-review':
+                        social_articles_load_sub_template(array('members/single/articles/pending.php'));
+                        break;
+                }
+                ?>
                 </div>
                 <?php do_action( 'bp_after_member_body' ); ?>
             </div>
@@ -59,19 +71,28 @@ else :
 
     ?>
     <div id="buddypress">
-        <?php do_action( 'bp_before_member_body' ); ?>
-
-
+        <?php do_action( 'template_notices' ); ?>
+        <div class="social-articles-main" role="main">
             <div id="articles-dir-list" class="articles dir-list">
-                <?php if($bp->current_action=="new"):?>
-                    <?php social_articles_load_sub_template( 'members/single/articles/new' ); ?>
-                <?php else:?>
-                    <?php social_articles_load_sub_template( 'members/single/articles/loop' ); ?>
-                <?php endif; ?>
+                <?php
+                switch($bp->current_action){
+                    case 'new':
+                        social_articles_load_sub_template( 'members/single/articles/new' );
+                        break;
+                    case 'articles':
+                        social_articles_load_sub_template( 'members/single/articles/loop' );;
+                        break;
+                    case 'draft':
+                        social_articles_load_sub_template( 'members/single/articles/draft' );
+                        break;
+                    case 'under-review':
+                        social_articles_load_sub_template( 'members/single/articles/pending' );
+                        break;
+                }
+                ?>
             </div>
+        </div>
 
-
-        <?php do_action( 'bp_after_member_body' ); ?>
     </div>
 <?php
 endif;
