@@ -29,7 +29,7 @@ if ( !function_exists('reactor_tumblog_icon') ) {
                         break;
                     case 'video' : 
                         $icon .= '<i class="fi-play-video"></i>'; 
-                        $title="Inclou video";
+                        $title="Inclou vídeo";
                         break;
                     case 'alerta' : 
                         $icon .= '<i style="color:red !important" class="fi-alert"></i>';
