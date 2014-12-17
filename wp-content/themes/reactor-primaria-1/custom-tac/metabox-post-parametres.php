@@ -50,7 +50,7 @@ function metabox1_callback( $post ) {
         <br>Icona:
         <select id="entry_icon" name="entry_icon">
             <option value="noicon" <?php selected( $entry_icon, "noicon" ); ?>></option>
-            <option value="video" <?php selected( $entry_icon, "video" ); ?>>Video</option>
+            <option value="video" <?php selected( $entry_icon, "video" ); ?>>Vídeo</option>
             <option value="carrusel" <?php selected( $entry_icon, "carrusel" ); ?>>Carrusel</option>
             <option value="podcast" <?php selected( $entry_icon, "podcast" ); ?>>Podcast</option>
             <option value="document" <?php selected( $entry_icon, "document" ); ?>>Document</option>
