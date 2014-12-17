@@ -53,7 +53,7 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
         <input type="submit" id="new-article" class="button" value="<?php _e("New article", "social-articles"); ?>" />
     </div>
     <div id="post-maker-container">
-        <div class="options">    
+        <div class="options">
             <div class="options-content">
                 <span class="titlelabel"><?php _e("Categories", "social-articles"); ?></span>
                 <div class="categories-selector"><?php _e("Select your category", "social-articles"); ?></div>
@@ -62,19 +62,19 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
                 <?php echo get_category_list($_GET['article']);?>
             </div>
             <div class="options-content options-content-second">
-                <label class="titlelabel"><?php _e("Tags", "social-articles"); ?></label>    
+                <label class="titlelabel"><?php _e("Tags", "social-articles"); ?></label>
                 <div class="tags-selector"><?php _e("Select your tags", "social-articles"); ?></div>
                 <span class="picker-t" onmouseover="showTagsList()"></span>
-                <span class="white-picker-t"></span>        
+                <span class="white-picker-t"></span>
                 <?php echo get_tags_list($_GET['article']);?>
             </div>
-            
+
             <div class="post-status-container options-content">
-                <label class="titlelabel"><?php _e("Status", "social-articles"); ?></label>             
-                <span class="article-status <?php echo $status;?>"><?php echo $statusLabels[$status];?></span>                                             
+                <label class="titlelabel"><?php _e("Status", "social-articles"); ?></label>
+                <span class="article-status <?php echo $status;?>"><?php echo $statusLabels[$status];?></span>
             </div>
         </div>
-           
+
         <input type="text" id="post_title" class="title-input" autofocus placeholder="<?php _e("Article title...", "social-articles"); ?>" value="<?php echo $title; ?>"/>
         
         <div class="editor-container">
@@ -136,8 +136,8 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
             <div class="edit-controls">
                 <input type="submit" class="button" value="<?php _e("Delete", "social-articles"); ?>" onclick="cancelImage()" /> 
             </div>    
-        </div> 
-        
+        </div>
+
         <div id="save-waiting" class="messages-container">
              <img id="save-gif"src ="<?php echo SA_BASE_URL;?>/assets/images/load.gif"/>
              <label><?php _e("Saving your article. Please wait.", "social-articles"); ?></label>        
