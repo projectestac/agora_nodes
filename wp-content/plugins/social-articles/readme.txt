@@ -3,8 +3,8 @@ Contributors: broobe_dev, mconte
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2CYX6BVN3T3L
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.8
-Tested up to: WordPress 3.8.1 / BuddyPress 1.9.1
-Stable tag: 1.5.1
+Tested up to: WordPress 3.9.2 / BuddyPress 2.1.1
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,8 @@ This is the only BuddyPress plugin that let you to create posts from your profil
 * Admin configuration (post per page, excerpt length, show buddyPress notifications)
 * Multiple or single category selection (whit admin settings)
 * Ability to turn on/off the edit and delete option
-* Buddypress 1.9.1 compatible
+* Buddypress 2.1.1 compatible
+* Responsive design
 
 * Languages
 ** English (default)
@@ -68,6 +69,22 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 4. **Plugin settings**.
 
 == Changelog ==
+
+= 1.7 =
+* Improvement in responsive design.
+* Bugfixing: Now the pending and draft articles are displayed right.
+* Added support for BuddyPress 2.1.1
+
+= 1.6 =
+* Changed the nav menu to improve themes compatibility.
+* Added responsive design.
+* Improved notifications.
+* Now the styles and scripts are added only in SA screens.
+* Bugfixing: Now it send only one notification when the post is approved.
+* Bugfixing: Now the edit_post capability check is working.
+* Bugfixing: Now the counters are updated right after save an article.
+* Added support for BuddyPress 2.0.2.
+
 = 1.5.1 =
 * Added support for BuddyPress 1.9.1
 * Added option to turn off the post edition
@@ -81,7 +98,6 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 * Fixed bug with https
 * Fixed bug in delete function
 * Dutch translation (Thanks Koen Van Damme!)
-
 
 = 1.3 =
 * Buddypress 1.7 compatible. Tested with: bp default theme, wp eleven theme, wp twenty theme. Also with some premium bp themes: Salutation, Buddy and Huddle.
