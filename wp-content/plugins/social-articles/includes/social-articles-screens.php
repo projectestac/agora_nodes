@@ -50,6 +50,32 @@ function new_article_screen() {
 
 
 
+/**
+ * draft_article_screen()
+ *
+ * Sets up and displays the screen output for the sub nav item "social-articles/screen-two"
+ */
+function draft_articles_screen() {
+    global $bp;
+    bp_update_is_directory( true, 'draft_articles' );
+    do_action( 'draft_articles_screen' );
+    bp_core_load_template( apply_filters( 'draft_articles_screen', 'members/single/articles' ) );
+}
+
+
+/**
+ * draft_article_screen()
+ *
+ * Sets up and displays the screen output for the sub nav item "social-articles/screen-two"
+ */
+function pending_articles_screen() {
+    global $bp;
+    bp_update_is_directory( true, 'pending_articles' );
+    do_action( 'pending_articles_screen' );
+    bp_core_load_template( apply_filters( 'pending_articles_screen', 'members/single/articles' ) );
+}
+
+
 
 if ( class_exists( 'BP_Theme_Compat' ) ) {
 
