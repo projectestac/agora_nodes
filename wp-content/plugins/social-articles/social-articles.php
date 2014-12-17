@@ -2,7 +2,7 @@
 /*
  Plugin Name: Social Articles
  Description: This is the first BuddyPress plugin that let you to create and manage posts from your profile. It supports all buddypres themes, so you don't need to be an expert to use it!
- Version: 1.5.1
+ Version: 1.7
  Author: Broobe
  Author URI: http://www.broobe.com
  Text Domain: social-articles
@@ -32,6 +32,8 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
 
         var $options;
         public function __construct() {
+            global $sa_actions;
+            $sa_actions = array('articles', 'draft', 'publish', 'under-review', 'new');
             $this -> options = get_option('social_articles_options');
             $this -> loadConstants();
             add_action('plugins_loaded', array(&$this, 'start'));
@@ -107,23 +109,26 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
         }
 
         public function loadScripts() {
-            if (!wp_script_is( 'jquery', 'queue' )){
-                wp_enqueue_script( 'jquery' );
+            global $bp, $sa_actions;
+            if(in_array($bp->current_action, $sa_actions)){
+
+                if (!wp_script_is( 'jquery', 'queue' )){
+                    wp_enqueue_script( 'jquery' );
+                }
+
+                if (!wp_script_is( 'jquery-ui-core', 'queue' )){
+                    wp_enqueue_script( 'jquery-ui-core' );
+                }
+
+                wp_enqueue_script('ajaxupload', SA_BASE_URL . '/assets/js/ajaxupload.js', array( 'jquery' ));
+                wp_enqueue_script('jquery.templates', SA_BASE_URL . '/assets/js/jquery.tmpl.min.js', array( 'jquery' ));
+                wp_enqueue_script('advance', SA_BASE_URL . '/assets/js/advanced.js');
+                wp_enqueue_script('wysihtml5', SA_BASE_URL . '/assets/js/wysihtml5-0.3.0.min.js');
+                wp_enqueue_script('social-articles', SA_BASE_URL . '/assets/js/social-articles.js');
+                wp_localize_script( 'social-articles', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ),
+                    'baseUrl' =>SA_BASE_URL,
+                    'tmpImageUrl' =>SA_TEMP_IMAGE_URL) );
             }
-
-            if (!wp_script_is( 'jquery-ui-core', 'queue' )){
-                wp_enqueue_script( 'jquery-ui-core' );
-            }
-
-            wp_enqueue_script('ajaxupload', SA_BASE_URL . '/assets/js/ajaxupload.js', array( 'jquery' ));
-            wp_enqueue_script('jquery.templates', SA_BASE_URL . '/assets/js/jquery.tmpl.min.js', array( 'jquery' ));
-            wp_enqueue_script('advance', SA_BASE_URL . '/assets/js/advanced.js');
-            wp_enqueue_script('wysihtml5', SA_BASE_URL . '/assets/js/wysihtml5-0.3.0.min.js');
-            wp_enqueue_script('social-articles', SA_BASE_URL . '/assets/js/social-articles.js');
-            wp_localize_script( 'social-articles', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ),
-                'baseUrl' =>SA_BASE_URL,
-                'tmpImageUrl' =>SA_TEMP_IMAGE_URL) );
-
 
         }
 
@@ -139,14 +144,17 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
                 wp_enqueue_style('dashboard');
                 wp_enqueue_style('global');
                 wp_enqueue_style('wp-admin');
-                wp_register_style( 'admin-stylesheet', SA_BASE_URL . '/assets/css/admin-stylesheet.css' );
+                wp_register_style( 'admin-stylesheet', SA_BASE_URL . '/assets/css/admin-stylesheet.css', null, true );
                 wp_enqueue_style( 'admin-stylesheet' );
             }
         }
 
         public function loadStyles() {
-            wp_register_style( 'stylesheet',SA_BASE_URL.'/assets/css/stylesheet.css', array(),'20130108','all' );
-            wp_enqueue_style( 'stylesheet' );
+            global $bp, $sa_actions;
+            if(in_array($bp->current_action, $sa_actions)){
+                wp_register_style( 'stylesheet',SA_BASE_URL.'/assets/css/stylesheet.css', array(),'20140825','all' );
+                wp_enqueue_style( 'stylesheet' );
+            }
         }
 
         public function adminMenu() {
