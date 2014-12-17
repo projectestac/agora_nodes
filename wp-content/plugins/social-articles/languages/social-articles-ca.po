@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Social Articles\n"
 "POT-Creation-Date: 2013-09-03 23:19-0300\n"
-"PO-Revision-Date: 2014-08-08 10:05+0100\n"
-"Last-Translator: mgrau <mgrau226@xtec.cat>\n"
+"PO-Revision-Date: 2014-12-17 17:09+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: Broobe <dev@broobe.com>\n"
 "Language: en_EN\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr "Configuració"
 
 #: social-articles.php:171
 msgid "Donate"
-msgstr ""
+msgstr "Dona"
 
 #: social-articles.php:191
 msgid "<strong>Social Articles</strong></a> requires the BuddyPress plugin to work. Please <a href=\"http://buddypress.org\">install BuddyPress</a> first, or <a href=\"plugins.php\">deactivate Social Articles</a>."
-msgstr ""
+msgstr "L'extensió <strong>Articles Socials</strong></a> necessita l'extensió Buddypress per funcionar. Si us plau <a href=\"http://buddypress.org\">instal·leu el Buddypress</a> o <a href=\"plugins.php\">desactiveu els articles socials</a>."
 
 #: includes/social-articles-functions.php:88
 msgid "One of your articles was approved"
@@ -34,7 +34,7 @@ msgstr "Un dels vostres articles ha estat aprovat"
 #: includes/social-articles-functions.php:88
 #: includes/social-articles-functions.php:96
 msgid "check it out!"
-msgstr "feu un cop d'ull!"
+msgstr "feu-hi un cop d'ull!"
 
 #: includes/social-articles-functions.php:95
 msgid "There is a new article by "
@@ -103,7 +103,7 @@ msgstr "fet"
 
 #: includes/social-articles-manage-functions.php:312
 msgid "Your article is under review. When the editors approve it you will get a notification."
-msgstr "El vostre article està revisant-se. Quan els editors l'aprovin rebreu una notificació."
+msgstr "El vostre article està en revisió. Quan els editors l'aprovin rebreu una notificació."
 
 #: includes/social-articles-manage-functions.php:316
 msgid "Your article is in draft form."
@@ -111,7 +111,7 @@ msgstr "El vostre article està en forma d'esborrany."
 
 #: includes/social-articles-manage-functions.php:320
 msgid "Your article has been published."
-msgstr "El vostre article ha estat publicat."
+msgstr "S'ha publicat el vostre article."
 
 #: includes/social-articles-options.php:16
 msgid "Settings Saved"
@@ -119,33 +119,33 @@ msgstr "S'ha desat la configuració."
 
 #: includes/social-articles-options.php:23
 msgid "Social Articles Settings"
-msgstr "Configuració d'articles socials."
+msgstr "Configuració dels articles socials"
 
 #: includes/social-articles-options.php:30
 #: includes/social-articles-options.php:46
 msgid "Help Spread the Word!"
-msgstr ""
+msgstr "Ajudeu a promocionar aquesta extensió"
 
 #: includes/social-articles-options.php:31
 msgid "Want to help make this plugin even better? All donations are used to improve this plugin, so donate $20, $50 or $100 now!"
-msgstr ""
+msgstr "Voleu que aquesta extensió sigui encara millor? Totes les donacions s'utilitzaran per millorar-la."
 
 #: includes/social-articles-options.php:38
 msgid "Or you could:"
-msgstr ""
+msgstr "També podeu:"
 
 #: includes/social-articles-options.php:40
 msgid "Rate the plugin 5★ on WordPress.org"
-msgstr ""
+msgstr "Valorar aquesta extensió amb cinc estrelles a wordpress.org"
 
 #: includes/social-articles-options.php:41
 msgid "Help out other users in the forums"
-msgstr ""
+msgstr "Ajudar a altres usuaris en el fòrum"
 
 #: includes/social-articles-options.php:42
 #, php-format
 msgid "Blog about it & link to the %1$splugin page%2$s"
-msgstr ""
+msgstr "Escriure una notícia en un blog i enllaçar-la a la %1$spàgina de l'extensió%2$s"
 
 #: includes/social-articles-options.php:59
 msgid "Post per page#"
@@ -221,7 +221,7 @@ msgstr "General"
 
 #: includes/social-articles-options.php:137
 msgid "Coming Soon!!!"
-msgstr ""
+msgstr "Ben aviat!"
 
 #: includes/social-articles-options.php:140
 msgid "Mail Notifications"
@@ -273,27 +273,27 @@ msgstr "Opcions prèmium"
 
 #: includes/social-articles-tools.php:110
 msgid "Why not do any or all of the following:"
-msgstr ""
+msgstr "Per què no feu alguna de les coses següents?"
 
 #: includes/social-articles-tools.php:112
 msgid "Link to it so other folks can find out about it."
-msgstr ""
+msgstr "Enllaçar-la per a que altres persones la puguin trobar."
 
 #: includes/social-articles-tools.php:113
 msgid "Give it a 5 star rating on WordPress.org."
-msgstr ""
+msgstr "Valora-la amb cinc estrelles a wordpress.org"
 
 #: includes/social-articles-tools.php:114
 msgid "Let other people know that it works with your WordPress setup."
-msgstr ""
+msgstr "Dieu-li als altres usuaris que funciona amb la vostra instal·lació del WordPress."
 
 #: includes/social-articles-tools.php:116
 msgid "Like this plugin?"
-msgstr ""
+msgstr "Us agrada aquesta extensió?"
 
 #: includes/social-articles-tools.php:127
 msgid "Found a bug?"
-msgstr ""
+msgstr "Heu trobat un error?"
 
 #: includes/templates/members/single/articles/loop.php:37
 #: includes/templates/members/single/articles/new.php:6
