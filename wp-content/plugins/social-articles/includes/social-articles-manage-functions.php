@@ -18,11 +18,22 @@ function delete_article(){
     global $socialArticles;
     $postToDelete = get_post($_POST['post_id']);
 
+    if($postToDelete->post_status == 'publish'){
+        $status_id = 'articles';
+    }else{
+        if($postToDelete->post_status == 'pending'){
+            $status_id = 'under-review';
+        }else{
+            $status_id = $postToDelete->post_status;
+        }
+    }
+
+
     if(bp_loggedin_user_id()==$postToDelete->post_author && ($socialArticles->options['allow_author_deletion']=="true" || $postToDelete->post_status=="draft") ){
        wp_delete_post($_POST['post_id']);
-       echo "ok"; 
+       echo json_encode(array("status"=>"ok", 'post_status'=>$status_id));
     }else{
-       echo "error";
+       echo json_encode(array("status"=>"error"));
     }
     die();    
 }
@@ -211,19 +222,22 @@ function get_articles($offset, $status, $all = false){
                             <?php endif;?>
                           </div>
                     <?php endif;?>              
-                        <div class="article-likes">  
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-categories">
+                            <?php _e("Archived", "social-articles" ); echo ": ".implode(" | ",$allCategories);?>
+                        </div>
+                        <div class="article-likes">
                             <a href="<?php echo get_comments_link( $post->ID ); ?>">
                                 <span class="likes-count">
                                       <?php $comments = wp_count_comments( $post->ID ); echo $comments->approved; ?>
                                 </span>
                                 <span class="likes-text"><?php _e("comments", "social-articles" )?></span>
-                            </a>                               
-                        </div> 
-                        <div class="clear"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="article-categories">        
-                        <?php _e("Archived", "social-articles" ); echo ": ".implode(" | ",$allCategories);?>                    
-                    </div>       
                     <div style="clear:both"></div>                          
                 </div>          
             </article>                  
@@ -304,6 +318,34 @@ function get_tags_list($post_id){
     $tagsList .= "</div></div>";  
     return $tagsList;   
 }
+
+
+function show_taxonomy_select($article_id, $taxonomy_name){
+
+    $current_terms =array();
+
+    if(isset($article_id)){
+        $current_terms = wp_get_post_terms( $article_id, $taxonomy_name, array("fields" => "ids"));
+    }
+    $args = array(
+        'hide_empty'=>0
+    );
+    $all_terms = get_terms($taxonomy_name, $args);
+    $combo = '';
+    if ( !empty( $all_terms ) && !is_wp_error( $all_terms ) ){
+        $combo = '<select id="sa-'.$taxonomy_name.'">';
+        foreach($all_terms as $term){
+            $selected = '';
+            if(in_array($term->term_id,$current_terms))
+                $selected = 'selected';
+            $combo .= '<option value="'.$term->term_id.'" '.$selected.'>'.$term->name.'</option>';
+        }
+        $combo.='</select>';
+    }
+    echo $combo;
+}
+
+
 
 
 function get_user_message($status){

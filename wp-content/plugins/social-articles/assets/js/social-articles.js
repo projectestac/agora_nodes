@@ -1,18 +1,4 @@
-function deleteArticlesNotification(action_id, item_id, adminUrl){
-    jQuery('#'+action_id).children(".social-delete").html("");
-    jQuery('#'+action_id ).children(".social-loader").show(); 
 
-    jQuery.ajax({
-        type: 'post',
-        url: adminUrl,
-        data: { action: "deleteArticlesNotification", action_id:action_id, item_id:item_id },
-        success:
-        function(data) {
-        	jQuery('#'+action_id).parent().hide();
-        	jQuery('#ab-pending-notifications').html(jQuery('#ab-pending-notifications').html() - 1);
-        }
-     });  
-}
 
 function savePost(){
     
@@ -77,9 +63,29 @@ function savePost(){
                              }
                             )                      
                             jQuery("#save-message").html(data.message);
-                            if(jQuery("#post-status").val() == "new-post"){
+
+                            if(jQuery("#post-status").val() == "new-post" && status== 'publish'){
                                 jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
                             }
+
+                            if(jQuery("#post-status").val() == "new-post" && status== 'draft'){
+                               jQuery("#draft span").html(parseInt(jQuery("#draft span").html())+1);
+                            }
+
+                            if(jQuery("#post-status").val() == "new-post" && status== 'pending'){
+                               jQuery("#under-review span").html(parseInt(jQuery("#under-review span").html())+1);
+                            }
+
+                            if(jQuery("#post-status").val() == "draft" && status== 'publish'){
+                                jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
+                                jQuery("#draft span").html(parseInt(jQuery("#draft span").html())-1);
+                            }
+
+                           if(jQuery("#post-status").val() == "draft" && status== 'pending'){
+                               jQuery("#under-review span").html(parseInt(jQuery("#under-review span").html())+1);
+                               jQuery("#draft span").html(parseInt(jQuery("#draft span").html())-1);
+                           }
+
 
                             jQuery(".post-save-options").show();
                             jQuery('html, body').animate({scrollTop:0}, 'slow');                                                                      
@@ -287,11 +293,15 @@ function deleteArticle(postId){
 	            url: MyAjax.ajaxurl,
 	            data: { action: "delete_article", post_id:postId},                                                
 	            success:
-	            function(response) {        
-	               jQuery("#articles span").html(parseInt(jQuery("#articles span").html())-1);
-	               counterId = '#'+jQuery("#current-state").val() + '-count';                 
-	               jQuery(counterId).html(parseInt(jQuery(counterId).html())-1);    
-	               jQuery("#"+postId).hide();                                         
-	                }
-	             });          
+	            function(response) {
+                   response = JSON.parse(response);
+                   if(response.status == 'ok'){
+
+                       jQuery("#"+response.post_status+" span").html(parseInt(jQuery("#"+response.post_status+" span").html())-1);
+                       counterId = '#'+jQuery("#current-state").val() + '-count';
+                       jQuery(counterId).html(parseInt(jQuery(counterId).html())-1);
+                       jQuery("#"+postId).hide();
+                   }
+	            }
+	      });
 } 

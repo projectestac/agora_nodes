@@ -61,12 +61,14 @@ add_action('save_post','social_articles_send_notification');
 function social_articles_send_notification($id){
     global $bp, $socialArticles;
     $savedPost = get_post($id);
-    if(function_exists("friends_get_friend_user_ids") && $savedPost->post_status == "publish" && $savedPost->post_type=="post" && !wp_is_post_revision($id) && $socialArticles->options['bp_notifications'] == "true"){
+    $notification_already_sent = get_post_meta($id, 'notification_already_sent', true);
+    if(empty($notification_already_sent) && function_exists("friends_get_friend_user_ids") && $savedPost->post_status == "publish" && $savedPost->post_type=="post" && !wp_is_post_revision($id) && $socialArticles->options['bp_notifications'] == "true"){
         $friends = friends_get_friend_user_ids($savedPost->post_author);
         foreach($friends as $friend):
             bp_core_add_notification($savedPost->ID,  $friend , $bp->social_articles->id, 'new_article'.$savedPost->ID, $savedPost->post_author);         
         endforeach;
-        bp_core_add_notification($savedPost->ID,  $savedPost->post_author , $bp->social_articles->id, 'new_article'.$savedPost->ID, -1);        
+        bp_core_add_notification($savedPost->ID,  $savedPost->post_author , $bp->social_articles->id, 'new_article'.$savedPost->ID, -1);
+        update_post_meta($id, 'notification_already_sent', true);
     }
 }
 
@@ -84,15 +86,15 @@ function social_articles_format_notifications( $action, $item_id, $secondary_ite
     $createdPost = get_post($item_id);
 
     if($secondary_item_id == "-1"){
-         $text = '</a> <div id="'.$action.'"class="notification">'. 
+         $text = '</a> <div id="'.$action.'"class="sa-notification">'.
                     __("One of your articles was approved","social-articles").'<a class="ab-item" title="'.$createdPost->post_title.'"href="'.get_permalink( $item_id ).'">,'.__("check it out!", "social-articles").'
                  </a> 
                  <a href="#" class="social-delete" onclick="deleteArticlesNotification(\''.$action.'\',\''.$item_id.'\', \''.admin_url( 'admin-ajax.php' ).'\'); return false;">x</a><span class="social-loader"></span></div>';
     
     }else{
         $creator = get_userdata($secondary_item_id); 
-        $text = '</a> <div id="'.$action.'"class="notification">'. 
-                    __("There is a new article by ", "social-articles").'<a class="ab-item" href="'.bloginfo('blog').'/members/'.$creator->user_login.'">'.$creator->user_nicename.', </a>
+        $text = '</a> <div id="'.$action.'"class="sa-notification">'.
+                    __("There is a new article by ", "social-articles").'<a class="ab-item" href="'.get_bloginfo('blog').'/members/'.$creator->user_login.'">'.$creator->user_nicename.', </a>
                  <a class="ab-item" title="'.$createdPost->post_title.'"href="'.get_permalink( $item_id ).'"> '.__("check it out!", "social-articles").'
                  </a> 
                  <a href="#" class="social-delete" onclick="deleteArticlesNotification(\''.$action.'\',\''.$item_id.'\', \''.admin_url( 'admin-ajax.php' ).'\'); return false;">x</a><span class="social-loader"></span></div>';
@@ -121,5 +123,48 @@ function isDirectWorkflow(){
     global $socialArticles;
     return $socialArticles->options['workflow'] == 'direct' ;
 }
+
+function sa_notifications_stuff(){
+
+    echo "
+    <style>
+        .sa-notification {
+            height: 20px !important;
+            width: 100% !important;
+            margin-top: -25px !important;
+            padding-bottom: 8px !important;
+            padding-left: 10px !important;
+            text-shadow: none !important;
+            min-width: 320px !important;
+        }
+
+        .sa-notification a {
+            display: inline !important;
+            height: 15px !important;
+            min-width: 0 !important;
+            padding: 0 !important;
+        }
+    </style>";
+
+    echo '<script>
+        function deleteArticlesNotification(action_id, item_id, adminUrl){
+            jQuery("#"+action_id).children(".social-delete").html("");
+            jQuery("#"+action_id ).children(".social-loader").show();
+
+            jQuery.ajax({
+                type: "post",
+                url: adminUrl,
+                data: { action: "deleteArticlesNotification", action_id:action_id, item_id:item_id },
+                success:
+                function(data) {
+                    jQuery("#"+action_id).parent().hide();
+                    jQuery("#ab-pending-notifications").html(jQuery("#ab-pending-notifications").html() - 1);
+                }
+             });
+        }
+    </script>';
+}
+add_action( 'wp_head', 'sa_notifications_stuff' );
+
 
 ?>
