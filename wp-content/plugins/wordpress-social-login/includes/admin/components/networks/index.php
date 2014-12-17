@@ -2,8 +2,8 @@
 /*!
 * WordPress Social Login
 *
-* http://hybridauth.sourceforge.net/wsl/index.html | http://github.com/hybridauth/WordPress-Social-Login
-*    (c) 2011-2013 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-social-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -21,12 +21,11 @@ function wsl_component_networks()
 	do_action( "wsl_component_networks_start" );
 
 	include "wsl.components.networks.setup.php";
-	include "wsl.components.networks.addmore.php";
-	include "wsl.components.networks.whyhello.php";
-	include "wsl.components.networks.basicinsights.php";
+	include "wsl.components.networks.sidebar.php"; 
 
 	wsl_admin_welcome_panel();
 ?>
+
 <form method="post" id="wsl_setup_form" action="options.php"> 
 	<?php settings_fields( 'wsl-settings-group' ); ?>
 
@@ -50,16 +49,13 @@ function wsl_component_networks()
                     if (is_xtecadmin()) {
                     //************ FI
 
-                        wsl_component_networks_whyhello();
-
-						wsl_component_networks_addmore();
+						wsl_component_networks_sidebar();
 
                     // XTEC ************ AFEGIT - Remove side boxes
                     // 2014.11.14 @aginard
                     }
                     //************ FI
 
-						wsl_component_networks_basicinsights();
 					?>
 				</td>
 			</tr>

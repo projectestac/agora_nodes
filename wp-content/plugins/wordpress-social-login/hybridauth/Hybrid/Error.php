@@ -1,8 +1,8 @@
 <?php
-/*!
+/**
 * HybridAuth
 * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
-* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
+* (c) 2009-2014, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
 */
 
 /**
@@ -13,31 +13,26 @@
 class Hybrid_Error
 {
 	/**
-	* store error in session
+	* Store error in session
+	*
+	* @param String $message
+	* @param Number $code
 	*/
-	public static function setError( $message, $code = NULL, $trace = NULL, $previous = NULL )
+	public static function setError( $message, $code = NULL )
 	{
-		Hybrid_Logger::info( "Enter Hybrid_Error::setError( $message )" );
-
 		Hybrid_Auth::storage()->set( "hauth_session.error.status"  , 1         );
 		Hybrid_Auth::storage()->set( "hauth_session.error.message" , $message  );
 		Hybrid_Auth::storage()->set( "hauth_session.error.code"    , $code     );
-		Hybrid_Auth::storage()->set( "hauth_session.error.trace"   , $trace    );
-		Hybrid_Auth::storage()->set( "hauth_session.error.previous", $previous );
 	}
 
 	/**
-	* clear the last error
+	* Clear the last error
 	*/
 	public static function clearError()
-	{ 
-		Hybrid_Logger::info( "Enter Hybrid_Error::clearError()" );
-
+	{
 		Hybrid_Auth::storage()->delete( "hauth_session.error.status"   );
 		Hybrid_Auth::storage()->delete( "hauth_session.error.message"  );
 		Hybrid_Auth::storage()->delete( "hauth_session.error.code"     );
-		Hybrid_Auth::storage()->delete( "hauth_session.error.trace"    );
-		Hybrid_Auth::storage()->delete( "hauth_session.error.previous" );
 	}
 
 	/**
@@ -67,18 +62,26 @@ class Hybrid_Error
 	}
 
 	/**
-	* return string detailled error backtrace as string.
+	* set api error
 	*/
-	public static function getErrorTrace()
+	public static function setApiError( $error )
 	{ 
-		return Hybrid_Auth::storage()->get( "hauth_session.error.trace" );
+		return Hybrid_Auth::storage()->set( "hauth_session.error.apierror", $error );
 	}
 
 	/**
-	* @return string detailled error backtrace as string.
+	* set api error
 	*/
-	public static function getErrorPrevious()
+	public static function deleteApiError()
 	{ 
-		return Hybrid_Auth::storage()->get( "hauth_session.error.previous" );
+		return Hybrid_Auth::storage()->delete( "hauth_session.error.apierror" );
+	}
+
+	/**
+	* return api error
+	*/
+	public static function getApiError()
+	{ 
+		return Hybrid_Auth::storage() ? Hybrid_Auth::storage()->get( "hauth_session.error.apierror" ) : '';
 	}
 }

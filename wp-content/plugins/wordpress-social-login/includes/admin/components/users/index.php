@@ -2,8 +2,8 @@
 /*!
 * WordPress Social Login
 *
-* http://hybridauth.sourceforge.net/wsl/index.html | http://github.com/hybridauth/WordPress-Social-Login
-*    (c) 2011-2013 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-social-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -21,12 +21,12 @@ function wsl_component_users()
 	do_action( "wsl_component_users_start" );
 
 	include "wsl.components.users.list.php";
-	include "wsl.components.users.profile.php";
+	include "wsl.components.users.profiles.php";
 
 	if( isset( $_REQUEST["uid"] ) && $_REQUEST["uid"] ){
 		$user_id = (int) $_REQUEST["uid"];
 
-		wsl_component_users_profile( $user_id );
+		wsl_component_users_profiles( $user_id );
 	}
 	else{
 		wsl_component_users_list();

@@ -1,8 +1,8 @@
 <?php
-/*!
+/**
 * HybridAuth
 * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
-* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
+* (c) 2009-2014, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
 */
 
 /**
@@ -10,7 +10,8 @@
  * 
  * Hybrid_Endpoint class provides a simple way to handle the OpenID and OAuth endpoint.
  */
-class Hybrid_Endpoint {
+class Hybrid_Endpoint
+{
 	public static $request = NULL;
 	public static $initDone = FALSE;
 
@@ -117,10 +118,7 @@ class Hybrid_Endpoint {
 
 		# check if page accessed directly
 		if( ! Hybrid_Auth::storage()->get( "hauth_session.$provider_id.hauth_endpoint" ) ) {
-			Hybrid_Logger::error( "Endpoint: hauth_endpoint parameter is not defined on hauth_start, halt login process!" );
-
-			header( "HTTP/1.0 404 Not Found" );
-			die( "You cannot access this page directly." );
+			throw new Hybrid_Exception( "You cannot access this page directly." );
 		}
 
 		# define:hybrid.endpoint.php step 2.
@@ -128,20 +126,14 @@ class Hybrid_Endpoint {
 
 		# if REQUESTed hauth_idprovider is wrong, session not created, etc. 
 		if( ! $hauth ) {
-			Hybrid_Logger::error( "Endpoint: Invalid parameter on hauth_start!" );
-
-			header( "HTTP/1.0 404 Not Found" );
-			die( "Invalid parameter! Please return to the login page and try again." );
+			throw new Hybrid_Exception( "Invalid parameter! Please return to the login page and try again." );
 		}
 
 		try {
-			Hybrid_Logger::info( "Endpoint: call adapter [{$provider_id}] loginBegin()" );
-
 			$hauth->adapter->loginBegin();
 		}
 		catch ( Exception $e ) {
-			Hybrid_Logger::error( "Exception:" . $e->getMessage(), $e );
-			Hybrid_Error::setError( $e->getMessage(), $e->getCode(), $e->getTraceAsString(), $e );
+			Hybrid_Error::setError( $e->getMessage(), $e->getCode() );
 
 			$hauth->returnToCallbackUrl();
 		}
@@ -158,30 +150,27 @@ class Hybrid_Endpoint {
 
 		$provider_id = trim( strip_tags( Hybrid_Endpoint::$request["hauth_done"] ) );
 
+		# check if page accessed directly
+		if( ! Hybrid_Auth::storage()->get( "hauth_session.$provider_id.hauth_endpoint" ) ) {
+			throw new Hybrid_Exception( "You cannot access this page directly." );
+		}
+
 		$hauth = Hybrid_Auth::setup( $provider_id );
 
 		if( ! $hauth ) {
-			Hybrid_Logger::error( "Endpoint: Invalid parameter on hauth_done!" ); 
-
 			$hauth->adapter->setUserUnconnected();
 
-			header("HTTP/1.0 404 Not Found"); 
-			die( "Invalid parameter! Please return to the login page and try again." );
+			throw new Hybrid_Exception( "Invalid parameter! Please return to the login page and try again." );
 		}
 
 		try {
-			Hybrid_Logger::info( "Endpoint: call adapter [{$provider_id}] loginFinish() " );
-
 			$hauth->adapter->loginFinish(); 
 		}
 		catch( Exception $e ){
-			Hybrid_Logger::error( "Exception:" . $e->getMessage(), $e );
-			Hybrid_Error::setError( $e->getMessage(), $e->getCode(), $e->getTraceAsString(), $e );
+			Hybrid_Error::setError( $e->getMessage(), $e->getCode() );
 
 			$hauth->adapter->setUserUnconnected(); 
 		}
-
-		Hybrid_Logger::info( "Endpoint: job done. retrun to callback url." );
 
 		$hauth->returnToCallbackUrl();
 		die();
@@ -194,23 +183,17 @@ class Hybrid_Endpoint {
 
 			# Init Hybrid_Auth
 			try {
-				require_once realpath( dirname( __FILE__ ) )  . "/Storage.php";
-				
 				$storage = new Hybrid_Storage(); 
 
 				// Check if Hybrid_Auth session already exist
-				if ( ! $storage->config( "CONFIG" ) ) { 
-					header( "HTTP/1.0 404 Not Found" );
-					die( "You cannot access this page directly." );
+				if ( ! $storage->config( "CONFIG" ) ){
+					throw new Hybrid_Exception( "You cannot access this page directly." );
 				}
 
 				Hybrid_Auth::initialize( $storage->config( "CONFIG" ) ); 
 			}
 			catch ( Exception $e ){
-				Hybrid_Logger::error( "Endpoint: Error while trying to init Hybrid_Auth" ); 
-
-				header( "HTTP/1.0 404 Not Found" );
-				die( "Oophs. Error!" );
+				throw new Hybrid_Exception( "Oophs. Error!" );
 			}
 		}
 	}

@@ -2,8 +2,8 @@
 /*!
 * WordPress Social Login
 *
-* http://hybridauth.sourceforge.net/wsl/index.html | http://github.com/hybridauth/WordPress-Social-Login
-*    (c) 2011-2013 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-social-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -22,8 +22,6 @@ function wsl_component_bouncer()
 
 	include "wsl.components.bouncer.setup.php";
 	include "wsl.components.bouncer.sidebar.php";
-
-	wsl_admin_welcome_panel();
 ?>
 <form method="post" id="wsl_setup_form" action="options.php"> 
 	<?php settings_fields( 'wsl-settings-group-bouncer' ); ?> 

@@ -1,8 +1,8 @@
 <?php
-/*!
+/**
 * HybridAuth
 * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
-* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 
+* (c) 2009-2014, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 
 */
 
 // A service client for the OAuth 1/1.0a flow.
@@ -31,6 +31,7 @@ class OAuth1Client{
 
 	public $http_code             = "";
 	public $http_info             = "";
+	public $http_header           = "";
 
 	/** 
 	* OAuth client constructor
@@ -64,7 +65,7 @@ class OAuth1Client{
 				$parameters[$k] = $v;
 
 		return $this->authorize_url . "?" . http_build_query( $parameters );
-    }
+    	}
 
 	/**
 	* Get a request_token from provider
@@ -81,6 +82,8 @@ class OAuth1Client{
 
 		$request     = $this->signedRequest( $this->request_token_url, $this->request_token_method, $parameters ); 
 		$token       = OAuthUtil::parse_parameters( $request );
+		
+		if( isset(  $token['oauth_token'] ) )
 		$this->token = new OAuthConsumer( $token['oauth_token'], $token['oauth_token_secret'] ); 
 
 		return $token; 
@@ -108,31 +111,31 @@ class OAuth1Client{
 	}
 
 	/** 
-	* GET wrappwer for provider apis request
+	* GET wrapper for provider apis request
 	*/
-	function get($url, $parameters = array())
+	function get($url, $parameters = array(), $content_type = NULL)
 	{
-		return $this->api($url, 'GET', $parameters); 
+		return $this->api($url, 'GET', $parameters, NULL, $content_type);
 	} 
 
 	/** 
-	* POST wreapper for provider apis request
+	* POST wrapper for provider apis request
 	*/
-	function post($url, $parameters = array())
+	function post($url, $parameters = array(), $body = NULL, $content_type = NULL, $multipart = false)
 	{
-		return $this->api($url, 'POST', $parameters); 
+		return $this->api($url, 'POST', $parameters, $body, $content_type, $multipart );
 	}
 
 	/** 
 	* Format and sign an oauth for provider api 
 	*/ 
-	function api( $url, $method = 'GET', $parameters = array() )
+	function api( $url, $method = 'GET', $parameters = array(), $body = NULL, $content_type = NULL, $multipart = false )
 	{
 		if ( strrpos($url, 'http://') !== 0 && strrpos($url, 'https://') !== 0 ) {
 			$url = $this->api_base_url . $url;
 		}
 
-		$response = $this->signedRequest( $url, $method, $parameters );
+		$response = $this->signedRequest( $url, $method, $parameters, $body, $content_type, $multipart );
 
 		if( $this->decode_json ){
 			$response = json_decode( $response );
@@ -144,24 +147,35 @@ class OAuth1Client{
 	/** 
 	* Make signed request  
 	*/ 
-	function signedRequest( $url, $method, $parameters )
+	function signedRequest( $url, $method, $parameters, $body = NULL, $content_type = NULL, $multipart = false )
 	{
-		$request = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, $method, $url, $parameters);
+
+        $signature_parameters = array();
+
+        // when making a multipart request, use only oauth_* keys for signature
+        foreach( $parameters AS $key => $value ){
+            if( !$multipart || strpos( $key, 'oauth_' ) === 0 ){
+                $signature_parameters[$key] = $value;
+            }
+        }
+
+		$request = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, $method, $url, $signature_parameters);
 		$request->sign_request($this->sha1_method, $this->consumer, $this->token);
 		switch ($method) {
-			case 'GET': return $this->request( $request->to_url(), 'GET' );
-			default   : return $this->request( $request->get_normalized_http_url(), $method, $request->to_postdata(), $request->to_header() ) ;
+			case 'GET': return $this->request( $request->to_url(), 'GET', NULL, NULL, $content_type );
+			default   :
+		if ($body)
+			return $this->request( $request->to_url(), $method, $body, $request->to_header(), $content_type );
+		else
+			return $this->request( $request->get_normalized_http_url(), $method, ($multipart ? $parameters : $request->to_postdata()), $request->to_header(), $content_type, $multipart ) ;
 		}
 	}
 	
 	/** 
 	* Make http request  
 	*/ 
-	function request( $url, $method, $postfields = NULL, $auth_header = null )
+	function request( $url, $method, $postfields = NULL, $auth_header = NULL, $content_type = NULL, $multipart = false )
 	{
-		Hybrid_Logger::info( "Enter OAuth1Client::request( $method, $url )" );
-		Hybrid_Logger::debug( "OAuth1Client::request(). dump post fields: ", serialize( $postfields ) ); 
-
 		$this->http_info = array();
 		$ci = curl_init();
 
@@ -174,6 +188,14 @@ class OAuth1Client{
 		curl_setopt( $ci, CURLOPT_SSL_VERIFYPEER, $this->curl_ssl_verifypeer );
 		curl_setopt( $ci, CURLOPT_HEADERFUNCTION, array($this, 'getHeader') );
 		curl_setopt( $ci, CURLOPT_HEADER        , FALSE );
+		curl_setopt( $ci, CURLINFO_HEADER_OUT   , TRUE );
+		curl_setopt( $ci, CURLINFO_HEADER_OUT   , TRUE );
+
+        if( $multipart ){
+            curl_setopt( $ci, CURLOPT_HTTPHEADER, array( 'Expect:', $auth_header ) );
+
+        }elseif ($content_type)
+			curl_setopt( $ci, CURLOPT_HTTPHEADER, array('Expect:', "Content-Type: $content_type") );
 		
 		if($this->curl_proxy){
 			curl_setopt( $ci, CURLOPT_PROXY        , $this->curl_proxy);
@@ -187,7 +209,7 @@ class OAuth1Client{
 					curl_setopt( $ci, CURLOPT_POSTFIELDS, $postfields );
 				}
 
-				if ( !empty($auth_header) && $this->curl_auth_header ){
+				if ( !empty($auth_header) && $this->curl_auth_header && !$multipart ){
 					curl_setopt( $ci, CURLOPT_HTTPHEADER, array( 'Content-Type: application/atom+xml', $auth_header ) );
 				}
 				break;
@@ -201,13 +223,24 @@ class OAuth1Client{
 		curl_setopt($ci, CURLOPT_URL, $url);
 		$response = curl_exec($ci);
 
-		Hybrid_Logger::debug( "OAuth1Client::request(). dump request info: ", serialize( curl_getinfo($ci) ) );
-		Hybrid_Logger::debug( "OAuth1Client::request(). dump request result: ", serialize( $response ) );
-
 		$this->http_code = curl_getinfo($ci, CURLINFO_HTTP_CODE);
 		$this->http_info = array_merge($this->http_info, curl_getinfo($ci));
 
 		curl_close ($ci);
+
+		//-
+		Hybrid_Error::deleteApiError();
+		
+		if( $this->http_code != 200 )
+		{
+			Hybrid_Error::setApiError( $this->http_code . '. ' . preg_replace('/\s+/', ' ', $response ) );
+		}
+
+		if( defined( 'WORDPRESS_SOCIAL_LOGIN_DEBUG_API_CALLS' ) )
+		{
+			do_action( 'wsl_log_provider_api_call', 'OAuth1', $url, $method, $postfields, $this->http_code, $this->http_info, $response );
+		}
+		//-
 
 		return $response; 
 	}

@@ -23,8 +23,11 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 			throw new Exception( "Your application key and secret are required in order to connect to {$this->providerId}.", 4 );
 		}
 
-		require_once Hybrid_Auth::$config["path_libraries"] . "OAuth/OAuth.php";
-		require_once Hybrid_Auth::$config["path_libraries"] . "LinkedIn/LinkedIn.php";
+		if ( ! class_exists( 'OAuthConsumer', false ) ) {
+			require_once realpath( dirname( __FILE__ ) )  . "/../thirdparty/OAuth/OAuth.php";
+		}
+
+		require_once realpath( dirname( __FILE__ ) )  . "/../thirdparty/LinkedIn/LinkedIn.php";
 
 		$this->api = new LinkedIn( array( 'appKey' => $this->config["keys"]["key"], 'appSecret' => $this->config["keys"]["secret"], 'callbackUrl' => $this->endpoint ) );
 
@@ -49,7 +52,15 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 			Hybrid_Auth::redirect( LINKEDIN::_URL_AUTH . $response['linkedin']['oauth_token'] );
 		}
 		else{
-			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid Token.", 5 );
+	 		if( isset( $response['linkedin']['oauth_problem'] ) ){
+		 		if( $response['linkedin']['oauth_problem'] == 'timestamp_refused' ){
+					throw new Exception( "Authentication failed! Your server time is not in sync with the {$this->providerId} servers. Acceptable timestamps: " . date("D, d M Y G:i:s", (int) $response['linkedin']['oauth_acceptable_timestamps'] ), 5 );
+				}
+
+				throw new Exception( "Authentication failed! {$this->providerId} returned an oauth_problem.", 5 );
+			}
+
+			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid oauth_token", 5 );
 		}
 	}
 
@@ -62,7 +73,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 		$oauth_verifier = $_REQUEST['oauth_verifier'];
 
 		if ( ! $oauth_verifier ){
-			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid Token.", 5 );
+			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid oauth_verifier", 5 );
 		}
 
 		$response = $this->api->retrieveTokenAccess( $oauth_token, $this->token( "oauth_token_secret" ), $oauth_verifier );
@@ -79,7 +90,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 			$this->setUserConnected();
 		}
 		else{
-			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid Token.", 5 );
+			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid access_token", 5 );
 		}
 	}
 
@@ -90,7 +101,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 	{
 		try{
 			// http://developer.linkedin.com/docs/DOC-1061
-			$response = $this->api->profile('~:(id,first-name,last-name,public-profile-url,picture-url,email-address,date-of-birth,phone-numbers,summary)');
+			$response = $this->api->profile('~:(id,first-name,last-name,public-profile-url,picture-url,picture-urls::(original),email-address,date-of-birth,phone-numbers,headline)');
 		}
 		catch( LinkedInException $e ){
 			throw new Exception( "User profile request failed! {$this->providerId} returned an error: $e", 6 );
@@ -100,7 +111,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 			$data = @ new SimpleXMLElement( $response['linkedin'] );
 
 			if ( ! is_object( $data ) ){
-				throw new Exception( "User profile request failed! {$this->providerId} returned an invalid xml data.", 6 );
+				throw new Exception( "User profile request failed! {$this->providerId} returned an invalid data.", 6 );
 			}
 
 			$this->user->profile->identifier  = (string) $data->{'id'};
@@ -113,7 +124,7 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 
 			$this->user->profile->photoURL    = (string) $data->{'picture-url'};
 			$this->user->profile->profileURL  = (string) $data->{'public-profile-url'};
-			$this->user->profile->description = (string) $data->{'summary'};
+			$this->user->profile->description = (string) $data->{'headline'};
 
 			if( $data->{'phone-numbers'} && $data->{'phone-numbers'}->{'phone-number'} ){
 				$this->user->profile->phone = (string) $data->{'phone-numbers'}->{'phone-number'}->{'phone-number'};
@@ -126,6 +137,10 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 				$this->user->profile->birthDay   = (string) $data->{'date-of-birth'}->day;
 				$this->user->profile->birthMonth = (string) $data->{'date-of-birth'}->month;
 				$this->user->profile->birthYear  = (string) $data->{'date-of-birth'}->year;
+			}
+
+			if( (string) $data->{'picture-urls'}->{'picture-url'} ){ 
+				$this->user->profile->photoURL  = (string) $data->{'picture-urls'}->{'picture-url'};
 			}
 
 			return $this->user->profile;
@@ -200,6 +215,8 @@ class Hybrid_Providers_LinkedIn extends Hybrid_Provider_Model
 		{
 			throw new Exception( "Update user status update failed! {$this->providerId} returned an error." );
 		}
+
+        return $response;
 	}
 
 	/**

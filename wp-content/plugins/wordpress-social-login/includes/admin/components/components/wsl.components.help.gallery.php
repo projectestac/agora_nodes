@@ -2,8 +2,8 @@
 /*!
 * WordPress Social Login
 *
-* http://hybridauth.sourceforge.net/wsl/index.html | http://github.com/hybridauth/WordPress-Social-Login
-*    (c) 2011-2013 Mohamed Mrassi and contributors | http://wordpress.org/extend/plugins/wordpress-social-login/
+* http://miled.github.io/wordpress-social-login/ | https://github.com/miled/wordpress-social-login
+*  (c) 2011-2014 Mohamed Mrassi and contributors | http://wordpress.org/plugins/wordpress-social-login/
 */
 
 /**
@@ -17,65 +17,65 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 function wsl_component_components_gallery()
 {
-	// not for today
-	return;
+	return; // ya men 3ach
 
 	// HOOKABLE: 
 	do_action( "wsl_component_components_gallery_start" ); 
 
-	add_thickbox();
+	$response = wp_remote_get( 'http://miled.github.io/wordpress-social-login/components-' . wsl_get_version() . '.json', array( 'timeout' => 15, 'sslverify' => false ) );
+
+	if ( ! is_wp_error( $response ) )
+	{
+		$response = wp_remote_retrieve_body( $response );
+
+		$components = json_decode ( $response );
+
+		if( $components )
+		{
 ?> 
 <br />
 
 <h2><?php _wsl_e( "Other Components available", 'wordpress-social-login' ) ?></h2>
 
-<style>
-.wsl_addon_div{
-	width: 350px; 
-	height: 125px; 
-	padding: 10px; 
-	border: 1px solid #ddd; 
-	background-color: #fff;
-	float:left;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	
-	position: relative;
-}
-.wsl_addon_div .button-secondary {
-    bottom: 8px;
-    left: 8px;
-    position: absolute; 
-}
-.wsl_addon_div .button-primary {
-    bottom: 8px;
-    right: 8px;
-    position: absolute;  
-}
-</style>
+<p><?php _wsl_e( "These components and add-ons can extend the functionality of WordPress Social Login", 'wordpress-social-login' ) ?>.</p>
 
-<div class="wsl_addon_div">
-	<h3 style="margin:0px;"><?php _wsl_e( "WordPress Social Login for BuddyPress", 'wordpress-social-login' ) ?></h3>
-	<hr />
-	<p><?php _wsl_e( "Make WordPress Social Login compatible with BuddyPress", 'wordpress-social-login' ) ?>.</p> 
-	<p><?php _wsl_e( "Widget integration, xProfiles mapping and more", 'wordpress-social-login' ) ?>.</p> 
-	<div>
-		<a class="button button-primary thickbox" href="plugin-install.php?tab=plugin-information&plugin=wsl-buddypress&TB_iframe=true"><?php _wsl_e( "Install Now", 'wordpress-social-login' ) ?></a>
-		<a class="button button-secondary" href="http://wordpress.org/extend/plugins/wsl-buddypress/" target="_blank"><?php _wsl_e( "Visit plugin site", 'wordpress-social-login' ) ?></a> 
-	</div>
-</div>
-
-<div class="wsl_addon_div">
-	<h3 style="margin:0px;"><?php _wsl_e( "Build yours", 'wordpress-social-login' ) ?></h3>
-	<hr />
-	<p><?php _wsl_e( "Looking to build your own custom <b>WordPress Social Login</b> extenstion or component? Well, it's pretty easy. Just RTFM :)", 'wordpress-social-login' ) ?></p>
- 
-	<div>
-		<a class="button button-primary"   href="http://hybridauth.sourceforge.net/wsl/developer.html" target="_blank"><?php _wsl_e( "WSL Developer API", 'wordpress-social-login' ) ?></a> 
-		<a class="button button-secondary" href="https://github.com/hybridauth/WordPress-Social-Login" target="_blank"><?php _wsl_e( "WSL on Github", 'wordpress-social-login' ) ?></a> 
-	</div>
-</div>
 <?php
+	foreach( $components as $item )
+	{
+		$item = (array) $item;
+		?>
+			<div class="wsl_component_div">
+				<h3 style="margin:0px;"><?php _wsl_e( $item['name'], 'wordpress-social-login' ) ?></h3>
+				
+				<div class="wsl_component_about_div">
+					<p>
+						<?php _wsl_e( $item['description'], 'wordpress-social-login' ) ?>
+						<br />
+						<?php echo sprintf( _wsl__( '<em>By <a href="%s">%s</a></em>' , 'wordpress-social-login' ), $item['developer_link'], $item['developer_name'] ); ?>
+					</p>
+				</div>
+
+				<a class="button button-secondary" href="<?php echo $item['download_link']; ?>" target="_blank"><?php _wsl_e( "Get this Component", 'wordpress-social-login' ) ?></a> 
+			</div>	
+		<?php
+	}
+?> 
+
+<div class="wsl_component_div">
+	<h3 style="margin:0px;"><?php _wsl_e( "Build yours", 'wordpress-social-login' ) ?></h3>
+
+	<div class="wsl_component_about_div">
+		<p><?php _wsl_e( "Want to build your own custom <b>WordPress Social Login</b> component? It's pretty easy. Just refer to the online developer documentation.", 'wordpress-social-login' ) ?></p>
+	</div>
+
+	<a class="button button-primary"   href="http://miled.github.io/wordpress-social-login/documentation.html" target="_blank"><?php _wsl_e( "WSL Developer API", 'wordpress-social-login' ) ?></a> 
+	<a class="button button-secondary" href="http://miled.github.io/wordpress-social-login/submit-component.html" target="_blank"><?php _wsl_e( "Submit your WSL Component", 'wordpress-social-login' ) ?></a> 
+</div>
+
+<?php
+		}
+	}
+
 	// HOOKABLE: 
 	do_action( "wsl_component_components_gallery_end" );
 }

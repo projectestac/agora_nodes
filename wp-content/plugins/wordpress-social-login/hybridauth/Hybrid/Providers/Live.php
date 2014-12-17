@@ -38,6 +38,8 @@ class Hybrid_Providers_Live extends Hybrid_Provider_Model_OAuth2
 		$this->api->curl_authenticate_method  = "GET";
 	}
 
+	// --------------------------------------------------------------------
+
 	/**
 	* grab the user profile from the api client
 	*/
@@ -46,7 +48,7 @@ class Hybrid_Providers_Live extends Hybrid_Provider_Model_OAuth2
 		$data = $this->api->get( "me" ); 
 
 		if ( ! isset( $data->id ) ){
-			throw new Exception( "User profile request failed! {$this->providerId} returned an invalide response.", 6 );
+			throw new Exception( "User profile request failed! {$this->providerId} returned an invalid response.", 6 );
 		}
 
 		$this->user->profile->identifier    = (property_exists($data,'id'))?$data->id:"";
@@ -85,7 +87,7 @@ class Hybrid_Providers_Live extends Hybrid_Provider_Model_OAuth2
 			throw new Exception( 'User contacts request failed! ' . $this->providerId . ' returned an error: ' . $this->errorMessageByStatus( $this->api->http_code ) );
 		}
 
-		if ( ! $response->data && ( $response->error != 0 ) )
+		if ( !isset($response->data) || ( isset($response->errcode) &&  $response->errcode != 0 ) )
 		{
 			return array();
 		}

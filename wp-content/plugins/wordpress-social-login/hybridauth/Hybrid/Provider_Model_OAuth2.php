@@ -1,15 +1,15 @@
 <?php
-/*!
+/**
 * HybridAuth
 * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
-* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 
+* (c) 2009-2014, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 
 */
 
 /**
  * To implement an OAuth 2 based service provider, Hybrid_Provider_Model_OAuth2
  * can be used to save the hassle of the authentication flow. 
  * 
- * Each class that inherit from Hybrid_Provider_Model_OAuth2 have to implemenent
+ * Each class that inherit from Hybrid_Provider_Model_OAuth2 have to implement
  * at least 2 methods:
  *   Hybrid_Providers_{provider_name}::initialize()     to setup the provider api end-points urls
  *   Hybrid_Providers_{provider_name}::getUserProfile() to grab the user profile
@@ -18,12 +18,16 @@
  * Hybrid/thirdparty/OAuth/OAuth2Client.php
  */
 class Hybrid_Provider_Model_OAuth2 extends Hybrid_Provider_Model
-{
-	// default permissions 
+{ 
+	/**
+	 * default permissions
+	 * @var string
+	 */
 	public $scope = "";
 
 	/**
-	* try to get the error message from provider api
+	* Try to get the error message from provider api
+	* @param Numeric $code
 	*/ 
 	function errorMessageByStatus( $code = null ) { 
 		$http_status_codes = ARRAY(
@@ -53,6 +57,10 @@ class Hybrid_Provider_Model_OAuth2 extends Hybrid_Provider_Model
 	*/
 	function initialize() 
 	{
+		if ( ! isset( $this->config["keys"]["id"] ) || ! isset( $this->config["keys"]["secret"] ) ){
+			throw new Exception( "Your application id and secret are required in order to connect to {$this->providerId}.", 4 );
+		}
+		
 		if ( ! $this->config["keys"]["id"] || ! $this->config["keys"]["secret"] ){
 			throw new Exception( "Your application id and secret are required in order to connect to {$this->providerId}.", 4 );
 		}
@@ -63,7 +71,7 @@ class Hybrid_Provider_Model_OAuth2 extends Hybrid_Provider_Model
 		}
 
 		// include OAuth2 client
-		require_once Hybrid_Auth::$config["path_libraries"] . "OAuth/OAuth2Client.php";
+		require_once realpath( dirname( __FILE__ ) )  . "/thirdparty/OAuth/OAuth2Client.php";
 
 		// create a new OAuth2 client instance
 		$this->api = new OAuth2Client( $this->config["keys"]["id"], $this->config["keys"]["secret"], $this->endpoint );
@@ -104,17 +112,17 @@ class Hybrid_Provider_Model_OAuth2 extends Hybrid_Provider_Model
 
 		// check for errors
 		if ( $error ){ 
-			throw new Exception( "Authentication failed! {$this->providerId} returned an error: $error", 5 );
+			throw new Exception( "Authentication failed! {$this->providerId} returned an error: " . htmlentities( $error ), 5 );
 		}
 
-		// try to authenicate user
-		$code = (array_key_exists('code',$_REQUEST))?$_REQUEST['code']:"";
+		// try to authenticate user
+		$code = (array_key_exists('code',$_REQUEST))?$_REQUEST['code'] : "";
 
 		try{
 			$this->api->authenticate( $code ); 
 		}
 		catch( Exception $e ){
-			throw new Exception( "User profile request failed! {$this->providerId} returned an error: $e", 6 );
+			throw new Exception( "Authentication failed! {$this->providerId} returned an invalid code " . htmlentities( $code ), 5 );
 		}
 
 		// check if authenticated
