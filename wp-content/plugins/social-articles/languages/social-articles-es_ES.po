@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: social-articles\n"
 "POT-Creation-Date: 2013-09-03 23:20-0300\n"
-"PO-Revision-Date: 2013-09-03 23:21-0300\n"
+"PO-Revision-Date: 2014-10-27 00:48-0300\n"
 "Last-Translator: broobe <dev@broobe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -375,7 +375,7 @@ msgstr "Selecciona tus etiquetas"
 
 #: includes/templates/members/single/articles/new.php:73
 msgid "Status"
-msgstr "Stado"
+msgstr "Estado"
 
 #: includes/templates/members/single/articles/new.php:78
 msgid "Article title..."
