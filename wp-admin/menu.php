@@ -240,7 +240,7 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 // 2014.10.21 @aginard
 global $isAgora;
 
-if ($isAgora && is_xtecadmin()) {
+if (($isAgora && is_xtecadmin()) || !$isAgora) {
 //************ FI
 
 /* translators: %s: Number of pending plugin updates. */
@@ -312,7 +312,7 @@ $menu[80]                               = array( __( 'Settings' ), 'manage_optio
 // 2014.11.03 @sarjona 19.03.15 @svallde2
 global $isAgora;
 
-if ($isAgora && is_xtecadmin()) {
+if (($isAgora && is_xtecadmin()) || !$isAgora) {
 //************ FI
 
 	$submenu['options-general.php'][40] = array( __( 'Permalinks' ), 'manage_options', 'options-permalink.php' );
