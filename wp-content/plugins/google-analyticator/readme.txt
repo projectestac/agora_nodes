@@ -1,9 +1,11 @@
-﻿=== Google Analyticator ===
+=== Google Analyticator ===
 Contributors: VideoUserManuals
 Tags: stats, statistics, google, analytics, google analytics, tracking, widget
 Requires at least: 3.2
-Tested up to: 3.8
-Stable tag: 6.4.7.3
+Tested up to: 4.0
+Stable tag: 6.4.8
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds the necessary JavaScript code to enable Google Analytics. Includes widgets for Analytics data display.
 
@@ -30,13 +32,18 @@ Google Analyticator Has the Following Features:
 - Provides complete control over options; disable any feature if needed
 - Supports localization - get the settings page in your language of choice
 - Ability to hide Google UID dropdown
-- Added Polish Translation
+- Translations - Polish, Turkish, Dutch and Spanish
 
 For more information, visit the [Google Analyticator plugin page](http://www.videousermanuals.com/google-analyticator/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description).
 
 If you have a great idea on how to improve the plugin, we would love to hear from you at the [Google Analyticator Feature Request page](http://www.videousermanuals.com/google-analyticator/feature-request/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description)
 
 A big thank you from the whole community to [Ronald](http://ronaldheft.com/) for all the hard work he put into this plugin.
+
+We also would like to thank our translators:
+
+Polish - Michał Mleczko from http://michalmleczko.waw.pl/
+Turkish - Cansın Çağan Acarer from http://www.35pixel.com/
 
 == Installation ==
 
@@ -61,6 +68,15 @@ For any support issues, please use the official WordPress support forums.
 
 
 == Changelog ==
+
+= 6.4.8 =
+* Bug fix: anonymizeIP
+* Reduced Memory Usage for dashboard
+* Added Turkish, Spanish and Dutch
+* Check token fix widget authentication
+* Added Remarketing, Demographics and Interests reports for universal
+* Changed Google API Client on setting of default path
+* Fixes bugs
 
 = 6.4.7.3 =
 * Bug fix: Test data left in place of Domain name / UID dropdown

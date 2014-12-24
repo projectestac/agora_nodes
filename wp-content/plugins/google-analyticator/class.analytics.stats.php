@@ -1,16 +1,5 @@
 <?php
 
-# Include SimplePie if it doesn't exist
-if ( !class_exists('SimplePie') ) {
-	require_once (ABSPATH . WPINC . '/class-feed.php');
-}
-
-if ( !class_exists('Google_Client') ) {
-	require_once 'google-api-php-client/src/Google_Client.php';
-}
-if ( !class_exists('Google_AnalyticsService') ) {
-	require_once 'google-api-php-client/src/contrib/Google_AnalyticsService.php';
-}
 
 /**
  * Handles interactions with Google Analytics' Stat API
@@ -32,6 +21,19 @@ class GoogleAnalyticsStats
 	 **/
 	function GoogleAnalyticsStats()
 	{
+
+			# Include SimplePie if it doesn't exist
+			if ( !class_exists('SimplePie') ) {
+				require_once (ABSPATH . WPINC . '/class-feed.php');
+			}
+			
+			if ( !class_exists('Google_Client') ) {
+				require_once 'google-api-php-client/src/Google_Client.php';
+			}
+			if ( !class_exists('Google_AnalyticsService') ) {
+				require_once 'google-api-php-client/src/contrib/Google_AnalyticsService.php';
+			}
+
             $this->client = new Google_Client();
             $this->client->setApprovalPrompt("force");
             $this->client->setAccessType('offline');
@@ -50,6 +52,7 @@ class GoogleAnalyticsStats
             catch (Google_ServiceException $e)
                 {
                     print '(cas:48) There was an Analytics API service error ' . $e->getCode() . ':' . $e->getMessage();
+					return false;
                 }
 	}
 
@@ -59,7 +62,21 @@ class GoogleAnalyticsStats
 
             if (!empty($ga_google_authtoken))
             {
+				try
+                {
                     $this->client->setAccessToken($ga_google_authtoken);
+				}
+				catch( Google_AuthException $e )
+                {
+                    print '(cas:72) Google Analyticator was unable to authenticate you with
+                            Google using the Auth Token you pasted into the input box on the previous step. <br><br>
+                            This could mean either you pasted the token wrong, or the time/date on your server is wrong,
+                            or an SSL issue preventing Google from Authenticating. <br><br>
+                            <a href="' . admin_url('/options-general.php?page=ga_reset').'"> Try Deauthorizing &amp; Resetting Google Analyticator.</a>
+                            <br><br><strong>Tech Info </strong> ' . $e->getCode() . ':' . $e->getMessage();
+
+                    return false;
+                }
             }
             else
             {

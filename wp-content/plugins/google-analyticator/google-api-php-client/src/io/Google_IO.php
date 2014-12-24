@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-require_once 'io/Google_HttpRequest.php';
-require_once 'io/Google_HttpStreamIO.php';
-require_once 'io/Google_CurlIO.php';
-require_once 'io/Google_REST.php';
+require_once GA_API_Path. 'io/Google_HttpRequest.php';
+require_once GA_API_Path. 'io/Google_HttpStreamIO.php';
+require_once GA_API_Path. 'io/Google_CurlIO.php';
+require_once GA_API_Path. 'io/Google_REST.php';
 
 /**
  * Abstract IO class
