@@ -390,7 +390,18 @@ function populate_options( array $options = array() ) {
 	 * or a valid timezone string (America/New_York). See https://www.php.net/manual/en/timezones.php
 	 * for all timezone strings supported by PHP.
 	 */
+
+//XTEC ************ MODIFICAT - Default time zone string
+//2014.07.22 @jmiro227
+
+        $offset_or_tz = _x( 'Europe/Madrid', 'default GMT offset or timezone string' );
+
+//************ ORIGINAL
+/*
 	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' ); // phpcs:ignore WordPress.WP.I18n.NoEmptyStrings
+*/
+//************ FI
+
 	if ( is_numeric( $offset_or_tz ) ) {
 		$gmt_offset = $offset_or_tz;
 	} elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list(), true ) ) {
