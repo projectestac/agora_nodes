@@ -10,6 +10,7 @@ class Bpfb_Data_Container {
 			'oembed_width' => 450,
 			'image_limit' => 5,
 			'links_target' => false,
+			'cleanup_images' => false,
 		));
 	}
 
@@ -58,17 +59,17 @@ class Bpfb_Data {
 	private function __construct() {}
 	private function __clone() {}
 
-	public function get ($option, $fallback=false) {
+	public static function get ($option, $fallback=false) {
 		if (!self::$_instance) self::_spawn_instance();
 		return self::$_instance->get($option, $fallback);
 	}
 
-	public function get_strict ($option, $fallback=false) {
+	public static function get_strict ($option, $fallback=false) {
 		if (!self::$_instance) self::_spawn_instance();
 		return self::$_instance->get_strict($option, $fallback);	
 	}
 
-	public function get_thumbnail_size ($strict=false) {
+	public static function get_thumbnail_size ($strict=false) {
 		if (!self::$_instance) self::_spawn_instance();
 		return self::$_instance->get_thumbnail_size($strict);
 	}
