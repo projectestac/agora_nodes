@@ -397,13 +397,16 @@ function populate_options( array $options = array() ) {
 	}
 
 	$timezone_string = '';
-	$gmt_offset      = 0;
-	/*
-	 * translators: default GMT offset or timezone string. Must be either a valid offset (-12 to 14)
-	 * or a valid timezone string (America/New_York). See https://secure.php.net/manual/en/timezones.php
-	 * for all timezone strings supported by PHP.
-	 */
-	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' ); // phpcs:ignore WordPress.WP.I18n.NoEmptyStrings
+	$gmt_offset = 0;
+	/* translators: default GMT offset or timezone string. Must be either a valid offset (-12 to 14)
+	   or a valid timezone string (America/New_York). See https://secure.php.net/manual/en/timezones.php
+	   for all timezone strings supported by PHP.
+	*/
+
+//XTEC ************ MODIFICAT - Default time zone string for Catalonia
+//2014.07.22 @jmiro227
+        $offset_or_tz = _x( 'Europe/Brussels', 'default GMT offset or timezone string' );
+//************ FI
 	if ( is_numeric( $offset_or_tz ) ) {
 		$gmt_offset = $offset_or_tz;
 	} elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list() ) ) {
