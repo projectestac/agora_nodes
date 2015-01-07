@@ -60,11 +60,23 @@ switch ( $action ) {
 		echo "<ul>";
 		foreach ( (array) $blogs as $details ) {
 			switch_to_blog( $details['blog_id'] );
+
+//XTEC ************ AFEGIT - Validates current theme and reverts it to default if invalid (usefull if removing themes)
+//2013.06.04 @jmiro227
+//                        wp_get_theme();
+//                        validate_current_theme();
+//************ FI
+
 			$siteurl = site_url();
 			$upgrade_url = admin_url( 'upgrade.php?step=upgrade_db' );
 			restore_current_blog();
 			echo "<li>$siteurl</li>";
-			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1' ) );
+//XTEC ************ MODIFICAT - Avoid SSL verification (because it fails when certificate is not valid)
+//2015.01.07 @sarjona - http://wordpress.stackexchange.com/questions/115279/multisite-database-upgrade-ssl-error
+			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1', 'sslverify' => false ) );
+//************ ORIGINAL
+//			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1' ) );
+//************ FI  
 			if ( is_wp_error( $response ) )
 				wp_die( sprintf( __( 'Warning! Problem updating %1$s. Your server may not be able to connect to sites running on it. Error message: <em>%2$s</em>' ), $siteurl, $response->get_error_message() ) );
 			/**
