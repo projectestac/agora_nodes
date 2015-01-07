@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Agora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-19 15:30+0100\n"
+"POT-Creation-Date: 2014-12-24 10:53+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: Agora\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +15,6 @@ msgstr ""
 "X-Poedit-Basepath: /Volumes/Trunk/xampp/htdocs/bpfb/wp-content/plugins/bpfb_the_edge/\n"
 "X-Generator: Poedit 1.6.7\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ca\n"
 "X-Poedit-SearchPath-0: lib\n"
 "X-Poedit-SearchPath-1: lib/forms\n"
 
@@ -39,74 +39,82 @@ msgstr "BuddyPress Activity Plus"
 msgid "Activity Plus"
 msgstr "Activity Plus"
 
-#: lib/class_bpfb_admin_pages.php:87
+#: lib/class_bpfb_admin_pages.php:92
 msgid "Appearance"
 msgstr "Aparença"
 
-#: lib/class_bpfb_admin_pages.php:91
+#: lib/class_bpfb_admin_pages.php:96
 msgid "Your BuddyPress theme incorporates Activity Plus style overrides. Respecting the selection you make in the &quot;Appearance&quot; section is entirely up to your theme."
 msgstr ""
 
-#: lib/class_bpfb_admin_pages.php:96
+#: lib/class_bpfb_admin_pages.php:101
 msgid "Theme"
 msgstr "Tema"
 
-#: lib/class_bpfb_admin_pages.php:100
+#: lib/class_bpfb_admin_pages.php:105
 msgid "Default (legacy)"
 msgstr "Per defecte (legacy)"
 
-#: lib/class_bpfb_admin_pages.php:105
+#: lib/class_bpfb_admin_pages.php:110
 msgid "New"
 msgstr "Nou"
 
-#: lib/class_bpfb_admin_pages.php:110
+#: lib/class_bpfb_admin_pages.php:115
 msgid "Round"
 msgstr "Arrodonit"
 
-#: lib/class_bpfb_admin_pages.php:114
+#: lib/class_bpfb_admin_pages.php:119
 msgid "Alignment"
 msgstr "Alineació"
 
-#: lib/class_bpfb_admin_pages.php:117
+#: lib/class_bpfb_admin_pages.php:122
 msgid "Left"
 msgstr "Esquerra"
 
-#: lib/class_bpfb_admin_pages.php:121
+#: lib/class_bpfb_admin_pages.php:126
 msgid "Right"
 msgstr "Dreta"
 
-#: lib/class_bpfb_admin_pages.php:128
+#: lib/class_bpfb_admin_pages.php:133
 msgid "Functional"
 msgstr "Configuració"
 
-#: lib/class_bpfb_admin_pages.php:131
+#: lib/class_bpfb_admin_pages.php:136
 msgid "oEmbed"
 msgstr "Paràmetres d'incrustació"
 
-#: lib/class_bpfb_admin_pages.php:134
+#: lib/class_bpfb_admin_pages.php:139
 #, php-format
 msgid "Your oEmbed dimensions will be dictated by the <code>BPFB_OEMBED_WIDTH</code> define value (%s). Remove this define to enable this option."
 msgstr ""
 
-#: lib/class_bpfb_admin_pages.php:138
-#: lib/class_bpfb_admin_pages.php:150
+#: lib/class_bpfb_admin_pages.php:143
+#: lib/class_bpfb_admin_pages.php:155
 msgid "Width"
 msgstr "Amplada"
 
-#: lib/class_bpfb_admin_pages.php:143
+#: lib/class_bpfb_admin_pages.php:148
 msgid "Image thumbnails"
 msgstr "Miniatures de les imatges"
 
-#: lib/class_bpfb_admin_pages.php:146
+#: lib/class_bpfb_admin_pages.php:151
 #, php-format
 msgid "Your thumbnail dimensions will be dictated by the <code>BPFB_THUMBNAIL_IMAGE_SIZE</code> define value (%s). Remove this define to enable these options."
 msgstr ""
 
-#: lib/class_bpfb_admin_pages.php:154
+#: lib/class_bpfb_admin_pages.php:159
 msgid "Height"
 msgstr "Alçada"
 
-#: lib/class_bpfb_admin_pages.php:162
+#: lib/class_bpfb_admin_pages.php:164
+msgid "Misc"
+msgstr "Miscel·lània"
+
+#: lib/class_bpfb_admin_pages.php:167
+msgid "Clean up images?"
+msgstr "Esborra les imatges?"
+
+#: lib/class_bpfb_admin_pages.php:174
 msgid "Save"
 msgstr "Desa"
 
@@ -188,14 +196,4 @@ msgstr "Hi ha hagut un error processant la vostra petició"
 #: lib/class_bpfb_binder.php:195
 msgid "Processing..."
 msgstr "Processant..."
-
-#: lib/external/wpmudev-dash-notification.php:62
-#, php-format
-msgid "Easily get updates, support, and one-click WPMU DEV plugin/theme installations right from in your dashboard - <strong><a href=\"%s\" title=\"Install Now &raquo;\">install the free WPMU DEV Dashboard plugin</a></strong>. &nbsp;&nbsp;&nbsp;<small><a href=\"http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/\">(find out more)</a></small>"
-msgstr ""
-
-#: lib/external/wpmudev-dash-notification.php:66
-#, php-format
-msgid "Updates, Support, Premium Plugins, Community - <strong><a href=\"%s\" title=\"Activate Now &raquo;\">activate the WPMU DEV Dashboard plugin now</a></strong>."
-msgstr ""
 
