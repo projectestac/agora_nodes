@@ -65,8 +65,12 @@ switch ( $action ) {
 			restore_current_blog();
 
 			echo "<li>$siteurl</li>";
-
-			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1' ) );
+//XTEC ************ MODIFICAT - Avoid SSL verification (because it fails when certificate is not valid)
+//2015.01.07 @sarjona - http://wordpress.stackexchange.com/questions/115279/multisite-database-upgrade-ssl-error
+            $response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1', 'sslverify' => false ) );
+//************ ORIGINAL
+//			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1' ) );
+//************ FI
 			if ( is_wp_error( $response ) ) {
 				wp_die( sprintf(
 					/* translators: 1: site url, 2: server error message */
