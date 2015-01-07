@@ -61,7 +61,14 @@ class WP_Widget_RSS extends WP_Widget {
 			return;
 		}
 
-		$rss   = fetch_feed( $url );
+		//XTEC ************ AFEGIT - It filters the rss feed url if it does not end with /feed
+ 		//2014.01.14 @jmiro227
+ 		if ( parse_url(untrailingslashit($url), PHP_URL_HOST) == parse_url(site_url(), PHP_URL_HOST)) {
+ 			if ( !(preg_match('|'.network_home_url().'.*/feed|', untrailingslashit( $url ))) )
+ 				return;
+ 		}
+ 		//************ FI
+		$rss = fetch_feed($url);
 		$title = $instance['title'];
 		$desc  = '';
 		$link  = '';
