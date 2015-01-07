@@ -357,7 +357,13 @@ function populate_options() {
 	   or a valid timezone string (America/New_York). See http://us3.php.net/manual/en/timezones.php
 	   for all timezone strings supported by PHP.
 	*/
-	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' );
+
+//XTEC ************ MODIFICAT - Default time zone string for Catalonia
+//2014.07.22 @jmiro227 
+        $offset_or_tz = _x( 'Europe/Brussels', 'default GMT offset or timezone string' );
+//************ ORIGINAL
+//	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' );
+//************ FI
 	if ( is_numeric( $offset_or_tz ) )
 		$gmt_offset = $offset_or_tz;
 	elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list() ) )
