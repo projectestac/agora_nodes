@@ -1,10 +1,10 @@
-﻿=== BuddyPress Like ===
+=== BuddyPress Like ===
 Contributors: darrenmeehan,hempsworth
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAJLLEJDBHAWL
 Tags: buddypress, like, rate, thumbs, Post, button, vote
 Requires at least: 3.8
-Tested up to: 3.9
-Stable tag: 0.1.7
+Tested up to: 4.1
+Stable tag: 0.1.8
 
 Gives users the ability to 'like' content across your BuddyPress enabled site. Note BuddyPress Like is currently in Beta.
 
@@ -30,6 +30,9 @@ Requires <a href="http://wordpress.org/plugins/buddypress/">BuddyPress</a>
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 0.1.8 =
+* Various fixes, thanks to BronsonQuick (https://github.com/BronsonQuick)
 
 = 0.1.7 =
 * No longer posts to activity feed when user likes post in a group.
@@ -100,6 +103,9 @@ Requires <a href="http://wordpress.org/plugins/buddypress/">BuddyPress</a>
 * Initial release.
 
 == Upgrade Notice ==
+
+= 0.1.8 =
+jQuery bug is now fixed, tested with latest WordPress and BuddyPress.
 
 = 0.1.7 =
 No longer posts statuses when something is liked in a group. Also includes some JQuery fixes.
