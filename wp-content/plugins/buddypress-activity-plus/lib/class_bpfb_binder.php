@@ -11,7 +11,7 @@ class BpfbBinder {
 	 * @access public
 	 * @static
 	 */
-	function serve () {
+	public static function serve () {
 		$me = new BpfbBinder;
 		$me->add_hooks();
 	}
@@ -245,7 +245,7 @@ EOFontIconCSS;
 	function ajax_preview_photo () {
 		$dir = BPFB_PLUGIN_BASE_DIR . '/img/';
 		if (!class_exists('qqFileUploader')) require_once(BPFB_PLUGIN_BASE_DIR . '/lib/external/file_uploader.php');
-		$uploader = new qqFileUploader(array('jpg', 'jpeg', 'png', 'gif'));
+		$uploader = new qqFileUploader(self::_get_supported_image_extensions());
 		$result = $uploader->handleUpload(BPFB_TEMP_IMAGE_DIR);
 		//header('Content-type: application/json'); // For some reason, IE doesn't like this. Skip.
 		echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
@@ -282,10 +282,10 @@ EOFontIconCSS;
 		$bpfb_code = $activity = '';
 		$aid = 0;
 		$codec = new BpfbCodec;
-		if (@$_POST['data']['bpfb_video_url']) {
+		if (!empty($_POST['data']['bpfb_video_url'])) {
 			$bpfb_code = $codec->create_video_tag($_POST['data']['bpfb_video_url']);
 		}
-		if (@$_POST['data']['bpfb_link_url']) {
+		if (!empty($_POST['data']['bpfb_link_url'])) {
 			$bpfb_code = $codec->create_link_tag(
 				$_POST['data']['bpfb_link_url'],
 				$_POST['data']['bpfb_link_title'],
@@ -293,7 +293,7 @@ EOFontIconCSS;
 				$_POST['data']['bpfb_link_image']
 			);
 		}
-		if (@$_POST['data']['bpfb_photos']) {
+		if (!empty($_POST['data']['bpfb_photos'])) {
 			$images = $this->move_images($_POST['data']['bpfb_photos']);
 			$bpfb_code = $codec->create_images_tag($images);
 		}
@@ -334,6 +334,8 @@ EOFontIconCSS;
 	}
 
 	function _add_js_css_hooks () {
+		if (!is_user_logged_in()) return false;
+
 		global $bp;
 
 		if (
@@ -356,10 +358,76 @@ EOFontIconCSS;
 	}
 
 	/**
+	 * Trigger handler when BuddyPress activity is removed.
+	 * @param  array $args BuddyPress activity arguments
+	 * @return bool Insignificant
+	 */
+	function remove_activity_images ($args) {
+		if (!is_user_logged_in()) return false;
+		if (empty($args['id'])) return false;
+
+		$activity = new BP_Activity_Activity($args['id']);
+		if (!is_object($activity) || empty($activity->content)) return false;
+
+		if (!bp_activity_user_can_delete($activity)) return false;
+		if (!BpfbCodec::has_images($activity->content)) return false;
+
+		$matches = array();
+		preg_match('/\[bpfb_images\](.*?)\[\/bpfb_images\]/s', $activity->content, $matches);
+		if (empty($matches[1])) return false;
+
+		$this->_clean_up_content_images($matches[1], $activity);
+
+		return true;
+	}
+
+	/**
+	 * Callback for activity images removal
+	 * @param  string $content Shortcode content parsed for images
+	 * @param  BP_Activity_Activity Activity which contains the shortcode - used for privilege check 
+	 * @return bool
+	 */
+	private function _clean_up_content_images ($content, $activity) {
+		if (!Bpfb_Data::get('cleanup_images')) return false;
+		if (!bp_activity_user_can_delete($activity)) return false;
+
+		$images = BpfbCodec::extract_images($content);
+		if (empty($images)) return false;
+
+		foreach ($images as $image) {
+			$info = pathinfo(trim($image));
+			
+			// Make sure we have the info we need
+			if (empty($info['filename']) || empty($info['extension'])) continue;
+			
+			// Make sure we're dealing with the image
+			$ext = strtolower($info['extension']);
+			if (!in_array($ext, self::_get_supported_image_extensions())) continue;
+
+			// Construct the filenames
+			$thumbnail = bpfb_get_image_dir($activity_blog_id) . $info['filename'] . '-bpfbt.' . $ext;
+			$full = bpfb_get_image_dir($activity_blog_id) . trim($image);
+
+			// Actually remove the images
+			if (file_exists($thumbnail) && is_writable($thumbnail)) @unlink($thumbnail);
+			if (file_exists($full) && is_writable($full)) @unlink($full);
+		}
+		return true;
+	}
+
+	/**
+	 * Lists supported image extensions
+	 * @return array Supported image extensions
+	 */
+	private static function _get_supported_image_extensions () {
+		return array('jpg', 'jpeg', 'png', 'gif');
+	}
+
+	/**
 	 * This is where the plugin registers itself.
 	 */
 	function add_hooks () {
-		
+
 		add_action('init', array($this, '_add_js_css_hooks'));
 
 		// Step2: Add AJAX request handlers
@@ -374,5 +442,9 @@ EOFontIconCSS;
 		
 		// Step 3: Register and process shortcodes
 		BpfbCodec::register();
+
+		if (Bpfb_Data::get('cleanup_images')) {
+			add_action('bp_before_activity_delete', array($this, 'remove_activity_images'));
+		}
 	}
 }
