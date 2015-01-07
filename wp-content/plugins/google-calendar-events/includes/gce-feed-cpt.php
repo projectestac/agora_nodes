@@ -102,17 +102,7 @@ add_filter( 'post_updated_messages', 'gce_feed_messages' );
  * @since 2.0.0
  */
 function gce_cpt_meta() {
-
-// XTEC ************ MODIFICAT - Translation hardcoded because GCE doesn't support it yet
-// 2014.10.08 @aginard
-
-	add_meta_box( 'gce_feed_meta', 'Paràmetres del calendari', 'gce_display_meta', 'gce_feed', 'advanced', 'core' );
-
-//************ ORIGINAL
-/*
-	add_meta_box( 'gce_feed_meta', 'Feed Settings', 'gce_display_meta', 'gce_feed', 'advanced', 'core' );
-*/
-//************ FI
+	add_meta_box( 'gce_feed_meta', __( 'Feed Settings', 'gce' ), 'gce_display_meta', 'gce_feed', 'advanced', 'core' );
 
 // XTEC ************ ELIMINAT - Removed metabox. We don't want this one.
 // 2014.10.08 @aginard
@@ -122,17 +112,7 @@ function gce_cpt_meta() {
 */
 //************ FI
 
-// XTEC ************ MODIFICAT - Translation hardcoded because GCE doesn't support it yet
-// 2014.10.08 @aginard
-
-    add_meta_box( 'gce_display_options_meta', 'Opcions de visualització', 'gce_display_options_meta', 'gce_feed', 'side', 'core' );
-
-//************ ORIGINAL
-/*
-	add_meta_box( 'gce_display_options_meta', 'Display Options', 'gce_display_options_meta', 'gce_feed', 'side', 'core' );
-*/
-//************ FI
-
+	add_meta_box( 'gce_display_options_meta', __( 'Display Options', 'gce' ), 'gce_display_options_meta', 'gce_feed', 'side', 'core' );
 }
 add_action( 'add_meta_boxes', 'gce_cpt_meta' );
 
@@ -169,8 +149,12 @@ function gce_display_options_meta() {
  * @since 2.0.0
  */
 function gce_save_meta( $post_id ) {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 			return $post_id;
+	}
+	
+	if( isset( $_REQUEST['bulk_edit'] ) ) {
+		return $post_id;
 	}
 
 	// An array to hold all of our post meta ids so we can run them through a loop
@@ -226,7 +210,7 @@ function gce_save_meta( $post_id ) {
 					$id = str_replace( '/public/basic', '', $id );
 					$id = str_replace( '%40', '@', $id );
 					
-					update_post_meta( $post_id, $pmf, $id );
+					update_post_meta( $post_id, $pmf, trim( $id ) );
 				} else {
 					update_post_meta( $post_id, $pmf, stripslashes( $_POST[$pmf] ) );
 				}
