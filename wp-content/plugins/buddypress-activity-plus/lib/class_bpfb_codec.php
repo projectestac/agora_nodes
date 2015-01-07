@@ -61,7 +61,7 @@ class BpfbCodec {
 	 * Relies on ./forms/images_tag_template.php for markup rendering.
 	 */
 	function process_images_tag ($atts, $content) {
-		$images = explode("\n", trim(strip_tags($content)));
+		$images = self::extract_images($content);
 		//return var_export($images,1);
 		$activity_id = bp_get_activity_id();
 		global $blog_id;
@@ -92,7 +92,7 @@ class BpfbCodec {
 	/**
 	 * Registers shotcode processing procedures.
 	 */
-	function register () {
+	public static function register () {
 		$me = new BpfbCodec;
 		add_shortcode('bpfb_link', array($me, 'process_link_tag'));
 		add_shortcode('bpfb_video', array($me, 'process_video_tag'));
@@ -102,5 +102,23 @@ class BpfbCodec {
 		add_filter('bp_get_activity_content_body', 'do_shortcode', 1);
 		// RSS feed processing
 		add_filter('bp_get_activity_feed_item_description', 'do_shortcode');
+	}
+
+	/**
+	 * Checks whether we have an images list shortcode in content.
+	 * @param  string $content String to check
+	 * @return boolean
+	 */
+	public static function has_images ($content) {
+		return has_shortcode($content, 'bpfb_images');
+	}
+
+	/**
+	 * Extracts images from shortcode content.
+	 * @param  string $shortcode_content Shortcode contents
+	 * @return array
+	 */
+	public static function extract_images ($shortcode_content) {
+		return explode("\n", trim(strip_tags($shortcode_content)));
 	}
 }
