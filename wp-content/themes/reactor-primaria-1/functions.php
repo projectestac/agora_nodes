@@ -553,19 +553,20 @@ function rebuild_bbpress_menus() {
  */
 function remove_admin_menus() {
 
-    // Forum
-    remove_submenu_page('options-general.php', 'bbpress');
+    if (!is_xtecadmin()) {
+        // Forum
+        remove_submenu_page('options-general.php', 'bbpress');
 
-    // BuddyPress
-    remove_submenu_page('options-general.php', 'bp-page-settings'); // Tab in BuddyPress
-    remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
-    
-    // Private BP Pages
-    remove_submenu_page('options-general.php', 'bphelp-pbp-settings'); // In this case, it doesn't block access
+        // BuddyPress
+        remove_submenu_page('options-general.php', 'bp-page-settings'); // Tab in BuddyPress
+        remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
 
-    // Settings | Writing
-    remove_submenu_page('options-general.php', 'options-writing.php'); // In this case, it doesn't block access
+        // Private BP Pages
+        remove_submenu_page('options-general.php', 'bphelp-pbp-settings'); // In this case, it doesn't block access
 
+        // Settings | Writing
+        remove_submenu_page('options-general.php', 'options-writing.php'); // In this case, it doesn't block access
+    }
 }
 
 /**
@@ -582,11 +583,10 @@ function wsl_unregister_admin_tabs() {
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['help']);
 }
 
-// Remove items for all users but xtecadmin
-if (!is_xtecadmin()) {
-    add_action('admin_menu', 'remove_admin_menus');
-    add_action('wsl_register_setting_end', 'wsl_unregister_admin_tabs');
-}
+// Remove items for all users but xtecadmin (check for xtecadmin is in the function 
+//   because global $current_user is not set at this stage)
+add_action('admin_menu', 'remove_admin_menus');
+add_action('wsl_register_setting_end', 'wsl_unregister_admin_tabs');
 
 // Rebuild menus for all users
 add_action('admin_menu', 'rebuild_bp_menus_step_1', 1); // Priority 1 is important!
