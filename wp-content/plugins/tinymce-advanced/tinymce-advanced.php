@@ -3,7 +3,7 @@
 Plugin Name: TinyMCE Advanced
 Plugin URI: http://www.laptoptips.ca/projects/tinymce-advanced/
 Description: Enables advanced features and plugins in TinyMCE, the visual editor in WordPress.
-Version: 4.0.2
+Version: 4.1.1
 Author: Andrew Ozz
 Author URI: http://www.laptoptips.ca/
 
@@ -14,11 +14,6 @@ Released under the GPL version 2.0, http://www.gnu.org/licenses/gpl-2.0.html
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License version 2.0 for more details.
 */
-
-//XTEC ************ AFEGIT - Localization
-//2013.06.21 @jmiro227
-load_plugin_textdomain( 'tadv', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
-//************ FI
 
 if ( ! class_exists('Tinymce_Advanced') ) :
 
@@ -37,7 +32,24 @@ class Tinymce_Advanced {
 	private $used_buttons = array();
 	private $all_buttons = array();
 	private $buttons_filter = array();
-	private $all_plugins = array( 'advlist','anchor','code','contextmenu','emoticons','importcss','insertdatetime','nonbreaking','print','searchreplace','table','visualblocks','visualchars','link' );
+
+	private $all_plugins = array(
+		'advlist',
+		'anchor',
+		'code',
+		'contextmenu',
+		'emoticons',
+		'importcss',
+		'insertdatetime',
+		'nonbreaking',
+		'print',
+		'searchreplace',
+		'table',
+		'visualblocks',
+		'visualchars',
+		'link',
+		'textpattern',
+	);
 
 	private $default_settings = array(
 		'options'	=> 'menubar,advlist',
@@ -51,10 +63,15 @@ class Tinymce_Advanced {
 	private $default_admin_settings = array( 'options' => array() );
 
 	function __construct() {
+		// Don't run outside of WP
+		if ( ! defined('ABSPATH') ) {
+			return;
+		}
+
 		add_action( 'plugins_loaded', array( &$this, 'set_paths' ), 50 );
 
 		if ( is_admin() ) {
-			add_action( 'admin_menu', array( &$this, 'menu' ) );
+			add_action( 'admin_menu', array( &$this, 'add_menu' ) );
 			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
 		}
 
@@ -72,6 +89,7 @@ class Tinymce_Advanced {
 		add_filter( 'htmledit_pre', array( &$this, 'htmledit' ), 999 );
 		add_filter( 'mce_external_plugins', array( &$this, 'mce_external_plugins' ), 999 );
 		add_filter( 'tiny_mce_plugins', array( &$this, 'tiny_mce_plugins' ), 999 );
+		add_action( 'after_wp_tiny_mce', array( &$this, 'after_wp_tiny_mce' ) );
 	}
 
 	// When using a plugin that changes the paths dinamically, set these earlier than 'plugins_loaded' 50.
@@ -106,6 +124,26 @@ class Tinymce_Advanced {
 			wp_enqueue_script( 'tadv-js', TADV_URL . 'js/tadv.js', array( 'jquery-ui-sortable' ), '4.0', true );
 			wp_enqueue_style( 'tadv-mce-skin', includes_url( 'js/tinymce/skins/lightgray/skin.min.css' ), array(), '4.0' );
 			wp_enqueue_style( 'tadv-css', TADV_URL . 'css/tadv-styles.css', array( 'editor-buttons' ), '4.0' );
+
+			if ( substr( get_locale(), 0, 2 ) !== 'en' ) {
+				add_action( 'admin_footer', array( &$this, 'load_mce_translation' ) );
+			}
+		}
+	}
+
+	function load_mce_translation() {
+		if ( ! class_exists( '_WP_Editors' ) ) {
+			require( ABSPATH . WPINC . '/class-wp-editor.php' );
+		}
+
+		$strings = _WP_Editors::wp_mce_translation();
+		$strings = preg_replace( '/tinymce.addI18n[^{]+/', '', $strings );
+		$strings = preg_replace( '/[^}]*$/', '', $strings );
+
+		if ( $strings ) {
+			?>
+			<script type="text/javascript">var tadvTranslation = <?php echo $strings; ?>;</script>
+			<?php
 		}
 	}
 
@@ -141,7 +179,7 @@ class Tinymce_Advanced {
 
 	// Min version 3.9-RC1
 	private function check_minimum_supported_version() {
-		return ( isset( $GLOBALS['wp_db_version'] ) && $GLOBALS['wp_db_version'] > 27000 );
+		return ( isset( $GLOBALS['wp_db_version'] ) && $GLOBALS['wp_db_version'] >= 29630 );
 	}
 
 	private function check_plugin_version() {
@@ -168,67 +206,67 @@ class Tinymce_Advanced {
 			return $this->all_buttons;
 
 //XTEC ************ MODIFICAT - Localization
-//2013.06.21 @jmiro227
+//2014.16.12 @jmiro227
 		$buttons = array(
 			// Core
-			'bold' => __('Bold', 'tadv'),
-			'italic' => __('Italic', 'tadv'),
-			'underline' => __('Underline', 'tadv'),
-			'strikethrough' => __('Strikethrough', 'tadv'),
-			'alignleft' => __('Align Left', 'tadv'),
-			'aligncenter' => __('Align Center', 'tadv'),
-			'alignright' => __('Align Right', 'tadv'),
-			'alignjustify' => __('Justify', 'tadv'),
-			'styleselect' => '<!--styleselect-->',
-			'formatselect' => '<!--formatselect-->',
-			'fontselect' => '<!--fontselect-->',
-			'fontsizeselect' => '<!--fontsizeselect-->',
-			'cut' => __('Cut', 'tadv'),
-			'copy' => __('Copy', 'tadv'),
-			'paste' => __('Paste', 'tadv'),
-			'bullist' => __('Bullet List', 'tadv'),
-			'numlist' => __('Numbered List', 'tadv'),
-			'outdent' => __('Outdent', 'tadv'),
-			'indent' => __('Indent', 'tadv'),
-			'blockquote' => __('Quote', 'tadv'),
-			'undo' => __('Undo', 'tadv'),
-			'redo' => __('Redo', 'tadv'),
-			'removeformat' => __('Remove Formatting', 'tadv'),
-			'subscript' => __('Subscript', 'tadv'),
-			'superscript' => __('Superscript', 'tadv'),
+			'bold' => __('Bold', 'tinymce-advanced'),
+			'italic' => __('Italic', 'tinymce-advanced'),
+			'underline' => __('Underline', 'tinymce-advanced'),
+			'strikethrough' => __('Strikethrough', 'tinymce-advanced'),
+			'alignleft' => __('Align left', 'tinymce-advanced'),
+			'aligncenter' => __('Align center', 'tinymce-advanced'),
+			'alignright' => __('Align right', 'tinymce-advanced'),
+			'alignjustify' => __('Justify', 'tinymce-advanced'),
+			'styleselect' => __('Formats', 'tinymce-advanced'),
+			'formatselect' => __('Paragraph', 'tinymce-advanced'),
+			'fontselect' => __('Font Family', 'tinymce-advanced'),
+			'fontsizeselect' => __('Font Sizes', 'tinymce-advanced'),
+			'cut' => __('Cut', 'tinymce-advanced'),
+			'copy' => __('Copy', 'tinymce-advanced'),
+			'paste' => __('Paste', 'tinymce-advanced'),
+			'bullist' => __('Bulleted list', 'tinymce-advanced'),
+			'numlist' => __('Numbered list', 'tinymce-advanced'),
+			'outdent' => __('Decrease indent', 'tinymce-advanced'),
+			'indent' => __('Increase indent', 'tinymce-advanced'),
+			'blockquote' => __('Blockquote', 'tinymce-advanced'),
+			'undo' => __('Undo', 'tinymce-advanced'),
+			'redo' => __('Redo', 'tinymce-advanced'),
+			'removeformat' => __('Clear formatting', 'tinymce-advanced'),
+			'subscript' => __('Subscript', 'tinymce-advanced'),
+			'superscript' => __('Superscript', 'tinymce-advanced'),
 
 			// From plugins
-			'hr' => __('Horizontal Rule', 'tadv'),
-			'link' => __('Link', 'tadv'),
-			'unlink' => __('Remove Link', 'tadv'),
-			'image' => __('Edit Image', 'tadv'),
-			'charmap' => __('Character Map', 'tadv'),
-			'pastetext' => __('Paste as Text', 'tadv'),
-			'print' => __('Print', 'tadv'),
-			'anchor' => __('Insert Anchor', 'tadv'),
-			'searchreplace' => __('Search/Replace', 'tadv'),
-			'visualblocks' => __('Visual Blocks', 'tadv'),
-		//	'visualchars' => 'Hidden Chars',
-			'code' => __('HTML code', 'tadv'),
-			'fullscreen' => __('Full Screen', 'tadv'),
-			'insertdatetime' => __('Insert Date/Time', 'tadv'),
-			'media' => __('Insert Media', 'tadv'),
-			'nonbreaking' => __('Non-Break Space', 'tadv'),
-			'table' => __('Table', 'tadv'),
-			'ltr' => __('Left to Right', 'tadv'),
-			'rtl' => __('Right to Left', 'tadv'),
-			'emoticons' => __('Emoticons', 'tadv'),
-			'forecolor' => __('Text Color', 'tadv'),
-			'backcolor' => __('Text Background', 'tadv'),
+			'hr' => __('Horizontal line', 'tinymce-advanced'),
+			'link' => __('Insert/edit link', 'tinymce-advanced'),
+			'unlink' => __('Remove link', 'tinymce-advanced'),
+			'image' => __('Insert/edit image', 'tinymce-advanced'),
+			'charmap' => __('Special character', 'tinymce-advanced'),
+			'pastetext' => __('Paste as text', 'tinymce-advanced'),
+			'print' => __('Print', 'tinymce-advanced'),
+			'anchor' => __('Anchor', 'tinymce-advanced'),
+			'searchreplace' => __('Find and replace', 'tinymce-advanced'),
+			'visualblocks' => __('Show blocks', 'tinymce-advanced'),
+			//'visualchars' => 'Hidden chars',
+			'code' => __('Source code', 'tinymce-advanced'),
+			'fullscreen' => __('Fullscreen', 'tinymce-advanced'),
+			'insertdatetime' => __('Insert date/time', 'tinymce-advanced'),
+			'media' => __('Insert/edit video', 'tinymce-advanced'),
+			'nonbreaking' => __('Nonbreaking space', 'tinymce-advanced'),
+			'table' => __('Table', 'tinymce-advanced'),
+			'ltr' => __('Left to right', 'tinymce-advanced'),
+			'rtl' => __('Right to left', 'tinymce-advanced'),
+			'emoticons' => __('Emoticons', 'tinymce-advanced'),
+			'forecolor' => __('Text color', 'tinymce-advanced'),
+			'backcolor' => __('Background color', 'tinymce-advanced'),
 
 			// Layer plugin ?
-		//	'insertlayer' => 'Layer',
+			'insertlayer' => __('Layer', 'tinymce-advanced'),
 
 			// WP
-			'wp_adv'		=> __('Toolbar toggle', 'tadv'),
-			'wp_help'		=> __('Help', 'tadv'),
-			'wp_more'		=> __('More Tag', 'tadv'),
-			'wp_page'		=> __('Page Break', 'tadv'),
+			'wp_adv'		=> __('Toolbar Toggle', 'tinymce-advanced'),
+			'wp_help'		=> __('Keyboard Shortcuts', 'tinymce-advanced'),
+			'wp_more'		=> __('Read more...', 'tinymce-advanced'),
+			'wp_page'		=> __('Page break', 'tinymce-advanced'),
 		);
 
 //************ ORIGINAL
@@ -239,71 +277,63 @@ class Tinymce_Advanced {
 			'italic' => 'Italic',
 			'underline' => 'Underline',
 			'strikethrough' => 'Strikethrough',
-			'alignleft' => 'Align Left',
-			'aligncenter' => 'Align Center',
-			'alignright' => 'Align Right',
+			'alignleft' => 'Align left',
+			'aligncenter' => 'Align center',
+			'alignright' => 'Align right',
 			'alignjustify' => 'Justify',
-			'styleselect' => '<!--styleselect-->',
-			'formatselect' => '<!--formatselect-->',
-			'fontselect' => '<!--fontselect-->',
-			'fontsizeselect' => '<!--fontsizeselect-->',
+			'styleselect' => 'Formats',
+			'formatselect' => 'Paragraph',
+			'fontselect' => 'Font Family',
+			'fontsizeselect' => 'Font Sizes',
 			'cut' => 'Cut',
 			'copy' => 'Copy',
 			'paste' => 'Paste',
-			'bullist' => 'Bullet List',
-			'numlist' => 'Numbered List',
-			'outdent' => 'Outdent',
-			'indent' => 'Indent',
-			'blockquote' => 'Quote',
+			'bullist' => 'Bulleted list',
+			'numlist' => 'Numbered list',
+			'outdent' => 'Decrease indent',
+			'indent' => 'Increase indent',
+			'blockquote' => 'Blockquote',
 			'undo' => 'Undo',
 			'redo' => 'Redo',
-			'removeformat' => 'Remove Formatting',
+			'removeformat' => 'Clear formatting',
 			'subscript' => 'Subscript',
 			'superscript' => 'Superscript',
 
 			// From plugins
-			'hr' => 'Horizontal Rule',
-			'link' => 'Link',
-			'unlink' => 'Remove Link',
-			'image' => 'Edit Image',
-			'charmap' => 'Character Map',
-			'pastetext' => 'Paste as Text',
+			'hr' => 'Horizontal line',
+			'link' => 'Insert/edit link',
+			'unlink' => 'Remove link',
+			'image' => 'Insert/edit image',
+			'charmap' => 'Special character',
+			'pastetext' => 'Paste as text',
 			'print' => 'Print',
-			'anchor' => 'Insert Anchor',
-			'searchreplace' => 'Search/Replace',
-			'visualblocks' => 'Visual Blocks',
-		//	'visualchars' => 'Hidden Chars',
-			'code' => 'HTML code',
-			'fullscreen' => 'Full Screen',
-			'insertdatetime' => 'Insert Date/Time',
-			'media' => 'Insert Media',
-			'nonbreaking' => 'Non-Break Space',
+			'anchor' => 'Anchor',
+			'searchreplace' => 'Find and replace',
+			'visualblocks' => 'Show blocks',
+		//	'visualchars' => 'Hidden chars',
+			'code' => 'Source code',
+			'fullscreen' => 'Fullscreen',
+			'insertdatetime' => 'Insert date/time',
+			'media' => 'Insert/edit video',
+			'nonbreaking' => 'Nonbreaking space',
 			'table' => 'Table',
-			'ltr' => 'Left to Right',
-			'rtl' => 'Right to Left',
+			'ltr' => 'Left to right',
+			'rtl' => 'Right to left',
 			'emoticons' => 'Emoticons',
-			'forecolor' => 'Text Color',
-			'backcolor' => 'Text Background',
+			'forecolor' => 'Text color',
+			'backcolor' => 'Background color',
 
 			// Layer plugin ?
 		//	'insertlayer' => 'Layer',
 
 			// WP
-			'wp_adv'		=> 'Toolbar toggle',
-			'wp_help'		=> 'Help',
-			'wp_more'		=> 'More Tag',
-			'wp_page'		=> 'Page Break',
+			'wp_adv'		=> 'Toolbar Toggle',
+			'wp_help'		=> 'Keyboard Shortcuts',
+			'wp_more'		=> 'Read more...',
+			'wp_page'		=> 'Page break',
 		);
 */
 //************ FI
-
-		if ( function_exists('moxiecode_plugins_url') ) {
-			if ( moxiecode_plugins_url('imagemanager') )
-				$buttons['insertimage'] = 'MC Image Manager';
-
-			if ( moxiecode_plugins_url('filemanager') )
-				$buttons['insertfile'] = 'MC File Manager';
-		}
 
 		// add/remove allowed buttons
 		$buttons = apply_filters( 'tadv_allowed_buttons', $buttons );
@@ -362,6 +392,9 @@ class Tinymce_Advanced {
 		if ( $this->check_setting( 'contextmenu' ) )
 			$plugins[] = 'contextmenu';
 
+		if ( $this->check_admin_setting( 'textpattern' ) )
+			$plugins[] = 'textpattern';
+
 		// add/remove used plugins
 		$plugins = apply_filters( 'tadv_used_plugins', $plugins, $this->used_buttons );
 
@@ -387,10 +420,6 @@ class Tinymce_Advanced {
 		}
 
 		$buttons_1 = $this->toolbar_1;
-
-		if ( 'content' === $editor_id && ! in_array( 'wp_adv', $buttons_1, true ) ) {
-			add_action( 'wp_enqueue_editor', array( &$this, 'wp_enqueue_editor' ) );
-		}
 
 		if ( is_array( $original ) && ! empty( $original ) ) {
 			$original = array_diff( $original, $this->buttons_filter );
@@ -473,7 +502,25 @@ class Tinymce_Advanced {
 			$init['importcss_file_filter'] = 'editor-style.css';
 		}
 
+		if ( $this->check_admin_setting( 'fontsize_formats' ) ) {
+			$init['fontsize_formats'] =  '8px 10px 12px 14px 16px 20px 24px 28px 32px 36px';
+		}
+
+		if ( $this->check_setting( 'paste_images' ) ) {
+			$init['paste_data_images'] = true;
+			$init['paste_word_valid_elements'] = '-strong/b,-em/i,-span,-p,-ol,-ul,-li,-h1,-h2,-h3,-h4,-h5,-h6,-p/div,-a[href|name],' .
+				'-table[width],-tr,-td[colspan|rowspan|width],-th,-thead,-tfoot,-tbody,sub,sup,strike,br,del,ins,img[src|alt|title|height|width]';
+		}
+
 		return $init;
+	}
+
+	function after_wp_tiny_mce() {
+		if ( $this->check_setting('menubar') ) {
+			?>
+			<style type="text/css">.wp-fullscreen-wrap .mce-menubar { position: static !important; width: auto !important; }</style>
+			<?php
+		}
 	}
 
 	function htmledit( $c ) {
@@ -526,14 +573,6 @@ class Tinymce_Advanced {
 		return $plugins;
 	}
 
-	function wp_enqueue_editor( $array ) {
-		if ( ! empty( $array['tinymce'] ) ) {
-			?>
-			<script>if ( typeof setUserSetting !== 'undefined' ) setUserSetting( 'hidetb', '1' );</script>
-			<?php
-		}
-	}
-
 	private function parse_buttons( $toolbar_id = false, $buttons = false ) {
 		if ( $toolbar_id && ! $buttons && ! empty( $_POST[$toolbar_id] ) )
 			$buttons = $_POST[$toolbar_id];
@@ -574,13 +613,14 @@ class Tinymce_Advanced {
 	}
 
 	function settings_page() {
-		if ( ! defined( 'TADV_ADMIN_PAGE' ) )
+		if ( ! defined( 'TADV_ADMIN_PAGE' ) ) {
 			define( 'TADV_ADMIN_PAGE', true );
+		}
 
 		include_once( TADV_PATH . 'tadv_admin.php' );
 	}
 
-	function menu() {
+	function add_menu() {
 		add_options_page( 'TinyMCE Advanced', 'TinyMCE Advanced', 'manage_options', 'tinymce-advanced', array( &$this, 'settings_page' ) );
 	}
 }
