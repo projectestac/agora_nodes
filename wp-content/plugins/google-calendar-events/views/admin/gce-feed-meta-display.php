@@ -77,7 +77,7 @@
 
 <table class="form-table">
 
-<!-- XTEC *** REMOVED - Moved code down -->
+<!-- XTEC *** ELIMINAT - Moved code down -->
 <!--
 	<tr>
 		<th scope="row"><?php _e( 'Feed Shortcode', 'gce' ); ?></th>
