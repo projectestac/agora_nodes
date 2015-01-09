@@ -29,8 +29,8 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 // Force https on login
-define('FORCE_SSL_LOGIN', true);
-if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+define('FORCE_SSL_ADMIN', true);
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
     $_SERVER['HTTPS'] = 'on';
 }
 
