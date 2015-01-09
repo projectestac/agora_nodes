@@ -141,6 +141,9 @@ function bp_like_admin_page() {
 
             </table> 
 
+            <!-- XTEC *** ELIMINAT - Don't show the "about this plugin" info -->
+            <!-- 2015.01.09 @aginard -->
+            <!--
             <div id="bplike-about" style="float:right; background:#fff;max-width:300px;padding:20px;margin-bottom:30px;">
                 <h3 class="hndle"><span>About BuddyPress Like</span></h3>
                 <p><strong>Version: <?php echo BP_LIKE_VERSION; ?></strong></p>
@@ -162,7 +165,9 @@ function bp_like_admin_page() {
 
                 </div>          
             </div>
-
+            -->
+            <!-- *** FI -->
+            
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row"><?php _e( 'Custom Messages' , 'buddypress-like' ); ?></th>
