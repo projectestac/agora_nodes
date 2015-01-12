@@ -148,7 +148,7 @@ if ( !function_exists('reactor_customize_register') ) {
 			 ) );
 			 
 			$wp_customize->add_control('reactor_options[tamany_font_nom]', array( 
-				'label'   => __('Tamany de la lletra', 'custom_tac'),
+				'label'   => __('Mida de la lletra', 'custom_tac'),
 				'section' => 'reactor_customizer_capcalera',
 				'type'    => 'select',
 				'choices' => array( 
