@@ -1,0 +1,27 @@
+/* 
+    Document   : grup-classe.css
+    Created on : 19-dic-2014, 17:05:07
+    Author     : jmeler
+    Description:
+        Stylesheet of grup-classe plugin
+*/
+
+.grup_classe_widget_class ul {
+    list-style-type: none;
+}
+
+.grup_classe_widget_class ul,
+.grup_classe_widget_class .widget_gce_widget,
+.grup_classe_widget_class .widget_nav_menu,
+.grup_classe_widget_class .widget_text {
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.grup_classe_widget_class .menu-item a:before{
+    content: "- ";
+}
+
+.widgets-holder-wrap .widget-inside {
+    line-height: 20px;
+}
