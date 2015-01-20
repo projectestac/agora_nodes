@@ -38,36 +38,6 @@ function reactor_do_reactor_head() { ?>
 
 <script>
 
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-function checkMenuCookie() {
-    var menu = getCookie("mostraMenu");
-    if (menu == 1) {
- 		document.getElementById("menu-panel").style.display="inline-block";
- 		document.getElementById("icon-menu").setAttribute("class", "dashicons dashicons-no-alt");
- 		document.getElementById("icon-23").setAttribute("backgroundColor", "yellow");
-    } else {
-    	document.getElementById("menu-panel").style.display="none";
-    	document.getElementById("icon-menu").setAttribute("class", "dashicons dashicons-menu");
-    }
-}
-
 function menu_toggle(){
 	$icon_menu=document.getElementById("icon-menu");
 	$menu_panel=document.getElementById("menu-panel");
