@@ -733,7 +733,7 @@ Barra lateral
 }
 
 #sidebar, #sidebar-category{
-    padding: 1em 1em 1em 2em;
+    padding: 2em 1em 1em 2em;
     background-color:white;
 }
 
@@ -982,6 +982,7 @@ ul.pagination li.current a {
 }
 ul.pagination li.current a:hover {
     cursor: pointer;
+    background: #E5E5E5;
 }
  
 /*****************************************************************
