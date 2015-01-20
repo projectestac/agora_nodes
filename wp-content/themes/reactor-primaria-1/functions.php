@@ -281,8 +281,8 @@ if ( function_exists('register_sidebar') ) {
     'after_widget' => '</div>
     ',
     'before_title' => '
-    <h2 class="widgettitle">',
-    'after_title' => '</h2>
+    <h4 class="widgettitle">',
+    'after_title' => '</h4>
     '
     ));
 }
