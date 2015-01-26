@@ -52,7 +52,8 @@ jQuery(document).ready( function($)
     <div style="margin-bottom:1.5em" class="welcome-panel-column welcome-panel-last">
         <h4><?php _e( "Necessites ajuda?" ); ?></h4>
         
-        <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302"><?php _e( 'Preguntes més freqüents' ); ?></a> <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/course/view.php?id=201"><?php _e( 'Espai de suport a Àgora' ); ?></a>
+        <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302"><?php _e( 'Preguntes més freqüents' ); ?></a> 
+        <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/mod/forum/view.php?id=1721"><?php _e( 'Espai de suport a Àgora' ); ?></a>
     </div>
 
     
