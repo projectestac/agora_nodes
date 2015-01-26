@@ -99,7 +99,7 @@ function custom_toolbar($wp_toolbar) {
     $wp_toolbar->add_node( array(
     	'parent' => 'site-name',
     	'id' => 'entrades', 
-    	'title' => __('Entrades'), 
+    	'title' => __('Articles'), 
     	'href' => admin_url( 'edit.php') 
     ));
     $wp_toolbar->add_node( array(
