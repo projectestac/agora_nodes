@@ -192,7 +192,6 @@ if ( !function_exists('reactor_customize_register') ) {
 				    'label' => __('Imatge de capçalera', 'custom_tac'),
 				    'section' => 'reactor_customizer_capcalera',
 				    'settings' => 'reactor_options[imatge_capcalera]',
-				    'description'=> 'Si voleu carrusel, no definiu cap imatge aquí', //Funcionarà a WP4
 				    'priority' => 4
 				)
 			    )
@@ -213,8 +212,8 @@ if ( !function_exists('reactor_customize_register') ) {
 				'theme_supports' => 'reactor-fonts',
 			 ) );
 				$wp_customize->add_control('reactor_options[carrusel]', array( 
-					'label'    => __('Carrusel (no aplica si hi ha una imatge de capçalera definida) ', 'reactor'),
-					'description'=> 'No aplica si hi ha una imatge de capçalera definida)', //Funcionarà a WP4
+					'label'    => __('Carrusel', 'reactor'),
+					'description'=> 'No aplica si hi ha una imatge de capçalera definida', 
 					'section'  => 'reactor_customizer_capcalera',
 					'type'     => 'select',
 					'choices'  => $aCarrusel,
@@ -257,6 +256,7 @@ if ( !function_exists('reactor_customize_register') ) {
 					'label'    => __('Favicon', 'reactor'),
 					'section'  => 'reactor_customizer_capcalera',
 					'settings' => 'reactor_options[favicon_image]',
+                                        'description' => 'Icona a la pestanya del navegador',
 					'priority' => 7,
 				 ) ) );    
 
@@ -350,7 +350,8 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 				$wp_customize->add_control('reactor_options[googleMaps]', array( 
-					'label'    => __('Mapa (adreça Google Maps)', 'custom_tac'),
+					'label'    => __('Mapa', 'custom_tac'),
+                                        'description' => 'Adreça de Google Maps',
 					'section'  => 'reactor_customizer_idcentre',
 					'priority' => 7,
 				 ) );
@@ -362,8 +363,9 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 				$wp_customize->add_control('reactor_options[emailCentre]', array( 
-					'label'    => __('Contacte principal (email) o pàgina de contacte', 'custom_tac'),
+					'label'    => __('Contacte principal', 'custom_tac'),
 					'section'  => 'reactor_customizer_idcentre',
+                                        'description' => 'Email o pàgina de contacte',
 					'priority' => 8,
 				 ) );
 				 				 							
