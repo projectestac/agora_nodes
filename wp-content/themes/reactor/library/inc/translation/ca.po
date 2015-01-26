@@ -152,13 +152,13 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/image.php:48
 msgid "Next &rarr;"
-msgstr ""
+msgstr "Següent &rarr"
 
 #: D:\Documents\GitHub/reactor/image.php:98
 #: D:\Documents\GitHub/reactor/library/inc/content/content-pages.php:36
 #: D:\Documents\GitHub/reactor/post-formats/format-standard.php:25
 msgid "Pages:"
-msgstr ""
+msgstr "Pàgines:"
 
 #: D:\Documents\GitHub/reactor/search.php:28
 #, php-format
@@ -982,23 +982,23 @@ msgstr ""
 #: D:\Documents\GitHub/reactor/library/inc/functions/helpers.php:274
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Pàgina %s"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/page-links.php:42
 msgid "Older posts"
-msgstr ""
+msgstr "Anteriors"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/page-links.php:45
 msgid "Newer posts"
-msgstr ""
+msgstr "Recents"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/page-links.php:72
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; Anterior"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/page-links.php:73
 msgid "Next &raquo;"
-msgstr ""
+msgstr "Següent &raquo;"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/page-links.php:121
 msgid "&hellip;"
