@@ -58,7 +58,7 @@ class Grup_classe_Widget extends WP_Widget {
     // Show form in admin back-end
     function form ($instance){
         $defaults = array (
-            'horari_families' =>'dl. 00:00-00:00'
+            'horari_families' =>'dl. 00:00-00:00',
         );
         
         $instance       = wp_parse_args((array) $instance, $defaults);
@@ -131,10 +131,12 @@ class Grup_classe_Widget extends WP_Widget {
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
-            Horari d'atenció a les famílies:<br>
+            
+             Horari d'atenció a les famílies:<br>
                 <input name="<?php echo $this->get_field_name('horari_families');?>"
                        type="text" 
-                       value="<?php echo esc_attr( $horari_families ); ?>" </br>
+                       value="<?php echo esc_attr( $horari_families ); ?>" /></br>    
+                
         </div>
         <br>      
         <!-- Enllaços -->
