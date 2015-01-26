@@ -936,7 +936,7 @@ msgid ""
 "\t<li>Are you sure that the database server is running?</li>\n"
 "</ul>\n"
 "<p>If you're unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href='https://wordpress.org/support/'>WordPress Support Forums</a>.</p>\n"
-msgstr ""
+msgstr "\n"
 "<h1>Error en establir una connexió a la base de dades</h1>\n"
 "<p>Això pot ser bé perquè el nom d'usuari i la contrasenya al fitxer <code>wp-config.php</code> siguin incorrectes o que no hagi estat possible contactar amb el servidor de base de dades a <code>%s</code>. Podria ser que el servidor de la base de dades fos fora de línia.</p>\n"
 "<ul>\n"
@@ -1643,7 +1643,7 @@ msgstr "Insereix des d'una URL"
 
 #: wp-includes/media.php:2967
 msgid "Set Featured Image"
-msgstr "Defineix la imatge destacada"
+msgstr "Defineix la imatge resum"
 
 #: wp-includes/default-widgets.php:197
 msgctxt "Links widget"
@@ -1664,7 +1664,7 @@ msgstr "Inverteix l'ordre"
 
 #: wp-includes/media.php:2968
 msgid "Set featured image"
-msgstr "Defineix la imatge destacada"
+msgstr "Defineix la imatge resum"
 
 #: wp-includes/media-template.php:458
 msgid "Deselect"
@@ -2921,7 +2921,7 @@ msgstr "Aprova i respon"
 
 #: wp-includes/post.php:1633
 msgid "All Posts"
-msgstr "Totes les entrades"
+msgstr "Tots els articles"
 
 #: wp-includes/post.php:1633
 msgid "All Pages"
@@ -3514,7 +3514,7 @@ msgstr "Pàgina mare"
 #: wp-includes/post.php:1622
 msgctxt "post type general name"
 msgid "Posts"
-msgstr "Entrades"
+msgstr "Articles"
 
 #: wp-includes/post.php:1626
 msgid "Edit Page"
@@ -3522,7 +3522,7 @@ msgstr "Edita pàgina"
 
 #: wp-includes/post.php:1629
 msgid "Search Posts"
-msgstr "Cerca a les entrades"
+msgstr "Cerca als articles"
 
 #: wp-includes/post.php:1625
 msgid "Add New Page"
@@ -4331,7 +4331,7 @@ msgstr "Mostra la jerarquia"
 
 #: wp-includes/default-widgets.php:654 wp-includes/default-widgets.php:683
 msgid "Recent Posts"
-msgstr "Entrades recents"
+msgstr "Articles recents"
 
 #: wp-includes/default-widgets.php:766
 msgid "Number of posts to show:"
@@ -4592,11 +4592,11 @@ msgstr "%1$s %2$s Resultats de la cerca per al Canal &quot;%3$s&quot; "
 
 #: wp-includes/general-template.php:2483
 msgid "&laquo; Previous"
-msgstr "&laquo; Entrades anteriors"
+msgstr "&laquo; Articles anteriors"
 
 #: wp-includes/general-template.php:2484
 msgid "Next &raquo;"
-msgstr "Entrades següents &raquo;"
+msgstr "Articles següents &raquo;"
 
 #: wp-includes/class-http.php:194
 msgid "User has blocked requests through HTTP."
@@ -5329,7 +5329,7 @@ msgstr "Lloc web: %1$s (IP: %2$s, %3$s)"
 
 #: wp-includes/pluggable.php:1389 wp-includes/pluggable.php:1399
 msgid "Excerpt: "
-msgstr "Extracte: "
+msgstr "Resum: "
 
 #: wp-includes/pluggable.php:1390
 msgid "You can see all trackbacks on this post here: "
@@ -5367,11 +5367,11 @@ msgstr "Lloc web : %1$s (IP: %2$s, %3$s)"
 
 #: wp-includes/pluggable.php:1524
 msgid "Trackback excerpt: "
-msgstr "Extracte del retroenllaç: "
+msgstr "Resum del retroenllaç: "
 
 #: wp-includes/pluggable.php:1531
 msgid "Pingback excerpt: "
-msgstr "Extracte del retroping: "
+msgstr "Resum del retroping: "
 
 #: wp-includes/pluggable.php:1544
 msgid "Approve it: %s"
@@ -5462,8 +5462,8 @@ msgstr "Publicada"
 #: wp-includes/post.php:115
 msgid "Published <span class=\"count\">(%s)</span>"
 msgid_plural "Published <span class=\"count\">(%s)</span>"
-msgstr[0] "Publicada <span class=\"count\">(%s)</span>"
-msgstr[1] "Publicades <span class=\"count\">(%s)</span>"
+msgstr[0] "Publicat <span class=\"count\">(%s)</span>"
+msgstr[1] "Publicats <span class=\"count\">(%s)</span>"
 
 #: wp-includes/post.php:119
 msgctxt "post"
@@ -5602,11 +5602,11 @@ msgstr "S'ha produït un error no identificat."
 
 #: wp-includes/script-loader.php:225
 msgid "Next &gt;"
-msgstr "Entrades següents &gt;"
+msgstr "Articles següents &gt;"
 
 #: wp-includes/script-loader.php:226
 msgid "&lt; Prev"
-msgstr "&lt; Entrades anteriors"
+msgstr "&lt; Articles anteriors"
 
 #: wp-includes/script-loader.php:227
 msgid "Image"
@@ -6307,7 +6307,7 @@ msgstr "Visita el web de %s"
 
 #: wp-includes/author-template.php:251 wp-includes/author-template.php:389
 msgid "Posts by %s"
-msgstr "Entrades de %s"
+msgstr "Articles de %s"
 
 #: wp-includes/bookmark-template.php:83
 msgid "Last updated: %s"
@@ -6496,7 +6496,7 @@ msgstr "Publica"
 
 #: wp-includes/revision.php:31
 msgid "Excerpt"
-msgstr "Extracte"
+msgstr "Resum"
 
 #: wp-includes/post.php:82
 msgid "Revisions"
@@ -6591,11 +6591,11 @@ msgstr "Afegeix"
 
 #: wp-includes/post.php:1628
 msgid "View Post"
-msgstr "Mostra l'entrada"
+msgstr "Mostra l'article"
 
 #: wp-includes/post.php:1626
 msgid "Edit Post"
-msgstr "Edita l'entrada"
+msgstr "Edita l'article"
 
 #: wp-includes/admin-bar.php:374
 msgid "Users"

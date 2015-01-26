@@ -4968,8 +4968,8 @@ msgstr "<strong>Tingueu en compte:</strong> Qualsevol personalització que hàge
 msgctxt "posts"
 msgid "Sticky <span class=\"count\">(%s)</span>"
 msgid_plural "Sticky <span class=\"count\">(%s)</span>"
-msgstr[0] "Enganxada <span class=\"count\">(%s)</span>"
-msgstr[1] "Enganxades <span class=\"count\">(%s)</span>"
+msgstr[0] "Fixat <span class=\"count\">(%s)</span>"
+msgstr[1] "Fixats <span class=\"count\">(%s)</span>"
 
 #: wp-admin/update-core.php:508
 msgid "Please select one or more plugins to update."
@@ -5632,7 +5632,7 @@ msgstr "<strong>Publica</strong> - Podeu establir les condicions de publicació 
 
 #: wp-admin/edit-form-advanced.php:350
 msgid "<strong>Featured Image</strong> - This allows you to associate an image with your post without inserting it. This is usually useful only if your theme makes use of the featured image as a post thumbnail on the home page, a custom header, etc."
-msgstr "<strong>Imatge destacada</strong> - Això permet associar una imatge amb l'entrada sense haver d'inserir-la. Això sol ser útil només si el tema fa servir la característica d'imatge destacada com a previsualització de l'entrada a la pàgina principal, en una capçalera personalitzada, etcètera."
+msgstr "<strong>Imatge resum</strong> - Això permet associar una imatge amb l'entrada sense haver d'inserir-la. Això sol ser útil només si el tema fa servir la característica d'imatge destacada com a previsualització de l'entrada a la pàgina principal, en una capçalera personalitzada, etcètera."
 
 #: wp-admin/edit-form-advanced.php:280
 msgid "<strong>Title</strong> - Enter a title for your post. After you enter a title, you&#8217;ll see the permalink below, which you can edit."
@@ -6188,7 +6188,7 @@ msgstr "Suprimeix la imatge destacada"
 
 #: wp-admin/edit-form-advanced.php:196
 msgid "Featured Image"
-msgstr "Imatge destacada"
+msgstr "Imatge resum"
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:241
 #: wp-admin/includes/class-wp-theme-install-list-table.php:362
@@ -8384,7 +8384,7 @@ msgstr "No s'ha trobat cap comentari."
 
 #: wp-admin/edit-form-advanced.php:66
 msgid "Post updated. <a href=\"%s\">View post</a>"
-msgstr "S'ha actualitzat l'entrada. <a href=\"%s\">Mostra l'entrada</a>"
+msgstr "S'ha actualitzat l'article. <a href=\"%s\">Mostra l'article</a>"
 
 #: wp-admin/edit-form-advanced.php:67 wp-admin/edit-form-advanced.php:83
 msgid "Custom field updated."
@@ -8405,19 +8405,19 @@ msgstr "Entrada restaurada a revisió des de %s"
 
 #: wp-admin/edit-form-advanced.php:72
 msgid "Post published. <a href=\"%s\">View post</a>"
-msgstr "Entrada publicada. <a href=\"%s\">Mostra l'entrada</a>"
+msgstr "Article publicat. <a href=\"%s\">Mostra l'article</a>"
 
 #: wp-admin/edit-form-advanced.php:73
 msgid "Post saved."
-msgstr "Entrada desada."
+msgstr "Article desat."
 
 #: wp-admin/edit-form-advanced.php:74
 msgid "Post submitted. <a target=\"_blank\" href=\"%s\">Preview post</a>"
-msgstr "Entrada enviada. <a target=\"_blank\" href=\"%s\">Previsualitza l'entrada</a>"
+msgstr "Article enviat. <a target=\"_blank\" href=\"%s\">Previsualitza l'article</a>"
 
 #: wp-admin/edit-form-advanced.php:75
 msgid "Post scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview post</a>"
-msgstr "Entrada programada per al:  <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Mostra l'entrada </a>"
+msgstr "Article programat per al:  <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Mostra l'article </a>"
 
 #. translators: Publish box date format, see http:php.net/date
 #: wp-admin/edit-form-advanced.php:77 wp-admin/edit-form-advanced.php:90
@@ -8428,7 +8428,7 @@ msgstr "d-m-Y \\a \\l\\e\\s G:i"
 
 #: wp-admin/edit-form-advanced.php:78
 msgid "Post draft updated. <a target=\"_blank\" href=\"%s\">Preview post</a>"
-msgstr "Esborrany d'entrada actualitzat. <a target=\"_blank\" href=\"%s\">Mostra l'entrada</a>"
+msgstr "Esborrany d'article actualitzat. <a target=\"_blank\" href=\"%s\">Mostra l'article</a>"
 
 #: wp-admin/edit-form-advanced.php:82
 msgid "Page updated. <a href=\"%s\">View page</a>"
@@ -8664,7 +8664,7 @@ msgstr "Continua"
 #: wp-admin/export.php:159 wp-admin/includes/class-wp-users-list-table.php:266
 #: wp-admin/menu.php:49
 msgid "Posts"
-msgstr "Entrades"
+msgstr "Articles"
 
 #: wp-admin/includes/import.php:158
 msgid "Blogger"
@@ -9607,7 +9607,8 @@ msgstr "Nom de la nova categoria"
 
 #: wp-admin/includes/meta-boxes.php:526
 msgid "Excerpts are optional hand-crafted summaries of your content that can be used in your theme. <a href=\"http://codex.wordpress.org/Excerpt\" target=\"_blank\">Learn more about manual excerpts.</a>"
-msgstr "Els extractes són resums opcionals del contingut escrits manualment que podeu usar al tema. <a href=\"http://codex.wordpress.org/Excerpt\" target=\"_blank\">Apreneu més sobre els resums manuals (en anglès)</a>"
+msgstr "Si no definiu Resum, es mostraran les primeres 45 paraules de l'article"
+#msgstr "Els extractes són resums opcionals del contingut escrits manualment que podeu usar al tema. <a href=\"http://codex.wordpress.org/Excerpt\" target=\"_blank\">Apreneu més sobre els resums manuals (en anglès)</a>"
 
 #: wp-admin/includes/meta-boxes.php:540
 msgid "Already pinged:"
