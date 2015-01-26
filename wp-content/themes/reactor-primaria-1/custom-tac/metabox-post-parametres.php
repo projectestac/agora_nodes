@@ -40,8 +40,8 @@ function metabox1_callback( $post ) {
 	$ck_bloc_html = get_post_meta( $post->ID, '_bloc_html', true );
         $ck_original_size = get_post_meta( $post->ID, '_original_size', true );
         
-        echo '<input type="checkbox" id="original_size" name="original_size" '.checked( $ck_original_size,'on' ,false ).'/> Imatge destacada amb mida original<br>';
-	echo '<input type="checkbox" id="bloc_html" name="bloc_html" '.checked( $ck_bloc_html,'on' ,false ).'/> Mostra contingut sencer, no un resum<br>';
+        echo '<input type="checkbox" id="original_size" name="original_size" '.checked( $ck_original_size,'on' ,false ).'/> Imatge resum amb mida original<br>';
+	echo '<input type="checkbox" id="bloc_html" name="bloc_html" '.checked( $ck_bloc_html,'on' ,false ).'/> Mostra contingut sencer<br>';
 	echo '<input type="checkbox" id="amaga_titol" name="amaga_titol" '.checked( $ck_hide_title,'on', false ).' /> Amaga títol<br>';
 	echo '<input type="checkbox" id="amaga_metadata" name="amaga_metadata" '.checked( $ck_hide_metadata,'on',false ).'/> Amaga metadades';
 
@@ -51,7 +51,7 @@ function metabox1_callback( $post ) {
         <select id="entry_icon" name="entry_icon">
             <option value="noicon" <?php selected( $entry_icon, "noicon" ); ?>></option>
             <option value="video" <?php selected( $entry_icon, "video" ); ?>>Vídeo</option>
-            <option value="carrusel" <?php selected( $entry_icon, "carrusel" ); ?>>Carrusel</option>
+            <option value="carrusel" <?php selected( $entry_icon, "carrusel" ); ?>>Foto/Carrusel</option>
             <option value="podcast" <?php selected( $entry_icon, "podcast" ); ?>>Podcast</option>
             <option value="document" <?php selected( $entry_icon, "document" ); ?>>Document</option>
             <option value="musica" <?php selected( $entry_icon, "musica" ); ?>>Música</option>
