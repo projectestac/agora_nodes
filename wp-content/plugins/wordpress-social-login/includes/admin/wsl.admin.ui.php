@@ -66,7 +66,13 @@ function wsl_admin_main()
 
 // XTEC ************ MODIFICAT - Hide tabs "Widget" and "Components"
 // 2014.11.14 @aginard
-	$wslp            = "users";
+    global $isAgora;
+    
+    if ($isAgora) {
+        $wslp        = "users";
+    } else {
+    	$wslp        = "networks";
+    }
 //************ ORIGINAL
 /*
 	$wslp            = "networks";
