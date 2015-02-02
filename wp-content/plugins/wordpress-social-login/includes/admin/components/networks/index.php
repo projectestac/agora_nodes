@@ -46,7 +46,8 @@ function wsl_component_networks()
 
                     // XTEC ************ AFEGIT - Remove side boxes
                     // 2014.11.14 @aginard
-                    if (is_xtecadmin()) {
+                    global $isAgora, $isBlocs;
+                    if (($isAgora && !is_xtecadmin()) && !$isBlocs) {
                     //************ FI
 
 						wsl_component_networks_sidebar();

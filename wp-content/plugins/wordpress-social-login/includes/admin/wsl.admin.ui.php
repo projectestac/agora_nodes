@@ -375,8 +375,9 @@ function wsl_admin_welcome_panel()
 
 <!-- XTEC ************ AFEGIT - Remove Welcome banner -->
 <!-- 2014.11.14 @aginard -->
-<?php 
-    if (!is_xtecadmin()) {
+<?php
+    global $isAgora, $isBlocs;
+    if (($isAgora && !is_xtecadmin()) && !$isBlocs) {
         echo '<!--';
     }
 //************ FI (The following close PHP tag belongs to the patch) ?>
@@ -435,7 +436,7 @@ function wsl_admin_welcome_panel()
 
 // XTEC ************ AFEGIT - Remove Welcome banner
 // 2014.11.14 @aginard
-    if (!is_xtecadmin()) {
+    if (($isAgora && !is_xtecadmin()) && !$isBlocs) {
         echo '-->';
     }
 //************ FI

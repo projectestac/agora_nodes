@@ -332,7 +332,8 @@ function wsl_component_bouncer_setup_membership_level()
 
 // XTEC ************ AFEGIT - Hide "Filters by profile urls"
 // 2014.11.14 @aginard
-    if (!is_xtecadmin()) {
+    global $isAgora;
+    if ($isAgora && !is_xtecadmin()) {
         echo '<!--';
     }
 //************ FI
@@ -384,7 +385,7 @@ function wsl_component_bouncer_setup_filters_domains()
 
 // XTEC ************ AFEGIT -  Hide "Filters by profile urls"
 // 2014.11.14 @aginard
-    if (!is_xtecadmin()) {
+    if ($isAgora && !is_xtecadmin()) {
         echo '-->';
     }
 //************ FI
