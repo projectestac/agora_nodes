@@ -122,12 +122,12 @@ class Grup_classe_Widget extends WP_Widget {
         <br>          
         <!-- Informació Tutoria -->
         <div>
-            <strong><span class="dashicons dashicons-admin-users"></span>Informació Tutorial</strong><br>
+            <strong><span class="dashicons dashicons-admin-users"></span>Informació del tutor/a</strong><br>
                 Nom del tutor/a:<br>
                 <input name="<?php echo $this->get_field_name('nom_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $nom_tutor ); ?>" /></br>
-            Email del tutor:<br>
+            Bústia del tutor/a:<br>
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
