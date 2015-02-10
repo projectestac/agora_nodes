@@ -220,9 +220,9 @@ function wsl_component_networks_setup()
 
 				<br />
 
-                <!--// XTEC ************ AFEGIT - Customize help info for Moodle provider. -->
+                <!--// XTEC ************ AFEGIT - Customize help info for Moodle and Google providers. -->
                 <!--// 2014.11.19 @aginard -->
-                <?php if ($provider_id != 'Moodle') : ?>
+                <?php if (($provider_id != 'Moodle') && ($provider_id != 'Google')) : ?>
                 <!--//************ FI -->
                 
 				<div
@@ -344,16 +344,23 @@ function wsl_component_networks_setup()
 					<?php endif; ?> 
 				</div>
                 
-                <!--// XTEC ************ AFEGIT - Customize help info for Moodle provider. Not using gettext, sorry! :( -->
+                <!--// XTEC ************ AFEGIT - Customize help info for Moodle and Google providers. Not using gettext, sorry! :( -->
                 <!--// 2014.11.19 @aginard -->
-                <?php else : ?>
+                <?php else : if ($provider_id == 'Moodle') : ?>
                 <div
                     class="wsl_div_settings_help_<?php echo $provider_id; ?>"
 					style="<?php if( isset( $_REQUEST["enable"] ) && ! isset( $_REQUEST["settings-updated"] ) && $_REQUEST["enable"] == $provider_id ) echo "-"; // <= lolz ?>display:none;">
                     <hr class="wsl" />
-                    <p>Per fer que els usuaris del Moodle puguin entrar a l'espai Nodes automàticament, visiteu la pàgina <a href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302&mode=cat&hook=201" target="_blank">http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302&mode=cat&hook=201</a> i seguiu les instruccions.</p><p>Heu de tenir en compte que cada vegada que un usuari/ària del Moodle entri, se li crearà automàticament un compte a Nodes.</p>
+                    <p>Per fer que els usuaris del Moodle puguin entrar a l'espai Nodes automàticament, visiteu la pàgina <a href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302&mode=cat&hook=201" target="_blank">http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302&mode=cat&hook=201</a> i seguiu les instruccions.</p><p>Heu de tenir en compte que la primera vegada que un usuari/ària del Moodle entri, se li crearà automàticament un compte a Nodes en cas que no en tingui.</p>
                 </div>
-                <?php endif; ?>
+                <?php endif; if ($provider_id == 'Google') : ?>
+                <div
+                    class="wsl_div_settings_help_<?php echo $provider_id; ?>"
+					style="<?php if( isset( $_REQUEST["enable"] ) && ! isset( $_REQUEST["settings-updated"] ) && $_REQUEST["enable"] == $provider_id ) echo "-"; // <= lolz ?>display:none;">
+                    <hr class="wsl" />
+                    <p>Per fer que els usuaris del Google puguin entrar a l'espai Nodes automàticament, visiteu la pàgina <a href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1741&mode=entry&hook=2281" target="_blank">http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1741&mode=entry&hook=2281</a> i seguiu les instruccions.</p><p>Heu de tenir en compte que la primera vegada que un usuari/ària del Google entri, se li crearà automàticament un compte a Nodes en cas que no en tingui.</p>
+                </div>
+                <?php endif; endif; ?>
                 <!--//************ FI -->
 
 			</div>
