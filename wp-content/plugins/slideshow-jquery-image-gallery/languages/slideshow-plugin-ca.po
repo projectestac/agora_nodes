@@ -194,7 +194,7 @@ msgstr "En acabar, el carrusel comença de nou"
 #: classes/SlideshowPluginInstaller.php:818
 msgid "Activate buttons (so the user can scroll through the slides)"
 msgstr ""
-"Activa els botons (l'usuari/ària podrà desplaçar-se a través de les "
+"Activa les fletxes de navegació (l'usuari/ària podrà desplaçar-se a través de les "
 "diapositives)"
 
 #: classes/SlideshowPluginInstaller.php:819
@@ -363,16 +363,16 @@ msgstr "Pausa el carrusel quan el ratolí passi per sobre"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:534
 msgid "Activate navigation buttons"
-msgstr "Activa els botons de navegació"
+msgstr "Activa les fletxes de navegació"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:535
 msgid "Hide navigation buttons, show when mouse hovers over"
 msgstr ""
-"Amaga els botons de navegació, mostra'ls quan el ratolí passi per sobre"
+"<span class='dashicons dashicons-arrow-right'></span>Amaga fins que el ratolí passi per sobre"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:536
 msgid "Activate pagination"
-msgstr "Paginació"
+msgstr "Punts de paginació"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:537
 msgid "Hide pagination, show when mouse hovers over"

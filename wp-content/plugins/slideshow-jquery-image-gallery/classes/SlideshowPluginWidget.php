@@ -20,20 +20,16 @@ class SlideshowPluginWidget extends WP_Widget
 		// Settings
 		// XTEC ************ MODIFICAT - Translation hardcoded because gettext doesn't works here
 		// 2014.10.10 @jmeler
-
-
 		$options = array(
 			'classname'   => 'SlideshowWidget',
 			'description' => 'Mostra un carrusel a la zona de ginys triada'
 		);
-
 		// Create the widget.
 		$this->WP_Widget(
 			'slideshowWidget',
 			'Carrusel',
 			$options
 		);
-
 		//************ ORIGINAL
 		/*
 		$options = array(
