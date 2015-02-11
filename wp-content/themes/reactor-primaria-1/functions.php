@@ -26,6 +26,16 @@
  * Reference the functions.php file in Reactor for add_theme_support functions
  */
 
+include "custom-tac/metabox-post-parametres.php";
+include "custom-tac/capcalera/icones-capcalera-settings.php";
+include "custom-tac/ginys/giny-xtec.php";
+include "custom-tac/ginys/giny-logo-centre.php";
+include "custom-tac/ginys/giny-socialmedia.php";
+include "custom-tac/menu-principal.php";
+include "custom-tac/capcalera/menu-logo.php";
+include "custom-tac/capcalera/menu-recursos-tac.php";
+include "custom-tac/colors_nodes.php";
+
 add_action('after_setup_theme', 'reactor_child_theme_setup', 11);
 
 function reactor_child_theme_setup() {
@@ -82,10 +92,7 @@ add_action ('reactor_content_before','add_breadcrumbs',999);
 //Sempre visible
 show_admin_bar( true );
 
-include "custom-tac/capcalera/menu-logo.php";
 add_action( 'admin_bar_menu', 'add_logo',1 ); 
-
-include "custom-tac/capcalera/menu-recursos-tac.php";
 add_action( 'admin_bar_menu', 'add_recursos',2);
 
 // Eliminem icones de la barra superior
@@ -249,23 +256,7 @@ function remove_default_category_description()
 }
 add_action('admin_head', 'remove_default_category_description');
 
-// Metabox paràmetres: Amaga títol, amaga metadades, mostra contingut sencer. 
-include "custom-tac/metabox-post-parametres.php";
 
-//Formulari per definir els icones de capçalera 
-include "custom-tac/capcalera/icones-capcalera-settings.php";
-
-//Giny Recursos XTEC
-include "custom-tac/ginys/giny-xtec.php";
-
-//Giny Logo centre
-include "custom-tac/ginys/giny-logo-centre.php";
-
-//Giny enllaços Social Media
-include "custom-tac/ginys/giny-socialmedia.php";
-
-//Menu principal
-include "custom-tac/menu-principal.php";
 add_action("reactor_content_before","menu_principal");
 
 // Zona de Ginys per categories
@@ -479,8 +470,8 @@ function rebuild_bp_menus_step_1() {
     add_submenu_page('xtec-bp-options', __('Groups', 'buddypress'), __('Groups', 'buddypress'), 'manage_options', 'bp-groups');
     add_submenu_page('xtec-bp-options', __('Social Articles', 'social-articles'), __('Social Articles', 'social-articles'), 'manage_options', 'social-articles', 'social_articles_page');
     add_submenu_page('xtec-bp-options', __('BuddyPress Like', 'buddypress-like'), __('BuddyPress Like', 'buddypress-like'), 'manage_options' , 'bp-like-settings' , 'bp_like_admin_page');
-	add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
-	add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
+    add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
+    add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
 
 }
 
@@ -575,9 +566,7 @@ function remove_admin_menus() {
  * @author Toni Ginard
  */
 function wsl_unregister_admin_tabs() {
-
     global $WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS;
-
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['login-widget']);
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['components']);
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['help']);
@@ -660,6 +649,32 @@ add_shortcode('menu', 'menu_function');
 
 
 /**
+ * get_description_text
+ * 
+ * Get the description text depending of type of page
+ * 
+ * @author Xavi Meler
+ * 
+ */
+
+function get_description_text (){
+    switch (true){
+        case is_category():
+            $description = single_cat_title( '', false ); 
+            break;
+        case is_tag():
+             $description = single_tag_title( '', false ); 
+            break;
+        default:
+             $description = esc_attr( get_bloginfo( 'description', 'display' ) );
+    }
+    return $description;
+}
+
+
+/**
+ * get_description_font_size
+ * 
  * Determina la mida de la font de la caixa descripció en funció del nombre de 
  * paraules i de la mida de cada paraula
  * 
@@ -679,21 +694,32 @@ function get_description_font_size($description){
     
     foreach ($aDescription as $word) {
         if (strlen($word) > 10)
-            return "1.5em";
+            return "2vw";
     }
     
     switch (true) {
         case $description_len <= 15: //3 paraules aprox. Paraula mitja: 5caracters
-            $fontSize = "2em";
+            $fontSize = "2.5vw";
             break;
         case 15 < $description_len && $description_len <= 40:
-            $fontSize = "1.8em";
+            $fontSize = "2vw";
             break;
         case $description_len > 40:
-            $fontSize = "1.5em";
+            $fontSize = "1.5vw";
             break;
     }
     return $fontSize;
+}
+
+function get_icon_font_size($icon_text){
+    $icon_text_len = strlen($icon_text);
+    $aIcon_text = explode(" ",$icon_text);
+    
+    foreach ($aIcon_text as $word) {
+        if (strlen($word) > 9)
+            return "0.8vw";
+    }
+    return "1vw";
 }
 
 /**
@@ -768,3 +794,78 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
     $filtered_data['post_content'] = str_replace('es.scribd.com', 'www.scribd.com', $filtered_data['post_content']);
     return $filtered_data;
 }
+
+
+function get_colors(){
+    
+    global $colors_nodes;
+    
+    $paleta = reactor_option('paleta_colors','blaus');
+    
+    $color_primary   = $colors_nodes[$paleta][1];
+    $color_secondary = $colors_nodes[$paleta][2];
+    $color_footer    = isset($colors_nodes[$paleta][3])?$colors_nodes[$paleta][3]:$color_secondary;
+    $color_link      = isset($colors_nodes[$paleta][4])?$colors_nodes[$paleta][4]:$color_secondary;
+    $color_icon22    = isset($colors_nodes[$paleta][5])?$colors_nodes[$paleta][5]:$color_secondary;
+    $color_calendari = isset($colors_nodes[$paleta][6])?$colors_nodes[$paleta][6]:$color_secondary;
+    
+    $css="
+            .box-title{
+                background-color:$color_primary;
+            }
+
+            .box-description{
+                background-color:$color_secondary;
+            }
+
+            #icon-11, #icon-23{
+                background-color:$color_secondary;
+            }
+
+            #icon-21, #icon-13{
+                background-color:$color_primary;
+            }
+            #icon-22 a {
+                color:$color_icon22 !important;
+            }
+            
+            h1, h2, h3, h4, h5, h6, a {    
+                color: $color_link  !important;
+            }
+            
+            #menu-panel {
+                    border-bottom: 2px solid $color_secondary;
+            }
+            
+            .entry-comments,
+            .entry-categories>a,
+            .entry-tags >a {
+                color: $color_secondary  !important;
+            }
+            
+            .entry-comments:before,
+            .entry-categories:before,
+            .entry-tags:before{
+                    color: $color_secondary; }
+            .menu-link, .sub-menu-link {
+                    color: $color_secondary  !important;
+            }    
+            
+
+            .gce-today span.gce-day-number{
+                border: 3px solid $color_calendari !important;
+            }
+
+            .gce-widget-grid .gce-calendar th abbr {
+                color: $color_calendari;
+            }
+            
+            #footer { 
+                background-color: $color_footer;
+            }
+       ";
+    
+    return $css;
+    
+}
+
