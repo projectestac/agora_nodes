@@ -204,9 +204,9 @@ article {
     padding-top: 0;
 }
 
-/*.post.format-video .entry-title {
+.post.format-video .entry-title {
     font-size: 1.5em;
-}*/
+}
 
 .entry-body li {
     margin-bottom: 0.75em;
@@ -234,6 +234,18 @@ article {
 .label.secondary {
     background-color: #4ad0d2;
     color: white;
+}
+
+.header_metatags{
+    padding-bottom:5px !important;
+    color:silver;
+    font-size: 1em;
+}
+
+.footer_metatags{
+    color:#087eb6;
+    margin-right: 4px;
+    font-size: 0.8em;
 }
 
 .entry-content img{
@@ -305,6 +317,12 @@ li#wp-admin-bar-bp-login{
     color:white;
 }
 
+@media screen and (max-width: 640px) {
+    #wpadminbar .quicklinks>ul>li>a {
+    height: 36px;
+    line-height: 36px;
+    }
+}
 
 /*****************************************************************
 Header
@@ -318,6 +336,58 @@ Header
 #header div.row > div.columns{
     padding:0px;
     /*margin-top: 4px;*/
+}
+
+.inner-header{
+    margin:0;
+    padding:0;
+}
+
+.inner-header > div.row > div.column{
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.inner-header > div.row {
+    padding:0;
+    margin:0;
+}
+
+#img-logo{
+    /*padding:1em;*/
+    max-width:120px;
+}
+
+.slideshow_slide {
+    margin-right: 0px !important;
+}
+
+.site-quick-box{
+    position: relative;
+    text-align: center;
+    height: 5.6em;
+    line-height: 5.6em;
+}
+
+#quick-call-box{
+    background-color: white;
+}
+
+#quick-call-box > a{
+    color:black;  
+}
+
+.site-quick-map-box-inner{
+    background-image:url(http://ies-sabadell.cat/webdecentre/wp-content/uploads/2014/08/googlemaps.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
 }
 
 /*****************************************************************
@@ -393,6 +463,14 @@ Posts
     filter: alpha(opacity=65);
 }
 
+.icon-graella > .dashicons,
+.site-quick-box-inner > .dashicons
+{
+    display: inline;
+    font-size: 2em;
+    line-height: 2.5em;
+}
+
 /*****************************************************************
 Header
 ******************************************************************/
@@ -437,7 +515,53 @@ Header
    background: whitesmoke;
 }
 
-
+@media screen and (max-width: 640px) {
+   
+    .box-grid{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: whitesmoke;
+    }  
+    .box-titlemobile{
+        width:100%;
+        overflow: hidden;
+        background-color:white;
+        padding:0.4em 0.5em 1em 0.5em;
+    }  
+    .box-titlemobile img{
+        max-height:150px; 
+        max-width:150px;
+        text-align:center;
+    }
+    div.box-titlemobile-inner{
+        
+        display: table;
+    }
+    div.box-titlemobile-logo{
+        float:left;
+        display: table-cell; 
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+    div.box-titlemobile-schoolName{
+        display: table-cell;
+        vertical-align: middle;
+        padding:0 1em;
+        font-size:1.7em;
+    }
+    #schoolCity{
+        font-size:0.8em;
+        color:#585858;
+    }
+    .site-header {
+        border-bottom: 0;
+        margin: 0;
+    }
+    .entry-body {
+        padding: 0.5em 0.5em;
+    }
+ }
 
 .box-grid:before{
     content: "";
@@ -515,7 +639,45 @@ Header
     color: white !important;
 }
 
+@media screen and (max-width: 640px) {
+    
+    .box-content-grid div {
+       display: table;
+       width: 33.333333333%;
+       height: 33.33%;
+       float:left;
+    }
+    
+    .box-content-grid div.topicons {
+       display: table !important;
+    }
 
+    .box-content-grid a:before {
+        font-size: 2.5em !important;
+    }
+
+    .box-content-grid a {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-size:1em !important;
+        text-transform: lowercase;
+        color: white !important;
+    }
+}
+
+.box-slider:before{
+    content: "";
+    display: block;
+    padding-top: 21.4%;
+}
+.box-slider{
+    position: relative;
+    width: 58.35%;
+    overflow: hidden;
+    background: silver;
+    float:left;
+}
 
 .box-content-slider{
     position: absolute;
@@ -532,6 +694,11 @@ Header
     line-height: 0.8em;
 }
 
+@media screen and (max-width: 1024px) {
+    .text_icon{
+        display:none;
+    }   
+}
 
 #icon-22 {
     background-color:white;
@@ -547,6 +714,10 @@ Header
 
 #box-grid div[id^='icon']:hover{
     background-color:#fdd300;
+}
+
+.slideshow_container_slideshow-jquery-image-gallery-custom-styles_1 .slideshow_slide {
+    margin-right: 0px;
 }
 
 .slideshow_description, .slideshow_title{
@@ -567,6 +738,7 @@ Header
 /*****************************************************************
 Menu principal 
 ******************************************************************/
+
 #menu-panel{
     padding:1em;
     height:auto;
@@ -893,7 +1065,16 @@ Calendari
     padding:5px;
  }
  
- 
+ @media screen and (max-width: 1280px) {
+     #sidebar-frontpage-2 .widget_gce_widget table tr th, 
+     #sidebar-frontpage-2 .widget_gce_widget table tr td {
+         padding: 0.25em;
+     }
+     #sidebar-frontpage-2 .gce-today span.gce-day-number {
+         border-radius: 75%;
+         padding: 2px;
+     }
+ }
 
 
 /*****************************************************************
@@ -952,6 +1133,15 @@ Footer
 .FlexEmbed--3by1:before {
   padding-bottom: 33.33333%;
 }
+.FlexEmbed--2by1:before {
+  padding-bottom: 50%;
+}
+.FlexEmbed--16by9:before {
+  padding-bottom: 56.25%;
+}
+.FlexEmbed--4by3:before {
+  padding-bottom: 75%;
+}
 .CoverImage {
   background-position: 50%;
   background-repeat: no-repeat;
@@ -962,6 +1152,13 @@ Footer
 /*****************************************************************
 Media
 ******************************************************************/
+
+/*Small devices*/
+@media screen and (max-width: 782px){
+    #wp-admin-bar-recursosXTEC, #wp-admin-bar-edit {
+        display: none !important;
+    }
+}
 
 /*Media print*/
 #info-footer-mediaprint{
@@ -996,105 +1193,11 @@ Media
     img {
         max-width: 500px;
         }
-     
+        
     @page {
         margin: 0.5cm;
         }    
+    
 }
 
 
-@media screen and (max-width: 640px) {
-    .box-grid{
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        background: whitesmoke;
-    }  
-    .box-titlemobile{
-        width:100%;
-        overflow: hidden;
-        background-color:white;
-        padding:0.4em 0.5em 1em 0.5em;
-    }  
-    .box-titlemobile img{
-        max-height:150px; 
-        max-width:150px;
-        text-align:center;
-    }
-    div.box-titlemobile-inner{
-        
-        display: table;
-    }
-    div.box-titlemobile-logo{
-        float:left;
-        display: table-cell; 
-        vertical-align: middle;
-        margin-left: 1em;
-    }
-    div.box-titlemobile-schoolName{
-        display: table-cell;
-        vertical-align: middle;
-        padding:0 1em;
-        font-size:1.7em;
-    }
-    #schoolCity{
-        font-size:0.8em;
-        color:#585858;
-    }
-    .site-header {
-        border-bottom: 0;
-        margin: 0;
-    }
-    .entry-body {
-        padding: 0.5em 0.5em;
-    }
-     #wpadminbar .quicklinks>ul>li>a {
-    height: 36px;
-    line-height: 36px;
-    }
-    
-    .box-content-grid div {
-       display: table;
-       width: 33.333333333%;
-       height: 33.33%;
-       float:left;
-    }
-    
-    .box-content-grid div.topicons {
-       display: table !important;
-    }
-
-    .box-content-grid a:before {
-        font-size: 2.5em !important;
-    }
-
-    .box-content-grid a {
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-        font-size:1em !important;
-        text-transform: lowercase;
-        color: white !important;
-    }
-    
-    #wp-admin-bar-recursosXTEC, #wp-admin-bar-edit {
-        display: none !important;
-    }
- }
- 
-@media screen and (max-width: 1024px) {
-    .text_icon{
-        display:none;
-    }   
-}
-
- @media screen and (max-width: 1280px) {
-     #sidebar-frontpage-2 .widget_gce_widget table tr th, 
-     #sidebar-frontpage-2 .widget_gce_widget table tr td {
-         padding: 0.25em;
-     }
-     #sidebar-frontpage-2 .gce-today span.gce-day-number {
-         border-radius: 75%;
-         padding: 2px;
-     }
- }
