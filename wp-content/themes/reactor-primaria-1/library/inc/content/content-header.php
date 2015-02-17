@@ -98,7 +98,7 @@ add_action('reactor_header_before', 'reactor_do_top_bar',1);
         <div>
           <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
              href="<?php echo home_url();?>">
-          <?php echo esc_attr(get_bloginfo('name', 'display')); ?>					
+          <?php echo nl2br(get_bloginfo('name', 'display')); ?>
           </a>
         </div>
       </div>
@@ -121,7 +121,7 @@ add_action('reactor_header_before', 'reactor_do_top_bar',1);
       <div class='box-content'>
         <div>
           <span style="font-size:<?php echo $description_font_size;?>">
-          <?php echo $description_text; ?>
+          <?php echo nl2br($description_text); ?>
           </span>
         </div>
       </div>
