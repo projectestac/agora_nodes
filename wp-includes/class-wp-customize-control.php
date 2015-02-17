@@ -469,7 +469,14 @@ class WP_Customize_Control {
 					if ( ! empty( $this->description ) ) : ?>
 						<span class="description customize-control-description"><?php echo $this->description; ?></span>
 					<?php endif; ?>
-					<textarea rows="5" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+
+					<!-- XTEC ************ MODIFICAT - reduce textarea height 
+					2015.02.17 @jmeler-->
+					<textarea rows=3  <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+					
+					<!-- ************ ORIGINAL
+					<textarea rows="5" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea> 
+					-->
 				</label>
 				<?php
 				break;
