@@ -561,9 +561,10 @@ class WP_Customize_Control {
 				<?php if ( ! empty( $this->description ) ) : ?>
 					<span id="<?php echo esc_attr( $description_id ); ?>" class="description customize-control-description"><?php echo $this->description; ?></span>
 				<?php endif; ?>
+				<!-- XTEC ************ MODIFICAT - reduce textarea height 2018.05.24 @svallde2-->
 				<textarea
 					id="<?php echo esc_attr( $input_id ); ?>"
-					rows="5"
+					rows="3"
 					<?php echo $describedby_attr; ?>
 					<?php $this->input_attrs(); ?>
 					<?php $this->link(); ?>
