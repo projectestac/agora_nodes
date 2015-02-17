@@ -512,7 +512,14 @@ class Tinymce_Advanced {
 				'-table[width],-tr,-td[colspan|rowspan|width],-th,-thead,-tfoot,-tbody,sub,sup,strike,br,del,ins,img[src|alt|title|height|width]';
 		}
 
-		return $init;
+//XTEC ************ AFEGIT - Allow the "embed" tag
+//2015.02.17 @aginard
+
+                $init['extended_valid_elements'] = 'embed[*]';
+                
+//************ FI
+
+return $init;
 	}
 
 	function after_wp_tiny_mce() {
