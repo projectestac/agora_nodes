@@ -789,7 +789,7 @@ Footer
 }
 
 #sidebar-footer .widget_logo_centre_widget img {
-    max-width: 100px;
+  max-width: 100px;
 }
 
 /*****************************************************************
@@ -863,7 +863,8 @@ Media
         display: table-cell;
         vertical-align: middle;
         padding:0 1em;
-        font-size:1.7em;
+        font-size:1.6em;
+        text-align: center;
     }
     #schoolCity{
         font-size:0.8em;
