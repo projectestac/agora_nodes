@@ -81,7 +81,9 @@ vcard (targeta identificació centre)
     border: 0;
     padding: 0;
 }
-.vcard .country-name, .vcard .region, .vcard .fn.org.url {
+.vcard .country-name, 
+.vcard .region, 
+.vcard .fn.org.url {
     display:none;
 }
 #tar-nomCentre {
@@ -784,6 +786,10 @@ Footer
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto 1em;
+}
+
+#sidebar-footer .widget_logo_centre_widget img {
+    max-width: 100px;
 }
 
 /*****************************************************************
