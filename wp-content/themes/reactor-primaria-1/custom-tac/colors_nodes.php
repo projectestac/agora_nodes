@@ -7,7 +7,7 @@ $colors_nodes= array (
                                 "primary"=>"#ff3257", 
                                 "secondary"=>"#4c86a6"),
     "blaus"         => array("nom"=>"Blau clar i Blau fosc", 
-                                "primary"=>"#00C9D6", 
+                                "primary"=>"#0eb1ff", 
                                 "secondary"=>"#087eb6"),
     "groc-blau"     => array("nom"=>"Groc i Blau",
                                 "primary"=>"#FFA00C", 
