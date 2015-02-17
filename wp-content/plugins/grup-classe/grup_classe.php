@@ -82,7 +82,6 @@ class Grup_classe_Widget extends WP_Widget {
                name="<?php echo $this->get_field_name( 'title' ); ?>" 
                type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
-        
         <!-- Bloc de text -->
         <div>
             <strong><span class="dashicons dashicons-format-quote"></span> Text/HTML </strong> 
@@ -127,16 +126,15 @@ class Grup_classe_Widget extends WP_Widget {
                 <input name="<?php echo $this->get_field_name('nom_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $nom_tutor ); ?>" /></br>
-            Bústia del tutor/a:<br>
+                Adreça electrònica del tutor/a:<br>
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
             
-             Horari d'atenció a les famílies:<br>
+                Horari d'atenció a les famílies:<br>
                 <input name="<?php echo $this->get_field_name('horari_families');?>"
                        type="text" 
                        value="<?php echo esc_attr( $horari_families ); ?>" /></br>    
-                
         </div>
         <br>      
         <!-- Enllaços -->
@@ -230,25 +228,24 @@ class Grup_classe_Widget extends WP_Widget {
                 echo "<br>";
             }
         }
-         
         // Tutor info
-        echo $before_title . "Tutoria" . $after_title;
-        echo "<ul>";
-        if (!empty($nom_tutor))
-            echo "<li><span class='dashicons dashicons-admin-users'></span> $nom_tutor";
-        if (!empty($email_tutor))
-            echo "<li><span class='dashicons dashicons-email-alt'></span> $email_tutor";
-        if (!empty($horari_families))
-            echo "<li><span class='dashicons dashicons-clock'></span> $horari_families";
-        echo "</ul>";
-        
-        // Menú
-        echo $before_title . "Enllaços" . $after_title;
-        if (!empty($nav_menu)){
-            the_widget('WP_Nav_Menu_Widget','nav_menu='.$nav_menu);
+        if (!empty($nom_tutor) || !empty($email_tutor) || !empty($horari_families)){
+            echo $before_title . "Tutoria" . $after_title;
+            echo "<ul>";
+            if (!empty($nom_tutor))
+              echo "<li><span class='dashicons dashicons-admin-users'></span> $nom_tutor";
+            if (!empty($email_tutor))
+              echo "<li><span class='dashicons dashicons-email-alt'></span> $email_tutor";
+            if (!empty($horari_families))
+              echo "<li><span class='dashicons dashicons-clock'></span> $horari_families";
+            echo "</ul>";
         }
-        echo "<br>";
-        
+        // Menú
+        if (!empty($nav_menu)){
+            echo $before_title . "Enllaços" . $after_title;
+            the_widget('WP_Nav_Menu_Widget','nav_menu='.$nav_menu);
+            echo "<br>";
+        }
         // Blocs de text/HTML 
         if (strlen(trim($text_open))>0){
             the_widget( 'WP_Widget_Text',"text=$text_close&filter=true");
