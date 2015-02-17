@@ -57,19 +57,8 @@ if ( !function_exists('reactor_customize_register') ) {
 	add_action('customize_register', 'reactor_customize_register');
 
 	function reactor_customize_register( $wp_customize ) {
-		
-		do_action('reactor_customize_register', $wp_customize);
-		
-		class WP_Customize_Textarea_Control extends WP_Customize_Control {
-		public $type = 'textarea';
-	 
-			public function render_content() { ?>
-				<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-                </label>
-			<?php
-			}
-		}
+
+                do_action('reactor_customize_register', $wp_customize);
 		
 		/**
 		 * modified dropdown-pages 
@@ -136,6 +125,7 @@ if ( !function_exists('reactor_customize_register') ) {
 			 ) );
 				$wp_customize->add_control('blogname', array( 
 					'label'    => __('Nom del centre', 'custom_tac'),
+                                        'type' => 'textarea',
 					'section'  => 'reactor_customizer_capcalera',
 					'priority' => 1,
 				 ) );
@@ -176,6 +166,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				$wp_customize->add_control('blogdescription', array( 
 					'label'    => __('Descripció / Lema', 'custom_tac'),
 					'section'  => 'reactor_customizer_capcalera',
+                                        'type' => 'textarea',
 					'priority' => 3,
 				 ) );
 
