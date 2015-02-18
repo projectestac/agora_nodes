@@ -156,7 +156,6 @@ if ( !function_exists('reactor_customize_register') ) {
 				'priority' => 2,
 			 ) );
 				 
-
 			$wp_customize->add_setting('blogdescription', array( 
 				'default'    => get_option('blogdescription'),
 				'type'       => 'option',
@@ -210,7 +209,6 @@ if ( !function_exists('reactor_customize_register') ) {
 					'choices'  => $aCarrusel,
 					'priority' => 5,
 				 ) );
-
 					
 			// Graella d'icones
 			class simpleHTML extends WP_Customize_Control {
@@ -385,8 +383,7 @@ if ( !function_exists('reactor_customize_register') ) {
 					'type'     => 'radio',
 					'choices'  => $paletes,
 				 ) );
-		 
-			
+		 	
 		$templates = get_theme_support('reactor-page-templates');
 		
 		if ( !is_array( $templates[0] ) ) {
@@ -394,8 +391,7 @@ if ( !function_exists('reactor_customize_register') ) {
 		}
 		
 		// Front Page
-
-		if ( in_array( 'front-page', $templates[0] ) ) {
+        	if ( in_array( 'front-page', $templates[0] ) ) {
 		$wp_customize->add_section('frontpage_settings', array( 
 			'title'          => __('Pàgina d\'inici', 'reactor'),
 			'priority'       =>6,//=> 50,
@@ -409,7 +405,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'reactor_options[frontpage_page]', array(
+                    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'reactor_options[frontpage_page]', array(
 				'label'   => __( 'Pàgina d\'inici', 'theme-name' ),
 				'section' => 'frontpage_settings',
 				'type'    => 'dropdown-pages',
@@ -418,13 +414,13 @@ if ( !function_exists('reactor_customize_register') ) {
 			) ) );
 			
 		 
-			$wp_customize->add_setting('reactor_options[frontpage_post_category]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_post_category]', array( 
 				'default'        => '',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
-				$wp_customize->add_control( new WP_Customize_Dropdown_Categories_Control( $wp_customize, 'reactor_frontpage_post_category', array( 
+                    $wp_customize->add_control( new WP_Customize_Dropdown_Categories_Control( $wp_customize, 'reactor_frontpage_post_category', array( 
 					'label'    => __('Categoria d\'articles', 'reactor'),
 					'section'  => 'frontpage_settings',
 					'type'     => 'dropdown-categories',
@@ -433,14 +429,14 @@ if ( !function_exists('reactor_customize_register') ) {
 				 ) ) );
 			
 
-			$wp_customize->add_setting('reactor_options[frontpage_layout]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_layout]', array( 
 				'default'        => '2c-r',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
 			 
-			$wp_customize->add_control('reactor_options[frontpage_layout]', array( 
+                    $wp_customize->add_control('reactor_options[frontpage_layout]', array( 
 				'label'   => __('Composició', 'custom_tac'),
 				'section' => 'frontpage_settings',
 				'type'    => 'select',
@@ -453,14 +449,14 @@ if ( !function_exists('reactor_customize_register') ) {
 				'priority' => 3,
 			 ) );
 		
-			$wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_1]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_1]', array( 
 				'default'        => '2',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
 			 
-				$wp_customize->add_control('reactor_options[frontpage_posts_per_fila_1]', array( 
+                    $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_1]', array( 
 					'label'   => __('Fila 1', 'reactor'),
 					'section' => 'frontpage_settings',
 					'type'    => 'select',
@@ -477,14 +473,14 @@ if ( !function_exists('reactor_customize_register') ) {
 				 ) );
 
 
-			$wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_2]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_2]', array( 
 				'default'        => '2',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
 			 
-			$wp_customize->add_control('reactor_options[frontpage_posts_per_fila_2]', array( 
+                    $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_2]', array( 
 				'label'   => __('Fila 2', 'reactor'),
 				'section' => 'frontpage_settings',
 				'type'    => 'select',
@@ -501,13 +497,13 @@ if ( !function_exists('reactor_customize_register') ) {
 			 ) );
 
 
-			$wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_n]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_n]', array( 
 				'default'        => '3',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
-				$wp_customize->add_control('reactor_options[frontpage_posts_per_fila_n]', array( 
+                    $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_n]', array( 
 					'label'   => __('Resta de files', 'reactor'),
 					'section' => 'frontpage_settings',
 					'type'    => 'select',
@@ -521,18 +517,18 @@ if ( !function_exists('reactor_customize_register') ) {
 					'priority' => 6,
 				 ) );
  
-			$wp_customize->add_setting('reactor_options[frontpage_number_posts]', array( 
+                $wp_customize->add_setting('reactor_options[frontpage_number_posts]', array( 
 				'default'        => 3,
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
-				$wp_customize->add_control('reactor_options[frontpage_number_posts]', array( 
+                    $wp_customize->add_control('reactor_options[frontpage_number_posts]', array( 
 					'label'    => __('Nombre d\'articles per pàgina', 'custom_tac'),
 					'section'  => 'frontpage_settings',
 					'type'     => 'text',
 					'priority' => 7,
-				 ) ); 
+                                ) ); 
 				 
 			
 		}
