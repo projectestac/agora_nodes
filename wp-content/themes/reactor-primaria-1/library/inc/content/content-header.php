@@ -32,37 +32,6 @@ function reactor_do_reactor_head() { ?>
     <link rel="shortcut icon" href="<?php echo $favicon_uri; ?>">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<script>
-
-function menu_toggle(){
-	$icon_menu=document.getElementById("icon-menu");
-	$menu_panel=document.getElementById("menu-panel");
-	
-	if ($menu_panel.style.display=="inline-block") {
-		$menu_panel.style.display="none";
-		$icon_menu.setAttribute("class", "dashicons dashicons-menu");
-	} else {
-		$menu_panel.style.display="inline-block";
-		$icon_menu.setAttribute("class", "dashicons dashicons-no-alt");	
-		document.getElementById("icon-23").setAttribute("backgroundColor", "yellow");
-	}
-}
-
-function cerca_toggle(){
-    	$icon_search=document.getElementById("icon-search");
-	$search_panel=document.getElementById("search-panel");
-	
-	if ($search_panel.style.display=="inline-block") {
-		$search_panel.style.display="none";
-		$icon_search.setAttribute("class", "dashicons dashicons-search");
-        } else {
-		$search_panel.style.display="inline-block";
-		$icon_search.setAttribute("class", "dashicons dashicons-no-alt");	
-		document.getElementById("icon-13").setAttribute("backgroundColor", "yellow");
-	}
-}
-</script>
-
 <?php
 }
 
