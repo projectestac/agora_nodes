@@ -7,9 +7,21 @@ Author URI: http://jurjur.org
 Template: reactor
 Version: 1.0.0
 */
-/*****************************************************************
-Add Custom styles below 
-******************************************************************/
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Oswald Light'), local('Oswald-Light'), url(library/font/Oswald/Oswald-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald Regular'), local('Oswald-Regular'), url(library/font/Oswald/Oswald-Regular.ttf) format('truetype');
+}
+
 body{
     background-color:white !important;
     font-family: "Open Sans",Arial,Helvetica,sans-serif;
@@ -41,7 +53,7 @@ h1 {
     font-size:2em;
 }
 h2 {
-    font-size:1.8em;
+    font-size:1.5em;
 }
 /*Bug WP/Buddypress*/
 #wp-toolbar > ul > li {
