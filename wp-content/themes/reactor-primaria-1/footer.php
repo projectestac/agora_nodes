@@ -7,7 +7,6 @@
  * @since 1.0.0
  */
 ?>
-       
         <?php reactor_footer_before(); ?>
         
         <footer id="footer" class="site-footer" role="contentinfo">
@@ -17,15 +16,47 @@
         </footer><!-- #footer -->
         <?php reactor_footer_after(); ?>
         
-        
-
     </div><!-- #main -->
 </div><!-- #page -->
 
 <?php wp_footer(); reactor_foot(); ?>
-<!-- Include the plug-in -->
 
-<?php if (!wp_is_mobile()){ ?>
+<script>
+    
+function menu_toggle(){
+    $icon_menu=document.getElementById("icon-menu");
+    $menu_panel=document.getElementById("menu-panel");
+
+    if ($menu_panel.style.display=="inline-block") {
+      $menu_panel.style.display="none";
+      $icon_menu.setAttribute("class", "dashicons dashicons-menu");
+    } else {
+      $menu_panel.style.display="inline-block";
+      $icon_menu.setAttribute("class", "dashicons dashicons-no-alt");	
+      document.getElementById("icon-23").setAttribute("backgroundColor", "yellow");
+    }
+}
+
+function cerca_toggle(){
+    $icon_search  = document.getElementById("icon-search");
+    $search_panel = document.getElementById("search-panel");
+
+    if ($search_panel.style.display=="inline-block") {
+      $search_panel.style.display="none";
+      $icon_search.setAttribute("class", "dashicons dashicons-search");
+    } else {
+      $search_panel.style.display="inline-block";
+      $icon_search.setAttribute("class", "dashicons dashicons-no-alt");	
+      document.getElementById("icon-13").setAttribute("backgroundColor", "yellow");
+    }
+}
+
+</script>
+
+ 
+<?php 
+    //TODO: refactoring, wp_is_mobile includes tablets
+    if (!wp_is_mobile()){ ?>
 
     <script type="text/javascript">
         //http://www.feedthebot.com/pagespeed/defer-loading-javascript.html
@@ -42,7 +73,7 @@
         else window.onload = downloadJSAtOnload;
         
     </script>
-
+    
 <?php } ?>
 
 <?php
