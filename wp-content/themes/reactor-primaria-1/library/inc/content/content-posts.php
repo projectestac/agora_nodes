@@ -90,8 +90,6 @@ function reactor_do_meta_autor_date() {
     }
 }
 
-//add_action('reactor_post_header', 'reactor_do_meta_autor_date', 4);
-
 /**
  * Post thumbnail
  * in format-standard
@@ -104,24 +102,25 @@ function reactor_do_standard_thumbnail() {
             return;
     
     if (has_post_thumbnail() && !is_single()) { 
-        $image_data   = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "full" );
+        $image_data   = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "full");
         $image_height = $image_data[2];
-        $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
         
-        // if user check original size or image is smaller than default height's thumbnail 
-        if ((get_post_meta( get_the_ID(), '_original_size', true ) == "on") 
+        
+        if ((get_post_meta(get_the_ID(), '_original_size', true) == "on") 
            ||($image_height<=200)) {
+            // a little image or original size option selected, show original size image
+            $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
             echo "<div class='entry-original-featured-image'><img src='" . $thumb_src . "'>";
-        } else {  
+        } else {
+            // a big image, show thumbnail
+            list($thumb_src) = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),"large");
             echo "<div class='entry-thumbnail' style='background-image:url(" . $thumb_src .")'>";
         }
         echo "</div>";
         
     }
 }
-
-//add_action('reactor_post_header', 'reactor_do_standard_thumbnail', 4);
-            
+           
 /**
  * Post footer title 
  * in format-audio, format-gallery, format-image, format-video
