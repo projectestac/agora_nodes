@@ -2388,7 +2388,7 @@ msgstr "Entrada nova"
 #: bp-core/deprecated/2.1.php:132
 #: bp-core/deprecated/2.1.php:319
 msgid "Manage Posts"
-msgstr "Gestiona les entrades"
+msgstr "Administra"
 
 #: bp-core/deprecated/2.1.php:133
 #: bp-core/deprecated/2.1.php:320
@@ -2990,7 +2990,7 @@ msgstr "Cancel·la l'amistat"
 #: bp-templates/bp-legacy/buddypress-functions.php:1101
 #: bp-templates/bp-legacy/buddypress-functions.php:1119
 msgid "Add Friend"
-msgstr "Afegeix un amic"
+msgstr "Demana amistat"
 
 #: bp-friends/bp-friends-template.php:583
 msgid "%s friend"
@@ -5126,7 +5126,7 @@ msgstr "Què hi ha de nou a %s, %s?"
 
 #: bp-templates/bp-legacy/buddypress/activity/post-form.php:25
 msgid "What's new, %s?"
-msgstr "Novetats, %s?"
+msgstr "Què hi ha de nou, %s?"
 
 #: bp-templates/bp-legacy/buddypress/activity/post-form.php:35
 msgid "Post Update"
@@ -6403,7 +6403,7 @@ msgstr "<span>%1$s</span> &mdash; %2$s"
 #: bp-activity/bp-activity-loader.php:110
 msgctxt "component directory title"
 msgid "Site-Wide Activity"
-msgstr "Activitat de tot el lloc"
+msgstr "Mur general"
 
 #: bp-core/bp-core-filters.php:480
 msgctxt "component directory title"
@@ -6877,7 +6877,7 @@ msgstr "Invitacions"
 #: bp-groups/bp-groups-loader.php:500
 msgctxt "My Group screen nav"
 msgid "Manage"
-msgstr "Gestiona les entrades"
+msgstr "Administra el node"
 
 #: bp-groups/bp-groups-loader.php:543
 msgctxt "My Account Groups"
