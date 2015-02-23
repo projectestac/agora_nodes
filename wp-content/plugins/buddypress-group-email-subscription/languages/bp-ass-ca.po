@@ -750,7 +750,7 @@ msgstr "Voleu rebre notificacions de les vostres entrades?"
 
 #: bp-activity-subscription-functions.php:2287
 msgid "Group Email Options"
-msgstr "Opcions de correu electrònic del node"
+msgstr "Opcions de correu del node"
 
 #: bp-activity-subscription-functions.php:2301
 msgid "Settings saved."
@@ -909,7 +909,7 @@ msgstr "Si us plau feu una donació a l'equip que el desenvolupa"
 
 #: bp-activity-subscription-main.php:42
 msgid "Email Options"
-msgstr "Opcions de correu electrònic"
+msgstr "Opcions de correu"
 
 #: bp-activity-subscription-main.php:95
 msgid "Error"
@@ -917,7 +917,7 @@ msgstr "Error"
 
 #. Plugin Name of the plugin/theme
 msgid "BuddyPress Group Email Subscription"
-msgstr "Subscripció per correu electrònic als nodes"
+msgstr "Subscripció per correu als nodes"
 
 #. Plugin URI of the plugin/theme
 msgid ""
