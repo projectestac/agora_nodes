@@ -55,9 +55,8 @@ function reactor_do_top_bar() {
     }
 }
 add_action('reactor_header_before', 'reactor_do_top_bar',1);
-?>
 
-<?php function reactor_do_title_logo() { 
+function reactor_do_title_logo() { 
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
     $options = get_option('my_option_name');
@@ -180,9 +179,7 @@ add_action('reactor_header_before', 'reactor_do_top_bar',1);
     </div>
     <div style="clear:both"></div>
 
-    <?php } ?>
-
-<?php
+    <?php }
 
 add_action('reactor_header_inside', 'reactor_do_title_logo', 1	);
 
