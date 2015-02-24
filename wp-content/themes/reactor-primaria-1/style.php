@@ -97,7 +97,7 @@
         opacity: 0.8;
     }
     #icon-12{
-       background-color:<?php echo $color_mobile?>;
+       background-color:<?php echo $color_mobile?> !important;
         opacity: 0.5;
     }
     #icon-13{
@@ -105,22 +105,21 @@
         opacity: 1;
     }
     #icon-21{
-        background-color:<?php echo $color_mobile?>;
+        background-color:<?php echo $color_mobile?> !important;
         opacity: 0.5;
     }
     #icon-22{
-       background-color:<?php echo $color_mobile?>;
+       background-color:<?php echo $color_mobile?> !important;
         opacity: 1;
     }
-     #icon-22 a {
+    #icon-22 a{
         color:white !important;
     }
+    
     #icon-23{
        background-color:<?php echo $color_mobile?>;
         opacity: 0.8;
     }
-    
-    
   }
     
 </style>
