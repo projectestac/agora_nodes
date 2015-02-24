@@ -239,10 +239,6 @@ li#wp-admin-bar-bp-login {
     float:right;
 }
 
-#wpadminbar #wp-admin-bar-recursosXTEC {
-    /*margin: 0 2px 0 0px;*/
-}
-
 #wpadminbar #wp-admin-bar-recursosXTEC >.ab-item:after {
     font: normal 14px/1 'dashicons';
     display:inline-block;
@@ -295,7 +291,6 @@ Posts
 .entry-comments,
 .entry-categories>a,
 .entry-tags >a {
-    color:#56AEC1 !important;
     font-size:0.8em;
 }
 .entry-date:before,
@@ -303,7 +298,6 @@ Posts
 .entry-comments:before,
 .entry-categories:before,
 .entry-tags:before{
-    color:#56AEC1; 
     display: inline-block;
     -webkit-font-smoothing: antialiased;
     font: normal 18px/1 'dashicons';
@@ -456,12 +450,14 @@ Header
     padding:0 0.3em;
     line-height: 0.8em;
 }
+
 #icon-22 {
     background-color:white;
 }
 #icon-12 {
     background-color:silver;
 }
+
 #search-panel {
     padding:0.5em;
 }
@@ -488,10 +484,6 @@ Menu principal
     height:auto;
     background-color:white;
     display:none;
-    border-bottom: 2px solid #087eb6;
-}
-.menu-link,.sub-menu-link {
-    color:#087eb6 !important;
 }
 .menu-item-depth-0 > a.menu-link {
     border-bottom: 1px solid #c0c0c0;
@@ -655,8 +647,13 @@ address{
     color:#444 !important;
 }
 .tagcloud{
-    background-color: aliceblue;
+    background-color:#f1f1f1;
 }
+.widget_socialmedia_widget a:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
 /*****************************************************************
 Categories
 ******************************************************************/
@@ -719,13 +716,10 @@ Calendari
 .gce-widget-grid .gce-calendar .gce-caption {
     background-color: #e7e7e7;
     color:#55556a;
-    /*font-weight: bold;*/
     text-transform: capitalize;
     padding-top: 0.3em;
 }
-.gce-widget-grid .gce-calendar th abbr {
-    color: #2ca698;
-}
+
 .gce-has-events{
     background-color:#cfcfcf !important;
     /*text-decoration: underline;*/
@@ -735,7 +729,6 @@ Calendari
     padding-right:1em;
 }
 .gce-today span.gce-day-number{
-    border: 3px solid #2ca698 !important;
     border-radius: 75%;
     padding:5px;
  }
