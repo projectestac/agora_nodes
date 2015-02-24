@@ -20,32 +20,26 @@
     .box-description{
         background-color:<?php echo $color_secondary; ?>
     }
-
     #icon-11, #icon-23{
         background-color:<?php echo $color_secondary;?>
     }
-
     #icon-21, #icon-13{
         background-color:<?php echo $color_primary;?>
     }
     #icon-22 a {
         color:<?php echo $color_icon22;?> !important;
     }
-
     h1, h2, h3, h4, h5, h6, a {    
         color: <?php echo $color_link;?>  !important;
     }
-
     #menu-panel {
             border-bottom: 2px solid <?php echo $color_secondary;?>
     }
-
     .entry-comments,
     .entry-categories>a,
     .entry-tags >a {
         color: <?php echo $color_secondary;?>  !important;
     }
-
     .entry-comments:before,
     .entry-categories:before,
     .entry-tags:before{
@@ -54,20 +48,15 @@
     .menu-link, .sub-menu-link {
             color: <?php echo $color_secondary;?> !important;
     }    
-
-
     .gce-today span.gce-day-number{
         border: 3px solid <?php echo $color_calendar;?>!important;
     }
-
     .gce-widget-grid .gce-calendar th abbr {
         color: <?php echo $color_calendar;?>
     }
-
     #footer { 
         background-color: <?php echo $color_footer;?>
     }
-    
    <?php  
     
     $options = get_option('my_option_name');
