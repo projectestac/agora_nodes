@@ -319,7 +319,7 @@ $(document).on( 'heartbeat-send.refresh-lock', function( e, data ) {
 		$.post( ajaxurl, {
 				action: 'sample-permalink',
 				post_id: $('#post_ID').val(),
-				new_title: $('#title').val(),
+				new_title: $('#title').val(),				
 				samplepermalinknonce: $('#samplepermalinknonce').val()
 			},
 			function( data ) {
@@ -415,7 +415,7 @@ jQuery(document).ready( function($) {
 	}
 
 	// The form is being submitted by the user
-	$submitButtons = $submitpost.find( ':button, :submit, a.submitdelete, #post-preview' ).on( 'click.edit-post', function( event ) {
+	$submitButtons = $submitpost.find( ':submit, a.submitdelete, #post-preview' ).on( 'click.edit-post', function( event ) {
 		var $button = $(this);
 
 		if ( $button.hasClass('disabled') ) {
@@ -930,7 +930,13 @@ jQuery(document).ready( function($) {
 		}
 
 		slug_value = ( c > full.length / 4 ) ? '' : full;
-		e.html('<input type="text" id="new-post-slug" value="'+slug_value+'" />').children('input').keypress(function(e) {
+		//XTEC ************ MODIFICAT - Save Permalinks on edit forms
+		//2015.02.18 @author - Nacho Abejaro
+		//************ ORIGINAL
+		//e.html('<input type="text" id="new-post-slug" value="'+slug_value+'" />').children('input').keypress(function(e) {
+		// XTEC ************ AFEGIT - Added tag name 
+		e.html('<input type="text" id="new-post-slug" name="post_name" value="'+slug_value+'" />').children('input').keypress(function(e) {
+		//************ FI
 			var key = e.keyCode || 0;
 			// on enter, just save the new slug, don't save the post
 			if ( 13 == key ) {
