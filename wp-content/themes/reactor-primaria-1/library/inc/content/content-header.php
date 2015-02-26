@@ -125,10 +125,10 @@ function reactor_do_title_logo() {
                 <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>   
             </div>
             <div id="icon-11">
-                <a title="<?php echo $options['title_icon12'];?>" 
-                   href="<?php echo $options['link_icon12'];?>" 
+                <a title="<?php echo $options['title_icon11'];?>" 
+                   href="<?php echo $options['link_icon11'];?>" 
                    class="dashicons dashicons-<?php echo $options['icon11'];?>"
-                   <?php echo set_target($options['link_icon12']);?>>
+                   <?php echo set_target($options['link_icon11']);?>>
                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon11']);?>" class="text_icon"><?php echo $options['title_icon11'];?> </span>
                 </a>
             </div>
