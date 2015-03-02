@@ -29,8 +29,29 @@ function barra_esquerra($frontpage_layout){
     }
     return $columnes;
 }
+
+function barra_esquerra_mobile($frontpage_layout){
+    switch ($frontpage_layout){
+        case "1c":
+            $columnes=12;
+            break;
+        case "2c-l":
+            get_sidebar('frontpage-mobile'); 
+            break;
+        case "2c-r":
+            $columnes=10;
+            break;
+            case "3c-c":
+            get_sidebar('frontpage-mobile'); 
+            $columnes=7;
+            break;
+        default:
+            $columnes=9;
+    }
+    return $columnes;
+}
+
 function barra_dreta($frontpage_layout){
-    $frontpage_layout = reactor_option('frontpage_layout');
     in_array($frontpage_layout,array("2c-r","3c-c")) ? get_sidebar('frontpage-2'):''; 
 }
 
@@ -103,10 +124,10 @@ get_header();
             reactor_inner_content_after(); 
         ?>
         </div><!-- .columns --><!--Contingut central -->
-        <!-- Barra dreta si aplica -->
+        <!-- Barra esquerra si aplica -->
         <div class="show-for-small">
             <a id='barra_esquerra'></a>		
-            <?php barra_esquerra($frontpage_layout);?>
+            <?php barra_esquerra_mobile($frontpage_layout);?>
         </div>
         <a id='barra_dreta'></a>
         <?php barra_dreta($frontpage_layout);?>

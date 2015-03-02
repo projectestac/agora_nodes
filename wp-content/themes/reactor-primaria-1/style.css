@@ -335,6 +335,11 @@ Posts
     opacity: 0.65;
     filter: alpha(opacity=65);
 }
+
+#sidebar-footer .widget_logo_centre_widget{
+    margin:0 0 2em 0;    
+}
+
 /*****************************************************************
 Header
 ******************************************************************/
