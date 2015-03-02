@@ -103,7 +103,7 @@
 			</p>
 		</td>
 	</tr>
-    
+
 <!-- XTEC *** AFEGIT - Code moved from above -->
 	<tr>
 		<th scope="row"><?php _e( 'Feed Shortcode', 'gce' ); ?></th>
@@ -117,14 +117,13 @@
 	</tr>
 <!-- *** FI -->
 
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
 <?php
     global $isAgora;
-    
-    if (!$isAgora || ($isAgora && is_xtecadmin())) {
+
+    if ($isAgora && is_xtecadmin()) {
 ?>
 <!-- *** FI -->
-
 	<tr>
 		<th scope="row"><label for="gce_search_query"><?php _e( 'Search Query', 'gce' ); ?></label></th>
 		<td>
@@ -133,7 +132,12 @@
 		</td>
 	</tr>
 
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
+<?php
+    } else {
+		// Added default values to save them when are not shown in the form
+?>
+		<input type="hidden" name="gce_search_query" id="gce_search_query"  value="<?php echo $gce_search_query; ?>" />
 <?php
     }
 ?>
@@ -147,11 +151,11 @@
 		</td>
 	</tr>
 
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
 <?php
     global $isAgora;
-    
-    if (!$isAgora || ($isAgora && is_xtecadmin())) {
+
+    if ($isAgora && is_xtecadmin()) {
 ?>
 <!-- *** FI -->
 
@@ -193,12 +197,16 @@
 		</td>
 	</tr>
 
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
 <?php
     } else {
-        ?>
-        <input type="hidden" name="gce_multi_day_events" id="gce_multi_day_events" value="1" checked />
-        <?php
+		// Added default values to save them when are not shown in the form
+?>
+		<input type="hidden" name="gce_date_format" id="gce_date_format"  value="<?php echo $gce_date_format; ?>" />
+		<input type="hidden" name="gce_time_format" id="gce_time_format"  value="<?php echo $gce_time_format; ?>" />
+		<input type="hidden" name="gce_cache" id="gce_cache"  value="<?php echo $gce_cache; ?>" />
+		<input type="hidden" name="gce_multi_day_events" id="gce_multi_day_events"  value="1" />
+<?php
     }
 ?>
 <!-- *** FI -->
@@ -214,12 +222,12 @@
 			<p class="description"><?php _e( 'Choose how you want your calendar to be displayed.', 'gce' ); ?></p>
 		</td>
 	</tr>
-	
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
 <?php
     global $isAgora;
-    
-    if (!$isAgora || ($isAgora && is_xtecadmin())) {
+
+    if ($isAgora && is_xtecadmin()) {
 ?>
 <!-- *** FI -->
 
@@ -280,10 +288,23 @@
 			</select>
 			<?php _e( 'forward', 'gce' ); ?>
 			<p class="description"><?php _e( 'Set how far in the future to retrieve events regardless of month or page being displayed.', 'gce' ); ?></p>
-		</td>	
+		</td
 	</tr>
 
-<!-- XTEC *** AFEGIT - Removed in Agora to simplify user experience -->
+<!-- XTEC *** AFEGIT - Removed to simplify user experience -->
+<?php
+    } else {
+		// Added default values to save them when are not shown in the form
+?>
+		<input type="hidden" name="gce_paging" id="gce_paging" value="<?php echo $gce_paging; ?>" />
+		<input type="hidden" name="gce_list_max_num" id="gce_list_max_num" value="<?php echo $gce_list_max_num; ?>" />
+		<input type="hidden" name="gce_list_max_length" id="gce_list_max_length" value="<?php echo $gce_list_max_length; ?>" />
+		<input type="hidden" name="gce_list_start_offset_num" id="gce_list_start_offset_num" value="<?php echo $gce_list_start_offset_num; ?>" />
+		<input type="hidden" name="gce_list_start_offset_direction" id="gce_list_start_offset_direction" value="<?php echo $gce_list_start_offset_direction; ?>" />
+		<input type="hidden" name="gce_feed_start" id="gce_feed_start" value="<?php echo $gce_feed_start; ?>" />
+		<input type="hidden" name="gce_feed_start_interval" id="gce_feed_start_interval" value="<?php echo $gce_feed_start_interval; ?>" />
+		<input type="hidden" name="gce_feed_end" id="gce_feed_end" value="<?php echo $gce_feed_end; ?>" />
+		<input type="hidden" name="gce_feed_end_interval" id="gce_feed_end_interval" value="<?php echo $gce_feed_end_interval; ?>" />
 <?php
     }
 ?>
