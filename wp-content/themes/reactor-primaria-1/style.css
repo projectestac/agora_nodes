@@ -143,13 +143,10 @@ Targetes
 .card_bgcolor3 {
     background-color:#e5e5e5;
 }
-#contingut_central_frontpage {
-    padding:0px;
-}
 #contingut_central_frontpage > .page {
-    background-color:#e4ecf2;
+    background-color: #ececec;
     line-height: 1.2em;
-    padding-bottom: 2em;
+    padding-bottom: 0.5em;
 }
 article {
     padding:0px;
