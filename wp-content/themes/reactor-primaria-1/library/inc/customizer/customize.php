@@ -181,6 +181,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				$wp_customize,'reactor_options[imatge_capcalera]',array(
 				    'label' => __('Imatge de capçalera', 'custom_tac'),
 				    'section' => 'reactor_customizer_capcalera',
+                                    'description'=> 'Recomanacions: 1000 x 220 px i menys de 500 KB', 
 				    'settings' => 'reactor_options[imatge_capcalera]',
 				    'priority' => 4
 				)
