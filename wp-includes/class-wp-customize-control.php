@@ -472,7 +472,7 @@ class WP_Customize_Control {
 
 					<!-- XTEC ************ MODIFICAT - reduce textarea height 
 					2015.02.17 @jmeler-->
-					<textarea rows=3  <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+					<textarea rows="3"  <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
 					
 					<!-- ************ ORIGINAL
 					<textarea rows="5" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea> 
