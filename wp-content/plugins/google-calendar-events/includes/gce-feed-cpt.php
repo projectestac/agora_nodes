@@ -104,15 +104,15 @@ add_filter( 'post_updated_messages', 'gce_feed_messages' );
 function gce_cpt_meta() {
 	add_meta_box( 'gce_feed_meta', __( 'Feed Settings', 'gce' ), 'gce_display_meta', 'gce_feed', 'advanced', 'core' );
 
-// XTEC ************ ELIMINAT - Removed metabox. We don't want this one.
+// XTEC ************ ELIMINAT - Removed help and GCE options metaboxes to simplify user experience
 // 2014.10.08 @aginard
 /*
 	// Sidebar meta box below publish section.
 	add_meta_box( 'gce_feed_sidebar_help', __( 'Helpful Links', 'gce' ), 'gce_feed_sidebar_help', 'gce_feed', 'side', 'core' );
-*/
-//************ FI
 
 	add_meta_box( 'gce_display_options_meta', __( 'Display Options', 'gce' ), 'gce_display_options_meta', 'gce_feed', 'side', 'core' );
+*/
+//************ FI
 }
 add_action( 'add_meta_boxes', 'gce_cpt_meta' );
 
