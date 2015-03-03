@@ -389,13 +389,13 @@ Header
 .box-image:before{
     content: "";
     display: block;
-    padding-top: 21.4%;
+    padding-top: 21.45%;
 }
 .box-image{
     position: relative;
     width: 58.35%;
     overflow: hidden;
-    background: silver;
+    background: white;
     float:left;
 }
 .box-content{
@@ -755,32 +755,30 @@ ul.pagination li.current a:hover {
 Footer
 ******************************************************************/
 #footer {
-    /*margin-top: 2em;*/
-    padding-top: 2em;
+  padding-top: 2em;
 }
 .inner-footer {
-    border:0;    
+  border:0;    
 }
 .site-info {
-    color:white;
+  color:white;
 }
 #footer a {
-    text-decoration: underline;
-    
+  text-decoration: underline;
 }
 .widget_socialmedia_widget a {
-    text-decoration: none !important;
-    margin: 0em 0.1em 0.1em 0.1em;
+  text-decoration: none !important;
+  margin: 0em 0.1em 0.1em 0.1em;
 }
 .fa-2-5x {
     font-size: 2.5em !important;
 }
 #footer  a:hover {
-    opacity: 0.4;
-    filter: alpha(opacity=40); 
+  opacity: 0.4;
+  filter: alpha(opacity=40); 
 }
 #footer * {
-    color:white !important;
+  color:white !important;
 }
 .FlexEmbed {
   display: block;
@@ -792,16 +790,11 @@ Footer
   display: block;
   width: 100%;
 }
-.FlexEmbed--3by1:before {
-  padding-bottom: 33.33333%;
-}
 .CoverImage {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto 1em;
 }
-
 #sidebar-footer .widget_logo_centre_widget img {
   max-width: 100px;
 }
