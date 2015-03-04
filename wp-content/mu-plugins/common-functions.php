@@ -54,3 +54,48 @@ function remove_page_meta_boxes() {
 }
 
 add_action('do_meta_boxes', 'remove_page_meta_boxes');
+
+// XTEC ************ AFEGIT
+// This function defines the order and the position for the boxes
+// 2015.03.04 @author Nacho Abejaro
+function set_order_meta_boxes($hidden, $screen) {
+
+	$post_type = $screen->post_type;
+
+	// So this can be used without hooking into user_register
+	if ( ! $user_id)
+		$user_id = get_current_user_id();
+
+	$meta_key = array(
+		'order' => "meta-box-order_$post_type",
+	);
+
+	if ( $post_type == 'post' ) {
+		
+		// Defines the position
+		$meta_value = array(
+			'side' => 'submitdiv,postimagediv,postexcerpt,metabox1,tagsdiv-post',
+			'normal' => 'categorydiv',
+			'advanced' => '',
+		);
+
+		// Sets Order
+		update_user_meta( $user_id, $meta_key['order'], $meta_value );
+	}elseif ( $post_type == 'page' ) {
+	
+		// Defines the position
+		$meta_value = array(
+			'side' => 'submitdiv,pageparentdiv',
+			'normal' => 'commentstatusdiv',
+			'advanced' => '',
+		);
+
+		//Sets Order
+		update_user_meta( $user_id, $meta_key['order'], $meta_value );
+	}else {
+		// Default, do nothing
+	}
+}
+
+add_action('add_meta_boxes', 'set_order_meta_boxes', 10, 2);
+//************ FI
