@@ -297,58 +297,6 @@ function unregister_default_widgets() {
  }
  add_action('widgets_init', 'unregister_default_widgets', 11);
 
- /**
- * Hide screen option's items. Best for usability  
- * @author Xavi Meler
- */
-function custom_hidden_meta_boxes( $hidden ) {
-    $hidden[] = 'revisionsdiv';
-    $hidden[] = 'commentstatusdiv';
-    $hidden[] = 'authordiv';
-    $hidden[] = 'layout_meta';
-    $hidden[] = 'gce_display_options_meta';
-    return $hidden;
-}
-
-add_filter( 'hidden_meta_boxes', 'custom_hidden_meta_boxes' );
-
-/**
- * Eliminem opcions dels articles que s'utilitzen molt poc o mai
- * @author Xavi Meler
- */
-function remove_post_meta_boxes() {
-     remove_meta_box('trackbacksdiv', 'post', 'normal');
-     remove_meta_box('trackbacksdiv', 'post', 'side');
-     remove_meta_box('commentsdiv', 'post', 'normal');
-     remove_meta_box('commentsdiv', 'post', 'side');
-     remove_meta_box( 'slugdiv' , 'post' , 'normal' ); 
-     remove_meta_box( 'slugdiv' , 'post' , 'side' );
-     remove_meta_box('formatdiv', 'post', 'normal');
-     remove_meta_box('formatdiv', 'post', 'side');
-     remove_meta_box( 'postcustom' , 'post' , 'normal' ); 
-     remove_meta_box( 'postcustom' , 'post' , 'side' );
-     remove_meta_box( 'rawhtml_meta_box' , 'post' , 'side' ); 
-     remove_meta_box( 'rawhtml_meta_box' , 'post' , 'normal' ); 
-     remove_meta_box( 'layout_meta' , 'post' , 'side' ); 
-     remove_meta_box( 'layout_meta' , 'post' , 'normal' ); 
-
-}
-
-add_action( 'do_meta_boxes', 'remove_post_meta_boxes' );
-
-/**
- * Remove not used metabox 
- * @author Xavi Meler
- */
-function remove_page_meta_boxes() {
-    remove_meta_box( 'commentsdiv', 'page', 'normal' );
-    remove_meta_box( 'slugdiv' , 'page' , 'normal' ); 
-    remove_meta_box( 'rawhtml_meta_box' , 'page' , 'side' ); 
-    remove_meta_box( 'postcustom' , 'page' , 'normal' ); 
-    remove_meta_box( 'postimagediv', 'page', 'side' );
-}
-
-add_action( 'do_meta_boxes', 'remove_page_meta_boxes');
 
 /**
  * Remove not used dashboard metaboxes 
