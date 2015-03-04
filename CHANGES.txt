@@ -6,3 +6,4 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - GCE: Added default values for hidden parameters and remove some metaboxes to simplify user experience
+- MU-PLUGIN: Created common-functions.php pluggin to include common functions which are not related only with the theme
