@@ -12,12 +12,26 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 <head>
-    <?php include "style.php"; ?> 
-    <link href="<?php echo get_stylesheet_directory_uri()?>/library/font/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    
+    <?php include "style.php"; ?>
+
+    <!--
+    	XTEC ************ AFEGIT
+    	Return to old code, because exists a problem when a center uses a own domain
+    	Added new version of bootstrapcdn (4.3.0)
+    	2015.03.05 @author Nacho Abejaro
+    -->
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+<!--     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- <link href="<?php //echo get_stylesheet_directory_uri()?>/library/font/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">-->
+
     <?php wp_head(); reactor_head(); ?>
-    
-    <?php 
+
+    <?php
         $favicon = reactor_option("favicon_image");
         if (!$favicon)
             $favicon = get_stylesheet_directory_uri()."/favicon.ico";
@@ -27,19 +41,19 @@
 
 <body <?php body_class(); ?>>
     <?php reactor_body_inside(); ?>
-    <div id="page" class="hfeed site"> 
+    <div id="page" class="hfeed site">
         <?php reactor_header_before(); ?>
-    
+
         <header id="header" class="site-header" role="banner">
             <div class="row">
-               <div class="<?php reactor_columns( 12 ); ?>"> 
-                    
+               <div class="<?php reactor_columns( 12 ); ?>">
+
                     <?php reactor_header_inside(); ?>
-                    
+
                 </div> <!-- .columns -->
             </div><!-- .row -->
         </header><!-- #header -->
-        
+
         <?php reactor_header_after(); ?>
-        
+
         <div id="main" class="wrapper">
