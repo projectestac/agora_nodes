@@ -41,8 +41,8 @@ function pending_submission_send_email( $new_status, $old_status, $post ) {
     else if ($old_status == 'pending' && $new_status == 'publish' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
         $username = get_userdata($post->post_author);
         $url = get_permalink($post->ID);
-            $subject = "El teu article ha sigut publicat:" . " " . $post->post_title;
-            $message = '"' . $post->post_title . '"' . " ha sigut aprovat i publicat. \r\n";
+            $subject = "El vostre article ha estat publicat:" . " " . $post->post_title;
+            $message = '"' . $post->post_title . '"' . " ha estat aprovat i publicat. \r\n";
             $message .= $url;
             $result = wp_mail($username->user_email, $subject, $message);
             }
