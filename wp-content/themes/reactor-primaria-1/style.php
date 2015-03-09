@@ -67,7 +67,7 @@
     }
     ?>
     
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 48.063em) {
         #icon-email{
             background-color:<?php echo $color_mobile?>;
             opacity: 1;

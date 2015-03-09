@@ -104,7 +104,7 @@ function reactor_do_title_logo() {
          </div>
     <?php
     } else { ?>
-        <div class='box-content-slider'>
+        <div class='box-content-slider hide-for-small'>
           <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
         </div>   
     <?php }?>        
@@ -182,51 +182,3 @@ function reactor_do_title_logo() {
     <?php }
 
 add_action('reactor_header_inside', 'reactor_do_title_logo', 1	);
-
-/**
- * Nav bar and mobile nav button
- * in header.php
- * 
- * @since 1.0.0
- */
-function reactor_do_nav_bar() {
-
-	if ( has_nav_menu('main-menu') ) {
-		$nav_class = ( reactor_option('mobile_menu', 1) ) ? 'class="hide-for-small" ' : ''; ?>
-		<div class="main-nav">
-			<nav id="menu" <?php echo $nav_class; ?>role="navigation">
-				<div class="section-container horizontal-nav" data-section="horizontal-nav" data-options="one_up:false;">
-					<?php reactor_main_menu(); ?>
-				</div>
-			</nav>
-		</div><!-- .main-nav -->
-	<?php
-	if ( reactor_option('mobile_menu', 1) ) { ?>       
-		<div id="mobile-menu-button" class="show-for-small" >
-			<button class="secondary button" id="mobileMenuButton" href="#mobile-menu">
-				<span class="mobile-menu-icon"></span>
-				<span class="mobile-menu-icon"></span>
-				<span class="mobile-menu-icon"></span>
-			</button>
-		</div><!-- #mobile-menu-button -->             
-	<?php }
-	}
-}
-
-/**
- * Mobile nav
- * in header.php
- * 
- * @since 1.0.0
- */
-function reactor_do_mobile_nav() {
-	if ( reactor_option('mobile_menu', 1) && has_nav_menu('main-menu') ) { ?> 
-		<nav id="mobile-menu" role="navigation">
-			<div class="section-container accordion" data-section="accordion" data-options="one_up:false">
-				<?php reactor_main_menu(); ?>
-			</div>
-		</nav>
-<?php }
-}
-add_action('reactor_header_before', 'reactor_do_mobile_nav', 1);
-

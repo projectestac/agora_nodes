@@ -34,7 +34,7 @@ div.large-9{
     font-size:0.9em;
 }
 .row {
-    max-width: 95em;
+    max-width: 100%;
     margin: 0 !important;
 }
 h1, h2, h3, h4, h5, h6, a {
@@ -222,20 +222,16 @@ Top header
     height: 36px !important;
     position:fixed;
 }
-
 .ab-item {
     color:#ddd !important;    
 }
-
 #wpadminbar #wp-admin-bar-bp-login>.ab-item:before {
     content: "\f112";
     margin-top: 4px;
 }
-
 li#wp-admin-bar-bp-login {
     float:right;
 }
-
 #wpadminbar #wp-admin-bar-recursosXTEC >.ab-item:after {
     font: normal 14px/1 'dashicons';
     display:inline-block;
@@ -246,18 +242,15 @@ li#wp-admin-bar-bp-login {
     color:lightgrey;
     padding-right: 4px;
 }
-
 #wpadminbar .quicklinks>ul>li.wp-admin-bar-gencat>a {
     padding: 0 0px 0 0px;
 }
-
 #wpadminbar .quicklinks .ab-empty-item {
     height: 32px;
     display: block;
     padding: 0 10px 0 0;
     margin: 0;
 }
-
 #wpadminbar .notification {
     color:white;
 }
@@ -826,16 +819,14 @@ Media
         position: fixed;
         bottom: 0;
     }
-    
     img {
         max-width: 500px;
         }
-     
     @page {
         margin: 0.5cm;
         }    
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 48.063em) {
     .box-grid{
         position: relative;
         width: 100%;
@@ -920,6 +911,7 @@ Media
         display:none;
     }   
 }
+/*Calendari*/
 @media screen and (max-width: 1280px) {
      #sidebar-frontpage-2 .widget_gce_widget table tr th, 
      #sidebar-frontpage-2 .widget_gce_widget table tr td {
@@ -930,3 +922,28 @@ Media
          padding: 2px;
      }
 }
+
+@media (min-width: 1480px) {
+    html{
+      background-color:#E2E2E2;  
+        
+    }
+      body {
+        width: 1480px;
+        margin-left: auto;
+        margin-right: auto;
+        border-left:3px solid #ddd;
+        border-right:3px solid #ddd;
+      }
+      .box-content a, 
+      .box-content span{
+        font-size: 30px !important;
+        }
+        
+        .box-content-grid a:before{
+          font-size: 2em !important;   
+        }
+        .box-content-grid a,.box-content-grid span {
+            font-size: 1em !important;
+        }
+    }
