@@ -14,19 +14,9 @@
 <head>
     <?php include "style.php"; ?>
 
-    <!--
-    	XTEC ************ AFEGIT
-    	Return to old code, because exists a problem when a center uses a own domain
-    	Added new version of bootstrapcdn (4.3.0)
-    	2015.03.10 @author Nacho Abejaro
-    -->
-
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
-<!--     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- <link href="<?php //echo get_stylesheet_directory_uri()?>/library/font/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">-->
 
     <?php wp_head(); reactor_head(); ?>
 
