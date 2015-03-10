@@ -8,20 +8,6 @@ Template: reactor
 Version: 1.0.0
 */
 
-@font-face {
-    font-family: 'Oswald';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Oswald Light'), local('Oswald-Light'), url(library/font/Oswald/Oswald-Light.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Oswald';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Oswald Regular'), local('Oswald-Regular'), url(library/font/Oswald/Oswald-Regular.ttf) format('truetype');
-}
-
 body{
     background-color:white !important;
     font-family: "Open Sans",Arial,Helvetica,sans-serif;
