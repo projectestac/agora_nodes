@@ -331,6 +331,9 @@ Header
     display: block;
     padding-top: 100%;
 }
+.box-title a:hover{
+    text-decoration: none;
+}
 .box-description{
     position: relative;
     width: 12.5%;
@@ -633,6 +636,7 @@ address{
 }
 .tagcloud{
     background-color:#f1f1f1;
+    padding: 0.5em;
 }
 .widget_socialmedia_widget a:hover {
     opacity: 0.4;
