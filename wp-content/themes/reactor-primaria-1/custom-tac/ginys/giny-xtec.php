@@ -22,15 +22,17 @@ class XTEC_Widget extends WP_Widget {
 	'arc'=>array('nom'=>"ARC",'url'=>'http://apliense.xtec.cat/arc/','img'=>'arc-icon.png','desc'=>'Aplicació de recursos al Currículum'), 
 	'odissea'=>array('nom'=>"Odissea",'url'=>'http://odissea.xtec.cat','img'=>'odissea-icon.png','desc'=>'Entorn virtual de formació per a docents'),
 	'ampa'=>array('nom'=>"AMPA",'url'=>'','img'=>'ampa-icon.png','desc'=>'La associació de Pares d\'alumnes del centre'),
-	'escola-verda'=>array('nom'=>"Escola verda",'url'=>'http://www.gencat.cat/mediamb/escolesverdes/','img'=>'escola-verda-icon.png','desc'=>'Escola verda'),
+	'escola-verda'=>array('nom'=>"Escola verda",'url'=>'http://mediambient.gencat.cat/ca/05_ambits_dactuacio/educacio_i_sostenibilitat/educacio_per_a_la_sostenibilitat/escoles_verdes','img'=>'escola-verda-icon.png','desc'=>'Escola verda'),
 	'atri'=>array('nom'=>"ATRI",'url'=>'https://atri.gencat.cat','img'=>'atri-icon.png','desc'=>'Portal ATRI'),
 	'saga'=>array('nom'=>"SAGA",'url'=>'https://saga.xtec.cat/entrada','img'=>'saga-icon.png','desc'=>'Aplicatiu SAGA'),
 	'familia-escola'=>array('nom'=>"Familia i escola",'url'=>'http://www20.gencat.cat/portal/site/familiaescola/','img'=>'familiaescola-icon.png','desc'=>'Pàgina amb consells i recursos per les famílies'),
         'internet-segura'=>array('nom'=>"Internet Segura",'url'=>'http://www.xtec.cat/web/recursos/tecinformacio/internet_segura','img'=>'internet-segura-icon.png','desc'=>'Recursos per utilitzar Internet de manera segura'),
-        'moodle' => array('nom'=>"MOODLE",'url'=>'','img'=>'moodle-icon.png','desc'=>'Enllaç al àgora-moodle del centre') 
+        'moodle' => array('nom'=>"MOODLE",'url'=>'','img'=>'moodle-icon.png','desc'=>'Enllaç al àgora-moodle del centre'), 
+	'portalcentre' => array('nom'=>"Portal de centre",'url'=>'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda','img'=>'portalcentre-icon.png','desc'=>'Enllaç al portal de centre'), 
+        'intraweb' => array('nom'=>"Intraweb",'url'=>'','img'=>'intraweb-icon.png','desc'=>'Enllaç a la intraweb'), 
 	);
 
-    public $recursosXtec = array('ensenyament','xtec','edu365','edu3','xarxa-docent','alexandria','linkat','jclic','merli','arc','odissea','atri','saga','familia-escola','internet-segura','moodle');
+    public $recursosXtec = array('ensenyament','xtec','edu365','edu3','xarxa-docent','alexandria','linkat','jclic','merli','arc','odissea','atri','saga','familia-escola','internet-segura','moodle','portalcentre','intraweb');
  
     // Create widget
     public function __construct() {
@@ -41,6 +43,7 @@ class XTEC_Widget extends WP_Widget {
       	        );
            $this->recursos['moodle']['url']=get_home_url()."/moodle";
            $this->recursos['ampa']['url']=get_home_url()."/ampa";
+           $this->recursos['intraweb']['url']=get_home_url()."/intraweb";
            
     }
  

@@ -7,3 +7,8 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - GCE: Added default values for hidden parameters and remove some metaboxes to simplify user experience
 - MU-PLUGIN: Created common-functions.php pluggin to include common functions which are not related only with the theme
+- Fix: Show left sidebar on mobile version
+- Improved header image adjustament
+- Improved visualization for high screen sizes
+- Add upload images capability to contributor & Restricting contributors to view only media library items they upload 
+- Enllaços educatius: Added two new icons ("intraweb" and "Portal de centre")
