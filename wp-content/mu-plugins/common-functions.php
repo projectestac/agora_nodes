@@ -99,3 +99,36 @@ function set_order_meta_boxes($hidden, $screen) {
 
 add_action('add_meta_boxes', 'set_order_meta_boxes', 10, 2);
 //************ FI
+
+/**
+ * Add upload images capability to the contributor rol 
+ * @author Xavi Meler
+ */
+function add_contributor_caps() {
+    $role = get_role( 'contributor' );
+    $role->add_cap('upload_files'); 
+}
+add_action( 'admin_init', 'add_contributor_caps');
+
+/**
+ * Restricting contributors to view only media library items they upload 
+ * TODO: fix counter (now counter show all files count)
+ * @author Xavi Meler
+*/ 
+function users_own_attachments( $wp_query_obj ) {
+    global $current_user, $pagenow;
+
+    if( !is_a( $current_user, 'WP_User') )
+        return;
+
+    if(('edit.php' != $pagenow) && ('upload.php' != $pagenow ) &&
+    (( 'admin-ajax.php' != $pagenow ) || ( $_REQUEST['action'] != 'query-attachments' )))
+        return;
+    
+    // Apply to this roles: Subscriptor, Contributor and Author
+    if(!current_user_can('delete_pages'))
+        $wp_query_obj->set('author', $current_user->id );
+   
+    return;
+}
+add_action('pre_get_posts','users_own_attachments');
