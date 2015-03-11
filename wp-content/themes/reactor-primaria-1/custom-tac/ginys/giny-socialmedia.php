@@ -25,7 +25,7 @@ class SocialMedia_Widget extends WP_Widget {
         'rss'=>array('nom'=>"rss",'url'=>'','img'=>'rss-square'), 
         'email'=>array('nom'=>"Correu",'url'=>'','img'=>'envelope-square'), 
         'moodle'=>array('nom'=>"Moodle",'url'=>'','img'=>'graduation-cap'),
-        'xarxanodes'=>array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'share-alt-square'),
+        'xarxanodes'=>array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'sitemap'),
         'docs'=>array('nom'=>"Documents",'url'=>'','img'=>'folder-open'),
         'fotos'=>array('nom'=>"Fotos",'url'=>'','img'=>'photo'),
         'video'=>array('nom'=>"Videos",'url'=>'','img'=>'caret-square-o-right')
@@ -43,18 +43,13 @@ class SocialMedia_Widget extends WP_Widget {
  
     // Front-End Display of the Widget
     public function widget($args, $instance) {
-
         $title = $instance['title'];
         $mida =  $instance['mida'];
- 
         echo $args['before_widget'];
-        
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
             $this->socialmedia[$idSocialMedia]["url"] = $instance[$idSocialMedia . '_url'];
         }
-
         // Display information
-        //echo '<div class="widget socialmedia-widget block" >';
         if (!empty($title)) {
             echo '<h4 class="widget-title">' . $title . '</h4>';
         }
@@ -64,9 +59,6 @@ class SocialMedia_Widget extends WP_Widget {
                 echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] ." ".$mida."\" href=\"" . $this->socialmedia[$idSocialMedia]['url'] . "\" title=\"" . $this->socialmedia[$idSocialMedia]['nom'] . "\" target=\"_blank\"></a>";
         }
         echo $args['after_widget'];
-        //echo '</div>';
-    
-        
     }
 
     // Back-end form of the Widget
@@ -119,8 +111,8 @@ class SocialMedia_Widget extends WP_Widget {
         $instance = array();
       	$instance['title'] = ( !empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['mida'] = ( !empty( $new_instance['mida'] ) ) ? strip_tags( $new_instance['mida'] ) : '';
-    	foreach ( $this->socialmedia as $idSocialMedia=>$nomSocialMedia ) {         	
-    		$instance[$idSocialMedia."_url"] = ( !empty( $new_instance[$idSocialMedia."_url"] ) ) ? strip_tags( $new_instance[$idSocialMedia."_url"] ):'';
+    	foreach ( $this->socialmedia as $idSocialMedia=>$nomSocialMedia ) {
+            $instance[$idSocialMedia."_url"] = ( !empty( $new_instance[$idSocialMedia."_url"] ) ) ? strip_tags( $new_instance[$idSocialMedia."_url"] ):'';
         }
       	return $instance;
     }
