@@ -65,13 +65,15 @@ class XTEC_Widget extends WP_Widget {
         echo $args['before_widget'];
         if ( !empty( $title ) ) {
             echo '<h4 class="widget-title">' . $title . '</h4>';
-        }         
+        }        
+        echo "<div class='grid-icon'>";
         foreach ( $this->recursos as $idRecurs=>$nomRecurs ) { 
            $idRecurs= $instance[$idRecurs];	
            if ( !empty( $idRecurs ) ) {
                 echo "<a target='_blank' title=\"".$nomRecurs['nom']."\" href=\"".$nomRecurs['url']."\"><img class=\"iconedu\" src=\"".get_stylesheet_directory_uri()."/custom-tac/imatges/".$nomRecurs['img']."\"></a>";
            }       
         }  
+        echo "</div>";
         echo $args['after_widget'];
    }
  
