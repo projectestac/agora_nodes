@@ -643,6 +643,10 @@ address{
     filter: alpha(opacity=40);
 }
 
+.widget_xtec_widget .grid-icon{
+    background-color: white;
+}
+
 /*****************************************************************
 Categories
 ******************************************************************/
