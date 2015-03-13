@@ -13,4 +13,4 @@ Changes in progress
 - Add upload images capability to contributor & Restricting contributors to view only media library items they upload
 - Enllaços educatius: Added two new icons ("intraweb" and "Portal de centre")
 - BPDOCS: Fixed bug when uploading files
-
+- THEME: Show comments in pages when they are enabled
