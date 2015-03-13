@@ -1045,7 +1045,7 @@ msgstr "Accediu per subscriure-us a aquest tema."
 
 #: src/templates/default/bbpress/user-replies-created.php:15
 msgid "Forum Replies Created"
-msgstr "Respostes creades al fòrum"
+msgstr "Respostes"
 
 #: src/templates/default/bbpress/user-details.php:48
 msgid "%s's Favorites"
@@ -1053,7 +1053,7 @@ msgstr "%s Preferits"
 
 #: src/templates/default/bbpress/user-details.php:35
 msgid "%s's Topics Started"
-msgstr "S'han començat %s temes"
+msgstr "S'han iniciat %s temes"
 
 #: src/templates/default/bbpress/loop-single-reply.php:21
 msgid "in reply to: "
@@ -1157,7 +1157,7 @@ msgstr "No podeu crear temes nous."
 
 #: src/templates/default/bbpress/user-profile.php:26
 msgid "Replies Created: %s"
-msgstr "Respostes creades: %s"
+msgstr "Respostes: %s"
 
 #: src/templates/default/bbpress/user-details.php:58
 msgid "%s's Subscriptions"
@@ -1182,7 +1182,7 @@ msgstr "Perfil"
 
 #: src/templates/default/bbpress/user-profile.php:25
 msgid "Topics Started: %s"
-msgstr "Temes començats: %s"
+msgstr "Temes iniciats: %s"
 
 #: src/templates/default/bbpress/user-profile.php:24
 msgid "Forum Role: %s"
@@ -1190,7 +1190,7 @@ msgstr "Rol del fòrum: %s"
 
 #: src/templates/default/bbpress/user-topics-created.php:15
 msgid "Forum Topics Started"
-msgstr "Temes del fòrum marcats com a preferits"
+msgstr "Temes iniciats"
 
 #: src/includes/core/capabilities.php:380
 msgid "Keymaster"
@@ -1308,7 +1308,7 @@ msgstr "Fòrum del grup"
 #: src/includes/extend/buddypress/loader.php:277
 #: src/templates/default/bbpress/user-details.php:41
 msgid "Replies Created"
-msgstr "Respostes creades"
+msgstr "Respostes"
 
 #: src/includes/admin/settings.php:1396
 msgid "Some optional parameters to help tune the conversion process."
@@ -1477,7 +1477,7 @@ msgstr "Neteja una importació prèvia"
 
 #: src/includes/admin/converter.php:130
 msgid "Start Over"
-msgstr "Comença de nou"
+msgstr "Inicia de nou"
 
 #: src/includes/admin/converter.php:84
 #: src/includes/admin/tools.php:199
@@ -1921,13 +1921,13 @@ msgstr "Cerca als fòrums..."
 #: src/includes/extend/buddypress/loader.php:269
 #: src/templates/default/bbpress/user-details.php:35
 msgid "Topics Started"
-msgstr "Temes marcats com a preferits"
+msgstr "Temes iniciats"
 
 #: src/includes/admin/settings.php:142
 #: src/includes/extend/buddypress/loader.php:218
 #: src/templates/default/bbpress/user-details.php:48
 msgid "Favorites"
-msgstr "Preferits"
+msgstr "Temes preferits"
 
 #: src/includes/admin/settings.php:150
 #: src/includes/extend/buddypress/loader.php:230
@@ -2724,7 +2724,7 @@ msgstr "<strong>ERROR</strong>: La vostra resposta no pot ser creada en aquest m
 
 #: src/includes/extend/buddypress/activity.php:420
 msgid "%1$s started the topic %2$s in the forum %3$s"
-msgstr "%1$s ha començat %2$s tema en el fòrum %3$s"
+msgstr "%1$s ha iniciat %2$s tema en el fòrum %3$s"
 
 #: src/templates/default/bbpress/form-reply.php:166
 #: src/templates/default/bbpress/form-topic.php:226
@@ -3156,7 +3156,7 @@ msgstr "Opinions"
 
 #: src/templates/default/bbpress/user-topics-created.php:28
 msgid "This user has not created any topics."
-msgstr "Aquest usuari/ària no ha creat cap tema."
+msgstr "Aquest usuari/ària no ha iniciat cap tema."
 
 #: src/templates/default/bbpress/user-topics-created.php:28
 msgid "You have not created any topics."
