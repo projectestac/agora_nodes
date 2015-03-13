@@ -683,6 +683,65 @@ li.feed{
     margin:0 !important;
 }
 
+#activity-filter-select {
+    display:none;
+}
+#buddypress div#object-nav.item-list-tabs ul li.current {
+    border-top: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom:0px !important;
+    border-radius:3px;
+}
+#buddypress div#object-nav.item-list-tabs ul li {
+    border-bottom: 1px solid #CCCCCC !important;
+}
+#buddypress div.item-list-tabs#subnav {
+    margin: 0;
+} 
+.widget_bp_core_members_widget .vcard div.item-title, .widget_bp_core_members_widget .vcard div.item-meta{
+    display:none;
+}
+.widget_bp_core_members_widget #members-list{
+    margin-left: 0;
+}
+.widget.buddypress div.item-options {
+    padding: 0 0 1em 0;
+}
+
+div.bbp-template-notice.info {
+    display:none;
+}
+.bbp-template-notice{
+    display:none;
+}
+.bbp-topic-permalink{
+    font-size:1.5em;
+}
+#bbp_topic_content_ifr {
+    border:1px solid #dedede;
+}
+
+#bbpress-forums {
+    font-size: 1em !important;
+}
+
+.bbp-pagination-count{
+    font-size:0.8em;
+    
+}
+#bbpress-forums li.bbp-header {
+    background: #f3f3f3 !important;
+}
+
+ul.bbp-topics, .bbp-topic-form{
+    border: 1px solid #D5D5D5 !important;
+}
+
+#bbpress-forums > #subscription-toggle{
+    display:none;
+}
+
 /*****************************************************************
 Calendari
 ******************************************************************/
