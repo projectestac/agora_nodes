@@ -691,14 +691,10 @@ li.feed{
     border-left: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
     border-bottom:0px !important;
-    border-radius:3px;
 }
 #buddypress div#object-nav.item-list-tabs ul li {
     border-bottom: 1px solid #CCCCCC !important;
 }
-#buddypress div.item-list-tabs#subnav {
-    margin: 0;
-} 
 .widget_bp_core_members_widget .vcard div.item-title, .widget_bp_core_members_widget .vcard div.item-meta{
     display:none;
 }
@@ -741,6 +737,16 @@ ul.bbp-topics, .bbp-topic-form{
 #bbpress-forums > #subscription-toggle{
     display:none;
 }
+#buddypress div.item-list-tabs#subnav{
+    margin:0px !important;
+    border-left: 1px solid #CCCCCC;
+    background-color: #eee !important;
+}
+
+#buddypress div.item-list-tabs ul li.selected a {
+    opacity: 1 !important;
+}
+
 
 /*****************************************************************
 Calendari
