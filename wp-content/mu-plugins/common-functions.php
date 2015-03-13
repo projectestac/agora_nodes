@@ -20,8 +20,7 @@ function common_hidden_meta_boxes($hidden) {
 	$hidden[] = 'revisionsdiv';
 	return $hidden;
 }
-
-// add_filter('hidden_meta_boxes', 'common_hidden_meta_boxes');
+//add_filter('hidden_meta_boxes', 'common_hidden_meta_boxes');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -101,6 +100,13 @@ function set_order_meta_boxes($hidden, $screen) {
 			update_user_meta( $user_id, $meta_key['order'], $meta_value );
 		}else {
 			// Default, do nothing
+		}
+	}else {
+		if ( $post_type == 'post' ) {
+			// Sets comments enabled
+			$meta_key['hidden'] = "metaboxhidden_$post_type";
+			$meta_value = array('slugdiv', 'trackbacksdiv', 'postcustom', 'postexcerpt', 'commentstatusdiv', 'authordiv', 'revisionsdiv');
+			update_user_meta( $user_id, $meta_key['hidden'], $meta_value );
 		}
 	}
 }
