@@ -661,7 +661,7 @@ msgstr ""
 #: bp-groups/bp-groups-notifications.php:280
 #: bp-groups/bp-groups-notifications.php:358
 msgid "To disable these notifications please log in and go to: %s"
-msgstr "Per a desactivar aquestes notificacions, connecteu-vos i aneu a: %s"
+msgstr "Per a desactivar aquests avisos, connecteu-vos i aneu a: %s"
 
 #: bp-activity/bp-activity-notifications.php:164
 msgid "%s replied to one of your updates"
@@ -1091,19 +1091,19 @@ msgstr "Paràmetres del compte"
 #: bp-core/admin/bp-core-components.php:64
 #: bp-core/admin/bp-core-components.php:369
 msgid "Allow your users to modify their account and notification settings directly from within their profiles."
-msgstr "Permet als usuaris modificar el seu compte i configuració de notificacions dels seus perfils."
+msgstr "Permet als usuaris modificar el seu compte i configuració d'avisos dels seus perfils."
 
 #: bp-core/admin/bp-core-components.php:67
 #: bp-core/admin/bp-core-components.php:384
 #: bp-core/deprecated/2.1.php:570
 #: bp-notifications/bp-notifications-loader.php:227
 msgid "Notifications"
-msgstr "Notificacions"
+msgstr "Avisos"
 
 #: bp-core/admin/bp-core-components.php:68
 #: bp-core/admin/bp-core-components.php:385
 msgid "Notify members of relevant activity with a toolbar bubble and/or via email, and allow them to customize their notification settings."
-msgstr "Notifiqueu als membres de l'activitat rellevant amb una bombolla de barra d'eines i/o per correu electrònic, i permeteu-los personalitzar els paràmetres de notificació."
+msgstr "Aviseu als membres de l'activitat rellevant amb una bombolla de barra d'eines i/o per correu electrònic, i permeteu-los personalitzar els paràmetres de avís."
 
 #: bp-core/admin/bp-core-components.php:145
 msgid "Active <span class=\"count\">(%s)</span>"
@@ -1193,7 +1193,7 @@ msgstr "Permet als teus usuaris de parlar entre ells directament i en privat. No
 
 #: bp-core/admin/bp-core-components.php:381
 msgid "Global, personal, and group activity streams with threaded commenting, direct posting, favoriting, and @mentions, all with full RSS feed and email notification support."
-msgstr "Flux global, personal, i de nodes amb possibilitat de comentar, afegir articles, marcar preferits i @mencions, tot amb RSS i notificacions per correu electrònic."
+msgstr "Flux global, personal, i de nodes amb possibilitat de comentar, afegir articles, marcar preferits i @mencions, tot amb RSS i avisos per correu electrònic."
 
 #: bp-core/admin/bp-core-components.php:388
 msgid "User Groups"
@@ -2488,7 +2488,7 @@ msgstr "Suprimeix el compte de %s"
 
 #: bp-core/deprecated/2.1.php:591
 msgid "No new notifications."
-msgstr "Teniu notificacions noves."
+msgstr "Teniu avisos nous."
 
 #: bp-forums/bp-forums-loader.php:28
 msgid "Discussion Forums"
@@ -4427,7 +4427,7 @@ msgstr[1] "Esteu a punt de reenviar un correu electrònic d'activació als compt
 
 #: bp-members/bp-members-admin.php:1779
 msgid "Last notified: %s"
-msgstr "Última notificació: %s"
+msgstr "Últim avís: %s"
 
 #: bp-members/bp-members-admin.php:1783
 msgid "(less than 24 hours ago)"
@@ -4737,7 +4737,7 @@ msgstr ""
 
 #: bp-messages/bp-messages-notifications.php:92
 msgid "To disable these notifications, please log in and go to: %s"
-msgstr "Per desactivar aquestes notificacions, entreu i aneu a: %s"
+msgstr "Per desactivar aquests avisos, entreu i aneu a: %s"
 
 #: bp-messages/bp-messages-notifications.php:131
 msgid "You have %d new messages"
@@ -4859,32 +4859,32 @@ msgstr "Mostra avisos de tot el lloc publicats per l'administrador/a"
 
 #: bp-notifications/bp-notifications-actions.php:43
 msgid "Notification successfully marked read."
-msgstr "La notificació s'han marcat satisfactòriament com a llegida."
+msgstr "L'avís s'ha marcat satisfactòriament com a llegit."
 
 #: bp-notifications/bp-notifications-actions.php:45
 #: bp-notifications/bp-notifications-actions.php:81
 msgid "There was a problem marking that notification."
-msgstr "Hi ha hagut un problema marcant aquesta notificació."
+msgstr "Hi ha hagut un problema marcant aquest avís."
 
 #: bp-notifications/bp-notifications-actions.php:79
 msgid "Notification successfully marked unread."
-msgstr "La notificació s'han marcat satisfactòriament com a no llegida."
+msgstr "L'avís s'ha marcat satisfactòriament com a no llegit."
 
 #: bp-notifications/bp-notifications-actions.php:115
 msgid "Notification successfully deleted."
-msgstr "La notificació s'ha eliminat correctament."
+msgstr "L'avís s'ha eliminat correctament."
 
 #: bp-notifications/bp-notifications-actions.php:117
 msgid "There was a problem deleting that notification."
-msgstr "Hi ha hagut un problema esborrant aquesta notificació."
+msgstr "Hi ha hagut un problema esborrant aquest avís."
 
 #: bp-notifications/bp-notifications-adminbar.php:54
 msgid "No new notifications"
-msgstr "No hi ha noves notificacions"
+msgstr "No hi ha nous avisos"
 
 #: bp-notifications/bp-notifications-loader.php:82
 msgid "Search Notifications..."
-msgstr "Cerca notificacions..."
+msgstr "Cerca avisos..."
 
 #: bp-notifications/bp-notifications-loader.php:208
 #: bp-notifications/bp-notifications-template.php:720
@@ -4898,16 +4898,16 @@ msgstr "No s'han trobat dades"
 #: bp-notifications/bp-notifications-template.php:993
 msgid "Viewing 1 notification"
 msgid_plural "Viewing %1$s - %2$s of %3$s notifications"
-msgstr[0] "Mostrant una notificació"
-msgstr[1] "Mostrant de %1$s a %2$s notificacions de %3$"
+msgstr[0] "Mostrant un avís"
+msgstr[1] "Mostrant de %1$s a %2$s avisos de %3$"
 
 #: bp-notifications/bp-notifications-template.php:1041
 msgid "Newest First"
-msgstr "Les més noves primer"
+msgstr "Els més nous primer"
 
 #: bp-notifications/bp-notifications-template.php:1042
 msgid "Oldest First"
-msgstr "Les més antigues primer"
+msgstr "Els més antics primer"
 
 #: bp-notifications/bp-notifications-template.php:1046
 msgid "Go"
@@ -4976,11 +4976,11 @@ msgstr "No s'han fet canvis en aquest compte."
 
 #: bp-settings/bp-settings-actions.php:301
 msgid "Your notification settings have been saved."
-msgstr "S'ha desat la configuració de les notificacions"
+msgstr "S'ha desat la configuració dels avisos"
 
 #: bp-settings/bp-settings-actions.php:303
 msgid "This user's notification settings have been saved."
-msgstr "S'ha desat la configuració de notificació de l'usuari/ària"
+msgstr "S'ha desat la configuració d'avís de l'usuari/ària"
 
 #: bp-settings/bp-settings-actions.php:403
 msgid "%s was successfully deleted."
@@ -5759,23 +5759,23 @@ msgstr "Envia resposta"
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/feedback-no-notifications.php:7
 msgid "You have no unread notifications."
-msgstr "No teniu cap notificació sense llegir."
+msgstr "No teniu cap avís sense llegir."
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/feedback-no-notifications.php:11
 msgid "This member has no unread notifications."
-msgstr "Aquest membre no té notificacions sense llegir."
+msgstr "Aquest membre no té avisos sense llegir."
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/feedback-no-notifications.php:19
 msgid "You have no notifications."
-msgstr "No teniu notificacions."
+msgstr "No teniu avisos."
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/feedback-no-notifications.php:23
 msgid "This member has no notifications."
-msgstr "Aquest membre no te cap notificació."
+msgstr "Aquest membre no te cap avís."
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/notifications-loop.php:5
 msgid "Notification"
-msgstr "Notificacions"
+msgstr "Avís"
 
 #: bp-templates/bp-legacy/buddypress/members/single/notifications/notifications-loop.php:6
 msgid "Date Received"
@@ -6857,7 +6857,7 @@ msgstr "Nodes"
 #: bp-groups/bp-groups-loader.php:428
 msgctxt "Group screen navigation title"
 msgid "Home"
-msgstr "Inici"
+msgstr "Mur"
 
 #: bp-groups/bp-groups-loader.php:460
 msgctxt "My Group screen nav"
@@ -7110,17 +7110,17 @@ msgstr "Marca com a no llegit"
 #: bp-notifications/bp-notifications-loader.php:26
 msgctxt "Page <title>"
 msgid "Notifications"
-msgstr "Notificacions"
+msgstr "Avisos"
 
 #: bp-notifications/bp-notifications-loader.php:107
 msgctxt "Profile screen nav"
 msgid "Notifications <span class=\"%s\">%s</span>"
-msgstr "Notificacions <span class=\"%s\">%s</span>"
+msgstr "Avisos <span class=\"%s\">%s</span>"
 
 #: bp-notifications/bp-notifications-loader.php:109
 msgctxt "Profile screen nav"
 msgid "Notifications"
-msgstr "Notificacions"
+msgstr "Avisos"
 
 #: bp-notifications/bp-notifications-loader.php:136
 msgctxt "Notification screen nav"
@@ -7135,7 +7135,7 @@ msgstr "Llegit"
 #: bp-notifications/bp-notifications-loader.php:181
 msgctxt "My Account Notification pending"
 msgid "Notifications <span class=\"count\">%s</span>"
-msgstr "Notificacions <span class=\"count\">%s</span>"
+msgstr "Avisos <span class=\"count\">%s</span>"
 
 #: bp-notifications/bp-notifications-loader.php:182
 msgctxt "My Account Notification pending"
@@ -7145,7 +7145,7 @@ msgstr "No llegides <span class=\"count\">%s</span>"
 #: bp-notifications/bp-notifications-loader.php:184
 msgctxt "My Account Notification"
 msgid "Notifications"
-msgstr "Notificacions"
+msgstr "Avisos"
 
 #: bp-notifications/bp-notifications-loader.php:185
 msgctxt "My Account Notification sub nav"
@@ -7496,10 +7496,9 @@ msgstr "Perfil"
 #~ msgstr[1] "Visualitzant missatge %1$s a %2$s (de %3$s missatges)"
 
 #~ msgid "Viewing %1$s to %2$s (of %3$s notification)"
-
 #~ msgid_plural "Viewing %1$s to %2$s (of %3$s notifications)"
-#~ msgstr[0] "Visualitzant %1$s a %2$s (de %3$s notificació)"
-#~ msgstr[1] "Visualitzant %1$s a %2$s (de %3$s notificacions)"
+#~ msgstr[0] "Visualitzant %1$s a %2$s (de %3$s avís)"
+#~ msgstr[1] "Visualitzant %1$s a %2$s (de %3$s avisos)"
 
 #~ msgid ""
 #~ "<strong>Link</strong> - Activity generated by posts and comments, forum "
@@ -7678,7 +7677,7 @@ msgstr "Perfil"
 #~ msgstr "Directori dels fòrums"
 
 #~ msgid "Email Notification"
-#~ msgstr "Notificació de correu electrònic"
+#~ msgstr "Avís de correu electrònic"
 
 #~ msgid "Avatar of %s"
 #~ msgstr "Avatar de %s"
