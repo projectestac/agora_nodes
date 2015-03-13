@@ -10,5 +10,7 @@ Changes in progress
 - Fix: Show left sidebar on mobile version
 - Improved header image adjustament
 - Improved visualization for high screen sizes
-- Add upload images capability to contributor & Restricting contributors to view only media library items they upload 
+- Add upload images capability to contributor & Restricting contributors to view only media library items they upload
 - Enllaços educatius: Added two new icons ("intraweb" and "Portal de centre")
+- BPDOCS: Fixed bug when uploading files
+
