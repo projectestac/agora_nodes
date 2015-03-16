@@ -16,3 +16,4 @@ Changes in progress
 - BPDOCS: Fixed bug when uploading files
 - THEME: Show comments in pages when they are enabled
 - MU-PLUGIN: Reviewed default position, hiddent and collapsed meta-boxes for pages and posts
+- THEME: Added some missing strings to Catalan translation like comments and edit (still is not complete)
