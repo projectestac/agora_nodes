@@ -45,7 +45,7 @@ add_action('reactor_page_footer', 'reactor_do_page_pagelinks');
  * @since 1.0.0
  */
 function reactor_do_page_edit() { 
-	edit_post_link( __('Edit', 'reactor'), '<div class="edit-link"><span>', '</span></div>');
+	edit_post_link( __('Edit'), '<div class="edit-link"><span>', '</span></div>');
 }
 add_action('reactor_page_footer', 'reactor_do_page_edit');
 
