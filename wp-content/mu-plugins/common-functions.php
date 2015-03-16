@@ -7,20 +7,6 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-/**
- * Hide screen option's items. Best for usability
- * @author Sara Arjona
- */
-function common_hidden_meta_boxes($hidden) {
-	$hidden[] = 'authordiv';
-	$hidden[] = 'commentsdiv';
-	$hidden[] = 'commentstatusdiv';
-	$hidden[] = 'layout_meta';
-	$hidden[] = 'slugdiv';
-	$hidden[] = 'revisionsdiv';
-	return $hidden;
-}
-//add_filter('hidden_meta_boxes', 'common_hidden_meta_boxes');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -38,7 +24,6 @@ function remove_post_meta_boxes() {
 	remove_meta_box('layout_meta', 'post', 'side');
 	remove_meta_box('layout_meta', 'post', 'normal');
 }
-
 add_action('do_meta_boxes', 'remove_post_meta_boxes');
 
 /**
@@ -51,7 +36,6 @@ function remove_page_meta_boxes() {
 	remove_meta_box('postcustom', 'page', 'normal');
 	remove_meta_box('postimagediv', 'page', 'side');
 }
-
 add_action('do_meta_boxes', 'remove_page_meta_boxes');
 
 /**
@@ -59,58 +43,55 @@ add_action('do_meta_boxes', 'remove_page_meta_boxes');
  * Sets order and initial position from boxes
  * for pages or articles
  * @author Nacho Abejaro
+ * @author Sara Arjona
  */
 function set_order_meta_boxes($hidden, $screen) {
-
 	$post_type = $screen->post_type;
-
 	// So this can be used without hooking into user_register
-	if ( ! $user_id)
+	if ( ! $user_id ) {
 		$user_id = get_current_user_id();
+	}
 
-	$user_meta = get_user_meta($user_id);
-
+	//$user_meta = get_user_meta($user_id);
 	$meta_key = array(
 		'order' => "meta-box-order_$post_type",
+		'hidden' => "metaboxhidden_$post_type",
+		'closed' => "closedpostboxes_$post_type",
 	);
 
 	// If user have preferences, do nothing
-	if ( ! get_user_meta( $user_id, $meta_key['order'], true) ) {
-
+	if ( ! get_user_meta($user_id, $meta_key['order'], true) ) {
 		if ( $post_type == 'post' ) {
-			// Defines the position
+			// Defines position of the meta-boxes
 			$meta_value = array(
 				'side' => 'submitdiv,postimagediv,postexcerpt,metabox1,tagsdiv-post',
 				'normal' => 'categorydiv',
 				'advanced' => '',
 			);
+			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
-			// Sets Order
-			update_user_meta( $user_id, $meta_key['order'], $meta_value );
-		}elseif ( $post_type == 'page' ) {
-
-			// Defines the position
+			// Defines hidden meta-boxes
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv');
+			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
+		} elseif ( $post_type == 'page' ) {
+			// Defines position of the meta-boxes
 			$meta_value = array(
 				'side' => 'submitdiv,pageparentdiv',
 				'normal' => 'commentstatusdiv',
 				'advanced' => '',
 			);
+			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
-			//Sets Order
-			update_user_meta( $user_id, $meta_key['order'], $meta_value );
-		}else {
-			// Default, do nothing
-		}
-	}else {
-		if ( $post_type == 'post' ) {
-			// Sets comments enabled
-			$meta_key['hidden'] = "metaboxhidden_$post_type";
-			$meta_value = array('slugdiv', 'trackbacksdiv', 'postcustom', 'postexcerpt', 'commentstatusdiv', 'authordiv', 'revisionsdiv');
-			update_user_meta( $user_id, $meta_key['hidden'], $meta_value );
+			// Defines hidden meta-boxes
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'revisionsdiv', 'slugdiv');
+			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
+
+			// Defines collapsed meta-boxes
+			$meta_value = array('layout_meta');
+			update_user_meta($user_id, $meta_key['closed'], $meta_value);
 		}
 	}
 }
-
 add_action('add_meta_boxes', 'set_order_meta_boxes', 10, 2);
 
 /**
@@ -118,10 +99,10 @@ add_action('add_meta_boxes', 'set_order_meta_boxes', 10, 2);
  * @author Xavi Meler
  */
 function add_contributor_caps() {
-    $role = get_role( 'contributor' );
-    $role->add_cap('upload_files');
+	$role = get_role('contributor');
+	$role->add_cap('upload_files');
 }
-add_action( 'admin_init', 'add_contributor_caps');
+add_action('admin_init', 'add_contributor_caps');
 
 /**
  * Restricting contributors to view only media library items they upload
@@ -129,19 +110,22 @@ add_action( 'admin_init', 'add_contributor_caps');
  * @author Xavi Meler
 */
 function users_own_attachments( $wp_query_obj ) {
-    global $current_user, $pagenow;
+	global $current_user, $pagenow;
 
-    if( !is_a( $current_user, 'WP_User') )
-        return;
+	if ( ! is_a($current_user, 'WP_User') ) {
+		return;
+	}
 
-    if(('edit.php' != $pagenow) && ('upload.php' != $pagenow ) &&
-    (( 'admin-ajax.php' != $pagenow ) || ( $_REQUEST['action'] != 'query-attachments' )))
-        return;
+	if ( ('edit.php' != $pagenow) && ('upload.php' != $pagenow ) &&
+	(( 'admin-ajax.php' != $pagenow ) || ( $_REQUEST['action'] != 'query-attachments' ) ) ) {
+		return;
+	}
 
-    // Apply to this roles: Subscriptor, Contributor and Author
-    if(!current_user_can('delete_pages'))
-        $wp_query_obj->set('author', $current_user->id );
+	// Apply to this roles: Subscriptor, Contributor and Author
+	if ( ! current_user_can('delete_pages') ) {
+		$wp_query_obj->set('author', $current_user->id);
+	}
 
-    return;
+	return;
 }
 add_action('pre_get_posts','users_own_attachments');

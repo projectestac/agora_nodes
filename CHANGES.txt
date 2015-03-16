@@ -15,3 +15,4 @@ Changes in progress
 - Enllaços educatius: Added two new icons ("intraweb" and "Portal de centre")
 - BPDOCS: Fixed bug when uploading files
 - THEME: Show comments in pages when they are enabled
+- MU-PLUGIN: Reviewed default position, hiddent and collapsed meta-boxes for pages and posts
