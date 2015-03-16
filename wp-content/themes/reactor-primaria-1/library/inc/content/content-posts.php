@@ -68,7 +68,7 @@ function reactor_do_standard_format_sticky() {
 function reactor_do_standard_header_titles() {
 	
     if (!is_single() && get_post_meta(get_the_ID(), '_amaga_titol', true) == "on") {
-        edit_post_link(__('Edit', 'reactor'), '<div class="edit-link"><span>', '</span></div>');
+        edit_post_link(__('Edit'), '<div class="edit-link"><span>', '</span></div>');
         return;
     }
    
@@ -78,7 +78,7 @@ function reactor_do_standard_header_titles() {
                     <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('%s', 'reactor'), the_title_attribute('echo=0'))); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 <?php } 
     
-    edit_post_link(__('Edit', 'reactor'), '<div class="edit-link"><span>', '</span></div>');
+    edit_post_link(__('Edit'), '<div class="edit-link"><span>', '</span></div>');
 }
 
 //add_action('reactor_post_header', 'reactor_do_standard_header_titles', 3);
