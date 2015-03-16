@@ -71,7 +71,7 @@ function set_order_meta_boxes($hidden, $screen) {
 			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
 			// Defines hidden meta-boxes
-			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv');
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
 			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
 		} elseif ( $post_type == 'page' ) {
 			// Defines position of the meta-boxes
@@ -93,6 +93,22 @@ function set_order_meta_boxes($hidden, $screen) {
 	}
 }
 add_action('add_meta_boxes', 'set_order_meta_boxes', 10, 2);
+
+/**
+ * Disable or enable comments and pings for pages or articles
+ * @author Nacho Abejaro
+ */
+function default_comments_off( $data ) {
+	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {
+		$data['comment_status'] = 'close';
+        $data['ping_status'] = 'close';
+    }elseif ( $data['post_type'] == 'post' && $data['post_status'] == 'auto-draft' ) {
+    	$data['comment_status'] = 'open';
+    	$data['ping_status'] = 'open';
+    }
+	return $data;
+}
+add_filter( 'wp_insert_post_data', 'default_comments_off' );
 
 /**
  * Add upload images capability to the contributor rol
