@@ -18,6 +18,7 @@ class script_manage_plugins extends agora_script_base{
 	}
 
 	protected function _execute($params = array()) {
+		include_once (ABSPATH . 'wp-admin/includes/plugin.php');
 		switch ($params['onoff']) {
 			case 'on':
 				$result = activate_plugin($params['activationfile']);
