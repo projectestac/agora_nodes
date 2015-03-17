@@ -3,8 +3,12 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 15.03.20
 ---------------------------------------------------------------------------------------
+- Set user priority on the boxes
+- Hidden unnecessary boxes
+- Added external links for Google Fonts
+- Sets the order and the position for the boxes
 - GCE: Added default values for hidden parameters and remove some metaboxes to simplify user experience
 - GCE: Fixed warning message in list of calendars
 - MU-PLUGIN: Created common-functions.php pluggin to include common functions which are not related only with the theme
