@@ -198,7 +198,8 @@ function reactor_img_unautop( $content ) {
  */
 function reactor_excerpt_more( $output ) {
 	global $post;
-	$readmore = reactor_option('post_readmore', 'Read more &raquo;');
+	//$readmore = reactor_option('post_readmore', 'Read more &raquo;');
+    $readmore = 'Llegeix més»';
 	return '&hellip;  <a href="' . get_permalink( $post->ID ) . '" title="Read ' . get_the_title( $post->ID ) . '">' . $readmore . '</a>';
 }
 
