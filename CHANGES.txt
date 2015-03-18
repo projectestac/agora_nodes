@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- CSV: Included first version of the import-users-from-csv-with-meta plugin
+
+
 Changes 15.03.20
 ---------------------------------------------------------------------------------------
 - Set user priority on the boxes
