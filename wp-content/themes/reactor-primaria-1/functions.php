@@ -177,7 +177,6 @@ function improved_trim_excerpt($text) {
         global $post;
 	$allowed_tags='<a>,<ul>,<li>,<ol>';
         
-        $excerpt_more = reactor_option('post_readmore','Llegeix més');
         $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_more);
 
         if ( '' == $text ) {
