@@ -17,7 +17,6 @@ $wp_min_fields = array("Username", "Password", "Email");
 load_plugin_textdomain('import-users-from-csv-with-meta', false, plugin_basename(dirname(__FILE__)). '/languages');
 //************ FI
 
-
 function acui_init(){
 	acui_activate();
 }
@@ -32,7 +31,7 @@ function acui_deactivate(){
 function acui_menu() {
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.17 @sarjona
-add_submenu_page( 'tools.php', 'Insert users massively (CSV)', __('Import users', 'import-users-from-csv-with-meta'), 'manage_options', 'acui', 'acui_options' ); 
+add_submenu_page( 'tools.php', 'Insert users massively (CSV)', __('Import users', 'import-users-from-csv-with-meta'), 'manage_options', 'acui', 'acui_options' );
 //************ ORIGINAL
 /*
 	add_submenu_page( 'tools.php', 'Insert users massively (CSV)', 'Import users from CSV', 'manage_options', 'acui', 'acui_options'
@@ -44,7 +43,7 @@ function acui_detect_delimiter($file){
 	$handle = @fopen($file, "r");
 	$sumComma = 0;
 	$sumSemiColon = 0;
-	$sumBar = 0; 
+	$sumBar = 0;
 
     if($handle){
     	while (($data = fgets($handle, 4096)) !== FALSE):
@@ -54,12 +53,12 @@ function acui_detect_delimiter($file){
 	    endwhile;
     }
     fclose($handle);
-    
+
     if(($sumComma > $sumSemiColon) && ($sumComma > $sumBar))
     	return ",";
     else if(($sumSemiColon > $sumComma) && ($sumSemiColon > $sumBar))
     	return ";";
-    else 
+    else
     	return "|";
 }
 
@@ -81,21 +80,21 @@ function acui_string_conversion($string){
 
 function acui_import_users($file, $role){?>
 	<div class="wrap">
-		<h2>Importing users</h2>	
+		<h2>Importing users</h2>
 		<?php
 			set_time_limit(0);
 			global $wpdb;
 			$headers = array();
 			global $wp_users_fields;
-			global $wp_min_fields;	
-	
+			global $wp_min_fields;
+
 //XTEC ************ ELIMINAT - Removed to simplify user experience
 //2015.03.18 @sarjona
 /*
 			echo "<h3>Ready to registers</h3>";
 			echo "<p>First row represents the form of sheet</p>";
  */
-//************ FI			
+//************ FI
 			$row = 0;
 
 			ini_set('auto_detect_line_endings',TRUE);
@@ -113,7 +112,7 @@ function acui_import_users($file, $role){?>
 
 				if( count($data) == 1 )
 					$data = $data[0];
-				
+
 				foreach ($data as $key => $value)   {
 					$data[$key] = trim($value);
 				}
@@ -121,7 +120,7 @@ function acui_import_users($file, $role){?>
 				for($i = 0; $i < count($data); $i++){
 					$data[$i] = acui_string_conversion($data[$i]);
 				}
-				
+
 				if($row == 0):
 					// check min columns username - password - email
 					if(count($data) < 3){
@@ -166,7 +165,7 @@ function acui_import_users($file, $role){?>
 					else{
 						$user_id = wp_create_user($username, $password, $email);
 					}
-						
+
 					if(is_wp_error($user_id)){
 //XTEC ************ MODIFICAT - Added language supporting and changed to $errors to print them at the end
 //2015.03.17 @sarjona
@@ -181,7 +180,7 @@ function acui_import_users($file, $role){?>
 
 					if(!( in_array("administrator", acui_get_roles($user_id), FALSE) || is_multisite() && is_super_admin( $user_id ) ))
 						wp_update_user(array ('ID' => $user_id, 'role' => $role)) ;
-						
+
 					if($columns > 3){
 						for($i=3; $i<$columns; $i++):
 							if( !empty($data) ){
@@ -201,7 +200,7 @@ function acui_import_users($file, $role){?>
 					flush();
 				endif;
 
-				$row++;						
+				$row++;
 			endwhile;
 			?>
 			</table>
@@ -252,13 +251,13 @@ function acui_get_editable_roles() {
 
     foreach ($editable_roles as $key => $editable_role)
 		$list_editable_roles[$key] = $editable_role["name"];
-	
+
     return $list_editable_roles;
 }
 
-function acui_options() 
+function acui_options()
 {
-	if (!current_user_can('edit_users'))  
+	if (!current_user_can('edit_users'))
 	{
 		wp_die(__('You are not allowed to see this content.'));
 		$acui_action_url = admin_url('options-general.php?page=' . plugin_basename(__FILE__));
@@ -311,7 +310,17 @@ function acui_options()
 
 		<div style="float:left; width:80%;">
 			<form method="POST" enctype="multipart/form-data" action="" accept-charset="utf-8" onsubmit="return check();">
-			<table class="form-table" style="width:50%">
+<!--
+//XTEC ************ MODIFICAT - Alter table
+//2015.03.20 @nacho
+-->
+				<table class="form-table">
+<!-- ************ ORIGINAL
+/*
+				<table class="form-table" style="width:50%" border="1">
+*/
+//************ FI
+-->
 				<tbody>
 				<tr class="form-field">
 <!--
@@ -328,8 +337,8 @@ function acui_options()
 -->
 					<td>
 					<select name="role" id="role">
-						<?php 
-							$list_roles = acui_get_editable_roles(); 
+						<?php
+							$list_roles = acui_get_editable_roles();
 							foreach ($list_roles as $key => $value) {
 								if($key == "subscriber")
 									echo "<option selected='selected' value='$key'>$value</option>";
@@ -339,7 +348,18 @@ function acui_options()
 						?>
 					</select>
 					</td>
+<!--
+//XTEC ************ AFEGIT - Added function for hidden or display help
+//2015.03.20 @nacho
+-->
+					<td>
+					<a href="javascript:void(0)" onClick="toggleproviderhelp()"><?php _e("Where do I get this info?", 'import-users-from-csv-with-meta') ?></a>
+					</td>
+<!--
+//************ FI
+-->
 				</tr>
+
 				<tr class="form-field form-required">
 <!--
 //XTEC ************ MODIFICAT - Added language supporting
@@ -375,6 +395,110 @@ function acui_options()
 		<div style="clear:both; width:100%;"></div>
 
 <!--
+//XTEC ************ AFEGIT - Added block for show help
+//2015.03.20 @nacho
+-->
+		<div
+			class="iu_div_settings_help_importUsers"
+			style="<?php if( isset( $_REQUEST["enable"] )  && $_REQUEST["enable"] == $provider_id ) echo "-"; // <= lolz ?>display:none;">
+			<table class="form-table editcomment">
+				<tbody>
+					<tr valign="top">
+						<td>
+							<div id="post-body-content">
+								<div id="namediv" class="stuffbox">
+									<h4 style="padding: 8px 12px; margin: 0.33em 0;">
+										<label>
+										<?php _e("Help", "import-users-from-csv-with-meta");?>
+										</label>
+							        </h4>
+							        <div class="inside">
+								        <hr class="wsl">
+									        <strong><?php _e("You should fill the first three rows with the next values", "import-users-from-csv-with-meta");?></strong><br/>
+									        <ul><ol>
+									        	<li>
+													<strong>
+													<?php _e("Username", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("Sets the username.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("Password", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("Sets user password.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("Email", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("Sets user email.", "import-users-from-csv-with-meta");?>
+												</li>
+									        </ul></ol>
+
+									        <strong><?php _e("The next columns are totally customizable and you can use whatever you want. All rows must contains same columns", "import-users-from-csv-with-meta");?></strong><br/>
+
+									        <ol>
+												<li>
+													<strong>
+													<?php _e("user_nicename", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("A string that contains a URL-friendly name for the user. The default is the user's username.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("user_url", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("A string containing the user's URL for the user's web site.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("display_name", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through obscurity (that is if you dont use and delete the default admin user).", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("nickname", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("The user's nickname, defaults to the user's username.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("first_name", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("The user's first name.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("last_name", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("The user's last name.", "import-users-from-csv-with-meta");?>
+												</li>
+												<li>
+													<strong>
+													<?php _e("description", "import-users-from-csv-with-meta");?>
+													</strong>
+													<?php _e("A string containing content about the user.", "import-users-from-csv-with-meta");?>
+												</li>
+											</ol>
+								        </hr>
+							        </div>
+							    </div>
+							</div>
+						</td>
+						<td width="10"></td>
+						<td width="400"> </td>
+					</tr>
+				</tbody>
+			</table>
+	    </div>
+<!--
+*/
+//************ FI
+-->
+
+<!--
 //XTEC ************ ELIMINAT - Removed to simplify user experience
 //2015.03.17 @sarjona
 /*
@@ -387,8 +511,8 @@ function acui_options()
 				<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 			</form>
 		</div>
-		<?php 
-		$headers = get_option("acui_columns"); 
+		<?php
+		$headers = get_option("acui_columns");
 
 		if(is_array($headers) && !empty($headers)):
 		?>
@@ -402,7 +526,7 @@ function acui_options()
 					<ol>
 						<?php foreach ($headers as $column): ?>
 							<li><?php echo $column; ?></li>
-						<?php endforeach; ?>						
+						<?php endforeach; ?>
 					</ol>
 				</td>
 			</tr>
@@ -434,7 +558,7 @@ function acui_options()
 			</tr>
 			<tr valign="top">
 				<th scope="row">Example</th>
-			<td>Download this <a href="<?php echo plugins_url() . "/import-users-from-csv-with-meta/test.csv"; ?>">.csv file</a> to test</td> 
+			<td>Download this <a href="<?php echo plugins_url() . "/import-users-from-csv-with-meta/test.csv"; ?>">.csv file</a> to test</td>
 			</tr>
 		</tbody></table>
 
@@ -450,7 +574,7 @@ function acui_options()
 						<li>Username</li>
 						<li>Password</li>
 						<li>Email</li>
-					</ol>						
+					</ol>
 					<small><em>(The next columns are totally customizable and you can use whatever you want. All rows must contains same columns)</em></small>
 					<small><em>(User profile will be adapted to the kind of data you have selected)</em></small>
 				</td>
@@ -483,7 +607,7 @@ function acui_options()
 			</tr>
 			<tr valign="top">
 				<th scope="row">Example</th>
-			<td>Download this <a href="<?php echo plugins_url() . "/import-users-from-csv-with-meta/test.csv"; ?>">.csv file</a> to test</td> 
+			<td>Download this <a href="<?php echo plugins_url() . "/import-users-from-csv-with-meta/test.csv"; ?>">.csv file</a> to test</td>
 			</tr>
 		</tbody></table>
 		<br/>
@@ -495,8 +619,12 @@ function acui_options()
 	<script type="text/javascript">
 	function check(){
 		if(document.getElementById("uploadfiles").value == "") {
-		   alert("Please choose a file");
-		   return false;
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.20 @nacho
+			//alert("Please choose a file");
+			alert ("<?php $msg = _e("Please choose a file", "import-users-from-csv-with-meta");; echo $msg;?>");
+			return false;
+//************ FI
 		}
 	}
 	</script>
@@ -532,7 +660,7 @@ function acui_fileupload_process($role) {
 		$filetitle = preg_replace('/\.[^.]+$/', '', basename( $filename ) );
 		$filename = $filetitle . '.' . $filetype['ext'];
 		$upload_dir = wp_upload_dir();
-		
+
 		if ($filetype['ext'] != "csv") {
 		  wp_die('File must be a CSV');
 		  return;
@@ -576,7 +704,7 @@ function acui_fileupload_process($role) {
 		require_once( ABSPATH . "wp-admin" . '/includes/image.php' );
 		$attach_data = wp_generate_attachment_metadata( $attach_id, $filedest );
 		wp_update_attachment_metadata( $attach_id,  $attach_data );
-		
+
 		acui_import_users($filedest, $role);
 	  }
 	}
@@ -625,8 +753,8 @@ function acui_save_extra_user_profile_fields( $user_id ){
 		}
 	endif;
 }
-	
-register_activation_hook(__FILE__,'acui_init'); 
+
+register_activation_hook(__FILE__,'acui_init');
 register_deactivation_hook( __FILE__, 'acui_deactivate' );
 add_action("plugins_loaded", "acui_init");
 add_action("admin_menu", "acui_menu");
@@ -636,59 +764,79 @@ add_action("personal_options_update", "acui_save_extra_user_profile_fields");
 add_action("edit_user_profile_update", "acui_save_extra_user_profile_fields");
 
 // misc
-if (!function_exists('str_getcsv')) { 
-    function str_getcsv($input, $delimiter = ',', $enclosure = '"', $escape = '\\', $eol = '\n') { 
-        if (is_string($input) && !empty($input)) { 
-            $output = array(); 
-            $tmp    = preg_split("/".$eol."/",$input); 
-            if (is_array($tmp) && !empty($tmp)) { 
-                while (list($line_num, $line) = each($tmp)) { 
-                    if (preg_match("/".$escape.$enclosure."/",$line)) { 
-                        while ($strlen = strlen($line)) { 
-                            $pos_delimiter       = strpos($line,$delimiter); 
-                            $pos_enclosure_start = strpos($line,$enclosure); 
-                            if ( 
-                                is_int($pos_delimiter) && is_int($pos_enclosure_start) 
-                                && ($pos_enclosure_start < $pos_delimiter) 
-                                ) { 
-                                $enclosed_str = substr($line,1); 
-                                $pos_enclosure_end = strpos($enclosed_str,$enclosure); 
-                                $enclosed_str = substr($enclosed_str,0,$pos_enclosure_end); 
-                                $output[$line_num][] = $enclosed_str; 
-                                $offset = $pos_enclosure_end+3; 
-                            } else { 
-                                if (empty($pos_delimiter) && empty($pos_enclosure_start)) { 
-                                    $output[$line_num][] = substr($line,0); 
-                                    $offset = strlen($line); 
-                                } else { 
-                                    $output[$line_num][] = substr($line,0,$pos_delimiter); 
-                                    $offset = ( 
-                                                !empty($pos_enclosure_start) 
-                                                && ($pos_enclosure_start < $pos_delimiter) 
-                                                ) 
-                                                ?$pos_enclosure_start 
-                                                :$pos_delimiter+1; 
-                                } 
-                            } 
-                            $line = substr($line,$offset); 
-                        } 
-                    } else { 
-                        $line = preg_split("/".$delimiter."/",$line); 
+if (!function_exists('str_getcsv')) {
+    function str_getcsv($input, $delimiter = ',', $enclosure = '"', $escape = '\\', $eol = '\n') {
+        if (is_string($input) && !empty($input)) {
+            $output = array();
+            $tmp    = preg_split("/".$eol."/",$input);
+            if (is_array($tmp) && !empty($tmp)) {
+                while (list($line_num, $line) = each($tmp)) {
+                    if (preg_match("/".$escape.$enclosure."/",$line)) {
+                        while ($strlen = strlen($line)) {
+                            $pos_delimiter       = strpos($line,$delimiter);
+                            $pos_enclosure_start = strpos($line,$enclosure);
+                            if (
+                                is_int($pos_delimiter) && is_int($pos_enclosure_start)
+                                && ($pos_enclosure_start < $pos_delimiter)
+                                ) {
+                                $enclosed_str = substr($line,1);
+                                $pos_enclosure_end = strpos($enclosed_str,$enclosure);
+                                $enclosed_str = substr($enclosed_str,0,$pos_enclosure_end);
+                                $output[$line_num][] = $enclosed_str;
+                                $offset = $pos_enclosure_end+3;
+                            } else {
+                                if (empty($pos_delimiter) && empty($pos_enclosure_start)) {
+                                    $output[$line_num][] = substr($line,0);
+                                    $offset = strlen($line);
+                                } else {
+                                    $output[$line_num][] = substr($line,0,$pos_delimiter);
+                                    $offset = (
+                                                !empty($pos_enclosure_start)
+                                                && ($pos_enclosure_start < $pos_delimiter)
+                                                )
+                                                ?$pos_enclosure_start
+                                                :$pos_delimiter+1;
+                                }
+                            }
+                            $line = substr($line,$offset);
+                        }
+                    } else {
+                        $line = preg_split("/".$delimiter."/",$line);
 
-                        /* 
-                         * Validating against pesky extra line breaks creating false rows. 
-                         */ 
-                        if (is_array($line) && !empty($line[0])) { 
-                            $output[$line_num] = $line; 
-                        }  
-                    } 
-                } 
-                return $output; 
-            } else { 
-                return false; 
-            } 
-        } else { 
-            return false; 
-        } 
-    } 
-} 
+                        /*
+                         * Validating against pesky extra line breaks creating false rows.
+                         */
+                        if (is_array($line) && !empty($line[0])) {
+                            $output[$line_num] = $line;
+                        }
+                    }
+                }
+                return $output;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+}
+?>
+
+<!--
+//XTEC ************ AFEGIT - Added Provided Help
+//2015.03.20 @nacho
+-->
+<script>
+function toggleproviderhelp() {
+	if(typeof jQuery=="undefined") {
+		alert ("<?php $msg = _e("Import Users module require jQuery to be installed on your wordpress in order to work!", "import-users-from-csv-with-meta"); echo $msg;?>");
+		return false;
+	}
+
+	idp = 'importUsers';
+	jQuery('.iu_div_settings_help_' + idp).toggle();
+
+	return false;
+}
+</script>
+<!-- ************ FI -->
