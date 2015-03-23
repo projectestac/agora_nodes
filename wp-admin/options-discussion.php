@@ -184,6 +184,12 @@ printf( __('Comments should be displayed with the %s comments at the top of each
 	</label>
 </fieldset></td>
 </tr>
+<?php
+// XTEC ************ AFEGIT - hide default avatars and punctuation. It's only showed for xtecadmin.
+// 2015.02.20 @vsaavedr
+global $isAgora, $isBlocs;
+if ( ( ($isAgora) && (is_xtecadmin()) ) || ( ($isBlocs) && (is_network_admin()) ) ) {
+?>
 <tr>
 <th scope="row"><?php _e('Maximum Rating'); ?></th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e('Maximum Rating'); ?></span></legend>
@@ -261,7 +267,10 @@ echo apply_filters( 'default_avatar_select', $avatar_list );
 
 </fieldset></td>
 </tr>
-<?php do_settings_fields('discussion', 'avatars'); ?>
+<?php
+}
+//FI
+do_settings_fields('discussion', 'avatars'); ?>
 </table>
 
 <?php do_settings_sections('discussion'); ?>
