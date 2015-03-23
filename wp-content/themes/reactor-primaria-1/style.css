@@ -19,6 +19,11 @@ div.large-9{
 #contingut_central_frontpage p{
     font-size:0.9em;
 }
+
+#contingut_central_frontpage{
+ padding:0px;   
+}
+
 .row {
     max-width: 100%;
     margin: 0 !important;
