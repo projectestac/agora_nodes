@@ -163,3 +163,9 @@ function myTemplate($query) {
 	//Reset Query
 	wp_reset_query();
 }
+
+/**
+ * Disable gravatar.com calls on buddypress.
+ * @author Víctor Saavedra (vsaavedr@xtec.cat)
+ */
+add_filter( 'bp_core_fetch_avatar_no_grav', '__return_true' );
