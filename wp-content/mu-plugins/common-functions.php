@@ -145,3 +145,14 @@ function users_own_attachments( $wp_query_obj ) {
 	return;
 }
 add_action('pre_get_posts','users_own_attachments');
+
+/**
+ * Disable gravatar.com calls.
+ * @author Víctor Saavedra (vsaavedr@xtec.cat)
+ */
+function remove_gravatar ($avatar, $id_or_email, $size, $default, $alt) {
+	$default = admin_url('images/mysteryman.png');
+	return "<img alt='{$alt}' src='{$default}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+}
+
+add_filter('get_avatar', 'remove_gravatar', 1, 5);
