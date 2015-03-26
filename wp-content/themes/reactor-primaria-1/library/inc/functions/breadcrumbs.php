@@ -2,16 +2,16 @@
 /**
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
  *
- * Breadcrumb Trail is a script for showing a breadcrumb trail for any type of page.  It tries to 
- * anticipate any type of structure and display the best possible trail that matches your site's 
- * permalink structure.  While not perfect, it attempts to fill in the gaps left by many other 
+ * Breadcrumb Trail is a script for showing a breadcrumb trail for any type of page.  It tries to
+ * anticipate any type of structure and display the best possible trail that matches your site's
+ * permalink structure.  While not perfect, it attempts to fill in the gaps left by many other
  * breadcrumb scripts.
  *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License as published by the Free Software Foundation; either version 2 of the License, 
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation; either version 2 of the License,
  * or (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package   BreadcrumbTrail
@@ -24,7 +24,7 @@
  */
 
 /**
- * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class, 
+ * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
  * which should be used in theme templates.
  *
  * @since  0.1.0
@@ -167,7 +167,7 @@ class Breadcrumb_Trail {
 	public function default_labels() {
 
 		$labels = array(
-			//TODO: No hardcoded translations 
+			//TODO: No hardcoded translations
 			//'home'                => __( 'Home',                    'breadcrumb-trail' ),
 			'home'                => __( 'Inici',                   'breadcrumb-trail' ),
 			'search'              => __( 'Search results for "%s"', 'breadcrumb-trail' ),
@@ -188,7 +188,7 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Runs through the various WordPress conditional tags to check the current page being viewed.  Once 
+	 * Runs through the various WordPress conditional tags to check the current page being viewed.  Once
 	 * a condition is met, a specific method is launched to add items to the $items array.
 	 *
 	 * @since  0.6.0
@@ -476,7 +476,7 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Adds a specific post's hierarchy to the items array.  The hierarchy is determined by post type's 
+	 * Adds a specific post's hierarchy to the items array.  The hierarchy is determined by post type's
 	 * rewrite arguments and whether it has an archive page.
 	 *
 	 * @since  0.6.0
@@ -523,7 +523,7 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Gets post types by slug.  This is needed because the get_post_types() function doesn't exactly 
+	 * Gets post types by slug.  This is needed because the get_post_types() function doesn't exactly
 	 * match the 'has_archive' argument when it's set as a string instead of a boolean.
 	 *
 	 * @since  0.6.0
@@ -577,7 +577,7 @@ class Breadcrumb_Trail {
 				$slug = trim( $taxonomy->rewrite['slug'], '/' );
 
 				/**
-				 * Deals with the situation if the slug has a '/' between multiple strings. For 
+				 * Deals with the situation if the slug has a '/' between multiple strings. For
 				 * example, "movies/genres" where "movies" is the post type archive.
 				 */
 				$matches = explode( '/', $slug );
@@ -892,8 +892,8 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Get parent posts by path.  Currently, this method only supports getting parents of the 'page' 
-	 * post type.  The goal of this function is to create a clear path back to home given what would 
+	 * Get parent posts by path.  Currently, this method only supports getting parents of the 'page'
+	 * post type.  The goal of this function is to create a clear path back to home given what would
 	 * normally be a "ghost" directory.  If any page matches the given path, it'll be added.
 	 *
 	 * @since  0.6.0
@@ -951,7 +951,7 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress 
+	 * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
 	 * function get_category_parents() but handles any type of taxonomy.
 	 *
 	 * @since  0.6.0
@@ -977,6 +977,11 @@ class Breadcrumb_Trail {
 			$term_id = $term->parent;
 		}
 
+// XTEC ************ AFEGIT - Mount correct breadcrumb for categories
+// 2015.03.25 @Nacho Abejaro
+		$parents = array_reverse($parents);
+// ************ FI
+
 		/* If we have parent terms, reverse the array to put them in the proper order for the trail. */
 		if ( !empty( $parents ) )
 			$this->items = array_merge( $this->items, $parents );
@@ -984,7 +989,7 @@ class Breadcrumb_Trail {
 
 	/**
 	 * Turns %tag% from permalink structures into usable links for the breadcrumb trail.  This feels kind of
-	 * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post' 
+	 * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post'
 	 * post type.  In the future, maybe it'll handle a wider variety of possibilities, especially for custom post
 	 * types.
 	 *
@@ -1065,7 +1070,7 @@ class Breadcrumb_Trail {
 }
 
 /**
- * Extends the Breadcrumb_Trail class for bbPress.  Only use this if bbPress is in use.  This should 
+ * Extends the Breadcrumb_Trail class for bbPress.  Only use this if bbPress is in use.  This should
  * serve as an example for other plugin developers to build custom breadcrumb items.
  *
  * @since  0.6.0
@@ -1074,7 +1079,7 @@ class Breadcrumb_Trail {
 class bbPress_Breadcrumb_Trail extends Breadcrumb_Trail {
 
 	/**
-	 * Runs through the various bbPress conditional tags to check the current page being viewed.  Once 
+	 * Runs through the various bbPress conditional tags to check the current page being viewed.  Once
 	 * a condition is met, add items to the $items array.
 	 *
 	 * @since  0.6.0
