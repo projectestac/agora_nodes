@@ -15,8 +15,6 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 function remove_post_meta_boxes() {
 	remove_meta_box('trackbacksdiv', 'post', 'normal');
 	remove_meta_box('trackbacksdiv', 'post', 'side');
-	remove_meta_box('formatdiv', 'post', 'normal');
-	remove_meta_box('formatdiv', 'post', 'side');
 	remove_meta_box('postcustom', 'post', 'normal');
 	remove_meta_box('postcustom', 'post', 'side');
 	remove_meta_box('rawhtml_meta_box', 'post', 'side');
@@ -64,14 +62,14 @@ function set_order_meta_boxes($hidden, $screen) {
 		if ( $post_type == 'post' ) {
 			// Defines position of the meta-boxes
 			$meta_value = array(
-				'side' => 'submitdiv,postimagediv,postexcerpt,metabox1,tagsdiv-post',
+				'side' => 'submitdiv,postimagediv,postexcerpt,formatdiv,metabox1,tagsdiv-post',
 				'normal' => 'categorydiv',
 				'advanced' => '',
 			);
 			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
 			// Defines hidden meta-boxes
-			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'formatdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
 			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
 		} elseif ( $post_type == 'page' ) {
 			// Defines position of the meta-boxes
