@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - CSV: Included first version of the import-users-from-csv-with-meta plugin
+- Solved categories error on breadcrumbs 
 
 
 Changes 15.03.20
