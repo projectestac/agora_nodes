@@ -80,7 +80,19 @@ function acui_string_conversion($string){
 
 function acui_import_users($file, $role){?>
 	<div class="wrap">
+<!--
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.30 @nacho
+ -->
+ <!--
+//************ ORIGINAL
+/*
 		<h2>Importing users</h2>
+*/
+*/
+//************ FI
+-->
+		<h2><?php _e('Importing users', 'import-users-from-csv-with-meta');?></h2>
 		<?php
 			set_time_limit(0);
 			global $wpdb;
@@ -137,9 +149,33 @@ function acui_import_users($file, $role){?>
 					$headers_filtered = array_diff($headers_filtered, $wp_min_fields);
 					update_option("acui_columns", $headers_filtered);
 					?>
-					<h3>Inserting and updating data</h3>
+<!--
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.30 @nacho
+ -->
+ <!--
+//************ ORIGINAL
+/*
+		<h3>Inserting and updating data</h3>
+*/
+*/
+//************ FI
+-->
+					<h3><?php _e('Inserting and updating data', 'import-users-from-csv-with-meta');?></h3>
 					<table>
-						<tr><th>Row</th><?php foreach($headers as $element) echo "<th>" . $element . "</th>"; ?></tr>
+					<!--
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.30 @nacho
+ -->
+ <!--
+//************ ORIGINAL
+/*
+		<tr><th>Row</th><?php //foreach($headers as $element) echo "<th>" . $element . "</th>"; ?></tr>
+*/
+*/
+//************ FI
+-->
+						<tr><th><?php _e('Row', 'import-users-from-csv-with-meta');?></th><?php foreach($headers as $element) echo "<th>" . $element . "</th>"; ?></tr>
 					<?php
 					$row++;
 				else:
@@ -221,7 +257,19 @@ function acui_import_users($file, $role){?>
 			?>
 <!--//************ FI -->
 			<br/>
-			<p>Process finished you can go <a href="<?php echo get_admin_url() . '/users.php'; ?>">here to see results</a></p>
+<!--
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.30 @nacho
+ -->
+ <!--
+//************ ORIGINAL
+/*
+		<p>Process finished you can go <a href="<?php //echo get_admin_url() . '/users.php'; ?>">here to see results </a></p>
+*/
+*/
+//************ FI
+-->
+			<p><?php _e('Process finished you can go', 'import-users-from-csv-with-meta');?> <a href="<?php echo get_admin_url() . '/users.php'; ?>"><?php _e('here to see results', 'import-users-from-csv-with-meta');?> </a></p>
 			<?php
 			//fclose($manager);
 			ini_set('auto_detect_line_endings',FALSE);
