@@ -145,3 +145,25 @@ function users_own_attachments( $wp_query_obj ) {
 	return;
 }
 add_action('pre_get_posts','users_own_attachments');
+
+
+/**
+ * Remove the "Dashboard" from the admin menu for contributor user roles
+ * @author Nacho Abejaro
+ */
+function remove_contributor_dashboard () {
+	global $current_user;
+
+	$user_id = get_current_user_id();
+
+	$caps = get_user_meta($user_id, 'wp_capabilities', true);
+	$roles = array_keys((array)$caps);
+	$role = $roles[0];
+
+	if ($role === 'contributor') {
+		remove_menu_page('edit-comments.php');
+		remove_menu_page('edit.php?post_type=gce_feed');
+		remove_menu_page('tools.php');
+	}
+}
+add_action('admin_menu', 'remove_contributor_dashboard');
