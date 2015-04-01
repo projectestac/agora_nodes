@@ -1201,6 +1201,11 @@ function get_terms( $args = array(), $deprecated = '' ) {
 		'meta_query'             => ''
 	);
 
+	//XTEC ************ AFEGIT - Show all categories for visibility plugin
+	//2015.03.31 @nacho
+	$defaults['hide_empty'] = false;
+	//************ FI
+
 	/*
 	 * Legacy argument format ($taxonomy, $args) takes precedence.
 	 *
