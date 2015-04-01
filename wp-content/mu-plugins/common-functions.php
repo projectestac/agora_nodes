@@ -144,9 +144,8 @@ function users_own_attachments( $wp_query_obj ) {
 }
 add_action('pre_get_posts','users_own_attachments');
 
-
 /**
- * Remove the "Dashboard" from the admin menu for contributor user roles
+ * Remove options from the admin menu for user contributor
  * @author Nacho Abejaro
  */
 function remove_contributor_dashboard () {
