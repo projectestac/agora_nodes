@@ -1108,6 +1108,11 @@ function get_terms( $taxonomies, $args = '' ) {
 		'meta_query'             => ''
 	);
 
+	//XTEC ************ AFEGIT - Show all categories for visibility plugin
+	//2015.03.31 @nacho
+	$defaults['hide_empty'] = false;
+	//************ FI
+
 	/**
 	 * Filter the terms query default arguments.
 	 *
