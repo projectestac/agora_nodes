@@ -1137,9 +1137,14 @@ function get_term_to_edit( $id, $taxonomy ) {
 function get_terms( $args = array(), $deprecated = '' ) {
 	$term_query = new WP_Term_Query();
 
+	//XTEC ************ AFEGIT - Show all categories for visibility plugin
+	//2015.03.31 @nacho
+	
 	$defaults = array(
 		'suppress_filter' => false,
+		'hide_empty' => false,
 	);
+	//************ FI
 
 	/*
 	 * Legacy argument format ($taxonomy, $args) takes precedence.
