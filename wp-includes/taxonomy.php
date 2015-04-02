@@ -1279,7 +1279,14 @@ function get_terms( $taxonomies, $args = '' ) {
 	}
 
 	$defaults = array('orderby' => 'name', 'order' => 'ASC',
-		'hide_empty' => true, 'exclude' => array(), 'exclude_tree' => array(), 'include' => array(),
+//XTEC ************ MODIFICAT - Added language supporting
+//2015.03.31 @nacho
+'hide_empty' => false, 'exclude' => array(), 'exclude_tree' => array(), 'include' => array(),
+//************ ORIGINAL
+/*
+ 'hide_empty' => true, 'exclude' => array(), 'exclude_tree' => array(), 'include' => array(),
+*/
+//************ FI
 		'number' => '', 'fields' => 'all', 'slug' => '', 'parent' => '',
 		'hierarchical' => true, 'child_of' => 0, 'get' => '', 'name__like' => '', 'description__like' => '',
 		'pad_counts' => false, 'offset' => '', 'search' => '', 'cache_domain' => 'core' );
