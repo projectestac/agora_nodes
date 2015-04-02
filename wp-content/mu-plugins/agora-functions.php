@@ -169,3 +169,13 @@ function myTemplate($query) {
  * @author Víctor Saavedra (vsaavedr@xtec.cat)
  */
 add_filter( 'bp_core_fetch_avatar_no_grav', '__return_true' );
+
+/**
+ * Remove screen options from posts to simplify user experience
+ * @author Sara Arjona
+ */
+function agora_remove_post_meta_boxes() {
+	remove_meta_box('formatdiv', 'post', 'normal');
+	remove_meta_box('formatdiv', 'post', 'side');
+}
+add_action('do_meta_boxes', 'agora_remove_post_meta_boxes');
