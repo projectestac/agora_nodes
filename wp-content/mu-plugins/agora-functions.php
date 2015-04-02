@@ -163,3 +163,36 @@ function myTemplate($query) {
 	//Reset Query
 	wp_reset_query();
 }
+
+/**
+ * If user is not logged in, redirects at login screen on BuddyPress tabs
+ * @author Nacho Abejaro
+ */
+function members_logged_in_only() {
+	global $current_user;
+
+	$uid = get_current_user_id();
+
+	if ($uid == 0) {
+		//Instead of using wp_redirect, echo location using meta
+		$location = home_url()."/wp-login.php";
+		echo "<meta http-equiv='refresh' content='0;url=$location'/>";
+	}
+}
+add_filter('bp_before_member_home_content', 'members_logged_in_only');
+
+/**
+ * Disable gravatar.com calls on buddypress.
+ * @author Víctor Saavedra (vsaavedr@xtec.cat)
+ */
+add_filter( 'bp_core_fetch_avatar_no_grav', '__return_true' );
+
+/**
+ * Remove screen options from posts to simplify user experience
+ * @author Sara Arjona
+ */
+function agora_remove_post_meta_boxes() {
+	remove_meta_box('formatdiv', 'post', 'normal');
+	remove_meta_box('formatdiv', 'post', 'side');
+}
+add_action('do_meta_boxes', 'agora_remove_post_meta_boxes');
