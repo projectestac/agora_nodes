@@ -165,6 +165,12 @@ function myTemplate($query) {
 }
 
 /**
+ * Disable gravatar.com calls on buddypress.
+ * @author Víctor Saavedra (vsaavedr@xtec.cat)
+ */
+add_filter( 'bp_core_fetch_avatar_no_grav', '__return_true' );
+
+/**
  * Remove screen options from posts to simplify user experience
  * @author Sara Arjona
  */
