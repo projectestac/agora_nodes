@@ -1637,7 +1637,7 @@ function get_terms( $taxonomies, $args = '' ) {
 	}
 
 	$defaults = array('orderby' => 'name', 'order' => 'ASC',
-//XTEC ************ MODIFICAT - Added language supporting
+//XTEC ************ MODIFICAT - Show all categories for visibility plugin
 //2015.03.31 @nacho
         'hide_empty' => false, 'exclude' => array(), 'exclude_tree' => array(), 'include' => array(),
 //************ ORIGINAL
