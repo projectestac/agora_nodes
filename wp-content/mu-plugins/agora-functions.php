@@ -169,8 +169,6 @@ function myTemplate($query) {
  * @author Nacho Abejaro
  */
 function members_logged_in_only() {
-	global $current_user;
-
 	$uid = get_current_user_id();
 
 	if ($uid == 0) {
