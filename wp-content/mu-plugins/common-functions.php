@@ -151,8 +151,6 @@ add_action('pre_get_posts','users_own_attachments');
  * @author Nacho Abejaro
  */
 function remove_contributor_dashboard () {
-	global $current_user;
-
 	$user_id = get_current_user_id();
 
 	$caps = get_user_meta($user_id, 'wp_capabilities', true);
