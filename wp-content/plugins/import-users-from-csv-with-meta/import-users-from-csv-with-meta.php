@@ -669,10 +669,11 @@ function acui_options()
 		if(document.getElementById("uploadfiles").value == "") {
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.20 @nacho
-			//alert("Please choose a file");
 			alert ("<?php $msg = _e("Please choose a file", "import-users-from-csv-with-meta");; echo $msg;?>");
-			return false;
+//************ ORIGINAL
+			//alert("Please choose a file");
 //************ FI
+			return false;
 		}
 	}
 	</script>
