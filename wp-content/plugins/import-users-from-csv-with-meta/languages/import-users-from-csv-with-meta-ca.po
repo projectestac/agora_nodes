@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: import-users-from-csv-with-meta\n"
 "POT-Creation-Date: 2015-03-30 12:17+0100\n"
-"PO-Revision-Date: 2015-03-30 12:18+0100\n"
-"Last-Translator: nacho <nacho@test.com>\n"
+"PO-Revision-Date: 2015-04-07 11:50+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: Departament Ensenyament Catalunya - Àrea TAC\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -20,17 +20,16 @@ msgid "Import users"
 msgstr "Importa usuaris"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:95
-#, fuzzy
 msgid "Importing users"
 msgstr "Importa usuaris"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:164
 msgid "Inserting and updating data"
-msgstr ""
+msgstr "Introducció i actualització de dades"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:178
 msgid "Row"
-msgstr ""
+msgstr "Fila"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:195
 #, php-format
@@ -52,11 +51,11 @@ msgstr "Usuaris NO importats"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:272
 msgid "Process finished you can go"
-msgstr ""
+msgstr "La importació ha acabat. Aneu"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:272
 msgid "here to see results"
-msgstr ""
+msgstr "aquí per veure els resultats"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:310
 msgid "You are not allowed to see this content."
