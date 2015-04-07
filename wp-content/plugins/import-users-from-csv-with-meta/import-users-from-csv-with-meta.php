@@ -84,6 +84,7 @@ function acui_import_users($file, $role){?>
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.30 @nacho
  -->
+ <h2><?php _e('Importing users', 'import-users-from-csv-with-meta');?></h2>
  <!--
 //************ ORIGINAL
 /*
@@ -92,7 +93,6 @@ function acui_import_users($file, $role){?>
 */
 //************ FI
 -->
-		<h2><?php _e('Importing users', 'import-users-from-csv-with-meta');?></h2>
 		<?php
 			set_time_limit(0);
 			global $wpdb;
@@ -153,6 +153,7 @@ function acui_import_users($file, $role){?>
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.30 @nacho
  -->
+ <h3><?php _e('Inserting and updating data', 'import-users-from-csv-with-meta');?></h3>
  <!--
 //************ ORIGINAL
 /*
@@ -161,12 +162,12 @@ function acui_import_users($file, $role){?>
 */
 //************ FI
 -->
-					<h3><?php _e('Inserting and updating data', 'import-users-from-csv-with-meta');?></h3>
 					<table>
 					<!--
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.30 @nacho
  -->
+					<tr><th><?php _e('Row', 'import-users-from-csv-with-meta');?></th><?php foreach($headers as $element) echo "<th>" . $element . "</th>"; ?></tr>
  <!--
 //************ ORIGINAL
 /*
@@ -175,7 +176,6 @@ function acui_import_users($file, $role){?>
 */
 //************ FI
 -->
-						<tr><th><?php _e('Row', 'import-users-from-csv-with-meta');?></th><?php foreach($headers as $element) echo "<th>" . $element . "</th>"; ?></tr>
 					<?php
 					$row++;
 				else:
@@ -261,6 +261,7 @@ function acui_import_users($file, $role){?>
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.30 @nacho
  -->
+ <p><?php _e('Process finished you can go', 'import-users-from-csv-with-meta');?> <a href="<?php echo get_admin_url() . '/users.php'; ?>"><?php _e('here to see results', 'import-users-from-csv-with-meta');?> </a></p>
  <!--
 //************ ORIGINAL
 /*
@@ -269,7 +270,6 @@ function acui_import_users($file, $role){?>
 */
 //************ FI
 -->
-			<p><?php _e('Process finished you can go', 'import-users-from-csv-with-meta');?> <a href="<?php echo get_admin_url() . '/users.php'; ?>"><?php _e('here to see results', 'import-users-from-csv-with-meta');?> </a></p>
 			<?php
 			//fclose($manager);
 			ini_set('auto_detect_line_endings',FALSE);
@@ -669,10 +669,11 @@ function acui_options()
 		if(document.getElementById("uploadfiles").value == "") {
 //XTEC ************ MODIFICAT - Added language supporting
 //2015.03.20 @nacho
-			//alert("Please choose a file");
 			alert ("<?php $msg = _e("Please choose a file", "import-users-from-csv-with-meta");; echo $msg;?>");
-			return false;
+//************ ORIGINAL
+			//alert("Please choose a file");
 //************ FI
+			return false;
 		}
 	}
 	</script>
