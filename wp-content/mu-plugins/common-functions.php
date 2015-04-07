@@ -15,8 +15,6 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 function remove_post_meta_boxes() {
 	remove_meta_box('trackbacksdiv', 'post', 'normal');
 	remove_meta_box('trackbacksdiv', 'post', 'side');
-	remove_meta_box('formatdiv', 'post', 'normal');
-	remove_meta_box('formatdiv', 'post', 'side');
 	remove_meta_box('postcustom', 'post', 'normal');
 	remove_meta_box('postcustom', 'post', 'side');
 	remove_meta_box('rawhtml_meta_box', 'post', 'side');
@@ -64,14 +62,14 @@ function set_order_meta_boxes($hidden, $screen) {
 		if ( $post_type == 'post' ) {
 			// Defines position of the meta-boxes
 			$meta_value = array(
-				'side' => 'submitdiv,postimagediv,postexcerpt,metabox1,tagsdiv-post',
+				'side' => 'submitdiv,postimagediv,postexcerpt,formatdiv,metabox1,tagsdiv-post',
 				'normal' => 'categorydiv',
 				'advanced' => '',
 			);
 			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
 			// Defines hidden meta-boxes
-			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'formatdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
 			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
 		} elseif ( $post_type == 'page' ) {
 			// Defines position of the meta-boxes
@@ -146,24 +144,34 @@ function users_own_attachments( $wp_query_obj ) {
 }
 add_action('pre_get_posts','users_own_attachments');
 
-
 /**
  * Remove the "Dashboard" from the admin menu for contributor user roles
  * @author Nacho Abejaro
  */
-function remove_contributor_dashboard () {
-	global $current_user;
+function remove_contributor_dashboard() {
 
-	$user_id = get_current_user_id();
+    $user_id = get_current_user_id();
 
-	$caps = get_user_meta($user_id, 'wp_capabilities', true);
-	$roles = array_keys((array)$caps);
-	$role = $roles[0];
+    $caps = get_user_meta($user_id, 'wp_capabilities', true);
+    $roles = array_keys((array) $caps);
+    $role = $roles[0];
 
-	if ($role === 'contributor') {
-		remove_menu_page('edit-comments.php');
-		remove_menu_page('edit.php?post_type=gce_feed');
-		remove_menu_page('tools.php');
-	}
+    if ($role === 'contributor') {
+        remove_menu_page('edit-comments.php');
+        remove_menu_page('edit.php?post_type=gce_feed');
+        remove_menu_page('tools.php');
+    }
 }
+
 add_action('admin_menu', 'remove_contributor_dashboard');
+
+/**
+ * Disable gravatar.com calls.
+ * @author Víctor Saavedra (vsaavedr@xtec.cat)
+ */
+function remove_gravatar ($avatar, $id_or_email, $size, $default, $alt) {
+	$default = admin_url('images/mysteryman.png');
+	return "<img alt='{$alt}' src='{$default}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+}
+
+add_filter('get_avatar', 'remove_gravatar', 1, 5);
