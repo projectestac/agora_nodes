@@ -25,17 +25,17 @@ add_filter('bp_docs_get_create_link', 'bp_docs_get_create_link_filter');
  * @author Nacho Abejaro
  */
 function bp_profile_menu_posts() {
-	global $bp;
+    global $bp;
 
-	bp_core_new_nav_item(
-		array(
-			'name' => 'Els meus articles',
-			'slug' => 'posts',
-			'position' => 100,
-			'default_subnav_slug' => 'published',
-			'screen_function' => 'mb_author_posts'
-		)
-	);
+    bp_core_new_nav_item(
+            array(
+                'name' => 'Els meus articles',
+                'slug' => 'myposts',
+                'position' => 100,
+                'default_subnav_slug' => 'published',
+                'screen_function' => 'mb_author_posts'
+            )
+    );
 }
 add_action('bp_setup_nav', 'bp_profile_menu_posts', 301 );
 
@@ -44,30 +44,32 @@ add_action('bp_setup_nav', 'bp_profile_menu_posts', 301 );
  * @author Nacho Abejaro
 */
 function bp_profile_submenu_posts() {
-	global $bp;
-	if(!is_user_logged_in()) return '';
+    global $bp;
+    if (!is_user_logged_in()) {
+        return '';
+    }
 
-	bp_core_new_subnav_item(
-		array(
-			'name' => 'Publicats',
-			'slug' => 'published',
-			'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['posts']['slug'] . '/' ,
-			'parent_slug' => $bp->bp_nav['posts']['slug'],
-			'position' => 10,
-			'screen_function' => 'mb_author_posts' // the function is declared below
-		)
-	);
+    bp_core_new_subnav_item(
+        array(
+            'name' => 'Publicats',
+            'slug' => 'mypublished',
+            'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['myposts']['slug'] . '/',
+            'parent_slug' => $bp->bp_nav['myposts']['slug'],
+            'position' => 10,
+            'screen_function' => 'mb_author_posts' // the function is declared below
+        )
+    );
 
-	bp_core_new_subnav_item(
-		array(
-			'name' => 'Esborranys',
-			'slug' => 'drafts',
-			'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['posts']['slug'] . '/' ,
-			'parent_slug' => $bp->bp_nav['posts']['slug'],
-			'position' => 20,
-			'screen_function' => 'mb_author_drafts' // the function is declared below
-		)
-	);
+    bp_core_new_subnav_item(
+        array(
+            'name' => 'Esborranys',
+            'slug' => 'mydrafts',
+            'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['myposts']['slug'] . '/',
+            'parent_slug' => $bp->bp_nav['myposts']['slug'],
+            'position' => 20,
+            'screen_function' => 'mb_author_drafts' // the function is declared below
+        )
+    );
 }
 add_action('bp_setup_nav', 'bp_profile_submenu_posts', 302 );
 
@@ -77,18 +79,18 @@ add_action('bp_setup_nav', 'bp_profile_submenu_posts', 302 );
  * Second function displays the content
  * @author Nacho Abejaro
 */
-function mb_author_posts(){
-	add_action( 'bp_template_content', 'mb_show_posts' );
-	bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
+function mb_author_posts() {
+    add_action('bp_template_content', 'mb_show_posts');
+    bp_core_load_template(apply_filters('bp_core_template_plugin', 'members/single/plugins'));
 }
 
 function mb_show_posts() {
-	$user_id = bp_displayed_user_id();
-	if (!$user_id) {
-		return '';
-	}
-	$query = "author=$user_id&orderby=title&order=ASC";
-	myTemplate($query);
+    $user_id = bp_displayed_user_id();
+    if (!$user_id) {
+        return '';
+    }
+    $query = "author=$user_id&orderby=title&order=ASC";
+    myTemplate($query);
 }
 
 /**
@@ -98,17 +100,17 @@ function mb_show_posts() {
  * @author Nacho Abejaro
  */
 function mb_author_drafts() {
-	add_action( 'bp_template_content', 'mb_show_drafts' );
-	bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
+    add_action('bp_template_content', 'mb_show_drafts');
+    bp_core_load_template(apply_filters('bp_core_template_plugin', 'members/single/plugins'));
 }
 
 function mb_show_drafts() {
-	$user_id = bp_displayed_user_id();
-	if (!$user_id) {
-		return '';
-	}
-	$query = "author=$user_id&post_status=draft&orderby=title&order=ASC";
-	myTemplate($query);
+    $user_id = bp_displayed_user_id();
+    if (!$user_id) {
+        return '';
+    }
+    $query = "author=$user_id&post_status=draft&orderby=title&order=ASC";
+    myTemplate($query);
 }
 
 /**
@@ -117,51 +119,53 @@ function mb_show_drafts() {
  */
 function myTemplate($query) {
 
-	// Launch the query
-	query_posts($query);
+    // Launch the query
+    query_posts($query);
 
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
-		echo '<div class="activity" role="main">';
-			echo '<ul id="activity-stream" class="activity-list item-list">';
-				echo '<li class="groups bp_doc_created activity-item mini">';
-					echo '<div class="bp-widget base">';
-						echo '<table border="0" cellspacing="0" cellpadding="0">';
-							echo '<tr>';
-								echo '<td>';
-									echo '<a href="' . get_edit_post_link() . '">';
-									the_post_thumbnail(thumbnail);
-									echo '</a>';
-								echo '</td>';
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            echo '<div class="activity" role="main">';
+                    echo '<ul id="activity-stream" class="activity-list item-list">';
+                            echo '<li class="groups bp_doc_created activity-item mini">';
+                                    echo '<div class="bp-widget base">';
+                                            echo '<table border="0" cellspacing="0" cellpadding="0">';
+                                                    echo '<tr>';
+                                                            echo '<td>';
+                                                                    echo '<a href="' . get_edit_post_link() . '">';
+                                                                    the_post_thumbnail(thumbnail);
+                                                                    echo '</a>';
+                                                            echo '</td>';
 
-								echo '<td>';
-									echo '<h2 class="title">';
-									echo '<a href="' . get_edit_post_link() . '">';
-									the_title();
-									echo '</a>';
-									echo '</h3>';
+                                                            echo '<td>';
+                                                                    echo '<h2 class="title">';
+                                                                    echo '<a href="' . get_edit_post_link() . '">';
+                                                                    the_title();
+                                                                    echo '</a>';
+                                                                    echo '</h3>';
 
-									echo '<p>' .get_the_author(). ' el ' ;
-									echo '<span class="date">' . get_the_date() . '</span>';
+                                                                    echo '<p>' .get_the_author(). ' el ' ;
+                                                                    echo '<span class="date">' . get_the_date() . '</span>';
 
-									echo '<div class="excerpt">';
-									the_excerpt();
-									echo '</div>';
-								echo '</td>';
-							echo '</tr>';
-						echo '</table>';
-					echo '</div>';
+                                                                    echo '<div class="excerpt">';
+                                                                    the_excerpt();
+                                                                    echo '</div>';
+                                                            echo '</td>';
+                                                    echo '</tr>';
+                                            echo '</table>';
+                                    echo '</div>';
 
-				echo '</li>';
-			echo '</ul>';
-		echo '</div>';
-	endwhile;
+                            echo '</li>';
+                    echo '</ul>';
+            echo '</div>';
+        };
 
-	else:
-		echo "Cap publicació que mostrar";
-	endif;
+    } else {
+        echo "No s'ha trobat cap esborrany";
+    };
 
-	//Reset Query
-	wp_reset_query();
+    //Reset Query
+    wp_reset_query();
 }
 
 /**
