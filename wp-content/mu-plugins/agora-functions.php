@@ -119,53 +119,60 @@ function mb_show_drafts() {
  */
 function myTemplate($query) {
 
-    // Launch the query
-    query_posts($query);
+	// Launch the query
+	query_posts($query);
 
-    if ( have_posts() ) {
-        while ( have_posts() ) {
-            the_post();
-            echo '<div class="activity" role="main">';
-                    echo '<ul id="activity-stream" class="activity-list item-list">';
-                            echo '<li class="groups bp_doc_created activity-item mini">';
-                                    echo '<div class="bp-widget base">';
-                                            echo '<table border="0" cellspacing="0" cellpadding="0">';
-                                                    echo '<tr>';
-                                                            echo '<td>';
-                                                                    echo '<a href="' . get_edit_post_link() . '">';
-                                                                    the_post_thumbnail(thumbnail);
-                                                                    echo '</a>';
-                                                            echo '</td>';
+	if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post();
+			echo '<div style="width: 100%; float: left; position: relative; margin-bottom: 5px;">';
+				echo '<div style="width: 100%; min-height: 130px; float: left; border-bottom: 2px solid #F2F0F0; background: white;	margin-left: 0px; padding-top: 15px; position: relative;">';
+					 echo '<div style="max-width: 100px; max-height: 100px; float: left; margin-top: 10px; position: relative; width: 200%;" >';
+					 echo '<a href="' . get_edit_post_link() . '">';
+                     the_post_thumbnail(thumbnail);
+                     echo '</a>';
+                     echo '</div>';
 
-                                                            echo '<td>';
-                                                                    echo '<h2 class="title">';
-                                                                    echo '<a href="' . get_edit_post_link() . '">';
-                                                                    the_title();
-                                                                    echo '</a>';
-                                                                    echo '</h3>';
 
-                                                                    echo '<p>' .get_the_author(). ' el ' ;
-                                                                    echo '<span class="date">' . get_the_date() . '</span>';
+                     echo '<div style="float: left; width: 78%; min-height: 105px; margin-top: 5px; margin-left: 2%; position: relative; margin-bottom: 5px;">';
+	                    echo '<h3 style="font-size: 20px !important; margin-top: 5px !important; margin-bottom: 0.1em !important;">';
+	                    echo '<a href="' . get_edit_post_link() . '">';
+	                    the_title();
+	                    echo '</a>';
+	                    echo '</h3>';
 
-                                                                    echo '<div class="excerpt">';
-                                                                    the_excerpt();
-                                                                    echo '</div>';
-                                                            echo '</td>';
-                                                    echo '</tr>';
-                                            echo '</table>';
-                                    echo '</div>';
+	                    //echo '<p>' .get_the_author(). ' el ' ;
+	                    echo '<span style="float: left; width: 100%; height: 30px; margin-bottom: 5px; color: #A0A5A9; font-size: 11px; font: italic 08px "Droid Serif", Georgia, "Times New Roman", Times, serif; text-align: right;">' . get_the_date() . '</span></p>';
 
-                            echo '</li>';
-                    echo '</ul>';
-            echo '</div>';
-        };
+	                    echo '<div class="excerpt">';
+	                    	echo get_short_text(get_the_excerpt(), 30);
+	                    echo '</div>';
+                     echo '</div>';
 
-    } else {
-        echo "No s'ha trobat cap esborrany";
-    };
+                     echo '<div id="article-footer">';
+                     	echo '<div style="width: 50%; height: 30px; float: left; margin-bottom: 2px; font-size:11px; line-height: 30px;">';
+                     		echo "categorias";
+                     	echo '</div>';
 
-    //Reset Query
-    wp_reset_query();
+                     	echo '<div style="float: right; width: 10%; color: #1fa799 !important; font-size: 11px; font: italic 08px "Droid Serif", Georgia, "Times New Roman", Times, serif;">';
+                     		echo "comentaris ";
+                     		echo '<span style="margin: 0 0 0 7px; font-weight: bold; font-size: 26px; text-shadow: 0 1px 0 white; line-height: 1; ">' . get_comments_number(). '</span>';
+                     	echo '</div>';
+
+                     echo '</div>';
+
+                     echo '<div style="clear:both"></div>';
+
+				echo '</div>';
+			echo '</div>';
+		};
+
+	} else {
+		echo "No s'ha trobat cap esborrany";
+	};
+
+	//Reset Query
+	wp_reset_query();
 }
 
 /**
