@@ -125,6 +125,15 @@ function myTemplate($query) {
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
+			
+			$allCategories = array();
+			$categories = get_the_category();
+			for($i=0; $i < count($categories); $i++){
+				$allCategories[]='<a href="'.get_category_link( $categories[$i]->cat_ID ).'" >'.
+						$categories[$i]->cat_name.
+						'</a>';
+			}
+			
 			echo '<div style="width: 100%; float: left; position: relative; margin-bottom: 5px;">';
 				echo '<div style="width: 100%; min-height: 130px; float: left; border-bottom: 2px solid #F2F0F0; background: white;	margin-left: 0px; padding-top: 15px; position: relative;">';
 					 echo '<div style="max-width: 100px; max-height: 100px; float: left; margin-top: 10px; position: relative; width: 200%;" >';
@@ -145,13 +154,13 @@ function myTemplate($query) {
 	                    echo '<span style="float: left; width: 100%; height: 30px; margin-bottom: 5px; color: #A0A5A9; font-size: 11px; font: italic 08px "Droid Serif", Georgia, "Times New Roman", Times, serif; text-align: right;">' . get_the_date() . '</span></p>';
 
 	                    echo '<div class="excerpt">';
-	                    	echo get_short_text(get_the_excerpt(), 30);
+	                    	echo limit_text(get_the_excerpt(), 30);
 	                    echo '</div>';
                      echo '</div>';
 
                      echo '<div id="article-footer">';
                      	echo '<div style="width: 50%; height: 30px; float: left; margin-bottom: 2px; font-size:11px; line-height: 30px;">';
-                     		echo "categorias";
+                     		echo "Archived: ".implode(" | ",$allCategories);
                      	echo '</div>';
 
                      	echo '<div style="float: right; width: 10%; color: #1fa799 !important; font-size: 11px; font: italic 08px "Droid Serif", Georgia, "Times New Roman", Times, serif;">';
@@ -173,6 +182,17 @@ function myTemplate($query) {
 
 	//Reset Query
 	wp_reset_query();
+}
+
+function limit_text($text, $limitwrd ) {
+	if (str_word_count($text) > $limitwrd) {
+		$words = str_word_count($text, 2);
+		if ($words > $limitwrd) {
+			$pos = array_keys($words);
+			$text = substr($text, 0, $pos[$limitwrd]) . ' [...]';
+		}
+	}
+	return $text;
 }
 
 /**
