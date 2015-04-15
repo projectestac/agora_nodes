@@ -13,6 +13,7 @@ buddypress-like
 google-analyticator
 google-calendar-events
 import-users-from-csv-with-meta
+intranet-importer
 invite-anyone
 private-bp-pages
 raw-html
@@ -24,4 +25,3 @@ widget-visibility-without-jetpack
 wordpress-importer
 wordpress-social-login
 xtec-mail
-
