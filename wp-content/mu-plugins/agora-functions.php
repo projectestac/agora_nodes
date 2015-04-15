@@ -100,6 +100,7 @@ function mb_author_posts() {
 }
 
 function mb_show_posts() {
+	$user_id = bp_displayed_user_id();
     $query = "author=$user_id&orderby=title&order=ASC";
     myTemplate($query);
 }
@@ -116,6 +117,7 @@ function mb_author_drafts() {
 }
 
 function mb_show_drafts() {
+	$user_id = bp_displayed_user_id();
     $query = "author=$user_id&post_status=draft&orderby=title&order=ASC";
     myTemplate($query);
 }
@@ -132,6 +134,7 @@ function mb_author_pending() {
 }
 
 function mb_show_pending() {
+	$user_id = bp_displayed_user_id();
 	$query = "author=$user_id&post_status=pending&orderby=title&order=ASC";
 	myTemplate($query);
 }
