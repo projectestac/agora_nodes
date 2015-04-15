@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.intranet li {    
+    margin-left: 25px;
+}
+
+.info-text {
+    max-width: 50em;
+    background: #e6e6ff;
+    border: 1px solid #9bb8d9;
+    color: #27427D;
+    padding: 10px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+}
+
+.info-text ul {
+    list-style: circle;
+}
