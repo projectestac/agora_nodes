@@ -1,0 +1,282 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: intranet-importer\n"
+"POT-Creation-Date: 2015-07-09 12:09+0100\n"
+"PO-Revision-Date: 2015-07-15 12:19+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
+"plugins/intranet-importer\n"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:46
+msgid "Import Intranets to Wordpress"
+msgstr "Importa continguts de la Intraweb a Nodes"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:53
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:70
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:142
+msgid "Intranet Import"
+msgstr "Importador d'Intraweb"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:54
+msgid "There is no content to be imported"
+msgstr "No hi ha cap contingut per importar"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:71
+msgid "This tool allows to import Intranet content to Wordpress"
+msgstr "Aquesta eina permet importar alguns continguts de la Intraweb a Nodes"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:72
+msgid "Start Import"
+msgstr "Inicia la importació"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:76
+msgid "Indicate the content you want to import:"
+msgstr "Seleccioneu els continguts que voleu importar:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:79
+msgid "Users"
+msgstr "Usuaris"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:81
+msgid "Users. (No users to import)"
+msgstr "Usuaris (No s'ha trobat cap usuari per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:84
+msgid "News"
+msgstr "Notícies"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:86
+msgid "News. (No news to import)"
+msgstr "Notícies (No s'ha trobat cap notícia per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:89
+msgid "Simple Pages"
+msgstr "Pàgines simples"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:91
+msgid "Simple Pages. (No Simple Pages to import)"
+msgstr "Pàgines simples (No s'ha trobat cap pàgina per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:94
+msgid "Admin Messages / Notice"
+msgstr "Missatges d'administració / Avisos"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:96
+msgid "Admin Messages / Notice. (No Admin Messages / Notice to import)"
+msgstr ""
+"Missatges d'administració / Avisos (No s'ha trobat cap missatge "
+"d'administració / avís per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:99
+msgid "Advanced Pages / Content"
+msgstr "Pàgines avançades / Continguts"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:101
+msgid "Advanced Pages / Content. (No advanced Pages / Content to import)"
+msgstr ""
+"Pàgines avançades / Continguts (No s'ha trobat cap pàgina per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:104
+msgid "Documents"
+msgstr "Documents"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:106
+msgid "Documents. (No documents to import)"
+msgstr "Documents (No s'ha trobat cap document per importar)"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:111
+msgid "Info text"
+msgstr ""
+"IMPORTANT: <ul><li>La privacitat indica si els continguts importats seran "
+"accessibles sense validació o si només hi tindran accés els administradors i "
+"els editors de Nodes.</li><li>Una vegada finalitzada la importació, podreu "
+"modificar la privacitat dels elements, però ho haureu de fer un a un. </"
+"li><li>Podeu importar els tipus de continguts per separat per donar-lis "
+"diferent tipus de privacitat.</li><li>La importació es pot repetir tantes "
+"vegades com es vulgui. En cas de que un contingut hagi canviat a la "
+"Intraweb, s'actualitzarà el contingut importat, altrament romandrà intacte.</"
+"li></ul>"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:115
+msgid "Select the privacity:"
+msgstr "Seleccioneu la privacitat:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:118
+msgid "Publish"
+msgstr "Pública"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:119
+msgid "Private"
+msgstr "Privada"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:123
+msgid "You must select at least one option"
+msgstr "Heu de seleccionar una opció com a mínim"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:124
+msgid "You must select the privacity"
+msgstr "Heu d'indicar quina privacitat tindran els continguts"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:143
+msgid "Return"
+msgstr "Torna"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:148
+msgid "Start Process"
+msgstr "Inici del Procés"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:173
+msgid "Total Imported Users: "
+msgstr "Total d'usuaris importats: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:177
+msgid "Report Imported News: "
+msgstr "Resum de notícies importades: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:178
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:190
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:202
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:214
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:226
+msgid "Inserted: "
+msgstr "Continguts nous:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:179
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:191
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:203
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:215
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:227
+msgid "Updated: "
+msgstr "Actualitzacions:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:189
+msgid "Report Imported Pages: "
+msgstr "Resum de pàgines importades: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:201
+msgid "Report Imported Messages: "
+msgstr "Resum de missatges importats: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:213
+msgid "Report Imported Documents: "
+msgstr "Resum de documents importats: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:225
+msgid "Report Imported Advanced Pages "
+msgstr "Resum de pàgines avançades importades: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/intranet-importer.php:238
+msgid "Process finished"
+msgstr "El procés d'importació ha finalitzat"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:35
+msgid "DataBase error: "
+msgstr "S'ha produït un error:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:59
+msgid "DataBase transaction error: "
+msgstr "S'ha produït un error en una operació a la base de dades:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:95
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:134
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:168
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:202
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:574
+msgid "Error Updating Post content: "
+msgstr "No s'ha pogut actualitzar el contingut:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:103
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:143
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:177
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:211
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:587
+msgid "Error inserting Post content: "
+msgstr "No s'ha pogut afegir el contingut:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:334
+msgid "Content of Intranet Primary Page"
+msgstr "Pàgines importades de la Intraweb d'Àgora"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:336
+msgid "Title of Intranet Primary Page"
+msgstr "Intraweb"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:403
+msgid "User created: "
+msgstr "Usuari creat:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:409
+msgid "User alredy exists: "
+msgstr "L'usuari ja existeix:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:415
+msgid "The email address already exists and must be unique: "
+msgstr "L'adreça de correu ja existeix i ha de ser única: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:421
+msgid "No password provided: "
+msgstr "No s'ha proporcionat la contrasenya:"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:701
+msgid "Error coping file "
+msgstr "No s'ha pogut copiar el fitxer"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/intranet-importer/lib/import.php:705
+msgid "File not found: "
+msgstr "No s'ha trobat el fitxer"
+
+#~ msgid "Import Users"
+#~ msgstr "Usuaris"
+
+#~ msgid "Import News"
+#~ msgstr "Notícies"
+
+#~ msgid "Select options:"
+#~ msgstr "Opcions de selecció:"
+
+#~ msgid "Report Imported Special Pages: "
+#~ msgstr "Resum Pàgines Especials Importades: "
+
+#~ msgid "Report Imported Users: "
+#~ msgstr "Resum Usuaris Importats: "
+
+#~ msgid "Total Imported Pages: "
+#~ msgstr "Total Pàgines Importades: "
+
+#~ msgid "Email already exists: "
+#~ msgstr "El email de l'usuari ja existeix i ha de ser únic"
+
+#~ msgid "Import Special Pages"
+#~ msgstr "Importa les Pàgines Especials"
+
+#, fuzzy
+#~ msgid "File not found "
+#~ msgstr "No s'ha trobat cap article"
+
+#~ msgid ""
+#~ "Process finished you can go to administration page to see the results"
+#~ msgstr "Process finalitzat,"
+
+#~ msgid "My Articles"
+#~ msgstr "Articles"
+
+#~ msgid "Pendind Revision"
+#~ msgstr "En revisó"
+
+#~ msgid "Drafts"
+#~ msgstr "Esborranys"
+
+#, fuzzy
+#~ msgid "Categories"
+#~ msgstr "Categories"
+
+#~ msgid "Comments"
+#~ msgstr "Comentaris"
