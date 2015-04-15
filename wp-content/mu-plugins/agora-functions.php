@@ -50,8 +50,8 @@ function bp_profile_submenu_posts() {
     }
 
     $publishCount = get_user_posts_count('publish');
-    $pendingCount = custom_get_user_posts_count('pending');
-    $draftCount = custom_get_user_posts_count('draft');
+    $pendingCount = get_user_posts_count('pending');
+    $draftCount = get_user_posts_count('draft');
 
     bp_core_new_subnav_item(
         array(
