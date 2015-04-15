@@ -64,7 +64,6 @@ function bp_profile_submenu_posts() {
         )
     );
 
-
     bp_core_new_subnav_item(
 	    array(
 		    'name' => 'En revisió'.'<span>'.$pendingCount.'</span>',
@@ -101,10 +100,6 @@ function mb_author_posts() {
 }
 
 function mb_show_posts() {
-    $user_id = bp_displayed_user_id();
-    if (!$user_id) {
-        return '';
-    }
     $query = "author=$user_id&orderby=title&order=ASC";
     myTemplate($query);
 }
@@ -121,17 +116,12 @@ function mb_author_drafts() {
 }
 
 function mb_show_drafts() {
-    $user_id = bp_displayed_user_id();
-    if (!$user_id) {
-        return '';
-    }
     $query = "author=$user_id&post_status=draft&orderby=title&order=ASC";
     myTemplate($query);
 }
 
-
 /**
- * Manage the second sub item
+ * Manage the third sub item
  * First function is the screen_function
  * Second function displays the content
  * @author Nacho Abejaro
@@ -142,10 +132,6 @@ function mb_author_pending() {
 }
 
 function mb_show_pending() {
-	$user_id = bp_displayed_user_id();
-	if (!$user_id) {
-		return '';
-	}
 	$query = "author=$user_id&post_status=pending&orderby=title&order=ASC";
 	myTemplate($query);
 }
