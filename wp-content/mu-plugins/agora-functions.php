@@ -45,9 +45,6 @@ add_action('bp_setup_nav', 'bp_profile_menu_posts', 301 );
 */
 function bp_profile_submenu_posts() {
     global $bp;
-    if (!is_user_logged_in()) {
-        return '';
-    }
 
     $publishCount = get_user_posts_count('publish');
     $pendingCount = get_user_posts_count('pending');
@@ -57,7 +54,7 @@ function bp_profile_submenu_posts() {
         array(
             'name' => 'Publicats'.'<span>'.$publishCount.'</span>',
             'slug' => 'mypublished',
-            'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['myposts']['slug'] . '/',
+            'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
             'parent_slug' => $bp->bp_nav['myposts']['slug'],
             'position' => 10,
             'screen_function' => 'mb_author_posts' // the function is declared below
@@ -68,7 +65,7 @@ function bp_profile_submenu_posts() {
 	    array(
 		    'name' => 'En revisió'.'<span>'.$pendingCount.'</span>',
 		    'slug' => 'myunder-review',
-		    'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['myposts']['slug'] . '/',
+		    'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
 		    'parent_slug' => $bp->bp_nav['myposts']['slug'],
 		    'position' => 20,
 		    'screen_function' => 'mb_author_pending' // the function is declared below
@@ -79,7 +76,7 @@ function bp_profile_submenu_posts() {
         array(
             'name' => 'Esborranys'.'<span>'.$draftCount.'</span>',
             'slug' => 'mydrafts',
-            'parent_url' => $bp->loggedin_user->domain . $bp->bp_nav['myposts']['slug'] . '/',
+            'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
             'parent_slug' => $bp->bp_nav['myposts']['slug'],
             'position' => 30,
             'screen_function' => 'mb_author_drafts' // the function is declared below
@@ -189,7 +186,6 @@ function myTemplate($query) {
 
                      	if (get_comments_number()) {
                      		echo '<div style="width: 40%; float: right; color: #1fa799 !important;">';
-
                      			echo '<span style="float: right; margin: 0 0 0 7px; font-size: 26px; font-weight: bold; line-height: 1; text-shadow: 0 1px 0 white; font-style: italic;">' . get_comments_number(). '</span>';
                      			echo '<span style="font-size:11px; line-height: 28px; float: right; margin: 0 0 0 7px; font: italic 11px "Droid Serif",Georgia,"Times New Roman",Times,serif;">';
                      				echo 'comentaris';
