@@ -187,12 +187,15 @@ function myTemplate($query) {
                      		echo "Archived: ".implode(" | ",$allCategories);
                      	echo '</div>';
 
-                     	echo '<div style="width: 40%; float: right; color: #1fa799 !important;">';
-	                     	echo '<span style="float: right; margin: 0 0 0 7px; font-size: 26px; font-weight: bold; line-height: 1; text-shadow: 0 1px 0 white; font-style: italic;">' . get_comments_number(). '</span>';
-	                     	echo '<span style="font-size:11px; line-height: 28px; float: right; margin: 0 0 0 7px; font: italic 11px "Droid Serif",Georgia,"Times New Roman",Times,serif;">';
-	                     		echo 'comentaris';
-	                     	echo "</span>";
-                     	echo '</div>';
+                     	if (get_comments_number()) {
+                     		echo '<div style="width: 40%; float: right; color: #1fa799 !important;">';
+
+                     			echo '<span style="float: right; margin: 0 0 0 7px; font-size: 26px; font-weight: bold; line-height: 1; text-shadow: 0 1px 0 white; font-style: italic;">' . get_comments_number(). '</span>';
+                     			echo '<span style="font-size:11px; line-height: 28px; float: right; margin: 0 0 0 7px; font: italic 11px "Droid Serif",Georgia,"Times New Roman",Times,serif;">';
+                     				echo 'comentaris';
+	                     		echo "</span>";
+	                     	echo '</div>';
+                     	}
                      echo '</div>';
 
                      echo '<div style="clear:both"></div>';
