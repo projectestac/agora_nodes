@@ -275,8 +275,7 @@ add_action('do_meta_boxes', 'agora_remove_post_meta_boxes');
  */
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'preserve_excerpt_format');
-function preserve_excerpt_format($text)
-{
+function preserve_excerpt_format($text) {
 	global $post;
 	$raw_excerpt = $text;
 	if ('' == $text )
@@ -300,7 +299,7 @@ function preserve_excerpt_format($text)
 		{
 			array_pop($words);
 			$text = implode(' ', $words);
-			$text = $text.$excerpt_more;
+			//$text = $text.$excerpt_more;
 		}
 		else
 			$text = implode(' ', $words);
