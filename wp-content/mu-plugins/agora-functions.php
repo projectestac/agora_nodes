@@ -7,7 +7,7 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-
+load_plugin_textdomain('agora-functions', false, plugin_basename(dirname(__FILE__)). '/languages');
 
 /**
  * To avoid error uploading files from HTTP pages
@@ -28,13 +28,13 @@ function bp_profile_menu_posts() {
     global $bp;
 
     bp_core_new_nav_item(
-            array(
-                'name' => 'Els meus articles',
-                'slug' => 'myposts',
-                'position' => 100,
-                'default_subnav_slug' => 'published',
-                'screen_function' => 'mb_author_posts'
-            )
+    	array(
+            'name' => __('My Articles', 'agora-functions'),
+            'slug' => 'myposts',
+            'position' => 100,
+            'default_subnav_slug' => 'published',
+            'screen_function' => 'mb_author_posts'
+    	)
     );
 }
 add_action('bp_setup_nav', 'bp_profile_menu_posts', 301 );
@@ -52,7 +52,7 @@ function bp_profile_submenu_posts() {
 
     bp_core_new_subnav_item(
         array(
-            'name' => 'Publicats'.'<span>'.$publishCount.'</span>',
+            'name' => __('Published', 'agora-functions').'<span>'.$publishCount.'</span>',
             'slug' => 'mypublished',
             'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
             'parent_slug' => $bp->bp_nav['myposts']['slug'],
@@ -63,7 +63,7 @@ function bp_profile_submenu_posts() {
 
     bp_core_new_subnav_item(
 	    array(
-		    'name' => 'En revisió'.'<span>'.$pendingCount.'</span>',
+		    'name' => __('Pendind Revision', 'agora-functions').'<span>'.$pendingCount.'</span>',
 		    'slug' => 'myunder-review',
 		    'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
 		    'parent_slug' => $bp->bp_nav['myposts']['slug'],
@@ -74,7 +74,7 @@ function bp_profile_submenu_posts() {
 
     bp_core_new_subnav_item(
         array(
-            'name' => 'Esborranys'.'<span>'.$draftCount.'</span>',
+            'name' => __('Drafts', 'agora-functions').'<span>'.$draftCount.'</span>',
             'slug' => 'mydrafts',
             'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
             'parent_slug' => $bp->bp_nav['myposts']['slug'],
@@ -163,7 +163,6 @@ function myTemplate($query) {
                      echo '</a>';
                      echo '</div>';
 
-
                      echo '<div style="float: left; width: 78%; min-height: 105px; margin-top: 5px; margin-left: 2%; position: relative; margin-bottom: 5px;">';
 	                    echo '<h3 style="font-size: 20px !important; margin-top: 5px !important; margin-bottom: 0.1em !important;">';
 	                    echo '<a href="' . get_edit_post_link() . '">';
@@ -171,7 +170,6 @@ function myTemplate($query) {
 	                    echo '</a>';
 	                    echo '</h3>';
 
-	                    //echo '<p>' .get_the_author(). ' el ' ;
 	                    echo '<span style="float: left; width: 100%; height: 10px; margin-bottom: 5px; color: #A0A5A9; font-size: 11px; font-style: italic; font: 08px "Droid Serif", Georgia, "Times New Roman", Times, serif; text-align: right; ">' . get_the_date() . '</span>';
 
 	                    echo '<div class="excerpt">';
@@ -181,14 +179,14 @@ function myTemplate($query) {
 
                      echo '<div id="article-footer">';
                      	echo '<div style="width: 50%; height: 30px; float: left; margin-bottom: 2px; font-size:11px; line-height: 30px;">';
-                     		echo "Archived: ".implode(" | ",$allCategories);
+                     		echo __('Categories ', 'agora-functions').implode(" | ",$allCategories);
                      	echo '</div>';
 
                      	if (get_comments_number()) {
                      		echo '<div style="width: 40%; float: right; color: #1fa799 !important;">';
                      			echo '<span style="float: right; margin: 0 0 0 7px; font-size: 26px; font-weight: bold; line-height: 1; text-shadow: 0 1px 0 white; font-style: italic;">' . get_comments_number(). '</span>';
                      			echo '<span style="font-size:11px; line-height: 28px; float: right; margin: 0 0 0 7px; font: italic 11px "Droid Serif",Georgia,"Times New Roman",Times,serif;">';
-                     				echo 'comentaris';
+                     				echo __('Comments', 'agora-functions');
 	                     		echo "</span>";
 	                     	echo '</div>';
                      	}
@@ -201,7 +199,7 @@ function myTemplate($query) {
 		};
 
 	} else {
-		echo "No s'ha trobat cap article";
+		echo __('Article not found', 'agora-functions');
 	};
 
 	//Reset Query
