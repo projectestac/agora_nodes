@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: agora-functions\n"
+"POT-Creation-Date: 2015-04-23 09:53+0100\n"
+"PO-Revision-Date: 2015-04-23 10:10+0100\n"
+"Last-Translator: nacho <nacho@test.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
+"mu-plugins\n"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:31
+msgid "My Articles"
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:54
+msgid "Published"
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:76
+msgid "Drafts"
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:182
+msgid "Categories "
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:189
+msgid "Comments"
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:202
+msgid "Article not found"
+msgstr ""
+
+#~ msgid "Pendind Revision"
+#~ msgstr "En revisó"
