@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-24 12:52+0100\n"
+"PO-Revision-Date: 2015-04-24 13:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "Project-Id-Version: Administration\n"
 "POT-Creation-Date: \n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Last-Translator: Victor <victor.saavedra.martinez@upcnet.es>\n"
 "Language-Team: \n"
 "Language: ca\n"
 
@@ -13668,3 +13668,7 @@ msgstr "Comentari de la paperera"
 #: wp-admin/comment.php:131
 msgid "You are about to delete the following comment:"
 msgstr "Ara s'eliminarà el comentari següent:"
+
+# AFEGIT XTEC
+msgid "Unactives"
+msgstr "Pendents d'activació"
