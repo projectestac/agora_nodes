@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-21 10:17+0100\n"
+"PO-Revision-Date: 2015-04-24 12:52+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5167,9 +5167,10 @@ msgstr "Sense títol"
 msgid "RSS Error: %s"
 msgstr "Error dels fils de subscripció: %s"
 
+# MODIFICAT XTEC
 #: wp-includes/default-widgets.php:1136
 msgid "Enter the RSS feed URL here:"
-msgstr "Introdueix la URL del canal RSS aquí:"
+msgstr "Introdueix l'URL del canal RSS aquí:"
 
 #: wp-includes/default-widgets.php:1139
 msgid "Give the feed a title (optional):"
@@ -6159,13 +6160,15 @@ msgstr "Marca com a brossa: %s"
 msgid "Website : %1$s (IP: %2$s , %3$s)"
 msgstr "Lloc web : %1$s (IP: %2$s, %3$s)"
 
+# MODFIICAT XTEC
 #: wp-includes/pluggable.php:1524
 msgid "Trackback excerpt: "
-msgstr "Extracte del retroenllaç: "
+msgstr "Nom curt del retroenllaç: "
 
+# MODIFICAT XTEC
 #: wp-includes/pluggable.php:1531
 msgid "Pingback excerpt: "
-msgstr "Extracte del retroping: "
+msgstr "Nom curt del retroping: "
 
 #: wp-includes/pluggable.php:1544
 msgid "Approve it: %s"
@@ -6256,16 +6259,18 @@ msgstr "%1$s [Revisió Actual]"
 msgid "Revision"
 msgstr "Revisió"
 
+# MODIFICAT XTEC
 #: wp-includes/post.php:112
 msgctxt "post"
 msgid "Published"
-msgstr "Publicada"
+msgstr "Publicat"
 
+# MODIFICAT XTEC
 #: wp-includes/post.php:115
 msgid "Published <span class=\"count\">(%s)</span>"
 msgid_plural "Published <span class=\"count\">(%s)</span>"
-msgstr[0] "Publicada <span class=\"count\">(%s)</span>"
-msgstr[1] "Publicades <span class=\"count\">(%s)</span>"
+msgstr[0] "Publicat <span class=\"count\">(%s)</span>"
+msgstr[1] "Publicats <span class=\"count\">(%s)</span>"
 
 #: wp-includes/post.php:119
 msgctxt "post"
