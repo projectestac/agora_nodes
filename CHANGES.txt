@@ -8,6 +8,8 @@ Changes in progress
 - CSV: Included first version of the import-users-from-csv-with-meta plugin
 - If user is not logged in, redirects at login screen on BuddyPress tabs 
 - Solved categories error on breadcrumbs 
+- Disabled gravatar requests.
+- PhpInfo for xtecadmins.
 
 
 Changes 15.03.20
