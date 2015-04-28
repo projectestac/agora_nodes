@@ -49,6 +49,10 @@ class SlideshowPluginPostType
 					'new_item'           => __('New slideshow', 'slideshow-plugin'),
 					'view_item'          => __('View slideshow', 'slideshow-plugin'),
 					'search_items'       => __('Search slideshows', 'slideshow-plugin'),
+					//XTEC *********** AFEGIT - new literal for all items.
+					//2015.04.24 @vsaavedr
+					'all_items'          => __( 'All Slideshows', 'slideshow-plugin' ),
+					//*********** FI
 					'not_found'          => __('No slideshows found', 'slideshow-plugin'),
 					'not_found_in_trash' => __('No slideshows found', 'slideshow-plugin')
 				),
@@ -92,7 +96,7 @@ class SlideshowPluginPostType
 	 * @since 1.0.0
 	 */
 	static function registerMetaBoxes()
-	{	
+	{
             //XTEC ************ ELIMINAT - Hide information metabox - not necessary - less is more
             //2014.11.20 @jmeler
             /*
@@ -145,7 +149,7 @@ class SlideshowPluginPostType
                         /*
 			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
                          */
-                        //************ FI         
+                        //************ FI
 		}
 	}
 
@@ -271,17 +275,17 @@ class SlideshowPluginPostType
 
 		// End list
 		echo '</div>';
-                
+
                 // XTEC ************ AFEGIT - get slides from picasa
                 // 2014.10.22 @jmeler
-                
+
                 echo '<hr><p style="color:green; font-weight:bold">Si voleu mostrar més de 10 diapositives us recomanem carregar-les des d\'un àlbum extern:</p>
-                      <strong>Picasa</strong> (adreça <a target="_blank" href="https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges">RSS</a>):  
-                      <input type="text" name="picasa_album" value='.get_post_meta( $post->ID, "picasa_album", true ).'><br>    
+                      <strong>Picasa</strong> (adreça <a target="_blank" href="https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges">RSS</a>):
+                      <input type="text" name="picasa_album" value='.get_post_meta( $post->ID, "picasa_album", true ).'><br>
                       <br>
                       <strong>Google+ Fotos</strong> (adreça web):<br>
                       <input type="text" name="googlephotos_album" value='.get_post_meta( $post->ID, "googlephotos_album", true ).'><br>';
-                   
+
                 //************ FI
 
 		// Templates
