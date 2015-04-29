@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2015-04-23 09:53+0100\n"
-"PO-Revision-Date: 2015-04-23 09:59+0100\n"
+"POT-Creation-Date: 2015-04-29 11:33+0100\n"
+"PO-Revision-Date: 2015-04-29 11:33+0100\n"
 "Last-Translator: nacho <nacho@test.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -15,29 +15,31 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
 "mu-plugins\n"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:31
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:35
 msgid "My Articles"
 msgstr "Articles"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:54
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:58
 msgid "Published"
 msgstr "Publicats"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:76
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:69
+msgid "Pendind Revision"
+msgstr "En revisó"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:80
 msgid "Drafts"
 msgstr "Esborranys"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:182
-msgid "Categories "
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:185
+#, fuzzy
+msgid "Categories"
 msgstr "Categories"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:189
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:192
 msgid "Comments"
 msgstr "Comentaris"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:202
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:205
 msgid "Article not found"
 msgstr "No s'ha trobat cap article"
-
-#~ msgid "Pendind Revision"
-#~ msgstr "En revisó"
