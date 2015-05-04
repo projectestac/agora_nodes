@@ -12,6 +12,8 @@ Changes in progress
 - PhpInfo for xtecadmins.
 - Avoid upload large images (>2MB).
 - Hide full size option post insertion (maximum size width 1024)
+- Slideshow: Added proportional mode
+- Added proxy support
 
 
 Changes 15.03.20

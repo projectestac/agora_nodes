@@ -657,12 +657,11 @@ msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr ""
-"Relació proporcional%s entre l'amplada i l'alçada del carrusel (amplada:"
-"alçada)"
+"<span class='dashicons dashicons-arrow-right'></span>Relació proporcional (amplada:alçada)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:613
 msgid "Slideshow's height"
-msgstr "Alçada del carrusel"
+msgstr "<span class='dashicons dashicons-arrow-right'></span>Mida de l'alçada fixa (px)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:614
 msgid "Image behaviour"
@@ -670,14 +669,13 @@ msgstr "Ajust de la imatge"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:615
 msgid "Shrink slideshow's height when width shrinks"
-msgstr "Redueix l'alçada de les diapositives quan l'ample encongeix"
+msgstr "<span class='dashicons dashicons-arrow-right'></span>Alçada variable"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:616
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
 msgstr ""
-"Habilita la capacitat de resposta (Redueix l'ample de les diapositives quan "
-"l'ample de la pàgina es redueix)"
+"L'ample s'adapta"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:618
 msgid "Hide description box, pop up when mouse hovers over"
@@ -876,3 +874,11 @@ msgstr "Esteu segurs que voleu eliminar aquest estil personalitzat?"
 
 #~ msgid "Leave any field open to use default value."
 #~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."
+
+# XTEC ************ AFEGIT - some translations for external albums error  
+# 2015.12.04 @jmeler 
+msgid "Album not available. Album ID not valid?"
+msgstr "Error al obtenir un àlbum extern. Comproveu l'adreça de l'àlbum. <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges'>Ajuda</a>."
+
+msgid "Timeout error. Album not available. Try to refresh this page"
+msgstr "No s'ha pogut carregar l'àlbum. Temps d'espera esgotat. Proveu a carregar la pàgina de nou."
