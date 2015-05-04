@@ -7,6 +7,7 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
+load_muplugin_textdomain('common-functions', '/languages');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -175,3 +176,62 @@ function remove_gravatar ($avatar, $id_or_email, $size, $default, $alt) {
 }
 
 add_filter('get_avatar', 'remove_gravatar', 1, 5);
+
+
+/**
+ * Avoid upload large images (>2MB).
+ * @author Xavier Meler (jmeler@xtec.cat)
+ * Thanks fischi
+ * http://wordpress.stackexchange.com/questions/131066/prevent-large-image-uploads/131076#131076
+ */
+
+function avoid_large_images_upload($file) {
+    $type = $file['type'];
+    $is_image = strpos($type, 'image');
+    
+    if ($is_image!==false){
+        $size = $file['size'];
+        $size = $size / 1024; // KB
+        $limitKB = 2048;      // KB
+        $limitMB = $limitKB/1024;
+        
+        if ( ( $size > $limitKB ) ) {
+            $file['error'] = __('Image files must be smaller than ', 'common-functions').$limitMB.' MB. '. __('Recommended width image:', 'common-functions')." 1024px.";
+        }
+    }
+    return $file;
+}
+
+add_filter('wp_handle_upload_prefilter', 'avoid_large_images_upload');
+
+
+/**
+ * Display extra warning message related to maximum image size
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+
+function warning_size_image() {
+    echo  __('Image files must be smaller than ', 'common-functions').' 2 MB. '. __('Recommended width image:', 'common-functions')." 1024px <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/fitxers-d-audio-i-video#TOC-Qu-cal-fer-si-els-fitxers-d-imatge-s-n-molt-grans-'>Ajuda</a>";
+        
+}
+
+add_filter('post-upload-ui', 'warning_size_image');
+
+
+/**
+ * Hide full size 
+ * @author Xavier Meler (jmeler@xtec.cat)
+ * Thanks wycks
+ * https://gist.github.com/wycks/4949242
+ */
+
+function add_image_insert_override($size_names){
+        $size_names = array(
+                          'thumbnail' => __('Thumbnail'), 
+                          'medium'    => __('Medium'), 
+                          'large'     => __('Large'),
+                        );
+      return $size_names;
+};
+
+add_filter('image_size_names_choose', 'add_image_insert_override' );
