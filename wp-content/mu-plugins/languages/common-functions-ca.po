@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: common-functions\n"
 "POT-Creation-Date: 2015-04-23 09:53+0100\n"
-"PO-Revision-Date: 2015-04-23 09:59+0100\n"
-"Last-Translator: nacho <nacho@test.com>\n"
+"PO-Revision-Date: 2015-05-04 15:56+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -12,8 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
-"mu-plugins\n"
+"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins\n"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:200
 msgid "Image files must be smaller than "
@@ -21,4 +20,5 @@ msgstr "Les imatges no poden ser més grans de "
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:199
 msgid "Recommended width image:"
-msgstr "Amplada recomenada: "
+msgstr "Amplada recomanada: "
+
