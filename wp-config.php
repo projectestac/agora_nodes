@@ -28,6 +28,16 @@ define('DB_PASSWORD', $agora['nodes']['userpwd']);
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
+// Proxy configuration
+if (!empty($agora['proxy']['host'])) {
+    define('WP_PROXY_HOST', $agora['proxy']['host']);
+    define('WP_PROXY_PORT', $agora['proxy']['port']);
+}
+if (!empty($agora['proxy']['user'])) {
+    define('WP_PROXY_USERNAME', $agora['proxy']['user']);
+    define('WP_PROXY_PASSWORD', $agora['proxy']['pass']);
+}
+
 // Force https on login
 define('FORCE_SSL_ADMIN', true);
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
