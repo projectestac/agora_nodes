@@ -21,8 +21,8 @@ class Logo_Centre_Widget extends WP_Widget {
     	if ( !empty( $title ) ) {
 		echo '<h4 class="widget-title">' . $title . '</h4>';
     	}       
-        if ( reactor_option('nomCanonicCentre') ) { 
-		$contacte=(strstr(reactor_option('emailCentre'),'@'))?"mailto:".reactor_option('emailCentre'):reactor_option('emailCentre');
+        
+        $contacte=(strstr(reactor_option('emailCentre'),'@'))?"mailto:".reactor_option('emailCentre'):reactor_option('emailCentre');
 	?>
             <div class="targeta_id_centre row">
 		<?php if (reactor_option('logo_image')){
@@ -59,14 +59,15 @@ class Logo_Centre_Widget extends WP_Widget {
                                 <span><?php echo reactor_option('telCentre'); ?></span>
                             </div>
                             <a id="tar-mapa" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a> 
-                            <span style="color:#bbb;font-size:0.8em;margin:0 5px" >|</span> 
+                            <span class="pipe" >|</span> 
                             <a id="tar-contacte" href="<?php echo $contacte;?>">contacte</a>
+                            
                         </div>		 
                     </div>	
 		 </div>		 
             </div>
   	<?php echo $args['after_widget']; ?>
-<?php }  //end if nomCanonicCentre
+<?php 
 
 } //end  function widget
 
