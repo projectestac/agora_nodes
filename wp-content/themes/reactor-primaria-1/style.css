@@ -83,6 +83,7 @@ vcard (targeta identificació centre)
     margin: 0;
     border: 0;
     padding: 0;
+    width:100%;
 }
 .vcard .country-name, 
 .vcard .region, 
@@ -122,6 +123,17 @@ vcard (targeta identificació centre)
     padding-left:2em;
     text-align: left;
 }
+
+.pipe{
+    color:#bbb;
+    font-size:0.8em;
+    margin:0 5px;
+}
+
+.ww { 
+   word-wrap:break-word;
+}
+
 /*****************************************************************
 Targetes
 ******************************************************************/
