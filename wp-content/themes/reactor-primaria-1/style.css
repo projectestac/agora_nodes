@@ -660,8 +660,10 @@ address{
     filter: alpha(opacity=40);
 }
 
-.widget_xtec_widget .grid-icon{
+.widget_xtec_widget .grid-icon {
     background-color: white;
+    margin-bottom:0.9em;
+    margin-top:0;
 }
 
 /*****************************************************************
