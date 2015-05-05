@@ -30,9 +30,11 @@ class XTEC_Widget extends WP_Widget {
         'moodle' => array('nom'=>"MOODLE",'url'=>'','img'=>'moodle-icon.png','desc'=>'Enllaç al àgora-moodle del centre'), 
 	'portalcentre' => array('nom'=>"Portal de centre",'url'=>'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda','img'=>'portalcentre-icon.png','desc'=>'Enllaç al portal de centre'), 
         'intraweb' => array('nom'=>"Intraweb",'url'=>'','img'=>'intraweb-icon.png','desc'=>'Enllaç a la intraweb'), 
-	);
+	'epergam' => array('nom'=>"ePergam",'url'=>'','img'=>'epergam-icon.png','desc'=>'Aplicatiu de la biblioteca escolar'), 
+	'lamevaxtec' => array('nom'=>"La meva XTEC",'url'=>'https://sites.google.com/a/xtec.cat/aplicacionsxtec/','img'=>'lamevaxtec-icon.png','desc'=>'Enllaç a l\'espai d\'usuari XTEC'), 
+    );
 
-    public $recursosXtec = array('ensenyament','xtec','edu365','edu3','xarxa-docent','alexandria','linkat','jclic','merli','arc','odissea','atri','saga','familia-escola','internet-segura','moodle','portalcentre','intraweb');
+    public $recursosXtec = array('ensenyament','xtec','edu365','edu3','xarxa-docent','alexandria','linkat','jclic','merli','arc','odissea','atri','saga','familia-escola','internet-segura','moodle','portalcentre','intraweb','epergam','lamevaxtec');
  
     // Create widget
     public function __construct() {
@@ -41,10 +43,10 @@ class XTEC_Widget extends WP_Widget {
             'Enllaços Educatius', // Name
             array( 'description' => 'Enllaços a portals, recursos i serveis de la Xarxa Telemàtica Educativa de Catalunya (XTEC)') 
       	        );
-           $this->recursos['moodle']['url']=get_home_url()."/moodle";
-           $this->recursos['ampa']['url']=get_home_url()."/ampa";
-           $this->recursos['intraweb']['url']=get_home_url()."/intraweb";
-           
+           $this->recursos['moodle']['url']  = get_home_url()."/moodle";
+           $this->recursos['ampa']['url']    = get_home_url()."/ampa";
+           $this->recursos['intraweb']['url']= get_home_url()."/intranet";
+           $this->recursos['epergam']['url'] = "http://aplitic.xtec.cat/epergam/web/biblioteca.jsp?codi=".SCHOOL_CODE;
     }
  
     // Front-End Display of the Widget

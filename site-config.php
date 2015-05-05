@@ -16,3 +16,4 @@ define('WP_SITEURL', $agora['server']['html'] . $centre . '/');
 define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 
 define('ENVIRONMENT', $agora['server']['enviroment']);
+define('SCHOOL_CODE',$school_info["clientCode"]);
