@@ -9,7 +9,12 @@ Changes in progress
 - Solved categories error on breadcrumbs 
 - Disabled gravatar requests.
 - PhpInfo for xtecadmins.
-- Slideshow plugion: Added proportional mode
+- Avoid upload large images (>2MB).
+- Hide full size option post insertion (maximum size width 1024)
+- Slideshow: Added proportional mode
+- Added proxy support
+- Giny Enllaços educatius: added 'ePergam', 'La meva XTEC' and bug fix #111
+- Added constant SCHOOL_CODE 
 
 
 Changes 15.03.20
