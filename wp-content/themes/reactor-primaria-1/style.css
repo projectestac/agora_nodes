@@ -667,6 +667,37 @@ address{
 }
 
 /*****************************************************************
+Shortcodes
+******************************************************************/
+.rss-date{
+    color:#888;
+    font-size:0.8em;
+}
+.rss-excerpt{
+    font-size:0.9em;
+    color:#444 ;
+}
+
+.rss-title{
+    margin-bottom:10px;
+}
+
+.rss-title a{
+    font-weight: bold;
+}
+
+.rss-sc li{
+    list-style-type: none;
+}
+
+.rss-sc li:before {
+content: "\f345";
+font: 14px/1 "dashicons";
+color: #BBB;
+margin-left:-1em;
+}
+
+/*****************************************************************
 Categories
 ******************************************************************/
 .archive-meta{
