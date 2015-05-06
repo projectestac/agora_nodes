@@ -22,3 +22,11 @@ msgstr "Les imatges no poden ser més grans de "
 msgid "Recommended width image:"
 msgstr "Amplada recomanada: "
 
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:274
+msgid "No item"
+msgstr "No hi ha elements"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:278
+msgid ">"
+msgstr "Fa"
+

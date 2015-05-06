@@ -23,3 +23,11 @@ msgstr ""
 msgid "Recommended width image:"
 msgstr ""
 
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:274
+msgid "No item"
+msgstr ""
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:278
+msgid ">"
+msgstr ""
+
