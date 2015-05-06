@@ -16,6 +16,7 @@ Changes in progress
 - Added proxy support
 - Giny Enllaços educatius: added 'ePergam', 'La meva XTEC' and bug fix #111
 - Added constant SCHOOL_CODE 
+- Added shortcode to embed rss into post and page
 
 
 Changes 15.03.20
