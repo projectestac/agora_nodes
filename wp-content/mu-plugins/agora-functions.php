@@ -63,7 +63,7 @@ function bp_profile_submenu_posts() {
 
     bp_core_new_subnav_item(
 	    array(
-		    'name' => __('Pendind Revision', 'agora-functions').'<span>'.$pendingCount.'</span>',
+		    'name' => __('Drafts', 'agora-functions').'<span>'.$pendingCount.'</span>',
 		    'slug' => 'myunder-review',
 		    'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
 		    'parent_slug' => $bp->bp_nav['myposts']['slug'],
