@@ -7,7 +7,7 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-load_plugin_textdomain('agora-functions', false, plugin_basename(dirname(__FILE__)). '/languages');
+load_muplugin_textdomain('agora-functions', '/languages');
 
 /**
  * To avoid error uploading files from HTTP pages
