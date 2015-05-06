@@ -10,25 +10,25 @@
 class SocialMedia_Widget extends WP_Widget {
    
     public $socialmedia = array( 
-	'twitter'=>array('nom'=>"Twitter",'url'=>'','img'=>'twitter-square'), 
-	'facebook'=>array('nom'=>"Facebook",'url'=>'','img'=>'facebook-square'),  
-	'google-plus'=>array('nom'=>"Google Plus",'url'=>'','img'=>'google-plus-square'),
-        'youtube'=>array('nom'=>"Youtube",'url'=>'','img'=>'youtube-square'),
-	'vimeo'=>array('nom'=>"Vimeo",'url'=>'','img'=>'vimeo-square'),
-        'picasa'=>array('nom'=>"Picasa",'url'=>'','img'=>'camera'), 
-        'flickr'=>array('nom'=>"Flickr",'url'=>'','img'=>'flickr'), 
-        'pinterest'=>array('nom'=>"Pinterest",'url'=>'','img'=>'pinterest-square'), 
-        'instagram'=>array('nom'=>"Instagram",'url'=>'','img'=>'instagram'),
-	'tumblr'=>array('nom'=>"Tumblr",'url'=>'','img'=>'tumblr-square'), 
-        'soundcloud'=>array('nom'=>"Soundcloud",'url'=>'','img'=>'soundcloud'), 
-        'dropbox'=>array('nom'=>"Dropbox",'url'=>'','img'=>'dropbox'),
-        'rss'=>array('nom'=>"rss",'url'=>'','img'=>'rss-square'), 
-        'email'=>array('nom'=>"Correu",'url'=>'','img'=>'envelope-square'), 
-        'moodle'=>array('nom'=>"Moodle",'url'=>'','img'=>'graduation-cap'),
-        'xarxanodes'=>array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'sitemap'),
-        'docs'=>array('nom'=>"Documents",'url'=>'','img'=>'folder-open'),
-        'fotos'=>array('nom'=>"Fotos",'url'=>'','img'=>'photo'),
-        'video'=>array('nom'=>"Videos",'url'=>'','img'=>'caret-square-o-right')
+	'twitter'       =>array('nom'=>"Twitter",   'url'=>'','img'=>'twitter-square'), 
+	'facebook'      =>array('nom'=>"Facebook",  'url'=>'','img'=>'facebook-square'),  
+	'google-plus'   =>array('nom'=>"Google Plus",'url'=>'','img'=>'google-plus-square'),
+        'youtube'       =>array('nom'=>"Youtube",   'url'=>'','img'=>'youtube-square'),
+	'vimeo'         =>array('nom'=>"Vimeo",     'url'=>'','img'=>'vimeo-square'),
+        'picasa'        =>array('nom'=>"Picasa",    'url'=>'','img'=>'camera'), 
+        'flickr'        =>array('nom'=>"Flickr",    'url'=>'','img'=>'flickr'), 
+        'pinterest'     =>array('nom'=>"Pinterest", 'url'=>'','img'=>'pinterest-square'), 
+        'instagram'     =>array('nom'=>"Instagram", 'url'=>'','img'=>'instagram'),
+	'tumblr'        =>array('nom'=>"Tumblr",    'url'=>'','img'=>'tumblr-square'), 
+        'soundcloud'    =>array('nom'=>"Soundcloud",'url'=>'','img'=>'soundcloud'), 
+        'dropbox'       =>array('nom'=>"Dropbox",   'url'=>'','img'=>'dropbox'),
+        'rss'           =>array('nom'=>"rss",       'url'=>'','img'=>'rss-square'), 
+        'email'         =>array('nom'=>"Correu",    'url'=>'','img'=>'envelope-square'), 
+        'moodle'        =>array('nom'=>"Moodle",    'url'=>'','img'=>'graduation-cap'),
+        'xarxanodes'    =>array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'sitemap'),
+        'docs'          =>array('nom'=>"Documents", 'url'=>'','img'=>'folder-open'),
+        'fotos'         =>array('nom'=>"Fotos",     'url'=>'','img'=>'photo'),
+        'video'         =>array('nom'=>"Videos",    'url'=>'','img'=>'caret-square-o-right')
         );
 
     // Create widget
@@ -47,7 +47,11 @@ class SocialMedia_Widget extends WP_Widget {
         $mida =  $instance['mida'];
         echo $args['before_widget'];
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
-            $this->socialmedia[$idSocialMedia]["url"] = $instance[$idSocialMedia . '_url'];
+            if (strpos($instance[$idSocialMedia . '_url'],"@")===false){
+                $this->socialmedia[$idSocialMedia]["url"] = $instance[$idSocialMedia . '_url'];
+            } else {
+                $this->socialmedia[$idSocialMedia]["url"] = "mailto:".$instance[$idSocialMedia . '_url'];
+            }
         }
         // Display information
         if (!empty($title)) {
