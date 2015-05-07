@@ -297,9 +297,10 @@ Posts
     vertical-align: middle;
     margin-right: 0.2rem;
 }
-.entry-date, .entry-author {
-    color: #A9AAA8;
+.entry-date, .entry-author a{
+    color: #A9AAA8 !important;
     margin-bottom: 0.8em;
+    margin-right:0.5em;
     display: inline-block;
     font-size: 0.8em;
 }
