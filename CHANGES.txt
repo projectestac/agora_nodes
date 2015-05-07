@@ -19,6 +19,7 @@ Changes in progress
 - Added shortcode to embed rss into post and page
 - Added author link in metadata author post
 - Added shortcode to embed rss into post and page
+- Added author link in metadata author post
 
 
 Changes 15.03.20
