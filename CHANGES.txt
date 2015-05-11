@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.0.5
 - CSV: Included first version of the import-users-from-csv-with-meta plugin
 - Solved categories error on breadcrumbs 
 - Disabled gravatar requests.
@@ -17,8 +18,8 @@ Changes in progress
 - Added constant SCHOOL_CODE 
 - Added shortcode to embed rss into post and page
 - Added author link in metadata author post
-- Added shortcode to embed rss into post and page
-- Added author link in metadata author post
+- Added 'myposts' functions to replace Social Articles
+- Added script to massive upgrade of WordPress (script_upgrade.class.php)
 
 
 Changes 15.03.20
