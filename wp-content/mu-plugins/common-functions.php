@@ -301,7 +301,6 @@ add_shortcode('rss', 'rss_shortcode');
 * @author Brad Dalton
 * @author Xavier Meler (jmeler@xtec.cat)
 */
-
 function add_post_thumbnail_rss($content) {
     global $post;
     if ( has_post_thumbnail( $post->ID ) ){
@@ -317,7 +316,6 @@ add_filter('the_excerpt_rss',  'add_post_thumbnail_rss');
 * Add tags to rss
 * @author Xavier Meler (jmeler@xtec.cat)
 */
-
 function add_tags_rss() {
     global $post;
     $posttags = wp_get_post_tags($post->ID);
@@ -329,3 +327,15 @@ function add_tags_rss() {
  }
  
  add_action('rss2_item', 'add_tags_rss');
+
+/**
+ * Set number of posts per page for search and archive template 
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+function posts_per_page() {
+    if ( is_search() || is_archive() ){
+        set_query_var('posts_per_page', 10);
+    }
+}
+
+add_filter('pre_get_posts', 'posts_per_page');
