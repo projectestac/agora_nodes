@@ -8,6 +8,7 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
 load_muplugin_textdomain('common-functions', '/languages');
+wp_enqueue_style('common-functions', WPMU_PLUGIN_URL . '/common-functions.css');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -229,57 +230,56 @@ add_filter('image_size_names_choose', 'add_image_insert_override' );
  * RSS Shortcode
  * @author Xavier Meler (jmeler@xtec.cat)
  */
-
 function rss_shortcode($atts) {
-        
-        include_once(ABSPATH . WPINC . '/feed.php');
-        
-        $a = shortcode_atts( array(
-            'feeds' => '',
-            'quantity' => 5,
-            'notitle'=>'',
-        ), $atts );
-        
-        $my_feeds = explode(",", $a['feeds']);
-        
-	foreach ( $my_feeds as $feed) :
-            
-            $rss = fetch_feed( $feed );
-            if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
-                $maxitems = $rss->get_item_quantity( $a['quantity'] ); 
-                $rss_items = $rss->get_items( 0, $maxitems ); 
-                $rss_title = '<a href="'.$rss->get_permalink().'" target="_blank">'.strtoupper( $rss->get_title() ).'</a>'; 
-            endif;
-            
-            echo '<div class="rss-sc">';
-            if ($a['notitle']===''){
-                echo '<div class="rss-title">'.$rss_title.'</div>';
-            }
-            echo '<ul>';
 
-            // Check items
-            if ( $maxitems == 0 ) {
-                    echo '<li>'.__( 'No item', 'common-functions').'.</li>';
-            } else {
-                foreach ( $rss_items as $item ) :
-                    // Get human date (comment if you want to use non human date)
-                    $item_date = __( '>', 'common-functions')." ".human_time_diff( $item->get_date('U'), current_time('timestamp'));
-                    echo '<li>';
-                    echo '<a href="'.esc_url( $item->get_permalink() ).'" title="'.$item_date.'">';
-                    echo esc_html( $item->get_title() );
-                    echo '</a>';
-                    echo ' <span class="rss-date">'.$item_date.'</span><br />';
-                    echo '<div class="rss-excerpt">';
-                    $content = $item->get_content();
-                    $content = wp_html_excerpt($content, 150) . ' ...';
-                    echo $content;
-                    echo '</div>';
-                    echo '</li>';
-                endforeach;
-            }
-            echo '</ul></div>';
+    include_once(ABSPATH . WPINC . '/feed.php');
 
-	endforeach; 
+    $attributes = shortcode_atts(array(
+        'feeds' => '',
+        'quantity' => 5,
+        'notitle' => '',
+            ), $atts);
+
+    $my_feeds = explode(",", $attributes['feeds']);
+
+    foreach ($my_feeds as $feed) :
+
+        $rss = fetch_feed($feed);
+        if (!is_wp_error($rss)) : // Checks that the object is created correctly 
+            $maxitems = $rss->get_item_quantity($attributes['quantity']);
+            $rss_items = $rss->get_items(0, $maxitems);
+            $rss_title = '<a href="' . $rss->get_permalink() . '" target="_blank">' . strtoupper($rss->get_title()) . '</a>';
+        endif;
+
+        echo '<div class="rss-sc">';
+        if ($attributes['notitle'] === '') {
+            echo '<div class="rss-title">' . $rss_title . '</div>';
+        }
+        echo '<ul>';
+
+        // Check items
+        if ($maxitems == 0) {
+            echo '<li>' . __('No item', 'common-functions') . '.</li>';
+        } else {
+            foreach ($rss_items as $item) :
+                // Get human date (comment if you want to use non human date)
+                $item_date = __('>', 'common-functions') . " " . human_time_diff($item->get_date('U'), current_time('timestamp'));
+                echo '<li>';
+                echo '<a href="' . esc_url($item->get_permalink()) . '" title="' . $item_date . '">';
+                echo esc_html($item->get_title());
+                echo '</a>';
+                echo ' <span class="rss-date">' . $item_date . '</span><br />';
+                echo '<div class="rss-excerpt">';
+                $content = $item->get_content();
+                $content = wp_html_excerpt($content, 150) . ' ...';
+                echo $content;
+                echo '</div>';
+                echo '</li>';
+            endforeach;
+        }
+        echo '</ul></div>';
+
+    endforeach;
 }
 
 add_shortcode('rss', 'rss_shortcode');
