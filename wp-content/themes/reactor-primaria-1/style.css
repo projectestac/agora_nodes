@@ -844,6 +844,10 @@ Calendari
 /*****************************************************************
  Pagination
 ******************************************************************/
+ul.pagination{
+    margin: 1.063em 1em 1.25em;
+}
+
 ul.pagination li.current a {
     background: #E5E5E5;
 }
