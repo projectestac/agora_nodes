@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reactor\n"
 "POT-Creation-Date: 2013-07-13 14:12-0600\n"
-"PO-Revision-Date: 2015-03-16 15:49+0100\n"
-"Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
+"PO-Revision-Date: 2015-05-11 17:12+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: awtheme\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,10 +19,8 @@ msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr "No s'ha trobat contingut"
 
 #: D:\Documents\GitHub/reactor/404.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching will help."
-msgstr ""
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching will help."
+msgstr "No s'ha trobat el contingut que buscàveu. Podeu provar a fer una cerca."
 
 #: D:\Documents\GitHub/reactor/archive-portfolio.php:26
 #: D:\Documents\GitHub/reactor/archive.php:27
@@ -44,17 +42,17 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/archive.php:33
 msgid "Archives"
-msgstr ""
+msgstr "Arxius"
 
 #: D:\Documents\GitHub/reactor/author.php:26
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: D:\Documents\GitHub/reactor/author.php:38
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Sobre %s"
 
 #: D:\Documents\GitHub/reactor/category.php:25
 #: D:\Documents\GitHub/reactor/taxonomy-portfolio-category.php:24
@@ -76,11 +74,11 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/comments.php:43
 msgid "Comments are closed."
-msgstr ""
+msgstr "Els comentaris estan tancats."
 
 #: D:\Documents\GitHub/reactor/comments.php:61
 msgid "Logged in as"
-msgstr ""
+msgstr "Has entrat com"
 
 #: D:\Documents\GitHub/reactor/comments.php:61
 msgid "Log out of this account"
@@ -88,20 +86,20 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/comments.php:61
 msgid "Log out"
-msgstr ""
+msgstr "Sortir"
 
 #: D:\Documents\GitHub/reactor/comments.php:64
 msgid "Name "
-msgstr ""
+msgstr "Nom"
 
 #: D:\Documents\GitHub/reactor/comments.php:64
 #: D:\Documents\GitHub/reactor/comments.php:66
 msgid "( required )"
-msgstr ""
+msgstr "*"
 
 #: D:\Documents\GitHub/reactor/comments.php:64
 msgid "Your Name*"
-msgstr ""
+msgstr "  "
 
 #: D:\Documents\GitHub/reactor/comments.php:64
 #: D:\Documents\GitHub/reactor/comments.php:66
@@ -110,15 +108,15 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/comments.php:66
 msgid "Email "
-msgstr ""
+msgstr "Correu"
 
 #: D:\Documents\GitHub/reactor/comments.php:66
 msgid "Your E-Mail*"
-msgstr ""
+msgstr " "
 
 #: D:\Documents\GitHub/reactor/comments.php:68
 msgid "Website "
-msgstr ""
+msgstr "La teva pàgina web"
 
 #: D:\Documents\GitHub/reactor/comments.php:68
 msgid "URL "
@@ -126,7 +124,7 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/comments.php:71
 msgid "Your Comment here..."
-msgstr "Introdueix aquí el teu comentari..."
+msgstr "El teu comentari aquí..."
 
 #: D:\Documents\GitHub/reactor/comments.php:73
 msgid "You can use these tags"
@@ -134,16 +132,11 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/comments.php:75
 msgid "Submit"
-msgstr ""
+msgstr "Envia"
 
 #: D:\Documents\GitHub/reactor/image.php:32
 #, php-format
-msgid ""
-"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
-"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</"
-"time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
-"&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
-"\">%8$s</a>."
+msgid "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>."
 msgstr ""
 
 #: D:\Documents\GitHub/reactor/image.php:43
@@ -152,7 +145,7 @@ msgstr ""
 #: D:\Documents\GitHub/reactor/library/inc/extensions/comments.php:23
 #: D:\Documents\GitHub/reactor/library/inc/extensions/comments.php:55
 msgid "Edit"
-msgstr ""
+msgstr "Edita"
 
 #: D:\Documents\GitHub/reactor/image.php:47
 msgid "&larr; Previous"
@@ -171,17 +164,17 @@ msgstr "Pàgines:"
 #: D:\Documents\GitHub/reactor/search.php:28
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Resultats per: %s"
 
 #: D:\Documents\GitHub/reactor/searchform.php:13
 msgid "Search for:"
-msgstr "Cercar:"
+msgstr "Cerca:"
 
 #: D:\Documents\GitHub/reactor/tag.php:25
 #: D:\Documents\GitHub/reactor/taxonomy-portfolio-tag.php:24
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Etiqueta: %s"
 
 #: D:\Documents\GitHub/reactor/library/inc/content/content-footer.php:75
 msgid "Powered by "
@@ -201,15 +194,15 @@ msgstr ""
 
 #: D:\Documents\GitHub/reactor/library/inc/content/content-posts.php:158
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Deixa un comentari"
 
 #: D:\Documents\GitHub/reactor/library/inc/content/content-posts.php:158
 msgid "1 Comment"
-msgstr "1 Comentari"
+msgstr "1 comentari"
 
 #: D:\Documents\GitHub/reactor/library/inc/content/content-posts.php:158
 msgid "% Comments"
-msgstr "% Comentaris"
+msgstr "% comentaris"
 
 #: D:\Documents\GitHub/reactor/library/inc/customizer/customize.php:249
 #: D:\Documents\GitHub/reactor/library/inc/customizer/customize.php:280
@@ -646,15 +639,15 @@ msgstr ""
 #: D:\Documents\GitHub/reactor/library/inc/extensions/comments.php:44
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s a les %2$s"
 
 #: D:\Documents\GitHub/reactor/library/inc/extensions/comments.php:50
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "El teu comentari esta esperant validació."
 
 #: D:\Documents\GitHub/reactor/library/inc/extensions/comments.php:58
 msgid "Reply"
-msgstr ""
+msgstr "Contesta"
 
 #: D:\Documents\GitHub/reactor/library/inc/extensions/menus.php:31
 msgid "Top Bar Left"
@@ -981,11 +974,11 @@ msgstr ""
 #: D:\Documents\GitHub/reactor/library/inc/functions/breadcrumbs.php:342
 #, php-format
 msgid "Search results for &quot;%1$s&quot;"
-msgstr ""
+msgstr "Resultats de la cerca de &quot;%1$s&quot;"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/breadcrumbs.php:347
 msgid "404 Not Found"
-msgstr ""
+msgstr "No trobat"
 
 #: D:\Documents\GitHub/reactor/library/inc/functions/helpers.php:274
 #, php-format
@@ -1225,8 +1218,7 @@ msgid "Icon"
 msgstr ""
 
 #: D:\Documents\GitHub/reactor/library/inc/shortcodes/tinymce/config.php:259
-msgid ""
-"Enter the name of the icon from http://zurb.com/playground/foundation-icons"
+msgid "Enter the name of the icon from http://zurb.com/playground/foundation-icons"
 msgstr ""
 
 #: D:\Documents\GitHub/reactor/library/inc/shortcodes/tinymce/config.php:264
@@ -1516,9 +1508,7 @@ msgid "Nothing Found"
 msgstr "No s'ha trobat contingut"
 
 #: D:\Documents\GitHub/reactor/post-formats/format-none.php:17
-msgid ""
-"Apologies, but no results were found. Perhaps searching will help find a "
-"related post."
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
 msgstr "Prova a fer una cerca"
 
 #: D:\Documents\GitHub/Reusable-Custom-WordPress-Meta-Boxes/metaboxes/meta-fields.php:11
@@ -1612,3 +1602,4 @@ msgstr ""
 #: D:\Documents\GitHub/Reusable-Custom-WordPress-Meta-Boxes/metaboxes/meta-fields.php:243
 msgid "Add some content to display the Call to Action area"
 msgstr ""
+
