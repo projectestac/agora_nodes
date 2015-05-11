@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: common-functions\n"
 "POT-Creation-Date: 2015-04-23 09:53+0100\n"
-"PO-Revision-Date: 2015-05-04 15:56+0100\n"
+"PO-Revision-Date: 2015-05-11 12:22+0100\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -24,7 +24,7 @@ msgstr "Amplada recomanada: "
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:274
 msgid "No item"
-msgstr "No hi ha elements"
+msgstr "No s'ha trobat cap element"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common-functions.php:278
 msgid ">"
