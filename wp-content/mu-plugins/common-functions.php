@@ -295,3 +295,37 @@ function rss_shortcode($atts) {
 }
 
 add_shortcode('rss', 'rss_shortcode');
+
+/**
+* Add feature image to rss
+* @author Brad Dalton
+* @author Xavier Meler (jmeler@xtec.cat)
+*/
+
+function add_post_thumbnail_rss($content) {
+    global $post;
+    if ( has_post_thumbnail( $post->ID ) ){
+        $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail'). '' . $content;
+    }
+    return $content;
+}
+
+add_filter('the_content_feed', 'add_post_thumbnail_rss');
+add_filter('the_excerpt_rss',  'add_post_thumbnail_rss');
+
+/**
+* Add tags to rss
+* @author Xavier Meler (jmeler@xtec.cat)
+*/
+
+function add_tags_rss() {
+    global $post;
+    $posttags = wp_get_post_tags($post->ID);
+    if (count(array_filter($posttags))>0) {
+      foreach($posttags as $tag) {
+        echo("<tag>$tag->name</tag>");
+      }
+    }   
+ }
+ 
+ add_action('rss2_item', 'add_tags_rss');
