@@ -8,6 +8,7 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
 load_muplugin_textdomain('common-functions', '/languages');
+wp_enqueue_style('common-functions', WPMU_PLUGIN_URL . '/common-functions.css');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -236,36 +237,61 @@ function add_image_insert_override($size_names){
 
 add_filter('image_size_names_choose', 'add_image_insert_override' );
 
-/**
-* Add feature image to rss
-* @author Brad Dalton
-* @author Xavier Meler (jmeler@xtec.cat)
-*/
 
-function add_post_thumbnail_rss($content) {
-    global $post;
-    if ( has_post_thumbnail( $post->ID ) ){
-        $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail'). '' . $content;
-    }
-    return $content;
+/**
+ * RSS Shortcode
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+function rss_shortcode($atts) {
+
+    include_once(ABSPATH . WPINC . '/feed.php');
+
+    $attributes = shortcode_atts(array(
+        'feeds' => '',
+        'quantity' => 5,
+        'notitle' => '',
+            ), $atts);
+
+    $my_feeds = explode(",", $attributes['feeds']);
+
+    foreach ($my_feeds as $feed) :
+
+        $rss = fetch_feed($feed);
+        if (!is_wp_error($rss)) : // Checks that the object is created correctly 
+            $maxitems = $rss->get_item_quantity($attributes['quantity']);
+            $rss_items = $rss->get_items(0, $maxitems);
+            $rss_title = '<a href="' . $rss->get_permalink() . '" target="_blank">' . strtoupper($rss->get_title()) . '</a>';
+        endif;
+
+        echo '<div class="rss-sc">';
+        if ($attributes['notitle'] === '') {
+            echo '<div class="rss-title">' . $rss_title . '</div>';
+        }
+        echo '<ul>';
+
+        // Check items
+        if ($maxitems == 0) {
+            echo '<li>' . __('No item', 'common-functions') . '.</li>';
+        } else {
+            foreach ($rss_items as $item) :
+                // Get human date (comment if you want to use non human date)
+                $item_date = __('>', 'common-functions') . " " . human_time_diff($item->get_date('U'), current_time('timestamp'));
+                echo '<li>';
+                echo '<a href="' . esc_url($item->get_permalink()) . '" title="' . $item_date . '">';
+                echo esc_html($item->get_title());
+                echo '</a>';
+                echo ' <span class="rss-date">' . $item_date . '</span><br />';
+                echo '<div class="rss-excerpt">';
+                $content = $item->get_content();
+                $content = wp_html_excerpt($content, 150) . ' ...';
+                echo $content;
+                echo '</div>';
+                echo '</li>';
+            endforeach;
+        }
+        echo '</ul></div>';
+
+    endforeach;
 }
 
-add_filter('the_content_feed', 'add_post_thumbnail_rss');
-add_filter('the_excerpt_rss',  'add_post_thumbnail_rss');
-
-/**
-* Add tags to rss
-* @author Xavier Meler (jmeler@xtec.cat)
-*/
-
-function add_tags_rss() {
-    global $post;
-    $posttags = wp_get_post_tags($post->ID);
-    if (count(array_filter($posttags))>0) {
-      foreach($posttags as $tag) {
-        echo("<tag>$tag->name</tag>");
-      }
-    }   
- }
- 
- add_action('rss2_item', 'add_tags_rss');
+add_shortcode('rss', 'rss_shortcode');
