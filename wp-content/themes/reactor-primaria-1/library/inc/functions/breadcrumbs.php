@@ -167,20 +167,18 @@ class Breadcrumb_Trail {
 	public function default_labels() {
 
 		$labels = array(
-			//TODO: No hardcoded translations
-			//'home'                => __( 'Home',                    'breadcrumb-trail' ),
-			'home'                => __( 'Inici',                   'breadcrumb-trail' ),
-			'search'              => __( 'Search results for "%s"', 'breadcrumb-trail' ),
-			'error_404'           => __( '404 Not Found',           'breadcrumb-trail' ),
-			'paged'               => __( 'Page %d',                 'breadcrumb-trail' ),
-			'archives'            => __( 'Archives',                'breadcrumb-trail' ),
-			'archive_minute_hour' => __( 'g:i a',                   'breadcrumb-trail' ),
-			'archive_minute'      => __( 'Minute %d',               'breadcrumb-trail' ),
-			'archive_hour'        => __( 'g a',                     'breadcrumb-trail' ),
-			'archive_day'         => __( 'd',                       'breadcrumb-trail' ),
-			'archive_week'        => __( 'Week %d',                 'breadcrumb-trail' ),
-			'archive_month'       => __( 'F',                       'breadcrumb-trail' ),
-			'archive_year'        => __( 'Y',                       'breadcrumb-trail' ),
+			'home'                => __( 'Home',                    'reactor' ),
+			'search'              => __( 'Search results for &quot;%1$s&quot;', 'reactor' ),
+			'error_404'           => __( '404 Not Found',           'reactor' ),
+			'paged'               => __( 'Page %d',                 'reactor' ),
+			'archives'            => __( 'Archives',                'reactor' ),
+			'archive_minute_hour' => __( 'g:i a',                   'reactor' ),
+			'archive_minute'      => __( 'Minute %d',               'reactor' ),
+			'archive_hour'        => __( 'g a',                     'reactor' ),
+			'archive_day'         => __( 'd',                       'reactor' ),
+			'archive_week'        => __( 'Week %d',                 'reactor' ),
+			'archive_month'       => __( 'F',                       'reactor' ),
+			'archive_year'        => __( 'Y',                       'reactor' ),
 		//	'edit'                => __( 'Edit',                    'breadcrumb-trail' ), // @todo Implement edit link
 		);
 
