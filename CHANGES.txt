@@ -21,6 +21,7 @@ Changes in progress
 - Added author link in metadata author post
 - Added 'myposts' functions to replace Social Articles
 - Added script to massive upgrade of WordPress (script_upgrade.class.php)
+- Added Docs page to visibility widget params
 
 
 Changes 15.03.20

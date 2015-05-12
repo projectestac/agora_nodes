@@ -88,7 +88,15 @@ class Jetpack_Widget_Conditions {
 				<option value="posts" <?php selected( 'posts', $minor ); ?>><?php _e( 'Posts page', 'jetpack' ); ?></option>
 				<option value="404" <?php selected( '404', $minor ); ?>><?php _e( '404 error page', 'jetpack' ); ?></option>
 				<option value="search" <?php selected( 'search', $minor ); ?>><?php _e( 'Search results', 'jetpack' ); ?></option>
-				<optgroup label="<?php esc_attr_e( 'Post type:', 'jetpack' ); ?>">
+				
+                                <!-- XTEC ************ AFEGIT - Add option for bp-docs index
+                                // 2015.05.12 @jmeler -->
+                                
+                                <option value="docs-index" <?php selected( 'docs-index', $minor ); ?>><?php _e( 'BuddyPress Docs Archive', 'jetpack' ); ?></option>
+				
+                                <!--************ FI -->
+                                
+                                <optgroup label="<?php esc_attr_e( 'Post type:', 'jetpack' ); ?>">
 					<?php
 
 					$post_types = get_post_types( array( 'public' => true ), 'objects' );
@@ -321,6 +329,13 @@ class Jetpack_Widget_Conditions {
 						case 'front':
 							$condition_result = is_front_page();
 						break;
+                                            
+                                                // XTEC ************ AFEGIT - Added post_type for index bp_doc
+                                                // 2015.05.12 @jmeler
+                                                case 'docs-index':
+							$condition_result = is_post_type_archive('bp_doc');
+						break;
+                                                //--************ FI 
 						default:
 							if ( substr( $rule['minor'], 0, 10 ) == 'post_type-' )
 								$condition_result = is_singular( substr( $rule['minor'], 10 ) );
