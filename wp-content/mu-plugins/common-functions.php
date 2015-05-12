@@ -321,7 +321,7 @@ function add_tags_rss() {
  * @author Xavier Meler (jmeler@xtec.cat)
  */
 function posts_per_page() {
-    if ( is_search() || is_archive() ){
+    if ( is_search() || is_archive() || is_author()){
         set_query_var('posts_per_page', 10);
     }
 }
