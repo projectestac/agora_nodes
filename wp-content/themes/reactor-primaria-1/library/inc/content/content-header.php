@@ -146,7 +146,7 @@ function reactor_do_title_logo() {
                 </a>
             </div>
             <div id="search-panel">
-                <form role="search" method="get" class="search-form" action="<?php get_home_url();?>">
+                <form role="search" method="get" class="search-form" action="<?php echo get_home_url();?>">
                     <input type="search" class="search-field" placeholder="Cerca i pulsa enter…" value="" name="s" title="Cerca:">
                     <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
                 </form>			
