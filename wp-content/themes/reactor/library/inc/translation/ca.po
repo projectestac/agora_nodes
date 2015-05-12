@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reactor\n"
 "POT-Creation-Date: 2013-07-13 14:12-0600\n"
-"PO-Revision-Date: 2015-05-11 17:12+0100\n"
+"PO-Revision-Date: 2015-05-12 16:39+0100\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: awtheme\n"
 "MIME-Version: 1.0\n"
@@ -1509,7 +1509,7 @@ msgstr "No s'ha trobat contingut"
 
 #: D:\Documents\GitHub/reactor/post-formats/format-none.php:17
 msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
-msgstr "Prova a fer una cerca"
+msgstr "Podeu provar a fer una cerca nova"
 
 #: D:\Documents\GitHub/Reusable-Custom-WordPress-Meta-Boxes/metaboxes/meta-fields.php:11
 msgid "No Sidebars"
@@ -1602,4 +1602,8 @@ msgstr ""
 #: D:\Documents\GitHub/Reusable-Custom-WordPress-Meta-Boxes/metaboxes/meta-fields.php:243
 msgid "Add some content to display the Call to Action area"
 msgstr ""
+
+# searchform.php
+msgid "Search"
+msgstr "Cerca"
 
