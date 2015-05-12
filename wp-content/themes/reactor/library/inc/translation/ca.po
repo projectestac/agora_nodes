@@ -1603,3 +1603,7 @@ msgstr ""
 msgid "Add some content to display the Call to Action area"
 msgstr ""
 
+# searchform.php
+msgid "Search"
+msgstr "Cerca"
+
