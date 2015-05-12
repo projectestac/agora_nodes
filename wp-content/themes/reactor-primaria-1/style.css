@@ -168,6 +168,11 @@ article {
     vertical-align: middle;
     margin-right: 0.2rem;
 }
+
+header.entry-header{
+    position:relative;
+}
+
 .entry-header > h2 {
     font-size: 1.35em;
     line-height: 1.15em;
@@ -273,12 +278,20 @@ Posts
 ******************************************************************/
 .entry-icon {
     position:absolute;
-    top:0.5em;
-    left:85%;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
+    top:-15px;
+    left:100%;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
     z-index:999;
 }
+
+.fullwidth .entry-icon{
+    position:absolute;
+    top:-15px;
+    left:97%;
+}
+
+
 .entry-date > a,
 .entry-author >a,
 .entry-comments,
