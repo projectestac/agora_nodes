@@ -105,7 +105,7 @@ function remove_old_stats() {
     
     global $wpdb;
 
-    $datetime = date('Y-m-d H:i:s', time() - 15552000); // 15552000 = 6 * 30 * 24 * 60 * 60 (6 month)
+    $datetime = date('Y-m-d H:i:s', time() - 31104000); // 31104000 = 6 * 30 * 24 * 60 * 60 * 2 (12 month)
     
     $wpdb->query( "DELETE FROM $wpdb->stats WHERE datetime < '$datetime'");
     
