@@ -65,6 +65,9 @@ if ( ! CUSTOM_TAGS ) {
 			'rev' => true,
 			'name' => true,
 			'target' => true,
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI
 		),
 		'abbr' => array(),
 		'acronym' => array(),
@@ -152,6 +155,11 @@ if ( ! CUSTOM_TAGS ) {
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
+// XTEC ************ AFEGIT -
+			'role' => true,
+			'tabindex' => true,
+			'style' => true,
+//************ FI
 		),
 		'dl' => array(),
 		'dt' => array(),
@@ -237,6 +245,9 @@ if ( ! CUSTOM_TAGS ) {
 			'src' => true,
 			'usemap' => true,
 			'width' => true,
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI
 		),
 		'ins' => array(
 			'datetime' => true,
@@ -336,6 +347,10 @@ if ( ! CUSTOM_TAGS ) {
 			'scope' => true,
 			'valign' => true,
 			'width' => true,
+// XTEC ************ AFEGIT -
+			'style' => true,
+			'class' => true,
+//************ FI
 		),
 		'textarea' => array(
 			'cols' => true,
@@ -379,6 +394,16 @@ if ( ! CUSTOM_TAGS ) {
 			'char' => true,
 			'charoff' => true,
 			'valign' => true,
+// XTEC ************ AFEGIT -
+			'class' => true,
+//************ FI
+		),
+		'track' => array(
+			'default' => true,
+			'kind' => true,
+			'label' => true,
+			'src' => true,
+			'srclang' => true,
 		),
 		'track' => array(
 			'default' => true,
