@@ -59,17 +59,19 @@ if ( ! CUSTOM_TAGS ) {
 	 * @since 2.0.0
 	 */
 	$allowedposttags = array(
-		'address'    => array(),
-		'a'          => array(
-			'href'     => true,
-			'rel'      => true,
-			'rev'      => true,
-			'name'     => true,
-			'target'   => true,
-			'download' => array(
-				'valueless' => 'y',
-			),
-		),
+		'address' => array(),
+		'a' => array(
+			'href' => true,
+			'rel' => true,
+			'rev' => true,
+			'name' => true,
+			'target' => true,
+            'download' => array(
+                    'valueless' => 'y',
+            ),
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI		),
 		'abbr'       => array(),
 		'acronym'    => array(),
 		'area'       => array(
@@ -159,6 +161,11 @@ if ( ! CUSTOM_TAGS ) {
 			'dir'      => true,
 			'lang'     => true,
 			'xml:lang' => true,
+// XTEC ************ AFEGIT -
+			'role' => true,
+			'tabindex' => true,
+			'style' => true,
+//************ FI
 		),
 		'dl'         => array(),
 		'dt'         => array(),
@@ -231,11 +238,14 @@ if ( ! CUSTOM_TAGS ) {
 			'height'   => true,
 			'hspace'   => true,
 			'longdesc' => true,
-			'vspace'   => true,
-			'src'      => true,
-			'usemap'   => true,
-			'width'    => true,
-		),
+			'vspace' => true,
+			'src' => true,
+			'usemap' => true,
+			'width' => true,
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI
+        ),
 		'ins'        => array(
 			'datetime' => true,
 			'cite'     => true,
@@ -331,9 +341,13 @@ if ( ! CUSTOM_TAGS ) {
 			'height'  => true,
 			'nowrap'  => true,
 			'rowspan' => true,
-			'scope'   => true,
-			'valign'  => true,
-			'width'   => true,
+			'scope' => true,
+			'valign' => true,
+			'width' => true,
+// XTEC ************ AFEGIT -
+			'style' => true,
+			'class' => true,
+//************ FI
 		),
 		'textarea'   => array(
 			'cols'     => true,
@@ -376,7 +390,10 @@ if ( ! CUSTOM_TAGS ) {
 			'bgcolor' => true,
 			'char'    => true,
 			'charoff' => true,
-			'valign'  => true,
+			'valign' => true,
+// XTEC ************ AFEGIT -
+			'class' => true,
+//************ FI
 		),
 		'track'      => array(
 			'default' => true,
