@@ -18,6 +18,11 @@ if ( defined( 'SUNRISE' ) ) {
 	include_once( WP_CONTENT_DIR . '/sunrise.php' );
 }
 
+// XTEC ************ AFEGIT - Avoid "Fatal error: Call to a member function set_prefix()" with Social Login authentication
+// 2015.02.13 @sarjona
+global $wpdb;
+//************ FI
+
 /** Check for and define SUBDOMAIN_INSTALL and the deprecated VHOST constant. */
 ms_subdomain_constants();
 
