@@ -8,7 +8,7 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
 load_muplugin_textdomain('common-functions', '/languages');
-wp_enqueue_style('common-functions', WPMU_PLUGIN_URL . '/common-functions.css');
+wp_enqueue_style('common-functions', get_site_url() . '/wp-content/mu-plugins/common-functions.css');
 
 /**
  * Remove screen options from posts to simplify user experience
