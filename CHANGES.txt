@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Version 15.05.19
 ---------------------------------------------------------------------------------------
+- Forbidden access to admin-tools and edit-comments for Colaborator user roles
 - Upgraded WordPress to version 4.0.5
 - CSV: Included first version of the import-users-from-csv-with-meta plugin
 - Solved categories error on breadcrumbs 
