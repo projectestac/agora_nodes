@@ -6,10 +6,10 @@ development home at https://github.com/projectestac/agora_nodes
 Version 15.05.19
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.0.5
-- CSV: Included first version of the import-users-from-csv-with-meta plugin
+- CSV: Included first version of the import-users-from-csv-with-meta plugin. #95
 - If user is not logged in, redirects at login screen on BuddyPress tabs 
-- Solved categories error on breadcrumbs 
-- Disabled gravatar requests.
+- Solved categories error on breadcrumbs #2
+- Disabled gravatar requests. #122
 - PhpInfo for xtecadmins.
 - Avoid upload large images (>2MB).
 - Hide full size option post insertion (maximum size width 1024)
@@ -21,7 +21,13 @@ Version 15.05.19
 - Added author link in metadata author post
 - Added 'myposts' functions to replace Social Articles
 - Added script to massive upgrade of WordPress (script_upgrade.class.php)
-- Added Docs page to visibility widget params
+- Added Docs page to visibility widget params.
+- Empty categories showed also in visibility widget.  #103
+- Hidden some categories for contributor role (Tools, Google Calendar and Comments). #115
+- Reviewed comments translation. #118
+- Fixed bug to let users edit its forum messages during specific time interval. #120
+
+
 
 
 Changes 15.03.20
