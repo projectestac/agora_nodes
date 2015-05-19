@@ -11,6 +11,7 @@ Changes in progress
 
 Changes 15.05.19
 ---------------------------------------------------------------------------------------
+- Hide Address Web Field by default on wp-admin/options-general.php
 - Upgraded WordPress to version 4.0.5
 - CSV: Included first version of the import-users-from-csv-with-meta plugin. #95
 - If user is not logged in, redirects at login screen on BuddyPress tabs 
