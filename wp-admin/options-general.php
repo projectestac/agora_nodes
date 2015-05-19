@@ -75,6 +75,18 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 <td><input name="siteurl" type="url" id="siteurl" value="<?php form_option( 'siteurl' ); ?>"<?php disabled( defined( 'WP_SITEURL' ) ); ?> class="regular-text code<?php if ( defined( 'WP_SITEURL' ) ) echo ' disabled' ?>" /></td>
 </tr>
 
+<!--
+// XTEC ************ MODIFICAT - Hide Address Web field by default
+// 2015.05.19 @nacho
+-->
+
+<tr>
+<th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
+<td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>" class="regular-text code disabled" disabled="disabled" /></td>
+</tr>
+
+<!-- //************ ORIGINAL -->
+<!--
 <tr>
 <th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
 <td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>"<?php disabled( defined( 'WP_HOME' ) ); ?> class="regular-text code<?php if ( defined( 'WP_HOME' ) ) echo ' disabled' ?>" />
@@ -89,8 +101,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 <?php endif; ?>
 </td>
 </tr>
-
-<?php } ?>
+ -->
+<!-- //************ FI -->
 
 <tr>
 <th scope="row"><label for="new_admin_email"><?php _e( 'Email Address' ); ?></label></th>
