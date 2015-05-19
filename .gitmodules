@@ -1,3 +1,6 @@
 [submodule "wp-content/plugins/xtec-mail/lib"]
 	path = wp-content/plugins/xtec-mail/lib
 	url = https://github.com/projectestac/mailer.git
+[submodule "wp-content/plugins/google-calendar-events"]
+	path = wp-content/plugins/google-calendar-events
+	url = https://github.com/projectestac/wordpress-gce.git
