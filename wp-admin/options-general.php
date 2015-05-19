@@ -87,6 +87,18 @@ if ( ! is_multisite() ) {
 <td><input name="siteurl" type="url" id="siteurl" value="<?php form_option( 'siteurl' ); ?>"<?php disabled( defined( 'WP_SITEURL' ) ); ?> class="regular-text code<?php echo $wp_site_url_class; ?>" /></td>
 </tr>
 
+<!--
+// XTEC ************ MODIFICAT - Hide Address Web field by default
+// 2015.05.19 @nacho
+-->
+
+<tr>
+<th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
+<td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>" class="regular-text code disabled" disabled="disabled" /></td>
+</tr>
+
+<!-- //************ ORIGINAL -->
+<!--
 <tr>
 <th scope="row"><label for="home"><?php _e( 'Site Address (URL)' ); ?></label></th>
 <td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>"<?php disabled( defined( 'WP_HOME' ) ); ?> class="regular-text code<?php echo $wp_home_class; ?>" />
@@ -103,8 +115,8 @@ if ( ! is_multisite() ) {
 <?php endif; ?>
 </td>
 </tr>
-
-<?php } ?>
+ -->
+<!-- //************ FI -->
 
 <tr>
 <th scope="row"><label for="new_admin_email"><?php _e( 'Email Address' ); ?></label></th>
