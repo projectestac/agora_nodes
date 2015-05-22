@@ -272,39 +272,3 @@ function agora_remove_post_meta_boxes() {
 
 add_action('do_meta_boxes', 'agora_remove_post_meta_boxes');
 
-/**
- * Remove html tags from the excerpt
- * @author Nacho Abejaro
- */
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'preserve_excerpt_format');
-
-function preserve_excerpt_format($text) {
-    //global $post;
-    $raw_excerpt = $text;
-    if ('' == $text) {
-        $text = get_the_content('');
-        $text = strip_shortcodes($text);
-        $text = apply_filters('the_content', $text);
-        $text = str_replace(']]>', ']]&gt;', $text);
-
-        $exceptions = '<p>,<a>,<em>,<strong>,<br><img>'; //PRESERVE THESE TAGS, ADD/REMOVE AS NEEDED
-        $text = strip_tags($text, $exceptions);
-
-        $maxCount = 55; //DEFAULT WP WORD COUNT, INCREASE AS NEEDED
-        $excerpt_length = apply_filters('excerpt_length', $maxCount);
-
-        //$moreText = '.... <a class="blue" href="'.get_permalink($post->ID).'">Read More &gt;&gt;</a>'; //CUSTOM MORE TEXT, CHANGE AS NEEDED
-        $excerpt_more = apply_filters('excerpt_more', '');
-
-        $words = preg_split("/[\n\r\t\ ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-        if (count($words) > $excerpt_length) {
-            array_pop($words);
-            $text = implode(' ', $words);
-            //$text = $text.$excerpt_more;
-        } else {
-            $text = implode(' ', $words);
-        }
-    }
-    return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
-}
