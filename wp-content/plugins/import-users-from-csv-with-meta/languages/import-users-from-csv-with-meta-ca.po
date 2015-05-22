@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: import-users-from-csv-with-meta\n"
 "POT-Creation-Date: 2015-03-30 12:17+0100\n"
-"PO-Revision-Date: 2015-05-22 12:02+0100\n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"PO-Revision-Date: 2015-05-23 01:17+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: Departament Ensenyament Catalunya - Àrea TAC\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -12,8 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.6.7\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
-"plugins/import-users-from-csv-with-meta\n"
+"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta\n"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:34
 msgid "Import users"
@@ -118,25 +117,16 @@ msgid "Sets user email."
 msgstr "Estableix el correu electrònic de l'usuari."
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:487
-msgid ""
-"The next columns are totally customizable and you can use whatever you want. "
-"All rows must contains same columns"
-msgstr ""
-"Les columnes següents són totalment personalitzables i es poden fer servir "
-"de la forma que vulgueu. Totes les files han de contenir les mateixes "
-"columnes:"
+msgid "The next columns are totally customizable and you can use whatever you want. All rows must contains same columns"
+msgstr "Les columnes següents són totalment personalitzables i es poden fer servir de la forma que vulgueu. Totes les files han de contenir les mateixes columnes:"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:492
 msgid "user_nicename"
 msgstr "user_nicename:"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:494
-msgid ""
-"A string that contains a URL-friendly name for the user. The default is the "
-"user's username."
-msgstr ""
-"Un text que conté un URL amigable per a l'usuari. El valor per defecte és el "
-"nom de l'usuari."
+msgid "A string that contains a URL-friendly name for the user. The default is the user's username."
+msgstr "Un text que conté un URL amigable per a l'usuari. El valor per defecte és el nom de l'usuari."
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:498
 msgid "user_url"
@@ -151,13 +141,8 @@ msgid "display_name"
 msgstr "display_name:"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:506
-msgid ""
-"A string that will be shown on the site. Defaults to user's username. It is "
-"likely that you will want to change this, for both appearance and security "
-"through obscurity (that is if you dont use and delete the default admin "
-"user)."
-msgstr ""
-"Un text que es mostrarà al lloc. Per defecte és el vostre nom d'usuari."
+msgid "A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through obscurity (that is if you dont use and delete the default admin user)."
+msgstr "Un text que es mostrarà al lloc. Per defecte és el vostre nom d'usuari."
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:510
 msgid "nickname"
@@ -200,9 +185,6 @@ msgid "Extra profile information"
 msgstr "Informació extra del perfil"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:880
-msgid ""
-"Import Users module require jQuery to be installed on your wordpress in "
-"order to work!"
-msgstr ""
-"El mòdul d'importació d'usuaris requereix tenir instal·lat JQuery al vostre "
-"WordPress per funcionar!"
+msgid "Import Users module require jQuery to be installed on your wordpress in order to work!"
+msgstr "El mòdul d'importació d'usuaris requereix tenir instal·lat JQuery al vostre WordPress per funcionar!"
+
