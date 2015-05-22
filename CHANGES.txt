@@ -3,9 +3,14 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Version 15.05.19
+Changes in progress
 ---------------------------------------------------------------------------------------
 - Forbidden access to admin-tools and edit-comments for Colaborator user roles
+
+
+
+Changes 15.05.19
+---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.0.5
 - CSV: Included first version of the import-users-from-csv-with-meta plugin. #95
 - If user is not logged in, redirects at login screen on BuddyPress tabs 
@@ -27,8 +32,6 @@ Version 15.05.19
 - Hidden some categories for contributor role (Tools, Google Calendar and Comments). #115
 - Reviewed comments translation. #118
 - Fixed bug to let users edit its forum messages during specific time interval. #120
-
-
 
 
 Changes 15.03.20
