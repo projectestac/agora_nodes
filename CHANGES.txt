@@ -6,7 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Forbidden access to admin-tools and edit-comments for Colaborator user roles
-
+- Modified language support on import-users-with-csv Card #625
 
 
 Changes 15.05.19
