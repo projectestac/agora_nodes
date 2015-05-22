@@ -339,69 +339,71 @@ add_filter('pre_get_posts', 'posts_per_page');
 
 /**
  * Exclude admin pages for Contributor user role
+ * @author Nacho Abejaro
  */
 function exclude_pages_from_admin($query) {
-	global $pagenow, $wp_post_types;
+    global $pagenow;
 
-	$role = getRole();
+    $role = getRole();
 
-	$restrictedPages = array(
-		'edit-comments.php',
-		'tools.php',
-	);
+    $restrictedPages = array(
+        'edit-comments.php',
+        'tools.php',
+    );
 
-	$restrictedPagesWithPost = array(
-		'edit.php?post_type=gce_feed',
-		'post-new.php?post_type=gce_feed',
-	);
+    $restrictedPagesWithPost = array(
+        'edit.php?post_type=gce_feed',
+        'post-new.php?post_type=gce_feed',
+    );
 
+    $post_type = get_current_post_type();
 
-	$post_type = get_current_post_type();
+    $postUrl = $pagenow . '?post_type=' . $post_type;
 
-	$postUrl = $pagenow.'?post_type='.$post_type;
-
-	if ($role == 'contributor' && (
-			( in_array($pagenow, $restrictedPages) || in_array($postUrl, $restrictedPagesWithPost) ))
-	){
-		wp_redirect( admin_url() );
-		exit;
-	}
+    if ($role == 'contributor' && (
+            ( in_array($pagenow, $restrictedPages) || in_array($postUrl, $restrictedPagesWithPost) ))
+    ) {
+        wp_die(__('You do not have permission to do that.'));
+    }
 }
 
-add_filter( 'parse_query', 'exclude_pages_from_admin' );
+add_filter('parse_query', 'exclude_pages_from_admin');
 
 /**
- * get the user Role
+ * Get the user Role
+ * @author Nacho Abejaro
  */
 function getRole() {
-	$user_id = get_current_user_id();
-	$caps = get_user_meta($user_id, 'wp_capabilities', true);
-	$roles = array_keys((array) $caps);
-	$role = $roles[0];
+    $user_id = get_current_user_id();
+    $caps = get_user_meta($user_id, 'wp_capabilities', true);
+    $roles = array_keys((array) $caps);
+    $role = $roles[0];
 
-	return $role;
+    return $role;
 }
 
 /**
- * get the current post_type
+ * Get the current post_type
+ * @author Nacho Abejaro
  */
 function get_current_post_type() {
-	global $post, $typenow, $current_screen;
+    global $post, $typenow, $current_screen;
 
-	if ($post && $post->post_type) {
-		// We have a post so we can just get the post type from that
-		return $post->post_type;
-	}elseif($typenow) {
-		// Check the global $typenow - set in admin.php
-		return $typenow;
-	}elseif($current_screen && $current_screen->post_type) {
-		// Check the global $current_screen object - set in sceen.php
-		return $current_screen->post_type;
-	}elseif(isset( $_REQUEST['post_type'] ) ) {
-		// Lastly check the post_type querystring
-		return sanitize_key( $_REQUEST['post_type'] );
-	}else {
-		// We do not know the post type!
-		return null;
-	}
+    if ($post && $post->post_type) {
+        // We have a post so we can just get the post type from that
+        return $post->post_type;
+    } elseif ($typenow) {
+        // Check the global $typenow - set in admin.php
+        return $typenow;
+    } elseif ($current_screen && $current_screen->post_type) {
+        // Check the global $current_screen object - set in sceen.php
+        return $current_screen->post_type;
+    } elseif (isset($_REQUEST['post_type'])) {
+        // Lastly check the post_type querystring
+        return sanitize_key($_REQUEST['post_type']);
+    } else {
+        // We do not know the post type!
+        return null;
+    }
 }
+
