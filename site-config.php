@@ -5,7 +5,7 @@ require_once (dirname(dirname(__FILE__)) . '/config/dblib-mysql.php');
 global $school_info;
 $centre = getSchoolInfo('nodes');
 
-global $agora, $isAgora, $isBlocs;
+global $agora, $isAgora, $isBlocs, $diskPercentNodes;
 
 $isAgora = true;
 $isBlocs = false;
@@ -18,3 +18,9 @@ define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $schoo
 
 define('ENVIRONMENT', $agora['server']['enviroment']);
 define('SCHOOL_CODE',$school_info["clientCode"]);
+
+if (isset($school_info['diskPercent_nodes'])){
+	$diskPercentNodes = $school_info['diskPercent_nodes'];
+}else {
+	$diskPercentNodes = 0;
+}
