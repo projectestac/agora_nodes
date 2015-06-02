@@ -65,7 +65,7 @@
                        <?php reactor_do_meta_autor_date(); ?>
                    </header>
                     <div class="entry-summary">
-                    <?php (get_post_meta( get_the_ID(), '_bloc_html', true )!="on")? the_excerpt(): the_content();?>
+                    <?php ($bloc_html)? the_content() : the_excerpt(); ?>
                     </div>
               </div>
               
