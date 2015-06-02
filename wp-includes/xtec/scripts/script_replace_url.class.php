@@ -24,7 +24,7 @@ class script_replace_url extends agora_script_base {
             $replaceURL = explode(',', $params['origin_url']);
             if ($params['add_ccentre']) {
                 foreach($replaceURL as $i => $url) {
-                    $replaceURL[$i] .= CENTRE;
+                    $replaceURL[$i] .= CENTRE.'/';
                 }
             }
         } else {
@@ -123,7 +123,7 @@ class script_replace_url extends agora_script_base {
         if ($and) {
             $sql .= "AND $and";
         }
-        if(!$this->execute_sql($sql)) {
+        if (!$this->execute_sql($sql)) {
             return false;
         }
         return true;
