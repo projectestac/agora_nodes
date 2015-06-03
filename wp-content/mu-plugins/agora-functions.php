@@ -272,3 +272,15 @@ function agora_remove_post_meta_boxes() {
 
 add_action('do_meta_boxes', 'agora_remove_post_meta_boxes');
 
+/**
+ * Control disk percent usage when upload a file
+ * @author Nacho Abejaro
+ */
+add_action('wp_handle_upload', 'quota_control');
+function quota_control() {
+	if (isset($GLOBALS['diskPercentNodes'])&&($GLOBALS['diskPercentNodes'] >= 100)){
+		$file['error'] = __('You have exceeded your disk quota limit', 'agora-functions');
+	}
+
+	return $file;
+}

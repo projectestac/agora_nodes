@@ -41,3 +41,6 @@ msgstr "No s'ha trobat cap article"
 
 msgid "Pending Review"
 msgstr "Pendent de revisió"
+
+msgid "You have exceeded your disk quota limit"
+msgstr "Heu excedit la vostra quota de disk"
