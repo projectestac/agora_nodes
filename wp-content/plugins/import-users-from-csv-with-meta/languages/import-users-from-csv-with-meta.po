@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: import-users-from-csv-with-meta\n"
 "POT-Creation-Date: 2015-03-17 13:49+0100\n"
-"PO-Revision-Date: 2015-03-17 13:49+0100\n"
-"Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
+"PO-Revision-Date: 2015-06-03 17:13+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: Departament Ensenyament Catalunya - Àrea TAC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11,18 +11,18 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/sarjona/workspace/agora_vm/html/wordpress/wp-"
-"content/plugins/import-users-from-csv-with-meta\n"
+"X-Poedit-SearchPath-0: /home/sarjona/workspace/agora_vm/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta\n"
 
 #: /home/sarjona/workspace/agora_vm/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:35
 msgid "Import users"
-msgstr ""
+msgstr "Importa usuaris"
 
 #: /home/sarjona/workspace/agora_vm/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:151
 #, php-format
 msgid "User %s already exists"
-msgstr ""
+msgstr "L'usuari %s ja existeix"
 
 #: /home/sarjona/workspace/agora_vm/html/wordpress/wp-content/plugins/import-users-from-csv-with-meta/import-users-from-csv-with-meta.php:232
 msgid "You are not allowed to see this content."
-msgstr ""
+msgstr "No teniu autorització per veure aquest contingut"
+
