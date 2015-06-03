@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Grup-classe Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-24 13:35+0100\n"
+"PO-Revision-Date: 2015-06-03 17:06+0100\n"
+"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"Language-Team: Xavier Meler <jmeler@xtec.cat>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Classroom"
+msgstr "Grup classe"
+
+msgid "Title:"
+msgstr "Títol:"
+
+msgid "Text/HTML"
+msgstr "Text/HTML"
+
+msgid "Calendar"
+msgstr "Agenda"
+
+msgid "Calendar's title:"
+msgstr "Títol de l'agenda:"
+
+msgid "Calendar:"
+msgstr "Calendari associat:"
+
+msgid "Show:"
+msgstr "Mostra:"
+
+msgid "Grid"
+msgstr "Calendari"
+
+msgid "List"
+msgstr "Llista"
+
+msgid "Tutor's information"
+msgstr "Tutoria"
+
+msgid "Tutor's info"
+msgstr "Tutoria"
+
+msgid "Tutor's name:"
+msgstr "Nom del tutor/a:"
+
+msgid "Tutor's email:"
+msgstr "Adreça electrònica del tutor/a:"
+
+msgid "Timetable for attending to families:"
+msgstr "Horari d'atenció a les famílies:"
+
+msgid "Links (associated menu)"
+msgstr "Enllaços (menú associat)"
+
+msgid "Links"
+msgstr "Enllaços"
+
+msgid "Mon. 00:00-00:00"
+msgstr "dl. 00:00-00:00"
+
+# Description
+msgid "Includes calendar, tutor's information and two html sections. Useful for classroom blog"
+msgstr "Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/html. Util per al blog de classe."
+
