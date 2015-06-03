@@ -3,7 +3,7 @@
 /*
  Plugin Name: Grup-classe
  Plugin URI: http://agora.xtec.cat/nodes/plugins/grup-classe
- Description: Afegeix un nou giny que inclou elements útils per un blog d'un grup-classe (calendari, informació sobre tutoria, enllaços associats) i dos blocs de text/HTML
+ Description: Afegeix un nou giny que inclou elements útils per un blog d'un grup classe (calendari, informació sobre tutoria, enllaços associats) i dos blocs de text/HTML
  Version: 1.0
  Author: Xavier Meler
  Author URI: https://github.com/jmeler
@@ -28,6 +28,13 @@
  
  */
 
+/* Load textdomain */
+add_action( 'init', 'grup_classe_load_textdomain' );
+
+function grup_classe_load_textdomain() {
+  load_plugin_textdomain( 'grup-classe', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
+}
+
 /* Enqueve plugin css */
 add_action( 'wp_enqueue_scripts', 'grup_classe_css' );
 
@@ -49,21 +56,21 @@ class Grup_classe_Widget extends WP_Widget {
     function Grup_classe_Widget(){
         $widget_ops =array (
             'classname' => 'grup_classe_widget_class',
-            'description' => 'Inclou calendari, 
-                              informació sobre el tutor/a i 
-                              dos blocs html. Ideal pel blog de grup-classe');
+            //Catalan, default language here. Gettext doesn't work in description :S
+            'description' => __("Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/html. Util per al blog de classe.",'grup-classe')
+             );
         $this->WP_Widget('grup_classe_widget', 'Grup-classe', $widget_ops);
     }
     
     // Show form in admin back-end
     function form ($instance){
         $defaults = array (
-            'horari_families' =>'dl. 00:00-00:00',
+            'horari_families' => __("Mon. 00:00-00:00","grup-classe")
         );
         
         $instance       = wp_parse_args((array) $instance, $defaults);
         
-        $title          = !empty( $instance['title'] ) ? $instance['title'] : '';
+        $title          = !empty($instance['title'] ) ? $instance['title'] : '';
         $text_open      = esc_textarea($instance['text_open']);
         $id_calendari   = $instance ['id_calendari'];
         $nom_calendari  = $instance ['nom_calendari'];
@@ -77,31 +84,31 @@ class Grup_classe_Widget extends WP_Widget {
         
         ?>
     
-        <p>Títol:<br>
-        <input id="<?php echo $this->get_field_id( 'title' ); ?>" 
+        <p><?php _e("Title:","grup-classe");?><br>
+        <input id=  "<?php echo $this->get_field_id( 'title' ); ?>" 
                name="<?php echo $this->get_field_name( 'title' ); ?>" 
                type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
-        <!-- Bloc de text -->
+        <!-- Custom html/text block -->
         <div>
-            <strong><span class="dashicons dashicons-format-quote"></span> Text/HTML </strong> 
+            <strong><span class="dashicons dashicons-format-quote"></span> <?php _e("Text/HTML","grup-classe");?> </strong> 
             <textarea class='widefat' rows=5 id="<?php echo $this->get_field_id('text_open'); ?>" name="<?php echo $this->get_field_name('text_open'); ?>"><?php echo $text_open; ?></textarea>
         </div>
         <br>        
-        <!-- Calendari / Agenda de Classe -->
+        <!-- Calendar / Classroom -->
         <?php 
          $args = array( 'posts_per_page' => -1, 'post_type' => 'gce_feed', 'order' => 'ASC');
          $calendaris = get_posts($args);
          wp_reset_query();
         ?>
         <div>
-            <strong><span class="dashicons dashicons-calendar"></span> Agenda </strong><br>
-            Títol de l'agenda:
+            <strong><span class="dashicons dashicons-calendar"></span> <?php _e("Calendar","grup-classe");?> </strong><br>
+            <?php _e("Calendar's title:","grup-classe");?>
             <input id="<?php echo $this->get_field_id( 'nom_calendari' ); ?>" 
                    name="<?php echo $this->get_field_name( 'nom_calendari' ); ?>" 
                    type="text" value="<?php echo esc_attr( $nom_calendari ); ?>">
             <br>
-            Calendari associat:<br>
+            <?php _e("Calendar:","grup-classe");?><br>
             <select id="<?php echo $this->get_field_id('id_calendari'); ?>" 
                     name="<?php echo $this->get_field_name('id_calendari'); ?>">
             <option value="0"></option>
@@ -114,36 +121,35 @@ class Grup_classe_Widget extends WP_Widget {
             ?>
             </select>
             <br>
-            Mostra: 
-            <br><input id="<?php echo $this->get_field_id('calendari_grid'); ?>" name="<?php echo $this->get_field_name('calendari_grid'); ?>" type="checkbox" <?php checked(isset($instance['calendari_grid']) ? $instance['calendari_grid'] : 0); ?> /> Calendari </label>
-            <br><input id="<?php echo $this->get_field_id('calendari_list'); ?>" name="<?php echo $this->get_field_name('calendari_list'); ?>" type="checkbox" <?php checked(isset($instance['calendari_list']) ? $instance['calendari_list'] : 0); ?> /> Llista    </label>        
+            <?php _e("Show:","grup-classe");?>
+            <br><input id="<?php echo $this->get_field_id('calendari_grid'); ?>" name="<?php echo $this->get_field_name('calendari_grid'); ?>" type="checkbox" <?php checked(isset($instance['calendari_grid']) ? $instance['calendari_grid'] : 0); ?> /> <?php _e("Grid","grup-classe");?> </label>
+            <br><input id="<?php echo $this->get_field_id('calendari_list'); ?>" name="<?php echo $this->get_field_name('calendari_list'); ?>" type="checkbox" <?php checked(isset($instance['calendari_list']) ? $instance['calendari_list'] : 0); ?> /> <?php _e("List","grup-classe");?> </label>        
         </div>
         <br>          
-        <!-- Informació Tutoria -->
+        <!-- Tutor's information -->
         <div>
-            <strong><span class="dashicons dashicons-admin-users"></span>Informació del tutor/a</strong><br>
-                Nom del tutor/a:<br>
+            <strong><span class="dashicons dashicons-admin-users"></span><?php _e("Tutor's information","grup-classe");?></strong><br>
+                <?php _e("Tutor's name:","grup-classe");?><br>
                 <input name="<?php echo $this->get_field_name('nom_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $nom_tutor ); ?>" /></br>
-                Adreça electrònica del tutor/a:<br>
+                <?php _e("Tutor's email:","grup-classe");?><br>
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
-            
-                Horari d'atenció a les famílies:<br>
+                <?php _e("Timetable for attending to families:","grup-classe");?><br>
                 <input name="<?php echo $this->get_field_name('horari_families');?>"
                        type="text" 
                        value="<?php echo esc_attr( $horari_families ); ?>" /></br>    
         </div>
         <br>      
-        <!-- Enllaços -->
+        <!-- Links -->
         <div>
             <?php
             $nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
             $menus = wp_get_nav_menus();
             ?>
-            <strong><span class="dashicons dashicons-admin-links"></span> Enllaços (menú associat)</strong> 
+            <strong><span class="dashicons dashicons-admin-links"></span> <?php _e("Links (associated menu)","grup-classe");?></strong> 
             <select id="<?php echo $this->get_field_id('nav_menu'); ?>" 
                     name="<?php echo $this->get_field_name('nav_menu'); ?>">
                 <option value="0"></option>
@@ -157,9 +163,9 @@ class Grup_classe_Widget extends WP_Widget {
             </select>
         </div>
         <br>
-         <!-- Bloc de text -->
+        <!-- Custom html/text block -->
         <div>
-            <strong><span class="dashicons dashicons-format-quote"></span> Text/HTML: </strong> 
+            <strong><span class="dashicons dashicons-format-quote"></span> <?php _e("Text/HTML","grup-classe");?> </strong> 
             <textarea class='widefat' rows=5 id="<?php echo $this->get_field_id('text_close'); ?>" name="<?php echo $this->get_field_name('text_close'); ?>"><?php echo $text_close; ?></textarea>
         </div>
         <br>
@@ -211,26 +217,26 @@ class Grup_classe_Widget extends WP_Widget {
         if (!empty($title)){
             echo $before_title . esc_html($title) . $after_title;
         }
-        // Blocs de text/HTML 
+        //  Custom html/text block 
         if (strlen(trim($text_open))>0){
             the_widget( 'WP_Widget_Text',"text=$text_open&filter=true");
         }
-        // Calendari
+        // Calendar
         if (!empty($id_calendari)){
             if (!empty($nom_calendari))
                 echo $before_title . $nom_calendari .$after_title;
             if ($calendari_grid){
-                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=grid');
+                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=grid&paging=true');
                 echo "<br>";
             }
             if ($calendari_list){
-                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=list');
+                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=list&paging=true');
                 echo "<br>";
             }
         }
-        // Tutor info
+        // Tutor's info
         if (!empty($nom_tutor) || !empty($email_tutor) || !empty($horari_families)){
-            echo $before_title . "Tutoria" . $after_title;
+            echo $before_title . __("Tutor's info","grup-classe") . $after_title;
             echo "<ul>";
             if (!empty($nom_tutor))
               echo "<li><span class='dashicons dashicons-admin-users'></span> $nom_tutor";
@@ -240,13 +246,13 @@ class Grup_classe_Widget extends WP_Widget {
               echo "<li><span class='dashicons dashicons-clock'></span> $horari_families";
             echo "</ul>";
         }
-        // Menú
+        // Links (Menu)
         if (!empty($nav_menu)){
-            echo $before_title . "Enllaços" . $after_title;
+            echo $before_title . __("Links","grup-classe") . $after_title;
             the_widget('WP_Nav_Menu_Widget','nav_menu='.$nav_menu);
             echo "<br>";
         }
-        // Blocs de text/HTML 
+        // Custom html/text block 
         if (strlen(trim($text_open))>0){
             the_widget( 'WP_Widget_Text',"text=$text_close&filter=true");
         }
