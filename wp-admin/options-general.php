@@ -112,7 +112,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 
 <tr>
 <th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
-<td><input name="home" type="url" id="home" value="<?php form_option( 'home' ); ?>" class="regular-text code" disabled  /></td>
+<td><input name="home" type="url" id="home" value="<?php form_option( 'home' ); ?>" class="regular-text code disabled" disabled="disabled"  /></td>
 </tr>
 
 <!-- //************ ORIGINAL -->
