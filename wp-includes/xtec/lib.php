@@ -4,6 +4,29 @@
  * This file contains extra functions for Agora and XTECBlocs services
  */
 
+/**
+ * Decide if user has full access. In Àgora must be xtecadmin and 
+ * in XTECBlocs must be network admin.
+ * 
+ * @global boolean $isAgora
+ * @global boolean $isBlocs
+ * @return boolean
+ */
+function is_xtec_super_admin() {
+
+    global $isAgora, $isBlocs;
+    
+    if ($isAgora && is_xtecadmin()) {
+        return true;
+    }
+    
+    if ($isBlocs && is_super_admin()) {
+        return true;
+    }
+    
+    return false;
+}
+
 /*
  * Check if current logged user is xtecadmin
  */
