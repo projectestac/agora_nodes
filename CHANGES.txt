@@ -10,6 +10,8 @@ Changes in progress
 - Role names translated in import-users-with-csv (Trello #625)
 - Widget Grup-classe: Add navigation buttons to calendar (Github #182)
 - Widget Grup-classe: Internationalization (Github #88)
+- Upgraded GCE to version 2.2.5 (Trello #800)
+
 
 
 Changes 15.05.19
