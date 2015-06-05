@@ -50,6 +50,9 @@ define ('WP_USE_EXT_MYSQL', false);
 // Block any kind of filesystem change, automatic or by users
 define('DISALLOW_FILE_MODS', true);
 
+// Completely disable all types of automatic updates, core or otherwise
+define('AUTOMATIC_UPDATER_DISABLED', true);
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
