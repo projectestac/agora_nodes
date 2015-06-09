@@ -4,3 +4,30 @@
 [submodule "wp-content/plugins/google-calendar-events"]
 	path = wp-content/plugins/google-calendar-events
 	url = https://github.com/projectestac/wordpress-gce.git
+[submodule "wp-content/plugins/blogger-importer"]
+	path = wp-content/plugins/blogger-importer
+	url = https://github.com/projectestac/wordpress-blogger-importer
+[submodule "wp-content/plugins/google-analyticator"]
+	path = wp-content/plugins/google-analyticator
+	url = https://github.com/projectestac/wordpress-google-analyticator
+[submodule "wp-content/plugins/raw-html"]
+	path = wp-content/plugins/raw-html
+	url = https://github.com/projectestac/wordpress-raw-html
+[submodule "wp-content/plugins/slideshow-jquery-image-gallery"]
+	path = wp-content/plugins/slideshow-jquery-image-gallery
+	url = https://github.com/projectestac/wordpress-slideshow-jig
+[submodule "wp-content/plugins/tinymce-advanced"]
+	path = wp-content/plugins/tinymce-advanced
+	url = https://github.com/projectestac/wordpress-tinymce-advanced
+[submodule "wp-content/plugins/wordpress-importer"]
+	path = wp-content/plugins/wordpress-importer
+	url = https://github.com/projectestac/wordpress-importer
+[submodule "wp-content/plugins/wordpress-php-info"]
+	path = wp-content/plugins/wordpress-php-info
+	url = https://github.com/projectestac/wordpress-php-info
+[submodule "wp-content/plugins/wordpress-social-login"]
+	path = wp-content/plugins/wordpress-social-login
+	url = https://github.com/projectestac/wordpress-social-login
+[submodule "wp-includes/xtec"]
+	path = wp-includes/xtec
+	url = https://github.com/projectestac/wordpress-xtec
