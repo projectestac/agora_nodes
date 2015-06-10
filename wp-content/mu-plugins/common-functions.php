@@ -383,8 +383,19 @@ add_filter('parse_query', 'exclude_pages_from_admin');
  * @author Nacho Abejaro
  */
 function getRole() {
+    
     $user_id = get_current_user_id();
-    $caps = get_user_meta($user_id, 'wp_capabilities', true);
+
+    // @aginard: in multisite system (XTECBlocs) the meta_key has the form of
+    //   wp_$blogid_capatilities, but in single site (Agora), it has the form
+    //   wp_capabilities. We need to differentiate them.
+    if (is_multisite()) {
+        $blogId = get_current_blog_id();
+        $caps = get_user_meta($user_id, 'wp_' . $blogId . '_capabilities', true);
+    } else {
+        $caps = get_user_meta($user_id, 'wp_capabilities', true);
+    }
+
     $roles = array_keys((array) $caps);
     $role = $roles[0];
 
