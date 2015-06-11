@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-24 12:52+0100\n"
+"PO-Revision-Date: 2015-06-11 18:24+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "Project-Id-Version: Development\n"
 "POT-Creation-Date: \n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Last-Translator: Xavier Meler <jmeler@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
 
@@ -113,7 +113,7 @@ msgstr ""
 # MODIFICAT XTEC
 #: wp-includes/media-template.php:151
 msgid "Close media panel"
-msgstr "Tanca el panell dels multimèdia"
+msgstr " "
 
 #: wp-includes/media-template.php:172
 msgid "Close uploader"
