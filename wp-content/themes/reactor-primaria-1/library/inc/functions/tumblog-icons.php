@@ -33,7 +33,7 @@ if (!function_exists('reactor_tumblog_icon')) {
                 $title = "Inclou vídeo";
                 break;
             case 'alerta' :
-                $icon .= '<i style="color:red !important" class="fi-alert"></i>';
+                $icon .= '<i class="fi-alert"></i>';
                 $title = "Avís Important";
                 break;
             case 'musica' :
