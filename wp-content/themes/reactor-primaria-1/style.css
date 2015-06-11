@@ -1,4 +1,4 @@
-/*
+    /*
 Theme Name: NODES
 Theme URI: 
 Description: Tema desenvolupat pel Departament d'Ensenyament de Catalunya
@@ -53,14 +53,17 @@ h2 {
 .login h1 a { 
     background-size:auto !important;
 }
-ul.menu{
-    list-style-type:none;
-    margin:0.3em;
-    margin-left:0;
-}
-ul.sub-menu{
+ul.menu, ul.sub-menu{
     list-style-type:none;
     margin-left: 0em;
+}
+.widget_nav_menu .sub-menu .sub-menu {
+    margin-left: 1em;
+}
+ul.sub-menu > li:before {    
+    content: "\f345";  
+    font: 11px/1 "dashicons";   
+    color: #BBB; 
 }
 table thead tr th, 
 table tfoot tr th, 
@@ -186,7 +189,7 @@ header.entry-header{
 .entry-body li {
     margin-bottom: 0.75em;
 }
-.entry-summary > p,h2 {
+.entry-summary > p, h2 {
     padding-top:0.5em;
 }
 .entry-thumbnail {
@@ -205,10 +208,6 @@ header.entry-header{
 .label.secondary {
     background-color: #4ad0d2;
     color: white;
-}
-.entry-content img {
-    padding-left:1em;
-    padding-right:1em;
 }
 #comments {
     padding: 1.5em 2em;
@@ -505,7 +504,7 @@ Menu principal
     display:none;
 }
 .menu-item-depth-0 > a.menu-link {
-    border-bottom: 1px solid #c0c0c0;
+    /*border-bottom: 1px solid #c0c0c0;*/
 }
 .menu-item-depth-0 {
     float:left;
@@ -515,27 +514,22 @@ Menu principal
 }
 .menu-item-depth-0 > a{
     font-weight: bold;
-    /*text-decoration: underline;
-    text-decoration: overline;*/
 }
 .menu-item-depth-2, .menu-item-depth-3{
     padding-left: 1em;
     font-size:0.9em;
 }
 .menu-item-depth-3{
-    padding-left: 2em;
+    padding-left: 1em;
 }
-ul.sub-menu > li:before {    
-    content: "\f345";  
-    font: 11px/1 "dashicons";   
-    color: #BBB; 
-}
+
 ul.menu-depth-1{
     margin-top:0.4em; 
 }
 li.menu-item-depth-2:last-child, li.menu-item-depth-3:last-child{
      margin-bottom:0.4em; 
 }
+
 /*****************************************************************
 Fil d'ariadna
 ******************************************************************/
@@ -922,6 +916,71 @@ Footer
 }
 #sidebar-footer .widget_logo_centre_widget img {
   max-width: 100px;
+}
+
+/*****************************************************************
+Bp-Docs
+******************************************************************/
+table.doctable{
+    border:0px;
+    border-top:1px solid #C6C6C6;   
+} 
+
+th.title-cell a,
+th.author-cell a, 
+th.created-date-cell a, 
+th.edited-date-cell a{
+    font-weight: bold;
+    
+}
+
+table.doctable td, 
+table.doctable th{
+    border:1px solid #C6C6C6;
+    border-left:0px;
+    border-top:0px;
+}
+table.doctable td:first-of-type, 
+table.doctable th:first-of-type {
+    border-left:1px solid #C6C6C6;
+}
+.docs-filter-section{
+    font-size: 1em !important;
+    border:0px !important;
+}
+table.doctable .title-cell {
+    width: 100%;
+}
+
+.created-date-cell, 
+.edited-date-cell{
+    color:#808080;
+}
+
+table.doctable .title-cell  {
+    color:#808080;
+    margin-top:1em;
+   
+}
+
+table.doctable .title-cell > a {
+    font-size:   1.3em;
+    line-height: 1.3em;
+    
+}
+
+div.docs-info-header {
+   background: #fff !important; 
+}
+
+.toggle-table, 
+.content-column, 
+.desc-column{
+    border:0px;
+}
+
+.toggle-table td{
+    border:0px;
 }
 
 /*****************************************************************
