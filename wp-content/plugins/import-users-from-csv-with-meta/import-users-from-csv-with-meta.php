@@ -452,10 +452,28 @@ function acui_options()
 
 		<div style="clear:both; width:100%;"></div>
 
-<!--
-//XTEC ************ AFEGIT - Added block for show help
-//2015.03.20 @nacho
--->
+        <!--
+        //XTEC ************ AFEGIT - Added Provided Help
+        //2015.03.20 @nacho
+        -->
+        <script>
+            function toggleproviderhelp() {
+                if (typeof jQuery == "undefined") {
+                    alert("<?php $msg = _e("Import Users module require jQuery to be installed on your wordpress in order to work!", "import-users-from-csv-with-meta");
+        echo $msg; ?>");
+                    return false;
+                }
+                idp = 'importUsers';
+                jQuery('.iu_div_settings_help_' + idp).toggle();
+                return false;
+            }
+        </script>
+        <!-- ************ FI -->
+
+        <!--
+        //XTEC ************ AFEGIT - Added block for show help
+        //2015.03.20 @nacho
+        -->
 		<div
 			class="iu_div_settings_help_importUsers"
 			style="<?php if( isset( $_REQUEST["enable"] )  && $_REQUEST["enable"] == $provider_id ) echo "-"; // <= lolz ?>display:none;">
@@ -879,23 +897,3 @@ if (!function_exists('str_getcsv')) {
         }
     }
 }
-?>
-
-<!--
-//XTEC ************ AFEGIT - Added Provided Help
-//2015.03.20 @nacho
--->
-<script>
-function toggleproviderhelp() {
-	if(typeof jQuery=="undefined") {
-		alert ("<?php $msg = _e("Import Users module require jQuery to be installed on your wordpress in order to work!", "import-users-from-csv-with-meta"); echo $msg;?>");
-		return false;
-	}
-
-	idp = 'importUsers';
-	jQuery('.iu_div_settings_help_' + idp).toggle();
-
-	return false;
-}
-</script>
-<!-- ************ FI -->
