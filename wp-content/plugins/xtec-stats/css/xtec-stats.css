@@ -1,0 +1,26 @@
+/** 
+Document   : xtec-stats.css
+Author: Àrea TAC - Departament d'Ensenyament de Catalunya
+Description: Stylesheet of xtec-stats plugin
+*/
+
+.xtec-stats {
+	/*Required for UPCNet*/
+    border: 1px solid #ddd;
+    color: #555;
+    font-size: 1em;
+    border-radius:2px;
+    padding: 0.5em;
+    text-align: left;
+    width: 8em;
+}
+
+#footer .xtec-stats {
+	/*Required for UPCNet*/
+	background-color: white;
+    border: 1px solid white;
+    color: #555 !important;
+    font-size: 1em;
+    border-radius:2px;
+    padding: 8px;   
+}
