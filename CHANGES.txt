@@ -13,6 +13,7 @@ Changes in progress
 - Upgraded GCE to version 2.2.5 (Trello #800)
 - Added disk quota control (Trello #733)
 - Removed plugin Social Articles (Trello #693)
+- Improvements in bpdocs styles (Pull request #195)
 
 
 
