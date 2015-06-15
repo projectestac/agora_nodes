@@ -12,6 +12,7 @@ Changes in progress
 - Updated mailer library
 - Added some information to replace URL script, for PORTAL
 - Fixed catalan spelling in Appearance | Customize | Colors (GitHub #206)
+- XTEC Stats: Added first version which includes just a widget to count visits (Trello #821)
 
 
 

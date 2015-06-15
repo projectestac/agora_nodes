@@ -284,5 +284,4 @@ function quota_control($results) {
 	}else {
 		return $results;
 	}
-
 }
