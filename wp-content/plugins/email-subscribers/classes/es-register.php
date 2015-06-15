@@ -260,8 +260,8 @@ class es_widget_register extends WP_Widget
 		<p>
             <label for="<?php echo $this->get_field_id('es_name'); ?>"><?php _e('Display Name Field', ES_TDOMAIN); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id('es_name'); ?>" name="<?php echo $this->get_field_name('es_name'); ?>">
-				<option value="YES" <?php $this->es_selected($es_name == 'YES'); ?>>YES</option>
-				<option value="NO" <?php $this->es_selected($es_name == 'NO'); ?>>NO</option>
+				<option value="YES" <?php $this->es_selected($es_name == 'YES'); ?>><?php _e('YES', ES_TDOMAIN); ?></option>
+				<option value="NO" <?php $this->es_selected($es_name == 'NO'); ?>><?php _e('NO', ES_TDOMAIN); ?></option>
 			</select>
         </p>
 		<p>

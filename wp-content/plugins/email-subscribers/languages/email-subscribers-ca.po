@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Email subscribers\n"
 "POT-Creation-Date: 2015-06-10 14:10+0100\n"
-"PO-Revision-Date: 2015-06-10 14:34+0100\n"
+"PO-Revision-Date: 2015-06-15 12:42+0100\n"
 "Last-Translator: Xavier Meler <jmeler@xtec.cat>\n"
 "Language-Team: Dep.Ensenyament <agora@xtec.cat>\n"
 "Language: ca\n"
@@ -35,7 +35,7 @@ msgstr "Subscripcions"
 
 #: ../classes/es-register.php:100 ../classes/es-register.php:101
 msgid "Subscribers"
-msgstr "Subscriptors"
+msgstr "Subscripcions"
 
 #: ../classes/es-register.php:103 ../classes/es-register.php:104
 msgid "Compose"
@@ -90,15 +90,15 @@ msgstr "Títol del giny"
 
 #: ../classes/es-register.php:261
 msgid "Display Name Field"
-msgstr ""
+msgstr "Demana nom d'usuari"
 
 #: ../classes/es-register.php:268
 msgid "Short Description"
-msgstr ""
+msgstr "Per a què serveix aquest formulari? "
 
 #: ../classes/es-register.php:270
 msgid "Short description about your subscription form."
-msgstr ""
+msgstr " "
 
 #: ../classes/es-register.php:273
 msgid "Subscriber Group"
@@ -1096,5 +1096,13 @@ msgid ""
 "reports except latest 10."
 msgstr ""
 
+# XTEC ************ AFEGIT
+# 2015.06.15 @jmeler
 msgid "Email Subscribers"
 msgstr "Subscripcions"
+
+msgid "YES"
+msgstr "Si"
+
+msgid "NO"
+msgstr "No"
