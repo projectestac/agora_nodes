@@ -5,6 +5,11 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Added submodule of Multisite common functions
+
+
+Changes 15.06.18
+---------------------------------------------------------------------------------------
 - Forbidden access to admin-tools and edit-comments for Collaborator user roles (Trello #790)
 - Don't allow admins to modify WordPress URL on wp-admin/options-general.php (Trello #797)
 - Role names translated in import-users-with-csv (Trello #625)
@@ -21,7 +26,7 @@ Changes 15.05.19
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.0.5
 - CSV: Included first version of the import-users-from-csv-with-meta plugin. #95
-- If user is not logged in, redirects at login screen on BuddyPress tabs 
+- If user is not logged in, redirects at login screen on BuddyPress tabs
 - Solved categories error on breadcrumbs #2
 - Disabled gravatar requests. #122
 - PhpInfo for xtecadmins.
@@ -30,7 +35,7 @@ Changes 15.05.19
 - Slideshow: Added proportional mode
 - Added proxy support
 - Giny Enllaços educatius: added 'ePergam', 'La meva XTEC' and bug fix #111
-- Added constant SCHOOL_CODE 
+- Added constant SCHOOL_CODE
 - Added shortcode to embed rss into post and page
 - Added author link in metadata author post
 - Added 'myposts' functions to replace Social Articles
