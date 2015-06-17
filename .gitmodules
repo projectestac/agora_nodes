@@ -31,3 +31,6 @@
 [submodule "wp-includes/xtec"]
 	path = wp-includes/xtec
 	url = https://github.com/projectestac/wordpress-xtec
+[submodule "wp-content/mu-plugins/common"]
+	path = wp-content/mu-plugins/common
+	url = https://github.com/projectestac/wordpress-mu-common.git
