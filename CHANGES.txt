@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Added submodule of Multisite common functions
+- Added message to warn user about quota exceeded in BuddyPress Activity+
 
 
 Changes 15.06.18
