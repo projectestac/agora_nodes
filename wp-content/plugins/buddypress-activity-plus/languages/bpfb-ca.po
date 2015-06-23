@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-24 10:53+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Last-Translator: nacho <nacho@test.com>\n"
 "Language-Team: Agora\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -12,8 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: /Volumes/Trunk/xampp/htdocs/bpfb/wp-content/plugins/bpfb_the_edge/\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: /Volumes/Trunk/xampp/htdocs/bpfb/wp-content/plugins/"
+"bpfb_the_edge/\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: lib\n"
 "X-Poedit-SearchPath-1: lib/forms\n"
@@ -44,7 +45,10 @@ msgid "Appearance"
 msgstr "Aparença"
 
 #: lib/class_bpfb_admin_pages.php:96
-msgid "Your BuddyPress theme incorporates Activity Plus style overrides. Respecting the selection you make in the &quot;Appearance&quot; section is entirely up to your theme."
+msgid ""
+"Your BuddyPress theme incorporates Activity Plus style overrides. Respecting "
+"the selection you make in the &quot;Appearance&quot; section is entirely up "
+"to your theme."
 msgstr ""
 
 #: lib/class_bpfb_admin_pages.php:101
@@ -85,11 +89,12 @@ msgstr "Paràmetres d'incrustació"
 
 #: lib/class_bpfb_admin_pages.php:139
 #, php-format
-msgid "Your oEmbed dimensions will be dictated by the <code>BPFB_OEMBED_WIDTH</code> define value (%s). Remove this define to enable this option."
+msgid ""
+"Your oEmbed dimensions will be dictated by the <code>BPFB_OEMBED_WIDTH</"
+"code> define value (%s). Remove this define to enable this option."
 msgstr ""
 
-#: lib/class_bpfb_admin_pages.php:143
-#: lib/class_bpfb_admin_pages.php:155
+#: lib/class_bpfb_admin_pages.php:143 lib/class_bpfb_admin_pages.php:155
 msgid "Width"
 msgstr "Amplada"
 
@@ -99,7 +104,10 @@ msgstr "Miniatures de les imatges"
 
 #: lib/class_bpfb_admin_pages.php:151
 #, php-format
-msgid "Your thumbnail dimensions will be dictated by the <code>BPFB_THUMBNAIL_IMAGE_SIZE</code> define value (%s). Remove this define to enable these options."
+msgid ""
+"Your thumbnail dimensions will be dictated by the "
+"<code>BPFB_THUMBNAIL_IMAGE_SIZE</code> define value (%s). Remove this define "
+"to enable these options."
 msgstr ""
 
 #: lib/class_bpfb_admin_pages.php:159
@@ -187,13 +195,10 @@ msgstr "Enganxeu l'enllaç aquí"
 msgid "You tried to add too many images, only %d will be posted."
 msgstr "Heu triat afegir massa imatges, només %d es pujaran."
 
-#: lib/class_bpfb_binder.php:177
-#: lib/class_bpfb_binder.php:194
+#: lib/class_bpfb_binder.php:177 lib/class_bpfb_binder.php:194
 msgid "There has been an error processing your request"
 msgstr "Hi ha hagut un error processant la vostra petició"
 
-#: lib/class_bpfb_binder.php:178
-#: lib/class_bpfb_binder.php:195
+#: lib/class_bpfb_binder.php:178 lib/class_bpfb_binder.php:195
 msgid "Processing..."
 msgstr "Processant..."
-
