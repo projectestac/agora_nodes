@@ -127,5 +127,28 @@ function bpfb_plugin_init () {
 	do_action('bpfb_init');
 	BpfbBinder::serve();
 }
+
 // Only fire off if BP is actually loaded.
+// XTEC ************ MODIFICAT - Control disk percent usage when upload a file
+// 2015.06.23 @nacho
+/**
+ * Shows a message if quota has exceed
+ */
+function bpfb_plugin_no_quota () {
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('bpfb_quota_control', BPFB_PLUGIN_URL . '/js/quota_control.js', array('jquery'));
+	wp_localize_script('bpfb_quota_control', 'l10nBpfb', array(
+		'quota_exceeded' => __('You have exceeded your disk quota', 'agora-functions')
+	));
+}
+
+if (isset($GLOBALS['diskPercentNodes'])&&($GLOBALS['diskPercentNodes'] <= 100)){
+	add_action('bp_loaded', 'bpfb_plugin_init');
+} else {
+	add_action('bp_loaded', 'bpfb_plugin_no_quota');
+}
+//************ ORIGINAL
+/*
 add_action('bp_loaded', 'bpfb_plugin_init');
+*/
+//************ FI
