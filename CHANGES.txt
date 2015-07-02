@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Added submodule of Multisite common functions
 - Added message to warn user about quota exceeded in BuddyPress Activity+
+- Improved visualitzation of Visibility block in Customizer (#Github #204)
 
 
 Changes 15.06.18

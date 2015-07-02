@@ -1,5 +1,11 @@
 jQuery( function( $ ) {
 	function setWidgetMargin( $widget ) {
+
+            /* XTEC ************ AFEGIT - Don't set width, better for customizer
+            2015.07.02 @jmeler */
+            return
+            /* FI */
+            
 		if ( $widget.hasClass( 'expanded' ) ) {
 			// The expanded widget must be at least 400px wide in order to
 			// contain the visibility settings. IE wasn't handling the
