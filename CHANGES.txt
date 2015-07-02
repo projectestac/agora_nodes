@@ -20,6 +20,7 @@ Changes in progress
 - Reactor-primaria-1: Deleted unused files for theme colours (GitHub #214)
 - Updated mailer library
 - Added two colour palettes to theme (GitHub #216)
+- Improved visualitzation of Visibility block in Appearance | Customize (GitHub #204)
 
 
 
