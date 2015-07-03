@@ -10,7 +10,8 @@ Changes in progress
 - GCE: Changed default cache duration to 300 seconds (Trello #875)
 - Removed link to Social Articles in BuddyPress admin page
 - Updated mailer library
-- Added some information to replace URL script
+- Added some information to replace URL script, for PORTAL
+- Fixed catalan spelling in Appearance | Customize | Colors (GitHub #206)
 
 
 
@@ -19,8 +20,8 @@ Changes 15.06.18
 - Forbidden access to admin-tools and edit-comments for Collaborator user roles (Trello #790)
 - Don't allow admins to modify WordPress URL on wp-admin/options-general.php (Trello #797)
 - Role names translated in import-users-with-csv (Trello #625)
-- Widget Grup-classe: Add navigation buttons to calendar (Github #182)
-- Widget Grup-classe: Internationalization (Github #88)
+- Widget Grup-classe: Add navigation buttons to calendar (GitHub #182)
+- Widget Grup-classe: Internationalization (GitHub #88)
 - Upgraded GCE to version 2.2.5 (Trello #800)
 - Added disk quota control (Trello #733)
 - Removed plugin Social Articles (Trello #693)
