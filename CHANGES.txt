@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Added submodule of Multisite common functions
 - Added message to warn user about quota exceeded in BuddyPress Activity+
+- Improved some styles (GCE, buttons, table and image margin with text and code styling) (GitHub #208)
 - GCE: Changed default cache duration to 300 seconds (Trello #875)
 - Removed link to Social Articles in BuddyPress admin page
 - Updated mailer library
