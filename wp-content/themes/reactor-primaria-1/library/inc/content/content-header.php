@@ -61,6 +61,8 @@ function reactor_do_title_logo() {
     $description_font_size = get_description_font_size($description_text);
     $options = get_option('my_option_name');
     ?>
+    
+    <!-- Caixa amb el nom del centre -->
     <div class='box-title hide-for-small'>
       <div class='box-content'>
         <div>
@@ -71,6 +73,8 @@ function reactor_do_title_logo() {
         </div>
       </div>
     </div>
+    
+    <!-- Logo i nom per mobils -->
     <div class='box-titlemobile show-for-small'>
       <div class="box-titlemobile-inner row">
         <div class="box-titlemobile-logo"> 
@@ -85,6 +89,8 @@ function reactor_do_title_logo() {
         </div>
       </div>
     </div>
+    
+    <!-- Caixa amb la descripció del centre -->
     <div class='box-description hide-for-small'>
       <div class='box-content'>
         <div>
@@ -94,6 +100,8 @@ function reactor_do_title_logo() {
         </div>
       </div>
     </div>
+    
+   <!-- Imatge/Carrusel --> 
    <div class='box-image hide-for-small'>
     <?php
      if(reactor_option('imatge_capcalera')) { ?>
@@ -104,12 +112,13 @@ function reactor_do_title_logo() {
          </div>
     <?php
     } else { ?>
-        <div class='box-content-slider hide-for-small'>
+        <div class='box-content-slider'>
           <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
         </div>   
     <?php }?>        
     </div>
     
+    <!-- Graella d'icones --> 
     <div id="box-grid" class='box-grid'>
         <div class='box-content-grid'>
             <div id="icon-email" class="topicons show-for-small">
