@@ -54,6 +54,14 @@
     .gce-widget-grid .gce-calendar th abbr {
         color: <?php echo $color_calendar;?>
     }
+    .button {
+        color: <?php echo $color_primary;?> !important;
+    }  
+    .button:hover {
+        background-color:<?php echo $color_primary;?> !important;
+        color:white !important; 
+    }
+    
     #footer { 
         background-color: <?php echo $color_footer;?>
     }
