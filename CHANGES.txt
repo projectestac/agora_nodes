@@ -15,6 +15,7 @@ Changes in progress
 - Added some information to replace URL script, for PORTAL
 - Fixed catalan spelling in Appearance | Customize | Colors (GitHub #206)
 - XTEC Stats: Added first version which includes just a widget to count visits (Trello #821)
+- BP-Docs: Hidden "Associated elements" in document edition (Trello #883)
 
 
 
