@@ -28,7 +28,6 @@
 
 include "custom-tac/metabox-post-parametres.php";
 include "custom-tac/capcalera/icones-capcalera-settings.php";
-include "custom-tac/ginys/giny-xtec.php";
 include "custom-tac/ginys/giny-logo-centre.php";
 include "custom-tac/menu-principal.php";
 include "custom-tac/capcalera/menu-logo.php";
