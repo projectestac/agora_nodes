@@ -313,7 +313,14 @@ class BP_Docs {
 		register_taxonomy( $this->associated_item_tax_name, array( $this->post_type_name ), array(
 			'labels'       => $associated_item_labels,
 			'hierarchical' => true,
+			// XTEC ************ MODIFICAT - Hide associate elements box (Don't show option in admin menu)
+			// 2015.07.13 @nacho
+			'show_ui'      => false,
+			//************ ORIGINAL
+			/*
 			'show_ui'      => true,
+			*/
+            //************ FI
 			'query_var'    => true,
 			'rewrite'      => array( 'slug' => 'item' ),
 		) );
