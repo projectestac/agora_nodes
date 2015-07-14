@@ -285,3 +285,9 @@ function quota_control($results) {
 		return $results;
 	}
 }
+
+/**
+ * Call action remove_old_stats when the cron to remove old stats has been launched
+ * @author Nacho Abejaro
+ */
+add_action('remove_stats', 'remove_old_stats');
