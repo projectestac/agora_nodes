@@ -19,6 +19,7 @@ Changes in progress
 - BP-Docs: Hidden "Associated elements" in document edition (Trello #883)
 - Reactor-primaria-1: Deleted unused files for theme colours (GitHub #214)
 - Updated mailer library
+- Added two colour palettes to theme (GitHub #216)
 
 
 
