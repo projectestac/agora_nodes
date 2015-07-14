@@ -71,7 +71,8 @@ if ( ! CUSTOM_TAGS ) {
             ),
 // XTEC ************ AFEGIT -
 			'style' => true,
-//************ FI		),
+//************ FI
+        ),
 		'abbr'       => array(),
 		'acronym'    => array(),
 		'area'       => array(
