@@ -23,6 +23,7 @@ Changes in progress
 - Added two colour palettes to theme (GitHub #216)
 - Improved visualitzation of Visibility block in Appearance | Customize (GitHub #204)
 - Intraweb Importer: Added plugin import data from Intraweb (Trello #732)
+- Fixed removal of statistics older than one year (Trello #820)
 
 
 
