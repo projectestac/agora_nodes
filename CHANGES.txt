@@ -18,6 +18,7 @@ Changes in progress
 - XTEC Stats: Added first version which includes just a widget to count visits (Trello #821)
 - BP-Docs: Hidden "Associated elements" in document edition (Trello #883)
 - Reactor-primaria-1: Deleted unused files for theme colours (GitHub #214)
+- Updated mailer library
 
 
 
