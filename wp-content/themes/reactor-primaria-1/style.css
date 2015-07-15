@@ -978,6 +978,26 @@ div.gce-widget-grid table tr td {
   padding: 0.5em 0.25em;
 }
 
+.gce-prev .gce-change-month {
+    padding-left:10px; 
+}
+
+div.gce-next .gce-change-month {
+    padding-right:10px; 
+}
+
+.gce-prev .gce-change-month-list:after {
+    content: "Anterior"; 
+}
+
+div.gce-next .gce-change-month-list:before {
+    content: "Següent";   
+}
+
+.gce-widget-list {
+    margin-bottom: 1.5em;
+}
+
 /* Pagination */
 
 ul.pagination{
