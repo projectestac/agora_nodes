@@ -21,7 +21,7 @@ Changes in progress
 - Updated mailer library
 - Added two colour palettes to theme (GitHub #216)
 - Improved visualitzation of Visibility block in Appearance | Customize (GitHub #204)
-
+- Intraweb Importer: Added plugin import data from Intraweb
 
 
 Changes 15.06.18
