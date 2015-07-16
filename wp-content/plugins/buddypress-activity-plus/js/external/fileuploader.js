@@ -267,7 +267,19 @@ qq.FileUploaderBasic = function(o){
         onProgress: function(id, fileName, loaded, total){},
         onComplete: function(id, fileName, responseJSON){},
         onCancel: function(id, fileName){},
-        // messages                
+        // messages
+
+// XTEC ************ MODIFICAT - Translated hard-coded error messages
+// 2015.09.21 @nacho
+        messages: {
+            typeError: "{file} té una extensió no vàlida. Només estan permeses les extensions {extensions}.",
+            sizeError: "{file} és massa gran, la mida màxima és {sizeLimit}.",
+            minSizeError: "{file} és massa petit, la mida mínima és {minSizeLimit}.",
+            emptyError: "{file} està buit, si us plau, seleccioneu els fitxers de nou sense incloure'l.",
+            onLeave: "S'estan carregant els fitxers. Si sortiu ara la càrrega es cancel·larà."            
+        },
+//************ ORIGINAL
+/*
         messages: {
             typeError: "{file} has invalid extension. Only {extensions} are allowed.",
             sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
@@ -275,6 +287,9 @@ qq.FileUploaderBasic = function(o){
             emptyError: "{file} is empty, please select files again without it.",
             onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."            
         },
+*/
+//************ FI
+
         showMessage: function(message){
             alert(message);
         }               
