@@ -476,7 +476,7 @@ function bp_like_get_some_likes( $number = '' ) {
     // $number is max likers it will output. Currently only takes 2.
     // need to decide if checking number of likes here, or in another fucntion, or in call to here..
     $bp_like_id = bp_get_activity_id();
-    $users_who_like = array_keys( bp_activity_get_meta( $bp_like_id , 'liked_count' , true ) );
+    $users_who_like = array_keys((array)(bp_activity_get_meta( $bp_like_id , 'liked_count' , true )));
 
     
     if ( count( $users_who_like ) == 0 ) {
