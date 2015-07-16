@@ -110,12 +110,25 @@ function bp_like_admin_page() {
                             <label for="bp_like_admin_post_activity_updates">
                                 <?php _e( "Post an activity update when something is liked" , 'buddypress-like' ); ?>
                             </label>
-                            <p class="description"><?php echo __( 'e.g. ' ) . $current_user->display_name . __( " liked Darren's activity. " ); ?></p>
+                            
+                            <!-- // XTEC ************ MODIFICAT - Fixed loading of translated strings -->
+                            <!-- // 2015.09.18 @aginard -->
+                            <p class="description"><?php echo __( 'e.g. ', 'buddypress-like' ) . $current_user->display_name . __( " liked Darren's activity. ", 'buddypress-like' ); ?></p>
+                            <!-- //************ ORIGINAL -->
+                            <!-- <p class="description"><?php echo __( 'e.g. ' ) . $current_user->display_name . __( " liked Darren's activity. " ); ?></p> -->
+                            <!-- //************ FI -->
+                            
                             <br />
 
                             <input type="checkbox" id="bp_like_admin_show_excerpt" name="bp_like_admin_show_excerpt" value="1"<?php if ( bp_like_get_settings( 'show_excerpt' ) == 1 ) echo ' checked="checked"' ?>>
                             <label for="bp_like_admin_show_excerpt"><?php _e( "Show a short excerpt of the activity that has been liked." , 'buddypress-like' ); ?></label>
-                            <p>Limit to <input type="text" maxlength="3" style="width: 40px" value="<?php echo bp_like_get_settings( 'excerpt_length' ); ?>" name="bp_like_admin_excerpt_length" /> characters.</p>
+
+                            <!-- // XTEC ************ MODIFICAT - Translated hard-coded language strings -->
+                            <!-- // 2015.09.18 @aginard -->
+                            <p>Limita a <input type="text" maxlength="3" style="width: 40px" value="<?php echo bp_like_get_settings( 'excerpt_length' ); ?>" name="bp_like_admin_excerpt_length" /> caràcters.</p>
+                            <!-- //************ ORIGINAL -->
+                            <!-- <p>Limit to <input type="text" maxlength="3" style="width: 40px" value="<?php echo bp_like_get_settings( 'excerpt_length' ); ?>" name="bp_like_admin_excerpt_length" /> characters.</p> -->
+                            <!-- //************ FI -->
 
                         </fieldset>
                     </td>
@@ -177,7 +190,14 @@ function bp_like_admin_page() {
                                 <span><?php _e( 'Custom Messages' , 'buddypress-like' ); ?></span>
                             </legend>
                             <label for="bp_like_admin_post_activity_updates">
-    <?php _e( "Change what messages are shown to users. For example, they can 'love' or 'dig' items instead of liking them." , "bp-like" ); ?>
+
+                            <!-- // XTEC ************ MODIFICAT - Fixed loading of translated strings -->
+                            <!-- // 2015.09.18 @aginard -->
+                            <?php _e( "Change what messages are shown to users. For example, they can 'love' or 'dig' items instead of liking them." , "buddypress-like" ); ?>
+                            <!-- //************ ORIGINAL -->
+                            <!-- <?php _e( "Change what messages are shown to users. For example, they can 'love' or 'dig' items instead of liking them." , "bp-like" ); ?> -->
+                            <!-- //************ FI -->
+                            
                             </label>
                         </fieldset>
                     </td>
@@ -208,7 +228,14 @@ function bp_like_admin_page() {
             </table>
 
             <p class="submit">
-                <input class="button-primary" type="submit" name="bp-like-admin-submit" id="bp-like-admin-submit" value="<?php _e( 'Save Changes' , 'wordpress' ); ?>"/>
+
+                <!-- // XTEC ************ MODIFICAT - Fixed loading of translated strings -->
+                <!-- // 2015.09.18 @aginard -->
+                <input class="button-primary" type="submit" name="bp-like-admin-submit" id="bp-like-admin-submit" value="<?php _e( 'Save Changes' , 'buddypress-like' ); ?>"/>
+                <!-- //************ ORIGINAL -->
+                <!-- <input class="button-primary" type="submit" name="bp-like-admin-submit" id="bp-like-admin-submit" value="<?php _e( 'Save Changes' , 'wordpress' ); ?>"/> -->
+                <!-- //************ FI -->
+
             </p>
     <?php wp_nonce_field( 'bp-like-admin' ) ?>
         </form>
