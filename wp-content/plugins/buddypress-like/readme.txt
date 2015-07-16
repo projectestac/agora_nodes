@@ -4,25 +4,22 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: buddypress, like, rate, thumbs, Post, button, vote
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 0.1.8
+Stable tag: 0.2
 
-Gives users the ability to 'like' content across your BuddyPress enabled site. Note BuddyPress Like is currently in Beta.
+Gives users the ability to 'like' content across your BuddyPress enabled site.
 
 == Description ==
 
-Gives users the ability to 'like' content across your BuddyPress enabled site. Note BuddyPress Like is currently in Beta.
-While development will be based on Github, for now many updates will be uploaded to WordPress.org for ease of access for the people who want the most up to date version.
-
-Requires <a href="http://wordpress.org/plugins/buddypress/">BuddyPress</a>
+Gives users the ability to 'like' content across your BuddyPress enabled site.
 
 == Installation ==
 
 = Automatic Installation =
-
-1. From inside your WordPress administration panel, visit 'Plugins -> Add New'
-2. Search for `BuddyPress Like` and find this plugin in the results
-3. Click 'Install'
-4. Once installed, activate via the 'Plugins -> Installed' page
+1. Ensure BuddyPress is enabled
+2. From inside your WordPress administration panel, visit 'Plugins -> Add New'
+3. Search for `BuddyPress Like` and find this plugin in the results
+4. Click 'Install'
+5. Once installed, activate via the 'Plugins -> Installed' page
 
 = Manual Installation =
 
@@ -30,6 +27,13 @@ Requires <a href="http://wordpress.org/plugins/buddypress/">BuddyPress</a>
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+= 0.2.0 = 
+* Added jQuery UI again.
+
+= 0.1.9 =
+* Renamed bp-like.dev.js to bp-like.js
+* Fixed parameters for wp_register_script(). Thanks to https://profiles.wordpress.org/ryanhellyer
+* Fixed PHP notice when a comment is liked. Thanks to https://profiles.wordpress.org/jasonthoele
 
 = 0.1.8 =
 * Various fixes, thanks to BronsonQuick (https://github.com/BronsonQuick)
@@ -103,6 +107,12 @@ Requires <a href="http://wordpress.org/plugins/buddypress/">BuddyPress</a>
 * Initial release.
 
 == Upgrade Notice ==
+
+= 0.2.0 = 
+jQuery UI added back, which is required for some themes.
+
+= 0.1.9 =
+Some small fixes.
 
 = 0.1.8 =
 jQuery bug is now fixed, tested with latest WordPress and BuddyPress.
