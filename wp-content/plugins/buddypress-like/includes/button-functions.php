@@ -80,8 +80,6 @@ function bplike_activity_button() {
 
 
     $activity = bp_activity_get_specific( array('activity_ids' => $bp_like_id) );
-
-    //TODO: I believe there is a bp core function for this.
     $activity_type = $activity['activities'][0]->type;
     // Debugging.
     //print_r($activity);
