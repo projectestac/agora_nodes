@@ -25,6 +25,7 @@ Changes in progress
 - Set default selected image size to large on page and article creation
 - BuddyPress Activity Plus: Updated module to version 1.6.2 (Trello #793)
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
+- BuddyPress: Updated module to version 2.3.2.1 (Trello #965)
 
 
 
