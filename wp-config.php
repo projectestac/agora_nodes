@@ -103,7 +103,7 @@ define('WP_DEBUG', false);
 define('SCRIPT_DEBUG', false);
 
 // Activates the saving of database queries in an array ($wpdb->queries).
-// Set to true and uncomment code in theme reactor-primaria-1 in footer.php 
+// Set to true and uncomment code in theme reactor-primaria-1 in footer.php
 //  and in wp-admin/admin-footer.php for admin pages, to use it.
 define('SAVEQUERIES', false);
 
