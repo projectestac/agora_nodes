@@ -8,17 +8,16 @@ if ( !defined( 'ABSPATH' ) ) {
  * bp_like_list_scripts()
  *
  * Includes the scripts required for ajax etc.
- * 
- * TODO: Begin versioning scripts, test loading in footer. to find faults and test performance differences
  *
  */
 function bp_like_list_scripts() {
-    wp_register_script( 'bplike-jquery' , plugins_url( '/assets/js/bp-like.min.js' , dirname( __FILE__ ) ) , BP_LIKE_VERSION , array('jquery') );
-    wp_enqueue_script( 'bplike-jquery' );
-
+    wp_register_script( 'bplike-jquery', plugins_url( '/assets/js/bp-like.min.js', dirname( __FILE__ ) ), array('jquery'), BP_LIKE_VERSION );
+    
+    if( !is_admin()){
+        wp_enqueue_script( 'bplike-jquery' );
+}
     /* JQuery dialog for likers popup. */
-   /// wp_register_script('jquery-ui-dialog', array('jquery'));
-    wp_enqueue_script('jquery-ui-dialog');
+   wp_enqueue_script('jquery-ui-dialog');
 }
 
 /**
@@ -51,6 +50,5 @@ function bp_like_insert_head() {
     <?php
 }
 
-// TODO: only load these if user is logged in, test
-add_action( 'wp_head' , 'bp_like_insert_head' );
+add_action( 'get_header' , 'bp_like_insert_head' );
 add_action( 'wp_print_scripts' , 'bp_like_list_scripts' );

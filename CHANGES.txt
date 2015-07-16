@@ -18,7 +18,7 @@ Changes in progress
 - WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
 - WSL: Added access control using black and white lists (GitHub #62)
 - BuddyPress-Group-Email-Subscription: Updated module to version 3.5.1 and revised catalan translation (Trello #793)
-
+- BudyyPress-Like: Updated module to version 0.2.0 and improved catalan translation (Trello #793)
 
 
 Changes 15.08.10
