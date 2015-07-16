@@ -150,14 +150,21 @@ class BP_Invite_Anyone extends BP_Group_Extension {
 		if ( $this->has_invites )
 			bp_core_add_message( __('Group invites sent.', 'buddypress') );
 		else
-			bp_core_add_message( __('Group created successfully.', 'buddypress') );
-	}
+			// XTEC ************ MODIFICAT - Now the translation text is in the invite-anyone module
+			// 2015.11.16 @nacho
+			bp_core_add_message( __('Group created successfully.', 'invite-anyone') );
+			//************ ORIGINAL
+			/*
+			 //bp_core_add_message( __('Group created successfully.', 'buddypress') );
+			*/
+			//************ FI
+            }
 
-	/**
-	 * Should the group creation step be included?
-	 *
-	 * @since 1.2
-	 */
+            /**
+             * Should the group creation step be included?
+             *
+             * @since 1.2
+             */
 	public function enable_create_step() {
 		$options = invite_anyone_options();
 		return ! empty( $options['group_invites_enable_create_step'] ) && $options['group_invites_enable_create_step'] === 'yes';
