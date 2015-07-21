@@ -27,6 +27,9 @@ if ( 'grid' === $mode ) {
 
 	remove_action( 'admin_head', 'wp_admin_canonical_url' );
 
+	// XTEC ************ ELIMINAT - Return old Wordpress version (4.0) to upload files from MediaTeca
+	// 2015.07.21 @nacho
+	/*
 	$q = $_GET;
 	// let JS handle this
 	unset( $q['s'] );
@@ -36,7 +39,8 @@ if ( 'grid' === $mode ) {
 		if ( ! $value || in_array( $key, $ignore ) ) {
 			unset( $vars[ $key ] );
 		}
-	}
+	}*/
+	//************ FI
 
 	wp_localize_script( 'media-grid', '_wpMediaGridSettings', array(
 		'adminUrl' => parse_url( self_admin_url(), PHP_URL_PATH ),
