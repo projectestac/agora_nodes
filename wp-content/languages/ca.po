@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-06-11 18:24+0100\n"
+"Project-Id-Version: Development\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-07-27 10:25+0100\n"
+"Last-Translator: nacho <nacho@test.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
-"Project-Id-Version: Development\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Xavier Meler <jmeler@xtec.cat>\n"
-"Language-Team: \n"
-"Language: ca\n"
 
 #: wp-includes/locale.php:184
 msgctxt "text direction"
 msgid "ltr"
-msgstr "d'esquerra a dreta"
+msgstr "ltr"
 
 #: wp-login.php:841
 msgid ""
@@ -187,6 +187,7 @@ msgstr "Mode de la taxa de bits"
 
 # MODIFICAT XTEC
 #: wp-includes/media.php:2930
+#, fuzzy
 msgid "All media types"
 msgstr "Tots els tipus de multimèdia"
 
@@ -220,6 +221,7 @@ msgid "Search Media"
 msgstr "Cerca fitxer multimèdia"
 
 #: wp-includes/media.php:3022
+#, fuzzy
 msgid "Edit Metadata"
 msgstr "Edita les metadades"
 
@@ -326,8 +328,9 @@ msgstr ""
 "amb els <a href=\"%2$s\">fòrums de suport</a>."
 
 #: wp-login.php:771 wp-login.php:775
+#, fuzzy
 msgid "http://codex.wordpress.org/Cookies"
-msgstr "http://codex.wordpress.org/Cookies"
+msgstr "https://codex.wordpress.org/Cookies"
 
 #: wp-login.php:774
 msgid ""
@@ -365,11 +368,11 @@ msgstr "Cap"
 
 #: wp-includes/class-wp-editor.php:769
 msgid "Font Family"
-msgstr "Família de la font"
+msgstr "Família del tipus de lletra"
 
 #: wp-includes/class-wp-editor.php:770
 msgid "Font Sizes"
-msgstr "Mides de la font"
+msgstr "Mides del tipus de lletra"
 
 #: wp-includes/class-wp-editor.php:900
 msgid "Split table cell"
@@ -377,7 +380,7 @@ msgstr "Divideix la cel·la de la taula"
 
 #: wp-includes/media-template.php:223 wp-includes/media.php:2984
 msgid "Suggested image dimensions:"
-msgstr "Dimensions de la imatge recomanades:"
+msgstr "Dimensions recomanades de la imatge:"
 
 #: wp-includes/media-template.php:912
 msgid "Custom Size"
@@ -565,7 +568,7 @@ msgstr "Quadrat"
 #: wp-includes/class-wp-editor.php:794
 msgctxt "list style"
 msgid "Default"
-msgstr "Per defecte"
+msgstr "Predeterminada"
 
 #: wp-includes/class-wp-editor.php:795
 msgctxt "list style"
@@ -787,8 +790,9 @@ msgstr "Mostra la llista de reproducció"
 
 #: wp-includes/media-template.php:418 wp-includes/media-template.php:521
 #: wp-includes/media.php:2935
+#, fuzzy
 msgid "Trash"
-msgstr "Paperera"
+msgstr "Envia a la paperera"
 
 #: wp-includes/media-template.php:738
 msgid "Playlist Settings"
@@ -1168,8 +1172,8 @@ msgid ""
 "Paste is now in plain text mode. Contents will now be pasted as plain text "
 "until you toggle this option off."
 msgstr ""
-"Enganxa està ara en mode de text pla. El contingut s'enganxarà ara com a "
-"text pla fins que commuteu aquesta opció."
+"&laquo;Enganxa&raquo; està ara en mode de text pla. El contingut s'enganxarà "
+"ara com a text pla fins que commuteu aquesta opció."
 
 #: wp-includes/class-wp-editor.php:775
 msgid "Justify"
@@ -1197,7 +1201,7 @@ msgstr "Codi font"
 
 #: wp-includes/class-wp-editor.php:841
 msgid "Emoticons"
-msgstr "Emoticons"
+msgstr "Emoticones"
 
 #: wp-includes/class-wp-editor.php:810
 msgid "Robots"
@@ -1312,8 +1316,9 @@ msgid "Insert Read More tag"
 msgstr "Insereix l'etiqueta 'llegeix més'"
 
 #: wp-includes/class-wp-editor.php:948
+#, fuzzy
 msgid "Distraction Free Writing"
-msgstr "Escriptura sense distraccions"
+msgstr "Mode d'escriptura sense distraccions"
 
 #: wp-includes/general-template.php:2647
 msgctxt "admin color scheme"
@@ -1341,13 +1346,14 @@ msgstr "S'ha intentat establir una qualitat d'imatge fora de rang [1, 100]."
 
 # MODIFICAT XTEC
 #: wp-includes/taxonomy.php:2489
+#, fuzzy
 msgid "A term with the name and slug provided already exists with this parent."
-msgstr ""
 "Ja existeix un terme amb aquest pare amb el nom i nom curt que heu "
 "proporcionat."
 
 # MODIFICAT XTEC
 #: wp-includes/taxonomy.php:2509
+#, fuzzy
 msgid "A term with the name and slug provided already exists."
 msgstr "Ja existeix un terme amb el nom i nom curt que heu proporcionat."
 
@@ -1469,8 +1475,9 @@ msgstr ""
 "contrasenya a continuació:"
 
 #: wp-includes/query.php:727
+#, fuzzy
 msgid "http://codex.wordpress.org/Function_Reference/is_main_query"
-msgstr "http://codex.wordpress.org/Function_Reference/is_main_query"
+msgstr "https://codex.wordpress.org/Function_Reference/is_main_query"
 
 #: wp-includes/query.php:2144
 msgctxt "Comma-separated list of search stopwords in your language"
@@ -1478,12 +1485,12 @@ msgid ""
 "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,"
 "was,what,when,where,who,will,with,www"
 msgstr ""
-"a, abans, abans-d'ahir, abintestat, ací, adesiara, adés, adéu, adàgio, ah, "
+"a, abans, abans-d'ahir, abintestat, ací, adesiara, adés, adéu, adagio, ah, "
 "ahir, ai, aitambé, aitampoc, aitan, aitant, aitantost, aixà, això, així, "
 "aleshores, algun, alguna, algunes, alguns, algú, alhora, allà, allèn, allò, "
-"allí, almenys, alto, altra, altre, altres, altresí, altri, alça, al·legro, "
+"allí, almenys, alto, altra, altre, altres, altresí, altri, alça, allegro, "
 "amargament, amb, ambdues, ambdós, amunt, amén, anc, andante, andantino, "
-"anit, ans, antany, apa, après, aqueix, aqueixa, aqueixes, aqueixos, aqueixs, "
+"anit, ans, antany, apa, aprés, aqueix, aqueixa, aqueixes, aqueixos, aqueixs, "
 "aquell, aquella, aquelles, aquells, aquest, aquesta, aquestes, aquests, "
 "aquèn, aquí, ara, arran, arrera, arrere, arreu, arri, arruix, atxim, au, "
 "avall, avant, aviat, avui, açò, bah, baix, baldament, ballmanetes, banzim-"
@@ -1716,8 +1723,8 @@ msgid ""
 "Have you entered your email correctly? You have entered %s, if it&#8217;s "
 "incorrect, you will not receive your email."
 msgstr ""
-"Heu introduït l'adreça de correu electrònic correctament? Heu introduït %s, "
-"si no és correcte, no rebreu el correu electrònic."
+"Heu introduït l'adreça electrònica correctament? Heu introduït %s, si no és "
+"correcte, no rebreu el correu electrònic."
 
 #: wp-signup.php:731
 msgid ""
@@ -1770,9 +1777,10 @@ msgid "Search"
 msgstr "Cerca"
 
 #: wp-includes/post-template.php:1691
+#, fuzzy
 msgctxt "revision date format"
 msgid "j F, Y @ G:i:s"
-msgstr "j \\d\\e F \\d\\e Y G:i:s"
+msgstr "j \\d\\e F \\d\\e Y @ H:i:s"
 
 #: wp-includes/functions.php:4484
 msgid "Session expired"
@@ -1853,7 +1861,7 @@ msgstr "Defineix la imatge resum"
 
 #: wp-includes/media-template.php:456
 msgid "Deselect"
-msgstr "Deselecciona"
+msgstr "Desselecciona"
 
 #: wp-includes/class-wp-xmlrpc-server.php:4156
 #: wp-includes/class-wp-xmlrpc-server.php:4166
@@ -1973,8 +1981,9 @@ msgid "Columns"
 msgstr "Columnes"
 
 #: wp-includes/media.php:2916
+#, fuzzy
 msgid "Drag and drop to reorder images."
-msgstr "Arrossegueu i deseu anar per reordenar les imatges."
+msgstr "Arrossegueu i deseu anar per reordenar els vídeos."
 
 #: wp-includes/media-template.php:674 wp-includes/media-template.php:898
 #: wp-includes/media.php:2676
@@ -2054,8 +2063,9 @@ msgstr ""
 "primer les taules de la base de dades antiga."
 
 #: wp-includes/taxonomy.php:350 wp-includes/taxonomy.php:351
+#, fuzzy
 msgid "Taxonomies cannot exceed 32 characters in length"
-msgstr "Les taxonomies no poden fer més de 32 caràcters de llarg"
+msgstr "Els noms de la taxonomia han de ser d'1 a 32 caràcters de llarg."
 
 #: wp-includes/ms-functions.php:1225
 msgid ""
@@ -2178,7 +2188,7 @@ msgstr "Multimèdia"
 #: wp-includes/post.php:57
 msgctxt "add new media"
 msgid "Add New"
-msgstr "Afegeix nou"
+msgstr "Afegeix"
 
 #: wp-includes/post.php:59
 msgid "View Attachment Page"
@@ -2310,20 +2320,23 @@ msgid "Select Files"
 msgstr "Seleccioneu fitxers"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:130
+#, fuzzy
 msgid "Distraction Free Writing mode"
-msgstr "Mode d'escriptura lliure de distracció"
+msgstr "Mode d'escriptura sense distraccions"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:135
+#, fuzzy
 msgid "Editor width in Distraction Free Writing mode:"
-msgstr "Amplada de l'editor al mode d'escriptura lliure de distracció:"
+msgstr "Mode d'escriptura sense distraccions"
 
 #: wp-includes/class-wp-admin-bar.php:367
 msgid "Skip to toolbar"
 msgstr "Aneu a la barra d'eines"
 
 #: wp-includes/class-wp-admin-bar.php:368
+#, fuzzy
 msgid "Top navigation toolbar."
-msgstr "Barra d'eines de navegació a la part superior."
+msgstr "Navegació d'entrades"
 
 #: wp-includes/class-wp-editor.php:180 wp-includes/class-wp-editor.php:1200
 msgctxt "Name for the Text editor tab (formerly HTML)"
@@ -2373,8 +2386,9 @@ msgid "Sorry, you cannot stick a private post."
 msgstr "No podeu fixar un article privat."
 
 #: wp-includes/class-wp-customize-control.php:624
+#, fuzzy
 msgid "No Image"
-msgstr "Sense imatge"
+msgstr "Escapça de la imatge"
 
 #: wp-includes/class-wp-customize-manager.php:1109
 msgid ""
@@ -2464,16 +2478,19 @@ msgid "Background Attachment"
 msgstr "Adjunta un fons "
 
 #: wp-includes/class-wp-customize-control.php:629
+#, fuzzy
 msgid "Uploaded"
-msgstr "Penjades"
+msgstr "Penjat per"
 
 #: wp-includes/class-wp-customize-control.php:628
+#, fuzzy
 msgid "Upload New"
-msgstr "Penja"
+msgstr "Penja fitxers"
 
 #: wp-includes/class-wp-customize-control.php:707
+#, fuzzy
 msgid "Remove Image"
-msgstr "Suprimeix la imatge"
+msgstr "Reemplaça la imatge"
 
 # MODIFICAT XTEC
 #: wp-includes/class-wp-xmlrpc-server.php:3741
@@ -2514,8 +2531,9 @@ msgid "Posts page"
 msgstr "Pàgina d'articles"
 
 #: wp-includes/class-wp-customize-control.php:590
+#, fuzzy
 msgid "Upload"
-msgstr "Penja"
+msgstr "S'està penjant"
 
 #: wp-includes/class-wp-customize-control.php:591
 #: wp-includes/class-wp-customize-widgets.php:726
@@ -2628,11 +2646,12 @@ msgid "Navigation"
 msgstr "Navegació"
 
 #: wp-includes/class-wp-customize-manager.php:1109
+#, fuzzy
 msgid "Your theme supports %s menu. Select which menu you would like to use."
 msgid_plural ""
 "Your theme supports %s menus. Select which menu appears in each location."
-msgstr[0] "El tema admet %s menú. Trieu quin voleu fer servir."
-msgstr[1] "El tema admet %s menús. Seleccioneu quin menú apareix en cada lloc."
+msgstr[0] "El tema permet un menú. Trieu quin menú voleu utilitzar."
+msgstr[1] "El tema permet un menú. Trieu quin menú voleu utilitzar."
 
 #: wp-includes/media-template.php:508
 msgid "Refresh"
@@ -2768,7 +2787,7 @@ msgstr ""
 #: wp-includes/class-wp-xmlrpc-server.php:1199
 #: wp-includes/class-wp-xmlrpc-server.php:4477
 msgid "You are not allowed to create posts as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per crear articles."
+msgstr "Amb aquest nom d'usuari no teniu autorització per crear entrades."
 
 # MODIFICAT XTEC
 #: wp-includes/class-wp-xmlrpc-server.php:1180
@@ -2780,6 +2799,7 @@ msgstr "No teniu permès crear articles privats en aquest tipus d'articles"
 msgid "Sorry, you are not allowed to publish posts in this post type"
 msgstr "No teniu permès publicar articles en aquest tipus d'articles"
 
+# MODIFICAT XTEC
 #: wp-includes/class-wp-xmlrpc-server.php:1279
 #: wp-includes/class-wp-xmlrpc-server.php:1303
 msgid ""
@@ -2845,11 +2865,12 @@ msgstr ""
 "abans de poder començar."
 
 #: wp-load.php:68
+#, fuzzy
 msgid ""
 "Need more help? <a href='http://codex.wordpress.org/Editing_wp-config."
 "php'>We got it</a>."
 msgstr ""
-"Necessiteu més ajuda? <a href='http://codex.wordpress.org/Editing_wp-config."
+"Necessiteu més ajuda? <a href='https://codex.wordpress.org/Editing_wp-config."
 "php'>La tenim</a>."
 
 #: wp-load.php:69
@@ -2858,7 +2879,7 @@ msgid ""
 "but this doesn't work for all server setups. The safest way is to manually "
 "create the file."
 msgstr ""
-"Podeu crear un fitxer <code>wp-config.php</code> mitjaçant la interfície "
+"Podeu crear un fitxer <code>wp-config.php</code> mitjançant la interfície "
 "web, però això no funciona en totes les configuracions de servidors. La "
 "manera més segura és crear el fitxer manualment."
 
@@ -2867,8 +2888,9 @@ msgid "Create a Configuration File"
 msgstr "Crea un fitxer de configuració"
 
 #: wp-includes/admin-bar.php:138
+#, fuzzy
 msgid "http://codex.wordpress.org/"
-msgstr "http://codex.wordpress.org/"
+msgstr "https://codex.wordpress.org/"
 
 #: wp-activate.php:98
 msgid ""
@@ -2992,11 +3014,12 @@ msgid "%s exceeds the maximum upload size for this site."
 msgstr "%s sobrepassa la mida màxima de càrrega per aquest lloc web."
 
 #: wp-includes/functions.php:3369
+#, fuzzy
 msgid ""
 "Please see <a href=\"http://codex.wordpress.org/Debugging_in_WordPress"
 "\">Debugging in WordPress</a> for more information."
 msgstr ""
-"Mireu <a href=\"http://codex.wordpress.org/Debugging_in_WordPress\">la "
+"Mireu <a href=\"https://codex.wordpress.org/Debugging_in_WordPress\">la "
 "depuració en el WordPress</a> per a més informació."
 
 #: wp-includes/admin-bar.php:153
@@ -3004,6 +3027,7 @@ msgid "Feedback"
 msgstr "Opinions (en anglès)"
 
 #: wp-includes/ms-functions.php:1466
+#, fuzzy
 msgid ""
 "Dear User,\n"
 "\n"
@@ -3019,17 +3043,18 @@ msgid ""
 "\n"
 "--The Team @ SITE_NAME"
 msgstr ""
-"Hola bloguers,\n"
+"Com esteu USERNAME,\n"
 "\n"
-"El lloc SITE_NAME nou s'ha configurat correctament a:\n"
+"La nova pàgina web SITE_NAME s'ha configurat correctament a:\n"
 "BLOG_URL\n"
 "\n"
-"Podeu entrar en el compte administratiu amb la següent informació:\n"
+"Podeu entrar al compte de l'administrador amb la següent informació:\n"
+"\n"
 "Nom d'usuari: USERNAME\n"
 "Contrasenya: PASSWORD\n"
 "Entreu aquí: BLOG_URLwp-login.php\n"
 "\n"
-"Esperem que gaudiu del lloc nou. Gràcies!\n"
+"Esperem que gaudiu de la nova web. Gràcies!\n"
 "\n"
 "--L'equip @ SITE_NAME"
 
@@ -3039,8 +3064,7 @@ msgstr "<strong>ERROR</strong>: Teclegeu un comentari."
 
 #: wp-comments-post.php:124
 msgid "<strong>ERROR</strong>: please enter a valid email address."
-msgstr ""
-"<strong>ERROR</strong>: introduïu una adreça de correu electrònic vàlida."
+msgstr "<strong>ERROR</strong>: introduïu una adreça electrònica vàlida."
 
 #: wp-comments-post.php:122
 msgid "<strong>ERROR</strong>: please fill the required fields (name, email)."
@@ -3218,8 +3242,8 @@ msgid ""
 "Scripts and styles should not be registered or enqueued until the %1$s, "
 "%2$s, or %3$s hooks."
 msgstr ""
-"Els scripts i estils no haurien de registrar-se o encuar-se fins al %1$s, "
-"%2$s, o codi %3$s."
+"Els scripts i estils no haurien de registrar-se o posar-se a la cua fins al "
+"%1$s, %2$s, o codi %3$s."
 
 #: wp-includes/class-wp-xmlrpc-server.php:484
 msgid "Allow link notifications from other blogs (pingbacks and trackbacks)"
@@ -3316,8 +3340,9 @@ msgid "Narrower"
 msgstr "Més estret"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:139
+#, fuzzy
 msgid "Default width"
-msgstr "Amplada per defecte"
+msgstr "Predeterminada"
 
 #: wp-includes/class-wp-editor.php:1263
 msgid "Word count: %s"
@@ -3458,7 +3483,7 @@ msgid ""
 "they always return false."
 msgstr ""
 "Les etiquetes de consulta condicionals no funcionen abans d'executar la "
-"consulta. Mentre no s'executi, sempre retornen false."
+"consulta. Mentre no s'executi, sempre retornen &laquo;False&raquo;."
 
 #: wp-includes/ms-functions.php:1001
 msgid "The user is already active."
@@ -3488,6 +3513,7 @@ msgstr "Estàndard"
 
 # MODIFICAT XTEC
 #: wp-includes/post.php:1337 wp-includes/post.php:1338
+#, fuzzy
 msgid "Post types cannot exceed 20 characters in length"
 msgstr "Els tipus d'articles no poden tenir més de 20 caràcters"
 
@@ -3500,6 +3526,7 @@ msgid "domain"
 msgstr "domini"
 
 #: wp-includes/admin-bar.php:605
+#, fuzzy
 msgctxt "admin bar menu group label"
 msgid "Add New"
 msgstr "Afegeix"
@@ -3652,8 +3679,9 @@ msgid "Thumbnail Width"
 msgstr "Amplada de la miniatura"
 
 #: wp-includes/script-loader.php:361
+#, fuzzy
 msgid "No matches found."
-msgstr "No s'ha trobat cap resultat."
+msgstr "No s'ha trobat cap pàgina."
 
 #: wp-login.php:620
 msgid "New password"
@@ -3754,12 +3782,13 @@ msgid "Network Admin"
 msgstr "Administrador de la xarxa"
 
 #: wp-includes/ms-load.php:412
+#, fuzzy
 msgid ""
 "Read the <a target=\"_blank\" href=\"http://codex.wordpress.org/"
 "Debugging_a_WordPress_Network\">bug report</a> page. Some of the guidelines "
 "there may help you figure out what went wrong."
 msgstr ""
-"Llegiu la pàgina <a target=\"_blank\" href=\"http://codex.wordpress.org/"
+"Llegiu la pàgina <a target=\"_blank\" href=\"https://codex.wordpress.org/"
 "Debugging_a_WordPress_Network\">d'informe d'errades</a> (en anglès). Algunes "
 "de les guies que hi ha allà us poden ajudar a esbrinar que va anar malament."
 
@@ -3786,19 +3815,21 @@ msgid ""
 "If you are the owner of this network please check that MySQL is running "
 "properly and all tables are error free."
 msgstr ""
-"Si sou el propietari d'aquesta xarxa, comproveu que MySQL s'està executant "
-"correctament i totes les taules estan lliures d'error."
+"Si sou el propietari d'aquesta xarxa, comproveu que el MySQL està executant-"
+"se i totes les taules estan lliures d'errors."
 
 #: wp-includes/ms-load.php:403
 msgid ""
 "If your site does not display, please contact the owner of this network."
-msgstr "Si el lloc no es mostra, contacteu amb el propietari de la xarxa."
+msgstr ""
+"Si no es mostra la pàgina web, contacteu amb el propietari d'aquesta xarxa."
 
 #: wp-includes/theme-compat/comments.php:26
+#, fuzzy
 msgid "One Response to %2$s"
 msgid_plural "%1$s Responses to %2$s"
-msgstr[0] "Una resposta a %2$s"
-msgstr[1] "%1$s respostes a %2$s"
+msgstr[0] "Una resposta a %s"
+msgstr[1] "Una resposta a %s"
 
 #: wp-signup.php:678
 msgctxt "Multisite active signup type"
@@ -3860,7 +3891,8 @@ msgstr "XHTML Friends Network"
 #: wp-includes/theme-compat/sidebar.php:73
 msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
 msgstr ""
-"Vàlid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr> "
+"<abbr title=\"en anglès, eXtensible HyperText Markup Language\">XHTML</abbr> "
+"vàlid"
 
 #: wp-includes/theme-compat/footer.php:19
 msgid "%1$s and %2$s."
@@ -3923,11 +3955,11 @@ msgstr "El vostre comentari"
 
 #: wp-includes/theme-compat/comments-popup.php:97
 msgid "Say It!"
-msgstr "Digues-ho!"
+msgstr "Digueu-ho!"
 
 #: wp-includes/theme-compat/comments-popup.php:107
 msgid "Close this window."
-msgstr "Tanca aquesta finestra."
+msgstr "Tanca la finestra."
 
 # MODIFICAT XTEC
 #: wp-includes/theme-compat/comments-popup.php:113
@@ -3945,7 +3977,7 @@ msgstr ""
 
 #: wp-includes/theme-compat/comments.php:72
 msgid "Log out of this account"
-msgstr "Surt d'aquest compte"
+msgstr "Surt del compte"
 
 #: wp-includes/theme-compat/comments.php:72
 msgid "Log out &raquo;"
@@ -3953,7 +3985,7 @@ msgstr "Surt &raquo;"
 
 #: wp-includes/theme-compat/comments.php:80
 msgid "Mail (will not be published)"
-msgstr "El correu electrònic (no es publicarà)"
+msgstr "Adreça electrònica (no es farà pública)"
 
 #: wp-includes/theme-compat/comments.php:87
 msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
@@ -4003,9 +4035,9 @@ msgid ""
 "<acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>"
 "%s</code>"
 msgstr ""
-"El salt de línia i paràgraf són automàtics, l'adreça de correu electrònic no "
-"es mostrarà mai, l'<acronym title=\"Hypertext Markup Language\">HTML</"
-"acronym> permès és: <code>%s</code>"
+"El salt de línia i paràgraf són automàtics, l'adreça electrònica no es "
+"mostrarà mai, l'<acronym title=\"Hypertext Markup Language\">HTML</acronym> "
+"permès és: <code>%s</code>"
 
 # MODIFICAT XTEC
 #: wp-includes/theme-compat/comments.php:17
@@ -4016,11 +4048,11 @@ msgstr ""
 
 #: wp-includes/theme-compat/sidebar.php:73
 msgid "This page validates as XHTML 1.0 Transitional"
-msgstr "Aquesta pàgina té codi XHTML 1.0 Transitional vàlid"
+msgstr "Aquesta pàgina compleix amb l'XHTML 1.0 Transicional"
 
 #: wp-includes/theme-compat/comments-popup.php:102
 msgid "Sorry, the comment form is closed at this time."
-msgstr "El formulari de comentaris està tancat ara mateix."
+msgstr "Ho sento, el formulari de comentaris està tancat en aquest moment."
 
 #: wp-includes/theme-compat/comments-popup.php:14
 msgid "%1$s - Comments on %2$s"
@@ -4075,7 +4107,7 @@ msgstr "Cerca etiquetes"
 
 #: wp-includes/taxonomy.php:478
 msgid "Popular Tags"
-msgstr "Etiquetes més comuns"
+msgstr "Etiquetes més comunes"
 
 #: wp-includes/taxonomy.php:486
 msgid "New Category Name"
@@ -4146,7 +4178,7 @@ msgid ""
 "registrations. To change or disable registration go to your <a href=\"%s"
 "\">Options page</a>."
 msgstr ""
-"Felicitats administrador del lloc web! Actualment esteu permetent &#8220;"
+"Felicitats, administrador del lloc web! Actualment esteu permetent &#8220;"
 "%s&#8221; registres. Per a canviar o desactivar el registre, aneu a la <a "
 "href=\"%s\">pàgina d'opcions</a>."
 
@@ -4257,36 +4289,39 @@ msgid "Theme without %1$s"
 msgstr "Tema sense %1$s"
 
 #: wp-includes/ms-load.php:409
+#, fuzzy
 msgid ""
 "<strong>Could not find site <code>%1$s</code>.</strong> Searched for table "
 "<code>%2$s</code> in database <code>%3$s</code>. Is that right?"
 msgstr ""
-"<strong>No es pot trobar el lloc web <code>%1$s</code>.</strong> Resultats "
-"de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</"
-"code>. És correcte?"
+"<strong>No es pot trobar el lloc %1$s.</strong> S'ha cercat en la taula %2$s "
+"de la base de dades %3$s. És correcte?"
 
 #: wp-includes/general-template.php:627
+#, fuzzy
 msgid ""
 "The <code>%s</code> option is deprecated for the family of <code>bloginfo()</"
 "code> functions."
 msgstr ""
-"L'opció <code>%s</code> és obsoleta per a la família de funcions "
-"<code>bloginfo()</code>. "
+"L'opció %1$s està obsoleta per a la família de funcions %2$s. Useu la funció "
+"%3$s per contra."
 
 #: wp-includes/general-template.php:627
+#, fuzzy
 msgid "Use the <code>%s</code> option instead."
-msgstr "Utilitzeu per contra l'opció <code>%s</code>."
+msgstr "Useu per contra <code>WP_User->ID</code>."
 
 #: wp-includes/ms-load.php:407
+#, fuzzy
 msgid ""
 "<strong>Database tables are missing.</strong> This means that MySQL is not "
 "running, WordPress was not installed properly, or someone deleted <code>%s</"
 "code>. You really should look at your database now."
 msgstr ""
-"<strong>Les taules de la base de dades no existeixen.</strong> Això vol dir "
-"que el MySQL no s'està executant, que el WordPress no està instal·lat "
-"correctament, o que algú ha esborrat <code>%s</code>. De debò que ara "
-"<em>hauríeu</em> de pegar-li un cop d'ull a la base de dades."
+"<strong>Les taules de la base de dades no existeixen.</strong> Això "
+"significa que la base de dades MySQL no s'està executant, que el WordPress "
+"no s'ha instal·lat correctament, o que algú ha esborrat %s. Heu de pegar-li "
+"una mirada a la base de dades ara."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4023
 msgid "Sorry, you do not have access to user data on this site."
@@ -4371,6 +4406,7 @@ msgstr "No podeu editar articles en aquest lloc web."
 
 # MODIFICAT XTEC
 #: wp-includes/class-wp-xmlrpc-server.php:2934
+#, fuzzy
 msgid ""
 "Sorry, you must be able to edit posts to this site in order to view "
 "categories."
@@ -4445,6 +4481,7 @@ msgstr ""
 "amb l'administrador del sistema."
 
 #: wp-includes/script-loader.php:537
+#, fuzzy
 msgctxt "search results"
 msgid "No results found."
 msgstr "No s'ha trobat cap resultat."
@@ -4466,8 +4503,8 @@ msgid ""
 "The email address entered did not appear to be a valid email address. Please "
 "enter a valid email address."
 msgstr ""
-"L'adreça electrònica que heu introduït no sembla que sia una adreça de "
-"correu electrònic vàlida. Introduïu una adreça electrònica vàlida."
+"L'adreça electrònica que heu introduït no sembla que sigui una adreça "
+"electrònica vàlida. Introduïu una adreça electrònica vàlida."
 
 # MODIFICAT XTEC
 #: wp-includes/formatting.php:3348
@@ -4488,8 +4525,9 @@ msgstr ""
 "ua URL vàlid."
 
 #: wp-includes/taxonomy.php:2491
+#, fuzzy
 msgid "A term with the name provided already exists with this parent."
-msgstr "Un terme amb el nom proporcionat ja existeix amb aquest pare."
+msgstr "Un terme amb el nom ja existeix amb aquest pare."
 
 #: wp-includes/ms-functions.php:1965
 msgid ""
@@ -4507,7 +4545,7 @@ msgstr ""
 
 #: wp-includes/locale.php:177
 msgid "number_format_decimal_point"
-msgstr "."
+msgstr ","
 
 #: wp-includes/comment-template.php:2108
 msgid "Your email address will not be published."
@@ -4612,7 +4650,7 @@ msgstr "Useu com a imatge resum"
 
 #: wp-includes/script-loader.php:345
 msgid "Mismatch"
-msgstr "No conincideixen"
+msgstr "No coincideixen"
 
 #: wp-includes/load.php:187
 msgid "Maintenance"
@@ -4641,8 +4679,9 @@ msgid "Links for %s"
 msgstr "Enllaços amb %s"
 
 #: wp-includes/nav-menu.php:686
+#, fuzzy
 msgid "Custom"
-msgstr "Personalitzat"
+msgstr "Personalitza"
 
 #: wp-includes/default-widgets.php:1351
 msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
@@ -4874,7 +4913,7 @@ msgstr "L'autor del comentari ha d'emplenar el nom i el correu electrònic"
 
 #: wp-includes/class-wp-xmlrpc-server.php:3278
 msgid "A valid email address is required"
-msgstr "Es necessita una adreça de correu electrònic vàlida"
+msgstr "Es necessita una adreça electrònica vàlida"
 
 #: wp-includes/class-wp-xmlrpc-server.php:3351
 msgid "You are not allowed access to details about comments."
@@ -5113,7 +5152,6 @@ msgstr "Mostra la valoració de l'enllaç"
 msgid "Select Month"
 msgstr "Selecciona el mes"
 
-# MODIFICAT XTEC
 #: wp-includes/default-widgets.php:355 wp-includes/default-widgets.php:636
 msgid "Show post counts"
 msgstr "Mostra el nombre d'articles"
@@ -5549,7 +5587,7 @@ msgstr "dilluns"
 #: wp-includes/locale.php:101 wp-includes/locale.php:111
 #: wp-includes/locale.php:124
 msgid "Tuesday"
-msgstr "dimarts "
+msgstr "Dimarts"
 
 #: wp-includes/locale.php:102 wp-includes/locale.php:112
 #: wp-includes/locale.php:125
@@ -5692,6 +5730,7 @@ msgid "Paragraph"
 msgstr "Paràgraf"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:117
+#, fuzzy
 msgid "Address"
 msgstr "Adreça"
 
@@ -5899,8 +5938,9 @@ msgid "Justify Text"
 msgstr "Text justificat"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:127
+#, fuzzy
 msgid "Insert link"
-msgstr "Insereix un enllaç"
+msgstr "Insereix/Edita un enllaç"
 
 #: wp-includes/class-wp-editor.php:853
 #: wp-includes/js/tinymce/wp-mce-help.php:128
@@ -6013,7 +6053,7 @@ msgstr "Els noms d'usuaris han de tenir lletres també!"
 
 #: wp-includes/ms-functions.php:512
 msgid "Sorry, that email address is not allowed!"
-msgstr "Aquesta adreça de correu electrònic no està permesa!"
+msgstr "Aquesta adreça electrònica no està permesa!"
 
 #: wp-includes/ms-functions.php:517 wp-includes/user.php:1677
 msgid "Sorry, that username already exists!"
@@ -6021,7 +6061,7 @@ msgstr "Aquest nom d'usuari ja existeix!"
 
 #: wp-includes/ms-functions.php:521 wp-includes/user.php:1720
 msgid "Sorry, that email address is already used!"
-msgstr "Aquesta adreça de correu electrònic ja l'estan utilitzant!"
+msgstr "Aquesta adreça electrònica ja l'estan utilitzant!"
 
 #: wp-includes/ms-functions.php:533
 msgid ""
@@ -6061,6 +6101,7 @@ msgid "New %1$s User: %2$s"
 msgstr "Nou %1$s usuari: %2$s"
 
 #: wp-includes/ms-functions.php:2119
+#, fuzzy
 msgid ""
 "Dear User,\n"
 "\n"
@@ -6075,12 +6116,12 @@ msgid ""
 "\n"
 "--The Team @ SITE_NAME"
 msgstr ""
-"Bloguers,\n"
+"Hola USERNAME,\n"
 "\n"
 "El compte està configurat.\n"
 "\n"
-"Podeu iniciar una sessió amb la següent informació:\n"
-"Usuari: USERNAME\n"
+"Podeu entrar amb la següent informació:\n"
+"Nom d'usuari: USERNAME\n"
 "Contrasenya: PASSWORD\n"
 "LOGINLINK\n"
 "\n"
@@ -6093,43 +6134,51 @@ msgid "<strong>ERROR</strong>: Invalid username or incorrect password."
 msgstr "<strong>ERROR</strong>: Nom d'usuari o contrasenya incorrectes."
 
 #: wp-includes/pluggable.php:1407 wp-includes/pluggable.php:1536
+#, fuzzy
 msgid "Author : %1$s (IP: %2$s , %3$s)"
 msgstr "Autor: %1$s (IP: %2$s, %3$s)"
 
 #: wp-includes/pluggable.php:1408 wp-includes/pluggable.php:1537
+#, fuzzy
 msgid "E-mail : %s"
 msgstr "Correu electrònic: %s"
 
 #: wp-includes/pluggable.php:1388 wp-includes/pluggable.php:1398
 #: wp-includes/pluggable.php:1409 wp-includes/pluggable.php:1523
 #: wp-includes/pluggable.php:1530 wp-includes/pluggable.php:1538
+#, fuzzy
 msgid "URL    : %s"
 msgstr "URL: %s"
 
 #: wp-includes/pluggable.php:1411 wp-includes/pluggable.php:1540
+#, fuzzy
 msgid "Comment: "
-msgstr "Comentari: "
+msgstr "Comentari: %s"
 
 #: wp-includes/pluggable.php:1412
+#, fuzzy
 msgid "You can see all comments on this post here: "
-msgstr "Podeu veure tots els comentaris d'aquest article aquí: "
+msgstr "Podeu veure tots els comentaris de l'entrada aquí:"
 
 #: wp-includes/pluggable.php:1414
 msgid "[%1$s] Comment: \"%2$s\""
 msgstr "[%1$s] Comentari des de: \"%2$s\""
 
 #: wp-includes/pluggable.php:1387 wp-includes/pluggable.php:1397
+#, fuzzy
 msgid "Website: %1$s (IP: %2$s , %3$s)"
-msgstr "Lloc web: %1$s (IP: %2$s, %3$s)"
+msgstr "Pàgina web: %1$s (IP: %2$s, %3$s)"
 
 #: wp-includes/pluggable.php:1389 wp-includes/pluggable.php:1399
+#, fuzzy
 msgid "Excerpt: "
-msgstr "Resum: "
+msgstr "Extracte"
 
 # MODIFICAT XTEC
 #: wp-includes/pluggable.php:1390
+#, fuzzy
 msgid "You can see all trackbacks on this post here: "
-msgstr "Podeu veure tots els retroenllaços d'aquest article aquí: "
+msgstr "Podeu veure tots els retropings d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1392
 msgid "[%1$s] Trackback: \"%2$s\""
@@ -6137,6 +6186,7 @@ msgstr "[%1$s] Retroenllaç des de: \"%2$s\""
 
 # MODIFICAT XTEC
 #: wp-includes/pluggable.php:1400
+#, fuzzy
 msgid "You can see all pingbacks on this post here: "
 msgstr "Podeu veure tots els retropings d'aquest article aquí: "
 
@@ -6157,13 +6207,13 @@ msgid "Spam it: %s"
 msgstr "Marca com a brossa: %s"
 
 #: wp-includes/pluggable.php:1522 wp-includes/pluggable.php:1529
+#, fuzzy
 msgid "Website : %1$s (IP: %2$s , %3$s)"
-msgstr "Lloc web : %1$s (IP: %2$s, %3$s)"
+msgstr "Pàgina web: %1$s (IP: %2$s, %3$s)"
 
-# MODFIICAT XTEC
 #: wp-includes/pluggable.php:1524
 msgid "Trackback excerpt: "
-msgstr "Nom curt del retroenllaç: "
+msgstr "Extracte del retroenllaç: "
 
 # MODIFICAT XTEC
 #: wp-includes/pluggable.php:1531
@@ -6243,9 +6293,10 @@ msgid "Home"
 msgstr "Pàgina d'inici"
 
 #: wp-includes/post-template.php:1653
+#, fuzzy
 msgctxt "revision date format"
 msgid "j F, Y @ G:i"
-msgstr "d-m-Y a les G:i"
+msgstr "j \\d\\e F \\d\\e Y @ H:i:s"
 
 #: wp-includes/post-template.php:1708
 msgid "%1$s [Autosave]"
@@ -6580,7 +6631,6 @@ msgstr "Es requereix un nom per a aquest terme"
 msgid "Could not insert term into the database"
 msgstr "No s'ha pogut inserir el terme a la base de dades"
 
-# MODIFICAT XTEC
 #: wp-includes/taxonomy.php:3004
 msgid "The slug &#8220;%s&#8221; is already in use by another term"
 msgstr "El nom curt &#8220;%s&#8221; ja s'utilitza en un altre terme"
@@ -6633,8 +6683,7 @@ msgstr "Funcionant amb el WordPress"
 #: wp-login.php:276
 msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
 msgstr ""
-"<strong>ERROR</strong>: introduïu un nom d'usuari o adreça de correu "
-"electrònic."
+"<strong>ERROR</strong>: introduïu un nom d'usuari o adreça electrònica."
 
 #: wp-login.php:280
 msgid ""
@@ -6667,12 +6716,11 @@ msgstr "Clau no vàlida"
 
 #: wp-includes/user.php:2134
 msgid "<strong>ERROR</strong>: Please type your e-mail address."
-msgstr ""
-"<strong>ERROR</strong>: Teclegeu la vostra adreça de correu electrònic."
+msgstr "<strong>ERROR</strong>: Teclegeu la vostra adreça electrònica."
 
 #: wp-includes/user.php:2136
 msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
-msgstr "<strong>ERROR</strong>: L'adreça de correu electrònic no és correcta."
+msgstr "<strong>ERROR</strong>: L'adreça electrònica no és correcta."
 
 #: wp-login.php:500
 msgid "Sorry, that key does not appear to be valid."
@@ -7111,8 +7159,9 @@ msgstr "Servidor no especificat"
 #: wp-includes/class-pop3.php:359 wp-includes/class-pop3.php:393
 #: wp-includes/class-pop3.php:426 wp-includes/class-pop3.php:525
 #: wp-includes/class-pop3.php:548
+#, fuzzy
 msgid "Error "
-msgstr "Error "
+msgstr "Error"
 
 #: wp-includes/class-pop3.php:115
 msgid "no login ID submitted"
@@ -7123,8 +7172,9 @@ msgid "connection not established"
 msgstr "connexió no establerta"
 
 #: wp-includes/class-pop3.php:135 wp-includes/class-pop3.php:171
+#, fuzzy
 msgid "No password submitted"
-msgstr "No s'ha enviat la contrasenya"
+msgstr "Protecció amb contrasenya"
 
 #: wp-includes/class-pop3.php:143
 msgid "Authentication failed"
@@ -7155,24 +7205,27 @@ msgid "apop authentication failed"
 msgstr "ha fallat l'autenticació apop"
 
 #: wp-includes/class-pop3.php:323
+#, fuzzy
 msgid "Premature end of list"
-msgstr "Final de la llista inesperat"
+msgstr "Crea una llista de reproducció d'àudio"
 
 #: wp-includes/class-pop3.php:456
 msgid "Empty command string"
 msgstr "Cadena d'instruccions buida"
 
 #: wp-includes/class-pop3.php:476
+#, fuzzy
 msgid "connection does not exist"
-msgstr "connexió inexistent"
+msgstr "El terme superior no existeix."
 
 #: wp-includes/class-pop3.php:583
 msgid "No msg number submitted"
 msgstr "No s'ha enviat cap número de missatge"
 
 #: wp-includes/class-pop3.php:589
+#, fuzzy
 msgid "Command failed "
-msgstr "Ordre fallida"
+msgstr "La càrrega del fitxer ha fallat."
 
 # MODIFICAT XTEC
 #: wp-includes/category-template.php:1000
@@ -7180,10 +7233,12 @@ msgid "Feed for all posts filed under %s"
 msgstr "Canal de tots els articles arxivats en %s"
 
 #: wp-includes/comment-template.php:1229
+#, fuzzy
 msgid "Comments Off"
-msgstr "Desactiva els comentaris"
+msgstr "Comentaris"
 
 #: wp-includes/comment-template.php:1274
+#, fuzzy
 msgid "Comment on %s"
 msgstr "Comentaris a %s"
 
@@ -7552,7 +7607,7 @@ msgstr "Públic, fixat"
 
 #: wp-includes/script-loader.php:448
 msgid "Schedule"
-msgstr "Previst"
+msgstr "Planifica"
 
 #: wp-includes/taxonomy.php:488
 msgid "Add or remove tags"
@@ -7681,3 +7736,400 @@ msgstr "Surt"
 #: wp-includes/class-wp-xmlrpc-server.php:5313
 msgid "You do not have permission to upload files."
 msgstr "No teniu permisos per penjar fitxers."
+
+#~ msgid "<span>Active:</span> %s"
+#~ msgstr "<span>Actiu:</span> %s"
+
+#~ msgid ""
+#~ "No %1$s was set in the arguments array for the \"%2$s\" sidebar. "
+#~ "Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this "
+#~ "notice and keep existing sidebar content."
+#~ msgstr ""
+#~ "No s'ha establert %1$s al conjunt d'arguments de la barra lateral \"%2$s"
+#~ "\". Es predetermina a \"%3$s\". Definiu manualment el %1$s al \"%3$s\" "
+#~ "per silenciar aquest avís i mantenir el contingut existent de la barra "
+#~ "lateral."
+
+#~ msgid "Macintosh uses Ctrl + Alt + letter."
+#~ msgstr "Mac utilitza Ctrl + Alt + lletra"
+
+#~ msgid "Connection lost or the server is busy. Please try again later."
+#~ msgstr ""
+#~ "S'ha perdut la connexió amb el servidor, o el servidor es troba ocupat. "
+#~ "Proveu de nou en una estona."
+
+#~ msgid "Plugin updates may not complete if you navigate away from this page."
+#~ msgstr ""
+#~ "És possible que les extensions no s'actualitzen completament si navegueu "
+#~ "fora d'aquesta pàgina."
+
+#~ msgid "Updating %s..."
+#~ msgstr "S'està actualitzant %s..."
+
+#~ msgid "%s updated!"
+#~ msgstr "S'ha actualitzat %s!"
+
+#~ msgid "%s update failed"
+#~ msgstr "L'actualització de %s ha fallat."
+
+#~ msgid "Update canceled."
+#~ msgstr "S'ha cancel·lat l'actualització."
+
+#~ msgid "Update Failed"
+#~ msgstr "L'actualització ha fallat."
+
+#~ msgctxt "theme"
+#~ msgid "Change"
+#~ msgstr "Canvia"
+
+#~ msgid "<span>Previewing theme</span> %s"
+#~ msgstr "<span>S'està previsualitzant el tema</span> %s"
+
+#~ msgid "<span>Active theme</span> %s"
+#~ msgstr "<span>Tema actiu</span> %s"
+
+#~ msgid "Dismiss this notice."
+#~ msgstr "Descarta aquest avís."
+
+#~ msgid "%1$s Response to %2$s"
+#~ msgid_plural "%1$s Responses to %2$s"
+#~ msgstr[0] "%1$s resposta a %2$s"
+#~ msgstr[1] "%1$s respostes a %2$s"
+
+#~ msgid ""
+#~ "Your theme supports %s menu. Select which menu appears in each location."
+#~ msgid_plural ""
+#~ "Your theme supports %s menus. Select which menu appears in each location."
+#~ msgstr[0] ""
+#~ "El tema permet %s menú. Seleccioneu quin menú apareix en cada ubicació."
+#~ msgstr[1] ""
+#~ "El tema permet %s menús. Seleccioneu quin menú apareix en cada ubicació."
+
+#~ msgid "Customizer"
+#~ msgstr "Personalitzador"
+
+#~ msgid "Could not split shared term."
+#~ msgstr "No es pot dividir un terme compartit."
+
+#~ msgid "Update completed successfully."
+#~ msgstr "S'ha completat l'actualització amb èxit."
+
+#~ msgid "Updating... please wait."
+#~ msgstr "S'està actualitzant... espereu."
+
+#~ msgid "Updating..."
+#~ msgstr "S'està actualitzant..."
+
+#~ msgid "Updated!"
+#~ msgstr "S'ha actualitzat!"
+
+#~ msgid "Suggested embed #%d"
+#~ msgstr "Incrustació suggerida #%d"
+
+#~ msgid "Suggested image #%d"
+#~ msgstr "Imatge suggerida #%d"
+
+#~ msgid "Site Preview"
+#~ msgstr "Previsualització del lloc web"
+
+#~ msgid "Custom Link"
+#~ msgstr "Enllaç personalitzat"
+
+#~ msgid "Drag and drop to reorder media files."
+#~ msgstr "Arrossegueu i deixeu anar per reordenar els mèdia."
+
+#~ msgid ""
+#~ "The %1$s option is deprecated for the family of %2$s functions. Use the "
+#~ "%3$s option instead."
+#~ msgstr ""
+#~ "L'opció %1$s està obsoleta per a la família de funcions de %2$s. Useu "
+#~ "l'opció %3$s per contra."
+
+#~ msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
+#~ msgstr "Sense comentaris<span class=\"screen-reader-text\"> a %s</span>"
+
+#~ msgid "Select Post"
+#~ msgstr "Selecciona entrada"
+
+#~ msgid "Select Week"
+#~ msgstr "Selecciona setmana"
+
+#~ msgid "Select Day"
+#~ msgstr "Selecciona dia"
+
+#~ msgid "Select Year"
+#~ msgstr "Selecciona any"
+
+#~ msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
+#~ msgstr "Comentaris tancats<span class=\"screen-reader-text\"> a %s</span>"
+
+#~ msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
+#~ msgid_plural ""
+#~ "%1$s Comments<span class=\"screen-reader-text\"> on %2$s</span>"
+#~ msgstr[0] "%1$s comentari<span class=\"screen-reader-text\"> a %2$s</span>"
+#~ msgstr[1] "%1$s comentaris<span class=\"screen-reader-text\"> a %2$s</span>"
+
+#~ msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
+#~ msgstr "1 comentari<span class=\"screen-reader-text\"> a %s</span>"
+
+#~ msgid "Link Text"
+#~ msgstr "Text de l'enllaç"
+
+#~ msgid "Search installed themes..."
+#~ msgstr "Cerca als temes instal·lats..."
+
+#~ msgid "Loading ..."
+#~ msgstr "S'està carregant..."
+
+#~ msgid "Live Preview"
+#~ msgstr "Previsualització"
+
+#~ msgid "Theme Details"
+#~ msgstr "Detalls del tema"
+
+#~ msgctxt "previous post"
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgctxt "next post"
+#~ msgid "Next"
+#~ msgstr "Següent"
+
+#~ msgid "No categories found."
+#~ msgstr "No s'han trobat categories."
+
+#~ msgid "Theme support for %1$s should be registered before the %2$s hook."
+#~ msgstr ""
+#~ "El suport del tema %1$s hauria de registrar-se abans de la intercepció "
+#~ "%2$s."
+
+#~ msgid "Widget moved down"
+#~ msgstr "S'ha mogut el giny cap a baix"
+
+#~ msgid "Widget moved up"
+#~ msgstr "S'ha mogut el giny cap a dalt"
+
+#~ msgid "Elements path"
+#~ msgstr "Camí dels elements"
+
+#~ msgid ""
+#~ "To move focus to other buttons use Tab or the arrow keys. To return focus "
+#~ "to the editor press Escape or use one of the buttons."
+#~ msgstr ""
+#~ "Per moure el focus a altres botons, fer servir la tecla de tabulació o "
+#~ "les de les fletxes. Per retornar el focus a l'editor, premeu la tecla "
+#~ "d'escapament o utilitzeu un dels botons."
+
+#~ msgid "Editor toolbar"
+#~ msgstr "Barra d'eines de l'editor"
+
+#~ msgid "Editor menu (when enabled)"
+#~ msgstr "Menú de l'editor (quan estigui activat)"
+
+#~ msgid "Image toolbar (when an image is selected)"
+#~ msgstr "Barra d'eines de la imatge (quan se selecciona una imatge)"
+
+#~ msgid "Focus shortcuts:"
+#~ msgstr "Dreceres del focus:"
+
+#~ msgid "Rich Text Area. Press Alt-Shift-H for help"
+#~ msgstr ""
+#~ "Àrea de l'editor de text enriquit. Premeu Alt-Majúscula-H per l'ajuda"
+
+#~ msgid ""
+#~ "The following values do not describe a valid date: month %1$s, day %2$s."
+#~ msgstr ""
+#~ "Els següents valors no descriuen una data vàlida: mes %1$s, dia %2$s."
+
+#~ msgid "You need to pass an array of types."
+#~ msgstr "Necessiteu passar un vector de tipus."
+
+#~ msgid "%s must set a database connection for use with escaping."
+#~ msgstr ""
+#~ "%s deu definir una connexió a la base de dades per fer servir amb "
+#~ "escapament."
+
+#~ msgid "Whois: %s"
+#~ msgstr "Whois: %s"
+
+#~ msgctxt "noun"
+#~ msgid "Trash"
+#~ msgstr "Paperera"
+
+#~ msgid "Edit Selection"
+#~ msgstr "Edita la selecció"
+
+#~ msgid "Newer posts"
+#~ msgstr "Entrades més recents"
+
+#~ msgid "Posts navigation"
+#~ msgstr "Navegació d'entrades"
+
+#~ msgid "Older posts"
+#~ msgstr "Entrades anteriors"
+
+#~ msgctxt "translations"
+#~ msgid "Available"
+#~ msgstr "Disponibles"
+
+#~ msgctxt "translations"
+#~ msgid "Installed"
+#~ msgstr "Instal·lades"
+
+#~ msgid "No alignment"
+#~ msgstr "Sense alineament"
+
+#~ msgid "Archives: %s"
+#~ msgstr "Arxiu: %s"
+
+#~ msgid "%1$s: %2$s"
+#~ msgstr "%1$s: %2$s"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Audio"
+#~ msgstr "Àudio"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Chats"
+#~ msgstr "Xats"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Statuses"
+#~ msgstr "Estats"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Links"
+#~ msgstr "Enllaços"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Videos"
+#~ msgstr "Vídeos"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Quotes"
+#~ msgstr "Citacions"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Galleries"
+#~ msgstr "Galeries"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Images"
+#~ msgstr "Imatges"
+
+#~ msgid "Month: %s"
+#~ msgstr "Mes: %s"
+
+#~ msgid "Day: %s"
+#~ msgstr "Dia: %s"
+
+#~ msgctxt "daily archives date format"
+#~ msgid "F j, Y"
+#~ msgstr "j \\d\\e F \\d\\e Y"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Asides"
+#~ msgstr "Anotacions"
+
+#~ msgid "Year: %s"
+#~ msgstr "Any: %s"
+
+#~ msgid "Author: %s"
+#~ msgstr "Autor: %s"
+
+#~ msgid "Tag: %s"
+#~ msgstr "Etiqueta: %s"
+
+#~ msgid "Category: %s"
+#~ msgstr "Categoria: %s"
+
+#~ msgid "Do not pass style tags to wp_add_inline_style()."
+#~ msgstr "No passeu etiquetes d'estil a wp_add_inline_style()."
+
+#~ msgid ""
+#~ "The following values do not describe a valid date: year %1$s, month %2$s, "
+#~ "day %3$s."
+#~ msgstr ""
+#~ "Els següents valors no descriuen una data vàlida: any %1$s, mes %2$s, dia "
+#~ "%3$s."
+
+#~ msgid "Reply to %s"
+#~ msgstr "Resposta a %s"
+
+#~ msgid ""
+#~ "Invalid value %1$s for %2$s. Expected value should be between %3$s and "
+#~ "%4$s."
+#~ msgstr ""
+#~ "Valor incorrecte %1$s per %2$s. El valor que s'espera hauria d'estar "
+#~ "entre %3$s i %4$s."
+
+#~ msgctxt "vertical table cell alignment"
+#~ msgid "V Align"
+#~ msgstr "V Align"
+
+#~ msgctxt "horizontal table cell alignment"
+#~ msgid "H Align"
+#~ msgstr "H Align"
+
+#~ msgid "Border color"
+#~ msgstr "Color de la vora"
+
+#~ msgid "Add to Dictionary"
+#~ msgstr "Afegeix al diccionari"
+
+#~ msgid "No color"
+#~ msgstr "Sense color"
+
+#~ msgctxt "label for custom color"
+#~ msgid "Custom..."
+#~ msgstr "Personalitzat..."
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Custom color"
+#~ msgstr "Color personalitzat"
+
+#~ msgid "No image selected"
+#~ msgstr "No s'ha seleccionat cap imatge"
+
+#~ msgid "Select Image"
+#~ msgstr "Selecciona una imatge"
+
+#~ msgid "Choose File"
+#~ msgstr "Tria fitxer"
+
+#~ msgid "No file selected"
+#~ msgstr "No s'ha seleccionat cap fitxer"
+
+#~ msgid "Change File"
+#~ msgstr "Canvia el fitxer"
+
+#~ msgid "Change Image"
+#~ msgstr "Canvia la imatge"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F \\d\\e Y"
+
+#~ msgid "Toolbar"
+#~ msgstr "Barra d'eines"
+
+#~ msgid "Page %s"
+#~ msgstr "Pàgina %s"
+
+#~ msgid "Top"
+#~ msgstr "A dalt"
+
+#~ msgid "Middle"
+#~ msgstr "Al mig"
+
+#~ msgid "Bottom"
+#~ msgstr "A baix"
+
+#~ msgid "By %s"
+#~ msgstr "Per %s"
