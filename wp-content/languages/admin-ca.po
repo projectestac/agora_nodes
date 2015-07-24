@@ -1,18 +1,18 @@
-# Translation of Administration in Catalan
-# This file is distributed under the same license as the Administration package.
+# Translation of Development in Catalan
+# This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-24 13:02+0100\n"
+"Project-Id-Version: Administration\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: nacho <nacho@test.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
-"Project-Id-Version: Administration\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Victor <victor.saavedra.martinez@upcnet.es>\n"
-"Language-Team: \n"
 "Language: ca\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: wp-admin/credits.php:182
 msgid "Release Lead"
@@ -71,12 +71,13 @@ msgstr ""
 "estesa des del diàleg de detalls."
 
 #: wp-admin/about.php:30 wp-admin/credits.php:85 wp-admin/freedoms.php:22
+#, fuzzy
 msgid ""
 "Thank you for updating! WordPress %s brings you a smoother writing and "
 "management experience."
 msgstr ""
-"Gràcies per actualitzar! El WordPress %s us transporta a una experiència més "
-"encantadora de gestió i escriptura."
+"Gràcies per actualitzar! El WordPress %s us ajuda a comunicar i compartir, "
+"globalment."
 
 # MODIFICAT XTEC
 #: wp-admin/about.php:57
@@ -123,8 +124,9 @@ msgstr ""
 "incrustacions</a> que suporta el WordPress."
 
 #: wp-admin/about.php:94
+#, fuzzy
 msgid "Focus on your content"
-msgstr "Centrats en el contingut"
+msgstr "Escaneja el lloc per cercar contingut"
 
 #: wp-admin/about.php:95
 msgid ""
@@ -153,12 +155,14 @@ msgstr ""
 "navegació més visual."
 
 #: wp-admin/about.php:123
+#, fuzzy
 msgid "Browse plugins"
-msgstr "Navega per les extensions"
+msgstr "%s extensions"
 
 #: wp-admin/about.php:135
+#, fuzzy
 msgid "Customizer API"
-msgstr "API del personalitzador"
+msgstr "Personalitza: %s"
 
 #: wp-admin/about.php:136
 msgid ""
@@ -169,8 +173,9 @@ msgstr ""
 "pel personalitzador."
 
 #: wp-admin/about.php:139
+#, fuzzy
 msgid "Query Ordering"
-msgstr "Ordre de les consultes"
+msgstr "Ordenació de consultes complexes"
 
 #: wp-admin/about.php:142
 msgid "Developers have more flexibility creating %1$s clauses through %2$s."
@@ -257,8 +262,9 @@ msgstr ""
 "plataforma de publicació personal més potent i extensible del món."
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:470
+#, fuzzy
 msgid "<strong>Untested</strong> with your version of WordPress"
-msgstr "<strong>Sense provar</strong> amb la versió actual del WordPress"
+msgstr "<strong>Incompatible</strong> amb la versió actual del WordPress"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:472
 msgid "<strong>Incompatible</strong> with your version of WordPress"
@@ -306,17 +312,15 @@ msgstr ""
 "Usarem aquesta informació per crear un fitxer <code>wp-config.php</code>."
 
 #: wp-admin/theme-install.php:82
+#, fuzzy
 msgid ""
 "You can Search for themes by keyword, author, or tag, or can get more "
 "specific and search by criteria listed in the feature filter. Alternately, "
 "you can browse the themes that are Featured, Popular, or Latest. When you "
 "find a theme you like, you can preview it or install it."
 msgstr ""
-"Podeu cercar temes per paraules clau, per autor o per etiquetes, o podeu "
-"aconseguir un més específic i cercar per criteris llistats en el filtre de "
-"característiques. També podeu navegar pels temes que són destacats, populars "
-"o els més nous. Quan trobeu un tema que us agradi, podeu previsualitzar-lo o "
-"instal·lar-lo."
+"També podeu navegar pels temes que són destacats, populars o recents. Quan "
+"trobeu un tema que us agradi, podeu previsualitzar-lo o instal·lar-lo."
 
 #: wp-admin/theme-install.php:224
 msgctxt "theme"
@@ -414,10 +418,11 @@ msgid "More Details"
 msgstr "Més detalls"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:465
+#, fuzzy
 msgid "%s download"
 msgid_plural "%s downloads"
-msgstr[0] "%s baixada"
-msgstr[1] "%s baixades"
+msgstr[0] "Baixa %s"
+msgstr[1] "Baixa %s"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:529
 msgid "View details"
@@ -434,14 +439,14 @@ msgid "Recently Updated"
 msgstr "Actualitzats recentment"
 
 #: wp-admin/includes/class-wp-upgrader.php:2609
+#, fuzzy
 msgid ""
 "\n"
 "UPDATE LOG\n"
 "=========="
 msgstr ""
-"\n"
-"REGISTRE DE L'ACTUALITZACIÓ\n"
-"=========="
+"ACTUALITZA EL REGISTRE\n"
+"====================="
 
 #: wp-admin/includes/plugin-install.php:350
 msgctxt "Plugin installer section title"
@@ -485,8 +490,9 @@ msgid "New Feature: Live Widget Previews"
 msgstr "Funcionalitat nova: Previsualització dels ginys en temps real"
 
 #: wp-admin/includes/template.php:2032
+#, fuzzy
 msgid "Add, edit, and play around with your widgets from the theme customizer."
-msgstr "Afegeix, edita i juga amb els ginys des del personalitzador de temes."
+msgstr "Afegeix, edita i juga amb els ginys des del personalitzador."
 
 #: wp-admin/includes/template.php:2032
 msgid ""
@@ -496,8 +502,9 @@ msgstr ""
 "llests."
 
 #: wp-admin/theme-install.php:257
+#, fuzzy
 msgid "No ratings."
-msgstr "Sense valoració."
+msgstr "%s valoració"
 
 #: wp-admin/theme-install.php:175
 msgid "Filtering by:"
@@ -584,8 +591,9 @@ msgid "All comment types"
 msgstr "Tots els tipus de comentaris"
 
 #: wp-admin/includes/dashboard.php:724
+#, fuzzy
 msgid "<span>%1$s, %2$s</span> %3$s"
-msgstr "<span>%1$s, %2$s</span> %3$s"
+msgstr "<span>%1$s, %2$s</span> <a href=\"%3$s\">%4$s</a>"
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:44
 #: wp-admin/theme-install.php:140
@@ -609,11 +617,12 @@ msgid ""
 "Remove allows you to remove a user from your site. It does not delete their "
 "content. You can also remove multiple users at once by using Bulk Actions."
 msgstr ""
-"Suprimeix us permet suprimir un usuari de la web. No se suprimeix el seu "
-"contingut. Podeu també suprimir molts usuaris d'una vegada fent servir les "
-"accions en massa."
+"&laquo;Suprimeix&raquo; us permet suprimir un usuari de la web. No se "
+"suprimeix el seu contingut. Podeu també suprimir molts usuaris d'una vegada "
+"fent servir les accions en massa."
 
 #: wp-admin/includes/upgrade.php:280
+#, fuzzy
 msgid ""
 "Your new WordPress site has been successfully set up at:\n"
 "\n"
@@ -629,20 +638,21 @@ msgid ""
 "--The WordPress Team\n"
 "https://wordpress.org/\n"
 msgstr ""
-"El lloc web nou gestionat amb el WordPress s'ha configurat correctament a:\n"
+"S'ha configurat correctament el WordPress a:\n"
 "\n"
 "%1$s\n"
 "\n"
-"Podeu iniciar una sessió al compte d'administrador amb la següent "
+"Podeu iniciar sessió al compte de l'administrador amb la següent "
 "informació:\n"
 "\n"
-"Nom d'usuari: %2$s\n"
+"Usuari: %2$s\n"
 "Contrasenya: %3$s\n"
+"Entreu aquí: %4$s\n"
 "\n"
-"Esperem que gaudiu del nou lloc web. Gràcies!\n"
+"Esperem que gaudiu del lloc web nou. Gràcies!\n"
 "\n"
 "--L'equip del WordPress\n"
-"http://ca.wordpress.org/\n"
+"https://wordpress.org/\n"
 
 #: wp-admin/index.php:57
 msgid ""
@@ -678,16 +688,19 @@ msgid "Add Themes"
 msgstr "Afegeix temes"
 
 #: wp-admin/theme-install.php:31
+#, fuzzy
 msgid "Featured Themes"
-msgstr "Temes destacats"
+msgstr "Imatges destacades"
 
 #: wp-admin/theme-install.php:32
+#, fuzzy
 msgid "Popular Themes"
-msgstr "Temes populars"
+msgstr "Etiquetes populars"
 
 #: wp-admin/theme-install.php:33
+#, fuzzy
 msgid "Newest Themes"
-msgstr "Temes més nous"
+msgstr "Afegiu un nou tema"
 
 #: wp-admin/theme-install.php:53
 msgid "Search Themes"
@@ -708,16 +721,17 @@ msgid ""
 "permanently remove a user from your site and delete their content. You can "
 "also delete multiple users at once by using Bulk Actions."
 msgstr ""
-"Suprimeix us portarà a una pantalla de confirmació per suprimir usuaris, on "
-"podeu suprimir permanentment un usuari de la web i suprimir el seu "
-"contingut. Podeu també suprimir molts usuaris a la vegada en fer servir les "
-"accions en massa."
+"&laquo;Suprimeix&raquo; us portarà a una pantalla de confirmació per "
+"suprimir usuaris, on podeu suprimir permanentment un usuari de la web i "
+"suprimir el seu contingut. Podeu també suprimir molts usuaris a la vegada en "
+"fer servir les accions en massa."
 
 #: wp-admin/users.php:239
+#, fuzzy
 msgid "What should be done with content owned by this user?"
 msgid_plural "What should be done with content owned by these users?"
 msgstr[0] "Què s'ha de fer amb el contingut d'aquest usuari?"
-msgstr[1] "Què s'ha de fer amb el contingut d'aquests usuaris?"
+msgstr[1] "Què s'ha de fer amb el contingut d'aquest usuari?"
 
 #: wp-admin/users.php:242
 msgid "Delete all content."
@@ -765,6 +779,7 @@ msgid "https://make.wordpress.org/"
 msgstr "http://make.wordpress.org/"
 
 #: wp-admin/includes/class-wp-upgrader.php:2591
+#, fuzzy
 msgid ""
 "\n"
 "BETA TESTING?\n"
@@ -782,21 +797,20 @@ msgid ""
 "\n"
 "Thanks! -- The WordPress Team"
 msgstr ""
-"\n"
-"ESTEU PROVANT LA BETA?\n"
+"PROVANT VERSIONS BETA?\n"
 "=============\n"
 "\n"
-"Aquest correu electrònic de depuració s'envia quan esteu fent servir una "
-"versió en desenvolupament del WordPress.\n"
+"Aquest correu de depuració s'envia si esteu utilitzant una versió de "
+"desenvolupament de WordPress.\n"
 "\n"
-"Si penseu que aquestes errades poden ser causades per un error de codi al "
-"WordPress, podríeu informar d'això?\n"
-" * Obriu un fil als fòrums de suport: https://wordpress.org/support/forum/"
+"Si penseu que aquests errors poden ser a causa d'un error al WordPress, "
+"podríeu comunicar-ho?\n"
+"* Obriu un fil als fòrums d'assistència: https://wordpress.org/support/forum/"
 "alphabeta\n"
-" * O, si us apanyeu escrivint un informe d'error: http://core.trac.wordpress."
-"org/\n"
+"* O, si us trobeu còmodes obrint un informe d'errades: https://core.trac."
+"wordpress.org/\n"
 "\n"
-"Gràcies! -- L'equip del WordPress"
+"Gràcies! -- L'equip de WordPress"
 
 #: wp-admin/includes/dashboard.php:1318
 msgid "Manage widgets"
@@ -823,8 +837,9 @@ msgid "Edit date and time"
 msgstr "Edita data i hora"
 
 #: wp-admin/themes.php:107
+#, fuzzy
 msgid "Search installed themes..."
-msgstr "Cerca els temes instal·lats..."
+msgstr "Cerca temes instal·lats"
 
 #: wp-admin/update-core.php:466
 msgid ""
@@ -965,8 +980,9 @@ msgid "%1$s MB (%2$s%%) Space Used"
 msgstr "%1$s MB (%2$s%%) d'espai utilitzat"
 
 #: wp-admin/themes.php:203 wp-admin/themes.php:284
+#, fuzzy
 msgid "Theme Details"
-msgstr "Detalls del tema"
+msgstr "Més detalls"
 
 #: wp-admin/options-reading.php:66
 msgid ""
@@ -983,9 +999,10 @@ msgid "At a Glance"
 msgstr "Ara mateix"
 
 #: wp-admin/themes.php:207 wp-admin/themes.php:288
+#, fuzzy
 msgctxt "theme"
 msgid "Active:"
-msgstr "Actiu:"
+msgstr "Inactiu:"
 
 #: wp-admin/includes/theme.php:208
 msgid "Accessibility Ready"
@@ -1067,10 +1084,11 @@ msgid ""
 "to preview your site in the new theme. To bring the pane back, click on the "
 "collapse icon again."
 msgstr ""
-"Quan previsualitzeu en monitors petits, podeu fer servir la icona redueix "
-"que hi ha a la part inferior del panell de l'esquerra. Això ocultarà el "
-"panell, i us donarà més espai per previsualitzar la pàgina web amb el tema "
-"nou. Per accedir al panell de nou, feu clic a la icona redueix altra vegada."
+"Quan previsualitzeu en monitors petits, podeu fer servir la icona &laquo;"
+"Redueix&raquo; que hi ha a la part inferior del panell de l'esquerra. Això "
+"ocultarà el panell, i us donarà més espai per previsualitzar la pàgina web "
+"amb el tema nou. Per accedir al panell de nou, feu clic a la icona redueix "
+"altra vegada."
 
 #: wp-admin/widgets.php:339
 msgid ""
@@ -1099,8 +1117,8 @@ msgid ""
 msgstr ""
 "Aquesta pantalla li mostra a un usuari individual tots els seus llocs en "
 "aquesta xarxa, i també permet a aquest usuari establir un lloc principal. "
-"Ell o ella poden usar els enllaços a sota de cada lloc ja sigui per visitar "
-"la pantalla principal o per visitar el tauler d'aquest lloc."
+"Ell o ella poden usar els enllaços a sota de cada lloc, sigui per visitar la "
+"pantalla principal o per visitar el tauler d'aquest lloc."
 
 #: wp-admin/includes/class-wp-upgrader.php:2633
 msgid "Rollback Error: [%1$s] %2$s"
@@ -1171,22 +1189,24 @@ msgstr ""
 "que heu iniciat."
 
 #: wp-admin/index.php:72
+#, fuzzy
 msgid ""
 "<strong>WordPress News</strong> - Latest news from the official WordPress "
 "project, the <a href=\"http://planet.wordpress.org/\">WordPress Planet</a>, "
 "and popular and recent plugins."
 msgstr ""
-"<strong>Notícies del WordPress</strong> - Les darreres notícies del projecte "
-"oficial del WordPress, el <a href=\"http://planet.wordpress.org/\">planeta "
-"del WordPress</a>, i les extensions recents i populars."
+"<strong>Notícies del WordPress</strong> - Les darreres notícies des del "
+"projecte oficial del WordPress, el <a href=\"https://planet.wordpress.org/"
+"\">Planeta del WordPress</a>, i les extensions populars i recents."
 
 #: wp-admin/index.php:74
+#, fuzzy
 msgid ""
 "<strong>WordPress News</strong> - Latest news from the official WordPress "
 "project, the <a href=\"http://planet.wordpress.org/\">WordPress Planet</a>."
 msgstr ""
 "<strong>Notícies del WordPress</strong> - Les darreres notícies del projecte "
-"oficial del WordPress, el <a href=\"http://planet.wordpress.org/\">planeta "
+"oficial del WordPress, el <a href=\"https://planet.wordpress.org/\">Planeta "
 "del WordPress</a>."
 
 #: wp-admin/post.php:117
@@ -1504,8 +1524,9 @@ msgid "Your translations are all up to date."
 msgstr "Les traduccions estan totes elles actualitzades."
 
 #: wp-admin/update-core.php:349
+#, fuzzy
 msgid "Some of your translations are out of date."
-msgstr "Algunes traduccions estan obsoletes."
+msgstr "Les traduccions estan totes elles actualitzades."
 
 #: wp-admin/includes/class-wp-upgrader.php:1247
 msgid ""
@@ -1557,6 +1578,7 @@ msgstr ""
 "per utilitzar quan afegiu una imatge a la mediateca."
 
 #: wp-admin/options-permalink.php:184
+#, fuzzy
 msgid ""
 "By default WordPress uses web <abbr title=\"Universal Resource Locator"
 "\">URL</abbr>s which have question marks and lots of numbers in them; "
@@ -1571,7 +1593,7 @@ msgstr ""
 "el WordPress ofereix la possibilitat de crear una estructura d'URL "
 "personalitzada per als enllaços permanents i arxius. Això pot millorar "
 "l'estètica, la usabilitat, i la compatibilitat dels enllaços. Un <a href="
-"\"http://codex.wordpress.org/Using_Permalinks\">nombre d'etiquetes hi ha "
+"\"https://codex.wordpress.org/Using_Permalinks\">nombre d'etiquetes hi ha "
 "disponibles</a>, i aquí teniu alguns exemples per començar."
 
 #: wp-admin/theme-editor.php:33
@@ -1589,6 +1611,7 @@ msgid "Create a brand new user and add them to this site."
 msgstr "Crea un nou usuari i l'afegeix a aquest lloc web."
 
 #: wp-admin/includes/ms.php:224
+#, fuzzy
 msgid ""
 "Dear user,\n"
 "\n"
@@ -1606,20 +1629,20 @@ msgid ""
 "All at ###SITENAME###\n"
 "###SITEURL###"
 msgstr ""
-"Bloguers,\n"
+"Estimat ###USERNAME###,\n"
 "\n"
-"Heu sol·licitat recentment canviar l'adreça de correu electrònic \n"
-"de l'administració.\n"
-"Si és correcte, feu clic al següent enllaç per canviar-la:\n"
+"Heu demanat recentment canviar l'adreça electrònica de l'administrador del "
+"vostre lloc web.\n"
+"\n"
+"Si és correcte, feu clic al següent enllaç per a canviar-la:\n"
 "###ADMIN_URL###\n"
 "\n"
-"Podeu ignorar correu electrònic o esborrar-lo sense cap problema\n"
-"si no voleu fer-ho.\n"
+"Podeu ignorar aquest missatge si no voleu canviar-la.\n"
 "\n"
-"Aquest correu electrònic s'ha enviat a ###EMAIL###\n"
+"Aquest missatge s'ha enviat a ###EMAIL###\n"
 "\n"
-"Salut,\n"
-"Tot a ###SITENAME###\n"
+"Salutacions,\n"
+"###SITENAME###,\n"
 "###SITEURL###"
 
 #: wp-admin/includes/class-wp-filesystem-base.php:298
@@ -1855,8 +1878,9 @@ msgstr ""
 "Compara qualssevol dues revisions&#8221;</strong> del lateral."
 
 #: wp-admin/includes/template.php:2003
+#, fuzzy
 msgid "Compare Revisions"
-msgstr "Compara revisions"
+msgstr "Compara dues revisions qualssevol"
 
 #: wp-admin/includes/template.php:2004
 msgid ""
@@ -2073,11 +2097,12 @@ msgstr ""
 "strong>."
 
 #: wp-admin/revision.php:119
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Revision_Management\" target=\"_blank"
 "\">Revisions Management</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Revision_Management\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Revision_Management\" target=\"_blank"
 "\">Gestió de les revisions</a> (en anglès)"
 
 #: wp-admin/revision.php:169
@@ -2105,9 +2130,10 @@ msgid "Menu locations updated."
 msgstr "S'han actualitzat les ubicacions dels menús."
 
 #: wp-admin/includes/revision.php:172
+#, fuzzy
 msgctxt "revision date short format"
 msgid "j M @ G:i"
-msgstr "j M a les G:i"
+msgstr "j M @ H:i"
 
 #: wp-admin/includes/media.php:296
 msgid "%1$s by %2$s."
@@ -2216,13 +2242,14 @@ msgstr ""
 "hi ha prop de cada element i fer clic a Afegeix al menú</strong> "
 
 #: wp-admin/nav-menus.php:520
+#, fuzzy
 msgid ""
 "To add a custom link, <strong>expand the Links section, enter a URL and link "
 "text, and click Add to Menu</strong>"
 msgstr ""
-"Per afegir un enllaç personalitzat, <strong>amplieu la secció d'enllaços, "
-"introduïu una URL i el text de l'enllaç, i feu clic a Afegeix al menú</"
-"strong>"
+"Per afegir un enllaç personalitzat, <strong>expandiu la secció d'enllaços "
+"personalitzats, introduïu un URL i un text de l'enllaç, i feu clic a "
+"«Afegeix al menú»</strong>"
 
 #: wp-admin/nav-menus.php:521
 msgid ""
@@ -2458,8 +2485,9 @@ msgid "sub item"
 msgstr "subelement"
 
 #: wp-admin/includes/nav-menu.php:589
+#, fuzzy
 msgid "Link Text"
-msgstr "Text de l'enllaç"
+msgstr "Destinació de l'enllaç"
 
 #: wp-admin/includes/nav-menu.php:1324
 msgid "<strong>%1$s</strong> has been updated."
@@ -2533,8 +2561,9 @@ msgid "%s is currently editing"
 msgstr "%s està editant actualment"
 
 #: wp-admin/includes/dashboard.php:1327
+#, fuzzy
 msgid "http://codex.wordpress.org/First_Steps_With_WordPress"
-msgstr "http://codex.wordpress.org/First_Steps_With_WordPress"
+msgstr "https://codex.wordpress.org/First_Steps_With_WordPress"
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:331
@@ -2554,6 +2583,7 @@ msgstr ""
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:332
+#, fuzzy
 msgid ""
 "You can also embed media from many popular websites including Twitter, "
 "YouTube, Flickr and others by pasting the media URL on its own line into the "
@@ -2649,8 +2679,8 @@ msgstr ""
 "Algunes caixes d'aquesta pantalla contenen paràmetres de com el contingut es "
 "publicarà, com ara:"
 
-# MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:346
+#, fuzzy
 msgid ""
 "<strong>Format</strong> - Post Formats designate how your theme will display "
 "a specific post. For example, you could have a <em>standard</em> blog post "
@@ -2761,8 +2791,9 @@ msgstr ""
 "triar un color fent servir el selector de colors."
 
 #: wp-admin/customize.php:135
+#, fuzzy
 msgid "Theme Customizer Options"
-msgstr "Opcions del personalitzador de temes"
+msgstr "Opcions del personalitzador"
 
 #: wp-admin/options-reading.php:65
 msgid ""
@@ -2872,19 +2903,21 @@ msgstr ""
 "paràmetres."
 
 #: wp-admin/options-writing.php:183
+#, fuzzy
 msgid ""
 "WordPress is not notifying any <a href=\"http://codex.wordpress.org/"
 "Update_Services\">Update Services</a> because of your site&#8217;s <a href="
 "\"%s\">visibility settings</a>."
 msgstr ""
-"El WordPress no notifica a cap <a href=\"http://codex.wordpress.org/"
+"El WordPress no notifica a cap <a href=\"https://codex.wordpress.org/"
 "Update_Services\">servei d'actualització</a> (en anglès) per la  <a href=\"%s"
 "\">configuració de visibilitat</a> del lloc web."
 
 #: wp-admin/includes/class-wp-themes-list-table.php:212
 #: wp-admin/theme-editor.php:33 wp-admin/update-core.php:300
+#, fuzzy
 msgid "http://codex.wordpress.org/Child_Themes"
-msgstr "http://codex.wordpress.org/Child_Themes"
+msgstr "https://codex.wordpress.org/Child_Themes"
 
 #: wp-admin/includes/dashboard.php:299
 msgid "Search Engines Discouraged"
@@ -3020,7 +3053,7 @@ msgid ""
 "username."
 msgstr ""
 "Podeu també navegar per les extensions preferides d'un usuari, si feu clic a "
-"l'enllaç preferits de la part superior esquerre de la pantalla i introduïu "
+"l'enllaç preferits de la part superior esquerra de la pantalla i introduïu "
 "el seu nom d'usuari del WordPress."
 
 #: wp-admin/plugin-install.php:61
@@ -3030,7 +3063,7 @@ msgid ""
 "zip package, and once uploaded, you can activate the new plugin."
 msgstr ""
 "Si voleu instal·lar una extensió que heu baixat a algun lloc, feu clic a "
-"l'enllaç penja de la part superior esquerre. Se us demanarà que pengeu un "
+"l'enllaç penja de la part superior esquerra. Se us demanarà que pengeu un "
 "paquet .zip, i una vegada penjat, podeu activar l'extensió nova."
 
 #: wp-admin/setup-config.php:138
@@ -3107,25 +3140,30 @@ msgstr ""
 "part superior del panell esquerre. Els fitxers dels temes es baixaran a la "
 "pàgina web automàticament. Quan acabi, el tema estarà disponible per "
 "activar, la qual cosa podreu fer a l'enllaç \"Activa\", o també si aneu a la "
-"pantalla gestiona els temes i feu clic a l'enllaç \"Previsualització\" que "
-"hi ha a la part inferior de la miniatura de qualsevol tema instal·lat."
+"pantalla &laquo;Gestiona els temes&raquo; i feu clic a l'enllaç "
+"\"Previsualització\" que hi ha a la part inferior de la miniatura de "
+"qualsevol tema instal·lat."
 
 #: wp-admin/options-reading.php:50
+#, fuzzy
 msgid ""
 "The <a href=\"http://codex.wordpress.org/Glossary#Character_set\">character "
 "encoding</a> of your site (UTF-8 is recommended)"
 msgstr ""
-"La <a href=\"http://codex.wordpress.org/Glossary#Character_set\">codificació "
-"de caràcters</a> (en anglès) del lloc web (UTF-8 és la recomanada)"
+"La <a href=\"https://codex.wordpress.org/Glossary#Character_set"
+"\">codificació de caràcters</a> (en anglès) del lloc web (UTF-8 és la "
+"recomanada)"
 
 #: wp-admin/plugin-editor.php:133 wp-admin/theme-editor.php:30
+#, fuzzy
 msgid ""
 "In the editing area the Tab key enters a tab character. To move below this "
 "area by pressing Tab, press the Esc key followed by the Tab key."
 msgstr ""
-"A l'àrea d'edició la tecla de tabulació introdueix un caràcter de tabulació. "
-"Per moure-us a la part inferior d'aquesta àrea en prémer tabulació, premeu "
-"la tecla d'escapament seguida de la de tabulació."
+"A l'àrea d'edició, la tecla de tabulació introdueix un caràcter de "
+"tabulació. Per moure's cap a baix en aquesta àrea en pressionar Tab, premeu "
+"la tecla Esc seguida de la tecla Tab. En alguns casos, caldrà prémer la "
+"tecla Esc dues vegades abans que la tecla Tab us permeti continuar."
 
 #: wp-admin/includes/widgets.php:200
 msgctxt "widget"
@@ -3349,16 +3387,18 @@ msgid "You are previewing %s"
 msgstr "Esteu previsualitzant el tema %s"
 
 #: wp-admin/custom-background.php:304 wp-admin/custom-header.php:568
+#, fuzzy
 msgid "Select Image"
-msgstr "Seleccioneu una imatge"
+msgstr "Selecciona la pàgina"
 
 #: wp-admin/custom-background.php:314 wp-admin/custom-header.php:604
 msgid "Or choose an image from your media library:"
 msgstr "O tria una imatge de la mediateca:"
 
 #: wp-admin/customize.php:88
+#, fuzzy
 msgid "Customize %s"
-msgstr "Personalitza %s"
+msgstr "Personalitza: %s"
 
 #: wp-admin/customize.php:176
 #: wp-admin/includes/class-wp-theme-install-list-table.php:303
@@ -3470,8 +3510,9 @@ msgstr ""
 #: wp-admin/includes/class-wp-upgrader-skins.php:522
 #: wp-admin/includes/class-wp-upgrader-skins.php:601 wp-admin/themes.php:221
 #: wp-admin/themes.php:301 wp-admin/themes.php:363
+#, fuzzy
 msgid "Live Preview"
-msgstr "Previsualització"
+msgstr "Previsualització: %s"
 
 #: wp-admin/custom-header.php:166
 msgid "This screen is used to customize the header section of your theme."
@@ -3543,10 +3584,11 @@ msgstr ""
 "que hi ha a la part inferior de la caixa per arrossegar i desar."
 
 #: wp-admin/users.php:382
+#, fuzzy
 msgid "User deleted."
 msgid_plural "%s users deleted."
 msgstr[0] "S'ha suprimit l'usuari."
-msgstr[1] "S'han suprimit %s usuaris."
+msgstr[1] "S'ha suprimit l'usuari."
 
 #: wp-admin/users.php:386
 msgid "New user created. <a href=\"%s\">Edit user</a>"
@@ -3581,6 +3623,7 @@ msgid "This theme is broken."
 msgstr "Aquest tema està malmès."
 
 #: wp-admin/includes/class-wp-themes-list-table.php:208
+#, fuzzy
 msgid "Version: "
 msgstr "Versió:"
 
@@ -3601,8 +3644,9 @@ msgid "About"
 msgstr "Quant a"
 
 #: wp-admin/includes/nav-menu.php:748 wp-admin/includes/nav-menu.php:1008
+#, fuzzy
 msgid "No results found."
-msgstr "No s'han trobat resultats."
+msgstr "No s'ha trobat cap lloc web."
 
 #: wp-admin/edit-comments.php:209 wp-admin/edit-comments.php:215
 #: wp-admin/includes/class-wp-comments-list-table.php:475
@@ -3673,7 +3717,7 @@ msgstr "Enllaç URL"
 #: wp-admin/includes/media.php:1162 wp-admin/includes/media.php:2501
 msgid "Enter a link URL or click above for presets."
 msgstr ""
-"Introduïu una URL d'un enllaç o cliqueu aquí dalt per als valors "
+"Introduïu un URL d'un enllaç o cliqueu aquí dalt per als valors "
 "predeterminats."
 
 # MODIFICAT XTEC
@@ -3754,8 +3798,9 @@ msgid "Settings"
 msgstr "Paràmetres"
 
 #: wp-admin/user-edit.php:274 wp-admin/user-edit.php:275
+#, fuzzy
 msgid "Toolbar"
-msgstr "Barra d'eines"
+msgstr "Eines"
 
 #: wp-admin/includes/plugin-install.php:177
 #: wp-admin/includes/theme-install.php:65
@@ -3869,7 +3914,7 @@ msgid ""
 "<strong>Welcome</strong> - Shows links for some of the most common tasks "
 "when setting up a new site."
 msgstr ""
-"<strong>Benvinguts</strong> - Mostra enllaços a les tasques més comuns quan "
+"<strong>Benvinguts</strong> - Mostra enllaços a les tasques més comunes quan "
 "estàs configurant un lloc web nou."
 
 #: wp-admin/includes/ajax-actions.php:284
@@ -3987,6 +4032,7 @@ msgstr ""
 "enllaç."
 
 #: wp-admin/ms-delete-site.php:45
+#, fuzzy
 msgid ""
 "Dear User,\n"
 "You recently clicked the 'Delete Site' link on your site and filled in a\n"
@@ -4004,24 +4050,22 @@ msgid ""
 "Webmaster\n"
 "###SITE_NAME###"
 msgstr ""
-"Bloguers,\n"
-"Fa poc heu clicat l'enllaç 'Esborra el lloc' de la vostra pàgina web i heu "
-"emplenat un\n"
-"formulari en aquesta pàgina.\n"
-"Si realment voleu esborrar el vostre web, cliqueu en l'enllaç d'aquí sota. "
-"No\n"
-"us preguntarem que confirmeu de nou així que feu clic solament si esteu "
-"completament segurs:\n"
+"Estimat ###USERNAME###,\n"
+"\n"
+"Recentment heu fet clic a l'enllaç «Suprimeix el lloc web» del vostre lloc, "
+"i heu omplert un formulari en aquesta pàgina.\n"
+"\n"
+"Si realment voleu esborrar el lloc web, feu clic a l'enllaç de baix. No se "
+"us demanarà cap confirmació, per tant feu clic només si esteu totalment "
+"segurs:\n"
 "###URL_DELETE###\n"
 "\n"
-"Si esborreu el web, considereu la possibilitat de crear una nova pàgina web "
-"aquí\n"
-"en algun moment en el futur! (Però recordeu que el vostre web actual i el "
-"nom d'usuari\n"
-"ja no seran mai més.)\n"
+"Si esborreu el vostre lloc web, considereu obrir-ne un altre el futur! (Però "
+"recordeu que el vostre lloc web actual i el vostre usuari es perdran per "
+"sempre.)\n"
 "\n"
-"Gràcies per fer servir el lloc web,\n"
-"l'administrador del web\n"
+"Gràcies per utilitzar el lloc web,\n"
+"Administrador web\n"
 "###SITE_NAME###"
 
 #: wp-admin/includes/ms.php:34
@@ -4041,6 +4085,7 @@ msgid "[%s] New Admin Email Address"
 msgstr "[%s] Adreça de correu electrònic d'administració nova"
 
 #: wp-admin/includes/ms.php:294
+#, fuzzy
 msgid ""
 "Dear user,\n"
 "\n"
@@ -4057,27 +4102,20 @@ msgid ""
 "All at ###SITENAME###\n"
 "###SITEURL###"
 msgstr ""
-"Bloguers,\n"
+"Estimat ###USERNAME###,\n"
 "\n"
-"Recentment heu sol·licitat canviar l'adreça de correu electrònic\n"
-"del vostre compte.\n"
-"Si això és correcte, feu clic en el següent enllaç per canviar-la:\n"
-" \n"
+"Heu demanat recentment canviar l'adreça electrònica del vostre compte.\n"
+"\n"
+"Si és correcte, feu clic al següent enllaç per a canviar-la:\n"
 "###ADMIN_URL###\n"
-" \n"
 "\n"
-" \n"
-"Podeu ignorar o eliminar de manera segura aquest\n"
-" \n"
-"correu electrònic si no voleu dur a terme aquest canvi.\n"
-" \n"
+"Podeu ignorar aquest missatge si no voleu canviar-la.\n"
 "\n"
-"Aquest correu electrònic s'ha enviat a ###EMAIL###\n"
-"\n"
+"Aquest missatge s'ha enviat a ###EMAIL###\n"
 "\n"
 "Salutacions,\n"
-"de part de ###SITENAME###\n"
-"###SITEURL### "
+"###SITENAME###,\n"
+"###SITEURL###"
 
 #: wp-admin/includes/ms.php:338
 msgid ""
@@ -4223,8 +4261,9 @@ msgid "Delete this theme"
 msgstr "Suprimeix aquest tema"
 
 #: wp-admin/includes/ms.php:424
+#, fuzzy
 msgid "Site Upload Space Quota "
-msgstr "Quota d'espai del lloc per a càrregues"
+msgstr "Quota d'espai per penjar del servidor"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:254
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:297
@@ -4248,11 +4287,12 @@ msgid "Global Settings"
 msgstr "Paràmetres globals"
 
 #: wp-admin/my-sites.php:48
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target="
 "\"_blank\">Documentation on My Sites</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Dashboard_My_Sites_Screen\" target="
 "\"_blank\">Documentació sobre els meus llocs web</a>"
 
 #: wp-admin/my-sites.php:16
@@ -4437,7 +4477,7 @@ msgstr "PMF"
 #: wp-admin/includes/plugin-install.php:346
 msgctxt "Plugin installer section title"
 msgid "Installation"
-msgstr "Instaŀlació"
+msgstr "Instal·lació"
 
 #: wp-admin/includes/plugin-install.php:345
 msgctxt "Plugin installer section title"
@@ -4450,6 +4490,7 @@ msgid "Screenshots"
 msgstr "Captures de pantalla"
 
 #: wp-admin/options-permalink.php:244
+#, fuzzy
 msgid ""
 "If you like, you may enter custom structures for your category and tag <abbr "
 "title=\"Universal Resource Locator\">URL</abbr>s here. For example, using "
@@ -4457,12 +4498,11 @@ msgid ""
 "like <code>http://example.org/%stopics/uncategorized/</code>. If you leave "
 "these blank the defaults will be used."
 msgstr ""
-"Si voleu, aquí podeu establir una estructura personalitzada per a les <abbr "
-"title=\"Universal Resource Locator\">URL</abbr> de les categories i "
-"etiquetes. Per exemple, fent servir <code>temes</code> com a base de la "
-"categoria faria que els enllaços de categoria apareguessin així: "
-"<code>http://exemple.org/%stemes/general/</code>. Si ho deixeu en blanc, "
-"s'usarà l'opció per defecte."
+"Si ho preferiu, podeu introduir aquí estructures personalitzades per a les "
+"<abbr title=\"Universal Resource Locator\">URLs</abbr> de les categories i "
+"etiquetes. Per exemple, fent servir <code>temes</code> com la categoria "
+"base, faria els enllaços de categories com <code>%s/temes/sense_categoria/</"
+"code>. Si ho deixeu en blanc, s'usaran les predeterminades."
 
 #: wp-admin/options-permalink.php:157
 msgid "You should update your web.config now."
@@ -4514,7 +4554,7 @@ msgid ""
 msgstr ""
 "Els usuaris nous rebran en correu electrònic fent-los saber que s'han afegit "
 "com a usuaris de la web. Aquest correu electrònic també conté la seva "
-"contrasenya. Marqueu la casella si no voleu que l'usuari reba un correu "
+"contrasenya. Marqueu la casella si no voleu que l'usuari rebi un correu "
 "electrònic de benvinguda."
 
 #: wp-admin/plugins.php:379
@@ -4556,8 +4596,8 @@ msgid ""
 "it manually:"
 msgstr ""
 "Esteu usant una versió en desenvolupament del WordPress. Podeu actualitzar a "
-"la darrera versió construïda (<em>nightly build</em>) automàticament o "
-"descarregar-la i instal·lar-la manualment:"
+"la darrera versió construïda automàticament o baixar-la i instal·lar-la "
+"manualment:"
 
 # MODIFICAT XTEC
 #: wp-admin/options-writing.php:36
@@ -5024,8 +5064,8 @@ msgid ""
 "Uploading Files allows you to choose the folder and path for storing your "
 "uploaded files."
 msgstr ""
-"Penja fitxers us permet triar la carpeta i camí on desar els fitxers que "
-"pengeu."
+"&laquo;Penja fitxers&raquo; us permet triar la carpeta i camí on desar els "
+"fitxers que pengeu."
 
 #: wp-admin/options-writing.php:21
 msgid ""
@@ -5700,9 +5740,10 @@ msgid "Add New User"
 msgstr "Afegeix"
 
 #: wp-admin/users.php:20
+#, fuzzy
 msgctxt "users per page (screen options)"
 msgid "Users"
-msgstr "Usuaris"
+msgstr "Tots els usuaris"
 
 #: wp-admin/options-discussion.php:12 wp-admin/options-general.php:13
 #: wp-admin/options-media.php:13 wp-admin/options-permalink.php:13
@@ -5744,8 +5785,9 @@ msgstr "Versió %s"
 #: wp-admin/includes/class-wp-themes-list-table.php:194
 #: wp-admin/theme-install.php:215 wp-admin/theme-install.php:243
 #: wp-admin/themes.php:204 wp-admin/themes.php:285 wp-admin/themes.php:334
+#, fuzzy
 msgid "By %s"
-msgstr "Per %s"
+msgstr "Per %s."
 
 #: wp-admin/user-new.php:231
 msgid "User added."
@@ -5801,8 +5843,8 @@ msgstr "Rol"
 msgctxt "users"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] "Total <span class=\"count\">(%s)</span>"
-msgstr[1] "Total <span class=\"count\">(%s)</span>"
+msgstr[0] "Tots <span class=\"count\">(%s)</span>"
+msgstr[1] "Tots <span class=\"count\">(%s)</span>"
 
 #: wp-admin/comment.php:57 wp-admin/custom-background.php:149
 #: wp-admin/custom-header.php:190 wp-admin/edit-comments.php:132
@@ -5893,11 +5935,12 @@ msgid "Title and Post Editor"
 msgstr "Títol i editor de l'article"
 
 #: wp-admin/edit-tags.php:235
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Posts_Tags_Screen\" target=\"_blank"
 "\">Documentation on Tags</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Posts_Tags_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Posts_Tags_Screen\" target=\"_blank"
 "\">Documentació sobre les etiquetes</a> (en anglès)"
 
 #: wp-admin/options-reading.php:151
@@ -5969,7 +6012,6 @@ msgstr ""
 msgid "Full Width Template"
 msgstr "Plantilla d'amplària completa"
 
-# MODIFICAT XTEC
 #: wp-admin/includes/theme.php:222
 msgid "Post Formats"
 msgstr "Formats dels articles"
@@ -6102,8 +6144,9 @@ msgid "Add:"
 msgstr "Afegeix:"
 
 #: wp-admin/press-this.php:288
+#, fuzzy
 msgid "Add Photos"
-msgstr "Afegeix fotos"
+msgstr "Afegeix temes"
 
 #: wp-admin/menu.php:213
 msgid "Available Tools"
@@ -6125,8 +6168,9 @@ msgid "Translators"
 msgstr "Traductors"
 
 #: wp-admin/credits.php:107
+#, fuzzy
 msgid "http://codex.wordpress.org/Contributing_to_WordPress"
-msgstr "http://codex.wordpress.org/Contributing_to_WordPress"
+msgstr "https://codex.wordpress.org/Contributing_to_WordPress"
 
 #: wp-admin/freedoms.php:45
 msgid ""
@@ -6336,6 +6380,7 @@ msgstr "Imatges penjades"
 
 # MODIFICAT XTEC
 #: wp-admin/media-new.php:56
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Uploading Media Files</a>"
@@ -6344,56 +6389,63 @@ msgstr ""
 "\">Documentació sobre la càrrega de fitxers multimèdia</a> (en anglès)"
 
 #: wp-admin/user-edit.php:53
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Users_Your_Profile_Screen\" target="
 "\"_blank\">Documentation on User Profiles</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Users_Your_Profile_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Users_Your_Profile_Screen\" target="
 "\"_blank\">Documentació sobre els perfils de l'usuari</a> (en anglès)"
 
 #: wp-admin/options-permalink.php:44
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_Permalinks_Screen\" target="
 "\"_blank\">Documentation on Permalinks Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Settings_Permalinks_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Settings_Permalinks_Screen\" target="
 "\"_blank\">Documentació sobre la configuració dels enllaços permanents</a> "
 "(en anglès)"
 
 #: wp-admin/edit-tags.php:231
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Posts_Categories_Screen\" target="
 "\"_blank\">Documentation on Categories</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Posts_Categories_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Posts_Categories_Screen\" target="
 "\"_blank\">Documentació sobre les categories</a> (en anglès)"
 
 #: wp-admin/edit-tags.php:233
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Links_Link_Categories_Screen\" target="
 "\"_blank\">Documentation on Link Categories</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Links_Link_Categories_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Links_Link_Categories_Screen\" target="
 "\"_blank\">Documentació sobre les categories dels enllaços</a> (en anglès)"
 
 #: wp-admin/widgets.php:73
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Appearance_Widgets_Screen\" target="
 "\"_blank\">Documentation on Widgets</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Appearance_Widgets_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Appearance_Widgets_Screen\" target="
 "\"_blank\">Documentació sobre els ginys</a> (en anglès)"
 
 #: wp-admin/nav-menus.php:544
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Appearance_Menus_Screen\" target="
 "\"_blank\">Documentation on Menus</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Appearance_Menus_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Appearance_Menus_Screen\" target="
 "\"_blank\">Documentació sobre els menús</a> (en anglès)"
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:325 wp-admin/media.php:83
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" "
 "target=\"_blank\">Documentation on Edit Media</a>"
@@ -6403,57 +6455,64 @@ msgstr ""
 "anglès)"
 
 #: wp-admin/edit-form-advanced.php:309
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages\" "
 "target=\"_blank\">Documentation on Editing Pages</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages\" "
-"target=\"_blank\">Documentació sobre l'edició de pàgines</a> (en anglès)"
+"<a href=\"https://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages"
+"\" target=\"_blank\">Documentació sobre l'edició de pàgines</a> (en anglès)"
 
 # MODIFICAT XTEC
 #: wp-admin/upload.php:51 wp-admin/upload.php:219
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank"
 "\">Documentation on Media Library</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank"
-"\">Documentació sobre la biblioteca d'elements multimèdia</a> (en anglès)"
+"<a href=\"http://codex.wordpress.org/Tools_Screen\" target=\"_blank"
+"\">Documentació sobre les eines</a> (en anglès)"
 
 #: wp-admin/tools.php:28
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Tools_Screen\" target=\"_blank"
 "\">Documentation on Tools</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Tools_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Tools_Screen\" target=\"_blank"
 "\">Documentació sobre les eines</a> (en anglès)"
 
 #: wp-admin/custom-header.php:191
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Appearance_Header_Screen\" target="
 "\"_blank\">Documentation on Custom Header</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Appearance_Header_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Appearance_Header_Screen\" target="
 "\"_blank\">Documentació sobre la personalització de la capçalera</a> (en "
 "anglès)"
 
 #: wp-admin/export.php:55
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Tools_Export_Screen\" target=\"_blank"
 "\">Documentation on Export</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Tools_Export_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Tools_Export_Screen\" target=\"_blank"
 "\">Documentació sobre l'exportació</a> (en anglès)"
 
 #: wp-admin/options-general.php:79
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_General_Screen\" target="
 "\"_blank\">Documentation on General Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Settings_General_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Settings_General_Screen\" target="
 "\"_blank\">Documentació sobre la configuració general</a> (en anglès)"
 
 # MODIFICAT XTEC
 #: wp-admin/options-media.php:34
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_Media_Screen\" target=\"_blank"
 "\">Documentation on Media Settings</a>"
@@ -6462,15 +6521,17 @@ msgstr ""
 "\">Documentació sobre els elements multimèdia</a> (en anglès)"
 
 #: wp-admin/update-core.php:489
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Dashboard_Updates_Screen\" target="
 "\"_blank\">Documentation on Updating WordPress</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Dashboard_Updates_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Dashboard_Updates_Screen\" target="
 "\"_blank\">Documentació sobre l'actualització del WordPress</a> (en anglès)"
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:293
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Posts_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Writing and Editing Posts</a>"
@@ -6479,55 +6540,62 @@ msgstr ""
 "\">Documentació sobre l'escriptura i edició d'articles</a> (en anglès)"
 
 #: wp-admin/comment.php:58 wp-admin/edit-comments.php:133
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Administration_Screens#Comments\" "
 "target=\"_blank\">Documentation on Comments</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Administration_Screens#Comments\" "
+"<a href=\"https://codex.wordpress.org/Administration_Screens#Comments\" "
 "target=\"_blank\">Documentació sobre els comentaris</a> (en anglès)"
 
 #: wp-admin/users.php:61
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Users_Screen\" target=\"_blank"
 "\">Documentation on Managing Users</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Users_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Users_Screen\" target=\"_blank"
 "\">Documentació sobre la gestió d'usuaris</a> (en anglès)"
 
 #: wp-admin/options-discussion.php:26
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_Discussion_Screen\" target="
 "\"_blank\">Documentation on Discussion Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Settings_Discussion_Screen\" target="
-"\"_blank\">Documentació sobre la configuració de la discussió</a> (en anglès)"
+"<a href=\"https://codex.wordpress.org/Settings_Discussion_Screen\" target="
+"\"_blank\">Documentació sobre la configuració dels debats</a> (en anglès)"
 
 #: wp-admin/edit-link-form.php:65
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Links_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Creating Links</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Links_Add_New_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Links_Add_New_Screen\" target=\"_blank"
 "\">Documentació sobre la creació d'enllaços</a> (en anglès)"
 
 #: wp-admin/options-reading.php:71
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_Reading_Screen\" target="
 "\"_blank\">Documentation on Reading Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Settings_Reading_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Settings_Reading_Screen\" target="
 "\"_blank\">Documentació sobre la configuració de lectura</a> (en anglès)"
 
 #: wp-admin/plugin-install.php:66
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Plugins_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Installing Plugins</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Plugins_Add_New_Screen\" target=\"_blank"
-"\">Documentació sobre la instal·lació d'extensions</a> (en anglès)"
+"<a href=\"https://codex.wordpress.org/Plugins_Add_New_Screen\" target="
+"\"_blank\">Documentació sobre la instal·lació d'extensions</a> (en anglès)"
 
 # MODIFICAT XTEC
 #: wp-admin/edit.php:205
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Posts_Screen\" target=\"_blank"
 "\">Documentation on Managing Posts</a>"
@@ -6536,75 +6604,84 @@ msgstr ""
 "\">Documentació sobre la gestió d'articles</a> (en anglès)"
 
 #: wp-admin/index.php:88
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Dashboard_Screen\" target=\"_blank"
 "\">Documentation on Dashboard</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Dashboard_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Dashboard_Screen\" target=\"_blank"
 "\">Documentació sobre el tauler</a> (en anglès)"
 
 #: wp-admin/plugin-editor.php:140
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Plugins_Editor_Screen\" target=\"_blank"
 "\">Documentation on Editing Plugins</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Plugins_Editor_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Plugins_Editor_Screen\" target=\"_blank"
 "\">Documentació sobre l'edició d'extensions</a> (en anglès)"
 
 #: wp-admin/custom-background.php:150
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Appearance_Background_Screen\" target="
 "\"_blank\">Documentation on Custom Background</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Appearance_Background_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Appearance_Background_Screen\" target="
 "\"_blank\">Documentació sobre el fons personalitzat</a> (en anglès)"
 
 #: wp-admin/import.php:28
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Tools_Import_Screen\" target=\"_blank"
 "\">Documentation on Import</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Tools_Import_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Tools_Import_Screen\" target=\"_blank"
 "\">Documentació sobre la importació</a> (en anglès)"
 
 #: wp-admin/edit.php:226
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Pages_Screen\" target=\"_blank"
 "\">Documentation on Managing Pages</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Pages_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Pages_Screen\" target=\"_blank"
 "\">Documentació sobre la gestió de pàgines</a> (en anglès)"
 
 #: wp-admin/edit-form-advanced.php:308
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Pages_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Adding New Pages</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Pages_Add_New_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Pages_Add_New_Screen\" target=\"_blank"
 "\">Documentació sobre la creació de pàgines noves</a> (en anglès)"
 
 #: wp-admin/options-writing.php:51
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Settings_Writing_Screen\" target="
 "\"_blank\">Documentation on Writing Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Settings_Writing_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Settings_Writing_Screen\" target="
 "\"_blank\">Documentació sobre la configuració d'escriptura</a> (en anglès)"
 
 #: wp-admin/link-manager.php:60
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Links_Screen\" target=\"_blank"
 "\">Documentation on Managing Links</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Links_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Links_Screen\" target=\"_blank"
 "\">Documentació sobre la gestió d'enllaços</a> (en anglès)"
 
 #: wp-admin/user-new.php:184
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Users_Add_New_Screen\" target=\"_blank"
 "\">Documentation on Adding New Users</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Users_Add_New_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Users_Add_New_Screen\" target=\"_blank"
 "\">Documentació sobre la creació d'usuaris nous</a> (en anglès)"
 
 #: wp-admin/includes/theme.php:195 wp-admin/includes/theme.php:256
@@ -6613,10 +6690,11 @@ msgid "Layout"
 msgstr "Format"
 
 #: wp-admin/users.php:223
+#, fuzzy
 msgid "You have specified this user for deletion:"
 msgid_plural "You have specified these users for deletion:"
 msgstr[0] "Heu especificat aquest usuari per suprimir:"
-msgstr[1] "Heu especificat aquests usuaris per suprimir:"
+msgstr[1] "Heu especificat aquest usuari per suprimir:"
 
 #: wp-admin/user-edit.php:204
 msgid "&larr; Back to Users"
@@ -6633,15 +6711,16 @@ msgstr "Plantilla de la pàgina %s"
 
 # MODIFICAT XTEC
 #: wp-admin/press-this.php:514
+#, fuzzy
 msgid "Post Format:"
 msgstr "Format de l'article:"
 
 #: wp-admin/plugins.php:270
+#, fuzzy
 msgid "This plugin may be active on other sites in the network."
 msgid_plural "These plugins may be active on other sites in the network."
-msgstr[0] "Aquesta extensió es pot activar als altres llocs webs de la xarxa."
-msgstr[1] ""
-"Aquestes extensions es poden activar als altres llocs webs de la xarxa."
+msgstr[0] "Aquesta extensió es pot activar als altres llocs web de la xarxa."
+msgstr[1] "Aquesta extensió es pot activar als altres llocs web de la xarxa."
 
 #: wp-admin/plugins.php:377
 msgid "You cannot delete a plugin while it is active on the main site."
@@ -6671,10 +6750,12 @@ msgid "Add New User"
 msgstr "Afegeix"
 
 #: wp-admin/user-new.php:433
+#, fuzzy
 msgid "Add New User "
 msgstr "Afegeix"
 
 #: wp-admin/user-new.php:328
+#, fuzzy
 msgid "Add Existing User "
 msgstr "Afegeix un usuari existent"
 
@@ -6684,7 +6765,7 @@ msgid ""
 "network."
 msgstr ""
 "Qualsevol edició en els fitxers d'aquesta pantalla es farà efectiva en tots "
-"els llocs webs de la xarxa."
+"els llocs web de la xarxa."
 
 #: wp-admin/user-new.php:240
 msgctxt "user"
@@ -6712,11 +6793,12 @@ msgstr ""
 "finestra nova amb totes aquestes opcions."
 
 #: wp-admin/plugin-editor.php:141
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Writing_a_Plugin\" target=\"_blank"
 "\">Documentation on Writing Plugins</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Writing_a_Plugin\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Writing_a_Plugin\" target=\"_blank"
 "\">Documentació sobre com escriure extensions</a> (en anglès)"
 
 #: wp-admin/index.php:65
@@ -6739,11 +6821,12 @@ msgstr ""
 "depenent del seu rol. "
 
 #: wp-admin/options-permalink.php:45
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Using_Permalinks\" target=\"_blank"
 "\">Documentation on Using Permalinks</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Using_Permalinks\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Using_Permalinks\" target=\"_blank"
 "\">Documentació sobre com fer servir els enllaços permanents</a> (en anglès)"
 
 #: wp-admin/plugin-editor.php:134
@@ -6760,12 +6843,13 @@ msgstr ""
 "funcionen, doneu un cop d'ull als enllaços següents."
 
 #: wp-admin/users.php:62
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Roles_and_Capabilities\" target=\"_blank"
 "\">Descriptions of Roles and Capabilities</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Roles_and_Capabilities\" target=\"_blank"
-"\">Descripció dels rols i les capacitats</a>  (en anglès)"
+"<a href=\"https://codex.wordpress.org/Roles_and_Capabilities\" target="
+"\"_blank\">Descripció dels rols i les capacitats</a>  (en anglès)"
 
 #: wp-admin/includes/upgrade.php:219
 msgid "sample-page"
@@ -6975,11 +7059,12 @@ msgid "%1$s &#8212; WordPress"
 msgstr "%1$s &#8212; WordPress"
 
 #: wp-admin/user-edit.php:270
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
 "\">More information</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
 "\">Més informació</a> (en anglès)"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:309
@@ -6992,19 +7077,21 @@ msgid "Submitted on <a href=\"%1$s\">%2$s at %3$s</a>"
 msgstr "Tramès el <a href=\"%1$s\">%2$s a les %3$s</a>"
 
 #: wp-admin/edit-comments.php:134
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Comment_Spam\" target=\"_blank"
 "\">Documentation on Comment Spam</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Comment_Spam\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Comment_Spam\" target=\"_blank"
 "\">Documentació sobre els comentaris no desitjat</a> (en anglès)"
 
 #: wp-admin/edit-comments.php:135
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
 "\">Documentation on Keyboard Shortcuts</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank"
 "\">Documentació sobre les dreceres de teclat</a> (en anglès)"
 
 #: wp-admin/widgets.php:53
@@ -7086,7 +7173,7 @@ msgid ""
 "files will be lost. Please consider using <a href=\"%s\">child themes</a> "
 "for modifications."
 msgstr ""
-"<strong>Tingueu en compte:</strong> Qualsevol personalització que hàgeu fet "
+"<strong>Tingueu en compte:</strong> Qualsevol personalització que hàgiu fet "
 "en els fitxers del tema es perdran. Considereu l'opció de fer servir <a href="
 "\"%s\">temes fills</a> per a les modificacions."
 
@@ -7123,12 +7210,13 @@ msgstr ""
 "en alguns servidors, així que sigueu pacients."
 
 #: wp-admin/options-general.php:288
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Formatting_Date_and_Time"
 "\">Documentation on date and time formatting</a>."
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Formatting_Date_and_Time\">Documentació "
-"sobre el format de la data i hora</a> (en anglès)."
+"<a href=\"https://codex.wordpress.org/Formatting_Date_and_Time"
+"\">Documentació sobre el format de la data i hora</a> (en anglès)."
 
 #: wp-admin/includes/user.php:437
 msgid ""
@@ -7198,8 +7286,9 @@ msgstr[0] "1 element"
 msgstr[1] "%s elements"
 
 #: wp-admin/includes/class-wp-users-list-table.php:123
+#, fuzzy
 msgid "No matching users were found."
-msgstr "No s'ha trobat cap usuari."
+msgstr "No s'han trobat extensions correctes."
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:137
 msgid "No themes match your request."
@@ -7234,16 +7323,17 @@ msgstr[0] "%s usuari"
 msgstr[1] "%s usuaris"
 
 #: wp-admin/update-core.php:166
+#, fuzzy
 msgid ""
 "<strong>Important:</strong> before updating, please <a href=\"http://codex."
 "wordpress.org/WordPress_Backups\">back up your database and files</a>. For "
 "help with updates, visit the <a href=\"http://codex.wordpress.org/"
 "Updating_WordPress\">Updating WordPress</a> Codex page."
 msgstr ""
-"<strong>Important:</strong> abans d'actualitzar, <a href=\"http://codex."
+"<strong>Important:</strong> abans d'actualitzar, <a href=\"https://codex."
 "wordpress.org/WordPress_Backups\">feu una còpia de seguretat dels fitxers i "
 "de la base de dades</a> (en anglès). Per aconseguir ajuda amb les "
-"actualitzacions, visiteu la pàgina del Codex sobre <a href=\"http://codex."
+"actualitzacions, visiteu la pàgina del Codex sobre <a href=\"https://codex."
 "wordpress.org/Updating_WordPress\">actualitzacions del WordPress</a> (en "
 "anglès)."
 
@@ -7262,12 +7352,13 @@ msgstr ""
 "fer comentaris.)"
 
 #: wp-admin/update-core.php:67
+#, fuzzy
 msgid ""
 "You can update to <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %2$s</a> automatically or download the package and install it "
 "manually:"
 msgstr ""
-"Podeu actualitzar el <a href=\"http://codex.wordpress.org/Version_%1$s"
+"Podeu actualitzar el <a href=\"https://codex.wordpress.org/Version_%1$s"
 "\">WordPress %2$s</a> automàticament o baixar el paquet i instal·lar-lo "
 "manualment:"
 
@@ -7325,19 +7416,22 @@ msgid "Create a New Site"
 msgstr "Crea un lloc web nou"
 
 #: wp-admin/plugins.php:340
+#, fuzzy
 msgctxt "plugins per page (screen options)"
 msgid "Plugins"
-msgstr "Extensions"
+msgstr "Extensió"
 
 #: wp-admin/upload.php:194
+#, fuzzy
 msgctxt "items per page (screen options)"
 msgid "Media items"
-msgstr "Elements multimèdia"
+msgstr "Opcions dels mèdia"
 
 #: wp-admin/edit-comments.php:112
+#, fuzzy
 msgctxt "comments per page (screen options)"
 msgid "Comments"
-msgstr "Comentaris"
+msgstr "Comentari"
 
 #: wp-admin/custom-header.php:573
 msgid ""
@@ -7348,12 +7442,13 @@ msgstr ""
 "s'usaran com estan."
 
 #: wp-admin/theme-install.php:103
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Using_Themes#Adding_New_Themes\" target="
 "\"_blank\">Documentation on Adding New Themes</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Using_Themes#Adding_New_Themes\" target="
-"\"_blank\">Documentació sobre com afegir nous temes</a> (en anglès)"
+"<a href=\"https://codex.wordpress.org/Using_Themes#Adding_New_Themes\" "
+"target=\"_blank\">Documentació sobre com afegir nous temes</a> (en anglès)"
 
 #: wp-admin/custom-header.php:833
 msgid "Crop and Publish"
@@ -7390,44 +7485,49 @@ msgstr ""
 "relacionat amb els autors i propietaris dels blocs amb què enllaceu."
 
 #: wp-admin/plugins.php:359
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Managing_Plugins#Plugin_Management\" "
 "target=\"_blank\">Documentation on Managing Plugins</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Managing_Plugins#Plugin_Management\" "
+"<a href=\"https://codex.wordpress.org/Managing_Plugins#Plugin_Management\" "
 "target=\"_blank\">Documentació sobre la gestió de les extensions</a> (en "
 "anglès) "
 
 #: wp-admin/theme-editor.php:42
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Template_Tags\" target=\"_blank"
 "\">Documentation on Template Tags</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Template_Tags\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Template_Tags\" target=\"_blank"
 "\">Documentació sobre les etiquetes de plantilla</a> (en anglès)"
 
 #: wp-admin/theme-editor.php:41
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Editing_Files\" target=\"_blank"
 "\">Documentation on Editing Files</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Editing_Files\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Editing_Files\" target=\"_blank"
 "\">Documentació sobre l'edició de fitxers</a> (en anglès)"
 
 #: wp-admin/theme-editor.php:40 wp-admin/themes.php:85
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Using_Themes\" target=\"_blank"
 "\">Documentation on Using Themes</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Using_Themes\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Using_Themes\" target=\"_blank"
 "\">Documentació sobre l'ús dels temes</a> (en anglès)"
 
 #: wp-admin/theme-editor.php:39
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Theme_Development\" target=\"_blank"
 "\">Documentation on Theme Development</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Theme_Development\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Theme_Development\" target=\"_blank"
 "\">Documentació sobre el desenvolupament dels temes</a> (en anglès)"
 
 #: wp-admin/includes/file.php:1086
@@ -7516,7 +7616,7 @@ msgid ""
 msgstr ""
 "Alguns temes mostren per defecte alguns ginys fins que editeu la barra "
 "lateral, però no es mostren automàticament a l'eina de gestió de la barra "
-"lateral. Una vegada feu el primer canvi de giny, podeu afegir altre cop els "
+"lateral. Una vegada féu el primer canvi de giny, podeu afegir altre cop els "
 "ginys per defecte des de l'àrea de ginys disponibles."
 
 #: wp-admin/widgets.php:59
@@ -7589,9 +7689,9 @@ msgid ""
 "theme&#8217;s folder via FTP into your <code>/wp-content/themes</code> "
 "directory."
 msgstr ""
-"Podeu penjar un tema manualment si ja heu descarregat l'axiu ZIP al vostre "
-"ordinador (assegureu-vos d'haver-ho fet d'una font de confiança). També "
-"podeu fer-ho a la manera antiga i copiar via FTP la carpeta d'un tema "
+"Podeu penjar un tema manualment si ja heu descarregat el fitxer ZIP al "
+"vostre ordinador (assegureu-vos d'haver-ho fet d'una font de confiança). "
+"També podeu fer-ho a la manera antiga i copiar via FTP la carpeta d'un tema "
 "descarregat al directori <code>/wp-content/themes</code>."
 
 #: wp-admin/user-edit.php:39
@@ -7619,7 +7719,7 @@ msgstr ""
 "en fer que una sigui &#8220;pare&#8221; de l'altra, creant un grup de "
 "pàgines."
 
-# MODFIICAT XTEC
+# MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:361
 msgid ""
 "<strong>Send Trackbacks</strong> - Trackbacks are a way to notify legacy "
@@ -7704,7 +7804,7 @@ msgstr ""
 msgid ""
 "You can also create posts with the <a href=\"%s\">Press This bookmarklet</a>."
 msgstr ""
-"Podeu també crear articles amb el bookmarklet <a href=\"%s\">Premeu això</a>."
+"Podeu també crear entrades amb el bookmarklet <a href=\"%s\">Premeu això</a>."
 
 # MODIFICAT XTEC
 #: wp-admin/user-edit.php:41
@@ -8016,7 +8116,7 @@ msgstr ""
 
 #: wp-admin/theme-editor.php:31
 msgid "After typing in your edits, click Update File."
-msgstr "Una vegada feu els canvis, feu clic a Actualitza el fitxer."
+msgstr "Una vegada feu els canvis, féu clic a Actualitza el fitxer."
 
 #: wp-admin/includes/meta-boxes.php:717
 msgid "(no parent)"
@@ -8231,8 +8331,8 @@ msgstr ""
 "visibilitat inclou opcions per protegir amb contrasenya un article o fer-lo "
 "romandre a dalt de tot del bloc indefinidament (fixat). Publica "
 "(immediatament) us permet definir una data i hora futura o passada per tal "
-"de poder programar un article i que es publiqui en el futur o retrocedir una "
-"araticle."
+"de poder programar un article i que es publiqui en el futur o retrocedir un "
+"article."
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:350
@@ -8386,6 +8486,7 @@ msgstr ""
 msgid "Install the RSS importer to import posts from an RSS feed."
 msgstr "Instal·la l'importador de RSS per importar articles d'un canal RSS."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/import.php:183
 msgid "Install the blogroll importer to import links in OPML format."
 msgstr ""
@@ -8440,24 +8541,28 @@ msgid "Clear"
 msgstr "Neteja"
 
 #: wp-admin/edit-tag-form.php:116 wp-admin/edit-tags.php:502
+#, fuzzy
 msgctxt "Taxonomy Description"
 msgid "Description"
 msgstr "Descripció"
 
 #: wp-admin/edit-tag-form.php:90 wp-admin/edit-tags.php:455
+#, fuzzy
 msgctxt "Taxonomy Slug"
 msgid "Slug"
-msgstr "URL"
+msgstr "Resum"
 
 #: wp-admin/edit-tag-form.php:84 wp-admin/edit-tags.php:449
+#, fuzzy
 msgctxt "Taxonomy Name"
 msgid "Name"
 msgstr "Nom"
 
 #: wp-admin/edit-tag-form.php:106 wp-admin/edit-tags.php:462
+#, fuzzy
 msgctxt "Taxonomy Parent"
 msgid "Parent"
-msgstr "Pare"
+msgstr "pare/mare"
 
 #: wp-admin/edit-form-comment.php:90
 msgctxt "adjective"
@@ -8599,6 +8704,7 @@ msgid "No sites found."
 msgstr "No s'ha trobat cap lloc web."
 
 #: wp-admin/includes/meta-boxes.php:550
+#, fuzzy
 msgid ""
 "Trackbacks are a way to notify legacy blog systems that you&#8217;ve linked "
 "to them. If you link other WordPress sites they&#8217;ll be notified "
@@ -8606,12 +8712,11 @@ msgid ""
 "Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">pingbacks</"
 "a>, no other action necessary."
 msgstr ""
-"Els retroenllaços són una forma de notificar a sistemes de bloc tradicionals "
-"que els heu enllaçat. Si enllaceu altres llocs web gestionats amb el "
-"WordPress, aquests seran notificats automàticament mitjançant <a href="
-"\"http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments\" "
-"target=\"_blank\">retropings</a> (en anglès), sense que calgui que feu res "
-"més."
+"Els retroenllaços són una manera de notificar als sistemes de blog antics "
+"que els heu enllaçat. Si enllaceu altres llocs de WordPress, seran "
+"notificats automàticament utilitzant <a href=\"https://codex.wordpress.org/"
+"Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">retropings</"
+"a>, no necessiteu fer res més."
 
 #: wp-admin/includes/post.php:649
 msgid "You are not allowed to create pages on this site."
@@ -8638,7 +8743,7 @@ msgstr "No teniu prou permisos per gestionar les extensions d'aquest lloc web."
 #: wp-admin/update.php:232
 msgid "You do not have sufficient permissions to install themes on this site."
 msgstr ""
-"No teniu els permisos necessaris per insta·lar els temes en aquest lloc web."
+"No teniu els permisos necessaris per instal·lar els temes en aquest lloc web."
 
 #: wp-admin/theme-editor.php:18
 msgid "You do not have sufficient permissions to edit templates for this site."
@@ -8732,12 +8837,13 @@ msgstr ""
 "%1$s</code>) per al domini."
 
 #: wp-admin/install.php:121
+#, fuzzy
 msgid ""
 "Usernames can have only alphanumeric characters, spaces, underscores, "
 "hyphens, periods and the @ symbol."
 msgstr ""
-"Els noms d'usuari solament han de tenir caràcters alfanumèrics, espais, "
-"guions, guions baixos, punts i el símbol @."
+"Els noms d'usuari solament poden tenir caràcters alfanumèrics, espais, "
+"guions baixos, guions, punts, i el símbol @."
 
 #: wp-admin/nav-menus.php:234
 msgid "The menu item has been successfully deleted."
@@ -8880,12 +8986,13 @@ msgstr ""
 "extensions&#8221;."
 
 #: wp-admin/options.php:171
+#, fuzzy
 msgid ""
 "The <code>%1$s</code> setting is unregistered. Unregistered settings are "
 "deprecated. See http://codex.wordpress.org/Settings_API"
 msgstr ""
 "El paràmetre <code>%1$s</code> no està registrat. Els paràmetres no "
-"registrats són obsolets. Llegiu http://codex.wordpress.org/Settings_API (en "
+"registrats són obsolets. Llegiu https://codex.wordpress.org/Settings_API (en "
 "anglès)"
 
 #: wp-admin/custom-background.php:283
@@ -9010,14 +9117,15 @@ msgid "You do not have sufficient permissions to manage plugins for this site."
 msgstr "No teniu prou permisos per gestionar les extensions d'aquest lloc."
 
 #: wp-admin/options-general.php:110
+#, fuzzy
 msgid ""
 "Enter the address here if you want your site homepage <a href=\"http://codex."
 "wordpress.org/Giving_WordPress_Its_Own_Directory\">to be different from the "
 "directory</a> you installed WordPress."
 msgstr ""
-"Introduïu l'adreça aquí si voleu que la pàgina principal del lloc <a href="
-"\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">sigui "
-"diferent del directori</a> en el qual heu instal·lat el WordPress."
+"Introdueix l'adreça aquí si <a href=\"https://codex.wordpress.org/"
+"Giving_WordPress_Its_Own_Directory\">vols que la pàgina d'inici sigui "
+"diferent del directori on has instal·lat el WordPress.</a>"
 
 #: wp-admin/options-general.php:100
 msgid "In a few words, explain what this site is about."
@@ -9092,7 +9200,7 @@ msgstr "Heu de proporcionar un nom de domini."
 
 #: wp-admin/includes/schema.php:868
 msgid "You must provide a name for your network of sites."
-msgstr "Heu de posar un nom per a la vostra xarxa de llocs webs."
+msgstr "Heu de posar un nom per a la vostra xarxa de llocs web."
 
 #: wp-admin/includes/schema.php:872
 msgid "The network already exists."
@@ -9139,6 +9247,7 @@ msgid "User already exists. Password inherited."
 msgstr "L'usuari ja existeix. Contrasenya heretada."
 
 #: wp-admin/update-core.php:65 wp-admin/upgrade.php:76
+#, fuzzy
 msgid ""
 "You cannot update because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running "
@@ -9163,6 +9272,7 @@ msgid "Update Plugins"
 msgstr "Actualitza les extensions"
 
 #: wp-admin/update-core.php:63 wp-admin/upgrade.php:74
+#, fuzzy
 msgid ""
 "You cannot update because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires PHP version %2$s or higher. You are running "
@@ -9172,6 +9282,7 @@ msgstr ""
 "superior del PHP. Esteu executant la versió %3$s."
 
 #: wp-admin/update-core.php:61 wp-admin/upgrade.php:72
+#, fuzzy
 msgid ""
 "You cannot update because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version "
@@ -9212,16 +9323,18 @@ msgstr ""
 "dades</strong>)"
 
 #: wp-admin/plugins.php:272
+#, fuzzy
 msgid "You are about to remove the following plugin:"
 msgid_plural "You are about to remove the following plugins:"
 msgstr[0] "Ara eliminareu l'extensió següent:"
-msgstr[1] "Ara eliminareu les extensions següents:"
+msgstr[1] "Ara eliminareu l'extensió següent:"
 
 #: wp-admin/plugins.php:267
+#, fuzzy
 msgid "Delete Plugin"
 msgid_plural "Delete Plugins"
 msgstr[0] "Elimina l'extensió"
-msgstr[1] "Elimina les extensions"
+msgstr[1] "Elimina l'extensió"
 
 #: wp-admin/plugins.php:290
 msgid "Are you sure you wish to delete these files and data?"
@@ -9321,6 +9434,7 @@ msgid "Advanced caching plugin."
 msgstr "Extensió de memòria cau avançada."
 
 #: wp-admin/install.php:172
+#, fuzzy
 msgid ""
 "You cannot install because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running "
@@ -9330,6 +9444,7 @@ msgstr ""
 "superior de MySQL. Esteu executant la versió %3$s."
 
 #: wp-admin/install.php:170
+#, fuzzy
 msgid ""
 "You cannot install because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires PHP version %2$s or higher. You are running "
@@ -9339,22 +9454,25 @@ msgstr ""
 "superior del PHP. Esteu executant la versió %3$s."
 
 #: wp-admin/includes/update.php:210
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> is "
 "available! Please notify the site administrator."
 msgstr ""
-"El <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> és "
-"disponible! Aviseu a l'administració del web."
+"El <a href=\"https://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> "
+"és disponible! Aviseu a l'administració del web."
 
 #: wp-admin/includes/update.php:208
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> is "
 "available! <a href=\"%2$s\">Please update now</a>."
 msgstr ""
-"El <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> és "
-"disponible! <a href=\"%2$s\">Actualitzeu ara</a>."
+"El <a href=\"https://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> "
+"és disponible! <a href=\"%2$s\">Actualitzeu ara</a>."
 
 #: wp-admin/install.php:168
+#, fuzzy
 msgid ""
 "You cannot install because <a href=\"http://codex.wordpress.org/Version_%1$s"
 "\">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version "
@@ -9625,8 +9743,8 @@ msgid ""
 "Welcome to WordPress. This is your first post. Edit or delete it, then start "
 "blogging!"
 msgstr ""
-"Us donem la benvinguda al WordPress. Aquest és el vostre primer article. "
-"Editeu-lo o suprimiu-lo, i després comenceu a publicar!"
+"Us donem la benvinguda al WordPress. Aquesta és la vostra primera entrada. "
+"Editeu-la o suprimiu-la, i després comenceu a publicar!"
 
 #: wp-admin/includes/upgrade.php:165
 msgid "Hello world!"
@@ -9671,8 +9789,9 @@ msgid "<strong>ERROR</strong>: Please enter an e-mail address."
 msgstr "<strong>ERROR</strong>: Introdueix una adreça de correu electrònic."
 
 #: wp-admin/includes/deprecated.php:557
+#, fuzzy
 msgid "No matching users were found!"
-msgstr "No s'ha trobat cap usuari coincident."
+msgstr "No s'han trobat extensions correctes."
 
 #: wp-admin/install.php:70
 msgid "WordPress &rsaquo; Installation"
@@ -9755,8 +9874,9 @@ msgid "No links found."
 msgstr "No s'ha trobat cap enllaç."
 
 #: wp-admin/link-parse-opml.php:78
+#, fuzzy
 msgid "XML error: %1$s at line %2$s"
-msgstr "Error de XML: %1$s en la línia %2$s"
+msgstr "Error al xml: %1$s a la línia %2$s"
 
 #: wp-admin/link.php:109
 msgid "Link not found."
@@ -9818,7 +9938,7 @@ msgstr "Multimèdia adjunt actualitzat."
 # MODIFICAT XTEC
 #: wp-admin/media.php:116 wp-admin/media.php:125
 msgid "Update Media"
-msgstr "Actualitza el multimèdia"
+msgstr "Actualitza el Multimèdia"
 
 #: wp-admin/menu.php:64
 msgid "Library"
@@ -9932,7 +10052,7 @@ msgstr "No s'ha trobat cap usuari."
 
 #: wp-admin/edit-form-advanced.php:366 wp-admin/options-discussion.php:14
 msgid "Discussion Settings"
-msgstr "Opcions de discussió"
+msgstr "Opcions dels debats"
 
 # MODIFICAT XTEC
 #: wp-admin/options-discussion.php:41 wp-admin/options-discussion.php:42
@@ -10106,8 +10226,9 @@ msgstr ""
 "electrònic."
 
 #: wp-admin/options-discussion.php:218
+#, fuzzy
 msgid "Mystery Man"
-msgstr "Home Misteriós"
+msgstr "Persona misteriosa"
 
 #: wp-admin/options-discussion.php:219
 msgid "Blank"
@@ -10134,9 +10255,10 @@ msgid "General Settings"
 msgstr "Opcions generals"
 
 #: wp-admin/options-general.php:18
+#, fuzzy
 msgctxt "timezone date format"
 msgid "Y-m-d G:i:s"
-msgstr "d-m-Y G:i:s"
+msgstr "d/m/Y H:i:s"
 
 #: wp-admin/options-general.php:115
 msgid "This address is used for admin purposes, like new user notification."
@@ -10300,6 +10422,7 @@ msgid "Tag base"
 msgstr "Etiqueta base"
 
 #: wp-admin/options-permalink.php:266
+#, fuzzy
 msgid ""
 "If your <code>web.config</code> file were <a href=\"http://codex.wordpress."
 "org/Changing_File_Permissions\">writable</a>, we could do this "
@@ -10309,7 +10432,7 @@ msgid ""
 "<code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;"
 "rules&gt;</code> element in <code>web.config</code> file."
 msgstr ""
-"Si el fitxer <code>web.config</code> tingués <a href=\"http://codex."
+"Si el fitxer <code>web.config</code> tingués <a href=\"https://codex."
 "wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem "
 "fer-ho automàticament però no en té, així que aquesta és l'URL que hauríeu "
 "de tenir al fitxer <code>web.config</code>. Cliqueu en el camp i premeu "
@@ -10329,6 +10452,7 @@ msgstr ""
 "s'hagi desat."
 
 #: wp-admin/options-permalink.php:273
+#, fuzzy
 msgid ""
 "If the root directory of your site were <a href=\"http://codex.wordpress.org/"
 "Changing_File_Permissions\">writable</a>, we could do this automatically, "
@@ -10338,7 +10462,7 @@ msgid ""
 "<kbd>CTRL + a</kbd> to select all. Then insert this code into the <code>web."
 "config</code> file."
 msgstr ""
-"Si el directori arrel de la pàgina web tingués <a href=\"http://codex."
+"Si el directori arrel de la pàgina web tingués <a href=\"https://codex."
 "wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem "
 "fer-ho automàticament, però no els té, així que aquesta és la regla rewrite "
 "que hauríeu de tenir al vostre fitxer <code>web.config</code>. Creeu un "
@@ -10358,6 +10482,7 @@ msgstr ""
 "estat creat."
 
 #: wp-admin/options-permalink.php:283
+#, fuzzy
 msgid ""
 "If your <code>.htaccess</code> file were <a href=\"http://codex.wordpress."
 "org/Changing_File_Permissions\">writable</a>, we could do this "
@@ -10365,9 +10490,9 @@ msgid ""
 "should have in your <code>.htaccess</code> file. Click in the field and "
 "press <kbd>CTRL + a</kbd> to select all."
 msgstr ""
-"Si el fitxer <code>.htaccess</code> tingués <a href=\"http://codex.wordpress."
-"org/Changing_File_Permissions\">permís d'escriptura</a> podríem fer-ho "
-"automàticament però, com que no el té, aquestes són les regles de "
+"Si el fitxer <code>.htaccess</code> tingués <a href=\"https://codex."
+"wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem "
+"fer-ho automàticament però, com que no el té, aquestes són les regles de "
 "mod_rewrite que és recomanable que tingueu al teu fitxer <code>.htaccess</"
 "code>. Feu clic al camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot."
 
@@ -10416,7 +10541,7 @@ msgstr "Text complet"
 
 #: wp-admin/options-reading.php:139
 msgid "Summary"
-msgstr "Sumari"
+msgstr "Resum"
 
 #: wp-admin/options-reading.php:86
 msgid "Encoding for pages and feeds"
@@ -10496,6 +10621,7 @@ msgstr "Serveis d'actualització"
 
 # MODIFICAT XTEC
 #: wp-admin/options-writing.php:177
+#, fuzzy
 msgid ""
 "When you publish a new post, WordPress automatically notifies the following "
 "site update services. For more about this, see <a href=\"http://codex."
@@ -10574,13 +10700,14 @@ msgid "Update File"
 msgstr "Actualitza el fitxer"
 
 #: wp-admin/plugin-editor.php:265 wp-admin/theme-editor.php:222
+#, fuzzy
 msgid ""
 "You need to make this file writable before you can save your changes. See <a "
 "href=\"http://codex.wordpress.org/Changing_File_Permissions\">the Codex</a> "
 "for more information."
 msgstr ""
 "Heu de donar permís d'escriptura a aquest fitxer abans de desar els canvis. "
-"Llegiu <a href=\"http://codex.wordpress.org/Changing_File_Permissions\" "
+"Llegiu <a href=\"https://codex.wordpress.org/Changing_File_Permissions\" "
 "title=\"Llegiu més detalls sobre com donar permisos d'escriptura (en "
 "anglès)\">el Còdex (en anglès)</a> per a més informació."
 
@@ -10767,37 +10894,43 @@ msgid "Unknown post type."
 msgstr "Tipus d'article desconegut."
 
 #: wp-admin/press-this.php:125
+#, fuzzy
 msgid "Embed Code"
-msgstr "Incrusta codi"
+msgstr "Incrustació"
 
 #: wp-admin/press-this.php:128
+#, fuzzy
 msgid "Insert Video"
-msgstr "Insereix vídeo"
+msgstr "Insereix en l'entrada"
 
 #: wp-admin/press-this.php:154
+#, fuzzy
 msgid "Click to insert."
-msgstr "Clica per inserir."
+msgstr "Feu clic per alternar"
 
 #: wp-admin/press-this.php:227
+#, fuzzy
 msgid "Unable to retrieve images or no images on page."
-msgstr ""
-"No es poden descarregar les imatges o bé la pàgina no conté cap imatge."
+msgstr "No s'ha pogut crear una imatge nova."
 
 #: wp-admin/press-this.php:288
 msgid "click images to select"
 msgstr "feu clic per seleccionar imatges"
 
 #: wp-admin/press-this.php:288
+#, fuzzy
 msgid "Add from URL"
-msgstr "Afegeix des d'URL"
+msgstr "Des d'un URL"
 
 # MODIFICAT XTEC
 #: wp-admin/press-this.php:611
+#, fuzzy
 msgid "Your post has been saved."
 msgstr "El vostre article s'ha desat."
 
 # MODIFICAT XTEC
 #: wp-admin/press-this.php:612
+#, fuzzy
 msgid "View post"
 msgstr "Veure l'article"
 
@@ -10806,8 +10939,9 @@ msgid "Close Window"
 msgstr "Tanca la finestra"
 
 #: wp-admin/press-this.php:656 wp-admin/press-this.php:657
+#, fuzzy
 msgid "Insert an Image"
-msgstr "Insereix una imatge"
+msgstr "Reinicialitza la imatge"
 
 #: wp-admin/press-this.php:661
 msgid "Embed a Video"
@@ -10870,12 +11004,13 @@ msgid "Broken Themes"
 msgstr "Temes fets malbé"
 
 #: wp-admin/options-writing.php:117 wp-admin/tools.php:41
+#, fuzzy
 msgid ""
 "Press This is a bookmarklet: a little app that runs in your browser and lets "
 "you grab bits of the web."
 msgstr ""
-"\"Premeu això\" és un anomenat bookmarklet: una petita aplicació per al "
-"navegador que us facilita aplegar informacions del web."
+"«Press This» és una eina petita que us permet obtenir fragments de la xarxa "
+"i crear noves entrades fàcilment."
 
 # MODIFICAT XTEC
 #: wp-admin/options-writing.php:119 wp-admin/tools.php:44
@@ -11014,6 +11149,7 @@ msgstr[1] "%d adjunts tornats a adjuntar."
 
 # MODIFICAT XTEC
 #: wp-admin/upload.php:250
+#, fuzzy
 msgid "Media attachment permanently deleted."
 msgid_plural "%d media attachments permanently deleted."
 msgstr[0] "Multimèdia adjunt suprimit definitivament."
@@ -11021,6 +11157,7 @@ msgstr[1] "%d multimèdies adjunts suprimits definitivament."
 
 # MODIFICAT XTEC
 #: wp-admin/upload.php:255
+#, fuzzy
 msgid "Media attachment moved to the trash."
 msgid_plural "%d media attachments moved to the trash."
 msgstr[0] "Multimèdia adjunt mogut a la paperera."
@@ -11028,6 +11165,7 @@ msgstr[1] "%d multimèdies adjunts moguts a la paperera."
 
 # MODIFICAT XTEC
 #: wp-admin/upload.php:261
+#, fuzzy
 msgid "Media attachment restored from the trash."
 msgid_plural "%d media attachments restored from the trash."
 msgstr[0] "Multimèdia adjunt restaurat des de la paperera."
@@ -11245,6 +11383,7 @@ msgid "Inactive Widgets"
 msgstr "Ginys inactius"
 
 #: wp-admin/widgets.php:78
+#, fuzzy
 msgid ""
 "The theme you are currently using isn&#8217;t widget-aware, meaning that it "
 "has no sidebars that you are able to change. For information on making your "
@@ -11253,7 +11392,7 @@ msgid ""
 msgstr ""
 "El tema que esteu utilitzant no funciona bé amb ginys, és a dir, no té cap "
 "barra lateral que pugueu adaptar. Per més informació sobre com fer funcionar "
-"un tema amb ginys, <a href=\"http://codex.wordpress.org/Widgetizing_Themes"
+"un tema amb ginys, <a href=\"https://codex.wordpress.org/Widgetizing_Themes"
 "\">seguiu aquestes instruccions</a> (en anglès)."
 
 #: wp-admin/widgets.php:235
@@ -11382,8 +11521,9 @@ msgid "Unpublished"
 msgstr "No publicada"
 
 #: wp-admin/includes/class-wp-posts-list-table.php:727
+#, fuzzy
 msgid "Y/m/d g:i:s A"
-msgstr "Y-m-d G:i:s"
+msgstr "d/m/Y G:i:s"
 
 #: wp-admin/includes/class-wp-media-list-table.php:396
 msgid "%s from now"
@@ -11584,8 +11724,9 @@ msgstr ""
 #: wp-admin/edit-form-advanced.php:77 wp-admin/edit-form-advanced.php:90
 #: wp-admin/edit-form-comment.php:103 wp-admin/includes/meta-boxes.php:165
 #: wp-admin/includes/meta-boxes.php:296 wp-admin/includes/revision.php:171
+#, fuzzy
 msgid "M j, Y @ G:i"
-msgstr "d-m-Y \\a \\l\\e\\s G:i"
+msgstr "j/M/Y @ H:i"
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:78
@@ -11639,7 +11780,7 @@ msgstr "Camps personalitzats"
 
 #: wp-admin/edit-form-advanced.php:218 wp-admin/menu.php:225
 msgid "Discussion"
-msgstr "Discussió "
+msgstr "Debats "
 
 # MODIFICAT XTEC
 #: wp-admin/edit-form-advanced.php:224
@@ -11648,7 +11789,7 @@ msgstr "Discussió "
 #: wp-admin/includes/class-wp-terms-list-table.php:431
 #: wp-admin/includes/meta-boxes.php:665
 msgid "Slug"
-msgstr "Nom curt"
+msgstr "Resum"
 
 #: wp-admin/edit-form-advanced.php:523 wp-admin/includes/ajax-actions.php:2055
 msgid "Last edited by %1$s on %2$s at %3$s"
@@ -11832,8 +11973,9 @@ msgstr[1] "Totals <span class=\"count\">(%s)</span>"
 
 #: wp-admin/includes/class-wp-links-list-table.php:75
 #: wp-admin/includes/class-wp-posts-list-table.php:226
+#, fuzzy
 msgid "View all categories"
-msgstr "Mostra totes les categories"
+msgstr "Totes les categories"
 
 # MODIFICAT XTEC
 #: wp-admin/includes/class-wp-list-table.php:526
@@ -12210,12 +12352,14 @@ msgid "Right Now"
 msgstr "Ara mateix"
 
 #: wp-admin/includes/dashboard.php:970
+#, fuzzy
 msgid "http://planet.wordpress.org/"
-msgstr "http://planet.wordpress.org/"
+msgstr "https://planet.wordpress.org/"
 
 #: wp-admin/includes/dashboard.php:979
+#, fuzzy
 msgid "http://planet.wordpress.org/feed/"
-msgstr "http://planet.wordpress.org/feed/"
+msgstr "https://planet.wordpress.org/feed/"
 
 #: wp-admin/includes/dashboard.php:988
 msgid "Other WordPress News"
@@ -12276,6 +12420,7 @@ msgstr "Mou aquest comentari a la paperera"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:471
 #: wp-admin/includes/dashboard.php:560
+#, fuzzy
 msgctxt "verb"
 msgid "Trash"
 msgstr "Paperera"
@@ -12487,12 +12632,13 @@ msgid "Private Key:"
 msgstr "Clau privada:"
 
 #: wp-admin/includes/file.php:1118
+#, fuzzy
 msgid ""
 "Enter the location on the server where the keys are located. If a passphrase "
 "is needed, enter that in the password field above."
 msgstr ""
-"Introduïu el camí on estan les claus al servidor. Si es necessita una "
-"contrasenya, introduïu-la en el camp de la contrasenya que hi ha més amunt."
+"Introduïu la ubicació on les claus pública i privada es troben al servidor. "
+"Si cal una contrasenya, introduïu-la al camp superior."
 
 #: wp-admin/includes/file.php:1123 wp-admin/includes/file.php:1125
 msgid "Connection Type"
@@ -12636,7 +12782,7 @@ msgstr "Des de l'ordinador"
 
 #: wp-admin/includes/media.php:19
 msgid "From URL"
-msgstr "Des d'una URL"
+msgstr "Des d'un URL"
 
 #: wp-admin/includes/media.php:20
 msgid "Gallery"
@@ -12844,6 +12990,7 @@ msgstr "Nom de la nova categoria"
 
 # MODIFICAT XTEC
 #: wp-admin/includes/meta-boxes.php:526
+#, fuzzy
 msgid ""
 "Excerpts are optional hand-crafted summaries of your content that can be "
 "used in your theme. <a href=\"http://codex.wordpress.org/Excerpt\" target="
@@ -12867,6 +13014,7 @@ msgstr "Separeu múltiples URLs amb espais"
 
 # MODIFICAT XTEC
 #: wp-admin/includes/meta-boxes.php:576
+#, fuzzy
 msgid ""
 "Custom fields can be used to add extra metadata to a post that you can <a "
 "href=\"http://codex.wordpress.org/Using_Custom_Fields\" target=\"_blank"
@@ -12885,8 +13033,9 @@ msgstr ""
 "aquesta pàgina."
 
 #: wp-admin/includes/meta-boxes.php:592
+#, fuzzy
 msgid "http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
-msgstr "http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
+msgstr "https://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
 
 #: wp-admin/includes/meta-boxes.php:648
 msgid "Show comments"
@@ -13167,8 +13316,9 @@ msgid "Compatible up to:"
 msgstr "Compatible fins:"
 
 #: wp-admin/includes/plugin-install.php:436
+#, fuzzy
 msgid "Downloaded:"
-msgstr "Descarregat:"
+msgstr "La descàrrega de fitxer ha fallat."
 
 #: wp-admin/includes/plugin-install.php:436
 msgid "%s time"
@@ -13315,7 +13465,7 @@ msgstr ""
 
 #: wp-admin/includes/schema.php:1025
 msgid "Warning! Wildcard DNS may not be configured correctly!"
-msgstr "Avís! el patró DNS pot no estar configurat correctament!"
+msgstr "Avís! El patró DNS pot no estar configurat correctament!"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:479
 #: wp-admin/includes/class-wp-posts-list-table.php:937
@@ -13427,8 +13577,9 @@ msgid "In reply to <a href=\"%1$s\">%2$s</a>."
 msgstr "En resposta a <a href=\"%1$s\">%2$s</a>."
 
 #: wp-admin/includes/class-wp-comments-list-table.php:540
+#, fuzzy
 msgid "Y/m/d \\a\\t g:ia"
-msgstr "Y-m-d \\a\\t G:i:s"
+msgstr "d/m/Y a les G:i"
 
 #: wp-admin/includes/template.php:440
 msgid "Reply to Comment"
@@ -13654,21 +13805,600 @@ msgid "You are about to mark the following comment as spam:"
 msgstr "Ara es marcarà com a brossa el comentari següent:"
 
 #: wp-admin/comment.php:124
+#, fuzzy
 msgid "Spam Comment"
-msgstr "Comentari brossa"
+msgstr "Actualitza el comentari"
 
 #: wp-admin/comment.php:127
 msgid "You are about to move the following comment to the Trash:"
 msgstr "Ara es mourà el comentari següent a la paperera:"
 
 #: wp-admin/comment.php:128
+#, fuzzy
 msgid "Trash Comment"
-msgstr "Comentari de la paperera"
+msgstr "%s comentari"
 
 #: wp-admin/comment.php:131
 msgid "You are about to delete the following comment:"
 msgstr "Ara s'eliminarà el comentari següent:"
 
-# AFEGIT XTEC
+#, fuzzy
 msgid "Unactives"
-msgstr "Pendents d'activació"
+msgstr "Pendents d'activació:"
+
+#~ msgid ""
+#~ "Terms shared across multiple taxonomies will be split when one of them is "
+#~ "updated. Find out more in the <a href=\"%1$s\">Plugin Developer Handbook</"
+#~ "a>."
+#~ msgstr ""
+#~ "Els termes compartits per múltiples taxonomies se separaran quan un "
+#~ "d'ells s'actualitzi. Trobeu més informació al <a href=\"%1$s\">Plugin "
+#~ "Developer Handbook</a>."
+
+#~ msgid ""
+#~ "%1$s, %2$s, and %3$s now support complex ordering with named meta query "
+#~ "clauses."
+#~ msgstr ""
+#~ "%1$s, %2$s i %3$s ara és compatible amb ordenacions complexes amb "
+#~ "clàusules de cerca amb nom."
+
+#~ msgid "Shared term splitting"
+#~ msgstr "Divisió de termes compartits"
+
+#~ msgid "JavaScript accessibility"
+#~ msgstr "Accessibilitat en Javascript"
+
+#~ msgid ""
+#~ "You can now send audible notifications to screen readers in JavaScript "
+#~ "with %s. Pass it a string, and an update will be sent to a dedicated ARIA "
+#~ "live notifications area."
+#~ msgstr ""
+#~ "Ara podeu enviar notificacions sonores als lectors de pantalla en "
+#~ "JavaScript amb %s. Passa'n la cadena i s'enviarà una actualització a "
+#~ "l'àrea de notificacions d'una ARIA dedicada."
+
+#~ msgid ""
+#~ "Database character encoding has changed from utf8 to utf8mb4, which adds "
+#~ "support for a whole range of new 4-byte characters."
+#~ msgstr ""
+#~ "La codificació de caràcters a la base de dades ha canviat de utf8 a "
+#~ "utf8mb4, que afegeix compatibilitat amb tot un ventall de nous caràcters "
+#~ "de 4 octets."
+
+#~ msgid "utf8mb4 support"
+#~ msgstr "Compatibilitat amb utf8mb4"
+
+#~ msgid "Streamlined plugin updates"
+#~ msgstr "Actualització simplificada de les extensions"
+
+#~ msgid ""
+#~ "Goodbye boring loading screen, hello smooth and simple plugin updates. "
+#~ "Click <em>Update&nbsp;Now</em> and watch the magic happen."
+#~ msgstr ""
+#~ "Adéu a l'avorrida pantalla de càrrega, hola a les actualitzacions simples "
+#~ "i elegants de les extensions. Feu clic a <em>Actualitza ara</em> i "
+#~ "observeu la màgia."
+
+#~ msgid "Even more embeds"
+#~ msgstr "Encara més elements incrustats"
+
+#~ msgid ""
+#~ "Paste links from Tumblr.com and Kickstarter and watch them magically "
+#~ "appear right in the editor. With every release, your publishing and "
+#~ "editing experience get closer together."
+#~ msgstr ""
+#~ "Enganxeu enllaços de Tumblr.com i Kickstarter i observeu com apareixen "
+#~ "màgicament a l'editor. Amb cada actualització, l'experiència de "
+#~ "publicació i edició s'acosten."
+
+#~ msgid ""
+#~ "Browse and preview your installed themes from the Customizer. Make sure "
+#~ "the theme looks great with <em>your</em> content, before it debuts on "
+#~ "your site. "
+#~ msgstr ""
+#~ "Exploreu i previsualitzeu els temes instal·lats des del personalitzador. "
+#~ "Assegureu-vos que el tema s'ajusta al <em>vostre</em> contingut abans de "
+#~ "publicar-ne els canvis."
+
+#~ msgid ""
+#~ "Don&#8217;t use any of those characters? You can still have fun &mdash; "
+#~ "emoji are now available in WordPress! Get creative and decorate your "
+#~ "content with %1$s, %2$s, %3$s, %4$s, and all the many other <a href=\"%5$s"
+#~ "\">emoji</a>."
+#~ msgstr ""
+#~ "No feu servir cap d'aquests caràcters? Tot i així en podeu gaudir: ja es "
+#~ "poden fer servir els emoji a WordPress! Sigueu creatius i decoreu el "
+#~ "vostre contingut amb %1$s, %2$s, %3$s, %4$s, i tots els altres <a href="
+#~ "\"%5$s\">emoji</a>."
+
+#~ msgid ""
+#~ "Writing in WordPress, whatever your language, just got better. WordPress "
+#~ "4.2 supports a host of new characters out-of-the-box, including native "
+#~ "Chinese, Japanese, and Korean characters, musical and mathematical "
+#~ "symbols, and hieroglyphs."
+#~ msgstr ""
+#~ "Escriure amb el WordPress, sigui quin sigui l'idioma, és cada vegada més "
+#~ "fàcil. El WordPress 4.2 permet un munt de nous caràcters per defecte, "
+#~ "inclosos els del Xinès nadiu, Japonès i Coreà, símbols musicals i "
+#~ "matemàtics, i jeroglífics."
+
+#~ msgid "Extended character support"
+#~ msgstr "Compatibilitat amb caràcters ampliats"
+
+#~ msgid "An easier way to share content"
+#~ msgstr "Una manera més senzilla de compartir contingut"
+
+#~ msgid ""
+#~ "Clip it, edit it, publish it. Get familiar with the new and improved "
+#~ "Press This. From the <a href=\"%s\">Tools</a> menu, add Press This to "
+#~ "your browser bookmark bar or your mobile device home screen. Once "
+#~ "installed you can share your content with lightning speed. Sharing your "
+#~ "favorite videos, images, and content has never been this fast or this "
+#~ "easy."
+#~ msgstr ""
+#~ "Retalla-ho, edita-ho i publica-ho. Acostumeu-vos al nou i millorat «Press "
+#~ "This» des del menú d'<a href=\"%s\">Eines</a>, afegiu «Press This» a la "
+#~ "barra d'adreces d'interès del vostre navegador o a la pàgina d'inici del "
+#~ "vostre dispositiu mòbil. Una vegada instal·lat, podreu compartir "
+#~ "contingut a la velocitat de la llum. Compartir els vostres vídeos, "
+#~ "imatges i contingut favorit mai havia sigut tan ràpid ni tan fàcil."
+
+#~ msgid "Switch themes in the Customizer"
+#~ msgstr "Canvia de tema al personalitzador"
+
+#~ msgid "https://codex.wordpress.org/Emoji"
+#~ msgstr "https://codex.wordpress.org/Emoji"
+
+#~ msgid "Standard Editor"
+#~ msgstr "Editor estàndard"
+
+#~ msgid "example: www.wordpress.org"
+#~ msgstr "exemple: www.wordpress.org"
+
+#~ msgid ""
+#~ "The search for installed themes will search for terms in their name, "
+#~ "description, author, or tag."
+#~ msgstr ""
+#~ "La cerca de temes instal·lats farà la cerca dels termes en el seu nom, "
+#~ "descripció, autor o etiqueta."
+
+#~ msgid "The search results will be updated as you type."
+#~ msgstr ""
+#~ "Els resultats de la cerca s'actualitzaran a mesura que aneu teclejant."
+
+#~ msgid ""
+#~ "You can Search for themes by keyword, author, or tag, or can get more "
+#~ "specific and search by criteria listed in the feature filter."
+#~ msgstr ""
+#~ "Podeu cercar temes per paraula clau, autor o etiqueta, o podeu ser més "
+#~ "específics i cercar pels criteris llistats en el filtre destacat."
+
+#~ msgid "Number of Themes found: %d"
+#~ msgstr "Nombre de temes que s'han trobat: %d"
+
+#~ msgid "Custom time format:"
+#~ msgstr "Format d'hora personalitzat:"
+
+#~ msgid "example:"
+#~ msgstr "exemple:"
+
+#~ msgid "enter a custom time format in the following field"
+#~ msgstr "entreu un format d'hora en el camp següent"
+
+#~ msgid "Custom date format:"
+#~ msgstr "Format de data personalitzat:"
+
+#~ msgid "enter a custom date format in the following field"
+#~ msgstr "entreu un format de data personalitzat en el camp següent"
+
+#~ msgid "Plugins updated successfully."
+#~ msgstr "S'han actualitzat les extensions correctament."
+
+#~ msgid "%s Active Installs"
+#~ msgstr "%s instal·lacions actives"
+
+#~ msgid "Active Installs:"
+#~ msgstr "Instal·lacions actives:"
+
+#~ msgctxt "Active plugin installs"
+#~ msgid "1+ Million"
+#~ msgstr "Més d'1 milió"
+
+#~ msgid "Detach"
+#~ msgstr "Elimina l'associació"
+
+#~ msgid "Main menu"
+#~ msgstr "Menú principal"
+
+#~ msgid "%d media attachment permanently deleted."
+#~ msgid_plural "%d media attachments permanently deleted."
+#~ msgstr[0] "%d fitxer mèdia adjunt s'ha esborrat definitivament."
+#~ msgstr[1] "%d fitxers mèdia adjunts s'han esborrat definitivament."
+
+#~ msgid "%d media attachment restored from the trash."
+#~ msgid_plural "%d media attachments restored from the trash."
+#~ msgstr[0] "%d fitxer mèdia adjunt restaurat de la paperera."
+#~ msgstr[1] "%d fitxers mèdia adjunts restaurats de la paperera."
+
+#~ msgid "You have specified these users for deletion:"
+#~ msgstr "Heu especificat aquests usuaris per suprimir:"
+
+#~ msgid "What should be done with content owned by these users?"
+#~ msgstr "Què s'ha de fer amb el contingut propietat d'aquests usuaris?"
+
+#~ msgid "%s user deleted."
+#~ msgid_plural "%s users deleted."
+#~ msgstr[0] "S'ha suprimit %s usuari"
+#~ msgstr[1] "S'han suprimit %s usuaris"
+
+#~ msgid "%d media attachment moved to the trash."
+#~ msgid_plural "%d media attachments moved to the trash."
+#~ msgstr[0] "%d fitxer mèdia adjunt s'ha mogut a la paperera."
+#~ msgstr[1] "%d fitxers mèdia adjunts s'han mogut a la paperera."
+
+#~ msgid "Delete Plugins"
+#~ msgstr "Suprimeix les extensions"
+
+#~ msgid "You are about to remove the following plugins:"
+#~ msgstr "Esteu a punt de suprimir les següents extensions:"
+
+#~ msgid "%s item"
+#~ msgid_plural "%s items"
+#~ msgstr[0] "%s element"
+#~ msgstr[1] "%s elements"
+
+#~ msgid "These plugins may be active on other sites in the network."
+#~ msgstr ""
+#~ "Aquestes extensions poden estar actives en altres llocs web de la xarxa."
+
+#~ msgid "1 page not updated, somebody is editing it."
+#~ msgstr "1 pàgina no s'ha actualitzat, algu l'està editant."
+
+#~ msgid "1 post not updated, somebody is editing it."
+#~ msgstr "1 entrada no s'ha actualitzat, algú l'està editant."
+
+#~ msgid "Hide post options"
+#~ msgstr "Amaga les opcions de les entrades"
+
+#~ msgid "Front Page"
+#~ msgstr "Portada"
+
+#~ msgid "This theme has not been rated yet."
+#~ msgstr "Aquest tema no s'ha valorat encara."
+
+#~ msgid "New translations are available."
+#~ msgstr "Hi ha traduccions noves disponibles."
+
+#~ msgid "Detached %d attachment."
+#~ msgid_plural "Detached %d attachments."
+#~ msgstr[0] "S'ha alliberat %d adjunt."
+#~ msgstr[1] "S'han alliberat %d adjunts."
+
+#~ msgid ""
+#~ "You can log out of other devices, such as your phone or a public "
+#~ "computer, by clicking the Log Out of All Other Sessions button."
+#~ msgstr ""
+#~ "Podeu finalitzar la sessió d'altres dispositius, com ara telèfon o un "
+#~ "ordinador públic, en fer clic al botó Surt de totes les sessions"
+
+#~ msgid "Open Press This"
+#~ msgstr "Obre «Press This»"
+
+#~ msgid ""
+#~ "Follow the link to open Press This. Then add it to your device&#8217;s "
+#~ "bookmarks or home screen."
+#~ msgstr ""
+#~ "Feu clic a l'enllaç per obrir «Press This». Després afegiu-ho a les "
+#~ "adreces d'interès o a la pàgina d'inici del vostre dispositiu."
+
+#~ msgid "Direct link (best for mobile)"
+#~ msgstr "Enllaç directe (millor per mòbil)"
+
+#~ msgid ""
+#~ "If you can&#8217;t drag the bookmarklet to your bookmarks, copy the "
+#~ "following code and create a new bookmark. Paste the code into the new "
+#~ "bookmark&#8217;s URL field."
+#~ msgstr ""
+#~ "Si no podeu arrossegar el bookmarlet a les vostres adreces d'interès, "
+#~ "copieu el codi següent i creeu una nova adreça d'interès. Enganxeu el "
+#~ "codi al camp URL de la nova adreça d'interès. "
+
+#~ msgid "Copy &#8220;Press This&#8221; bookmarklet code"
+#~ msgstr "Copia el codi del bookmarlet «Press This»"
+
+#~ msgid ""
+#~ "Drag the bookmarklet below to your bookmarks bar. Then, when you&#8217;re "
+#~ "on a page you want to share, simply &#8220;press&#8221; it."
+#~ msgstr ""
+#~ "Arrossegueu el bookmarklet inferior a la vostra barra d'adreces "
+#~ "d'interès. Així, quan visiteu una pàgina que vulgueu compartir, només heu "
+#~ "de fer-hi clic."
+
+#~ msgid "Bookmarklet"
+#~ msgstr "Bookmarklet"
+
+#~ msgid "Install Press This"
+#~ msgstr "Instal·la «Press This»"
+
+#~ msgid "Edit selected menu"
+#~ msgstr "Edita el menú seleccionat"
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a href=\"%2$s\" class="
+#~ "\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href="
+#~ "\"%5$s\" class=\"update-link\">update now</a>."
+#~ msgstr ""
+#~ "Hi ha disponible una versió nova de %1$s. <a href=\"%2$s\" class="
+#~ "\"thickbox\" title=\"%3$s\">Visualitzeu els detalls de la versió %4$s</a> "
+#~ "o <a href=\"%5$s\" class=\"update-link\">actualitzeu ara</a>."
+
+#~ msgid "Close details dialog"
+#~ msgstr "Tanca el diàleg dels detalls"
+
+#~ msgid "You are currently editing the page that shows your latest posts."
+#~ msgstr ""
+#~ "Esteu editant actualment la pàgina que mostra les darreres entrades."
+
+#~ msgid "Posts Page"
+#~ msgstr "Pàgina de les entrades"
+
+#~ msgid "Number of items per page:"
+#~ msgstr "Nombre d'elements per pàgina:"
+
+#~ msgid "Missing post ID."
+#~ msgstr "Falta l'identificador de l'entrada."
+
+#~ msgid "Size in megabytes"
+#~ msgstr "Mida en megabytes"
+
+#~ msgid "Back to post options"
+#~ msgstr "Torna a les opcions de les entrades"
+
+#~ msgid "Suggested media"
+#~ msgstr "Mèdia suggerits"
+
+#~ msgid "Post title"
+#~ msgstr "Títol de l'entrada"
+
+#~ msgid ""
+#~ "You should upgrade <a href=\"%s\" target=\"_blank\">your bookmarklet</a> "
+#~ "to the latest version!"
+#~ msgstr ""
+#~ "Actualitzeu <a href=\"%s\" target=\"_blank\">el bookmarklet</a> a "
+#~ "l'última versió!"
+
+#~ msgid "Scan"
+#~ msgstr "Escaneja"
+
+#~ msgid "Enter a URL to scan"
+#~ msgstr "Introduïu un URL per escanejar"
+
+#~ msgid "Press This!"
+#~ msgstr "«Press This»!"
+
+#~ msgid "Show post options"
+#~ msgstr "Mostra les opcions de l'entrada"
+
+#~ msgctxt "Used in Press This to indicate where the content comes from."
+#~ msgid "Source:"
+#~ msgstr "Origen:"
+
+#~ msgid "Search categories"
+#~ msgstr "Cerca categories"
+
+#~ msgid "Search categories by name"
+#~ msgstr "Cerca categories per nom"
+
+#~ msgid "Post formats"
+#~ msgstr "Formats d'entrada"
+
+#~ msgid "Toggle add category"
+#~ msgstr "Mostra/amaga «afegeix categoria»"
+
+#~ msgid ""
+#~ "Could not save or locate the temporary download file for the source URL."
+#~ msgstr ""
+#~ "No s'ha pogut desar o localitzar el fitxer temporal descarregat des de "
+#~ "l'URL d'origen."
+
+#~ msgid "Could not download the source URL (native error: %s)."
+#~ msgstr "No s'ha pogut baixar l'URL origen (error: %s)."
+
+#~ msgid "Error: %s"
+#~ msgstr "Error: %s"
+
+#~ msgid "Error while adding the category. Please try again later."
+#~ msgstr ""
+#~ "S'ha produït un error en afegir la categoria. Proveu-ho de nou més tard."
+
+#~ msgid "This category cannot be added. Please change the name and try again."
+#~ msgstr ""
+#~ "Aquesta categoria no es pot afegir. Canvieu el nom i proveu-ho de nou."
+
+#~ msgid "Invalid post."
+#~ msgstr "Entrada incorrecta."
+
+#~ msgid ""
+#~ "Unable to connect to the filesystem. Please confirm your credentials."
+#~ msgstr ""
+#~ "No s'ha pogut connectar al sistema de fitxers. Confirmeu les credencials."
+
+#~ msgid ""
+#~ "You do not have sufficient permissions to update plugins on this site."
+#~ msgstr ""
+#~ "No teniu permisos suficients per actualitzar les extensions d'aquest lloc "
+#~ "web."
+
+#~ msgid "In reply to: <b><a href=\"%1$s\">%2$s</a></b>"
+#~ msgstr "En resposta a: <b><a href=\"%1$s\">%2$s</a></b>"
+
+#~ msgid "In response to: <b>%s</b>"
+#~ msgstr "En resposta a: <b>%s</b>"
+
+#~ msgid "Mark as Spam"
+#~ msgstr "Marca com a brossa"
+
+#~ msgid "Submitted on"
+#~ msgstr "Enviat el"
+
+#~ msgid "<a href=\"%1$s\">%2$s at %3$s</a>"
+#~ msgstr "<a href=\"%1$s\">%2$s a les %3$s</a>"
+
+#~ msgid "In Response To"
+#~ msgstr "En resposta a"
+
+#~ msgid "You are only logged in at this location."
+#~ msgstr "Heu iniciat sessió en aquest lloc."
+
+#~ msgid "Distraction-Free Writing"
+#~ msgstr "Escriptura sense distraccions"
+
+#~ msgid ""
+#~ "These suggestions are based on the plugins you and other users have "
+#~ "installed."
+#~ msgstr ""
+#~ "Aquests suggeriments estan basats en les extensions que vosaltres o "
+#~ "altres usuaris han instal·lat."
+
+#~ msgid ""
+#~ "You can enable distraction-free writing mode using the icon to the right. "
+#~ "This feature is not available for old browsers or devices with small "
+#~ "screens, and requires that the full-height editor be enabled in Screen "
+#~ "Options."
+#~ msgstr ""
+#~ "Podeu activar el mode d'escriptura sense distraccions fent servir la "
+#~ "icona de la dreta. Aquesta funcionalitat no està disponible en navegadors "
+#~ "antics o dispositius amb pantalles petites, i cal que s'activi l'editor a "
+#~ "alçada completa en les opcions de pantalla."
+
+#~ msgid ""
+#~ "Enable distraction-free writing mode, and everything surrounding the "
+#~ "editor will fade away when you start typing. Move your mouse out of the "
+#~ "editor to reveal everything again."
+#~ msgstr ""
+#~ "Activeu el mode d'escriptura sense distraccions, i tot al voltant de "
+#~ "l'editor desapareixerà quan comenceu a prémer una tecla. Moveu el ratolí "
+#~ "fora de l'editor perquè tot aparegui de nou."
+
+#~ msgctxt "Plugin Installer"
+#~ msgid "Recommended"
+#~ msgstr "Recomanades"
+
+#~ msgid "You cannot delete a theme while it has an active child theme."
+#~ msgstr "No podeu suprimir un tema mentre té un tema fill actiu."
+
+#~ msgid "Log Out of All Sessions"
+#~ msgstr "Surt de totes les sessions"
+
+#~ msgid "Log %s out of all sessions"
+#~ msgstr "Desconnecta %s de totes les sessions"
+
+#~ msgid "Manage in Customizer"
+#~ msgstr "Gestiona amb el personalitzador"
+
+#~ msgid ""
+#~ "Left your account logged in at a public computer? Lost your phone? This "
+#~ "will log you out everywhere except your current browser."
+#~ msgstr ""
+#~ "Deixeu la sessió oberta en ordinadors públics? Heu perdut el telèfon? "
+#~ "Això us tancarà la sessió en tot excepte en el navegador actual."
+
+#~ msgid "Log Out of All Other Sessions"
+#~ msgstr "Surt de totes les sessions"
+
+#~ msgid ""
+#~ "You can set the language, and the translation files will be automatically "
+#~ "downloaded and installed (available if your filesystem is writable)."
+#~ msgstr ""
+#~ "Podeu definir la llengua, i els fitxers de traducció es baixaran "
+#~ "automàticament i s'instal·laran (disponible si el sistema de fitxers és "
+#~ "d'escriptura)."
+
+#~ msgid "Enable full-height editor and distraction-free functionality."
+#~ msgstr "Activa l'editor a pantalla completa."
+
+#~ msgid "Untested with your version of WordPress"
+#~ msgstr "No s'ha provat amb aquesta versió del WordPress"
+
+#~ msgid ""
+#~ "You can now manage and live-preview Custom Header in the <a href=\"%1$s"
+#~ "\">Customizer</a>."
+#~ msgstr ""
+#~ "Podeu ara gestionar i visualitzar la capçalera personalitzada al <a href="
+#~ "\"%1$s\">personalitzador</a>."
+
+#~ msgid ""
+#~ "You can now manage and live-preview Custom Backgrounds in the <a href="
+#~ "\"%1$s\">Customizer</a>."
+#~ msgstr ""
+#~ "Podeu gestionar ara i visualitzar els fons personalitzats al <a href="
+#~ "\"%1$s\">personalitzador</a>."
+
+#~ msgid "Filter by category"
+#~ msgstr "Filtra per categoria"
+
+#~ msgid "Filter by comment type"
+#~ msgstr "Filtra per tipus de comentari"
+
+#~ msgid "You are now logged out everywhere else."
+#~ msgstr "Has finalitzat la sessió del tot."
+
+#~ msgid "%s has been logged out."
+#~ msgstr "%s ha finalitzat la sessió."
+
+#~ msgid "Could not log out user sessions. Please try again."
+#~ msgstr "No s'ha pogut desconnectar a l'usuari. Proveu-ho de nou."
+
+#~ msgid "This preview is unavailable in the editor."
+#~ msgstr "Aquesta previsualització no està disponible a l'editor."
+
+#~ msgid "You don't have permission to attach files to this post."
+#~ msgstr "No teniu permisos per adjuntar fitxers a aquesta entrada."
+
+#~ msgid "You don't have permission to upload files."
+#~ msgstr "No teniu permisos per penjar fitxers."
+
+#~ msgctxt "term parent"
+#~ msgid "Parent"
+#~ msgstr "Pare"
+
+#~ msgid ""
+#~ "You can insert media files by clicking the icons above the post editor "
+#~ "and following the directions. You can align or edit images using the "
+#~ "inline formatting toolbar available in Visual mode."
+#~ msgstr ""
+#~ "Podeu inserir mèdia en fer clic a les icones de la part superior de "
+#~ "l'editor i seguir les instruccions. Podeu alinear o editar les imatges "
+#~ "fent servir la barra de format disponible al mode visual."
+
+#~ msgid ""
+#~ "The Text mode allows you to enter HTML along with your post text. Line "
+#~ "breaks will be converted to paragraphs automatically."
+#~ msgstr ""
+#~ "El mode text us permet introduir HTML a l'entrada. Els salts de línia es "
+#~ "convertiran automàticament en paràgrafs."
+
+#~ msgid ""
+#~ "Visual mode gives you a WYSIWYG editor. Click the last icon in the row to "
+#~ "get a second row of controls. "
+#~ msgstr ""
+#~ "El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera "
+#~ "icona de la fila per obtenir una segona fila de controls."
+
+#~ msgid ""
+#~ "<strong>Post editor</strong> - Enter the text for your post. There are "
+#~ "two modes of editing: Visual and Text. Choose the mode by clicking on the "
+#~ "appropriate tab."
+#~ msgstr ""
+#~ "<strong>Editor d'entrades</strong> - Introduïu el text de l'entrada. Hi "
+#~ "ha dos modes d'edició: visual i text. Trieu el mode en fer clic en la "
+#~ "pestanya adequada."
+
+#~ msgid "Custom Links"
+#~ msgstr "Enllaços personalitzats"
+
+#~ msgid "Remove Image"
+#~ msgstr "Suprimeix la imatge"
+
+#~ msgid "Upload"
+#~ msgstr "Penja"

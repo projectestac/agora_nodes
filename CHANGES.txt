@@ -3,10 +3,17 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Updated catalan translation for WordPress 4.2.2
+
+
+
 Changes 15.08.10
 ---------------------------------------------------------------------------------------
 - Added new function to manage superadmin and xtecadmin
 - Updated Mailer WSDL's
+
 
 Changes 15.07.20
 ---------------------------------------------------------------------------------------
