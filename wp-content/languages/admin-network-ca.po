@@ -2,17 +2,17 @@
 # This file is distributed under the same license as the Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-20 16:27+0100\n"
+"Project-Id-Version: Network Admin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-07-27 10:19+0100\n"
+"Last-Translator: nacho <nacho@test.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
-"Project-Id-Version: Network Admin\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
-"Language-Team: \n"
-"Language: Català\n"
+"Language: ca\n"
 
 #: wp-admin/network.php:477 wp-admin/network.php:513
 msgid ""
@@ -113,7 +113,7 @@ msgstr "Des d'aquí podeu:"
 
 #: wp-admin/network/index.php:27
 msgid "Add and manage sites or users"
-msgstr "Afegeix i gestiona llocs webs o usuaris"
+msgstr "Afegeix i gestiona llocs web o usuaris"
 
 #: wp-admin/network/index.php:28
 msgid "Install and activate themes or plugins"
@@ -133,7 +133,7 @@ msgid ""
 "your network."
 msgstr ""
 "El giny ara mateix d'aquesta pantalla proporciona l'usuari actual i la suma "
-"de tots els llocs webs de la xarxa."
+"de tots els llocs web de la xarxa."
 
 #: wp-admin/network/index.php:41
 msgid "To search for a user or site, use the search boxes."
@@ -164,11 +164,12 @@ msgstr ""
 "base de dades."
 
 #: wp-admin/network/upgrade.php:32
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Updates_Screen\" target="
 "\"_blank\">Documentation on Upgrade Network</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin_Updates_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Network_Admin_Updates_Screen\" target="
 "\"_blank\">Documentació sobre com actualitzar la xarxa</a> (en anglès)"
 
 #: wp-admin/network/upgrade.php:102
@@ -210,7 +211,7 @@ msgid ""
 "Subdirectory networks may not be fully compatible with custom wp-content "
 "directories."
 msgstr ""
-"El subdirectori de la xarxa potser no sigui compatible completament amb els "
+"El subdirectori de la xarxa potser no és compatible completament amb els "
 "directoris personalitzats de wp-content."
 
 #: wp-admin/network/settings.php:37
@@ -218,7 +219,7 @@ msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target="
 "\"_blank\">Documentation on Network Settings</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Network_Admin_Settings_Screen\" target="
 "\"_blank\">Documentació sobre les opcions de la xarxa</a> (en anglès)"
 
 #: wp-admin/network/site-users.php:230
@@ -285,18 +286,20 @@ msgid "Add New Site"
 msgstr "Afegeix un lloc web nou"
 
 #: wp-admin/network/themes.php:236
+#, fuzzy
 msgctxt "network"
 msgid "Theme deleted."
 msgid_plural "%s themes deleted."
-msgstr[0] "S'ha suprimit el tema."
+msgstr[0] "S'ha suprimit %s tema."
 msgstr[1] "S'han suprimit %s temes."
 
 #: wp-admin/network/themes.php:208
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Themes_Screen\" target="
 "\"_blank\">Documentation on Network Themes</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin_Themes_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Network_Admin_Themes_Screen\" target="
 "\"_blank\">Documentació sobre els temes de la xarxa</a> (en anglès)"
 
 #: wp-admin/network/site-info.php:104 wp-admin/network/site-settings.php:94
@@ -309,28 +312,32 @@ msgid "Are you sure you wish to delete these themes?"
 msgstr "Esteu segur que voleu suprimir aquests temes?"
 
 #: wp-admin/network/themes.php:151
+#, fuzzy
 msgid "Yes, Delete this theme"
 msgid_plural "Yes, Delete these themes"
 msgstr[0] "Sí, suprimeix aquest tema"
-msgstr[1] "Sí, suprimeix aquests temes"
+msgstr[1] "Sí, suprimeix aquest tema"
 
 #: wp-admin/network/themes.php:137
+#, fuzzy
 msgid "You are about to remove the following theme:"
 msgid_plural "You are about to remove the following themes:"
 msgstr[0] "Esteu a punt de suprimir el següent tema:"
-msgstr[1] "Esteu a punt de suprimir el següents temes:"
+msgstr[1] "Esteu a punt de suprimir el següent tema:"
 
 #: wp-admin/network/themes.php:136
+#, fuzzy
 msgid "This theme may be active on other sites in the network."
 msgid_plural "These themes may be active on other sites in the network."
 msgstr[0] "Aquest tema pot activar-se a altres llocs web de la xarxa."
-msgstr[1] "Aquests temes poden activar-se a altres llocs web de la xarxa."
+msgstr[1] "Aquest tema pot activar-se a altres llocs web de la xarxa."
 
 #: wp-admin/network/themes.php:134
+#, fuzzy
 msgid "Delete Theme"
 msgid_plural "Delete Themes"
 msgstr[0] "Suprimeix el tema"
-msgstr[1] "Suprimeix els temes"
+msgstr[1] "Suprimeix el tema"
 
 #: wp-admin/network/menu.php:46 wp-admin/network/settings.php:19
 msgid "Network Settings"
@@ -353,8 +360,9 @@ msgid ""
 "Add User will set up a new user account on the network and send that person "
 "an email with username and password."
 msgstr ""
-"Afegeix un usuari configurarà el compte d'un usuari nou i li enviarà a "
-"aquesta persona un correu electrònic amb el nom d'usuari i contrasenya."
+"&laquo;Afegeix un usuari&raquo; configurarà el compte d'un usuari nou i li "
+"enviarà a aquesta persona un correu electrònic amb el nom d'usuari i "
+"contrasenya."
 
 #: wp-admin/network/site-info.php:89 wp-admin/network/site-settings.php:79
 #: wp-admin/network/site-themes.php:133 wp-admin/network/site-users.php:161
@@ -366,10 +374,11 @@ msgid "You do not have sufficient permissions to delete themes for this site."
 msgstr "No teniu permès suprimir els temes d'aquest lloc web."
 
 #: wp-admin/network/site-themes.php:163 wp-admin/network/themes.php:233
+#, fuzzy
 msgid "Theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "S'ha desactivat el tema."
-msgstr[1] "S'han desactivat %s temes."
+msgstr[1] "S'ha desactivat el tema."
 
 #: wp-admin/network/site-info.php:39 wp-admin/network/site-settings.php:39
 #: wp-admin/network/site-themes.php:54 wp-admin/network/site-users.php:49
@@ -377,10 +386,11 @@ msgid "Invalid site ID."
 msgstr "Identificador del lloc web incorrecte."
 
 #: wp-admin/network/site-themes.php:160 wp-admin/network/themes.php:230
+#, fuzzy
 msgid "Theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "S'ha activat el tema."
-msgstr[1] "S'han activat %s temes."
+msgstr[1] "S'ha activat el tema."
 
 #: wp-admin/network/site-themes.php:165 wp-admin/network/themes.php:238
 msgid "No theme selected."
@@ -426,9 +436,10 @@ msgstr ""
 "forma en què està emmagatzemada la dada a la base de dades."
 
 #: wp-admin/network/site-themes.php:130 wp-admin/network/themes.php:195
+#, fuzzy
 msgctxt "themes per page (screen options)"
 msgid "Themes"
-msgstr "Temes"
+msgstr "%s temes"
 
 #: wp-admin/network/site-info.php:24 wp-admin/network/site-settings.php:24
 #: wp-admin/network/site-themes.php:24 wp-admin/network/site-users.php:27
@@ -438,11 +449,11 @@ msgid ""
 "date are displayed. Network admins can mark a site as archived, spam, "
 "deleted and mature, to remove from public listings or disable."
 msgstr ""
-"<strong>Informació</strong> - El domini i el camí poques vegades s'editen ja "
-"que poden fer que el lloc web no funcioni correctament. Es mostren la data "
-"de registre i la data de la darrera actualització. Els administradors de la "
-"xarxa poden marcar un lloc web com arxivat, brossa, suprimit o caducat, per "
-"a suprimir-lo dels llistats públics o desactivar-lo."
+"<strong>Informació</strong> - El domini i el camí s'editen poques vegades, "
+"ja que poden fer que el lloc web no funcioni correctament. Es mostren la "
+"data de registre i la data de la darrera actualització. Els administradors "
+"de la xarxa poden marcar un lloc web com arxivat, brossa, suprimit o "
+"caducat, per a suprimir-lo dels llistats públics o desactivar-lo."
 
 #: wp-admin/network/site-info.php:25 wp-admin/network/site-settings.php:25
 #: wp-admin/network/site-themes.php:25 wp-admin/network/site-users.php:28
@@ -463,7 +474,7 @@ msgid ""
 "The menu is for editing information specific to individual sites, "
 "particularly if the admin area of a site is unavailable."
 msgstr ""
-"El menú és per editar informació específica de llocs webs individuals, "
+"El menú és per editar informació específica de llocs web individuals, "
 "especialment si l'àrea d'administració d'un lloc no és disponible."
 
 #: wp-admin/network/sites.php:35
@@ -497,11 +508,12 @@ msgstr "%s temes"
 #: wp-admin/network/site-info.php:32 wp-admin/network/site-new.php:29
 #: wp-admin/network/site-settings.php:32 wp-admin/network/site-themes.php:32
 #: wp-admin/network/site-users.php:35 wp-admin/network/sites.php:45
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Sites_Screen\" target="
 "\"_blank\">Documentation on Site Management</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin_Sites_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Network_Admin_Sites_Screen\" target="
 "\"_blank\">Documentació sobre l'administració del lloc web</a> (en anglès)"
 
 #: wp-admin/network/menu.php:18 wp-admin/network/sites.php:254
@@ -514,11 +526,12 @@ msgid "All Sites"
 msgstr "Tots els llocs web"
 
 #: wp-admin/network/index.php:53
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin\" target=\"_blank"
 "\">Documentation on the Network Admin</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Network_Admin\" target=\"_blank"
 "\">Documentació sobre l'administració de la xarxa</a> (en anglès)"
 
 #: wp-admin/network/site-themes.php:17
@@ -539,18 +552,20 @@ msgid ""
 "Name, ID number, or IP address. Screen Options allows you to choose how many "
 "sites to display on one page."
 msgstr ""
-"Afegeix us durà a la pantalla per afegir un lloc web nou. Podeu cercar un "
-"lloc web per nom, per número identificador, o per adreça IP. Les opcions de "
-"la pantalla us permeten triar quants llocs web voleu mostrar per pàgina."
+"&laquo;Afegeix us durà&raquo; a la pantalla per afegir un lloc web nou. "
+"Podeu cercar un lloc web per nom, per número identificador, o per adreça IP. "
+"Les opcions de la pantalla us permeten triar quants llocs web voleu mostrar "
+"per pàgina."
 
 #: wp-admin/network/user-new.php:17
 msgid "You do not have sufficient permissions to add users to this network."
 msgstr "No teniu permès afegir usuaris a aquesta xarxa."
 
 #: wp-admin/network/sites.php:25
+#, fuzzy
 msgctxt "sites per page (screen options)"
 msgid "Sites"
-msgstr "Llocs"
+msgstr "Lloc: %s"
 
 #: wp-admin/network/sites.php:206
 msgid "You do not have permission to delete that site."
@@ -566,11 +581,12 @@ msgid "Add New"
 msgstr "Afegeix"
 
 #: wp-admin/network/user-new.php:29 wp-admin/network/users.php:242
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Network_Admin_Users_Screen\" target="
 "\"_blank\">Documentation on Network Users</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Network_Admin_Users_Screen\" target="
+"<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\" target="
 "\"_blank\">Documentació sobre els usuaris de la xarxa</a> (en anglès)"
 
 #: wp-admin/network/sites.php:40
@@ -597,7 +613,7 @@ msgstr ""
 #: wp-admin/network/sites.php:34
 msgid "An Edit link to a separate Edit Site screen."
 msgstr ""
-"Un enllaç Edita que us durà a una pantalla apart per a editar el lloc web."
+"Un enllaç Edita que us durà a una pantalla a part per a editar el lloc web."
 
 #: wp-admin/network/site-new.php:23
 msgid ""
@@ -622,7 +638,7 @@ msgstr ""
 "Ara heu d'anar al llistat dels usuaris existents en l'Administrador de la "
 "xarxa > Usuaris i fer clic en Nom d'usuari o a l'enllaç actiu Edita que hi "
 "ha a la part inferior del nom. Això us durà a una pàgina d'edició d'usuari "
-"on podeu activar una casella per garantir privilegis de super administrador."
+"on podeu activar una casella per garantir privilegis de superadministrador."
 
 #: wp-admin/network.php:230
 msgctxt "subdirectory examples"
@@ -736,7 +752,7 @@ msgid ""
 msgstr ""
 "Afegiu el següent al fitxer <code>wp-config.php</code> en <code>%s</code> "
 "tot just <strong>damunt</strong> de la línia <code>/* Això és tot, prou "
-"d'editar - que bloguis de gust*/</code>:"
+"d'editar - que bloguegis de gust*/</code>:"
 
 #: wp-admin/network.php:199
 msgid ""
@@ -745,7 +761,7 @@ msgid ""
 "step."
 msgstr ""
 "Empleneu la informació d'aquí sota i així estareu a punt per crear una xarxa "
-"de llocs webs gestionats pel WordPress. Crearem els fitxers de configuració "
+"de llocs web gestionats pel WordPress. Crearem els fitxers de configuració "
 "en el proper pas."
 
 #: wp-admin/network.php:211
@@ -757,6 +773,7 @@ msgstr ""
 "instal·lat, ja que es farà servir al final de la instal·lació."
 
 #: wp-admin/network.php:416
+#, fuzzy
 msgid ""
 "This unique authentication key is also missing from your <code>wp-config."
 "php</code> file."
@@ -767,8 +784,8 @@ msgstr[0] ""
 "Aquesta clau d'autenticació única també falta al fitxer <code>wp-config.php</"
 "code>."
 msgstr[1] ""
-"Aquestes claus d'autenticació úniques també falten al fitxer <code>wp-config."
-"php</code>."
+"Aquesta clau d'autenticació única també falta al fitxer <code>wp-config.php</"
+"code>."
 
 #: wp-admin/network.php:174
 msgid "You cannot install a network of sites with your server address."
@@ -880,11 +897,12 @@ msgstr ""
 "Sembla que el mòdul <code>mod_rewrite</code> de l'Apache no està instal·lat."
 
 #: wp-admin/network.php:123 wp-admin/network.php:134
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank"
 "\">Documentation on Creating a Network</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Create_A_Network\" target=\"_blank"
 "\">Documentació sobre la creació d'una xarxa</a> (en anglès)"
 
 #: wp-admin/network.php:121
@@ -900,7 +918,7 @@ msgstr ""
 
 #: wp-admin/network.php:165
 msgid "Once the network is created, you may reactivate your plugins."
-msgstr "Un vegada creada la xarxa, podeu de reactivar les extensions."
+msgstr "Una vegada creada la xarxa, podeu de reactivar les extensions."
 
 #: wp-admin/network.php:165
 msgid ""
@@ -941,7 +959,7 @@ msgstr ""
 
 #: wp-admin/network.php:112
 msgid "Create a Network of WordPress Sites"
-msgstr "Creeu una xarxa de llocs webs del WordPress"
+msgstr "Creeu una xarxa de llocs web del WordPress"
 
 #: wp-admin/network.php:176
 msgid "Return to Dashboard"
@@ -967,11 +985,12 @@ msgstr ""
 "tard.</strong>"
 
 #: wp-admin/network.php:124 wp-admin/network.php:135
+#, fuzzy
 msgid ""
 "<a href=\"http://codex.wordpress.org/Tools_Network_Screen\" target=\"_blank"
 "\">Documentation on the Network Screen</a>"
 msgstr ""
-"<a href=\"http://codex.wordpress.org/Tools_Network_Screen\" target=\"_blank"
+"<a href=\"https://codex.wordpress.org/Tools_Network_Screen\" target=\"_blank"
 "\">Documentació sobre la pantalla de xarxa</a> (en anglès)"
 
 #: wp-admin/network.php:219
@@ -1166,8 +1185,8 @@ msgid ""
 "plugins."
 msgstr ""
 "La configuració del menú activa/desactiva que apareguin els menús de les "
-"extensions per a usuaris que no són superadministradors, per a què solament "
-"els super administradors, no els administradors de llocs, puguin activar les "
+"extensions per a usuaris que no són superadministradors, perquè solament els "
+"superadministradors, no els administradors de llocs, puguin activar les "
 "extensions."
 
 #: wp-admin/network/sites.php:32
@@ -1242,20 +1261,20 @@ msgstr ""
 "WordPress i no poden usar-se com a noms de bloc: <code>%s</code>"
 
 #: wp-admin/network/upgrade.php:69
+#, fuzzy
 msgid ""
 "Warning! Problem updating %1$s. Your server may not be able to connect to "
 "sites running on it. Error message: <em>%2$s</em>"
 msgstr ""
-"Atenció! S'ha produït un problema actualitzant %1$s. El servidor potser no "
-"pot connectar amb els llocs que s'executen en ell. Missatge d'error: <em>"
-"%2$s</em>"
+"Avís! S'ha produït un problema en actualitzar %1$s. El servidor potser no "
+"pot connectar-se als llocs web que està executant. Missatge d'error: %2$s"
 
 #: wp-admin/network/settings.php:167
 msgid ""
 "If you want to limit site registrations to certain domains. One domain per "
 "line."
 msgstr ""
-"Si voleu limitar el registre de llocs webs a certs dominis. Entreu un domini "
+"Si voleu limitar el registre de llocs web a certs dominis. Entreu un domini "
 "per línia."
 
 #: wp-admin/network/settings.php:178
@@ -1272,7 +1291,7 @@ msgid ""
 "visit a non-existent site."
 msgstr ""
 "Si el registre està desactivat, definiu la variable <code>NOBLOGREDIRECT</"
-"code> en el fitxer <code>wp-config.php</code> a una url on vulgueu redirigir "
+"code> en el fitxer <code>wp-config.php</code> a un url on vulgueu redirigir "
 "els visitants quan vagin a una pàgina inexistent."
 
 #: wp-admin/network/site-new.php:37
@@ -1297,7 +1316,7 @@ msgstr "Llocs web marcats com a brossa."
 
 #: wp-admin/network/sites.php:194
 msgid "Sites removed from spam."
-msgstr "Llocs webs suprimits de la brossa."
+msgstr "Llocs web suprimits de la brossa."
 
 #: wp-admin/network/users.php:260
 msgid "Users removed from spam."
@@ -1590,3 +1609,78 @@ msgid "Username and password will be mailed to the above email address."
 msgstr ""
 "El nom d'usuari i contrasenya s'enviarà per correu electrònic a les adreces "
 "de correu electrònic d'aquí sobre."
+
+#~ msgid "Delete Themes"
+#~ msgstr "Suprimeix temes"
+
+#~ msgid ""
+#~ "These unique authentication keys are also missing from your <code>wp-"
+#~ "config.php</code> file."
+#~ msgstr ""
+#~ "Aquestes claus d'autenticació úniques també falten del fitxer <code>wp-"
+#~ "config.php</code>."
+
+#~ msgid "Yes, Delete these themes"
+#~ msgstr "Sí, suprimeix aquests temes."
+
+#~ msgid "%s theme enabled."
+#~ msgid_plural "%s themes enabled."
+#~ msgstr[0] "S'ha habilitat %s tema."
+#~ msgstr[1] "S'han habilitat %s temes."
+
+#~ msgid "%s theme disabled."
+#~ msgid_plural "%s themes disabled."
+#~ msgstr[0] "S'ha deshabilitat %s tema."
+#~ msgstr[1] "S'han deshabilitat %s temes."
+
+#~ msgid "Are you sure you wish to delete this theme?"
+#~ msgstr "Segur que voleu suprimir aquest tema?"
+
+#~ msgid "These themes may be active on other sites in the network."
+#~ msgstr "Aquests temes es poden activar en altres llocs web de la xarxa."
+
+#~ msgid "You are about to remove the following themes:"
+#~ msgstr "Esteu a punt de suprimir els següents temes:"
+
+#~ msgid ""
+#~ "Once you hit &#8220;Confirm Deletion&#8221;, the user will be permanently "
+#~ "removed."
+#~ msgstr ""
+#~ "Una vegada premeu &#8220;Confirma l'eliminació&#8221;, l'usuari se "
+#~ "suprimirà permanentment."
+
+#~ msgid "User has no sites or content and will be deleted."
+#~ msgstr "L'usuari no té llocs web ni contingut i s'eliminarà."
+
+#~ msgid ""
+#~ "Once you hit &#8220;Confirm Deletion&#8221;, these users will be "
+#~ "permanently removed."
+#~ msgstr ""
+#~ "Una vegada premeu &#8220;Confirma l'eliminació&#8221;, aquests usuaris se "
+#~ "suprimiran permanentment."
+
+#~ msgid "You have chosen to delete the user from all networks and sites."
+#~ msgstr "Heu triat suprimir l'usuari de totes les xarxes i llocs web."
+
+#~ msgid "Select a user"
+#~ msgstr "Selecciona un usuari"
+
+#~ msgid "Enable menus"
+#~ msgstr "Activa els menús"
+
+#~ msgid "Set site attributes"
+#~ msgstr "Configura els atributs del lloc web"
+
+#~ msgid ""
+#~ "You have chosen to delete the following users from all networks and sites."
+#~ msgstr ""
+#~ "Heu triat suprimir els següents usuaris de totes les xarxes i llocs web."
+
+#~ msgid "Allowed file types. Separate types by spaces."
+#~ msgstr "Els tipus de fitxers permesos. Separa els tipus amb espais."
+
+#~ msgid "Size in kilobytes"
+#~ msgstr "Mida en kilobytes"
+
+#~ msgid "New registrations settings"
+#~ msgstr "Paràmetres dels registres nous"
