@@ -216,7 +216,8 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 
 // XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
 // 2014.10.21 @aginard
-if (!$isAgora || is_xtecadmin()) {
+// 2015.07.31 @nacho
+if (is_xtec_super_admin()) {
 //************ FI
 
 $menu[65] = array( sprintf( __('Plugins %s'), $count ), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'dashicons-admin-plugins' );
@@ -283,10 +284,8 @@ $menu[80]                               = array( sprintf( __( 'Settings %s' ), $
 	$submenu['options-general.php'][25] = array(__('Discussion'), 'manage_options', 'options-discussion.php');
 	$submenu['options-general.php'][30] = array(__('Media'), 'manage_options', 'options-media.php');
 // XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
-// 2014.11.03 @sarjona 19.03.15 @svallde2
-global $isAgora;
-
-if (!$isAgora || is_xtecadmin()) {
+// 2014.11.03 @sarjona 15.07.31 @nacho 19.03.15 @svallde2
+if (is_xtec_super_admin()) {
 //************ FI
 	$submenu['options-general.php'][40] = array(__('Permalinks'), 'manage_options', 'options-permalink.php');
     // translators: %s is the update notification bubble, if updates are available.
