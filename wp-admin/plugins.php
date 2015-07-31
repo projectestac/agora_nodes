@@ -12,9 +12,8 @@ require_once( dirname( __FILE__ ) . '/admin.php' );
 
 // XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
 // 2014.10.21 @aginard
-global $isAgora;
-
-if ($isAgora && !is_xtecadmin()) {
+// 2015.07.31 @nacho
+if (!is_xtec_super_admin()) {
     wp_die( __( 'You do not have sufficient permissions to manage plugins for this site.' ) );
 }
 //************ FI
