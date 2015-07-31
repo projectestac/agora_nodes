@@ -291,3 +291,30 @@ function quota_control($results) {
  * @author Nacho Abejaro
  */
 add_action('remove_stats', 'remove_old_stats');
+
+/**
+ *  Avoid delete this pages: Activitat, Membres, Nodes and Initial Page
+ * @param unknown $post_ID
+ */
+function restrict_post_deletion($post_ID){
+
+	$pagesList = array("Membres", "Pàgines d'inici", "Activitat", "Nodes");
+	$restricted_pages = array();
+
+	if (!is_xtec_super_admin()) {
+		foreach ($pagesList as $pageTitle){
+			$page = get_page_by_title($pageTitle);
+			if ($page->ID) {
+				array_push($restricted_pages, $page->ID);
+			}
+		}
+
+		if (in_array($post_ID, $restricted_pages)) {
+			$msg = __('The page you were trying to delete is protected.', 'agora-functions');
+			wp_die($msg);
+		}
+	}
+
+}
+add_action('wp_trash_post', 'restrict_post_deletion');
+add_action('before_delete_post', 'restrict_post_deletion');
