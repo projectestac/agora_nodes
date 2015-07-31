@@ -5,7 +5,8 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Updated catalan translation for WordPress 4.2.2
+- Updated catalan translation for WordPress 4.2.2 (Trello #793)
+- Avoid deletion of main pages (Trello #909)
 
 
 
