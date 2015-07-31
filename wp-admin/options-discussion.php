@@ -211,8 +211,8 @@ $show_avatars = get_option( 'show_avatars' );
 <?php
 // XTEC ************ AFEGIT - hide default avatars and punctuation. It's only showed for xtecadmin.
 // 2015.02.20 @vsaavedr
-global $isAgora, $isBlocs;
-if ( ( ($isAgora) && (is_xtecadmin()) ) || ( ($isBlocs) && (is_network_admin()) ) ) {
+// 2015.07.31 @nacho
+if (is_xtec_super_admin()){
 ?>
 <tr class="avatar-settings<?php if ( ! $show_avatars ) echo ' hide-if-js'; ?>">
 <th scope="row"><?php _e('Maximum Rating'); ?></th>
