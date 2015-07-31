@@ -238,7 +238,8 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 
 // XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
 // 2014.10.21 @aginard
-if (!$isAgora || is_xtecadmin()) {
+// 2015.07.31 @nacho
+if (is_xtec_super_admin()) {
 //************ FI
 
 /* translators: %s: Number of pending plugin updates. */
@@ -308,10 +309,9 @@ $menu[80]                               = array( __( 'Settings' ), 'manage_optio
 
 // XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
 // 2014.11.03 @sarjona
+// 2015.07.31 @nacho
 // 2019.03.15 @svallde2
-global $isAgora;
-
-if (!$isAgora || is_xtecadmin()) {
+if (is_xtec_super_admin()) {
 //************ FI
 
 	$submenu['options-general.php'][40] = array( __( 'Permalinks' ), 'manage_options', 'options-permalink.php' );
