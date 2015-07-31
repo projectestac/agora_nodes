@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2015-04-23 09:53+0100\n"
-"PO-Revision-Date: 2015-06-30 13:22+0100\n"
-"Last-Translator: nacho <nacho@test.com>\n"
+"POT-Creation-Date: 2015-07-31 09:56+0100\n"
+"PO-Revision-Date: 2015-09-01 17:26+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -12,46 +12,79 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
-"mu-plugins\n"
+"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins\n"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:31
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:34
 msgid "My Articles"
 msgstr "Articles"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:54
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:58
 msgid "Published"
 msgstr "Publicats"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:76
-msgid "Drafts"
-msgstr "Esborranys"
-
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:182
-msgid "Categories "
-msgstr "Categories"
-
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:189
-msgid "Comments"
-msgstr "Comentaris"
-
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:202
-msgid "Article not found"
-msgstr "No s'ha trobat cap article"
-
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:69
 msgid "Pending Review"
 msgstr "Pendent de revisió"
 
-msgid "You have exceeded your disk quota limit"
-msgstr ""
-"No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que "
-"té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o "
-"sol·licitar una ampliació de la quota. Trobareu més informació en aquesta "
-"PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?"
-"id=461&mode=entry&hook=561"
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:80
+msgid "Drafts"
+msgstr "Esborranys"
 
-#: bpfb.php
-msgid "You have exceeded your disk quota"
-msgstr ""
-"No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que "
-"té assignada."
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:186
+msgid "Categories"
+msgstr "Categories"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:193
+msgid "Comments"
+msgstr "Comentaris"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:205
+msgid "Article not found"
+msgstr "No s'ha trobat cap article"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:282
+msgid "You have exceeded your disk quota limit"
+msgstr "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o sol·licitar una ampliació de la quota. Trobareu més informació en aquesta PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=461&mode=entry&hook=561"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:313
+msgid "The page you were trying to delete is protected."
+msgstr "La pàgina que volíeu esborrar està protegida"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+msgid "Image files must be smaller than "
+msgstr "Les imatges no poden ser més grans de "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+msgid "Recommended width image:"
+msgstr "Amplada recomanada: "
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:225
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:226
+msgid "Medium"
+msgstr "Mitjana"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:227
+msgid "Large"
+msgstr "Gran"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:268
+msgid "No item"
+msgstr "No s'ha trobat cap element"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:272
+msgid ">"
+msgstr "Fa"
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:364
+msgid "You do not have permission to do that."
+msgstr "No teniu autorització per fer això"
+
+#~ msgid "You have exceeded your disk quota"
+#~ msgstr ""
+#~ "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota "
+#~ "que té assignada."
