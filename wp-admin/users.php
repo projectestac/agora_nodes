@@ -184,8 +184,8 @@ switch ( $wp_list_table->current_action() ) {
 
 		foreach ( $userids as $id ) {
 		   // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
-           // 2014.09.03 @aginard 19.03.15 @svalld22
-            if ($isAgora && ($id == get_xtecadmin_id())) {
+           // 2014.09.03 @aginard 15.07.31 @nacho 19.03.15 @svalld2e2
+            if (!is_xtec_super_admin()) {
                wp_die(__('You do not have permission to do that.'));
             }
             //************ FI
@@ -278,7 +278,8 @@ switch ( $wp_list_table->current_action() ) {
 
         // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (confirmation step)
         // 2014.09.03 @aginard
-        if ($isAgora && ($id == get_xtecadmin_id())) {
+		// 2015.07.31 @nacho
+        if (!is_xtec_super_admin()) {
             wp_die(__('You do not have permission to do that.'));
         }
         //************ FI

@@ -76,8 +76,9 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora && !is_xtecadmin()) { ?>
-<!--  
+<!-- 2015.07.11 @nacho -->
+<?php if (!is_xtec_super_admin()) { ?>
+<!--
 <?php } ?>
 
 <tr>
@@ -142,8 +143,9 @@ else :
 
 <!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!--// 2014.09.09 @aginard
-<?php if ($isAgora && !is_xtecadmin()) { ?>
---> 
+	// 2015.07.31 @nacho
+<?php if (!is_xtec_super_admin()) { ?>
+-->
 <?php } ?>
 <!-- ************ FI -->
 
@@ -153,9 +155,11 @@ else :
 </tr>
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora && !is_xtecadmin()) { ?>
-<!--  
+<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag
+	 2015.07.11 @nacho
+-->
+<?php if (!is_xtec_super_admin()) { ?>
+<!--
 <?php } ?>
 
 <tr>
@@ -201,11 +205,12 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
 <!-- 2014.09.09 @aginard
-<?php if ($isAgora && !is_xtecadmin()) { ?>
---> 
+	 2015.07.11 @nacho
+<?php if (!is_xtec_super_admin()) { ?>
+-->
 <?php } ?>
 <!-- ************ FI -->
-    
+
 <?php do_settings_fields( 'reading', 'default' ); ?>
 </table>
 
