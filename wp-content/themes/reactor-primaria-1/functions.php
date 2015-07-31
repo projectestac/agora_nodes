@@ -44,7 +44,7 @@ function reactor_child_theme_setup() {
 	 	'reactor-menus',
 	 	array('main-menu','side-menu')
 	 );
-	
+
 	/* Support for sidebars
 	Note: this doesn't change layout options */
 	// remove_theme_support('reactor-sidebars');
@@ -52,34 +52,34 @@ function reactor_child_theme_setup() {
 	 	'reactor-sidebars',
 	 	array('primary', 'secondary', 'front-primary', 'front-secondary','categoria', 'footer')
 	 );
-	
+
 	add_theme_support(
 	 	'reactor-layouts',
 	 	array('1c','2c-l')
 	 );
-	
+
 	/* Support for custom post types */
 	 remove_theme_support('reactor-post-types');
-	
+
 	/* Support for page templates */
 	add_theme_support(
 		'reactor-page-templates',
 		array('front-page'/*, 'news-page', 'portfolio', 'contact'*/)
 	);
-	
+
 	/* Remove support for background options in customizer */
 	remove_theme_support('reactor-backgrounds');
-        
+
         add_theme_support('reactor-tumblog-icons');
-	
+
 }
 
 /**
- * Fil d'ariadna 
+ * Fil d'ariadna
  * @author Xavi Meler
  */
 function add_breadcrumbs(){
-    reactor_breadcrumbs(); 
+    reactor_breadcrumbs();
 }
 add_action ('reactor_content_before','add_breadcrumbs',999);
 
@@ -90,7 +90,7 @@ add_action ('reactor_content_before','add_breadcrumbs',999);
 //Sempre visible
 show_admin_bar( true );
 
-add_action( 'admin_bar_menu', 'add_logo',1 ); 
+add_action( 'admin_bar_menu', 'add_logo',1 );
 add_action( 'admin_bar_menu', 'add_recursos',2);
 
 // Eliminem icones de la barra superior
@@ -99,19 +99,19 @@ function custom_toolbar($wp_toolbar) {
     $wp_toolbar->remove_node('updates');
     $wp_toolbar->remove_node('comments');
     $wp_toolbar->remove_node('new-content');
-    $wp_toolbar->remove_node('search');  
+    $wp_toolbar->remove_node('search');
     $wp_toolbar->remove_node('themes');
     $wp_toolbar->add_node( array(
     	'parent' => 'site-name',
-    	'id' => 'entrades', 
-    	'title' => __('Articles'), 
-    	'href' => admin_url( 'edit.php') 
+    	'id' => 'entrades',
+    	'title' => __('Articles'),
+    	'href' => admin_url( 'edit.php')
     ));
     $wp_toolbar->add_node( array(
 		'parent' => 'site-name',
- 		'id' => 'pagines', 
- 		'title' => __('Pàgines'), 
- 		'href' => admin_url( 'edit.php?post_type=page') 
+ 		'id' => 'pagines',
+ 		'title' => __('Pàgines'),
+ 		'href' => admin_url( 'edit.php?post_type=page')
  	));
 }
 add_action('admin_bar_menu', 'custom_toolbar',98);
@@ -153,7 +153,7 @@ function save_extra_category_fields( $term_id ) {
 // save extra category extra fields hook
 add_action ( 'edited_category', 'save_extra_category_fields');
 
-//Filtre categoria 
+//Filtre categoria
 function filter_by_taxonomy($query) {
     global $categoria;
     global $etiqueta;
@@ -168,13 +168,13 @@ function filter_by_taxonomy($query) {
 }
 
 add_action( 'pre_get_posts', 'filter_by_taxonomy');
- 
+
 // Permet algunes etiquetes html a l'extracte d'un post
 function improved_trim_excerpt($text) {
-    
+
         global $post;
 	$allowed_tags='<a>,<ul>,<li>,<ol>';
-        
+
         $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_more);
 
         if ( '' == $text ) {
@@ -190,11 +190,11 @@ function improved_trim_excerpt($text) {
                     array_pop($words);
                     $text = implode(' ', $words);
             }
-            else 
+            else
                  return $text;
-            
+
         }
-        
+
         return $text . $excerpt_more;
 }
 
@@ -276,7 +276,7 @@ if ( function_exists('register_sidebar') ) {
 }
 
 /**
- * Hide widgets 
+ * Hide widgets
  * @author Xavi Meler
  */
 function unregister_default_widgets() {
@@ -289,16 +289,16 @@ function unregister_default_widgets() {
      unregister_widget('InviteAnyoneWidget');
      unregister_widget('BP_Core_Whos_Online_Widget');
      unregister_widget('BP_Core_Login_Widget');
-     unregister_widget('BP_Messages_Sitewide_Notices_Widget'); 	
+     unregister_widget('BP_Messages_Sitewide_Notices_Widget');
 
  }
  add_action('widgets_init', 'unregister_default_widgets', 11);
 
 
 /**
- * Remove not used dashboard metaboxes 
+ * Remove not used dashboard metaboxes
  * @author Xavi Meler
- */ 
+ */
 function remove_dashboard_widgets(){
     //remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
     //remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
@@ -313,7 +313,7 @@ function remove_dashboard_widgets(){
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
 
-include "custom-tac/rss-metabox.php"; 
+include "custom-tac/rss-metabox.php";
 
 add_action('wp_dashboard_setup', 'rss_register_widgets');
 
@@ -322,20 +322,20 @@ function rss_register_widgets() {
     wp_add_dashboard_widget('widget_rss_nodes', "Notícies", 'rss_box');
 }
 
-// Tauler personalitzat 
-include "custom-tac/welcome-panel.php"; 
+// Tauler personalitzat
+include "custom-tac/welcome-panel.php";
 
 add_action( 'welcome_panel', 'rc_my_welcome_panel' );
 
 /**
  * Remove option in admin bar added by the extension 'WordPress Social Login'.
  * It is removed for all users
- * 
+ *
  * @global Array $wp_admin_bar
  * @author Toni Ginard
  */
 function tweak_admin_bar() {
-    
+
     global $wp_admin_bar;
 
     $wp_admin_bar->remove_menu('wp-admin-wordpress-social-login');
@@ -346,9 +346,9 @@ add_action('wp_before_admin_bar_render', 'tweak_admin_bar');
 
 /**
  * Build HTML page to centralize all BuddyPress-related stuff
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function bp_options_page() {
     ?>
@@ -394,12 +394,12 @@ function bp_options_page() {
 }
 
 /**
- * Move options from Settings to custom BuddyPress page, step 1. This movement 
- * is broken in two steps because some actions need to be done early and some 
+ * Move options from Settings to custom BuddyPress page, step 1. This movement
+ * is broken in two steps because some actions need to be done early and some
  * need to be done later, depending on the implementation of every plugin.
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function rebuild_bp_menus_step_1() {
 
@@ -419,12 +419,12 @@ function rebuild_bp_menus_step_1() {
 }
 
 /**
- * Move options from Settings to custom BuddyPress page, step 2. This movement 
- * is broken in two steps because some actions need to be done early and some 
+ * Move options from Settings to custom BuddyPress page, step 2. This movement
+ * is broken in two steps because some actions need to be done early and some
  * need to be done later, depending on the implementation of every plugin.
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function rebuild_bp_menus_step_2() {
 
@@ -432,16 +432,16 @@ function rebuild_bp_menus_step_2() {
     remove_menu_page('bp-groups');
 
     remove_submenu_page('options-general.php', 'bp-components'); // Tab in BuddyPress
-    remove_submenu_page('bp-general-settings', 'ass_admin_options'); // Group Email 
+    remove_submenu_page('bp-general-settings', 'ass_admin_options'); // Group Email
     remove_submenu_page('options-general.php', 'bp-like-settings'); // BuddyPress Like
 
 }
 
 /**
  * Build HTML page to centralize all bbpress-related stuff
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function bbpress_options_page() {
     ?>
@@ -470,9 +470,9 @@ function bbpress_options_page() {
 
 /**
  * Build bbpress custom menu
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function rebuild_bbpress_menus() {
     add_menu_page(__('Forums', 'bbpress'), __('Forums', 'bbpress'), 'manage_options', 'xtec-bbpress-options', 'bbpress_options_page', '', 58);
@@ -480,9 +480,9 @@ function rebuild_bbpress_menus() {
 
 /**
  * Remove menus for administrators who are not xtecadmin
- * 
+ *
  * @author Toni Ginard
- * 
+ *
  */
 function remove_admin_menus() {
 
@@ -504,7 +504,7 @@ function remove_admin_menus() {
 
 /**
  * Unregister WordPress Social Login admin tabs
- * 
+ *
  * @author Toni Ginard
  */
 function wsl_unregister_admin_tabs() {
@@ -514,7 +514,7 @@ function wsl_unregister_admin_tabs() {
     unset($WORDPRESS_SOCIAL_LOGIN_ADMIN_TABS['help']);
 }
 
-// Remove items for all users but xtecadmin (check for xtecadmin is in the function 
+// Remove items for all users but xtecadmin (check for xtecadmin is in the function
 //   because global $current_user is not set at this stage)
 add_action('admin_menu', 'remove_admin_menus');
 add_action('wsl_register_setting_end', 'wsl_unregister_admin_tabs');
@@ -527,22 +527,28 @@ add_action('admin_menu', 'rebuild_bbpress_menus');
 /**
  * Avoid delete this pages: Activitat(5), Membres(6), Nodes(sec 16,pri 141)
  *
- * @author Xavi Meler & Toni Ginard 
+ * @author Xavi Meler & Toni Ginard
  */
-add_action('wp_trash_post', 'restrict_post_deletion', 10, 1);
+
+// XTEC ************ ELIMINAT - moved and extended function at agora-functions.php file
+// 2015.07.31 @nacho
+/*
+
+/*add_action('wp_trash_post', 'restrict_post_deletion', 10, 1);
 
 function restrict_post_deletion($post_ID){
-   
+
     $restricted_pages = array(5,6,16,141);
     if(get_post_type( $post_ID )=="page" && in_array($post_ID, $restricted_pages)){
         echo "Aquesta p&agrave;gina forma part de l'estructura de NODES. No es pot esborrar.";
         exit;
     }
-}
+}*/
+//************ FI
 
 /**
  * Remove Page Templates
- * 
+ *
  * @author Xavi Meler
  * Thanks Alex Angas
  */
@@ -557,13 +563,13 @@ function remove_page_templates( $templates ) {
 add_filter( 'theme_page_templates', 'remove_page_templates' );
 
 /**
- * Menú shortcode 
- *  
+ * Menú shortcode
+ *
  * @author Xavi Meler
  * http://www.smashingmagazine.com/2012/05/01/wordpress-shortcodes-complete-guide/
- * 
+ *
  * Usage: [menu name="main-menu"]
- 
+
 
 function menu_function($atts, $content = null) {
    extract(
@@ -583,7 +589,7 @@ function menu_function($atts, $content = null) {
           'walker'=> new themeslug_walker_nav_menu
           )
    );
-   
+
 }
 add_shortcode('menu', 'menu_function');
 
@@ -592,20 +598,20 @@ add_shortcode('menu', 'menu_function');
 
 /**
  * get_description_text
- * 
+ *
  * Get the description text depending of type of page
- * 
+ *
  * @author Xavi Meler
- * 
+ *
  */
 
 function get_description_text (){
     switch (true){
         case is_category():
-            $description = single_cat_title( '', false ); 
+            $description = single_cat_title( '', false );
             break;
         case is_tag():
-             $description = single_tag_title( '', false ); 
+             $description = single_tag_title( '', false );
             break;
         default:
              $description = esc_attr( get_bloginfo( 'description', 'display' ) );
@@ -616,29 +622,29 @@ function get_description_text (){
 
 /**
  * get_description_font_size
- * 
- * Determina la mida de la font de la caixa descripció en funció del nombre de 
+ *
+ * Determina la mida de la font de la caixa descripció en funció del nombre de
  * paraules i de la mida de cada paraula
- * 
+ *
  * Si hi ha una paraula molt llarga, redueix la font a 1.5em
  * Si hi ha més de 3 paraules, redueix a 1.8em
  * Si hi ha més de 8 paraules, redueix a 1.5em
  * Paraula mitja: 5 caràcteres/paraula
- * 
+ *
  * @author Xavi Meler
- * 
+ *
  */
- 
+
 function get_description_font_size($description){
-    
+
     $description_len = strlen($description);
     $aDescription = explode(" ",$description);
-    
+
     foreach ($aDescription as $word) {
         if (strlen($word) > 10)
             return "2vw";
     }
-    
+
     switch (true) {
         case $description_len <= 15: //3 paraules aprox. Paraula mitja: 5caracters
             $fontSize = "2.5vw";
@@ -656,7 +662,7 @@ function get_description_font_size($description){
 function get_icon_font_size($icon_text){
     $icon_text_len = strlen($icon_text);
     $aIcon_text = explode(" ",$icon_text);
-    
+
     foreach ($aIcon_text as $word) {
         if (strlen($word) > 9)
             return "0.8vw";
@@ -666,7 +672,7 @@ function get_icon_font_size($icon_text){
 
 /**
  * Informació del centre al peu de la versió per imprimir
- * 
+ *
  * @author Xavi Meler
  */
 
@@ -676,11 +682,11 @@ function footer_mediaprint(){
     echo "<div id='info-footer-mediaprint'>". reactor_option('nomCanonicCentre')." | ".  get_home_url()."</div>";
 }
 
-/* 
- * Fixem la portada amb la configuració de "pàgina" i establim la pàgina segons 
- * el valor definit al customizer (Personalitza). Evitem dependre de les opcions de 
- * Paràmetres -> Lectura i del problema de l'esborrat de la pàgina d'inici definida allà. 
- * 
+/*
+ * Fixem la portada amb la configuració de "pàgina" i establim la pàgina segons
+ * el valor definit al customizer (Personalitza). Evitem dependre de les opcions de
+ * Paràmetres -> Lectura i del problema de l'esborrat de la pàgina d'inici definida allà.
+ *
  * @author Xavi Meler
  */
 
@@ -694,9 +700,9 @@ function set_page_on_front($value) {
     return reactor_option("frontpage_page");
 }
 
-/** 
+/**
  * Canvia la galeta perquè no sigui secura (wordpress_ enlloc de wordpress_sec) per no haver de validar dues vegades en accedir al Tauler
- * 
+ *
  * @author Sara Arjona
  *
 */
@@ -711,8 +717,8 @@ function wpadmin_secure_cookie_filter( ) {
 */
 
 /**
- * If external adress, open link on new window 
- * 
+ * If external adress, open link on new window
+ *
  * @author Xavi Meler
 */
 
@@ -725,8 +731,8 @@ function set_target($link){
 
 /**
  * Replace "es.scribd.com" per "www.scribd.com" cause es.scribd.com doesn't work as a oEmbed provider
- * I try to add as a oEmbed provider via wp_oembed_add_provider but doesn't work 
- * 
+ * I try to add as a oEmbed provider via wp_oembed_add_provider but doesn't work
+ *
  * @author Xavi Meler
 */
 
@@ -739,18 +745,18 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
 
 
 function get_colors(){
-    
+
     global $colors_nodes;
-    
+
     $paleta = reactor_option('paleta_colors','blaus');
-    
+
     $color_primary   = $colors_nodes[$paleta][1];
     $color_secondary = $colors_nodes[$paleta][2];
     $color_footer    = isset($colors_nodes[$paleta][3])?$colors_nodes[$paleta][3]:$color_secondary;
     $color_link      = isset($colors_nodes[$paleta][4])?$colors_nodes[$paleta][4]:$color_secondary;
     $color_icon22    = isset($colors_nodes[$paleta][5])?$colors_nodes[$paleta][5]:$color_secondary;
     $color_calendari = isset($colors_nodes[$paleta][6])?$colors_nodes[$paleta][6]:$color_secondary;
-    
+
     $css="
             .box-title{
                 background-color:$color_primary;
@@ -770,29 +776,29 @@ function get_colors(){
             #icon-22 a {
                 color:$color_icon22 !important;
             }
-            
-            h1, h2, h3, h4, h5, h6, a {    
+
+            h1, h2, h3, h4, h5, h6, a {
                 color: $color_link  !important;
             }
-            
+
             #menu-panel {
                     border-bottom: 2px solid $color_secondary;
             }
-            
+
             .entry-comments,
             .entry-categories>a,
             .entry-tags >a {
                 color: $color_secondary  !important;
             }
-            
+
             .entry-comments:before,
             .entry-categories:before,
             .entry-tags:before{
                     color: $color_secondary; }
             .menu-link, .sub-menu-link {
                     color: $color_secondary  !important;
-            }    
-            
+            }
+
 
             .gce-today span.gce-day-number{
                 border: 3px solid $color_calendari !important;
@@ -801,13 +807,13 @@ function get_colors(){
             .gce-widget-grid .gce-calendar th abbr {
                 color: $color_calendari;
             }
-            
-            #footer { 
+
+            #footer {
                 background-color: $color_footer;
             }
        ";
-    
+
     return $css;
-    
+
 }
 
