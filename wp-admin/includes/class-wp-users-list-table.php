@@ -366,31 +366,26 @@ class WP_Users_List_Table extends WP_List_Table {
 
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (opening if)
                 // 2014.09.03 @aginard
-                global $isAgora;
-                if ($isAgora) {
-                    if (($user_object->user_login != get_xtecadmin_username()) || is_xtecadmin()) {
+				// 2015.07.31 @nacho
+                if (!is_xtec_super_admin()){
+                    if ( $user_object->user_login != get_xtecadmin_username() ) {
                         $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
                     }
                 } else {
                 //************ FI
-                    
-                $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
-                
+                	$actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
                 // 2014.09.03 @aginard
                 }
                 //************ FI
-                
 			} else {
 				$edit = "<strong>$user_object->user_login</strong><br />";
 			}
 			if ( !is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) )
-
                 // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (opening if)
-                // 2014.09.03 @aginard
-                {
-                global $isAgora;
-                if ($isAgora) {
+				// 2015.07.31 @nacho
+				{
+                if (!is_xtec_super_admin()){
                     if ($user_object->user_login != get_xtecadmin_username()) {
         				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . "</a>";
                     }
