@@ -176,8 +176,11 @@ $profileuser = get_user_to_edit($user_id);
 
 // XTEC ************ AFEGIT - Only xtecadmin is allowed to edit xtecadmin
 // 2014.09.03 @aginard
-if ($isAgora && ($profileuser->user_login == get_xtecadmin_username()) && !is_xtecadmin()) {
-    wp_die(__('You do not have permission to edit this user.'));
+// 2015.07.31 @nacho
+if (!is_xtec_super_admin()){
+	if ( $profileuser->user_login == get_xtecadmin_username() ) {
+		wp_die(__('You do not have permission to edit this user.'));
+	}
 }
 //************ FI
 
