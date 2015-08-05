@@ -8,6 +8,7 @@ Changes in progress
 - Updated catalan translation for WordPress 4.2.2 (Trello #793)
 - Avoid deletion of main pages (Trello #909)
 - Modified code to check if is xtecadmin or superadmin (Trello #902)
+- Block access to install script (Trello #521)
 
 
 
