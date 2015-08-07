@@ -318,3 +318,26 @@ function restrict_post_deletion($post_ID){
 }
 add_action('wp_trash_post', 'restrict_post_deletion');
 add_action('before_delete_post', 'restrict_post_deletion');
+
+/**
+ * Prevents the creation of restricted pages
+ * The first filter, ‘wp_unique_post_slug_is_bad_hierarchical_slug’, is for hierarchical posts
+ * The second filter, ‘wp_unique_post_slug_is_bad_flat_slug’, is for non-hierarchical posts.
+ * @author Nacho Abejaro
+ */
+function prevent_directory_slugs($bool, $slug) {
+
+	$blackPagesList = array("moodle", "moodle2", "intranet");
+
+	foreach ($blackPagesList as $page){
+		if ( $slug == $page ) {
+			$msg = __('The page name you were trying to create is protected.', 'agora-functions');
+			wp_die($msg);
+			// Without exit does not works correctly
+			exit(0);
+		}
+	}
+}
+
+add_filter('wp_unique_post_slug_is_bad_hierarchical_slug','prevent_directory_slugs',10,2);
+add_filter('wp_unique_post_slug_is_bad_flat_slug','prevent_directory_slugs',10,2);
