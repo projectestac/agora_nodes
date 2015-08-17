@@ -10,6 +10,7 @@ Changes in progress
 - Modified code to check if is xtecadmin or superadmin (Trello #902)
 - Block access to install script (Trello #521)
 - Prevent the creation of restricted pages (Trello #871)
+- Hidden text icon in the mobile version (GitHub #229)
 
 
 
