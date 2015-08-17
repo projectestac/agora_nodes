@@ -1278,6 +1278,10 @@ div.docs-info-header {
   div.gce-widget-grid table tr td {
     padding: 0.5em;
   }
+  
+  .text_icon {
+      display:none;
+  }
 }  
  
 /* Large > 1480px */
