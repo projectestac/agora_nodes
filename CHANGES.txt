@@ -10,6 +10,7 @@ Changes in progress
 - Modified code to check if is xtecadmin or superadmin (Trello #902)
 - Prevent the creation of restricted pages (Trello #871)
 - Hidden text icon in the mobile version (GitHub #229)
+- Grup-Classe: Second HTML box independent of first box (GitHub #228)
 
 
 
