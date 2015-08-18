@@ -253,7 +253,7 @@ class Grup_classe_Widget extends WP_Widget {
             echo "<br>";
         }
         // Custom html/text block 
-        if (strlen(trim($text_open))>0){
+        if (strlen(trim($text_close))>0) {
             the_widget( 'WP_Widget_Text',"text=$text_close&filter=true");
         }
         echo $after_widget;
