@@ -11,6 +11,7 @@ Changes in progress
 - Block access to install script (Trello #521)
 - Prevent the creation of restricted pages (Trello #871)
 - Hidden text icon in the mobile version (GitHub #229)
+- Grup-Classe: Second HTML box independent of first box (GitHub #228)
 
 
 
