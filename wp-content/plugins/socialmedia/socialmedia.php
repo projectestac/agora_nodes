@@ -35,7 +35,7 @@ class SocialMedia_Widget extends WP_Widget {
         'rss'           => array('nom'=>"rss",       'url'=>'','img'=>'rss-square'), 
         'email'         => array('nom'=>"Correu",    'url'=>'','img'=>'envelope-square'), 
         'moodle'        => array('nom'=>"Moodle",    'url'=>'','img'=>'graduation-cap'),
-        'xarxanodes'    => array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'sitemap'),
+        'xarxanodes'    => array('nom'=>"Xarxa Nodes",'url'=>'','img'=>'comments'),
         'docs'          => array('nom'=>"Documents", 'url'=>'','img'=>'folder-open'),
         'fotos'         => array('nom'=>"Fotos",     'url'=>'','img'=>'photo'),
         'video'         => array('nom'=>"Videos",    'url'=>'','img'=>'caret-square-o-right')
@@ -48,12 +48,11 @@ class SocialMedia_Widget extends WP_Widget {
             'Enllaços social media', 
             array( 'description' => 'Enllaços a les vostres xarxes socials i canals multimèdia', ) // Args
             );
-        $this->socialmedia["xarxanodes"]["url"] = get_home_url()."/activitat";    
+        $this->socialmedia["xarxanodes"]["url"] = get_home_url()."/activitat";   
     }
  
     // Back-end form of the Widget
     public function form($instance) {
-        
         $title = isset($instance['title']) ? $instance['title'] : "Segueix-nos!";
         $mida = isset($instance['mida']) ? $instance['mida'] : "fa-2x";    
              
@@ -78,7 +77,7 @@ class SocialMedia_Widget extends WP_Widget {
               </p>
 
             <label>Defineix les teves xarxes i canals multimèdia: </label><br> 
-
+            
             <?php foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) { ?>
                    <p>
                     <label for="<?php echo $this->get_field_id($idSocialMedia); ?>"><?php echo  esc_attr($nomSocialMedia['nom']); ?><br>
@@ -90,7 +89,6 @@ class SocialMedia_Widget extends WP_Widget {
     
     // Sanitize and return the safe form values
     public function update( $new_instance, $old_instance ) {
-        
         $instance = array();
         $instance['title'] = ( !empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
         $instance['mida'] = ( !empty( $new_instance['mida'] ) ) ? sanitize_text_field( $new_instance['mida'] ) : '';
@@ -104,35 +102,27 @@ class SocialMedia_Widget extends WP_Widget {
     
     // Front-End Display of the Widget
     public function widget($args, $instance) {
-        
         extract( $args );
         echo $before_widget;
        
         $title = $instance['title'];
         $mida =  $instance['mida'];
        
-        foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
-            if (strpos($instance[$idSocialMedia . '_url'],"@")===false){
-                $this->socialmedia[$idSocialMedia]["url"] = $instance[$idSocialMedia . '_url'];
-            } else {
-                $this->socialmedia[$idSocialMedia]["url"] = "mailto:".$instance[$idSocialMedia . '_url'];
-            }
-        }
-        
         // Display information
         if (!empty($title)) {
             echo $before_title . $title . $after_title;
         }
-
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
-            if ($this->socialmedia[$idSocialMedia]['url']!=''){
-                echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] ." ".$mida."\" href=\"" . esc_url($this->socialmedia[$idSocialMedia]['url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\"></a>";
+            if (!empty($instance[$idSocialMedia.'_url'])) {
+                if ($idSocialMedia=="email") {
+                    echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] ." ".$mida."\" href=\"mailto:" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\"></a>";
+                } else { 
+                    echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] ." ".$mida."\" href=\"" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\"></a>";
+                }
             }
         }
-        
         echo $after_widget;
     }
-
 }
  
 // Register widget
