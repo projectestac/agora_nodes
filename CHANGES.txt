@@ -13,6 +13,7 @@ Changes in progress
 - Hidden text icon in the mobile version (GitHub #229)
 - Grup-Classe: Second HTML box independent of first box (GitHub #228)
 - Social Media: Fixed automatic links (GitHub #108)
+- Enllaços educatius: Updated URL of edu3 (GitHub #225)
 
 
 
