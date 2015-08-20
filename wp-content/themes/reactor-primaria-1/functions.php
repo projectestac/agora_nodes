@@ -817,3 +817,59 @@ function get_colors(){
 
 }
 
+/**
+ * Custom login form
+ * 
+ * Logo is a simple workaround to show a simple image. 
+ * No default wp_logo is showed because is necessary to define dimensions (to fit school's logo accurently)
+ * I has valorated getimagesize, but is disabled for security reasons.
+ * @author Xavier Meler
+ */
+
+function nodes_login_form_css() { 
+   
+    ?>
+    <style type="text/css">
+        body.login {
+            background: #FFF;
+        }
+        
+        body.login #login h1 a {
+            display:none;
+        }
+        
+        body.login #login_logo{
+            text-align:center;
+            margin-bottom:1em;
+        }
+        
+        body.login #login_logo img {
+            max-width:200px;
+            margin-bottom:1em;
+        }
+                
+        body.login #loginform {
+            -webkit-box-shadow: inherit;
+            box-shadow: inherit;
+            border: 1px solid #ddd;
+            background:#F5F5F5;
+        }
+        
+        body.login .wp-social-login-widget{
+            text-align:center;
+        }
+    </style>
+<?php }
+
+//Logo image from customizer 
+function show_logo () {
+    echo "<div id='login_logo'><img src=" . reactor_option('logo_image') . ">"
+       . "<h1>" . reactor_option('nomCanonicCentre') . "</h1></div>";
+}
+// Load new login form styles
+add_action( 'login_enqueue_scripts', 'nodes_login_form_css' );
+// Show logo and WP_social_login widget
+add_filter( 'login_message', 'show_logo',10 );
+add_filter( 'login_message', 'wsl_render_auth_widget_in_wp_login_form',20 );
+// Remove original WP_social_login widget because are in a bad position for usability
+remove_action( 'login_form', 'wsl_render_auth_widget_in_wp_login_form' );
