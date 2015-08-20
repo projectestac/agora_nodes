@@ -14,7 +14,7 @@ Changes in progress
 - Grup-Classe: Second HTML box independent of first box (GitHub #228)
 - Social Media: Fixed automatic links (GitHub #108)
 - Enllaços educatius: Updated URL of edu3 (GitHub #225)
-
+- Changed login form layout (GitHub #79)
 
 
 Changes 15.08.10
