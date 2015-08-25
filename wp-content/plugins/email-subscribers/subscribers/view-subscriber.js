@@ -1,3 +1,13 @@
+function _es_redirect()
+{
+	window.location = "admin.php?page=es-view-subscribers";
+}
+
+function _es_help()
+{
+	window.open("http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/");
+}
+
 function _es_addemail()
 {
 	if(document.form_addemail.es_email_mail.value=="")
@@ -24,44 +34,97 @@ function _es_delete(id, query)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.frm_es_display.action="admin.php?page=es-view-subscribers&search="+query+"&ac=del&did="+id;
+		document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;;
+		document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+		document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+		document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+		document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+		document.frm_es_display.action="admin.php?page=es-view-subscribers&ac=del&did="+id;
 		document.frm_es_display.submit();
 	}
 }
 
-function _es_redirect()
-{
-	window.location = "admin.php?page=es-view-subscribers";
-}
-
-function _es_help()
-{
-	window.open("http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/");
-}
-
-function _es_resend(id,query)
-{
-	document.frm_es_display.action="admin.php?page=es-view-subscribers&ac=resend&search="+query+"&did="+id;
+function _es_resend(id, query)
+{	
+	//document.frm_es_display.action="admin.php?page=es-view-subscribers&ac=resend&search="+query+"&did="+id;
+	document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;;
+	document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+	document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+	document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+	document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+	document.frm_es_display.action="admin.php?page=es-view-subscribers&ac=resend&did="+id;
 	document.frm_es_display.submit();
 }
 
-function _es_search_sts_action(sts)
+function _es_search_sub_action(alphabets)
 {
-	var searchquery = document.frm_es_display.searchquery.value;
-	var cnt = document.frm_es_display.searchquery_cnt.value;
-	document.frm_es_display.frm_es_bulkaction.value = 'search_sts';
-	document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+	//var searchquery = document.frm_es_display.searchquery.value;
+	//var cnt = document.frm_es_display.searchquery_cnt.value;
+	//var group = document.frm_es_display.searchquery_group.value;
+	//document.frm_es_display.frm_es_bulkaction.value = 'search_sts';
+	//document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt + "&group=" + group;
+	document.getElementById("frm_es_bulkaction").value = 'search_sts';
+	document.getElementById("searchquery").value = alphabets;
+	document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+	document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+	document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+	document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+	document.frm_es_display.action="admin.php?page=es-view-subscribers";
+	document.frm_es_display.submit();
+}
+
+function _es_search_group_action(group)
+{
+	//var searchquery = document.frm_es_display.searchquery.value;
+	//var sts = document.frm_es_display.searchquery_sts.value;
+	//var cnt = document.frm_es_display.searchquery_cnt.value;
+	//document.frm_es_display.frm_es_bulkaction.value = 'search_group';
+	//document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt + "&group=" + group;
+	document.getElementById("frm_es_bulkaction").value = 'search_group';
+	document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+	document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+	document.getElementById("searchquery_group").value = group;
+	document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+	document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+	document.frm_es_display.action="admin.php?page=es-view-subscribers";
+	document.frm_es_display.submit();
+}
+
+function _es_search_sts_action(status)
+{
+	//var searchquery = document.frm_es_display.searchquery.value;
+	//var cnt = document.frm_es_display.searchquery_cnt.value;
+	//var group = document.frm_es_display.searchquery_group.value;
+	//document.frm_es_display.frm_es_bulkaction.value = 'search_sts';
+	//document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt + "&group=" + group;
+	document.getElementById("frm_es_bulkaction").value = 'search_sts';
+	document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+	document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+	document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+	document.getElementById("searchquery_sts").value = status;
+	document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+	document.frm_es_display.action="admin.php?page=es-view-subscribers";
 	document.frm_es_display.submit();
 }
 
 function _es_search_count_action(cnt)
 {
-	var searchquery = document.frm_es_display.searchquery.value;
-	var sts = document.frm_es_display.searchquery_sts.value;
-	document.frm_es_display.frm_es_bulkaction.value = 'search_cnt';
-	document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+	//var searchquery = document.frm_es_display.searchquery.value;
+	//var sts = document.frm_es_display.searchquery_sts.value;
+	//var group = document.frm_es_display.searchquery_group.value;
+	//document.frm_es_display.frm_es_bulkaction.value = 'search_cnt';
+	//document.frm_es_display.action="admin.php?page=es-view-subscribers&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt + "&group=" + group;
+	document.getElementById("frm_es_bulkaction").value = 'search_cnt';
+	document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+	document.getElementById("searchquery_cnt").value = cnt;
+	document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+	document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+	document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+	document.frm_es_display.action="admin.php?page=es-view-subscribers";
 	document.frm_es_display.submit();
 }
+
+
 
 function _es_bulkaction()
 {
@@ -78,11 +141,18 @@ function _es_bulkaction()
 		{
 			if(confirm("Are you sure you want to delete?"))
 			{
-				var searchquery = document.frm_es_display.searchquery.value;
-				var sts = document.frm_es_display.searchquery_sts.value;
-				var cnt = document.frm_es_display.searchquery_cnt.value;
-				document.frm_es_display.frm_es_bulkaction.value = 'delete';
-				document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=delete&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+				//var searchquery = document.frm_es_display.searchquery.value;
+				//var sts = document.frm_es_display.searchquery_sts.value;
+				//var cnt = document.frm_es_display.searchquery_cnt.value;
+				//document.frm_es_display.frm_es_bulkaction.value = 'delete';
+				//document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=delete&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+				document.getElementById("frm_es_bulkaction").value = 'delete';
+				document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+				document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+				document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+				document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+				document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+				document.frm_es_display.action="admin.php?page=es-view-subscribers";
 				document.frm_es_display.submit();
 			}
 			else
@@ -99,11 +169,18 @@ function _es_bulkaction()
 	{
 		if(confirm("Do you want to resend confirmation email? \nAlso please note, this will update subscriber current status to 'Unconfirmed'."))
 		{
-			var searchquery = document.frm_es_display.searchquery.value;
-			var sts = document.frm_es_display.searchquery_sts.value;
-			var cnt = document.frm_es_display.searchquery_cnt.value;
-			document.frm_es_display.frm_es_bulkaction.value = 'resend';
-			document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=resend&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+			//var searchquery = document.frm_es_display.searchquery.value;
+			//var sts = document.frm_es_display.searchquery_sts.value;
+			//var cnt = document.frm_es_display.searchquery_cnt.value;
+			//document.frm_es_display.frm_es_bulkaction.value = 'resend';
+			//document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=resend&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+			document.getElementById("frm_es_bulkaction").value = 'resend';
+			document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+			document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+			document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+			document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+			document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+			document.frm_es_display.action="admin.php?page=es-view-subscribers";
 			document.frm_es_display.submit();
 		}
 		else
@@ -122,11 +199,18 @@ function _es_bulkaction()
 	
 		if(confirm("Do you want to update subscribers group?"))
 		{
-			var searchquery = document.frm_es_display.searchquery.value;
-			var sts = document.frm_es_display.searchquery_sts.value;
-			var cnt = document.frm_es_display.searchquery_cnt.value;
-			document.frm_es_display.frm_es_bulkaction.value = 'groupupdate';
-			document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=groupupdate&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+			//var searchquery = document.frm_es_display.searchquery.value;
+			//var sts = document.frm_es_display.searchquery_sts.value;
+			//var cnt = document.frm_es_display.searchquery_cnt.value;
+			//document.frm_es_display.frm_es_bulkaction.value = 'groupupdate';
+			//document.frm_es_display.action="admin.php?page=es-view-subscribers&bulkaction=groupupdate&search=" + searchquery + "&sts=" + sts + "&cnt=" + cnt;
+			document.getElementById("frm_es_bulkaction").value = 'groupupdate';
+			document.getElementById("searchquery").value = document.frm_es_display.searchquery.value;
+			document.getElementById("searchquery_cnt").value = document.frm_es_display.searchquery_cnt.value;
+			document.getElementById("searchquery_group").value = document.frm_es_display.searchquery_group.value;
+			document.getElementById("searchquery_sts").value = document.frm_es_display.searchquery_sts.value;
+			document.getElementById("wp_create_nonce").value = document.frm_es_display.wp_create_nonce.value;
+			document.frm_es_display.action="admin.php?page=es-view-subscribers";
 			document.frm_es_display.submit();
 		}
 		else

@@ -4,6 +4,7 @@
 if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	es_cls_security::es_check_number($did);
 	
 	$es_success = '';
 	$es_success_msg = FALSE;
@@ -52,7 +53,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('Mail Subject', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Subscribers Group', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Categories / Custom Post', ES_TDOMAIN); ?></th>
@@ -61,7 +61,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('Mail Subject', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Subscribers Group', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Categories / Custom Post', ES_TDOMAIN); ?></th>
@@ -79,7 +78,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['es_note_id']; ?>" name="es_group_item[]"></td>
 					  	<td>
 						<?php 
 						$template = es_cls_compose::es_template_select($data['es_note_templ']);
@@ -97,7 +95,7 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 							</span>
 						</div>
 						</td>
-						<td><?php echo $data['es_note_group']; ?></td>
+						<td><?php echo stripslashes($data['es_note_group']); ?></td>
 						<td>
 						<?php 
 						$es_note_cat = str_replace("## -- ##", ", ", $data['es_note_cat']);
@@ -122,7 +120,11 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 						<?php 
 						if ($data['es_note_status'] == "Enable")
 						{
-							echo "Send mail when new posts are published";
+							echo "Send mail immediately<br> when new post is published.";
+						}
+						elseif ($data['es_note_status'] == "Cron")
+						{
+							echo "Add to cron and send mail via cron job.";
 						}
 						else
 						{
@@ -137,7 +139,7 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="5" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
+				?><tr><td colspan="4" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
 			}
 			?>
 		</tbody>

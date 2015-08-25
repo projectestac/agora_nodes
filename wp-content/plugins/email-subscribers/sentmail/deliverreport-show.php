@@ -2,6 +2,8 @@
 <script language="javaScript" src="<?php echo ES_URL; ?>sentmail/sentmail.js"></script>
 <?php
 $sentguid = isset($_GET['sentguid']) ? $_GET['sentguid'] : '';
+es_cls_security::es_check_guid($sentguid);
+
 if ($sentguid == '')
 {
 	?>
@@ -18,7 +20,8 @@ if ($sentguid == '')
     <div class="tool-box">
 	<?php
 	$pagenum = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
-	$limit = 100;
+	es_cls_security::es_check_number($pagenum);
+	$limit = 200;
 	$offset = ($pagenum - 1) * $limit;
 	$total = es_cls_delivery::es_delivery_count($sentguid);
 	$fulltotal = $total;
@@ -31,9 +34,11 @@ if ($sentguid == '')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
+            <th width="3%" scope="col"><?php _e('Sno', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Email', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Sent Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Viewed Status', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Viewed Date', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Database ID', ES_TDOMAIN); ?></th>
@@ -41,9 +46,11 @@ if ($sentguid == '')
         </thead>
 		<tfoot>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
+            <th width="3%" scope="col"><?php _e('Sno', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Email', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Sent Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Viewed Status', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Viewed Date', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Database ID', ES_TDOMAIN); ?></th>
@@ -59,9 +66,11 @@ if ($sentguid == '')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['es_deliver_id']; ?>" name="es_group_item[]"></td>
+						<td align="left"><?php echo $i; ?></td>
 					  	<td><?php echo $data['es_deliver_emailmail']; ?></td>
 						<td><?php echo $data['es_deliver_sentdate']; ?></td>
+						<td><?php echo es_cls_common::es_disp_status($data['es_deliver_sentstatus']); ?></td>
+						<td><?php echo es_cls_common::es_disp_status($data['es_deliver_senttype']); ?></td>
 						<td><?php echo es_cls_common::es_disp_status($data['es_deliver_status']); ?></td>
 						<td><?php echo $data['es_deliver_viewdate']; ?></td>
 						<td><?php echo $data['es_deliver_emailid']; ?></td>
@@ -72,7 +81,7 @@ if ($sentguid == '')
 			}
 			else
 			{
-				?><tr><td colspan="6" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
+				?><tr><td colspan="8" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
 			}
 			?>
 		</tbody>

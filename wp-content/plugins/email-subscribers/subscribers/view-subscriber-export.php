@@ -26,7 +26,6 @@ $cnt_comment_author = $wpdb->get_var("SELECT count(DISTINCT comment_author_email
   <table width="100%" class="widefat" id="straymanage">
     <thead>
       <tr>
-        <th width="3%" class="check-column" scope="col"><input type="checkbox" name="eemail_group_item[]" /></th>
         <th scope="col"><?php _e('Sno', ES_TDOMAIN); ?></th>
         <th scope="col"><?php _e('Export option', ES_TDOMAIN); ?></th>
 		<th scope="col"><?php _e('Total email', ES_TDOMAIN); ?></th>
@@ -35,7 +34,6 @@ $cnt_comment_author = $wpdb->get_var("SELECT count(DISTINCT comment_author_email
     </thead>
     <tfoot>
       <tr>
-        <th width="3%" class="check-column" scope="col"><input type="checkbox" name="eemail_group_item[]" /></th>
         <th scope="col"><?php _e('Sno', ES_TDOMAIN); ?></th>
         <th scope="col"><?php _e('Export option', ES_TDOMAIN); ?></th>
 		<th scope="col"><?php _e('Total email', ES_TDOMAIN); ?></th>
@@ -44,21 +42,18 @@ $cnt_comment_author = $wpdb->get_var("SELECT count(DISTINCT comment_author_email
     </tfoot>
     <tbody>
       <tr>
-        <td><input type="checkbox" value="" name="eemail_group_item[]"></td>
         <td>1</td>
         <td><?php _e('Subscriber email address', ES_TDOMAIN); ?></td>
 		<td><?php echo $cnt_subscriber; ?></td>
         <td><a onClick="javascript:_es_exportcsv('<?php echo $home_url. "?es=export"; ?>', 'view_subscriber')" href="javascript:void(0);"><?php _e('Click to export csv', ES_TDOMAIN); ?></a> </td>
       </tr>
       <tr class="alternate">
-        <td><input type="checkbox" value="" name="eemail_group_item[]"></td>
         <td>2</td>
         <td><?php _e('Registered email address', ES_TDOMAIN); ?></td>
 		<td><?php echo $cnt_users; ?></td>
         <td><a onClick="javascript:_es_exportcsv('<?php echo $home_url. "?es=export"; ?>', 'registered_user')" href="javascript:void(0);"><?php _e('Click to export csv', ES_TDOMAIN); ?></a> </td>
       </tr>
       <tr>
-        <td><input type="checkbox" value="" name="eemail_group_item[]"></td>
         <td>3</td>
         <td><?php _e('Comments author email address', ES_TDOMAIN); ?></td>
 		<td><?php echo $cnt_comment_author; ?></td>

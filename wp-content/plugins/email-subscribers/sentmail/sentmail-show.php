@@ -4,6 +4,7 @@
 if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	es_cls_security::es_check_number($did);
 	
 	$es_success = '';
 	$es_success_msg = FALSE;
@@ -54,7 +55,8 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
     <div class="tool-box">
 	<?php
 	$pagenum = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
-	$limit = 20;
+	es_cls_security::es_check_number($pagenum);
+	$limit = 30;
 	$offset = ($pagenum - 1) * $limit;
 	$total = es_cls_sentmail::es_sentmail_count(0);
 	$fulltotal = $total;
@@ -67,25 +69,27 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('View Reports', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Mail Preview', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent Source', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent Start Date', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent End Date', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Total Mails', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Preview', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Source', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Start Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('End Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Total', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Action', ES_TDOMAIN); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('View Reports', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Mail Preview', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent Source', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent Start Date', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Sent End Date', ES_TDOMAIN); ?></th>
-			<th scope="col"><?php _e('Total Mails', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Preview', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Source', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Start Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('End Date', ES_TDOMAIN); ?></th>
+			<th scope="col"><?php _e('Total', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Action', ES_TDOMAIN); ?></th>
           </tr>
         </tfoot>
@@ -99,7 +103,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['es_sent_id']; ?>" name="es_group_item[]"></td>
 					  	<td>
 						<a title="Click For Report" href="<?php echo ES_ADMINURL; ?>?page=es-sentmail&amp;ac=delivery&amp;sentguid=<?php echo $data['es_sent_guid']; ?>">
 						<?php echo $data['es_sent_guid']; ?>
@@ -107,14 +110,18 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 						</td>
 						<td>
 						<a title="Mail Preview" href="<?php echo ES_ADMINURL; ?>?page=es-sentmail&amp;ac=preview&amp;did=<?php echo $data['es_sent_id']; ?>&amp;pagenum=<?php echo $pagenum; ?>">
-							Preview
+							<img alt="Delete" src="<?php echo ES_URL; ?>images/preview.gif" />
 						</a>
 						</td>
 						<td><?php echo $data['es_sent_source']; ?></td>
+						<td><?php echo es_cls_common::es_disp_status($data['es_sent_status']); ?></td>
+						<td><?php echo es_cls_common::es_disp_status($data['es_sent_type']); ?></td>
 						<td><?php echo $data['es_sent_starttime']; ?></td>
 						<td><?php echo $data['es_sent_endtime']; ?></td>
 						<td><?php echo $data['es_sent_count']; ?></td>
-						<td><a onClick="javascript:_es_delete('<?php echo $data['es_sent_id']; ?>')" href="javascript:void(0);">Delete</a></td>
+						<td><a title="Delete Record" onClick="javascript:_es_delete('<?php echo $data['es_sent_id']; ?>')" href="javascript:void(0);">
+						<img alt="Delete" src="<?php echo ES_URL; ?>images/delete.gif" />
+						</a></td>
 					</tr>
 					<?php
 					$i = $i+1;
@@ -122,7 +129,7 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="8" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
+				?><tr><td colspan="9" align="center"><?php _e('No records available.', ES_TDOMAIN); ?></td></tr><?php 
 			}
 			?>
 		</tbody>

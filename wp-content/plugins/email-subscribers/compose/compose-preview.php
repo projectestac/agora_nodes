@@ -1,6 +1,7 @@
 <?php if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); } ?>
 <?php
 $did = isset($_GET['did']) ? $_GET['did'] : '0';
+es_cls_security::es_check_number($did);
 
 // First check if ID exist with requested ID
 $result = es_cls_compose::es_template_count($did);

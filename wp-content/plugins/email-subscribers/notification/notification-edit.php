@@ -2,6 +2,7 @@
 <div class="wrap">
 <?php
 $did = isset($_GET['did']) ? $_GET['did'] : '0';
+es_cls_security::es_check_number($did);
 
 // First check if ID exist with requested ID
 $result = es_cls_notification::es_notification_count($did);
@@ -113,7 +114,7 @@ if ($es_error_found == FALSE && strlen($es_success) > 0)
       
 	  <label for="tag-link"><?php _e('Subscribers Group', ES_TDOMAIN); ?></label>
       <select name="es_note_group" id="es_note_group">
-		<option value='<?php echo $form["es_note_group"]; ?>'><?php echo $form["es_note_group"]; ?></option>
+		<option value='<?php echo $form["es_note_group"]; ?>'><?php echo stripslashes($form["es_note_group"]); ?></option>
       </select>
       <p><?php _e('Not allowed to update the subscribers group in edit page.', ES_TDOMAIN); ?></p>
 	  
@@ -224,7 +225,8 @@ if ($es_error_found == FALSE && strlen($es_success) > 0)
 	  
 	  <label for="tag-link"><?php _e('Notification Status', ES_TDOMAIN); ?></label>
       <select name="es_note_status" id="es_note_status">
-        <option value='Enable' <?php if($form['es_note_status']=='Enable') { echo 'selected="selected"' ; } ?>>Send mail when new posts are published</option>
+        <option value='Enable' <?php if($form['es_note_status']=='Enable') { echo 'selected="selected"' ; } ?>>Send mail immediately when new post is published.</option>
+		<option value='Cron' <?php if($form['es_note_status']=='Cron') { echo 'selected="selected"' ; } ?>>Add to cron when new post is published and send via cron job.</option>
 		<option value='Disable' <?php if($form['es_note_status']=='Disable') { echo 'selected="selected"' ; } ?>>Disable notification</option>
       </select>
       <p><?php _e('Please select notification status.', ES_TDOMAIN); ?></p>

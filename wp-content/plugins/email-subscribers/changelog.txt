@@ -108,3 +108,17 @@ using administrator login and select Editor role to Send Email Menu, So that you
 * Tested upto 4.2
 * Fixed warning message bug on Roles page
 * Sync Email option has been added in the subscribers admin page. with this option all newly registered email address will be synced automatically into the plugin subscribers group.
+
+********************************Version 2.9************************************************************
+
+1. Tested upto 4.3
+2. Option available to add same email address to multiple group name
+3. Cron Mail option added. With this option you can schedule cron jobs for newsletter and notification emails. Using this cron option you can schedule mail (example 100 mails per hour)
+4. Group Name added in the export list.
+5. Mail Type option has been added in the Send Mail admin page. With this option you can add the mails into cron job or you can send the mail immediately.
+6. Notification Status option has been added in the notification setup page. With this option you can add notification mails into cron job or you can send the mail immediately when new post is published.
+7. Group name filter has been added in the subscriber admin page.
+
+********************************Version 2.9.1************************************************************
+
+* Fixed cross-site scripting vulnerabilities and a potential SQL injection.

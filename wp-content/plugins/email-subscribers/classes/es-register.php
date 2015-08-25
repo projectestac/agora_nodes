@@ -5,7 +5,7 @@ class es_cls_registerhook
 	{
 		global $wpdb;
 		
-		add_option('email-subscribers', "1.0");
+		add_option('email-subscribers', "2.9");
 
 		// Plugin tables
 		$array_tables_to_plugin = array('es_emaillist','es_sentdetails','es_deliverreport','es_pluginconfig');
@@ -17,7 +17,7 @@ class es_cls_registerhook
         $handle = fopen($sql_file, 'r');
         $query = fread($handle, filesize($sql_file));
         fclose($handle);
-        $query=str_replace('CREATE TABLE IF NOT EXISTS `','CREATE TABLE IF NOT EXISTS `'.$prefix, $query);
+        $query=str_replace('CREATE TABLE IF NOT EXISTS ','CREATE TABLE IF NOT EXISTS '.$prefix, $query);
         $queries=explode('-- SQLQUERY ---', $query);
 
         // run the queries one by one
@@ -58,6 +58,42 @@ class es_cls_registerhook
 			es_cls_default::es_notifications_default();
 		}
         return true;
+	}
+	
+	public static function es_synctables()
+	{
+		$es_c_email_subscribers_ver = get_option('email-subscribers');
+		if($es_c_email_subscribers_ver <> "2.9")
+		{
+			global $wpdb;
+			
+			// loading the sql file, load it and separate the queries
+			$sql_file = ES_DIR.'sql'.DS.'es-createdb.sql';
+			$prefix = $wpdb->prefix;
+			$handle = fopen($sql_file, 'r');
+			$query = fread($handle, filesize($sql_file));
+			fclose($handle);
+			$query=str_replace('CREATE TABLE IF NOT EXISTS ','CREATE TABLE '.$prefix, $query);
+			$query=str_replace('ENGINE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci*/','', $query);
+			$queries=explode('-- SQLQUERY ---', $query);
+	
+			// includes db upgrade file
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			
+			// run the queries one by one
+			foreach($queries as $sSql)
+			{
+				dbDelta( $sSql );
+			}
+			
+			$guid = es_cls_common::es_generate_guid(60);
+			$home_url = home_url('/');
+			$cronurl = $home_url . "?es=cron&guid=". $guid;
+			add_option('es_c_cronurl', $cronurl);
+			add_option('es_cron_mailcount', "50");
+			add_option('es_cron_adminmail', "Hi Admin, \r\n\r\nCron URL has been triggered successfully on ###DATE### for the mail ###SUBJECT###. And it sent mail to ###COUNT### recipient. \r\n\r\nThank You");
+			update_option('email-subscribers', "2.9" );
+		}
 	}
 	
 	public static function es_deactivation()
@@ -108,6 +144,9 @@ class es_cls_registerhook
 			
 		add_submenu_page('email-subscribers', __( 'Send Email', ES_TDOMAIN ), 
 			__( 'Send Email', ES_TDOMAIN ), $es_roles_sendmail, 'es-sendemail', array( 'es_cls_intermediate', 'es_sendemail' ));
+		
+		add_submenu_page('email-subscribers', __( 'Cron', ES_TDOMAIN ), 
+			__( 'Cron Mail', ES_TDOMAIN ), $es_roles_sendmail, 'es-cron', array( 'es_cls_intermediate', 'es_cron' ));
 				
 		add_submenu_page('email-subscribers', __( 'Settings', ES_TDOMAIN ), 
 			__( 'Settings', ES_TDOMAIN ), $es_roles_setting, 'es-settings', array( 'es_cls_intermediate', 'es_settings' ));	
@@ -117,7 +156,7 @@ class es_cls_registerhook
 			
 		add_submenu_page('email-subscribers', __( 'Sent Mails', ES_TDOMAIN ), 
 			__( 'Sent Mails', ES_TDOMAIN ), $es_roles_sentmail, 'es-sentmail', array( 'es_cls_intermediate', 'es_sentmail' ));	
-					
+			
 		add_submenu_page('email-subscribers', __( 'Help & Info', ES_TDOMAIN ), 
 			__( 'Help & Info', ES_TDOMAIN ), $es_roles_help, 'es-general-information', array( 'es_cls_intermediate', 'es_information' ));
 			
@@ -260,8 +299,8 @@ class es_widget_register extends WP_Widget
 		<p>
             <label for="<?php echo $this->get_field_id('es_name'); ?>"><?php _e('Display Name Field', ES_TDOMAIN); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id('es_name'); ?>" name="<?php echo $this->get_field_name('es_name'); ?>">
-				<option value="YES" <?php $this->es_selected($es_name == 'YES'); ?>><?php _e('YES', ES_TDOMAIN); ?></option>
-				<option value="NO" <?php $this->es_selected($es_name == 'NO'); ?>><?php _e('NO', ES_TDOMAIN); ?></option>
+				<option value="YES" <?php $this->es_selected($es_name == 'YES'); ?>>YES</option>
+				<option value="NO" <?php $this->es_selected($es_name == 'NO'); ?>>NO</option>
 			</select>
         </p>
 		<p>

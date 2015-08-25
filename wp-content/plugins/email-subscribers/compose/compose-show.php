@@ -1,9 +1,24 @@
 <?php if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); } ?>
 <?php
+$es_c_email_subscribers_ver = get_option('email-subscribers');
+if ($es_c_email_subscribers_ver <> "2.9")
+{
+	?>
+	<div class="error fade">
+		<p>
+		Note: You have recently upgraded the plugin and your tables are not sync. 
+		Please <a title="Sync plugin tables." href="<?php echo ES_ADMINURL; ?>?page=es-settings&amp;ac=sync"><?php _e('Click Here', ES_TDOMAIN); ?></a> to sync the table. 
+		This is mandatory and it will not affect your data.
+		</p>
+	</div>
+	<?php
+}
+
 // Form submitted, check the data
 if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	es_cls_security::es_check_number($did);
 	
 	$es_success = '';
 	$es_success_msg = FALSE;
@@ -52,7 +67,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('Email subject', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
             <th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
@@ -61,7 +75,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="es_group_item[]" /></th>
 			<th scope="col"><?php _e('Email subject', ES_TDOMAIN); ?></th>
 			<th scope="col"><?php _e('Status', ES_TDOMAIN); ?></th>
             <th scope="col"><?php _e('Type', ES_TDOMAIN); ?></th>
@@ -79,7 +92,6 @@ if (isset($_POST['frm_es_display']) && $_POST['frm_es_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['es_templ_id']; ?>" name="es_group_item[]"></td>
 					  	<td><?php echo esc_html(stripslashes($data['es_templ_heading'])); ?></td>
 						<td><?php echo $data['es_templ_status']; ?></td>
 						<td><?php echo $data['es_email_type']; ?></td>

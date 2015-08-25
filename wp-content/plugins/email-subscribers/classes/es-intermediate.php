@@ -81,6 +81,9 @@ class es_cls_intermediate
 			case 'add':
 				require_once(ES_DIR.'settings'.DIRECTORY_SEPARATOR.'settings-add.php');
 				break;
+			case 'sync':
+				require_once(ES_DIR.'settings'.DIRECTORY_SEPARATOR.'setting-sync.php');
+				break;
 			default:
 				require_once(ES_DIR.'settings'.DIRECTORY_SEPARATOR.'settings-edit.php');
 				break;
@@ -119,6 +122,24 @@ class es_cls_intermediate
 				break;
 			default:
 				require_once(ES_DIR.'roles'.DIRECTORY_SEPARATOR.'roles-add.php');
+				break;
+		}
+	}
+	
+	public static function es_cron()
+	{
+		global $wpdb;
+		$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+		switch($current_page)
+		{
+			case 'add':
+				require_once(ES_DIR.'cron'.DIRECTORY_SEPARATOR.'cron-add.php');
+				break;
+			case 'edit':
+				require_once(ES_DIR.'cron'.DIRECTORY_SEPARATOR.'cron-edit.php');
+				break;
+			default:
+				require_once(ES_DIR.'cron'.DIRECTORY_SEPARATOR.'cron-add.php');
 				break;
 		}
 	}

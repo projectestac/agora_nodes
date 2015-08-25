@@ -37,6 +37,16 @@ if (isset($_POST['es_form_submit']) && $_POST['es_form_submit'] == 'yes')
 		$es_email_group = isset($_POST['es_email_group_txt']) ? $_POST['es_email_group_txt'] : '';
 	}
 	
+	if($es_email_group <> "")
+	{
+		$special_letters = es_cls_common::es_special_letters();
+		if (preg_match($special_letters, $es_email_group))
+		{
+			$es_errors[] = __('Error: Special characters ([\'^$%&*()}{@#~?><>,|=_+\"]) are not allowed in the group name.', ES_TDOMAIN);
+			$es_error_found = TRUE;
+		}
+	}
+	
 	if ($es_email_status == '')
 	{
 		$es_email_status = "Confirmed";
@@ -52,56 +62,60 @@ if (isset($_POST['es_form_submit']) && $_POST['es_form_submit'] == 'yes')
 		$csv = es_cls_common::es_readcsv($tmpname);
 	}
 	
-	if(count($csv) > 0)
+	//	No errors found, we can add this Group to the table
+	if ($es_error_found == FALSE)
 	{
-		$inserted = 0;
-		$duplicate = 0;
-		$invalid = 0;
-		for ($i = 1; $i < count($csv) - 1; $i++)
+		if(count($csv) > 0)
 		{
-			$form["es_email_mail"] = trim($csv[$i][0]);
-			$form["es_email_name"] = trim($csv[$i][1]);
-			$form["es_email_group"] = $es_email_group;
-			$form["es_email_status"] = $es_email_status;
-			$action = es_cls_dbquery::es_view_subscriber_ins($form, "insert");
-			if( $action == "sus" )
+			$inserted = 0;
+			$duplicate = 0;
+			$invalid = 0;
+			for ($i = 1; $i < count($csv) - 1; $i++)
 			{
-				$inserted = $inserted + 1;
+				$form["es_email_mail"] = trim($csv[$i][0]);
+				$form["es_email_name"] = trim($csv[$i][1]);
+				$form["es_email_group"] = $es_email_group;
+				$form["es_email_status"] = $es_email_status;
+				$action = es_cls_dbquery::es_view_subscriber_ins($form, "insert");
+				if( $action == "sus" )
+				{
+					$inserted = $inserted + 1;
+				}
+				elseif( $action == "ext" )
+				{
+					$duplicate = $duplicate + 1;
+				}
+				elseif( $action == "invalid" )
+				{
+					$invalid = $invalid + 1;
+				}
+	
+				// Reset the form fields
+				$form = array(
+					'es_email_name' => '',
+					'es_email_status' => '',
+					'es_email_group' => '',
+					'es_email_mail' => ''
+				);
 			}
-			elseif( $action == "ext" )
-			{
-				$duplicate = $duplicate + 1;
-			}
-			elseif( $action == "invalid" )
-			{
-				$invalid = $invalid + 1;
-			}
-
-			// Reset the form fields
-			$form = array(
-				'es_email_name' => '',
-				'es_email_status' => '',
-				'es_email_group' => '',
-				'es_email_mail' => ''
-			);
+			?>
+			<div class="updated fade">
+				<p><strong><?php echo $inserted; ?> <?php _e('Email(s) was successfully imported.', ES_TDOMAIN); ?></strong></p>
+				<p><strong><?php echo $duplicate; ?> <?php _e('Email(s) are already in our database.', ES_TDOMAIN); ?></strong></p>
+				<p><strong><?php echo $invalid; ?> <?php _e('Email(s) are invalid.', ES_TDOMAIN); ?></strong></p>
+				<p><strong><a href="<?php echo ES_ADMINURL; ?>?page=es-view-subscribers">
+				<?php _e('Click here', ES_TDOMAIN); ?></a> <?php _e(' to view the details', ES_TDOMAIN); ?></strong></p>
+			</div>
+			<?php
 		}
-		?>
-		<div class="updated fade">
-			<p><strong><?php echo $inserted; ?> <?php _e('Email(s) was successfully imported.', ES_TDOMAIN); ?></strong></p>
-			<p><strong><?php echo $duplicate; ?> <?php _e('Email(s) are already in our database.', ES_TDOMAIN); ?></strong></p>
-			<p><strong><?php echo $invalid; ?> <?php _e('Email(s) are invalid.', ES_TDOMAIN); ?></strong></p>
-			<p><strong><a href="<?php echo ES_ADMINURL; ?>?page=es-view-subscribers">
-			<?php _e('Click here', ES_TDOMAIN); ?></a> <?php _e(' to view the details', ES_TDOMAIN); ?></strong></p>
-		</div>
-		<?php
-	}
-	else
-	{
-		?>
-		<div class="error fade">
-			<p><strong><?php _e('File upload failed or no data available in the csv file.', ES_TDOMAIN); ?></strong></p>
-		</div>
-		<?php
+		else
+		{
+			?>
+			<div class="error fade">
+				<p><strong><?php _e('File upload failed or no data available in the csv file.', ES_TDOMAIN); ?></strong></p>
+			</div>
+			<?php
+		}
 	}
 }
 

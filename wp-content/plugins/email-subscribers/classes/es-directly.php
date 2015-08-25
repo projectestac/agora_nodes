@@ -28,6 +28,9 @@ function es_plugin_parse_request($qstring)
 			case 'optin':
 				require_once(ES_DIR.'job'.DIRECTORY_SEPARATOR.'es-optin.php');
 				break;
+			case 'cron':
+				require_once(ES_DIR.'job'.DIRECTORY_SEPARATOR.'es-cron.php');
+				break;
 		}
 	}
 }

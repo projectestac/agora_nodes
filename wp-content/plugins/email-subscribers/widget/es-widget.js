@@ -21,6 +21,7 @@
     var mynumber = Math.random();
 	var str= "es_email="+ encodeURI(es_email.value) + "&es_name=" + encodeURI(es_name.value) + "&es_group=" + encodeURI(es_group.value) + "&timestamp=" + encodeURI(date_now) + "&action=" + encodeURI(mynumber);
 	es_submit_request(url+'/?es=subscribe', str);
+	//alert(url+'/?es=subscribe' + str);
 }
 
 var http_req = false;

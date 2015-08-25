@@ -75,7 +75,7 @@ class es_cls_notification
 		if($post_id > 0)
 		{
 			$post_type = get_post_type( $post_id );
-			$sSql = "SELECT * FROM `".$prefix."es_notification` where es_note_status = 'Enable' ";
+			$sSql = "SELECT * FROM `".$prefix."es_notification` where (es_note_status = 'Enable' or es_note_status = 'Cron') ";
 			if($post_type == "post")
 			{
 				$category = get_the_category( $post_id );

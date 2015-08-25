@@ -36,7 +36,7 @@ class es_cls_dbquery
 		return $arrRes;
 	}
 	
-	public static function es_view_subscriber_search2($search = "", $id = 0, $search_sts = "", $offset = 0, $limit = 0)
+	public static function es_view_subscriber_search2($search = "", $id = 0, $search_sts = "", $offset = 0, $limit = 0, $search_group = "")
 	{
 		global $wpdb;
 		$prefix = $wpdb->prefix;
@@ -45,6 +45,11 @@ class es_cls_dbquery
 		if($search_sts <> "")
 		{
 			$sSql = $sSql . " and es_email_status='".$search_sts."'";
+		}
+		
+		if($search_group <> "" && $search_group <> "ALL")
+		{
+			$sSql = $sSql . ' and es_email_group="'.$search_group.'"';
 		}
 		
 		if($search <> "" && $search <> "ALL")
@@ -77,13 +82,18 @@ class es_cls_dbquery
 		$sSql = $sSql . " order by es_email_id asc";
 		$sSql = $sSql . " LIMIT $offset, $limit";
 
-		//echo $sSql;
+		//echo $sSql."<br>";
+		//esc_sql( $sSql );
+		//echo $sSql."<br>";
+
 		$arrRes = $wpdb->get_results($sSql, ARRAY_A);
 		return $arrRes;
 	}
 	
 	public static function es_view_subscriber_sendmail($search = "", $group = "")
 	{
+		//echo $search . "--<br>";
+		//echo $group. "--<br>";
 		global $wpdb;
 		$prefix = $wpdb->prefix;
 		$arrRes = array();
@@ -111,8 +121,15 @@ class es_cls_dbquery
 			$sSql = $sSql . " and es_email_group='".$group."'";
 			
 		}
+		else
+		{
+			$sSql = $sSql . " and es_email_id in (select max(es_email_id) from ".$prefix."es_emaillist group by es_email_mail)";
+		}
 		$sSql = $sSql . " and (es_email_status = 'Confirmed' or es_email_status = 'Single Opt In')";
 		$sSql = $sSql . " order by es_email_mail asc";
+		
+		//echo "<br>".$sSql."<br>";
+		
 		$arrRes = $wpdb->get_results($sSql, ARRAY_A);
 		return $arrRes;
 	}
@@ -130,6 +147,7 @@ class es_cls_dbquery
 		{
 			$sSql = "SELECT COUNT(*) AS `count` FROM `".$prefix."es_emaillist`";
 		}
+
 		$result = $wpdb->get_var($sSql);
 		return $result;
 	}
@@ -169,11 +187,11 @@ class es_cls_dbquery
 		{
 			return "invalid";
 		}
-		
+
 		$CurrentDate = date('Y-m-d G:i:s'); 
 		if($action == "insert")
 		{
-			$sSql = "SELECT * FROM `".$prefix."es_emaillist` where es_email_mail='".$data["es_email_mail"]."'";
+			$sSql = "SELECT * FROM `".$prefix."es_emaillist` where es_email_mail='".$data["es_email_mail"]."' and es_email_group='".trim($data["es_email_group"])."'";
 			$result = $wpdb->get_var($sSql);
 			if ( $result > 0)
 			{
@@ -186,17 +204,32 @@ class es_cls_dbquery
 						(`es_email_name`,`es_email_mail`, `es_email_status`, `es_email_created`, `es_email_viewcount`, `es_email_group`, `es_email_guid`)
 						VALUES(%s, %s, %s, %s, %d, %s, %s)", array(trim($data["es_email_name"]), trim($data["es_email_mail"]), 
 						trim($data["es_email_status"]), $CurrentDate, 0, trim($data["es_email_group"]), $guid));
-				$wpdb->query($sql);
+				$wpdb->query($sql);				
 				return "sus";
 			}
 		}
 		elseif($action == "update")
 		{
-			$sSql = $wpdb->prepare("UPDATE `".$prefix."es_emaillist` SET `es_email_name` = %s, `es_email_mail` = %s,
-					`es_email_status` = %s, `es_email_group` = %s WHERE es_email_id = %d LIMIT 1", array($data["es_email_name"], $data["es_email_mail"], 
-					$data["es_email_status"], $data["es_email_group"], $data["es_email_id"]));
-			$wpdb->query($sSql);
-			return "sus";
+			$sSql = "SELECT * FROM `".$prefix."es_emaillist` where es_email_mail='".$data["es_email_mail"]."'"; 
+			$sSql = $sSql . " and es_email_group='".trim($data["es_email_group"])."' and es_email_id <> ".$data["es_email_id"];
+			$result = $wpdb->get_var($sSql);
+			if ( $result > 0)
+			{
+				return "ext";
+			}
+			else
+			{
+				//$sSql = $wpdb->prepare("UPDATE `".$prefix."es_emaillist` SET `es_email_name` = %s, `es_email_mail` = %s,
+				//		`es_email_status` = %s, `es_email_group` = %s WHERE es_email_mail = %s LIMIT 10", array($data["es_email_name"], $data["es_email_mail"], 
+				//		$data["es_email_status"], $data["es_email_group"], $data["es_email_mail"]));
+				//$wpdb->query($sSql);
+				//return "sus";
+				$sSql = $wpdb->prepare("UPDATE `".$prefix."es_emaillist` SET `es_email_name` = %s, `es_email_mail` = %s,
+						`es_email_status` = %s, `es_email_group` = %s WHERE es_email_id = %d LIMIT 1", array($data["es_email_name"], $data["es_email_mail"], 
+						$data["es_email_status"], $data["es_email_group"], $data["es_email_id"]));
+				$wpdb->query($sSql);
+				return "sus";
+			}
 		}
 	}
 	
@@ -268,11 +301,16 @@ class es_cls_dbquery
 		$result = $wpdb->get_var($sSql);
 		if ( $result > 0)
 		{
+			//$sSql = "UPDATE `".$prefix."es_emaillist` SET `es_email_status` = %s";
+			//$sSql = $sSql . " WHERE es_email_id = %d";
+			//$sSql = $sSql . " and es_email_mail = %s";
+			//$sSql = $sSql . " and es_email_guid = %s Limit 1";
+			//$sSql = $wpdb->prepare($sSql, array($status, $id, $email, $guid));
+			//$wpdb->query($sSql);
+			
 			$sSql = "UPDATE `".$prefix."es_emaillist` SET `es_email_status` = %s";
-			$sSql = $sSql . " WHERE es_email_id = %d";
-			$sSql = $sSql . " and es_email_mail = %s";
-			$sSql = $sSql . " and es_email_guid = %s Limit 1";
-			$sSql = $wpdb->prepare($sSql, array($status, $id, $email, $guid));
+			$sSql = $sSql . " WHERE es_email_mail = %s Limit 10";
+			$sSql = $wpdb->prepare($sSql, array($status, $email));
 			$wpdb->query($sSql);
 			return true;
 		}
@@ -311,11 +349,16 @@ class es_cls_dbquery
 		$arrRes = array();
 		$currentdate = date('Y-m-d G:i:s'); 
 		
-		$sSql = "SELECT * FROM `".$prefix."es_emaillist` WHERE";
-		$sSql = $sSql . " es_email_mail = %s";
-		$sSql = $sSql . " Limit 1";
-		$sSql = $wpdb->prepare($sSql, array($data["es_email_mail"]));
+		//$sSql = "SELECT * FROM `".$prefix."es_emaillist` WHERE";
+		//$sSql = $sSql . " es_email_mail = %s";
+		//$sSql = $sSql . " es_email_group = %s";
+		//$sSql = $sSql . " Limit 1";
+		//$sSql = $wpdb->prepare($sSql, array($data["es_email_mail"], $data["es_email_group"]));
+		//$arrRes = $wpdb->get_results($sSql, ARRAY_A);	
+		
+		$sSql = "SELECT * FROM `".$prefix."es_emaillist` where es_email_mail='".$data["es_email_mail"]."' and es_email_group='".trim($data["es_email_group"])."'";
 		$arrRes = $wpdb->get_results($sSql, ARRAY_A);
+		
 		if(count($arrRes) > 0)
 		{
 			if( $arrRes[0]['es_email_status'] == "Confirmed" )

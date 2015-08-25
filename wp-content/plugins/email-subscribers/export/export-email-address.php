@@ -20,8 +20,8 @@ if(isset($_GET['es']))
 					switch ($option) 
 					{
 						case "view_subscriber":
-							$sSql = "select es_email_mail as Email, es_email_name as Name, es_email_status as Status, es_email_created as Created";
-							$sSql = $sSql . " from ". $wpdb->prefix . "es_emaillist ORDER BY es_email_mail";
+							$sSql = "select es_email_mail as Email, es_email_name as Name, es_email_status as Status, es_email_created as Created,";
+							$sSql = $sSql . " es_email_group as Emailgroup from ". $wpdb->prefix . "es_emaillist ORDER BY es_email_mail";
 							$data = $wpdb->get_results($sSql);
 							es_cls_common::download($data, 's', '');
 							break;

@@ -116,7 +116,7 @@ if ($es_error_found == FALSE && isset($es_success[0]) == TRUE)
 	  </select>
       <p><?php _e('Select user role to access plugin Notification Menu. Only Admin user can change this value.', ES_TDOMAIN); ?></p>
 	  
-	  <label for="tag-display-status"><?php _e('Send Email Menu', ES_TDOMAIN); ?></label>
+	  <label for="tag-display-status"><?php _e('Send Email Menu/Cron Menu', ES_TDOMAIN); ?></label>
 	  <select name="es_roles_sendmail" id="es_roles_sendmail">
 		<option value='manage_options' <?php if($es_roles_sendmail == 'manage_options') { echo "selected='selected'" ; } ?>>Administrator Only</option>
 		<option value='edit_others_pages' <?php if($es_roles_sendmail == 'edit_others_pages') { echo "selected='selected'" ; } ?>>Administrator/Editor</option>

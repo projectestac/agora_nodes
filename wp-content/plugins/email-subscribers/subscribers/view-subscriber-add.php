@@ -21,12 +21,14 @@ if (isset($_POST['es_form_submit']) && $_POST['es_form_submit'] == 'yes')
 	
 	$form['es_email_status'] = isset($_POST['es_email_status']) ? $_POST['es_email_status'] : '';
 	$form['es_email_name'] = isset($_POST['es_email_name']) ? $_POST['es_email_name'] : '';
+	
 	$form['es_email_mail'] = isset($_POST['es_email_mail']) ? $_POST['es_email_mail'] : '';
 	if ($form['es_email_mail'] == '')
 	{
 		$es_errors[] = __('Please enter subscriber email address.', ES_TDOMAIN);
 		$es_error_found = TRUE;
 	}
+	
 	$es_email_group = isset($_POST['es_email_group']) ? $_POST['es_email_group'] : '';
 	if ($es_email_group == '')
 	{
@@ -43,7 +45,17 @@ if (isset($_POST['es_form_submit']) && $_POST['es_form_submit'] == 'yes')
 		$es_errors[] = __('Please select or create your group for this email.', ES_TDOMAIN);
 		$es_error_found = TRUE;
 	}
-		
+	
+	if($form['es_email_group'] <> "")
+	{
+		$special_letters = es_cls_common::es_special_letters();
+		if (preg_match($special_letters, $form['es_email_group']))
+		{
+			$es_errors[] = __('Error: Special characters ([\'^$%&*()}{@#~?><>,|=_+\"]) are not allowed in the group name.', ES_TDOMAIN);
+			$es_error_found = TRUE;
+		}
+	}
+
 	//	No errors found, we can add this Group to the table
 	if ($es_error_found == FALSE)
 	{
@@ -76,7 +88,9 @@ if (isset($_POST['es_form_submit']) && $_POST['es_form_submit'] == 'yes')
 
 if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
 {
-	?><div class="error fade"><p><strong><?php echo $es_errors[0]; ?></strong></p></div><?php
+	?><div class="error fade"><p><strong><?php echo $es_errors[0]; ?>
+	<a href="<?php echo ES_ADMINURL; ?>?page=es-view-subscribers"><?php _e('Click here', ES_TDOMAIN); ?></a> <?php _e(' to view the details', ES_TDOMAIN); ?>
+	</strong></p></div><?php
 }
 if ($es_error_found == FALSE && isset($es_success[0]) == TRUE)
 {
@@ -125,7 +139,7 @@ if ($es_error_found == FALSE && isset($es_success[0]) == TRUE)
 			$i = 1;
 			foreach ($groups as $group)
 			{
-				?><option value='<?php echo $group["es_email_group"]; ?>'><?php echo $group["es_email_group"]; ?></option><?php
+				?><option value="<?php echo stripslashes($group["es_email_group"]); ?>"><?php echo stripslashes($group["es_email_group"]); ?></option><?php
 			}
 		}
 		?>

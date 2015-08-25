@@ -112,7 +112,7 @@ if ($es_error_found == FALSE && strlen($es_success) > 0)
 			$i = 1;
 			foreach ($groups as $group)
 			{
-				?><option value='<?php echo $group["es_email_group"]; ?>'><?php echo $group["es_email_group"]; ?></option><?php
+				?><option value="<?php echo stripslashes($group["es_email_group"]); ?>"><?php echo stripslashes($group["es_email_group"]); ?></option><?php
 			}
 		}
 		?>
@@ -205,8 +205,9 @@ if ($es_error_found == FALSE && strlen($es_success) > 0)
 	  
 	  <label for="tag-link"><?php _e('Notification Status', ES_TDOMAIN); ?></label>
       <select name="es_note_status" id="es_note_status">
-        <option value='Enable' selected="selected">Send mail when new posts are published</option>
-		<option value='Disable'>Disable notification</option>
+        <option value='Enable' selected="selected">Send mail immediately when new post is published.</option>
+		<option value='Cron'>Add to cron when new post is published and send via cron job.</option>
+		<option value='Disable'>Disable notification.</option>
       </select>
       <p><?php _e('Please select notification status.', ES_TDOMAIN); ?></p>
 

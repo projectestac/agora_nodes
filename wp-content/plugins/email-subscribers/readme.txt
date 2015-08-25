@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-
 Plugin URI: http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
 Tags: email newsletter, subscription, sendmail, newsletter, subscribers
 Requires at least: 3.4
-Tested up to: 4.2
-Stable tag: 2.8
+Tested up to: 4.3
+Stable tag: 2.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,23 +28,25 @@ This plugin have subscription box and it allows users to publicly subscribe by s
 = Main advantage: =
 
 1. Send notification email to subscribers when new posts are published to your blog.
-2. Create a HTML newsletter and send manually to subscribers.
+2. Create a HTML newsletter and send manually (Or Schedule) to subscribers.
 3. Auto generate a newsletter with latest available posts in the blog and send to your subscribers via cron job.
 
 = Plugin Features: =
 
 *   Send notification email to subscribers when new posts are published.
-*   Subscription box.
+*   Option to schedule mail (Cron job option).
+*   Subscription box (Widget/Shortcode/PHP Code).
 *   Double opt-in and single opt-in facility for subscriber.
 *   Email notification to admin when user signs up (Optional).
 *   Automatic welcome mail to subscriber (Optional).
 *   Unsubscribe link in the mail.
 *   Import/Export subscriber emails.
 *   HTML editor to compose newsletter.
-*   Send newsletter email.
+*   Send newsletter.
 *   Alphabetized list in send mail page.
 *   Sent mail status and when it was viewed.
 *   Support localization or internationalization.
+*   Ability to control user access (Roles and Capabilities).
 
 = Translators =
 
@@ -73,6 +75,9 @@ This plugin have subscription box and it allows users to publicly subscribe by s
 *   Q12. Is plugin contain bulk update option for subscribers group?
 *   Q13. Is Mail not working on Email Subscribers wordpress plugin?
 *   Q14. How to assign user roles to plugin menu?
+*   Q15. How to schedule auto mails (Cron mails)?
+*   Q16. How to schedule auto emails for Email subscribers wordpress plugin in cPanel?
+*   Q17. How to schedule auto emails for Email subscribers wordpress plugin in Parallels Plesk?
 
 == Installation ==
 
@@ -85,7 +90,7 @@ Installation Instruction and Configuration [Installation Instruction and Configu
 *   Q3. How to import and export email address to subscriber list?
 *   Q4. How to compose static newsletter?
 *   Q5. How to add subscription box in posts?
-*   Q6. How to modify the existing mails (Opt-in mail, Welcome mail, Admin mails) content?
+*   Q6. How to modify Opt-in mail, Welcome mail, Admin mail contents?
 *   Q7. How to send static newsletter manually?
 *   Q8. Where to check sent mails?
 *   Q9. How to configure notification email to subscribers when new posts are published?
@@ -95,6 +100,9 @@ Installation Instruction and Configuration [Installation Instruction and Configu
 *   Q13. Is Mail not working on Email Subscribers wordpress plugin?
 *   Q14. How to install and activate Email Subscribers on multisite installation blogs?
 *   Q14. How to assign user roles to plugin menu?
+*   Q15. How to schedule auto mails (Cron mails)?
+*   Q16. How to schedule auto emails for Email subscribers wordpress plugin in cPanel?
+*   Q17. How to schedule auto emails for Email subscribers wordpress plugin in Parallels Plesk?
 
 FAQ Answer [http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/](http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/)
 
@@ -111,6 +119,8 @@ FAQ Answer [http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-
 5. Admin Page. Notification Management Page. http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
 
 6. Roles Page. Roles and Capabilities Management Page. http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
+
+7. Schedule mail (Cron job). Cron Job Detailes Page. http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
 
 == Changelog ==
 
@@ -209,6 +219,20 @@ Up to plugin version 2.6 only administrator level users can manage this plugin i
 * Fixed warning message bug on Roles page
 * Sync Email option has been added in the subscribers admin page. with this option all newly registered email address will be synced automatically into the plugin subscribers group.
 
+= 2.9 =
+
+1. Tested upto 4.3
+2. Option available to add same email address to multiple group name
+3. Cron Mail option added. With this option you can schedule cron jobs for newsletter and notification emails. Using this cron option you can schedule mail (example 100 mails per hour)
+4. Group Name added in the export list.
+5. Mail Type option has been added in the Send Mail admin page. With this option you can add the mails into cron job or you can send the mail immediately.
+6. Notification Status option has been added in the notification setup page. With this option you can add notification mails into cron job or you can send the mail immediately when new post is published.
+7. Group name filter has been added in the subscriber admin page.
+
+= 2.9.1 =
+
+* Fixed cross-site scripting vulnerabilities and a potential SQL injection.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -305,3 +329,17 @@ Up to plugin version 2.6 only administrator level users can manage this plugin i
 * Tested upto 4.2
 * Fixed warning message bug on Roles page
 * Sync Email option has been added in the subscribers admin page. with this option all newly registered email address will be synced automatically into the plugin subscribers group.
+
+= 2.9 =
+
+1. Tested upto 4.3
+2. Option available to add same email address to multiple group name
+3. Cron Mail option added. With this option you can schedule cron jobs for newsletter and notification emails. Using this cron option you can schedule mail (example 100 mails per hour)
+4. Group Name added in the export list.
+5. Mail Type option has been added in the Send Mail admin page. With this option you can add the mails into cron job or you can send the mail immediately.
+6. Notification Status option has been added in the notification setup page. With this option you can add notification mails into cron job or you can send the mail immediately when new post is published.
+7. Group name filter has been added in the subscriber admin page.
+
+= 2.9.1 =
+
+* Fixed cross-site scripting vulnerabilities and a potential SQL injection.

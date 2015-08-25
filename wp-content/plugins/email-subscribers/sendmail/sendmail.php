@@ -1,5 +1,20 @@
 <?php if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); } ?>
+<?php if ( ! empty( $_POST ) && ! wp_verify_nonce( $_REQUEST['wp_create_nonce'], 'sendmail-nonce' ) )  { die('<p>Security check failed.</p>'); } ?>
 <?php
+$es_c_email_subscribers_ver = get_option('email-subscribers');
+if ($es_c_email_subscribers_ver <> "2.9")
+{
+	?>
+	<div class="error fade">
+		<p>
+		Note: You have recently upgraded the plugin and your tables are not sync. 
+		Please <a title="Sync plugin tables." href="<?php echo ES_ADMINURL; ?>?page=es-settings&amp;ac=sync"><?php _e('Click Here', ES_TDOMAIN); ?></a> to sync the table. 
+		This is mandatory and it will not affect your data.
+		</p>
+	</div>
+	<?php
+}
+
 $es_errors = array();
 $es_success = '';
 $es_error_found = FALSE;
@@ -8,6 +23,7 @@ $es_templ_heading = isset($_POST['es_templ_heading']) ? $_POST['es_templ_heading
 $es_email_group = isset($_POST['es_email_group']) ? $_POST['es_email_group'] : '';
 $es_search_query = isset($_POST['es_search_query']) ? $_POST['es_search_query'] : '';
 $sendmailsubmit = isset($_POST['sendmailsubmit']) ? $_POST['sendmailsubmit'] : 'no';
+$es_sent_type = isset($_POST['es_sent_type']) ? $_POST['es_sent_type'] : '';
 
 if ($sendmailsubmit == 'yes')
 {
@@ -19,6 +35,7 @@ if ($sendmailsubmit == 'yes')
 		$es_errors[] = __('Please select your mail subject.', ES_TDOMAIN);
 		$es_error_found = TRUE;
 	}
+	
 	$form['es_email_group'] = isset($_POST['es_email_group']) ? $_POST['es_email_group'] : '';
 	$recipients = isset($_POST['eemail_checked']) ? $_POST['eemail_checked'] : '';
 	if ($recipients == '')
@@ -27,9 +44,16 @@ if ($sendmailsubmit == 'yes')
 		$es_error_found = TRUE;
 	}
 	
+	$form['es_sent_type'] = isset($_POST['es_sent_type']) ? $_POST['es_sent_type'] : '';
+	if ($form['es_sent_type'] == '')
+	{
+		$es_errors[] = __('Please select your mail type.', ES_TDOMAIN);
+		$es_error_found = TRUE;
+	}
+	
 	if ($es_error_found == FALSE)
 	{
-		es_cls_sendmail::es_prepare_newsletter_manual($es_templ_heading, $recipients);				
+		es_cls_sendmail::es_prepare_newsletter_manual($es_templ_heading, $recipients, $form['es_sent_type']);				
 		$es_success_msg = TRUE;
 		$es_success = __('Mail sent successfully', ES_TDOMAIN);
 		if ($es_success_msg == TRUE)
@@ -104,6 +128,21 @@ if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
 		</td>
 		</tr>
 		<tr>
+			<th scope="row">
+				<label for="elp">
+					<?php _e('Mail Type', ES_TDOMAIN); ?>
+					<p class="description"><?php _e('Select your mail type.', ES_TDOMAIN); ?></p>
+				</label>
+			</th>
+			<td>
+				<select name="es_sent_type" id="es_sent_type">
+					<option value=''>Select</option>
+					<option value='Instant Mail' <?php if($es_sent_type == 'Instant Mail') { echo "selected='selected'" ; } ?>>Send mail immediately.</option>
+					<option value='Cron Mail' <?php if($es_sent_type == 'Cron Mail') { echo "selected='selected'" ; } ?>>Send mail via cron job.</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
 		<th scope="row">
 			<label for="elp">
 				<?php _e('Select subscriber group', ES_TDOMAIN); ?>
@@ -122,11 +161,11 @@ if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
 				$i = 1;
 				foreach ($groups as $group)
 				{
-					if($group["es_email_group"] == $es_email_group) 
+					if(stripslashes($group["es_email_group"]) == stripslashes($es_email_group)) 
 					{ 
 						$thisselected = "selected='selected'" ; 
 					}
-					?><option value='<?php echo $group["es_email_group"]; ?>' <?php echo $thisselected; ?>><?php echo $group["es_email_group"]; ?></option><?php
+					?><option value="<?php echo esc_html($group["es_email_group"]); ?>" <?php echo $thisselected; ?>><?php echo stripslashes($group["es_email_group"]); ?></option><?php
 					$thisselected = "";
 				}
 			}
@@ -200,7 +239,7 @@ if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
 				echo "<br>";
 				echo "Email starts with : " . $es_search_query;
 				echo "<br>";
-				echo "Subscriber group : " . $es_email_group;
+				echo "Subscriber group : " . stripslashes($es_email_group);
 				echo "<br><br>";
 				echo '</span>';
 			}
@@ -209,7 +248,11 @@ if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
 		</tr>
 	</tbody>
 	</table>
+	<?php $nonce = wp_create_nonce( 'sendmail-nonce' ); ?>
 	<div style="padding-top:10px;">
+	<input type="hidden" name="es_search_query" id="es_search_query" value="<?php echo $es_search_query; ?>"/>
+	<input type="hidden" name="sendmailsubmit" id="sendmailsubmit" value=""/>
+	<input type="hidden" name="wp_create_nonce" id="wp_create_nonce" value="<?php echo $nonce; ?>"/>
 	<?php if( $count <> 0 ) { ?>
 	<input type="submit" name="Submit" class="button add-new-h2" value="<?php _e('Send Email', ES_TDOMAIN); ?>" style="width:160px;" />&nbsp;&nbsp;
 	<?php } else { ?>
@@ -219,8 +262,6 @@ if ($es_error_found == TRUE && isset($es_errors[0]) == TRUE)
     <input name="Help" lang="publish" class="button add-new-h2" onclick="_es_help()" value="<?php _e('Help', ES_TDOMAIN); ?>" type="button" />
 	</div>
 	<?php wp_nonce_field('es_form_submit'); ?>
-	<input type="hidden" name="es_search_query" id="es_search_query" value="<?php echo $es_search_query; ?>"/>
-	<input type="hidden" name="sendmailsubmit" id="sendmailsubmit" value=""/>
 	</form>
 </div>
 <p class="description"><?php echo ES_OFFICIAL; ?></p>

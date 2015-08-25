@@ -3,7 +3,7 @@
 Plugin Name: Email Subscribers
 Plugin URI: http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
 Description: Email subscribers plugin has options to send newsletters to subscribers. It has a separate page with HTML editor to create a HTML newsletter. Also have options to send notification email to subscribers when new posts are published to your blog. Separate page available to include and exclude categories to send notifications.
-Version: 2.8
+Version: 2.9.1
 Author: Gopi Ramasamy
 Donate link: http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2014/05/02/email-subscribers-wordpress-plugin/
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*  
-Copyright 2014 Email subscribers (http://www.gopiplus.com)
+Copyright 2015 Email subscribers (http://www.gopiplus.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
