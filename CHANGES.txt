@@ -16,6 +16,7 @@ Changes in progress
 - Enllaços educatius: Updated URL of edu3 (GitHub #225)
 - Changed login form layout (GitHub #79)
 - WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
+- WSL: Added access control using black and white lists (GitHub #62)
 
 
 Changes 15.08.10
