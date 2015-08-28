@@ -341,3 +341,4 @@ function prevent_directory_slugs($bool, $slug) {
 
 add_filter('wp_unique_post_slug_is_bad_hierarchical_slug','prevent_directory_slugs',10,2);
 add_filter('wp_unique_post_slug_is_bad_flat_slug','prevent_directory_slugs',10,2);
+
