@@ -15,6 +15,7 @@ Changes in progress
 - Social Media: Fixed automatic links (GitHub #108)
 - Enllaços educatius: Updated URL of edu3 (GitHub #225)
 - Changed login form layout (GitHub #79)
+- WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
 
 
 Changes 15.08.10
