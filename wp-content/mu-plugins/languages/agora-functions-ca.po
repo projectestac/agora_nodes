@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
 "POT-Creation-Date: 2015-07-31 09:56+0100\n"
-"PO-Revision-Date: 2015-09-02 18:22+0100\n"
+"PO-Revision-Date: 2015-10-05 18:42+0100\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -44,7 +44,7 @@ msgstr "No s'ha trobat cap article"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:282
 msgid "You have exceeded your disk quota limit"
-msgstr "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o sol·licitar una ampliació de la quota. Trobareu més informació en aquesta PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=461&mode=entry&hook=561"
+msgstr "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que el centre té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o sol·licitar una ampliació de la quota. Trobareu més informació en aquesta PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=461&mode=entry&hook=561"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:313
 msgid "The page you were trying to delete is protected."
@@ -53,6 +53,10 @@ msgstr "La pàgina que volíeu esborrar està protegida"
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:313
 msgid "The page name you were trying to create is protected."
 msgstr "El nom de pàgina que voleu utilitzar està reservat. Si us plau, utilitzeu-ne un altre."
+
+#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:328
+msgid "Page name is required."
+msgstr "El nom de la pàgina és obligatori"
 
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
