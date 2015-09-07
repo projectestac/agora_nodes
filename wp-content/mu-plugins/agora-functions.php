@@ -321,26 +321,41 @@ add_action('before_delete_post', 'restrict_post_deletion');
 
 /**
  * Prevents the creation of restricted pages
- * The first filter, ‘wp_unique_post_slug_is_bad_hierarchical_slug’, is for hierarchical posts
- * The second filter, ‘wp_unique_post_slug_is_bad_flat_slug’, is for non-hierarchical posts.
  * @author Nacho Abejaro
  */
-function prevent_directory_slugs($bool, $slug) {
 
-	$blackPagesList = array("moodle", "moodle2", "intranet");
-
-	foreach ($blackPagesList as $page){
-		if ( $slug == $page ) {
-			$msg = __('The page name you were trying to create is protected.', 'agora-functions');
-			wp_die($msg);
-			// Without exit does not works correctly
-			exit(0);
-		}
-	}
+function force_post_title_init() {
+	wp_enqueue_script('jquery');
 }
 
-add_filter('wp_unique_post_slug_is_bad_hierarchical_slug','prevent_directory_slugs',10,2);
-add_filter('wp_unique_post_slug_is_bad_flat_slug','prevent_directory_slugs',10,2);
+function force_post_title() {
+	$msgError = __('The page name you were trying to create is protected.', 'agora-functions');
+	$msgNull = __('Page name is required.', 'agora-functions');
+	echo "<script type='text/javascript'>\n";
+	echo "
+    jQuery('#publish').click(function(){
+		var title = jQuery('[id^=\"titlediv\"]').find('#title');
+		if (title.val() != '') {
+			var blackPagesList = ['moodle', 'moodle2', 'intranet'];
+
+			if (jQuery.inArray(title.val().toLowerCase(), blackPagesList) !== -1) {
+				alert ('".$msgError."');
+				return false;
+			}else {
+				// Title ok, do nothing
+				return true;
+			}
+        }else {
+			alert ('".$msgNull."');
+			return false;
+		}
+    });
+  ";
+	echo "</script>\n";
+}
+
+add_action('edit_form_advanced', 'force_post_title');
+add_action('edit_page_form', 'force_post_title');
 
 /**
  * To avoid error uploading files from HTTP pages
