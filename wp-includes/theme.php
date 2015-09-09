@@ -73,7 +73,6 @@ function wp_get_themes( $args = array() ) {
 			$themes[ $theme ] = $_themes[ $theme_root['theme_root'] . '/' . $theme ];
 		else
 			$themes[ $theme ] = $_themes[ $theme_root['theme_root'] . '/' . $theme ] = new WP_Theme( $theme, $theme_root['theme_root'] );
-                
 	}
 
 	if ( null !== $args['errors'] ) {

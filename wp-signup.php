@@ -123,7 +123,18 @@ function show_blog_form( $blogname = '', $blog_title = '', $errors = '' ) {
 
 	<div id="privacy">
         <p class="privacy-intro">
+	<?php
+	// XTEC ************ MODIFICAT - Changed term privacy for visibility
+	// 2013.12.17 @mespinosaz
+	?>
+            <label for="blog_public_on"><?php _e('Visibility:') ?></label>
+	<?php
+	//************ ORIGINAL
+	/*
             <label for="blog_public_on"><?php _e('Privacy:') ?></label>
+    */
+	//************ FI
+	?>
             <?php _e( 'Allow search engines to index this site.' ); ?>
             <br style="clear:both" />
             <label class="checkbox" for="blog_public_on">

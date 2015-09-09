@@ -141,7 +141,7 @@ case 'dodelete':
 	if ( is_multisite() )
 		wp_die( __('User deletion is not allowed from this screen.') );
 
-    check_admin_referer('delete-users');
+	check_admin_referer('delete-users');
 
 	if ( empty($_REQUEST['users']) ) {
 		wp_redirect($redirect);
@@ -199,7 +199,7 @@ case 'delete':
 	if ( is_multisite() )
 		wp_die( __('User deletion is not allowed from this screen.') );
 
-    check_admin_referer('bulk-users');
+	check_admin_referer('bulk-users');
 
 	if ( empty($_REQUEST['users']) && empty($_REQUEST['user']) ) {
 		wp_redirect($redirect);

@@ -84,7 +84,6 @@ if ( $doing_cron_transient != $doing_wp_cron )
 	return;
 
 foreach ( $crons as $timestamp => $cronhooks ) {
-
 	if ( $timestamp > $gmt_time )
 		break;
 
