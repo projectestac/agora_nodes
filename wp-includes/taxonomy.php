@@ -1139,11 +1139,10 @@ function get_terms( $args = array(), $deprecated = '' ) {
 
 	//XTEC ************ AFEGIT - Show all categories for visibility plugin
 	//2015.03.31 @nacho
-	
 	$defaults = array(
 		'suppress_filter' => false,
-		'hide_empty' => false,
 	);
+	$defaults['hide_empty'] = !is_agora();
 	//************ FI
 
 	/*
