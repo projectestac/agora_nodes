@@ -257,6 +257,10 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
+		// ************ FI
 		$id = 'bottom' === $which ? 'new_role2' : 'new_role';
 	?>
 	<div class="alignleft actions">
@@ -281,6 +285,10 @@ class WP_Users_List_Table extends WP_List_Table {
 		 */
 		do_action( 'restrict_manage_users', $which );
 		echo '</div>';
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		}
+		// ************ FI
 	}
 
 	/**

@@ -409,13 +409,6 @@ if ( ! CUSTOM_TAGS ) {
 			'src' => true,
 			'srclang' => true,
 		),
-		'track' => array(
-			'default' => true,
-			'kind' => true,
-			'label' => true,
-			'src' => true,
-			'srclang' => true,
-		),
 		'tt' => array(),
 		'u' => array(),
 		'ul' => array(

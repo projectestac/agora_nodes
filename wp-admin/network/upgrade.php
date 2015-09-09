@@ -68,8 +68,15 @@ switch ( $action ) {
 			break;
 		}
 		echo "<ul>";
-		foreach ( (array) $site_ids as $site_id ) {
-			switch_to_blog( $site_id );
+		foreach ( (array) $blogs as $details ) {
+			switch_to_blog( $details['blog_id'] );
+//XTEC ************ AFEGIT - Validates current theme and reverts it to default if invalid (usefull if removing themes)
+//2013.06.04 @jmiro227
+// 		         if (is_xtecblocs()){
+//                  wp_get_theme();
+//                  validate_current_theme();
+//               }
+//************ FI
 			$siteurl = site_url();
 			$upgrade_url = admin_url( 'upgrade.php?step=upgrade_db' );
 			restore_current_blog();
