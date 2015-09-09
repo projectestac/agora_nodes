@@ -42,5 +42,3 @@ $required_php_version = '5.6.20';
  * @global string $required_mysql_version
  */
 $required_mysql_version = '5.0';
-
-$wp_local_package = 'ca';
