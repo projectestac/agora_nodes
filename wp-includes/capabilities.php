@@ -397,8 +397,11 @@ function map_meta_cap( $cap, $user_id ) {
 		case 'unfiltered_html':
 			// Disallow unfiltered_html for all users, even admins and super admins.
 			if ( defined( 'DISALLOW_UNFILTERED_HTML' ) && DISALLOW_UNFILTERED_HTML ) {
-				$caps[] = 'do_not_allow';
-			} elseif ( is_multisite() && ! is_super_admin( $user_id ) ) {
+                $caps[] = 'do_not_allow';
+                //XTEC ************ MODIFICAT - Add permission for unfiltered html also to users ho can edit posts
+                //2013.07.25 @jmiro227
+            } elseif ( is_multisite() && ! (is_super_admin( $user_id ) || current_user_can('edit_posts'))) {
+            //************ FI
 				$caps[] = 'do_not_allow';
 			} else {
 				$caps[] = 'unfiltered_html';

@@ -262,7 +262,11 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
-		$id        = 'bottom' === $which ? 'new_role2' : 'new_role';
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
+		// ************ FI
+		$id = 'bottom' === $which ? 'new_role2' : 'new_role';
 		$button_id = 'bottom' === $which ? 'changeit2' : 'changeit';
 		?>
 	<div class="alignleft actions">
@@ -298,6 +302,10 @@ class WP_Users_List_Table extends WP_List_Table {
 		 * @param string $which The location of the extra table nav markup: 'top' or 'bottom'.
 		 */
 		do_action( 'manage_users_extra_tablenav', $which );
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		}
+		// ************ FI
 	}
 
 	/**
