@@ -2278,6 +2278,10 @@ function bbp_breadcrumb( $args = array() ) {
 			} else {
 				$root_url = get_post_type_archive_link( bbp_get_forum_post_type() );
 			}
+            // XTEC ************ AFEGIT - To avoid error uploading files from HTTP pages (this patch affects to breadcrumbs inside forums views)
+            // 2015.09.08 @sarjona
+			$root_url = preg_replace('/^http:/i', 'https:', $root_url);
+            //************ FI
 
 			// Add the breadcrumb
 			$crumbs[] = '<a href="' . esc_url( $root_url ) . '" class="bbp-breadcrumb-root">' . $r['root_text'] . '</a>';
