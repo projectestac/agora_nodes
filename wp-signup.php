@@ -193,19 +193,26 @@ function show_blog_form( $blogname = '', $blog_title = '', $errors = '' ) {
 	?>
 
 	<div id="privacy">
-		<p class="privacy-intro">
-			<label for="blog_public_on"><?php _e( 'Privacy:' ); ?></label>
-			<?php _e( 'Allow search engines to index this site.' ); ?>
-			<br style="clear:both" />
-			<label class="checkbox" for="blog_public_on">
-				<input type="radio" id="blog_public_on" name="blog_public" value="1" <?php echo $blog_public_on_checked; ?> />
-				<strong><?php _e( 'Yes' ); ?></strong>
-			</label>
-			<label class="checkbox" for="blog_public_off">
-				<input type="radio" id="blog_public_off" name="blog_public" value="0" <?php echo $blog_public_off_checked; ?> />
-				<strong><?php _e( 'No' ); ?></strong>
-			</label>
-		</p>
+        <p class="privacy-intro">
+	<?php
+	// XTEC ************ MODIFICAT - Changed term privacy for visibility
+	// 2013.12.17 @mespinosaz
+	?>
+            <label for="blog_public_on"><?php _e('Visibility:') ?></label>
+	<?php
+	//************ FI
+	?>
+            <?php _e( 'Allow search engines to index this site.' ); ?>
+            <br style="clear:both" />
+            <label class="checkbox" for="blog_public_on">
+                <input type="radio" id="blog_public_on" name="blog_public" value="1" <?php if ( !isset( $_POST['blog_public'] ) || $_POST['blog_public'] == '1' ) { ?>checked="checked"<?php } ?> />
+                <strong><?php _e( 'Yes' ); ?></strong>
+            </label>
+            <label class="checkbox" for="blog_public_off">
+                <input type="radio" id="blog_public_off" name="blog_public" value="0" <?php if ( isset( $_POST['blog_public'] ) && $_POST['blog_public'] == '0' ) { ?>checked="checked"<?php } ?> />
+                <strong><?php _e( 'No' ); ?></strong>
+            </label>
+        </p>
 	</div>
 
 	<?php
