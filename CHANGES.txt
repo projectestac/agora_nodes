@@ -20,7 +20,8 @@ Changes in progress
 - BuddyPress-Group-Email-Subscription: Updated module to version 3.5.1 and revised catalan translation (Trello #793)
 - BudyyPress-Like: Updated module to version 0.2.0 and improved catalan translation (Trello #793)
 - bbPress: Updated module to version 2.5.8 (Trello #793)
-- bbPress: Fixed media upload using Fancy Editor (GitHub #130) 
+- bbPress: Fixed media upload using Fancy Editor (GitHub #130)
+- Theme reactor-primaria-1: Added fields for custom CSS (GitHub #253)
 
 
 Changes 15.08.10
