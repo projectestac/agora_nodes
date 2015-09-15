@@ -117,4 +117,7 @@
         }
     }
     
+    <?php echo get_option( 'common_css', '' );?>
+    <?php echo get_option( 'school_css', '' );?>
+    
 </style>
