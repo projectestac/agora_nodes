@@ -1145,6 +1145,41 @@ div.docs-info-header {
   display: none;
 }
 
+/* Login Form */
+
+body.login {
+    background: #FFF;
+    }
+
+body.login h1 {
+    line-height: 1em;
+}
+body.login #login h1 a {
+    display:none;
+    }
+        
+body.login #login_logo{
+    text-align:center;
+    margin-bottom:1em;
+    }
+        
+body.login #login_logo img {
+    max-width:200px;
+    margin-bottom:1em;
+    }
+                
+body.login #loginform {
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    border: 1px solid #ddd;
+    background:#F5F5F5;
+    }
+        
+body.login .wp-social-login-widget{
+    text-align:center;
+    }
+
+
 /* Media */
 
 @media print {
