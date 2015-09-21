@@ -27,6 +27,7 @@ Changes in progress
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 - BuddyPress: Updated module to version 2.3.2.1 (Trello #965)
 - AddToAny: Installed version 1.6.6 (Trello #918)
+- Added and improved translations (Trello #963)
 
 
 
