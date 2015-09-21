@@ -50,5 +50,13 @@ function bp_like_insert_head() {
     <?php
 }
 
+// XTEC ************ MODIFICAT - Revert change made by module update to fix JS code sent before <html> 
+// 2015.09.21 @aginard
+add_action( 'wp_head' , 'bp_like_insert_head' );
+//************ ORIGINAL
+/*
 add_action( 'get_header' , 'bp_like_insert_head' );
+*/
+//************ FI
+
 add_action( 'wp_print_scripts' , 'bp_like_list_scripts' );
