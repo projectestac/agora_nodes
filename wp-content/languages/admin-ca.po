@@ -8120,7 +8120,7 @@ msgstr "Una vegada feu els canvis, féu clic a Actualitza el fitxer."
 
 #: wp-admin/includes/meta-boxes.php:717
 msgid "(no parent)"
-msgstr "(sense pare)"
+msgstr "(sense mare)"
 
 #: wp-admin/edit-form-advanced.php:371
 msgid ""
@@ -8558,11 +8558,11 @@ msgctxt "Taxonomy Name"
 msgid "Name"
 msgstr "Nom"
 
+# MODIFICAT XTEC
 #: wp-admin/edit-tag-form.php:106 wp-admin/edit-tags.php:462
-#, fuzzy
 msgctxt "Taxonomy Parent"
 msgid "Parent"
-msgstr "pare/mare"
+msgstr "Mare"
 
 #: wp-admin/edit-form-comment.php:90
 msgctxt "adjective"
@@ -12990,7 +12990,6 @@ msgstr "Nom de la nova categoria"
 
 # MODIFICAT XTEC
 #: wp-admin/includes/meta-boxes.php:526
-#, fuzzy
 msgid ""
 "Excerpts are optional hand-crafted summaries of your content that can be "
 "used in your theme. <a href=\"http://codex.wordpress.org/Excerpt\" target="
@@ -13041,10 +13040,11 @@ msgstr "https://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
 msgid "Show comments"
 msgstr "Mostra els comentaris"
 
+# MODIFICAT XTEC
 #: wp-admin/includes/class-wp-posts-list-table.php:1050
 #: wp-admin/includes/meta-boxes.php:736 wp-admin/includes/meta-boxes.php:737
 msgid "Parent"
-msgstr "pare/mare"
+msgstr "Categoria mare"
 
 #: wp-admin/includes/class-wp-posts-list-table.php:1056
 msgid "Main Page (no parent)"
@@ -13165,9 +13165,10 @@ msgstr "fill/a"
 msgid "kin"
 msgstr "parents"
 
+# MODIFICAT XTEC
 #: wp-admin/includes/meta-boxes.php:1010
 msgid "parent"
-msgstr "pare/mare"
+msgstr "Mare"
 
 #: wp-admin/includes/meta-boxes.php:1013
 msgid "sibling"
@@ -13826,6 +13827,15 @@ msgstr "Ara s'eliminarà el comentari següent:"
 msgid "Unactives"
 msgstr "Pendents d'activació:"
 
+msgid "Number of items per page:"
+msgstr "Nombre d'elements a mostrar:"
+
+msgid "Custom Links"
+msgstr "Enllaços"
+
+msgid "Manage in Customizer"
+msgstr "Gestiona amb el personalitzador"
+
 #~ msgid ""
 #~ "Terms shared across multiple taxonomies will be split when one of them is "
 #~ "updated. Find out more in the <a href=\"%1$s\">Plugin Developer Handbook</"
@@ -14142,9 +14152,6 @@ msgstr "Pendents d'activació:"
 #~ msgid "Posts Page"
 #~ msgstr "Pàgina de les entrades"
 
-#~ msgid "Number of items per page:"
-#~ msgstr "Nombre d'elements per pàgina:"
-
 #~ msgid "Missing post ID."
 #~ msgstr "Falta l'identificador de l'entrada."
 
@@ -14293,9 +14300,6 @@ msgstr "Pendents d'activació:"
 #~ msgid "Log %s out of all sessions"
 #~ msgstr "Desconnecta %s de totes les sessions"
 
-#~ msgid "Manage in Customizer"
-#~ msgstr "Gestiona amb el personalitzador"
-
 #~ msgid ""
 #~ "Left your account logged in at a public computer? Lost your phone? This "
 #~ "will log you out everywhere except your current browser."
@@ -14393,9 +14397,6 @@ msgstr "Pendents d'activació:"
 #~ "<strong>Editor d'entrades</strong> - Introduïu el text de l'entrada. Hi "
 #~ "ha dos modes d'edició: visual i text. Trieu el mode en fer clic en la "
 #~ "pestanya adequada."
-
-#~ msgid "Custom Links"
-#~ msgstr "Enllaços personalitzats"
 
 #~ msgid "Remove Image"
 #~ msgstr "Suprimeix la imatge"
