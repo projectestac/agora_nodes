@@ -22,6 +22,7 @@ Changes in progress
 - bbPress: Updated module to version 2.5.8 (Trello #793)
 - bbPress: Fixed media upload using Fancy Editor (GitHub #130)
 - Theme reactor-primaria-1: Added fields for custom CSS (GitHub #253)
+- Set default selected image size to large on page and article creation
 
 
 Changes 15.08.10
