@@ -466,7 +466,18 @@ do_action( "{$taxonomy}_term_new_form_tag" );
 <?php endif; // global_terms_enabled() ?>
 <?php if ( is_taxonomy_hierarchical($taxonomy) ) : ?>
 <div class="form-field term-parent-wrap">
-	<label for="parent"><?php _ex( 'Parent', 'term parent' ); ?></label>
+	<label for="parent">
+	<?php 
+// XTEC ************ MODIFICAT - Added translation language
+// 2015.09.21 @nacho
+	_e( 'Parent');
+//************ ORIGINAL
+/*
+		_ex( 'Parent', 'term parent' );
+*/
+//************ FI
+	?>
+	</label>
 	<?php
 	$dropdown_args = array(
 		'hide_empty'       => 0,
