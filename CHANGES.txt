@@ -28,6 +28,7 @@ Changes in progress
 - BuddyPress: Updated module to version 2.3.2.1 (Trello #965)
 - AddToAny: Installed version 1.6.6 (Trello #918)
 - Added and improved translations (Trello #963)
+- Add specific variable for frontpage blog name in order to allow especial chars, like \n (Trello #972)
 
 
 
