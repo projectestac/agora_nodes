@@ -117,13 +117,13 @@ if ( !function_exists('reactor_customize_register') ) {
 		 ) );
 		 
 		 
-			$wp_customize->add_setting('blogname', array( 
-				'default'    => get_option('blogname'),
+			$wp_customize->add_setting('nodesbox_name', array( 
+				'default'    => get_option('nodesbox_name'),
 				'type'       => 'option',
 				'capability' => 'manage_options',
 				'transport'  => 'postMessage',
 			 ) );
-				$wp_customize->add_control('blogname', array( 
+				$wp_customize->add_control('nodesbox_name', array( 
 					'label'    => __('Nom del centre', 'custom_tac'),
                                         'type' => 'textarea',
 					'section'  => 'reactor_customizer_capcalera',
