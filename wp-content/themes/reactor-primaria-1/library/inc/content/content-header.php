@@ -68,7 +68,7 @@ function reactor_do_title_logo() {
         <div>
           <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
              href="<?php echo home_url();?>">
-          <?php echo nl2br(get_bloginfo('name', 'display')); ?>
+          <?php echo nl2br(get_option('nodesbox_name')); ?>
           </a>
         </div>
       </div>
