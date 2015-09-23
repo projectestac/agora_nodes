@@ -363,3 +363,15 @@ add_filter('bbp_get_topic_permalink', 'bbp_get_forum_permalink_filter');
 add_filter('bbp_get_reply_permalink', 'bbp_get_forum_permalink_filter');
 add_filter('bbp_get_topic_stick_link', 'bbp_get_forum_permalink_filter');
 add_filter('bp_get_group_permalink', 'bbp_get_forum_permalink_filter');
+
+/**
+ * Disable Add_To_Any Module widgets if user is not xtecadmin
+ * @author Nacho Abejaro 
+ */
+function unregister_AddToAny_widgets() {
+	if (!is_xtec_super_admin()) {
+		unregister_widget( 'A2A_SHARE_SAVE_Widget' );
+		unregister_widget( 'A2A_Follow_Widget' );
+	}
+}
+add_action('widgets_init', 'unregister_AddToAny_widgets');
