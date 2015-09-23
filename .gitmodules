@@ -34,3 +34,6 @@
 [submodule "wp-content/mu-plugins/common"]
 	path = wp-content/mu-plugins/common
 	url = https://github.com/projectestac/wordpress-mu-common.git
+[submodule "wp-content/plugins/add-to-any"]
+	path = wp-content/plugins/add-to-any
+	url = https://github.com/projectestac/wordpress-add-to-any.git
