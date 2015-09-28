@@ -43,3 +43,7 @@
 [submodule "wp-content/plugins/invite-anyone"]
 	path = wp-content/plugins/invite-anyone
 	url = https://github.com/projectestac/wordpress-invite-anyone.git
+[submodule "wp-content/plugins/email-subscribers"]
+	path = wp-content/plugins/email-subscribers
+	url = https://github.com/projectestac/wordpress-email-subscribers.git
+
