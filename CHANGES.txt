@@ -14,6 +14,7 @@ Changes in progress
 - Wordpress Importer: Removed XTEC change that was only used in multisite configuration (XTECBlocs) (Trello #936)
 - Mailer lib: Added latest changes
 - Google Analyticator: Upgraded to version 6.4.9.6 (Trello #994)
+- Email Subscribers: Added version 2.9.2 with first version of XTEC changes (Trello #833)
 
 
 
