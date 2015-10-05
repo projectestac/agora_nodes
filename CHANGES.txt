@@ -29,7 +29,7 @@ Changes in progress
 - AddToAny: Installed version 1.6.6 (Trello #918)
 - Added and improved translations (Trello #963)
 - Add specific variable for frontpage blog name in order to allow especial chars, like \n (Trello #972)
-
+- Wordpress-Importer: Added spanish translation
 
 
 Changes 15.08.10
