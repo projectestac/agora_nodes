@@ -35,6 +35,7 @@ Changes 15.10.09
 - Added and improved translations (Trello #963)
 - Add specific variable for frontpage blog name in order to allow especial chars, like \n (Trello #972)
 - Wordpress-Importer: Added spanish translation
+- Added recaptcha plugin
 
 
 Changes 15.08.10
