@@ -37,3 +37,6 @@
 [submodule "wp-content/plugins/add-to-any"]
 	path = wp-content/plugins/add-to-any
 	url = https://github.com/projectestac/wordpress-add-to-any.git
+[submodule "wp-content/plugins/wp-recaptcha"]
+	path = wp-content/plugins/wp-recaptcha
+	url = https://github.com/projectestac/wordpress-recaptcha.git
