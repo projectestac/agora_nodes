@@ -929,6 +929,12 @@ ul.bbp-topics, .bbp-topic-form {
   opacity: 1 !important;
 }
 
+.widget.buddypress #friends-list li, 
+.widget.buddypress #groups-list li, 
+.widget.buddypress #members-list li {
+  clear: inherit !important;
+}
+
 /* Calendari */
 
 .gce-widget-grid .gce-calendar td {
