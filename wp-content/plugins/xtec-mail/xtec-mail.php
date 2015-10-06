@@ -233,6 +233,10 @@ if (!function_exists('wp_mail')) {
 
     	$sender = get_mailsender();
 
+        if (!$sender) {
+            return false;
+        }
+
         // Compact the input, apply the filters, and extract them back out
         extract(apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments')));
 
