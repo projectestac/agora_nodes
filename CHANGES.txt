@@ -5,6 +5,11 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+
+
+
+Changes 15.10.09
+---------------------------------------------------------------------------------------
 - Updated catalan translation for WordPress 4.2.2 (Trello #793)
 - Avoid deletion of main pages (Trello #909)
 - Modified code to check if is xtecadmin or superadmin (Trello #902)
