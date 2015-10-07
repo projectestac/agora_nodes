@@ -935,6 +935,10 @@ ul.bbp-topics, .bbp-topic-form {
   clear: inherit !important;
 }
 
+body.buddypress .addtoany_share_save_container{
+    display:none;
+}
+  
 /* Calendari */
 
 .gce-widget-grid .gce-calendar td {
