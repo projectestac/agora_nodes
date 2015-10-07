@@ -89,11 +89,14 @@ class Jetpack_Widget_Conditions {
 				<option value="404" <?php selected( '404', $minor ); ?>><?php _e( '404 error page', 'jetpack' ); ?></option>
 				<option value="search" <?php selected( 'search', $minor ); ?>><?php _e( 'Search results', 'jetpack' ); ?></option>
 				
-                                <!-- XTEC ************ AFEGIT - Add option for bp-docs index
-                                // 2015.05.12 @jmeler -->
-                                
-                                <option value="docs-index" <?php selected( 'docs-index', $minor ); ?>><?php _e( 'BuddyPress Docs Archive', 'jetpack' ); ?></option>
-				
+                                <!-- XTEC ************ AFEGIT - Add options for buddypress pages
+                                // 2015.10.07 @jmeler -->
+                                <optgroup label="<?php esc_attr_e( 'Xarxa Nodes:', 'jetpack' ); ?>">
+                                    <option value="activity" <?php selected( 'activity', $minor ); ?>><?php _e( 'Mur general', 'jetpack' ); ?></option>
+                                    <option value="group" <?php selected( 'group', $minor ); ?>><?php _e( 'Nodes', 'jetpack' ); ?></option>
+                                    <option value="member" <?php selected( 'member', $minor ); ?>><?php _e( 'Membres', 'jetpack' ); ?></option>
+                                    <option value="docs-index" <?php selected( 'docs-index', $minor ); ?>><?php _e( 'BuddyPress Docs Archive', 'jetpack' ); ?></option>
+                                </optgroup>
                                 <!--************ FI -->
                                 
                                 <optgroup label="<?php esc_attr_e( 'Post type:', 'jetpack' ); ?>">
@@ -335,6 +338,18 @@ class Jetpack_Widget_Conditions {
                                                 case 'docs-index':
 							$condition_result = is_post_type_archive('bp_doc');
 						break;
+                                            
+                                                // 2015.10.07 @jmeler - Added buddypress pages
+                                                case 'activity':
+                                                    $condition_result = bp_is_activity_component();
+						break;
+                                                case 'group':
+                                                    $condition_result = bp_is_group();
+						break;
+                                                case 'member':
+                                                    $condition_result = bp_is_user();
+						break;
+                                            
                                                 //--************ FI 
 						default:
 							if ( substr( $rule['minor'], 0, 10 ) == 'post_type-' )
