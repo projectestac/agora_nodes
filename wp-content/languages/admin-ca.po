@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Administration\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-10-05 17:42+0100\n"
+"PO-Revision-Date: 2015-10-07 12:57+0100\n"
 "Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -9922,7 +9922,7 @@ msgstr "Pàgina principal (sense pare)"
 #: wp-admin/includes/class-wp-posts-list-table.php:1161
 #: wp-admin/includes/meta-boxes.php:735 wp-admin/includes/meta-boxes.php:736
 msgid "Parent"
-msgstr "Categoria mare"
+msgstr "Pàgina mare"
 
 #. translators: Between password field and private checkbox on post quick edit
 #. interface

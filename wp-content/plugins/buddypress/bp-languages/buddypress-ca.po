@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Development\n"
 "Report-Msgid-Bugs-To: https://buddypress.trac.wordpress.org\n"
 "POT-Creation-Date: 2015-06-05 13:48:17+00:00\n"
-"PO-Revision-Date: 2015-10-06 13:47+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2015-10-07 13:27+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -3458,8 +3458,8 @@ msgid ""
 "A dynamic list of recently active, popular, and newest Friends of the "
 "displayed member.  Widget is only shown when viewing a member profile."
 msgstr ""
-"Una llista dinàmica d'amistats recentment actives, polpulars o noeves del "
-"mebre que es mostra. El giny només es mostra s'està veient el perfil d'un "
+"Una llista dinàmica d'amistats amb activitat recent, populars o noves del "
+"membre. El giny només es mostra quan s'està visualitzant el perfil d'un "
 "membre."
 
 #: bp-friends/bp-friends-widgets.php:73
@@ -6675,7 +6675,7 @@ msgstr "No hi ha sol·licituds de pertinença pendents."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:22
 msgid "Send Invites"
-msgstr "Invitacions"
+msgstr "Envia invitacions"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:37
 msgid "Group invitations can only be extended to friends."
@@ -8146,7 +8146,7 @@ msgstr "Membres <span>%s</span>"
 #: bp-groups/bp-groups-loader.php:526
 msgctxt "My Group screen nav"
 msgid "Send Invites"
-msgstr "Invitacions"
+msgstr "Envia invitacions"
 
 #: bp-groups/bp-groups-loader.php:541
 msgctxt "My Group screen nav"
