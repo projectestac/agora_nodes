@@ -390,3 +390,29 @@ function unregister_AddToAny_widgets() {
 	}
 }
 add_action('widgets_init', 'unregister_AddToAny_widgets', 11);
+
+/**
+ * Exclude URL access to bbpress module options
+ * @author Nacho Abejaro
+ */
+function remove_general_bbpress_options(){
+
+	$restrictedPage = 'options-general.php?page=bbpress';
+
+	// Get current URL
+	$pageURL = 'http';
+	if ($_SERVER["HTTPS"] == "on") {
+		$pageURL .= "s";
+	}
+
+	$pageURL .= "://". $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+
+	// Check if url contains the restricted page
+	$pos = strpos($pageURL, $restrictedPage);
+
+	if ( !is_xtec_super_admin() && ($pos !== false) ) {
+		wp_die(__('You do not have permission to do that.'));
+	}
+}
+
+add_action('parse_query', 'remove_general_bbpress_options');
