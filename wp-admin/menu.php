@@ -236,11 +236,10 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 	);
 }
 
-// XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
+// XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin, only in Nodes
 // 2014.10.21 @aginard
 // 2015.07.31 @nacho
-if (is_xtec_super_admin()) {
-//************ FI
+if (is_xtecblocs() || is_xtec_super_admin()) {
 
 /* translators: %s: Number of pending plugin updates. */
 $menu[65] = array( sprintf( __( 'Plugins %s' ), $count ), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'dashicons-admin-plugins' );
