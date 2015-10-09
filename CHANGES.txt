@@ -18,6 +18,7 @@ Changes in progress
 - Check if the path is absolute or relative to mount the header link (Trello #1008)
 - Fixed admin users not being able to delete users (Trello #991)
 - Blocked access to install.php (Trello #521)
+- Blocked access to bbpress administration to all users but xtecadmin (Trello #980)
 
 
 Changes 15.10.09
