@@ -5,6 +5,8 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Moved activation script of Nodes to WordPress (Trello #996)
+- Added support to activation script to serialized data in wp_postmeta (Trello #937)
 
 
 
