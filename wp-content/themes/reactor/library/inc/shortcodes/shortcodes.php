@@ -200,7 +200,12 @@ function reactor_add_custom_gallery( $attr ) {
 		if ( !$attr['orderby'] )
 			unset( $attr['orderby'] );
 	}
-
+	
+	// XTEC ************ AFEGIT - Check if theme supports HTML5
+	// 2015.11.05 @nacho
+	$html5 = current_theme_supports( 'html5', 'gallery' );
+	//************ FI
+	
 	extract( shortcode_atts( array( 
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
@@ -213,7 +218,7 @@ function reactor_add_custom_gallery( $attr ) {
 		'include'    => '',
 		'exclude'    => ''
 	 ), $attr ) );
-
+	
 	$id = intval( $id );
 	if ('RAND' == $order )
 		$orderby = 'none';
@@ -240,15 +245,109 @@ function reactor_add_custom_gallery( $attr ) {
 			$output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
 		return $output;
 	}
-
+	
+	// XTEC ************ MODIFICAT - Set default tags
+	// 2015.11.05 @nacho
+	$itemtag = 'dl';
+	$captiontag = 'dd';
+	$icontag = 'dt';
+	//************ ORIGINAL
+	/*
 	$itemtag = tag_escape( $itemtag );
 	$captiontag = tag_escape( $captiontag );
+	*/
+	//************ FI
+
 	$columns = intval( $columns );
 	$itemwidth = $columns > 0 ? floor( 100/$columns ) : 100;
 	$float = is_rtl() ? 'right' : 'left';
 
 	$selector = "gallery-{$instance}";
 
+	// XTEC ************ MODIFICAT - Added CSS styles and modify the attachments process 
+	// 2015.11.05 @nacho
+	$gallery_style = '';
+	
+	/**
+	 * Filter whether to print default gallery styles.
+	 *
+	 * @param bool $print Whether to print default gallery styles.
+	 *                    Defaults to false if the theme supports HTML5 galleries.
+	 *                    Otherwise, defaults to true.
+	 */
+	if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
+		$gallery_style = "
+		<style type='text/css'>
+			#{$selector} {
+				margin: auto;
+			}
+			#{$selector} .gallery-item {
+				float: {$float};
+				margin-top: 10px;
+				text-align: center;
+				width: {$itemwidth}%;
+			}
+			#{$selector} img {
+				border: 2px solid #cfcfcf;
+			}
+			#{$selector} .gallery-caption {
+				margin-left: 0;
+			}
+		</style>\n\t\t";
+	}
+	
+	$size_class = sanitize_html_class( $size );
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	
+	/**
+	* Filter the default gallery shortcode CSS styles.
+	*
+	* @param string $gallery_style Default gallery shortcode CSS styles.
+	* @param string $gallery_div   Opening HTML div container for the gallery shortcode output.
+	*/
+	$output = apply_filters( 'gallery_style', $gallery_style . $gallery_div );
+
+	$i = 0;
+	foreach ( $attachments as $id => $attachment ) {
+			
+		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false );
+		
+		$image_meta  = wp_get_attachment_metadata( $id );
+		$orientation = '';
+		if ( isset( $image_meta['height'], $image_meta['width'] ) ) {
+			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+		}
+		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "
+				<{$icontag} class='gallery-icon {$orientation}'>
+				$link
+				</{$icontag}>";
+			
+		if ( $captiontag && trim($attachment->post_excerpt) ) {
+			$output .= "
+				<{$captiontag} class='wp-caption-text gallery-caption'>
+				" . wptexturize($attachment->post_excerpt) . "
+				</{$captiontag}>";
+		}
+		
+		$output .= "</{$itemtag}>";
+
+		if ( ! $html5 && $columns > 0 && ++$i % $columns == 0 ) {
+			$output .= '<br style="clear: both" />';
+		}
+	}
+	
+	if ( ! $html5 && $columns > 0 && $i % $columns !== 0 ) {
+		$output .= "<br style='clear: both' />";
+	}
+	
+	$output .= "
+	</div>\n";
+	
+	return $output;
+	
+	//************ ORIGINAL
+	/*
 	$size_class = sanitize_html_class( $size );
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 	$output = apply_filters('gallery_style', $gallery_div );
@@ -258,10 +357,8 @@ function reactor_add_custom_gallery( $attr ) {
 	$clearing = ( isset( $attr['link'] ) && 'file' == $attr['link'] ) ? 'data-clearing' : '';
 	
 	$output .= "<{$itemtag} class='large-block-grid-{$grid} small-block-grid-2 gallery-item clearing-thumbs' {$clearing}>";
-	
 	foreach ( $attachments as $id => $attachment ) {
 		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false );
-		
 		$output .= "
 			<{$icontag} class='gallery-icon'>
 				$link
@@ -273,13 +370,14 @@ function reactor_add_custom_gallery( $attr ) {
 				</{$captiontag}>";
 		}
 		if ( $columns > 0 && ++$i % $columns == 0 )
-			$output .= '<br style="clear: both" />';
+			$output .= '<br style="clear: both" />';		
 	}
-
 	$output .= "</{$itemtag}>";
 	$output .= "</div>\n";
 
 	return $output;
+	*/
+	//************ FI
 }
 
 /**
