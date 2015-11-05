@@ -9,6 +9,7 @@ Changes in progress
 - Added support to activation script to serialized data in wp_postmeta (Trello #937)
 - Blogger Importer: Upgraded to version 0.9 (Trello #936)
 - wordpress-mu-common: Synced code with XTECBlocs. Changes have no effects to Nodes
+- Stats widget: Added margin-bottom (Trello #1009)
 
 
 
