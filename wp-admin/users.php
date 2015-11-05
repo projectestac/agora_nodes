@@ -285,9 +285,26 @@ switch ( $wp_list_table->current_action() ) {
         //************ FI
 
 		$user = get_userdata( $id );
+
+        // XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
+        // 2015.11.05 @nacho
+        $username = $user->user_login;
+		if ( $id == $current_user->ID || $username == ADMIN_USERNAME || $username == XTECADMIN_USERNAME ) {
+
+        //************ ORIGINAL
+        /*
 		if ( $id == $current_user->ID ) {
+        */
+        //************ FI
+
 			/* translators: 1: user id, 2: user login */
 			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be deleted.</strong>'), $id, $user->user_login) . "</li>\n";
+
+            // XTEC ************ AFEGIT - Xtecadmin and admin user cannot be deleted (confirmation step)
+            // 2015.11.05 @nacho
+			exit;
+            //************ FI
+
 		} else {
 			/* translators: 1: user id, 2: user login */
 			echo "<li><input type=\"hidden\" name=\"users[]\" value=\"" . esc_attr($id) . "\" />" . sprintf(__('ID #%1$s: %2$s'), $id, $user->user_login) . "</li>\n";
