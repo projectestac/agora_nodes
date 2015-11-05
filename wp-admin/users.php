@@ -165,14 +165,6 @@ case 'dodelete':
 
 	foreach ( $userids as $id ) {
 
-        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
-        // 2014.09.03 @aginard
-		// 2015.07.31 @nacho
-        if (!is_xtec_super_admin()) {
-            wp_die(__('You do not have permission to do that.'));
-        }
-        //************ FI
-
         if ( ! current_user_can( 'delete_user', $id ) )
 			wp_die(__( 'You can&#8217;t delete that user.' ) );
 
@@ -240,18 +232,27 @@ case 'delete':
 <?php
 	$go_delete = 0;
 	foreach ( $userids as $id ) {
+		$user = get_userdata( $id );
 
-        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (confirmation step)
-        // 2014.09.03 @aginard
-		// 2015.07.31 @nacho
-        if (!is_xtec_super_admin()) {
-            wp_die(__('You do not have permission to do that.'));
-        }
+        // XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
+        // 2015.11.05 @nacho
+
+        $username = $user->user_login;
+		if ( $id == $current_user->ID || $username == ADMIN_USERNAME || $username == XTECADMIN_USERNAME ) {
+
+        //************ ORIGINAL
+        /*
+        if ( $id == $current_user->ID ) {
+        */
         //************ FI
 
-		$user = get_userdata( $id );
-		if ( $id == $current_user->ID ) {
-			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be deleted.</strong>'), $id, $user->user_login) . "</li>\n";
+                echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be deleted.</strong>'), $id, $user->user_login) . "</li>\n";
+
+            // XTEC ************ AFEGIT - Xtecadmin and admin user cannot be deleted (confirmation step)
+            // 2015.11.05 @nacho
+			exit;
+            //************ FI
+
 		} else {
 			echo "<li><input type=\"hidden\" name=\"users[]\" value=\"" . esc_attr($id) . "\" />" . sprintf(__('ID #%1$s: %2$s'), $id, $user->user_login) . "</li>\n";
 			$go_delete++;
