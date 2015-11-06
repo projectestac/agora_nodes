@@ -17,6 +17,7 @@ Changes in progress
 - Added theme reactor-serveis-educatius (Trello #981)
 - Check if the path is absolute or relative to mount the header link (Trello #1008)
 - Fixed admin users not being able to delete users (Trello #991)
+- Blocked access to install.php (Trello #521)
 
 
 Changes 15.10.09
