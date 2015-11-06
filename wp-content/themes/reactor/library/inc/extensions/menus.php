@@ -143,7 +143,7 @@ if ( !function_exists('reactor_footer_links') ) {
  * @credit wearerequired http://required.ch/
  * @since 1.2.0
  */
-if ( !function_exists('reactor_side_menu') ) { 
+if ( !function_exists('reactor_side_menu') ) {
 	function reactor_side_menu( $nav_args = '' ) {
 		global $post;
 		
@@ -196,9 +196,22 @@ if ( !function_exists('reactor_side_menu') ) {
 		
 		// display the menu if there are subpages
 		if ( $children ) {
-			
-			$output = $nav_args['before'] . $children . $nav_args['after'];
 
+			// XTEC ************ MODIFICAT - Added Parent Page into accordion and css style when it is active
+			// 2015.11.06 @nacho
+			$parent_url =  get_permalink( $post->post_parent );
+			$current_url = get_permalink( $post->ID );
+			
+			$active = ($parent_url == $current_url) ? 'style="font-weight:bold;"' : '';			
+			$parent_url = '<div class="section"><p class="page_item title" data-section-title=""><a href="' . get_permalink( $post->post_parent ) . '" '.$active.'>' . get_the_title($post->post_parent). '</p></a></div>';
+			
+			$output = $nav_args['before'] . $parent_url. $children . $nav_args['after'];
+			//************ ORIGINAL
+			/*
+			 * $output = $nav_args['before'] . $children . $nav_args['after'];
+			 */
+			//************ FI
+			
 			echo $output;
 		}
 	}
