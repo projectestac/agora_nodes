@@ -8,6 +8,8 @@ Changes in progress
 - Moved activation script of Nodes to WordPress (Trello #996)
 - Added support to activation script to serialized data in wp_postmeta (Trello #937)
 - Blogger Importer: Upgraded to version 0.9 (Trello #936)
+- wordpress-mu-common: Synced code with XTECBlocs. Changes have no effects to Nodes
+
 
 
 Changes 15.10.09
