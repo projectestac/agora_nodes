@@ -15,6 +15,7 @@ Changes in progress
 - wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926) 
 - Added ability to decide if a client is "Servei Educatiu" (Trello #981)
 - Added theme reactor-serveis-educatius (Trello #981)
+- Check if the path is absolute or relative to mount the header link (Trello #1008)
 
 
 Changes 15.10.09
