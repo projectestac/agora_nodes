@@ -133,21 +133,53 @@ function reactor_do_title_logo() {
                 <a title="Trucar" href="tel:<?php echo reactor_option('telCentre'); ?>" class="dashicons dashicons-phone"></a>
                 <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>   
             </div>
-            <div id="icon-11">
-                <a title="<?php echo $options['title_icon11'];?>" 
-                   href="<?php echo $options['link_icon11'];?>" 
+			<div id="icon-11">
+            	<?php
+            	$url = parse_url($options['link_icon11']);
+            	if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
+            	?>
+            	<a title="<?php echo $options['title_icon11'];?>"
+                   href="<?php echo $options['link_icon11'];?>"
                    class="dashicons dashicons-<?php echo $options['icon11'];?>"
                    <?php echo set_target($options['link_icon11']);?>>
                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon11']);?>" class="text_icon"><?php echo $options['title_icon11'];?> </span>
                 </a>
+                <?php
+            	}else {
+            		$link_url = get_home_url()."/".$options['link_icon11'];
+            	?>
+            	<a title="<?php echo $options['title_icon11'];?>"
+                   href="<?php echo $link_url;?>"
+                   class="dashicons dashicons-<?php echo $options['icon11'];?>">
+                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon11']);?>" class="text_icon"><?php echo $options['title_icon11'];?> </span>
+                </a>
+            	<?php
+            	}
+            	?>
             </div>
             <div id="icon-12">
-                <a class="dashicons dashicons-<?php echo $options['icon12'];?>" 
-                   title="<?php echo $options['title_icon12'];?>" 
-                   href="<?php echo $options['link_icon12'];?>" 
+            	<?php
+            	$url = parse_url($options['link_icon12']);
+            	if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
+            	?>
+            	<a title="<?php echo $options['title_icon12'];?>"
+                   href="<?php echo $options['link_icon12'];?>"
+                   class="dashicons dashicons-<?php echo $options['icon12'];?>"
                    <?php echo set_target($options['link_icon12']);?>>
                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon12']);?>" class="text_icon"><?php echo $options['title_icon12'];?> </span>
                 </a>
+                <?php
+            	}else {
+            		$link_url = get_home_url()."/".$options['link_icon12'];
+            	?>
+            	<a title="<?php echo $options['title_icon12'];?>"
+                   href="<?php echo $link_url;?>"
+                   class="dashicons dashicons-<?php echo $options['icon12'];?>">
+                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon12']);?>" class="text_icon"><?php echo $options['title_icon12'];?> </span>
+                </a>
+            	<?php
+            	}
+            	?>
             </div>
             <div id="icon-13">
                 <a class="dashicons dashicons-search" title="CERCA" href="javascript:void(0);" onclick='cerca_toggle();'>
@@ -161,20 +193,52 @@ function reactor_do_title_logo() {
                 </form>			
             </div>
             <div id="icon-21">
-                 <a class="dashicons dashicons-<?php echo $options['icon21'];?>" 
-                    title="<?php echo $options['title_icon21'];?>" 
-                    href="<?php echo $options['link_icon21'];?>" 
-                    <?php echo set_target($options['link_icon21']);?>>
-                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon21']);?>" class="text_icon"><?php echo $options['title_icon21'];?> </span>
-                 </a>
+                 <?php
+            	$url = parse_url($options['link_icon21']);
+            	if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
+            	?>
+            	<a class="dashicons dashicons-<?php echo $options['icon21'];?>"
+                   title="<?php echo $options['title_icon21'];?>"
+                   href="<?php echo $options['link_icon21'];?>"
+                   <?php echo set_target($options['link_icon21']);?>>
+                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon21']);?>" class="text_icon"><?php echo $options['title_icon21'];?> </span>
+                </a>
+                <?php
+            	}else {
+            		$link_url = get_home_url()."/".$options['link_icon21'];
+            	?>
+            	<a title="<?php echo $options['title_icon21'];?>"
+                   href="<?php echo $link_url;?>"
+                   class="dashicons dashicons-<?php echo $options['icon21'];?>">
+                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon21']);?>" class="text_icon"><?php echo $options['title_icon21'];?> </span>
+                </a>
+            	<?php
+            	}
+            	?>
             </div>
             <div id="icon-22">
-                <a class="dashicons dashicons-<?php echo $options['icon22'];?>" 
-                   title="<?php echo $options['title_icon22'];?>" 
-                   href="<?php echo $options['link_icon22'];?>" 
+	    	<?php
+            	$url = parse_url($options['link_icon22']);
+            	if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
+            	?>
+            	<a class="dashicons dashicons-<?php echo $options['icon22'];?>"
+                   title="<?php echo $options['title_icon22'];?>"
+                   href="<?php echo $options['link_icon22'];?>"
                    <?php echo set_target($options['link_icon22']);?>>
                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon22']);?>" class="text_icon"><?php echo $options['title_icon22'];?> </span>
                 </a>
+                <?php
+            	}else {
+            		$link_url = get_home_url()."/".$options['link_icon22'];
+            	?>
+            	<a title="<?php echo $options['title_icon22'];?>"
+                   href="<?php echo $link_url;?>"
+                   class="dashicons dashicons-<?php echo $options['icon22'];?>">
+                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon22']);?>" class="text_icon"><?php echo $options['title_icon22'];?> </span>
+                </a>
+            	<?php
+            	}
+            	?>
             </div>
             <div id="icon-23">
                 <a class="dashicons dashicons-menu" 
