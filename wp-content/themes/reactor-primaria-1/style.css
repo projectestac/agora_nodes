@@ -458,7 +458,7 @@ li#wp-admin-bar-bp-login {
 
 .box-title .box-content a,  
 .box-description .box-content{
-  padding: 0.4em;
+  padding: 0.8em;
   font-family:'Oswald'; font-weight: 300;
 }
 
@@ -935,6 +935,35 @@ ul.bbp-topics, .bbp-topic-form {
   clear: inherit !important;
 }
 
+body.buddypress .addtoany_share_save_container { 
+    display:none; 
+}
+
+.bbp-reply-content p, .bbp-topic-title {
+  font-size: 1.5em !important; 
+}
+
+#buddypress h3{
+    font-size:1em;
+}
+
+#wp-bbp_reply_content-editor-container,
+#wp-bbp_reply_content-editor-container{
+    border:1px solid #ddd !important;
+}
+
+.forums.bbp-replies{
+    border:1px solid #ddd !important;
+}
+
+#bbp_topic_tags,
+[for=bbp_topic_tags]{
+    display:none !important;
+}
+#bbpress-forums fieldset.bbp-form {
+  border: 1px solid #ddd !important;
+}
+    
 /* Calendari */
 
 .gce-widget-grid .gce-calendar td {
@@ -1185,7 +1214,6 @@ body.login .wp-social-login-widget{
     text-align:center;
     }
 
-
 /* Media */
 
 @media print {
@@ -1323,6 +1351,11 @@ body.login .wp-social-login-widget{
   .text_icon {
       display:none;
   }
+  
+  body.single #sidebar { 
+      display:none; 
+  }
+  
 }  
  
 /* Large > 1480px */
@@ -1331,22 +1364,25 @@ body.login .wp-social-login-widget{
     background-color:#E2E2E2;  
    
     }
-      body {
-        width: 1480px;
-        margin-left: auto;
-        margin-right: auto;
-        border-left:3px solid #ddd;
-        border-right:3px solid #ddd;
-      }
-      .box-content a, 
-      .box-content span{
-        font-size: 30px !important;
-        }
+    
+    body {
+      width: 1480px;
+      margin-left: auto;
+      margin-right: auto;
+      border-left:3px solid #ddd;
+      border-right:3px solid #ddd;
+    }
+    
+    .box-content a, 
+    .box-content span{
+      font-size: 30px !important;      
+    }
+    
         
-        .box-content-grid a:before{
-          font-size: 2em !important;   
-        }
-        .box-content-grid a,.box-content-grid span {
-            font-size: 1em !important;
-        }
+    .box-content-grid a:before{
+      font-size: 2em !important;   
+    }
+    .box-content-grid a,.box-content-grid span {
+      font-size: 1em !important;
+    }
 }
