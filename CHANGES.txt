@@ -11,6 +11,7 @@ Changes in progress
 - wordpress-mu-common: Synced code with XTECBlocs. Changes have no effects to Nodes
 - Stats widget: Added margin-bottom (Trello #1009)
 - Theme reactor-primaria-1: Added new Color Palette "Purple and Green" (GitHub #307)
+- Theme reactor-primaria-1: Improvements to CSS styles and moved content from common_css to code (GitHub #303)
 - wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926) 
 
 
