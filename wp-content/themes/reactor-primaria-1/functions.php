@@ -717,16 +717,24 @@ function wpadmin_secure_cookie_filter( ) {
 */
 
 /**
- * If external adress, open link on new window
+ * If external address, open link on new window
  *
  * @author Xavi Meler
-*/
+ * @param $link
+ * @return string with the target property
+ */
+function set_target($link) {
+    $link = str_replace('http://', '://', trim($link));
+    $link = str_replace('https://', '://', $link);
 
-function set_target($link){
-    if (strpos(trim($link),"http")===0)
-        return "target='_blank'";
-    else
-        return "";
+    $siteURL = get_home_url();
+    $siteURL = str_replace('http://', '://', trim($siteURL));
+    $siteURL = str_replace('https://', '://', $siteURL);
+
+    if (!strpos($link, $siteURL)) {
+        return 'target="_blank"';
+    }
+    return "";
 }
 
 /**
