@@ -38,6 +38,27 @@ function reactor_do_reactor_head() { ?>
 add_action('wp_head', 'reactor_do_reactor_head', 1);
 
 /**
+ * @param $options where the icon info is stored
+ * @param $icon_number number of the icon to be used
+ */
+function show_header_icon($options, $icon_number) {
+    $url = parse_url($options['link_icon'.$icon_number]);
+    if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
+        $link = $options['link_icon'.$icon_number];
+        $target = set_target($link);
+    }else {
+        $link = get_home_url()."/".$options['link_icon'.$icon_number];
+        $target = "";
+    }
+    $font_size = get_icon_font_size( $options['title_icon'.$icon_number]);
+    $title = $options['title_icon'.$icon_number];
+    $icon = $options['icon'.$icon_number];
+    echo '<div id="icon-'.$icon_number.'">';
+    echo '<a title="'.$title.'" href="'.$link.'" class="dashicons dashicons-'.$icon.'" '.$target.'>';
+    echo '<span style="font-size: ' . $font_size . ';" class="text_icon">'.$title.'</span></a></div>';
+}
+
+/**
  * Top bar
  * in header.php
  * 
@@ -133,22 +154,10 @@ function reactor_do_title_logo() {
                 <a title="Trucar" href="tel:<?php echo reactor_option('telCentre'); ?>" class="dashicons dashicons-phone"></a>
                 <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>   
             </div>
-            <div id="icon-11">
-                <a title="<?php echo $options['title_icon11'];?>" 
-                   href="<?php echo $options['link_icon11'];?>" 
-                   class="dashicons dashicons-<?php echo $options['icon11'];?>"
-                   <?php echo set_target($options['link_icon11']);?>>
-                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon11']);?>" class="text_icon"><?php echo $options['title_icon11'];?> </span>
-                </a>
-            </div>
-            <div id="icon-12">
-                <a class="dashicons dashicons-<?php echo $options['icon12'];?>" 
-                   title="<?php echo $options['title_icon12'];?>" 
-                   href="<?php echo $options['link_icon12'];?>" 
-                   <?php echo set_target($options['link_icon12']);?>>
-                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon12']);?>" class="text_icon"><?php echo $options['title_icon12'];?> </span>
-                </a>
-            </div>
+            <?php
+            show_header_icon($options, 11);
+            show_header_icon($options, 12);
+            ?>
             <div id="icon-13">
                 <a class="dashicons dashicons-search" title="CERCA" href="javascript:void(0);" onclick='cerca_toggle();'>
                     <span class="text_icon">cerca</span>   
@@ -158,24 +167,12 @@ function reactor_do_title_logo() {
                 <form role="search" method="get" class="search-form" action="<?php echo get_home_url();?>">
                     <input type="search" class="search-field" placeholder="Cerca i pulsa enter…" value="" name="s" title="Cerca:">
                     <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
-                </form>			
+                </form>
             </div>
-            <div id="icon-21">
-                 <a class="dashicons dashicons-<?php echo $options['icon21'];?>" 
-                    title="<?php echo $options['title_icon21'];?>" 
-                    href="<?php echo $options['link_icon21'];?>" 
-                    <?php echo set_target($options['link_icon21']);?>>
-                    <span style="font-size:<?php echo get_icon_font_size( $options['title_icon21']);?>" class="text_icon"><?php echo $options['title_icon21'];?> </span>
-                 </a>
-            </div>
-            <div id="icon-22">
-                <a class="dashicons dashicons-<?php echo $options['icon22'];?>" 
-                   title="<?php echo $options['title_icon22'];?>" 
-                   href="<?php echo $options['link_icon22'];?>" 
-                   <?php echo set_target($options['link_icon22']);?>>
-                   <span style="font-size:<?php echo get_icon_font_size( $options['title_icon22']);?>" class="text_icon"><?php echo $options['title_icon22'];?> </span>
-                </a>
-            </div>
+            <?php
+            show_header_icon($options, 21);
+            show_header_icon($options, 22);
+            ?>
             <div id="icon-23">
                 <a class="dashicons dashicons-menu" 
                    title="MENU" 
