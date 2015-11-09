@@ -10,6 +10,7 @@ Changes in progress
 - Blogger Importer: Upgraded to version 0.9 (Trello #936)
 - wordpress-mu-common: Synced code with XTECBlocs. Changes have no effects to Nodes
 - Stats widget: Added margin-bottom (Trello #1009)
+- Added new Color Palette "Purple and Green" (GitHub #307)
 
 
 
