@@ -5,7 +5,9 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- XTEC lib: Changed replace_url to support only a single URL
+- XTEC lib: Changed replace_url to support only a single URL (Trello #)
+- Theme reactor-serveis-educatius: Improved menu and added search option in responsive version (Trello #)
+
 
 
 Changes 15.11.16
