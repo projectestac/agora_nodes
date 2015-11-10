@@ -842,6 +842,6 @@ remove_action( 'login_form', 'wsl_render_auth_widget_in_wp_login_form' );
 
 // Load styles
 function load_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '-primaria-1/style.css' );
+    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '-serveis-educatius/style.css' );
 }
 add_action( 'login_enqueue_scripts', 'load_stylesheet' );
