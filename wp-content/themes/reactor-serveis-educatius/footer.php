@@ -23,20 +23,74 @@
 
 <script>
 
-    jQuery(".menu-responsive.dashicons.dashicons-menu").on("click", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
+    function isMobileDevice(){
+        return jQuery("html").hasClass("touch") ? true : false;
+    }
 
-        var $menuHeader = jQuery("#menu-panel").find(".menu-header"),
-            $list = $menuHeader.find("ul.menu-principal"),
-            $imgCentre = jQuery(".box-titlemobile-logo").find("img");
+//    jQuery(".menu-responsive.dashicons.dashicons-menu").on("click", function(event) {
+//        event.preventDefault();
+//        event.stopPropagation();
+//
+//        var $menuHeader = jQuery("#menu-panel").find(".menu-header"),
+//            $list = $menuHeader.find("ul.menu-principal"),
+//            $listItems = $list.find("li.menu-item-depth-0"),
+//            $imgCentre = jQuery(".box-titlemobile-logo").find("img");
+//
+//        var toggleClass = $menuHeader.hasClass("open-menu-header") ? "removeClass" : "addClass";
+//
+//        $menuHeader[toggleClass]("open-menu-header");
+//        $list[toggleClass]("open-menu-principal");
+//        $imgCentre[toggleClass]("invisible");
+//
+//        if(isMobileDevice()) {
+//            console.info("mobile device");
+////            jQuery(".menu-item-depth-0").unbind('mouseenter mouseleave');
+////            jQuery(".menu-item-depth-0").off('hover');
+//        } else {
+//            console.info("mobile device");
+//        }
+//
+//    });
 
-        var toggleClass = $menuHeader.hasClass("open-menu-header") ? "removeClass" : "addClass";
+    var MenuResponsive = {
+        is_mobile: false,
+        list_items: {},
+        init: function() {
+            MenuResponsive.is_mobile = isMobileDevice();
+            MenuResponsive.addEventListeners();
+        },
+        addEventListeners: function() {
+            jQuery(".menu-responsive.dashicons.dashicons-menu").on("click", function(event) {
+                event.preventDefault();
+                event.stopPropagation();
 
-        $menuHeader[toggleClass]("open-menu-header");
-        $list[toggleClass]("open-menu-principal");
-        $imgCentre[toggleClass]("invisible");
-    });
+                var $menuHeader = jQuery("#menu-panel").find(".menu-header"),
+                    $list = $menuHeader.find("ul.menu-principal"),
+                    $listItems = $list.find("li.menu-item-depth-0"),
+                    $imgCentre = jQuery(".box-titlemobile-logo").find("img");
+
+                $listItems.on("click", function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    var self = jQuery(this),
+                    $ul = self.find("> ul"),
+                    toggleVisibility = $ul.hasClass("visible") ? "removeClass" : "addClass";
+                    $ul[toggleVisibility]("visible");
+                });
+
+
+                var toggleClass = $menuHeader.hasClass("open-menu-header") ? "removeClass" : "addClass";
+
+                $menuHeader[toggleClass]("open-menu-header");
+                $list[toggleClass]("open-menu-principal");
+                $imgCentre[toggleClass]("invisible");
+            });
+        }
+    };
+
+
+    MenuResponsive.init();
+
 
 function cerca_toggle(){
     $icon_search  = document.getElementById("icon-search");

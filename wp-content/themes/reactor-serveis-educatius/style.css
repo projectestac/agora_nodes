@@ -651,7 +651,7 @@ li#wp-admin-bar-bp-login {
     border-right: 2px solid white;
 }
 
-ul.menu-principal .menu-item-depth-0:last-child > a{
+ul.menu-principal .menu-item-depth-0:last-child > a {
     border-right: 0px;
 }
 
@@ -677,7 +677,7 @@ ul.menu-depth-1 {
 }
 
 /*.menu-item-depth-0:hover {*/
-    /*background-color: #00688B;*/
+/*background-color: #00688B;*/
 /*}*/
 
 .menu-item-depth-0:hover ul.menu-depth-1 {
@@ -1344,7 +1344,6 @@ body.login .wp-social-login-widget {
         padding: 15px 10px 0px 10px;
     }
 
-
     div.box-titlemobile-inner {
         display: table;
     }
@@ -1420,12 +1419,12 @@ body.login .wp-social-login-widget {
         display: none;
     }
 
-    html .site-content.sub-page ul.breadcrumbs{
+    html .site-content.sub-page ul.breadcrumbs {
         margin-left: inherit !important;
         width: 100%;
     }
 
-    html .site-content.sub-page #side-menu{
+    html .site-content.sub-page #side-menu {
         margin-top: -70px;
     }
 
@@ -1444,7 +1443,7 @@ body.login .wp-social-login-widget {
     }
 
     /* Menú responsive*/
-    #main #menu-panel  .open-menu-header{
+    #main #menu-panel .open-menu-header {
         display: block;
         z-index: 1;
         position: fixed;
@@ -1452,29 +1451,29 @@ body.login .wp-social-login-widget {
         left: 0;
     }
 
-    #main #menu-panel  .open-menu-principal{
+    #main #menu-panel .open-menu-principal {
         z-index: 1;
         margin: 0;
         width: 100%;
     }
 
-    #main #menu-panel  .open-menu-principal li{
+    #main #menu-panel .open-menu-principal li {
         width: 100%;
         float: none;
         /*background-color: silver;*/
         display: block;
     }
 
-    #main #menu-panel  .open-menu-principal li.menu-item-depth-0 > a {
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0 > a {
         border-right: 0;
     }
 
-    #main #menu-panel .open-menu-principal li ul{
+    #main #menu-panel .open-menu-principal li ul {
         padding: 0 !important;
         width: 100%;
     }
 
-    .open-menu-principal .menu-item-depth-0:hover ul.menu-depth-1 li{
+    .open-menu-principal .menu-item-depth-0:hover ul.menu-depth-1 li {
         padding-left: 10%;
         width: 100%;
         margin-bottom: 0;
@@ -1482,6 +1481,22 @@ body.login .wp-social-login-widget {
 
     .invisible {
         opacity: 0;
+    }
+
+    .visible {
+        opacity: 1 !important;
+    }
+
+    .menu-item-depth-0 {
+        border-bottom: 1px solid #999;
+    }
+
+    .menu-item-depth-0:hover ul.menu-depth-1 {
+        opacity: 0;
+    }
+
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0 > a:after {
+
     }
 }
 
@@ -1517,11 +1532,11 @@ body.login .wp-social-login-widget {
     padding: 0;
 }
 
-.etiquetes-header{
+.etiquetes-header {
     float: left;
 }
 
-.etiquetes-header a:hover{
+.etiquetes-header a:hover {
     text-decoration: none;
 }
 
@@ -1564,14 +1579,14 @@ div[id^='logo_centre_widget-'] > h4 {
     left: initial;
 }
 
-.site-content.sub-page ul.breadcrumbs{
+.site-content.sub-page ul.breadcrumbs {
     margin-left: 25% !important;
     width: 75%;
     clear: both;
     background-color: white;
 }
 
-.site-content.sub-page #side-menu{
+.site-content.sub-page #side-menu {
     margin-top: -46px;
 }
 
