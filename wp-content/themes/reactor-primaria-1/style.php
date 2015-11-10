@@ -15,7 +15,7 @@
    
     ?>
     .box-title{
-       background-color:<?php echo $color_primary;?>
+        background-color:<?php echo $color_primary;?>
     }
     .box-description{
         background-color:<?php echo $color_secondary; ?>
@@ -29,7 +29,8 @@
     #icon-22 a {
         color:<?php echo $color_icon22;?> !important;
     }
-    h1, h2, h3, h4, h5, h6, a {    
+    /** 2015.11.13 @nacho: Display correct color for arrows on SideMenuWalker Menu**/
+    h1, h2, h3, h4, h5, h6, a, .dropDown.dashicons {
         color: <?php echo $color_link;?>  !important;
     }
     #menu-panel {
