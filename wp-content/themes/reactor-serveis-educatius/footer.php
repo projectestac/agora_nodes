@@ -28,13 +28,13 @@
         event.stopPropagation();
 
         var $menuHeader = jQuery("#menu-panel").find(".menu-header"),
-            llista = $menuHeader.find("#menu-menu-principal"),
+            $list = $menuHeader.find("ul.menu-principal"),
             $imgCentre = jQuery(".box-titlemobile-logo").find("img");
 
         var toggleClass = $menuHeader.hasClass("open-menu-header") ? "removeClass" : "addClass";
 
         $menuHeader[toggleClass]("open-menu-header");
-        llista[toggleClass]("open-menu-principal");
+        $list[toggleClass]("open-menu-principal");
         $imgCentre[toggleClass]("invisible");
     });
 
