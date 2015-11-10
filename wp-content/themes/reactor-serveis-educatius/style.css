@@ -531,7 +531,7 @@ li#wp-admin-bar-bp-login {
 }
 
 .box-content a, .box-content span {
-    display: table-cell;
+    display: inline-block;
     text-align: center;
     vertical-align: middle;
     color: white !important;
@@ -651,7 +651,7 @@ li#wp-admin-bar-bp-login {
     border-right: 2px solid white;
 }
 
-#menu-menu-principal .menu-item-depth-0:last-child > a{
+ul.menu-principal .menu-item-depth-0:last-child > a{
     border-right: 0px;
 }
 
@@ -1530,7 +1530,7 @@ body.login .wp-social-login-widget {
     width: 100%;
 }
 
-#menu-menu-principal.menu-principal {
+.menu-header ul.menu-principal {
     padding: 0;
     height: 100%;
     width: 90%;
@@ -1588,7 +1588,6 @@ div[id^='logo_centre_widget-'] > h4 {
 .menu-responsive.dashicons.dashicons-menu {
     display: none;
 }
-
 
 /* @NEW =================== {END} */
 

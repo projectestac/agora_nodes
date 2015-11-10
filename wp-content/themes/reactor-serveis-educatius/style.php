@@ -54,6 +54,10 @@
     .box-image {
         background-color: <?php echo $color_secondary;?>;
     }
+    
+    .menu-item-depth-0:hover {
+        background-color: <?php echo $color_tertiary;?>;
+    }
 
     .menu-item-depth-0:hover ul.menu-depth-1 {
         /*background-color: #00688B;*/
