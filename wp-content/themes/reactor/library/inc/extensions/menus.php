@@ -143,7 +143,7 @@ if ( !function_exists('reactor_footer_links') ) {
  * @credit wearerequired http://required.ch/
  * @since 1.2.0
  */
-if ( !function_exists('reactor_side_menu') ) { 
+if ( !function_exists('reactor_side_menu') ) {
 	function reactor_side_menu( $nav_args = '' ) {
 		global $post;
 		
@@ -196,9 +196,7 @@ if ( !function_exists('reactor_side_menu') ) {
 		
 		// display the menu if there are subpages
 		if ( $children ) {
-			
 			$output = $nav_args['before'] . $children . $nav_args['after'];
-
 			echo $output;
 		}
 	}
