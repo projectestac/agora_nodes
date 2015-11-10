@@ -651,7 +651,7 @@ li#wp-admin-bar-bp-login {
     border-right: 2px solid white;
 }
 
-ul.menu-principal .menu-item-depth-0:last-child > a{
+ul.menu-principal .menu-item-depth-0:last-child > a {
     border-right: 0px;
 }
 
@@ -677,7 +677,7 @@ ul.menu-depth-1 {
 }
 
 /*.menu-item-depth-0:hover {*/
-    /*background-color: #00688B;*/
+/*background-color: #00688B;*/
 /*}*/
 
 .menu-item-depth-0:hover ul.menu-depth-1 {
@@ -1249,7 +1249,7 @@ div.docs-info-header {
 /* Login Form */
 
 body.login {
-    background: #FFF;
+    background-color: #ddd !important;
 }
 
 body.login h1 {
@@ -1338,10 +1338,10 @@ body.login .wp-social-login-widget {
 
     .box-titlemobile img {
         max-height: 170px;
-        max-width: 85%;
+        max-width: 70%;
         display: block;
         margin: 0 auto;
-        padding: 15px 10px 0px 10px;
+        padding: 30px 10px 10px 10px;
     }
 
 
@@ -1420,12 +1420,12 @@ body.login .wp-social-login-widget {
         display: none;
     }
 
-    html .site-content.sub-page ul.breadcrumbs{
+    html .site-content.sub-page ul.breadcrumbs {
         margin-left: inherit !important;
         width: 100%;
     }
 
-    html .site-content.sub-page #side-menu{
+    html .site-content.sub-page #side-menu {
         margin-top: -70px;
     }
 
@@ -1439,6 +1439,53 @@ body.login .wp-social-login-widget {
         color: white !important;
     }
 
+    .responsive-search-form{
+        position: absolute;
+        z-index: 1;
+        font-size: 2.5em;
+        color: white !important;
+        top: 10px;
+        right: 15px;
+        width: 200px;
+        height: 30px;
+    }
+
+    .responsive-search-form .dashicons{
+        font-size: 0.8em;
+        position: absolute;
+        right: 5px;
+        -webkit-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+    }
+
+    .responsive-search-form.focused .dashicons {
+        right: 215px;
+        top: -3px;
+    }
+
+    .responsive-search-form input[type="submit"] {
+        display: none;
+    }
+
+    .responsive-search-form input[type="text"]{
+        opacity: 0;
+        height: 25px;
+        padding-bottom: 0;
+        padding-top: 0;
+        width: 200px;
+        -webkit-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+        text-indent: 5px;
+        font-size: 12px;
+        position: absolute;
+        right: -9999px;
+    }
+
+    .responsive-search-form.focused input[type="text"] {
+        opacity: 1;
+        right: 0px;
+    }
+
     .menu-responsive.dashicons.dashicons-menu:hover {
         text-decoration: none;
     }
@@ -1450,38 +1497,131 @@ body.login .wp-social-login-widget {
         position: fixed;
         top: 80px;
         left: 0;
+        background-color: rgba(0,0,0,.9);
+        overflow-y: auto;
+        height: 100%;
     }
 
-    #main #menu-panel  .open-menu-principal{
+    #main #menu-panel .open-menu-principal {
         z-index: 1;
         margin: 0;
         width: 100%;
+        height: auto;
+        overflow-y: scroll;
     }
 
-    #main #menu-panel  .open-menu-principal li{
+    #main #menu-panel .open-menu-principal li {
         width: 100%;
         float: none;
-        /*background-color: silver;*/
+        position: relative;
         display: block;
     }
 
-    #main #menu-panel  .open-menu-principal li.menu-item-depth-0 > a {
+    /*#main #menu-panel .open-menu-principal li.menu-item-depth-0.menu-item-has-children:after {*/
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0.menu-item-has-children:before {
+        content: "\f347";
+        display: inline-block;
+        width: 25px;
+        /* height: 15px; */
+        font-size: 15px;
+        line-height: 1;
+        font-family: dashicons;
+        text-decoration: inherit;
+        font-weight: 400;
+        font-style: normal;
+        text-align: left;
+        -webkit-transition: color .1s ease-in 0;
+        transition: color .1s ease-in 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: none;
+        color: white;
+        line-height: 45px;
+        float: right;
+        cursor: pointer;
+    }
+
+    /*#main #menu-panel .open-menu-principal li.menu-item-depth-0.menu-item-has-children.list-opened:after{*/
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0.menu-item-has-children.list-opened:before{
+        content: "\f343";
+    }
+
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0 > a {
         border-right: 0;
     }
 
-    #main #menu-panel .open-menu-principal li ul{
+    #main #menu-panel .open-menu-principal li ul {
         padding: 0 !important;
         width: 100%;
     }
 
-    .open-menu-principal .menu-item-depth-0:hover ul.menu-depth-1 li{
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0.menu-item-has-children.list-opened ul{
+        position: relative;
+        left: 0;
+    }
+
+    .open-menu-principal .menu-item-depth-0 ul.menu-depth-1 li,
+    .open-menu-principal .menu-item-depth-0:hover ul.menu-depth-1 li {
         padding-left: 10%;
         width: 100%;
         margin-bottom: 0;
     }
 
+    .open-menu-principal .menu-item-depth-0 ul.menu-depth-1 li {
+        line-height: 2em;
+        font-size: 0.9em;
+    }
+
     .invisible {
         opacity: 0;
+    }
+
+    .visible {
+        opacity: 1 !important;
+        display: block !important;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .fixed {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    .menu-item-depth-0 {
+        border-bottom: 1px solid #999;
+    }
+
+    html .menu-item-depth-0:hover ul.menu-depth-1 {
+        display: none;
+        opacity: 0;
+    }
+
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0 > a.no-anchor:after{
+        content: '';
+    }
+
+    #main #menu-panel .open-menu-principal li.menu-item-depth-0 > a:after {
+        content: "\f345";
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        font-size: 15px;
+        line-height: 1;
+        font-family: dashicons;
+        text-decoration: inherit;
+        font-weight: 400;
+        font-style: normal;
+        vertical-align: middle;
+        text-align: center;
+        -webkit-transition: color .1s ease-in 0;
+        transition: color .1s ease-in 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: none;
     }
 }
 
@@ -1517,11 +1657,11 @@ body.login .wp-social-login-widget {
     padding: 0;
 }
 
-.etiquetes-header{
+.etiquetes-header {
     float: left;
 }
 
-.etiquetes-header a:hover{
+.etiquetes-header a:hover {
     text-decoration: none;
 }
 
@@ -1564,14 +1704,14 @@ div[id^='logo_centre_widget-'] > h4 {
     left: initial;
 }
 
-.site-content.sub-page ul.breadcrumbs{
+.site-content.sub-page ul.breadcrumbs {
     margin-left: 25% !important;
     width: 75%;
     clear: both;
     background-color: white;
 }
 
-.site-content.sub-page #side-menu{
+.site-content.sub-page #side-menu {
     margin-top: -46px;
 }
 
