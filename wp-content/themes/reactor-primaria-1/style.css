@@ -935,35 +935,6 @@ ul.bbp-topics, .bbp-topic-form {
   clear: inherit !important;
 }
 
-body.buddypress .addtoany_share_save_container { 
-    display:none; 
-}
-
-.bbp-reply-content p, .bbp-topic-title {
-  font-size: 1.5em !important; 
-}
-
-#buddypress h3{
-    font-size:1em;
-}
-
-#wp-bbp_reply_content-editor-container,
-#wp-bbp_reply_content-editor-container{
-    border:1px solid #ddd !important;
-}
-
-.forums.bbp-replies{
-    border:1px solid #ddd !important;
-}
-
-#bbp_topic_tags,
-[for=bbp_topic_tags]{
-    display:none !important;
-}
-#bbpress-forums fieldset.bbp-form {
-  border: 1px solid #ddd !important;
-}
-    
 /* Calendari */
 
 .gce-widget-grid .gce-calendar td {
@@ -1351,11 +1322,6 @@ body.login .wp-social-login-widget{
   .text_icon {
       display:none;
   }
-  
-  body.single #sidebar { 
-      display:none; 
-  }
-  
 }  
  
 /* Large > 1480px */
@@ -1363,26 +1329,121 @@ body.login .wp-social-login-widget{
   html{
     background-color:#E2E2E2;  
    
-    }
-    
-    body {
-      width: 1480px;
-      margin-left: auto;
-      margin-right: auto;
-      border-left:3px solid #ddd;
-      border-right:3px solid #ddd;
-    }
-    
-    .box-content a, 
-    .box-content span{
-      font-size: 30px !important;      
-    }
-    
+  }
+  body {
+    width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left:3px solid #ddd;
+    border-right:3px solid #ddd;
+  }
+  .box-content a,
+  .box-content span{
+    font-size: 30px !important;
+  }
         
-    .box-content-grid a:before{
-      font-size: 2em !important;   
-    }
-    .box-content-grid a,.box-content-grid span {
-      font-size: 1em !important;
-    }
+  .box-content-grid a:before{
+    font-size: 2em !important;
+  }
+  .box-content-grid a,.box-content-grid span {
+    font-size: 1em !important;
+  }
 }
+
+/**
+ * 2015.11.13 @nacho: Customize the customSection, noChildren and dropDown classes when Side_Menu_walker is loaded
+*/
+.section-container.accordion > .customSection div.content {
+    padding: 0 0.9375em;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+}
+
+.section-container.accordion > .customSection > .title a {
+    padding: 0.9375em;
+    color: #333;
+    font-size: 0.875em;
+    background: transparent none repeat scroll 0% 0%;
+    display: inline-block;    
+}
+
+.section-container.accordion > .customSection p {
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 0em;
+    text-rendering: optimizelegibility;
+    background: #D5D5D5 none repeat scroll 0% 0%;
+    border-color: #CCC;
+    border-style: solid;
+    border-width: 0px 0px 1px;
+}
+
+.section-container.accordion > .section > .title a,
+.section-container.accordion > .customSection > .title a {
+    padding-right: 30px;
+    white-space: normal;
+}
+
+.section-container.accordion > .customSection ul {
+    padding-top: 0px;    
+    display: block;
+    margin: 0px;
+    padding: 0.875em 0px;
+    list-style-type: none;
+    list-style-position: inside;
+    font-size: 1em;
+    line-height: 1.6;    
+    list-style-position: outside;
+    font-family: inherit;
+}
+
+.section-container.accordion > .customSection li {
+    padding-left: 2em;
+    margin: 0px 0px 0.4375em;
+    font-size: 0.875em;
+}
+
+.section-container.accordion > .customSection {
+    position: relative;
+}
+
+.dashicons, .dashicons-before:before {
+    content: "\f347";
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+}
+
+.customSection .dashicons-arrow-down-alt2:before {
+    content: "\f343" !important;
+}
+
+.dropDown {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+}
+
+#side-menu .section, #side-menu .customSection.active {
+	position: relative !important;
+}
+
+.noChildren .dashicons, .noChildren .dashicons-before:before {
+	content: "";
+}
+
+.noChildren .dashicons-arrow-down-alt2:before {
+	content: "";
+}
+/**
+ *End @nacho
+*/
