@@ -85,7 +85,6 @@ function reactor_do_title_logo()
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
                         <span style="font-size:<?php echo $description_font_size; ?>">
                             <img src="<?php echo reactor_option('logo_image'); ?>">
-                            <?php echo esc_url( home_url( '/' ) ); ?>
                         </span>
                     </a>
                 </div>
