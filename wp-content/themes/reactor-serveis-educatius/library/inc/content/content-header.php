@@ -76,6 +76,13 @@ function reactor_do_title_logo()
                     </a>
                 </div>
             </div>
+            <div class="responsive-search-form">
+                <span class="dashicons dashicons-search"></span>
+                <form role="search" method="get" id="searchform" action="<?php echo home_url(); ?>">
+                        <input type="text" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="" />
+                        <input class="button prefix" type="submit" id="searchsubmit" value="<?php echo esc_attr__('Search', 'reactor'); ?>" />
+                </form>
+            </div>
         </div>
 
         <!-- Caixa amb la descripció del centre -->
