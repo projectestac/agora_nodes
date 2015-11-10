@@ -190,6 +190,7 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 // 2014.10.21 @aginard
 // 2015.07.31 @nacho
 if (is_xtecblocs() || is_xtec_super_admin()) {
+//************ FI
 
 $menu[65] = array( sprintf( __('Plugins %s'), $count ), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'dashicons-admin-plugins' );
 
