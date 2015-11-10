@@ -329,36 +329,45 @@ class Side_Menu_Walker extends Walker_Page {
 
     function start_el( &$output, $page, $depth = 0, $args = array(), $current_page = 0 ) {
 
-        extract( $args, EXTR_SKIP );
-        $classes = array( 'page_item', 'page-item-' . $page->ID );
-		
-            if ( !empty( $current_page ) ) {
-                $_current_page = get_page( $current_page );
-			}
-			
-            if ( isset( $_current_page->ancestors ) && in_array( $page->ID, ( array ) $_current_page->ancestors ) ) {
-                $classes[] = 'current_page_ancestor';
-			}
-			
-            if ( $page->ID == $current_page ) {
-                $classes[] = 'current_page_item active';
-			} elseif ( $_current_page && $page->ID == $_current_page->post_parent ) {
-                $classes[] = 'current_page_parent';
-            } elseif ( $page->ID == get_option('page_for_posts') ) {
-                $classes[] = 'current_page_parent';
-            }
+		extract( $args, EXTR_SKIP );
+		$classes = array( 'page_item', 'page-item-' . $page->ID );
+
+		if ( !empty( $current_page ) ) {
+			$_current_page = get_page( $current_page );
+		}
+		if ( isset( $_current_page->ancestors ) && in_array( $page->ID, ( array ) $_current_page->ancestors ) ) {
+			$classes[] = 'current_page_ancestor';
+		}
+		if ( $page->ID == $current_page ) {
+			$classes[] = 'current_page_item active';
+		} elseif ( $_current_page && $page->ID == $_current_page->post_parent ) {
+			$classes[] = 'current_page_parent';
+        } elseif ( $page->ID == get_option('page_for_posts') ) {
+			$classes[] = 'current_page_parent';
+		}
 
 		// create sections
+		// XTEC ************ MODIFICAT - Added class customSection for sections with childrens
+		// 2015.11.13 @nacho
+		$section_class = ( $depth == 0 && in_array('current_page_ancestor', $classes) ) ? 'customSection' : 'section';
+		//************ ORIGINAL
+		/*
 		$section_class = ( $depth == 0 && in_array('current_page_ancestor', $classes) ) ? 'section active' : 'section';
-		
+		*/
+		//************ FI
 		$classes = implode(' ', apply_filters('page_css_class', $classes, $page ) );
-		
-		$output .= ( $depth == 0 ) ? '<div class="' . $section_class . '">' : '';			
-		
-        $output .= ( $depth == 0 ) ? '<p class="' . $classes . ' title" data-section-title>' : '<li class="' . $classes . '">';
-        $output .= '<a href="' . get_page_link( $page->ID ) . '" title="' . esc_attr( wp_strip_all_tags( $page->post_title ) ) . '">';
-        $output .= $args['link_before'] . $page->post_title . $args['link_after'];
-        $output .= '</a>';
+		// XTEC ************ MODIFICAT - Added class dropDrown for display arrows
+		// 2015.11.13 @nacho
+		$output .= ( $depth == 0 ) ? '<div class="' . $section_class . '"><span class="dropDown dashicons dashicons-arrow-down-alt2"></span>' : '';
+		//************ ORIGINAL
+		/*
+		$output .= ( $depth == 0 ) ? '<div class="' . $section_class . '">' : '';
+		*/
+		//************ FI
+		$output .= ( $depth == 0 ) ? '<p class="' . $classes . ' title" data-section-title>' : '<li class="' . $classes . '">';
+		$output .= '<a href="' . get_page_link( $page->ID ) . '" title="' . esc_attr( wp_strip_all_tags( $page->post_title ) ) . '">';
+		$output .= $args['link_before'] . $page->post_title . $args['link_after'];
+		$output .= '</a>';
 		$output .= ( $depth == 0 && empty( $args['has_children'] ) ) ? '</div>' : '';
     }
 	
@@ -367,5 +376,4 @@ class Side_Menu_Walker extends Walker_Page {
 			$output .= "</li>";
 		}
     }
-
 }
