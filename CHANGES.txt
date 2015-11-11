@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 15.11.16
 ---------------------------------------------------------------------------------------
 - Moved activation script of Nodes to WordPress (Trello #996)
 - Added support to activation script to serialized data in wp_postmeta (Trello #937)
