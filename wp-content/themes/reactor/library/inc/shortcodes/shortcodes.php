@@ -201,7 +201,29 @@ function reactor_add_custom_gallery( $attr ) {
 			unset( $attr['orderby'] );
 	}
 
-	extract( shortcode_atts( array( 
+	// XTEC ************ AFEGIT - Check if theme supports HTML5
+	// 2015.11.16 @nacho
+	$html5 = current_theme_supports( 'html5', 'gallery' );
+	//************ FI
+
+	// XTEC ************ MODIFICAT - Modified columns value to show correctly all images and legends
+	// 2015.11.16 @nacho
+	extract( shortcode_atts( array(
+		'order'      => 'ASC',
+		'orderby'    => 'menu_order ID',
+		'id'         => $post->ID,
+		'itemtag'    => 'ul',
+		'icontag'    => 'li',
+		'captiontag' => 'li',
+		'columns'    => 3,
+		'size'       => 'thumbnail',
+		'include'    => '',
+		'exclude'    => ''
+	 ), $attr ) );
+
+	//************ ORIGINAL
+	/*
+	extract( shortcode_atts( array(
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
 		'id'         => $post->ID,
@@ -213,6 +235,8 @@ function reactor_add_custom_gallery( $attr ) {
 		'include'    => '',
 		'exclude'    => ''
 	 ), $attr ) );
+	*/
+	//************ FI
 
 	$id = intval( $id );
 	if ('RAND' == $order )
@@ -241,18 +265,99 @@ function reactor_add_custom_gallery( $attr ) {
 		return $output;
 	}
 
+	// XTEC ************ MODIFICAT - Set default tags
+	// 2015.11.16 @nacho
+	$itemtag = 'dl';
+	$captiontag = 'dd';
+	$icontag = 'dt';
+	//************ ORIGINAL
+	/*
 	$itemtag = tag_escape( $itemtag );
 	$captiontag = tag_escape( $captiontag );
+	*/
+	//************ FI
 	$columns = intval( $columns );
 	$itemwidth = $columns > 0 ? floor( 100/$columns ) : 100;
 	$float = is_rtl() ? 'right' : 'left';
 
 	$selector = "gallery-{$instance}";
 
+	// XTEC ************ AFEGIT - Default gallery styles.
+	// Defaults to false if the theme supports HTML5 galleries. Otherwise, defaults to true
+	// 2015.11.16 @nacho
+	$gallery_style = '';
+	if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
+		$gallery_style = "
+		<style type='text/css'>
+			#{$selector} {
+				margin: auto;
+			}
+			#{$selector} .gallery-item {
+				float: {$float};
+				margin-top: 10px;
+				text-align: center;
+				width: {$itemwidth}%;
+			}
+			#{$selector} img {
+				border: 2px solid #cfcfcf;
+			}
+			#{$selector} .gallery-caption {
+				margin-left: 0;
+			}
+		</style>\n\t\t";
+	}
+	//************ FI
 	$size_class = sanitize_html_class( $size );
 	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	// XTEC ************ MODIFICAT - Opening HTML div container for the gallery shortcode output
+	// 2015.11.16 @nacho
+	$output = apply_filters( 'gallery_style', $gallery_style . $gallery_div );
+	//************ ORIGINAL
+	/*
 	$output = apply_filters('gallery_style', $gallery_div );
+	*/
+	//************ FI
 
+	// XTEC ************ MODIFICAT - Mount the Gallery Grid
+	// 2015.11.16 @nacho
+	$i = 0;
+	foreach ( $attachments as $id => $attachment ) {
+		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false );
+
+		$image_meta  = wp_get_attachment_metadata( $id );
+		$orientation = '';
+		if ( isset( $image_meta['height'], $image_meta['width'] ) ) {
+			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+		}
+		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "
+				<{$icontag} class='gallery-icon {$orientation}'>
+				$link
+				</{$icontag}>";
+
+		if ( $captiontag && trim($attachment->post_excerpt) ) {
+			$output .= "
+				<{$captiontag} class='wp-caption-text gallery-caption'>
+				" . wptexturize($attachment->post_excerpt) . "
+				</{$captiontag}>";
+		}
+
+		$output .= "</{$itemtag}>";
+		if ( ! $html5 && $columns > 0 && ++$i % $columns == 0 ) {
+			$output .= '<br style="clear: both" />';
+		}
+	}
+
+	if ( ! $html5 && $columns > 0 && $i % $columns !== 0 ) {
+		$output .= "<br style='clear: both' />";
+	}
+
+	$output .= "</div>\n";
+
+	return $output;
+
+	//************ ORIGINAL
+	/*
 	$i = 0;
 	$grid = $columns;
 	$clearing = ( isset( $attr['link'] ) && 'file' == $attr['link'] ) ? 'data-clearing' : '';
@@ -280,6 +385,8 @@ function reactor_add_custom_gallery( $attr ) {
 	$output .= "</div>\n";
 
 	return $output;
+	*/
+	//************ FI
 }
 
 /**
