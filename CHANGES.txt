@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- XTEC lib: Changed replace_url to support only a single URL
+
+
 Changes 15.11.16
 ---------------------------------------------------------------------------------------
 - Moved activation script of Nodes to WordPress (Trello #996)
