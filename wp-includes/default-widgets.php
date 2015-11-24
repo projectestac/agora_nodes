@@ -1373,6 +1373,14 @@ class WP_Widget_Tag_Cloud extends WP_Widget {
 			'menu'        => $nav_menu
 		);
 
+		// XTEC ************ AFEGIT - If the instance of checkbox is checked a class is added to convert the link to a button
+		// 2015.11.23 @nacho
+		$links_as_buttons = $instance[ 'links_as_buttons' ] ? true : false;
+
+		if ($links_as_buttons == true) {
+			$nav_menu_args['menu_class'] = 'links_as_buttons';
+		}
+		//************ FI
 		/**
 		 * Filter the arguments for the Custom Menu widget.
 		 *
@@ -1400,6 +1408,10 @@ class WP_Widget_Tag_Cloud extends WP_Widget {
 		if ( ! empty( $new_instance['nav_menu'] ) ) {
 			$instance['nav_menu'] = (int) $new_instance['nav_menu'];
 		}
+		// XTEC ************ AFEGIT - Update the instance value of checkbox
+		// 2015.11.23 @nacho
+		$instance[ 'links_as_buttons' ] = $new_instance[ 'links_as_buttons' ];
+		//************ FI
 		return $instance;
 	}
 
@@ -1433,6 +1445,15 @@ class WP_Widget_Tag_Cloud extends WP_Widget {
 		?>
 			</select>
 		</p>
+		<!--
+		// XTEC ************ AFEGIT - Creates the checkbox field
+		// 2015.11.23 @nacho
+		-->
+		<p>
+			<input class="checkbox" type="checkbox" <?php checked( $instance[ 'links_as_buttons' ], 'on' ); ?> id="<?php echo $this->get_field_id( 'links_as_buttons' ); ?>" name="<?php echo $this->get_field_name( 'links_as_buttons' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'links_as_buttons' ); ?>"><?php _e('Show links as buttons');?></label>
+		</p>
+		<!-- //************ FI -->
 		<?php
 	}
 }
