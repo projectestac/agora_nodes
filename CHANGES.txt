@@ -9,6 +9,7 @@ Changes in progress
 - Theme reactor-serveis-educatius: Improved menu and added search option in responsive version (Trello #981)
 - Theme reactor: Fixed position of the legends of the images in custom galleries inserted in articles (Trello #1011)
 - Theme reactor-primaria-1: Fixed side menu in pages when there are subpages. (Trello #1010)
+- BuddyPress: Updated catalan translation (Trello #987)
 
 
 
