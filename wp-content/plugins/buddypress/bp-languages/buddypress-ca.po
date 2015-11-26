@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Development\n"
 "Report-Msgid-Bugs-To: https://buddypress.trac.wordpress.org\n"
 "POT-Creation-Date: 2015-06-05 13:48:17+00:00\n"
-"PO-Revision-Date: 2015-10-07 13:27+0100\n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"PO-Revision-Date: 2015-11-26 09:26+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -4266,9 +4266,10 @@ msgstr "Teniu una invitació al node: %s"
 msgid "Group invite could not be accepted"
 msgstr "La invitació de node no es pot acceptar"
 
+# MODIFICAT XTEC
 #: bp-groups/bp-groups-screens.php:79 bp-groups/bp-groups-screens.php:704
 msgid "Group invite accepted"
-msgstr "S'ha acceptar la invitiació del node"
+msgstr "S'ha acceptat la invitació del node"
 
 #: bp-groups/bp-groups-screens.php:104
 msgid "Group invite could not be rejected"
