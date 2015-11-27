@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Added custom image for categories in page header (Trello #1054)
+
+
 Changes 15.12.14
 ---------------------------------------------------------------------------------------
 - XTEC lib: Changed replace_url to support only a single URL (Trello #1027)
