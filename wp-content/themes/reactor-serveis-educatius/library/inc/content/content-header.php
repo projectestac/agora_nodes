@@ -101,20 +101,56 @@ function reactor_do_title_logo()
         <!-- Imatge/Carrusel -->
         <div class="small-9 columns">
             <div class='box-image hide-for-small'>
+                <!-- Imatge/Carrusel -->
                 <?php
-                if (reactor_option('imatge_capcalera')) : ?>
-                    <div class='box-content'>
-                        <div class='CoverImage FlexEmbed FlexEmbed--3by1'
-                             style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
+                /**
+                 * @author: Nacho Abejaro
+                 * Check if page is a category
+                 * - If category has an image assigned, load it
+                 * - If has not been assigned an image, the header can be an image or a carrusel
+                 * Page is not a category
+                 * - Header can be an image or a carrusel
+                 */
+                if (is_category()){
+                    $image = get_category_image();
+                    if (!empty($image)){ ?>
+                        <div class='box-content'>
+                            <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                                 style="background-image:url(<?php echo $image;?>)">
+                            </div>
                         </div>
-                    </div>
-                <?php else:  ?>
-                    <div class='box-content-slider'>
-                        <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
-                    </div>
-                <?php endif; ?>
+                        <?php
+                    }else {
+                        if(reactor_option('imatge_capcalera')) { ?>
+                            <div class='box-content'>
+                                <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                                     style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
+                                </div>
+                            </div>
+                            <?php
+                        } else { ?>
+                            <div class='box-content-slider'>
+                                <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
+                            </div>
+                        <?php }
+                    }
+                }else {
+                    if (reactor_option('imatge_capcalera')) { ?>
+                        <div class='box-content'>
+                            <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                                 style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
+                            </div>
+                        </div>
+                        <?php
+                    } else { ?>
+                        <div class='box-content-slider'>
+                            <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
+                        </div>
+                    <?php }
+                }?>
             </div>
         </div>
+
         <div style="clear:both"></div>
     </div>
 <?php }
