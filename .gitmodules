@@ -40,3 +40,6 @@
 [submodule "wp-content/plugins/wp-recaptcha"]
 	path = wp-content/plugins/wp-recaptcha
 	url = https://github.com/projectestac/wordpress-recaptcha.git
+[submodule "wp-content/plugins/invite-anyone"]
+	path = wp-content/plugins/invite-anyone
+	url = https://github.com/projectestac/wordpress-invite-anyone.git
