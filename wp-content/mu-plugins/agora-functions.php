@@ -416,3 +416,119 @@ function remove_general_bbpress_options(){
 }
 
 add_action('parse_query', 'remove_general_bbpress_options');
+
+/**
+ * Adedd new extrafields for categories (images and articles_fila)
+ * This function replaced the old version located on functions.php of the themes
+ * 2015.12.04 @author Xavier Meler & Nacho Abejaro
+ */
+function extra_category_fields( $tag ) {    //check for existing featured ID
+    $t_id = $tag->term_id;
+    $cat_meta = get_option( "category_$t_id");
+    ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label for="articles_fila"><?php _e( 'Articles by row', 'agora-functions' ); ?></label></th>
+        <td>
+            <input type="text" name="Cat_meta[articles_fila]" id="Cat_meta[articles_fila]" size="25" style="width:60%;" value="<?php echo $cat_meta['articles_fila'] ? $cat_meta['articles_fila'] : ''; ?>"><br />
+            <p class="description"><?php _e('Articles to be displayed per row on category page (between 1 and 4)', 'agora-functions'); ?></p>
+        </td>
+    </tr>
+
+    <tr class="form-field form-required term-name-wrap">
+        <th scope="row" valign="top">
+            <label for="term_meta[term_meta]">
+                <?php _e( 'Image', 'agora-functions' ); ?>
+            </label>
+        </th>
+        <!-- Extra field to load an image into category -->
+        <td>
+            <label for="upload_image">
+                <input id="upload_image_button" class="button" type="button" value="<?php _e( 'Upload image', 'agora-functions' );?>" />
+                <input type="text" size="50" name="Cat_meta[image]" id="Cat_meta[image]" value="<?php echo esc_attr( $cat_meta['image'] ) ? esc_attr( $cat_meta['image'] ) : ''; ?>" readonly>
+                <p class="description"><?php _e( 'Provide an image for the category', 'agora-functions' ); ?></p>
+            </label>
+            <br/>
+            <?php
+            if (!empty($cat_meta['image'])) {
+                ?>
+                <input type=image src="<?php echo $cat_meta['image'];?>" height=110 width=160 alt="actual image" border=0 >
+                <p class="description"><?php _e( 'Current header image', 'agora-functions' ); ?></p>
+                <?php
+            }
+            ?>
+        </td>
+
+        <!-- Open the WP gallery and insert the URL image into text button (term_meta)-->
+        <script>
+            jQuery(document).ready(function($){
+                var custom_uploader;
+                $('#upload_image_button').click(function(e) {
+                    e.preventDefault();
+                    //If the uploader object has already been created, reopen the dialog
+                    if (custom_uploader) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    //Extend the wp.media object
+                    custom_uploader = wp.media.frames.file_frame = wp.media({
+                        title: 'Selecciona una imatge',
+                        button: {
+                            text: 'Selecciona una imatge'
+                        },
+                        multiple: false
+                    });
+
+                    //When a file is selected, grab the URL and set it as the text field's value
+                    custom_uploader.on('select', function() {
+                        console.log(custom_uploader.state().get('selection').toJSON());
+                        attachment = custom_uploader.state().get('selection').first().toJSON();
+                        $('#upload_image').val(attachment.url);
+
+                        // Save img URL into input Cat_meta[image] field
+                        $("#Cat_meta\\[image\\]").val(attachment.url);
+                    });
+
+                    //Open the uploader dialog
+                    custom_uploader.open();
+                });
+            });
+        </script>
+    </tr>
+<?php }
+
+add_action ( 'edit_category_form_fields', 'extra_category_fields');
+
+/**
+ * Save category extra fields callback function
+ * This function replaced the old version located on functions.php of the themes
+ * 2015.12.04 @author Xavier Meler & Nacho Abejaro
+ */
+function save_extra_category_fields( $term_id ) {
+
+    if ( isset( $_POST['Cat_meta'] ) ) {
+        $t_id = $term_id;
+        $cat_meta = get_option( "category_$t_id");
+        $cat_keys = array_keys($_POST['Cat_meta']);
+        foreach ($cat_keys as $key){
+            if (isset($_POST['Cat_meta'][$key])){
+                $cat_meta[$key] = $_POST['Cat_meta'][$key];
+            }
+        }
+        //save the option array
+        update_option( "category_$t_id", $cat_meta );
+    }
+}
+// save extra category extra fields hook
+add_action ( 'edited_category', 'save_extra_category_fields');
+
+/**
+ * Gets image field from a category
+ * 2015.12.04 @author Nacho Abejaro
+ */
+function get_category_image (){
+    $categoria = get_query_var('cat');
+    $cat_meta = get_option("category_$categoria");
+    $image = $cat_meta ['image'];
+
+    return $image;
+}

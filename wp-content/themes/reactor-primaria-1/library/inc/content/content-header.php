@@ -13,7 +13,7 @@
 /**
  * Site meta, title, and favicon
  * in header.php
- * 
+ *
  * @since 1.0.0
  */
 function reactor_do_reactor_head() { ?>
@@ -31,8 +31,7 @@ function reactor_do_reactor_head() { ?>
     <?php $favicon_uri = reactor_option('favicon_image') ? reactor_option('favicon_image') : get_template_directory_uri() . '/favicon.ico'; ?>
     <link rel="shortcut icon" href="<?php echo $favicon_uri; ?>">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-<?php
+    <?php
 }
 
 add_action('wp_head', 'reactor_do_reactor_head', 1);
@@ -61,90 +60,124 @@ function show_header_icon($options, $icon_number) {
 /**
  * Top bar
  * in header.php
- * 
+ *
  * @since 1.0.0
  */
 function reactor_do_top_bar() {
     if ( has_nav_menu('top-bar-l') || has_nav_menu('top-bar-r') ) {
-            $topbar_args = array(
-                'title'     => reactor_option('topbar_title', get_bloginfo('name')),
-                'title_url' => reactor_option('topbar_title_url', home_url()),
-                'fixed'     => reactor_option('topbar_fixed', 0),
-                'contained' => reactor_option('topbar_contain', 1),
-            );
+        $topbar_args = array(
+            'title'     => reactor_option('topbar_title', get_bloginfo('name')),
+            'title_url' => reactor_option('topbar_title_url', home_url()),
+            'fixed'     => reactor_option('topbar_fixed', 0),
+            'contained' => reactor_option('topbar_contain', 1),
+        );
         reactor_top_bar( $topbar_args );
     }
 }
 add_action('reactor_header_before', 'reactor_do_top_bar',1);
 
-function reactor_do_title_logo() { 
+function reactor_do_title_logo() {
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
     $options = get_option('my_option_name');
     ?>
-    
+
     <!-- Caixa amb el nom del centre -->
     <div class='box-title hide-for-small'>
-      <div class='box-content'>
-        <div>
-          <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
-             href="<?php echo home_url();?>">
-          <?php echo nl2br(get_option('nodesbox_name')); ?>
-          </a>
+        <div class='box-content'>
+            <div>
+                <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
+                   href="<?php echo home_url();?>">
+                    <?php echo nl2br(get_option('nodesbox_name')); ?>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <!-- Logo i nom per mobils -->
     <div class='box-titlemobile show-for-small'>
-      <div class="box-titlemobile-inner row">
-        <div class="box-titlemobile-logo"> 
-          <img src="<?php echo reactor_option('logo_image'); ?>">					
-        </div> 
-        <div class="box-titlemobile-schoolName">
-          <a href="<?php echo home_url();?>">
-          <span><?php echo esc_attr(get_bloginfo('name', 'display')); ?></span>
-          </a><br>
-          <?php $addr = explode(" ",reactor_option("cpCentre"),2);?> 
-          <span id="schoolCity"><?php echo $addr[1];?></span>
+        <div class="box-titlemobile-inner row">
+            <div class="box-titlemobile-logo">
+                <img src="<?php echo reactor_option('logo_image'); ?>">
+            </div>
+            <div class="box-titlemobile-schoolName">
+                <a href="<?php echo home_url();?>">
+                    <span><?php echo esc_attr(get_bloginfo('name', 'display')); ?></span>
+                </a><br>
+                <?php $addr = explode(" ",reactor_option("cpCentre"),2);?>
+                <span id="schoolCity"><?php echo $addr[1];?></span>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <!-- Caixa amb la descripció del centre -->
     <div class='box-description hide-for-small'>
-      <div class='box-content'>
-        <div>
-          <span style="font-size:<?php echo $description_font_size;?>">
-          <?php echo nl2br($description_text); ?>
-          </span>
-        </div>
-      </div>
-    </div>
-    
-   <!-- Imatge/Carrusel --> 
-   <div class='box-image hide-for-small'>
-    <?php
-     if(reactor_option('imatge_capcalera')) { ?>
         <div class='box-content'>
-           <div class='CoverImage FlexEmbed FlexEmbed--3by1'
-                style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
-           </div>
-         </div>
-    <?php
-    } else { ?>
-        <div class='box-content-slider'>
-          <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
-        </div>   
-    <?php }?>        
+            <div>
+            <span style="font-size:<?php echo $description_font_size;?>">
+            <?php echo nl2br($description_text); ?>
+            </span>
+            </div>
+        </div>
     </div>
-    
-    <!-- Graella d'icones --> 
+
+    <div class='box-image hide-for-small'>
+        <!-- Imatge/Carrusel -->
+        <?php
+        /**
+         * @nacho: 2015
+         *
+         * Check if page is a category
+         * - If category has an image assigned, load it
+         * - If has not been assigned an image, the header can be an image or a carrusel
+         * Page is not a category
+         * - Header can be an image or a carrusel
+         */
+        if (is_category()){
+            $image = get_category_image();
+            if (!empty($image)){ ?>
+                <div class='box-content'>
+                    <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                         style="background-image:url(<?php echo $image;?>)">
+                    </div>
+                </div>
+                <?php
+            }else {
+                if(reactor_option('imatge_capcalera')) { ?>
+                    <div class='box-content'>
+                        <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                             style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
+                        </div>
+                    </div>
+                    <?php
+                } else { ?>
+                    <div class='box-content-slider'>
+                        <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
+                    </div>
+                <?php }
+            }
+        }else {
+            if (reactor_option('imatge_capcalera')) { ?>
+                <div class='box-content'>
+                    <div class='CoverImage FlexEmbed FlexEmbed--3by1'
+                         style="background-image:url(<?php echo reactor_option('imatge_capcalera'); ?>)">
+                    </div>
+                </div>
+                <?php
+            } else { ?>
+                <div class='box-content-slider'>
+                    <?php do_action('slideshow_deploy', reactor_option('carrusel')); ?>
+                </div>
+            <?php }
+        }?>
+    </div>
+
+    <!-- Graella d'icones -->
     <div id="box-grid" class='box-grid'>
         <div class='box-content-grid'>
             <div id="icon-email" class="topicons show-for-small">
                 <a href="mailto:<?php echo reactor_option('emailCentre'); ?>" class="dashicons dashicons-email"></a>
-                <span class="text_icon">Correu</span>   
+                <span class="text_icon">Correu</span>
             </div>
             <div id="icon-maps" class="topicons show-for-small">
                 <a title="Mapa" href="<?php echo reactor_option('googleMaps'); ?>" class="dashicons dashicons-location-alt"></a>
@@ -152,7 +185,7 @@ function reactor_do_title_logo() {
             </div>
             <div id="icon-phone" class="topicons show-for-small">
                 <a title="Trucar" href="tel:<?php echo reactor_option('telCentre'); ?>" class="dashicons dashicons-phone"></a>
-                <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>   
+                <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>
             </div>
             <?php
             show_header_icon($options, 11);
@@ -160,7 +193,7 @@ function reactor_do_title_logo() {
             ?>
             <div id="icon-13">
                 <a class="dashicons dashicons-search" title="CERCA" href="javascript:void(0);" onclick='cerca_toggle();'>
-                    <span class="text_icon">cerca</span>   
+                    <span class="text_icon">cerca</span>
                 </a>
             </div>
             <div id="search-panel">
@@ -174,17 +207,17 @@ function reactor_do_title_logo() {
             show_header_icon($options, 22);
             ?>
             <div id="icon-23">
-                <a class="dashicons dashicons-menu" 
-                   title="MENU" 
-                   href="javascript:void(0);" 
+                <a class="dashicons dashicons-menu"
+                   title="MENU"
+                   href="javascript:void(0);"
                    onclick='menu_toggle();'>
-                   <span class="text_icon">menú</span>  
+                    <span class="text_icon">menú</span>
                 </a>
             </div>
         </div>
     </div>
     <div style="clear:both"></div>
 
-    <?php }
+<?php }
 
 add_action('reactor_header_inside', 'reactor_do_title_logo', 1	);
