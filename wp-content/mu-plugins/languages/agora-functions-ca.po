@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
 "POT-Creation-Date: 2015-07-31 09:56+0100\n"
-"PO-Revision-Date: 2015-10-07 13:53+0100\n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"PO-Revision-Date: 2015-12-03 15:44+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -101,6 +101,24 @@ msgstr "Fa"
 #: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:364
 msgid "You do not have permission to do that."
 msgstr "No teniu autorització per fer això"
+
+msgid "Image"
+msgstr "Imatge"
+
+msgid "Provide an image for the category"
+msgstr "Defineix una imatge per la categoria"
+
+msgid "Upload image"
+msgstr "Puja una imatge"
+
+msgid "Current header image"
+msgstr "Imatge actual de la capçalera"
+
+msgid "Articles by row"
+msgstr "Articles per fila"
+
+msgid "Articles to be displayed per row on category page (between 1 and 4)"
+msgstr "Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)"
 
 #~ msgid "You have exceeded your disk quota"
 #~ msgstr ""
