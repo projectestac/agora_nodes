@@ -1,37 +1,37 @@
+# Translation of Stable (latest release) in Catalan
+# This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Agora\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-24 10:53+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: nacho <nacho@test.com>\n"
-"Language-Team: Agora\n"
-"Language: ca\n"
+"PO-Revision-Date: 2015-11-27 13:09+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: /Volumes/Trunk/xampp/htdocs/bpfb/wp-content/plugins/"
-"bpfb_the_edge/\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: lib\n"
-"X-Poedit-SearchPath-1: lib/forms\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.7.5\n"
+"Project-Id-Version: Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
 
-#: lib/bpfb_group_documents.php:31
+#: bpfb.php:50
+msgid "There was an issue determining where BuddyPress Activity Plus plugin is installed. Please reinstall."
+msgstr "Hi ha hagut un problema per determinar on està instal·lada l'exntensió BuddyPress Activity Plus. Torneu-la a instal·lar de nou."
+
+#: lib/bpfb_group_documents.php:48
 msgid "Add documents"
 msgstr "Afegiu documents"
 
-#: lib/bpfb_group_documents.php:32
+#: lib/bpfb_group_documents.php:49
 msgid "Please select a group to upload to"
 msgstr "Seleccioneu un grup per a pujar-lo"
 
-#: lib/bpfb_group_documents.php:184
-#, php-format
+#: lib/bpfb_group_documents.php:201
 msgid "%s uploaded new file(s): %s to %s"
 msgstr "%s fitxer(s) nou (s) pujats: %s a %s"
 
+#. #-#-#-#-#  tmp-buddypress-activity-plus.pot (BuddyPress Activity Plus 1.6.3)
+#. Plugin Name of the plugin/theme
 #: lib/class_bpfb_admin_pages.php:32
 msgid "BuddyPress Activity Plus"
 msgstr "BuddyPress Activity Plus"
@@ -45,11 +45,8 @@ msgid "Appearance"
 msgstr "Aparença"
 
 #: lib/class_bpfb_admin_pages.php:96
-msgid ""
-"Your BuddyPress theme incorporates Activity Plus style overrides. Respecting "
-"the selection you make in the &quot;Appearance&quot; section is entirely up "
-"to your theme."
-msgstr ""
+msgid "Your BuddyPress theme incorporates Activity Plus style overrides. Respecting the selection you make in the &quot;Appearance&quot; section is entirely up to your theme."
+msgstr "El vostre tema del BuddPress incorpora estils de l'extensió Activity Plus. Això pot provocar que no es respectin els paràmetres que heu triat a la secció &quot;Aparença&quot;."
 
 #: lib/class_bpfb_admin_pages.php:101
 msgid "Theme"
@@ -88,11 +85,8 @@ msgid "oEmbed"
 msgstr "Paràmetres d'incrustació"
 
 #: lib/class_bpfb_admin_pages.php:139
-#, php-format
-msgid ""
-"Your oEmbed dimensions will be dictated by the <code>BPFB_OEMBED_WIDTH</"
-"code> define value (%s). Remove this define to enable this option."
-msgstr ""
+msgid "Your oEmbed dimensions will be dictated by the <code>BPFB_OEMBED_WIDTH</code> define value (%s). Remove this define to enable this option."
+msgstr "Les dimensions de l'oEmbed seran les indicades pel valor de la constant <code>BPFB_OEMBED_WIDTH</code> (%s). Esborreu aquesta constant per activar aquesta opció."
 
 #: lib/class_bpfb_admin_pages.php:143 lib/class_bpfb_admin_pages.php:155
 msgid "Width"
@@ -103,12 +97,8 @@ msgid "Image thumbnails"
 msgstr "Miniatures de les imatges"
 
 #: lib/class_bpfb_admin_pages.php:151
-#, php-format
-msgid ""
-"Your thumbnail dimensions will be dictated by the "
-"<code>BPFB_THUMBNAIL_IMAGE_SIZE</code> define value (%s). Remove this define "
-"to enable these options."
-msgstr ""
+msgid "Your thumbnail dimensions will be dictated by the <code>BPFB_THUMBNAIL_IMAGE_SIZE</code> define value (%s). Remove this define to enable these options."
+msgstr "Les dimensions de les miniatures seran les indicades pel valor de la constant <code>BPFB_THUMBNAIL_IMAGE_SIZE</code> (%s). Esborreu aquesta constant per activar aquesta opció."
 
 #: lib/class_bpfb_admin_pages.php:159
 msgid "Height"
@@ -126,79 +116,94 @@ msgstr "Esborra les imatges?"
 msgid "Save"
 msgstr "Desa"
 
-#: lib/class_bpfb_binder.php:135
+#: lib/class_bpfb_binder.php:168
 msgid "Add photos"
-msgstr "Afegeix imatge(s)"
+msgstr "Afegeix imatges"
 
-#: lib/class_bpfb_binder.php:136
+#: lib/class_bpfb_binder.php:169
 msgid "Add image URL"
 msgstr "Afegiu l'URL de la imatge"
 
-#: lib/class_bpfb_binder.php:137
+#: lib/class_bpfb_binder.php:170
 msgid "Add another image URL"
-msgstr "Afegiu l'URL de la imatge"
+msgstr "Afegiu l'URL d'una altra imatge"
 
-#: lib/class_bpfb_binder.php:138
+#: lib/class_bpfb_binder.php:171
 msgid "Add videos"
 msgstr "Afegeix vídeos"
 
-#: lib/class_bpfb_binder.php:139
+#: lib/class_bpfb_binder.php:172
 msgid "Add video"
 msgstr "Afegeix vídeo"
 
-#: lib/class_bpfb_binder.php:140
+#: lib/class_bpfb_binder.php:173
 msgid "Add links"
 msgstr "Afegeix enllaços"
 
-#: lib/class_bpfb_binder.php:141
+#: lib/class_bpfb_binder.php:174
 msgid "Add link"
 msgstr "Afegeix enllaç"
 
-#: lib/class_bpfb_binder.php:142
+#: lib/class_bpfb_binder.php:175
 msgid "Add"
 msgstr "Afegeix"
 
-#: lib/class_bpfb_binder.php:143
+#: lib/class_bpfb_binder.php:176
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: lib/class_bpfb_binder.php:144
+#: lib/class_bpfb_binder.php:177
 msgid "Preview"
 msgstr "Previsualitza"
 
-#: lib/class_bpfb_binder.php:145
+#: lib/class_bpfb_binder.php:178
 msgid "Drop files here to upload"
-msgstr "Arrossegueu aquí els fitxers per a pujar-los"
+msgstr "Arrossegueu els fitxers aquí per a pujar-los"
 
-#: lib/class_bpfb_binder.php:146
+#: lib/class_bpfb_binder.php:179
 msgid "Upload a file"
 msgstr "Pugeu un fitxer"
 
-#: lib/class_bpfb_binder.php:147
+#: lib/class_bpfb_binder.php:180
 msgid "Choose thumbnail"
 msgstr "Escull una miniatura"
 
-#: lib/class_bpfb_binder.php:148
+#: lib/class_bpfb_binder.php:181
 msgid "No thumbnail"
 msgstr "No hi ha cap miniatura"
 
-#: lib/class_bpfb_binder.php:149
+#: lib/class_bpfb_binder.php:182
 msgid "Paste video URL here"
 msgstr "Enganxeu l'URL del vídeo aquí"
 
-#: lib/class_bpfb_binder.php:150
+#: lib/class_bpfb_binder.php:183
 msgid "Paste link here"
 msgstr "Enganxeu l'enllaç aquí"
 
-#: lib/class_bpfb_binder.php:151
-#, php-format
+#: lib/class_bpfb_binder.php:184
 msgid "You tried to add too many images, only %d will be posted."
 msgstr "Heu triat afegir massa imatges, només %d es pujaran."
 
-#: lib/class_bpfb_binder.php:177 lib/class_bpfb_binder.php:194
+#: lib/class_bpfb_binder.php:210 lib/class_bpfb_binder.php:227
 msgid "There has been an error processing your request"
 msgstr "Hi ha hagut un error processant la vostra petició"
 
-#: lib/class_bpfb_binder.php:178 lib/class_bpfb_binder.php:195
+#: lib/class_bpfb_binder.php:211 lib/class_bpfb_binder.php:228
 msgid "Processing..."
 msgstr "Processant..."
+
+#. Plugin URI of the plugin/theme
+msgid "http://premium.wpmudev.org/project/media-embeds-for-buddypress-activity"
+msgstr "http://premium.wpmudev.org/project/media-embeds-for-buddypress-activity"
+
+#. Description of the plugin/theme
+msgid "A Facebook-style media sharing improvement for the activity box."
+msgstr "Una millora a l'estil de Facebook per a la compartició de mitjans a la caixa de l'activitat."
+
+#. Author of the plugin/theme
+msgid "WPMU DEV"
+msgstr "WPMU DEV"
+
+#. Author URI of the plugin/theme
+msgid "http://premium.wpmudev.org"
+msgstr "http://premium.wpmudev.org"
