@@ -117,12 +117,14 @@ function custom_toolbar($wp_toolbar) {
 }
 add_action('admin_bar_menu', 'custom_toolbar',98);
 
+// Moved and extended function at agora-functions.php file
+// 2015.12.04 @nacho
 /* Camps extra per definir disposició de noticies a cada categoria*/
-function extra_category_fields( $tag ) {    //check for existing featured ID
+/*
+/*function extra_category_fields( $tag ) {    //check for existing featured ID
     $t_id = $tag->term_id;
     $cat_meta = get_option( "category_$t_id");
 ?>
-
 
 <tr class="form-field">
 <th scope="row" valign="top"><label for="articles_fila"><?php _e('Articles per fila'); ?></label></th>
@@ -134,6 +136,8 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 
 <?php }
 
+// Moved and extended function at agora-functions.php file
+// 2015.12.04 @nacho
 add_action ( 'edit_category_form_fields', 'extra_category_fields');
 
 // save extra category extra fields callback function
@@ -153,6 +157,7 @@ function save_extra_category_fields( $term_id ) {
 }
 // save extra category extra fields hook
 add_action ( 'edited_category', 'save_extra_category_fields');
+*/
 
 //Filtre categoria
 function filter_by_taxonomy($query) {
