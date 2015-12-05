@@ -12,6 +12,7 @@ Changes in progress
 - BuddyPress: Updated catalan translation (Trello #987)
 - Wordpress-xtec: Fixed parsing apostrophes when activating a service and add support for table wp_term_taxonomy (Trello #1075)
 - Invite Anyone: Upgraded extension to version 1.3.9 (Trello #987)
+- Carrusel: Upgraded extension to version 2.3.1 (Trello #986)
 
 
 Changes 15.11.16
