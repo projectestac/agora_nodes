@@ -3,14 +3,14 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 15.12.14
 ---------------------------------------------------------------------------------------
 - XTEC lib: Changed replace_url to support only a single URL (Trello #1027)
 - Theme reactor-serveis-educatius: Improved menu and added search option in responsive version (Trello #981)
 - Theme reactor: Fixed position of the legends of the images in custom galleries inserted in articles (Trello #1011)
 - Theme reactor-primaria-1: Fixed side menu in pages when there are subpages. (Trello #1010)
 - BuddyPress: Updated catalan translation (Trello #987)
-- Wordpress-xtec: Fixed parsing apostrophes when activating a service and add support for table wp_term_taxonomy (Trello #1075)
+- XTEC lib Fixed parsing apostrophes when activating a service and add support for table wp_term_taxonomy (Trello #1075)
 - Invite Anyone: Upgraded extension to version 1.3.9 (Trello #987)
 - Carrusel: Upgraded extension to version 2.3.1 (Trello #986)
 
@@ -24,7 +24,7 @@ Changes 15.11.16
 - Stats widget: Added margin-bottom (Trello #1009)
 - Theme reactor-primaria-1: Added new Color Palette "Purple and Green" (GitHub #307)
 - Theme reactor-primaria-1: Improvements to CSS styles and moved content from common_css to code (GitHub #303)
-- wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926) 
+- wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926)
 - Added ability to decide if a client is "Servei Educatiu" (Trello #981)
 - Added theme reactor-serveis-educatius (Trello #981)
 - Check if the path is absolute or relative to mount the header link (Trello #1008)
