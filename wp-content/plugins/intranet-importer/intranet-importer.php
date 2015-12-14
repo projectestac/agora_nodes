@@ -118,7 +118,11 @@ if (class_exists('WP_Importer')) {
 					echo '</div>';
                     
 					echo '<div class="info-text">';
-					echo __('Info text', 'intranet-importer')."<br/><br/>";
+
+					$info_url  = get_site_url().'/docs';
+					$info_docs_url = "<a href=\"$info_url\" target=\"_blank\">$info_url</a>";
+					echo sprintf(__('Info text', 'intranet-importer'), $info_docs_url);
+
 					echo '</div>';
 
 					$msg_select_option = __('You must select at least one option', 'intranet-importer');
