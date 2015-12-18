@@ -1858,12 +1858,8 @@ div[id^='logo_centre_widget-'] > h4 {
     position: relative !important;
 }
 
-.noChildren .dashicons, .noChildren .dashicons-before:before {
-    content: "";
-}
-
-.noChildren .dashicons-arrow-down-alt2:before {
-    content: "";
+.noChildren .dashicons {
+    display: none;
 }
 /**
  *End @nacho
