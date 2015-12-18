@@ -1758,4 +1758,14 @@ div[id^='logo_centre_widget-'] > h4 {
     .box-content-grid a, .box-content-grid span {
         font-size: 1em !important;
     }
+
+    #menu-menusuperior li.main-menu-item {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1479px) {
+    #menu-menusuperior li.main-menu-item {
+        font-size: 1vw;
+    }
 }
