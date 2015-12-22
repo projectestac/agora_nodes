@@ -16,8 +16,9 @@
  *
  * @since 1.0.0
  */
-function reactor_do_reactor_head() { ?>
-    <meta charset="<?php bloginfo('charset'); ?>" />
+function reactor_do_reactor_head()
+{ ?>
+    <meta charset="<?php bloginfo('charset'); ?>"/>
     <title><?php wp_title('|', true, 'right'); ?></title>
 
     <!-- google chrome frame for ie -->
@@ -31,7 +32,8 @@ function reactor_do_reactor_head() { ?>
     <?php $favicon_uri = reactor_option('favicon_image') ? reactor_option('favicon_image') : get_template_directory_uri() . '/favicon.ico'; ?>
     <link rel="shortcut icon" href="<?php echo $favicon_uri; ?>">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <?php
+
+<?php
 }
 
 add_action('wp_head', 'reactor_do_reactor_head', 1);
@@ -63,20 +65,23 @@ function show_header_icon($options, $icon_number) {
  *
  * @since 1.0.0
  */
-function reactor_do_top_bar() {
-    if ( has_nav_menu('top-bar-l') || has_nav_menu('top-bar-r') ) {
+function reactor_do_top_bar()
+{
+    if (has_nav_menu('top-bar-l') || has_nav_menu('top-bar-r')) {
         $topbar_args = array(
-            'title'     => reactor_option('topbar_title', get_bloginfo('name')),
+            'title' => reactor_option('topbar_title', get_bloginfo('name')),
             'title_url' => reactor_option('topbar_title_url', home_url()),
-            'fixed'     => reactor_option('topbar_fixed', 0),
+            'fixed' => reactor_option('topbar_fixed', 0),
             'contained' => reactor_option('topbar_contain', 1),
         );
-        reactor_top_bar( $topbar_args );
+        reactor_top_bar($topbar_args);
     }
 }
-add_action('reactor_header_before', 'reactor_do_top_bar',1);
 
-function reactor_do_title_logo() {
+add_action('reactor_header_before', 'reactor_do_top_bar', 1);
+
+function reactor_do_title_logo()
+{
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
     $options = get_option('my_option_name');
@@ -220,4 +225,4 @@ function reactor_do_title_logo() {
 
 <?php }
 
-add_action('reactor_header_inside', 'reactor_do_title_logo', 1	);
+add_action('reactor_header_inside', 'reactor_do_title_logo', 1);
