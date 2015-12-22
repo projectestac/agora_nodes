@@ -22,7 +22,7 @@ class Logo_Centre_Widget extends WP_Widget {
 		echo '<h4 class="widget-title">' . $title . '</h4>';
     	}       
         
-        $contacte=(strstr(reactor_option('emailCentre'),'@'))?"mailto:".reactor_option('emailCentre'):reactor_option('emailCentre');
+        $contacte = (strstr(reactor_option('emailCentre'),'@'))?"mailto:".reactor_option('emailCentre'):reactor_option('emailCentre');
 	?>
             <div class="targeta_id_centre row">
 		<?php if (reactor_option('logo_image')){
