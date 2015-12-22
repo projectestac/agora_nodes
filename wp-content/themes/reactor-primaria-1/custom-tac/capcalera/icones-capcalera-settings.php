@@ -1,10 +1,8 @@
 <?php
 
 /*************************************************************
-Capçalera settings form
-**************************************************************/
-
-
+ * Capçalera settings form
+ **************************************************************/
 class graellaIcones
 {
     /**
@@ -17,8 +15,8 @@ class graellaIcones
      */
     public function __construct()
     {
-        add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
-        add_action( 'admin_init', array( $this, 'page_init' ) );
+        add_action('admin_menu', array($this, 'add_plugin_page'));
+        add_action('admin_init', array($this, 'page_init'));
     }
 
     /**
@@ -28,11 +26,11 @@ class graellaIcones
     {
         // This page will be under "Settings"
         add_theme_page(
-            'Settings Admin', 
-            'Icones de capçalera', 
-            'manage_options', 
-            'my-setting-admin', 
-            array( $this, 'create_admin_page' )
+            'Settings Admin',
+            'Icones de capçalera',
+            'manage_options',
+            'my-setting-admin',
+            array($this, 'create_admin_page')
         );
     }
 
@@ -41,81 +39,84 @@ class graellaIcones
      */
     public function create_admin_page()
     {
-    	
-	 	
+
+
         // Set class property
-        $this->options = get_option( 'my_option_name' );
+        $this->options = get_option('my_option_name');
         ?>
         <div class="wrap row">
             <div style="float:left;margin-right:30px;">
-	         <?php screen_icon(); ?>
-            <h2>Icones de capçalera</h2> 
-                                  
-	            <form method="post" action="options.php">
-	            
-	            <?php
-	                // This prints out all hidden setting fields
-	                settings_fields( 'my_option_group' );   
-	                do_settings_sections( 'my-setting-admin' );
-	                submit_button(); 
-	            ?>
-	            </form>
-   			</div>
-   			   			
-	   		<div style="float:right;padding:10px;border-left:1px solid silver;">	
-	   			<h3>Icones disponibles</h3>
-	   			<p>Copia el nom de la icona i enganxa'l a la posició desitjada.</p>
-	   			<div style="float:left;margin-right:10px">
-	   			
-	   			<?php 
-	   			// $dashicons1 =array (icones...), dashicons2, dashicons3
-				include "dashicons.php";  
-				?>
-	   			
-	   			<?php
-                                foreach ($dashicons1 as $icon){
-                                    echo "<div> <span class=\"dashicons $icon\"></span> ".str_replace("dashicons-","",$icon)." </div>";
-                                }
-                                ?>
-                                            </div>
+                <?php screen_icon(); ?>
+                <h2>Icones de capçalera</h2>
 
-                                            <div style="float:left;margin-right:10px">
-                                <?php 
-                                foreach ($dashicons2 as $icon){
-                                    echo "<div> <span class=\"dashicons $icon\"></span> ".str_replace("dashicons-","",$icon)." </div>";
-                                }
-                                ?>
-                                            </div>
+                <form method="post" action="options.php">
 
-                                            <div style="float:left;margin-right:10px">
-                                <?php 
-                                foreach ($dashicons3 as $icon){
-                                    echo "<div> <span class=\"dashicons $icon\"></span> ".str_replace("dashicons-","",$icon)." </div>";
-                                }
-                                ?>
-	   			</div>
-   			
-   			</div>
-   			
+                    <?php
+                    // This prints out all hidden setting fields
+                    settings_fields('my_option_group');
+                    do_settings_sections('my-setting-admin');
+                    submit_button();
+                    ?>
+                </form>
+            </div>
+
+            <div style="float:right;padding:10px;border-left:1px solid silver;">
+                <h3>Icones disponibles</h3>
+
+                <p>Copia el nom de la icona i enganxa'l a la posició desitjada.</p>
+
+                <div style="float:left;margin-right:10px">
+
+                    <?php
+                    // $dashicons1 =array (icones...), dashicons2, dashicons3
+                    include "dashicons.php";
+                    ?>
+
+                    <?php
+                    foreach ($dashicons1 as $icon) {
+                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                    }
+                    ?>
+                </div>
+
+                <div style="float:left;margin-right:10px">
+                    <?php
+                    foreach ($dashicons2 as $icon) {
+                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                    }
+                    ?>
+                </div>
+
+                <div style="float:left;margin-right:10px">
+                    <?php
+                    foreach ($dashicons3 as $icon) {
+                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                    }
+                    ?>
+                </div>
+
+            </div>
+
         </div>
-      <?php
+        <?php
     }
 
     /**
      * Register and add settings
      */
     public function page_init()
-    {        
+    {
         register_setting(
             'my_option_group', // Option group
             'my_option_name', // Option name
-            array( $this, 'sanitize' ) // Sanitize
+            array($this, 'sanitize') // Sanitize
         );
+
 	// Fila1
 	add_settings_section(
             'setting_icons_fila1', // ID
             'Icones a la fila 1', // Title
-            array( $this, 'print_section_info' ), // Callback
+            array($this, 'print_section_info'), // Callback
             'my-setting-admin' // Page
         );  
         // Icon 11  
@@ -250,19 +251,19 @@ class graellaIcones
          add_settings_section(
             'setting_general', // ID
             'General', // Title
-            array( $this, 'print_section_info' ), // Callback
+            array($this, 'print_section_info'), // Callback
             'my-setting-admin' // Page
-        );  
-        
+        );
+
         // Mostrar text sota els icones 
         add_settings_field(
             'show_text_icon', // ID
             'Mostra text sota la icona:', // Title 
-            array( $this, 'show_text_icon_callback' ), // Callback
+            array($this, 'show_text_icon_callback'), // Callback
             'my-setting-admin', // Page
             'setting_general' // Section           
-        );    
-	
+        );
+
     }
 
     /**
@@ -270,7 +271,7 @@ class graellaIcones
      *
      * @param array $input Contains all settings fields as array keys
      */
-    public function sanitize( $input )
+    public function sanitize($input)
     {
         $new_input = array();
 
@@ -307,24 +308,26 @@ class graellaIcones
 	        return $new_input;
     }
 
-    /** 
+    /**
      * Print the Section text
      */
-    public function print_separador(){
-        print '<hr>';
-    }
- 
-     
-    public function print_section_info(){
+    public function print_separador()
+    {
         print '<hr>';
     }
 
-    /** 
+
+    public function print_section_info()
+    {
+        print '<hr>';
+    }
+
+    /**
      * Get the settings option array and print one of its values
      */
-     public function sep_callback()
+    public function sep_callback()
     {
-       //Nothing    
+        //Nothing
     }
 
     
@@ -484,7 +487,7 @@ class graellaIcones
     
    }
 
-if( is_admin() )
+if (is_admin())
     $my_settings_page = new graellaIcones();
 
 ?>

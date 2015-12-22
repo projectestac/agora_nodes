@@ -12,7 +12,7 @@
     $color_icon22    = isset($colors_nodes[$paleta]["icon22"])?$colors_nodes[$paleta]["icon22"]:$color_secondary;
     $color_calendar  = isset($colors_nodes[$paleta]["calendar"])?$colors_nodes[$paleta]["calendar"]:$color_secondary;
     $color_mobile    = isset($colors_nodes[$paleta]["mobile"])?$colors_nodes[$paleta]["mobile"]:$color_secondary;
-   
+
     ?>
     .box-title{
         background-color:<?php echo $color_primary;?>
@@ -70,8 +70,8 @@
     
     $options = get_option('my_option_name');
     if ($options['show_text_icon']!="si"){
-        echo ".text_icon{ 
-                    display:none !important; 
+        echo ".text_icon{
+                    display:none !important;
              }";
     }
     ?>
@@ -117,7 +117,7 @@
             opacity: 0.8;
         }
     }
-    
+
     <?php echo get_option( 'common_css', '' );?>
     <?php echo get_option( 'school_css', '' );?>
     

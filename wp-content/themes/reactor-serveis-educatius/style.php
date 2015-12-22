@@ -1,7 +1,6 @@
 <style>
 <?php
-
-
+    
     global $colors_nodes;
     
     $paleta = reactor_option('paleta_colors','blaus');
@@ -32,7 +31,7 @@
 
     ?>
     .box-title{
-       background-color:<?php echo $color_primary;?>
+        background-color:<?php echo $color_primary;?>
     }
     .box-description{
         background-color:<?php echo $color_secondary; ?>
