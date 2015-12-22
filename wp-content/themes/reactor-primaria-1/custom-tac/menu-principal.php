@@ -1,6 +1,6 @@
 <?php
 class themeslug_walker_nav_menu extends Walker_Nav_Menu {
-  
+
     // add classes to ul sub-menus
     function start_lvl( &$output, $depth = 0, $args = array() ) {
 
@@ -19,12 +19,12 @@ class themeslug_walker_nav_menu extends Walker_Nav_Menu {
         $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
     }
 
-  
+
     // add main/sub classes to li's and links
      function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
         global $wp_query;
-      
+
         $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
 
         // depth dependent classes
@@ -60,14 +60,14 @@ class themeslug_walker_nav_menu extends Walker_Nav_Menu {
             $args->link_after,
             $args->after
         );
-  
+
         // build html
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
 }
 function menu_principal(){
 	$defaults = array(
-	    'theme_location' => "main-menu",	
+	    'theme_location' => "main-menu",
 	    'echo'            => true,
 	    'container'       => FALSE,
 	'container_id'    => FALSE,
