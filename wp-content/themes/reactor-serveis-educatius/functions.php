@@ -39,39 +39,37 @@ add_action('after_setup_theme', 'reactor_child_theme_setup', 11);
 function reactor_child_theme_setup() {
 
     /* Support for menus */
-	// remove_theme_support('reactor-menus');
-	 add_theme_support(
-	 	'reactor-menus',
-	 	array('main-menu','side-menu')
-	 );
+    // remove_theme_support('reactor-menus');
+    add_theme_support(
+        'reactor-menus',
+        array('main-menu','side-menu')
+    );
 
-	/* Support for sidebars
-	Note: this doesn't change layout options */
-	// remove_theme_support('reactor-sidebars');
-	 add_theme_support(
-	 	'reactor-sidebars',
-	 	array('primary', 'secondary', 'front-primary', 'front-secondary','categoria', 'footer')
-	 );
+    /* Support for sidebars
+    Note: this doesn't change layout options */
+    // remove_theme_support('reactor-sidebars');
+    add_theme_support(
+    'reactor-sidebars',
+    array('primary', 'secondary', 'front-primary', 'front-secondary','categoria', 'footer')
+    );
 
-	add_theme_support(
-	 	'reactor-layouts',
-	 	array('1c','2c-l')
-	 );
+    add_theme_support(
+        'reactor-layouts',
+        array('1c','2c-l')
+    );
 
-	/* Support for custom post types */
-	 remove_theme_support('reactor-post-types');
+    /* Support for custom post types */
+    remove_theme_support('reactor-post-types');
 
-	/* Support for page templates */
-	add_theme_support(
-		'reactor-page-templates',
-		array('front-page'/*, 'news-page', 'portfolio', 'contact'*/)
-	);
+    /* Support for page templates */
+    add_theme_support(
+        'reactor-page-templates',
+        array('front-page'/*, 'news-page', 'portfolio', 'contact'*/)
+    );
 
-	/* Remove support for background options in customizer */
-	remove_theme_support('reactor-backgrounds');
-
-        add_theme_support('reactor-tumblog-icons');
-
+    /* Remove support for background options in customizer */
+    remove_theme_support('reactor-backgrounds');
+    add_theme_support('reactor-tumblog-icons');
 }
 
 /**
@@ -103,17 +101,17 @@ function custom_toolbar($wp_toolbar) {
 
     $wp_toolbar->remove_node('themes');
     $wp_toolbar->add_node( array(
-    	'parent' => 'site-name',
-    	'id' => 'entrades',
-    	'title' => __('Articles'),
-    	'href' => admin_url( 'edit.php')
+    'parent' => 'site-name',
+    'id' => 'entrades',
+    'title' => __('Articles'),
+    'href' => admin_url( 'edit.php')
     ));
     $wp_toolbar->add_node( array(
-		'parent' => 'site-name',
- 		'id' => 'pagines',
- 		'title' => __('Pàgines'),
- 		'href' => admin_url( 'edit.php?post_type=page')
- 	));
+'parent' => 'site-name',
+'id' => 'pagines',
+'title' => __('Pàgines'),
+'href' => admin_url( 'edit.php?post_type=page')
+));
 }
 add_action('admin_bar_menu', 'custom_toolbar',98);
 
@@ -130,8 +128,8 @@ add_action('admin_bar_menu', 'custom_toolbar',98);
 <th scope="row" valign="top"><label for="articles_fila"><?php _e('Articles per fila'); ?></label></th>
 <td>
 <input type="text" name="Cat_meta[articles_fila]" id="Cat_meta[articles_fila]" size="25" style="width:60%;" value="<?php echo $cat_meta['articles_fila'] ? $cat_meta['articles_fila'] : ''; ?>"><br />
-            <span class="description"><?php _e('Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)'); ?></span>
-     </td>
+        <span class="description"><?php _e('Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)'); ?></span>
+    </td>
 </tr>
 
 <?php }
@@ -146,7 +144,7 @@ function save_extra_category_fields( $term_id ) {
         $t_id = $term_id;
         $cat_meta = get_option( "category_$t_id");
         $cat_keys = array_keys($_POST['Cat_meta']);
-            foreach ($cat_keys as $key){
+        foreach ($cat_keys as $key){
             if (isset($_POST['Cat_meta'][$key])){
                 $cat_meta[$key] = $_POST['Cat_meta'][$key];
             }
@@ -178,29 +176,27 @@ add_action( 'pre_get_posts', 'filter_by_taxonomy');
 // Permet algunes etiquetes html a l'extracte d'un post
 function improved_trim_excerpt($text) {
 
-        global $post;
-	$allowed_tags='<a>,<ul>,<li>,<ol>';
+    global $post;
+$allowed_tags='<a>,<ul>,<li>,<ol>';
 
-        $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_more);
+    $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_more);
 
-        if ( '' == $text ) {
-            $text = get_the_content('');
-            $text = apply_filters('the_content', $text);
-            $text = str_replace('\]\]\>', ']]&gt;', $text);
-            $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-            $text = strip_tags($text,$allowed_tags);
-            $excerpt_length = 45;
+    if ( '' == $text ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace('\]\]\>', ']]&gt;', $text);
+        $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+        $text = strip_tags($text,$allowed_tags);
+        $excerpt_length = 45;
 
-            $words = explode(' ', $text, $excerpt_length + 1);
-            if (count($words)> $excerpt_length) {
-                    array_pop($words);
-                    $text = implode(' ', $words);
-            }
-            else
-                 return $text;
-
+        $words = explode(' ', $text, $excerpt_length + 1);
+        if (count($words)> $excerpt_length) {
+            array_pop($words);
+            $text = implode(' ', $words);
         }
-
+        else
+            return $text;
+        }
         return $text . $excerpt_more;
 }
 
@@ -601,7 +597,6 @@ add_shortcode('menu', 'menu_function');
 
 */
 
-
 /**
  * get_description_text
  *
@@ -718,15 +713,17 @@ function set_page_on_front($value) {
 add_filter('secure_auth_cookie', 'wpadmin_secure_cookie_filter');
 
 function wpadmin_secure_cookie_filter( ) {
-	return false;
+return false;
 }
 */
 
 /**
- * If external adress, open link on new window
+ * If external address, open link on new window
  *
  * @author Xavi Meler
-*/
+ * @param $link
+ * @return string with the target property
+ */
 
 function set_target($link){
     if (strpos(trim($link),"http")===0)
