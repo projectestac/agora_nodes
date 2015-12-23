@@ -59,9 +59,6 @@ function xtec_mail_options() {
     if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'siteoptions':
-                if (isset($_POST['xtec_mail_idapp'])) {
-                    update_site_option('xtec_mail_idapp', $_POST['xtec_mail_idapp']);
-                }
                 if (isset($_POST['xtec_mail_replyto'])) {
                     update_site_option('xtec_mail_replyto', $_POST['xtec_mail_replyto']);
                 }
@@ -102,7 +99,7 @@ function xtec_mail_options() {
                     <tr valign="top">
                         <th scope="row"><?php _e('idApp', 'xtec-mail') ?></th>
                         <td>
-                            <input type="text" name="xtec_mail_idapp" value="<?php echo get_site_option('xtec_mail_idapp') ?>" />
+                            <?php echo XTEC_MAIL_IDAPP . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>'; ?>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -112,11 +109,9 @@ function xtec_mail_options() {
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row"><?php _e('ENVIRONMENT', 'xtec-mail') ?></th>
+                        <th scope="row"><?php _e('Environment', 'xtec-mail') ?></th>
                         <td>
-                            <?php
-                                echo ENVIRONMENT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>';
-                            ?>
+                            <?php echo ENVIRONMENT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>'; ?>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -213,7 +208,7 @@ if (!function_exists('wp_mail')) {
 
 		$log = (get_site_option('xtec_mail_log')) ? true : false;
 		$debug = (get_site_option('xtec_mail_debug')) ? true : false;
-		$idApp = get_site_option('xtec_mail_idapp');
+		$idApp = XTEC_MAIL_IDAPP;
 		$replyto = get_site_option('xtec_mail_replyto');
 		$sender = get_site_option('xtec_mail_sender');
 		$logpath = get_site_option('xtec_mail_logpath');
