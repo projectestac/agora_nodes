@@ -17,10 +17,18 @@ define('WP_SITEURL', $agora['server']['html'] . $centre . '/');
 define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 
 define('ENVIRONMENT', $agora['server']['enviroment']);
-define('SCHOOL_CODE',$school_info["clientCode"]);
+define('SCHOOL_CODE', $school_info['clientCode']);
 
-if (isset($school_info['diskPercent_nodes'])){
-	$diskPercentNodes = $school_info['diskPercent_nodes'];
-}else {
-	$diskPercentNodes = 0;
+if (isset($school_info['diskPercent_nodes'])) {
+    $diskPercentNodes = $school_info['diskPercent_nodes'];
+} else {
+    $diskPercentNodes = 0;
+}
+
+if (isset($agora['iseoi']) && $agora['iseoi']) {
+    define('XTEC_MAIL_IDAPP', 'AGORAEOI');
+} elseif (isset($agora['iseoi'])) {
+    define('XTEC_MAIL_IDAPP', 'AGORA');
+} else {
+    define('XTEC_MAIL_IDAPP', 'XTECBLOCS');
 }
