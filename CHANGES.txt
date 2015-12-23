@@ -18,6 +18,7 @@ Changes in progress
 - XTEC-stats: Added register in wp_options to keep the number of visits and get the information from there (Trello #1098)
 - XTEC-stats: Changed counting to include visits to wp-admin (Trello #1098)
 - Themes: Moved common code to parent theme and done minor improvements (Trello #1094)
+- XTEC-mailer: Moved idApp from database to code (Trello #894)
 
 
 
