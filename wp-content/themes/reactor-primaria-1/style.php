@@ -36,6 +36,7 @@
     #menu-panel {
             border-bottom: 2px solid <?php echo $color_secondary;?>
     }
+
     .entry-comments,
     .entry-categories>a,
     .entry-tags >a {
