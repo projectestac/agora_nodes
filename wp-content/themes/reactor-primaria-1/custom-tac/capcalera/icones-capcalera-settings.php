@@ -3,8 +3,7 @@
 /*************************************************************
  * Capçalera settings form
  **************************************************************/
-class graellaIcones
-{
+class graellaIcones {
     /**
      * Holds the values to be used in the fields callbacks
      */
@@ -112,28 +111,31 @@ class graellaIcones
             array($this, 'sanitize') // Sanitize
         );
 
-	// Fila1
-	add_settings_section(
+        // Fila1
+        add_settings_section(
             'setting_icons_fila1', // ID
             'Icones a la fila 1', // Title
             array($this, 'print_section_info'), // Callback
             'my-setting-admin' // Page
         );  
+
         // Icon 11  
-	add_settings_field(
+    	add_settings_field(
             'title_icon11', // ID
             'Element 1:', // Title 
             array( $this, 'title_icon11_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         );    
-		add_settings_field(
+
+        add_settings_field(
             'icon11', // ID
             'Icona:', // Title 
             array( $this, 'icon11_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         );    
+
         add_settings_field(
             'link_icon11', // ID
             'Enllaç:', // Title 
@@ -158,13 +160,15 @@ class graellaIcones
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         );    
-		add_settings_field(
+
+        add_settings_field(
             'icon12', // ID
             'Icona:', // Title 
             array( $this, 'icon12_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         );    
+
         add_settings_field(
             'link_icon12', // ID
             'Enllaç:', // Title 
@@ -172,6 +176,7 @@ class graellaIcones
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         ); 
+
         add_settings_field(
             'separador12', // ID
             '<hr>', // Title 
@@ -179,21 +184,24 @@ class graellaIcones
             'my-setting-admin', // Page
             'setting_icons_fila1' // Section           
         );      
-       	// Fila2 
+
+        // Fila2 
        	add_settings_section(
             'setting_icons_fila2', // ID
             'Icones a la fila 2', // Title
             array( $this, 'print_section_info' ), // Callback
             'my-setting-admin' // Page
         );
-   	// Icon 21	
-	add_settings_field(
+
+        // Icon 21	
+        add_settings_field(
             'title_icon21', // ID
             'Element 1:', // Title 
             array( $this, 'title_icon21_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila2' // Section           
         );      
+
         add_settings_field(
             'icon21', // ID
             'Icona:', // Title 
@@ -201,22 +209,25 @@ class graellaIcones
             'my-setting-admin', // Page
             'setting_icons_fila2' // Section           
         ); 
+
         add_settings_field(
             'link_icon21', // ID
             'Enllaç:', // Title 
             array( $this, 'link_icon21_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila2' // Section           
-        ); 
-  	add_settings_field(
+        );
+
+        add_settings_field(
             'separador21', // ID
             '<hr>', // Title 
             array( $this, 'sep_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_icons_fila2' // Section           
         );
+
         // Icon 22
-	add_settings_field(
+        add_settings_field(
             'title_icon22', // ID
             'Element 2:', // Title 
             array( $this, 'title_icon22_callback' ), // Callback
@@ -224,7 +235,7 @@ class graellaIcones
             'setting_icons_fila2' // Section           
         ); 
 
-	add_settings_field(
+        add_settings_field(
             'icon22', // ID
             'Icona:', // Title 
             array( $this, 'icon22_callback' ), // Callback
@@ -248,14 +259,14 @@ class graellaIcones
           'setting_icons_fila2' // Section           
         );
         
-         add_settings_section(
+        add_settings_section(
             'setting_general', // ID
             'General', // Title
             array($this, 'print_section_info'), // Callback
             'my-setting-admin' // Page
         );
 
-        // Mostrar text sota els icones 
+        // Mostrar text sota les icones 
         add_settings_field(
             'show_text_icon', // ID
             'Mostra text sota la icona:', // Title 
@@ -485,9 +496,8 @@ class graellaIcones
         );        
     }
     
-   }
+}
 
-if (is_admin())
+if (is_admin()) {
     $my_settings_page = new graellaIcones();
-
-?>
+}
