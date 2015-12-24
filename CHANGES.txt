@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Added custom image for categories in page header (Trello #1054)
+- Themes reactor-primaria-1 and reactor-serveis-educatius: Minor format improvements in code
 
 
 Changes 15.12.14
