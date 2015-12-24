@@ -3,10 +3,11 @@
 /*************************************************************
  * Capçalera settings form
  **************************************************************/
-class graellaIcones
-{
+class graellaIcones {
+
     const FIRST_ITEM_INDEX = 1;
     const MAX_ITEM_INDEX = 5;
+
     /**
      * Holds the values to be used in the fields callbacks
      */
@@ -41,8 +42,6 @@ class graellaIcones
      */
     public function create_admin_page()
     {
-
-
         // Set class property
         $this->options = get_option('my_option_name');
         ?>
@@ -155,7 +154,7 @@ class graellaIcones
             );
 
             add_settings_field(
-                'separador11', // ID
+                'separador' . $i, // ID
                 '<hr>', // Title
                 array($this, 'sep_callback'), // Callback
                 'my-setting-admin', // Page
@@ -264,7 +263,6 @@ class graellaIcones
 
 }
 
-if (is_admin())
+if (is_admin()) {
     $my_settings_page = new graellaIcones();
-
-?>
+}
