@@ -3,7 +3,7 @@ function add_recursos( $wp_admin_bar ) {
 
 	$args = array(
 		'id'     => 'recursosXTEC',     
-		'title'  => '<img src="'.get_stylesheet_directory_uri().'/custom-tac/imatges/logo_xtec.png'."\">",
+		'title'  => '<img src="'.get_template_directory_uri().'/custom-tac/imatges/logo_xtec.png'."\">",
 		'parent' => false,          
 	);
 
