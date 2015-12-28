@@ -64,9 +64,20 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 				}
 				break;
 			default:
-				// 4 is the default number of columns for 1 sidebar
-				$classes[] = 'large-4';
-				break;
+
+                // XTEC ************ MODIFICAT - Customization
+                // 2015.12.28 @aginard - Change by jmeler
+
+                $classes[] = 'large-3';
+
+                //************ ORIGINAL
+                /*
+    			// 4 is the default number of columns for 1 sidebar
+                $classes[] = 'large-4';
+                */
+                //************ FI
+                
+                break;
 		}
 			
 		// pull the content above left sidebar on small screens
@@ -119,8 +130,19 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 					$classes[] = 'large-7';
 					$classes[] = 'large-offset-1';
 				} else {
-					$classes[] = 'large-8';
-				}
+
+                    // XTEC ************ MODIFICAT - Customization
+                    // 2015.12.28 @aginard - Change by jmeler
+
+                    $classes[] = 'large-9';
+
+                    //************ ORIGINAL
+                    /*
+                    $classes[] = 'large-8';
+                    */
+                    //************ FI
+
+                }
 				break;
 		}
 			
