@@ -8,6 +8,20 @@
  */
 ?>
 
+<?php // XTEC ************ MODIFICAT - Customization
+      // 2015.12.29 @aginard
+
+    reactor_sidebar_before(); ?>
+       <div id="sidebar-frontpage" class="sidebar <?php reactor_columns( 3 ); ?>" role="complementary">
+         <div id="sidebar-frontpage-inner">
+           <?php dynamic_sidebar('sidebar-frontpage'); ?>
+         </div>
+       </div><!-- #sidebar-frontpage -->
+    <?php reactor_sidebar_after(); ?>
+
+   <?php //************ ORIGINAL
+         /*
+
 	<?php // get the front page layout
 	wp_reset_postdata();
     $layout =  reactor_option('', '1c', '_template_layout'); ?>
@@ -51,3 +65,6 @@
     <?php reactor_sidebar_after(); ?>
     
     <?php endif; endif; ?>
+
+*/
+//************ FI

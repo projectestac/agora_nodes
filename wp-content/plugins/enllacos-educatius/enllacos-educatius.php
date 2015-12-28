@@ -88,7 +88,7 @@ class XTEC_Widget extends WP_Widget {
         foreach ($this->recursos as $idRecurs => $nomRecurs) {
             $idRecurs = $instance[$idRecurs];
             if (!empty($idRecurs)) {
-                echo "<a target='_blank' title=\"" . $nomRecurs['nom'] . "\" href=\"" . esc_url($nomRecurs['url']) . "\"><img class=\"iconedu\" src=\"" . get_stylesheet_directory_uri() . "/custom-tac/imatges/" . $nomRecurs['img'] . "\"></a>";
+                echo "<a target='_blank' title=\"" . $nomRecurs['nom'] . "\" href=\"" . esc_url($nomRecurs['url']) . "\"><img class=\"iconedu\" src=\"" . get_template_directory_uri() . "/custom-tac/imatges/" . $nomRecurs['img'] . "\"></a>";
             }
         }
         echo "</div>";
