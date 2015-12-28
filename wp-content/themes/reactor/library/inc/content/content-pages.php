@@ -105,4 +105,24 @@ function reactor_woo_after_sidebar() { ?>
 <?php }
 
 add_action('woocommerce_sidebar', 'reactor_woo_after_sidebar', 999);
+
+
+// XTEC ************ AFEGIT - Customization
+// 2015.12.28 @aginard
+
+/**
+ * Add comments in pages (if enabled)
+ *
+ * @author Sara Arjona
+ */
+function reactor_do_page_comments() {
+	// If comments are open or we have at least one comment, load up the comment template
+	if ( is_page() && ( comments_open() || '0' != get_comments_number() ) ) {
+		comments_template('', true);
+	}
+}
+add_action('reactor_page_after', 'reactor_do_page_comments', 2);
+
+//************ FI
+
 ?>

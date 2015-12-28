@@ -78,7 +78,6 @@
                 </div><!-- .columns -->
                                 
             </div><!-- .row -->
-            
         </div><!-- #content -->
         
         <?php reactor_content_after(); ?>

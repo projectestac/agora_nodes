@@ -26,13 +26,15 @@
  * Reference the functions.php file in Reactor for add_theme_support functions
  */
 
-include "custom-tac/metabox-post-parametres.php";
-include "custom-tac/capcalera/icones-capcalera-settings.php";
-include "custom-tac/ginys/giny-logo-centre.php";
-include "custom-tac/menu-principal.php";
-include "custom-tac/capcalera/menu-logo.php";
-include "custom-tac/capcalera/menu-recursos-tac.php";
-include "custom-tac/colors_nodes.php";
+$theme_root = get_theme_root();
+
+include $theme_root . '/reactor/custom-tac/metabox-post-parametres.php';
+include 'custom-tac/capcalera/icones-capcalera-settings.php';
+include 'custom-tac/ginys/giny-logo-centre.php';
+include 'custom-tac/menu-principal.php';
+include $theme_root . '/reactor/custom-tac/capcalera/menu-logo.php';
+include $theme_root . '/reactor/custom-tac/capcalera/menu-recursos-tac.php';
+include $theme_root . '/reactor/custom-tac/colors_nodes.php';
 
 add_action('after_setup_theme', 'reactor_child_theme_setup', 11);
 
@@ -98,7 +100,6 @@ function custom_toolbar($wp_toolbar) {
     $wp_toolbar->remove_node('comments');
     $wp_toolbar->remove_node('new-content');
 //    $wp_toolbar->remove_node('search');
-
     $wp_toolbar->remove_node('themes');
     $wp_toolbar->add_node( array(
     'parent' => 'site-name',
@@ -119,7 +120,7 @@ add_action('admin_bar_menu', 'custom_toolbar',98);
 // 2015.12.04 @nacho
 /* Camps extra per definir disposició de noticies a cada categoria*/
 /*
-/*function extra_category_fields( $tag ) {    //check for existing featured ID
+function extra_category_fields( $tag ) {    //check for existing featured ID
     $t_id = $tag->term_id;
     $cat_meta = get_option( "category_$t_id");
 ?>
@@ -315,7 +316,7 @@ function remove_dashboard_widgets(){
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
 
-include "custom-tac/rss-metabox.php";
+include $theme_root . '/reactor/custom-tac/rss-metabox.php';
 
 add_action('wp_dashboard_setup', 'rss_register_widgets');
 
@@ -325,7 +326,7 @@ function rss_register_widgets() {
 }
 
 // Tauler personalitzat
-include "custom-tac/welcome-panel.php";
+include $theme_root . '/reactor/custom-tac/welcome-panel.php';
 
 add_action( 'welcome_panel', 'rc_my_welcome_panel' );
 
@@ -724,12 +725,18 @@ return false;
  * @param $link
  * @return string with the target property
  */
+function set_target($link) {
+    $link = str_replace('http://', '://', trim($link));
+    $link = str_replace('https://', '://', $link);
 
-function set_target($link){
-    if (strpos(trim($link),"http")===0)
-        return "target='_blank'";
-    else
-        return "";
+    $siteURL = get_home_url();
+    $siteURL = str_replace('http://', '://', trim($siteURL));
+    $siteURL = str_replace('https://', '://', $siteURL);
+
+    if (!strpos($link, $siteURL)) {
+        return 'target="_blank"';
+    }
+    return "";
 }
 
 /**
@@ -835,15 +842,20 @@ function show_logo () {
        . "<h1>" . reactor_option('nomCanonicCentre') . "</h1></div>";
 }
 
-
 // Show logo and WP_social_login widget
 add_filter( 'login_message', 'show_logo',10 );
 add_filter( 'login_message', 'wsl_render_auth_widget_in_wp_login_form',20 );
 // Remove original WP_social_login widget because are in a bad position for usability
 remove_action( 'login_form', 'wsl_render_auth_widget_in_wp_login_form' );
 
-// Load styles
-function load_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '-serveis-educatius/style.css' );
+// Load styles from the parent (first) and the child (second)
+function theme_enqueue_styles() {
+
+    $parent_style = 'parent-style';
+
+    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array($parent_style));
 }
-add_action( 'login_enqueue_scripts', 'load_stylesheet' );
+
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+add_action('login_enqueue_scripts', 'theme_enqueue_styles'); // Required for login form

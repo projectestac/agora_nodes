@@ -60,9 +60,15 @@ if ( !function_exists('reactor_wp_helpers') ) {
 		// clean up comment styles in the head
 		add_action('wp_head', 'reactor_remove_recent_comments_style', 1);
 		// fixes CSS output for front end admin bar
+
+        //XTEC ************ ELIMINAT - Customization
+        // 2015.12.28 @aginard
+        /*
 		add_action('wp_head', 'reactor_admin_bar_fix', 5);
 		add_action('get_header', 'reactor_remove_admin_bar_css');
-		
+		*/
+        //************ FI
+
 		// adds class to body
 		add_filter('body_class', 'reactor_topbar_body_class');
 		
@@ -198,7 +204,18 @@ function reactor_img_unautop( $content ) {
  */
 function reactor_excerpt_more( $output ) {
 	global $post;
+    
+    // XTEC ************ MODIFICAT - Customization
+    // 2015.12.28 @aginard
+
+    $readmore = 'Llegeix més»';
+
+    //************ ORIGINAL
+    /*
 	$readmore = reactor_option('post_readmore', 'Read more &raquo;');
+    */
+    //************ FI
+    
 	return '&hellip;  <a href="' . get_permalink( $post->ID ) . '" title="Read ' . get_the_title( $post->ID ) . '">' . $readmore . '</a>';
 }
 
