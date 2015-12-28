@@ -166,6 +166,27 @@ class Breadcrumb_Trail {
 	 */
 	public function default_labels() {
 
+        // XTEC ************ MODIFICAT - Customization
+        // 2015.12.28 @aginard
+
+        $labels = array(
+			'home'                => __( 'Home',                    'reactor' ),
+			'search'              => __( 'Search results for &quot;%1$s&quot;', 'reactor' ),
+			'error_404'           => __( '404 Not Found',           'reactor' ),
+			'paged'               => __( 'Page %d',                 'reactor' ),
+			'archives'            => __( 'Archives',                'reactor' ),
+			'archive_minute_hour' => __( 'g:i a',                   'reactor' ),
+			'archive_minute'      => __( 'Minute %d',               'reactor' ),
+			'archive_hour'        => __( 'g a',                     'reactor' ),
+			'archive_day'         => __( 'd',                       'reactor' ),
+			'archive_week'        => __( 'Week %d',                 'reactor' ),
+			'archive_month'       => __( 'F',                       'reactor' ),
+			'archive_year'        => __( 'Y',                       'reactor' ),
+		//	'edit'                => __( 'Edit',                    'breadcrumb-trail' ), // @todo Implement edit link
+		);
+
+        //************ ORIGINAL
+        /*
 		$labels = array(
 			'home'                => __( 'Home',                    'breadcrumb-trail' ),
 			'search'              => __( 'Search results for "%s"', 'breadcrumb-trail' ),
@@ -181,6 +202,8 @@ class Breadcrumb_Trail {
 			'archive_year'        => __( 'Y',                       'breadcrumb-trail' ),
 		//	'edit'                => __( 'Edit',                    'breadcrumb-trail' ), // @todo Implement edit link
 		);
+        */
+        //************ FI
 
 		return $labels;
 	}
@@ -974,6 +997,11 @@ class Breadcrumb_Trail {
 			/* Set the parent term's parent as the parent ID. */
 			$term_id = $term->parent;
 		}
+
+// XTEC ************ AFEGIT - Mount correct breadcrumb for categories
+// 2015.03.25 @Nacho Abejaro
+		$parents = array_reverse($parents);
+// ************ FI
 
 		/* If we have parent terms, reverse the array to put them in the proper order for the trail. */
 		if ( !empty( $parents ) )

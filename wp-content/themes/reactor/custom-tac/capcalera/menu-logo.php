@@ -7,14 +7,14 @@ function add_logo( $wp_admin_bar ) {
     if ($isConsorci) {
 	$args = array(
 		'id'     => 'consorci',    
-		'title'  => '<img src="'.get_stylesheet_directory_uri().'/custom-tac/imatges/logo_consorci.png">',
+		'title'  => '<img src="'.get_template_directory_uri().'/custom-tac/imatges/logo_consorci.png">',
 		'href' =>'http://www.edubcn.cat/ca/',
 		'parent' => false,          
 	);
     } else {
         $args = array(
 		'id'     => 'gencat',    
-		'title'  => '<img src="'.get_stylesheet_directory_uri().'/custom-tac/imatges/logo_gene.png">',
+		'title'  => '<img src="'.get_template_directory_uri().'/custom-tac/imatges/logo_gene.png">',
 		'href' =>'http://www.gencat.cat/ensenyament/',
 		'parent' => false,
         );
