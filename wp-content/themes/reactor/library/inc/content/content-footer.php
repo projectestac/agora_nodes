@@ -28,7 +28,13 @@ if ( current_theme_supports('reactor-breadcrumbs') ) {
 			</div><!-- #breadcrumbs -->
 	<?php }
 	}
+
+    // XTEC ************ ELIMINAT - Customization
+    // 2015.12.28 @aginard
+    /*
 	add_action('reactor_footer_before', 'reactor_do_breadcrumbs', 1);
+    */
+    //************ FI
 }
 
 /**
@@ -56,6 +62,25 @@ add_action('reactor_footer_inside', 'reactor_do_footer_widgets', 1);
  * @since 1.0.0
  */
 function reactor_do_footer_content() { ?>
+    
+<?php // XTEC ************ MODIFICAT - Customization
+      // 2015.12.28 @aginard ?>
+
+    <div class="site-info">
+        <div class="row">
+            <div class="<?php reactor_columns( 12 ); ?>">
+                <div style="text-align:center" id="colophon">
+                    <p> <a target="_blank" href="http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/">Avís legal</a> |
+                    <a target="_blank" href="http://agora.xtec.cat/nodes/">Sobre el web</a> |
+                    <span class="copyright">&copy;<?php echo date_i18n('Y'); ?>  Generalitat de Catalunya | </span>
+                    <span class="site-source">Fet amb <a href=http://wordpress.org/>WordPress</a></span></p>
+                </div><!-- #colophon -->
+            </div><!-- .columns -->
+        </div><!-- .row -->
+    </div><!-- #site-info -->
+
+    <?php //************ ORIGINAL
+    /*
 	<div class="site-info">
 		<div class="row">
         
@@ -79,6 +104,9 @@ function reactor_do_footer_content() { ?>
             
 		</div><!-- .row -->
 	</div><!-- #site-info -->
+    */
+    //************ FI ?>
+    
 <?php 
 }
 add_action('reactor_footer_inside', 'reactor_do_footer_content', 2);
