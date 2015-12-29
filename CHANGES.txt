@@ -8,6 +8,7 @@ Changes in progress
 - Added custom image for categories in page header (Trello #1054)
 - Themes reactor-primaria-1 and reactor-serveis-educatius: Minor format improvements in code
 - Intraweb Importer: Improved information text for users (Trello #1068)
+- Carrusel: Allow loading picasa albums from URL (Trello #1056)
 
 
 
