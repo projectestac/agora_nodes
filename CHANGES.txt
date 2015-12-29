@@ -9,6 +9,7 @@ Changes in progress
 - Themes reactor-primaria-1 and reactor-serveis-educatius: Minor format improvements in code
 - Intraweb Importer: Improved information text for users (Trello #1068)
 - Carrusel: Allow loading picasa albums from URL (Trello #1056)
+- Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
 
 
 
