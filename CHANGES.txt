@@ -10,6 +10,7 @@ Changes in progress
 - Intraweb Importer: Improved information text for users (Trello #1068)
 - Carrusel: Allow loading picasa albums from URL (Trello #1056)
 - Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
+- Wordpress Importer: Removed XTEC change that was only used in multisite configuration (XTECBlocs) (Trello #936)
 - Mailer lib: Added latest changes
 
 
