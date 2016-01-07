@@ -2177,6 +2177,10 @@ function bp_core_load_buddypress_textdomain() {
 	$locations = apply_filters( 'buddypress_locale_locations', array(
 		trailingslashit( WP_LANG_DIR . '/' . $domain  ),
 		trailingslashit( WP_LANG_DIR ),
+		// XTEC ************ AFEGIT - Load file from BP plugin directory
+		// 2015.09.14 @nacho
+		trailingslashit( constant( 'BP_PLUGIN_DIR' ) .'bp-languages' ),
+		// ************ FI
 	) );
 
 	// Try custom locations in WP_LANG_DIR
