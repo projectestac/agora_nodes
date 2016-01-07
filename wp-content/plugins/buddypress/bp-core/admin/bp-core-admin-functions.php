@@ -428,6 +428,17 @@ function bp_core_get_admin_tabs( $active_tab = '' ) {
 		),
 	);
 
+// XTEC ************ AFEGIT - Removed tabs in Settings > BuddyPress. Actual access to tabs is 
+//                            blocked in theme. This removal is to avoid admins seeing something 
+//                            where they cannot access.
+// 2014.09.10 @aginard
+
+    if (!is_xtecadmin()) {
+        unset($tabs[1]); // Pages tab
+        unset($tabs[2]); // Settings tab
+    }
+
+//************ FI
 	// If forums component is active, add additional tab
 	if ( bp_is_active( 'forums' ) && class_exists( 'BP_Forums_Component' ) ) {
 
