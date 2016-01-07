@@ -1,20 +1,24 @@
 <?php
-
 /**
- * BuddyPress Tools panel
+ * BuddyPress Tools panel.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
+ *
+ * @package BuddyPress
+ * @subpackage Core
  */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Render the BuddyPress Tools page.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_core_admin_tools() {
 	?>
 	<div class="wrap">
-		<?php screen_icon( 'buddypress'); ?>
 
 		<h2><?php esc_html_e( 'BuddyPress Tools', 'buddypress' ) ?></h2>
 
@@ -35,7 +39,7 @@ function bp_core_admin_tools() {
 
 								<?php foreach ( bp_admin_repair_list() as $item ) : ?>
 
-									<label><input type="checkbox" class="checkbox" name="<?php echo esc_attr( $item[0] ) . '" id="' . esc_attr( str_replace( '_', '-', $item[0] ) ); ?>" value="1" /> <?php echo esc_html( $item[1] ); ?></label><br />
+									<label for="<?php echo esc_attr( str_replace( '_', '-', $item[0] ) ); ?>"><input type="checkbox" class="checkbox" name="<?php echo esc_attr( $item[0] ) . '" id="' . esc_attr( str_replace( '_', '-', $item[0] ) ); ?>" value="1" /> <?php echo esc_html( $item[1] ); ?></label><br />
 
 								<?php endforeach; ?>
 
@@ -57,7 +61,7 @@ function bp_core_admin_tools() {
 /**
  * Handle the processing and feedback of the admin tools page.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_admin_repair_handler() {
 	if ( ! bp_is_post_request() ) {
@@ -147,7 +151,7 @@ function bp_admin_repair_list() {
 	/**
 	 * Filters the array of the repair list.
 	 *
-	 * @since BuddyPress (2.0.0)
+	 * @since 2.0.0
 	 *
 	 * @param array $repair_list Array of values for the Repair list options.
 	 */
@@ -157,7 +161,7 @@ function bp_admin_repair_list() {
 /**
  * Recalculate friend counts for each user.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @return array
  */
@@ -215,7 +219,7 @@ function bp_admin_repair_friend_count() {
 /**
  * Recalculate group counts for each user.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
  * @return array
  */
@@ -260,9 +264,9 @@ function bp_admin_repair_group_count() {
 }
 
 /**
- * Recalculate user-to-blog relationships and useful blog meta data
+ * Recalculate user-to-blog relationships and useful blog meta data.
  *
- * @since BuddyPress (2.1.0)
+ * @since 2.1.0
  *
  * @return array
  */
@@ -294,7 +298,7 @@ function bp_admin_repair_blog_records() {
 /**
  * Recalculate the total number of active site members.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_admin_repair_count_members() {
 	$statement = __( 'Counting the number of active members on the site&hellip; %s', 'buddypress' );
@@ -308,7 +312,7 @@ function bp_admin_repair_count_members() {
  *
  * Re-runs the migration from usermeta introduced in BP 2.0.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_admin_repair_last_activity() {
 	$statement = __( 'Determining last activity dates for each user&hellip; %s', 'buddypress' );
@@ -319,10 +323,12 @@ function bp_admin_repair_last_activity() {
 /**
  * Assemble admin notices relating success/failure of repair processes.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  *
- * @param string $message Feedback message.
- * @param unknown $class Unused.
+ * @param string      $message Feedback message.
+ * @param string|bool $class   Unused.
+ *
+ * @return bool
  */
 function bp_admin_tools_feedback( $message, $class = false ) {
 	if ( is_string( $message ) ) {
@@ -364,7 +370,7 @@ function bp_admin_tools_feedback( $message, $class = false ) {
  * We register this page on Network Admin as a top-level home for our
  * BuddyPress tools. This displays the default content.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_core_admin_available_tools_page() {
 	?>
@@ -376,7 +382,7 @@ function bp_core_admin_available_tools_page() {
 		/**
 		 * Fires inside the markup used to display the Available Tools page.
 		 *
-		 * @since BuddyPress (2.0.0)
+		 * @since 2.0.0
 		 */
 		do_action( 'bp_network_tool_box' ); ?>
 
@@ -387,7 +393,7 @@ function bp_core_admin_available_tools_page() {
 /**
  * Render an introduction of BuddyPress tools on Available Tools page.
  *
- * @since BuddyPress (2.0.0)
+ * @since 2.0.0
  */
 function bp_core_admin_available_tools_intro() {
 	$query_arg = array(
@@ -397,8 +403,8 @@ function bp_core_admin_available_tools_intro() {
 	$page = bp_core_do_network_admin() ? 'admin.php' : 'tools.php' ;
 	$url  = add_query_arg( $query_arg, bp_get_admin_url( $page ) );
 	?>
-	<div class="tool-box">
-		<h3 class="title"><?php esc_html_e( 'BuddyPress Tools', 'buddypress' ) ?></h3>
+	<div class="card tool-box">
+		<h3><?php esc_html_e( 'BuddyPress Tools', 'buddypress' ) ?></h3>
 		<p>
 			<?php esc_html_e( 'BuddyPress keeps track of various relationships between users, groups, and activity items. Occasionally these relationships become out of sync, most often after an import, update, or migration.', 'buddypress' ); ?>
 			<?php printf( esc_html_x( 'Use the %s to repair these relationships.', 'buddypress tools intro', 'buddypress' ), '<a href="' . esc_url( $url ) . '">' . esc_html__( 'BuddyPress Tools', 'buddypress' ) . '</a>' ); ?>
