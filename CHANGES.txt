@@ -15,6 +15,8 @@ Changes in progress
 - Mailer lib: Added latest changes
 - Google Analyticator: Upgraded to version 6.4.9.6 (Trello #994)
 - Email Subscribers: Added version 2.9.2 with first version of XTEC changes (Trello #833)
+- XTEC-stats: Added register in wp_options to keep the number of visits and get the information from there (Trello #1098)
+- XTEC-stats: Changed counting to include visits to wp-admin (Trello #1098)
 
 
 
