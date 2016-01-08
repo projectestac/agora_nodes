@@ -58,33 +58,29 @@ class Xtec_stats_widget extends WP_Widget {
         return $instance;
 	}
 
-	// Get DDBB results
-	function getStats($instance) {
-		global $wpdb;
-
-		$query = "SELECT count(*) AS Total FROM wp_stats
-				WHERE uri NOT LIKE('%wp-cron%')
-				AND uri NOT LIKE('%wp-admin%')";
-
-		$result = $wpdb->get_results($query);
-		$total = $result[0]->Total;
-
-		return $total;
-	}
-
 	// outputs the content of the widget
 	function widget($args, $instance) {
-		extract( $args );
-		echo $before_widget;
 
-		$total = $this->getStats($instance);
+        $before_widget = $args['before_widget'];
+        $after_widget = $args['after_widget'];
 
-		if (!empty($instance['title'])){
-			echo $before_title . esc_html($instance['title']) . $after_title;
-		}
-		echo '<div class="xtec-stats">';
-		echo $total;
-		echo '</div>';
-		echo $after_widget;
-	}
+        $visits = get_option('xtec-stats-visits');
+
+        echo $before_widget;
+
+        if (!empty($instance['title'])) {
+            $before_title = $args['before_title'];
+            $after_title = $args['after_title'];
+
+            echo $before_title . esc_html($instance['title']) . $after_title;
+        }
+        
+        echo '<div class="xtec-stats">';
+        echo $visits;
+        echo '</div>';
+        
+        echo $after_widget;
+        
+        return ;
+    }
 }
