@@ -26,40 +26,70 @@ load_plugin_textdomain('xtec-stats', false, plugin_basename(dirname(__FILE__)). 
 class Xtec_stats_widget extends WP_Widget {
 
 	// Constructor
-	function Xtec_stats_widget(){
+	function __construct() {
 		$widget_ops =array (
 			'description' => __('Visits counter', 'xtec-stats'),
 			'name' => __('Statistics', 'xtec-stats'),
 		);
-
-		$this->WP_Widget('xtec_stats_widget', 'xtec_stats', $widget_ops);
+        
+		parent::__construct('xtec_stats_widget', 'xtec_stats', $widget_ops);
 	}
 
-	// outputs the options form on admin
-	function form ($instance){
-		$instance = wp_parse_args((array) $instance);
-		$title = !empty($instance['title'] ) ? $instance['title'] : '';
+    /**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+    function form ($instance){
+        $title = !empty($instance['title']) ? $instance['title'] : '';
+        // @aginard: 'include_admin' is an unique value for all the widgets, so its value is stored in options table 
+        $include_admin = get_option('xtec-stats-include-admin');
+
 		?>
-        <p><?php _e("Title:","xtec-stats");?><br>
-        <input id=  "<?php echo $this->get_field_id('title'); ?>"
+        <p><?php _e('Title:', 'xtec-stats');?><br />
+        <input id="<?php echo $this->get_field_id('title'); ?>"
                name="<?php echo $this->get_field_name('title'); ?>"
                type="text" value="<?php echo esc_attr($title); ?>"
-               >
+               />
+        </p>
+        <p>
+        <input id="<?php echo $this->get_field_id('include_admin'); ?>"
+               name="<?php echo $this->get_field_name('include_admin'); ?>"
+               type="checkbox"
+               <?php echo (esc_attr($include_admin) == 'on') ? 'checked' : ''; ?>
+               />
+        <?php _e('Count administrators stats', 'xtec-stats');?>
         </p>
         <?php
 	}
 
-	//Save options
-	function update($new_instance, $old_instance){
-		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field($new_instance['title']);
-        $instance['title'] = strip_tags($new_instance['title']);
+    /**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+    function update($new_instance, $old_instance){
+		$instance = array();
+		$instance['title'] = (!empty($new_instance['title'])) ? strip_tags(sanitize_text_field($new_instance['title'])) : '';
+        $include_admin = (!empty($new_instance['include_admin'])) ? strip_tags(sanitize_text_field($new_instance['include_admin'])) : 'off';
+        // @aginard: 'include_admin' is stored in widget data to make possible to be
+        // changed in the widget form, but the value used is in options table
+		$instance['include_admin'] = $include_admin;
 
+        // 'include_admin' is an unique value for all the widgets, so its value is stored separatedly
+        update_option('xtec-stats-include-admin', $include_admin);
+        
         return $instance;
 	}
 
-	// outputs the content of the widget
-	function widget($args, $instance) {
+    /**
+     * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+     */
+    function widget($args, $instance) {
 
         $before_widget = $args['before_widget'];
         $after_widget = $args['after_widget'];
