@@ -28,7 +28,7 @@ function intranetImportControlTable() {
 function importData($table, $privacity) {
 	global $wpdb;
 
-	$query = " SELECT * FROM $table";
+	$query = "SELECT * FROM $table";
 	$result = $wpdb->get_results($query);
 
 	if (!empty($wpdb->last_error)) {
@@ -44,7 +44,7 @@ function importData($table, $privacity) {
 	if ($result) {
 		foreach ($result as $new_data) {
 			$report = addToWordPress($table, $new_data, $report, $privacity);
-			echo ".";
+			echo '.';
 		}
 	}
 
@@ -80,12 +80,12 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 
 		$userId = getUserId($new_data->cr_uid);
 
-		$post['post_content']	= parseSingleContent($new_data->hometext).parseSingleContent($new_data->bodytext);
-		$post['post_name'] 		= $new_data->urltitle;
-		$post['post_title'] 	= $new_data->title;
-		$post['post_status'] 	= $privacity;
-		$post['post_type'] 		= 'post';
-		$post['post_author'] 	= $userId;
+		$post['post_content'] = parseSingleContent($new_data->hometext).parseSingleContent($new_data->bodytext);
+		$post['post_name'] 	  = $new_data->urltitle;
+		$post['post_title']   = $new_data->title;
+		$post['post_status']  = $privacity;
+		$post['post_type'] 	  = 'post';
+		$post['post_author']  = $userId;
 
 		if ($result) {
 			$post['ID'] = $result->id_wp_post;
@@ -93,7 +93,7 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 
 			if ($update === false) {
 				$report['error'][] = __('Error Updating Post content: ', 'intranet-importer').'&nbsp;'.$new_data->urltitle;
-			}else {
+			} else {
 				$report['update']++;
 			}
 		} else {
@@ -442,6 +442,7 @@ function importUsers(){
 function importSpecialPages($privacity) {
 	global $wpdb;
 
+    // Get the list of pages
 	$table = 'content_page';
 	$query = " SELECT * FROM $table WHERE page_active=1";
 	$result = $wpdb->get_results($query);
@@ -453,9 +454,10 @@ function importSpecialPages($privacity) {
 		'error'		=> array(),
 	);
 	if ($result) {
+        // Get and process the contents of each page
 		foreach ($result as $new_data) {
 			$report = getAdvancedContent($new_data, $table, $report, $privacity);
-			echo ".";
+			echo '.';
 		}
 	}
 	return $report;
@@ -468,77 +470,79 @@ function importSpecialPages($privacity) {
  * and change the src
  */
 function parseAdvancedContent($resultData){
-	$post['post_content'] = '';
+	$post_content = '';
 	$images = array();
+    
+    // Each iteration process a single content of a page
 	foreach ($resultData as $advancedContent) {
 		$type = $advancedContent->con_type;
 		$advancedContent = unserialize($advancedContent->con_data);
 
-		if ($type == 'Heading') {
-			$post['post_content'] .= "<".$advancedContent['headerSize'].">".$advancedContent['text']."</".$advancedContent['headerSize'].">";
-		}
-		if ($type == 'OpenStreetMap') {
-			$lat = $advancedContent["latitude"];
-			$long = $advancedContent["longitude"];
-			$zoom = $advancedContent["zoom"];
+        switch ($type) {
+            case 'Heading':
+                // Set default value
+                $header = (isset($advancedContent['headerSize'])) ? $advancedContent['headerSize'] : 'h3';
+                $post_content .= "<$header>" . $advancedContent['text'] . "</$header>";
+                break;
 
-			$post['post_content'] .= '<iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" src="http://www.openstreetmap.org/export/embed.html?bbox='.$long.','.$lat.'&mamp='.$zoom.'" style="border: 1px solid black"></iframe>';
-		}
-		if ($type == 'Vimeo') {
-			$post['post_content'] .= wp_oembed_get($advancedContent['url'])."<br/>";
-			$post['post_content'] .= $advancedContent['text'];
-		}
-		if ($type == 'GoogleMap') {
-			$lat = $advancedContent["latitude"];
-			$long = $advancedContent["longitude"];
-			$zoom = $advancedContent["zoom"];
+            case 'source':
+                $lat = $advancedContent["latitude"];
+                $long = $advancedContent["longitude"];
+                $zoom = $advancedContent["zoom"];
+                $post_content .= '<iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" src="http://www.openstreetmap.org/export/embed.html?bbox=' . $long . ',' . $lat . '&mamp=' . $zoom . '" style="border: 1px solid black"></iframe>';
+                break;
 
-			$post['post_content'] .=  '<br/><iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q='.$lat.','.$long.'&amp;output=embed&z='.$zoom.'"></iframe><br/><br/>';
-		}
-		if ($type == 'Quote') {
-			$post['post_content'] .= "<p>";
-			$post['post_content'] .= $advancedContent['text']."<br/>";
-			$post['post_content'] .= $advancedContent['source']."<br/>";;
-			$post['post_content'] .= $advancedContent['desc'];
-			$post['post_content'] .= "</p>";
-		}
-		if ($type == 'ComputerCode') {
-			$post['post_content'] .= "<p>";
-			$post['post_content'] .= $advancedContent['text']."<br/>";
-			$post['post_content'] .= "</p>";
-		}
+            case 'Vimeo':
+                $post_content .= wp_oembed_get($advancedContent['url']) . "<br/>";
+                $post_content .= $advancedContent['text'];
+                break;
 
-		if ($type == 'Html') {
-			// Get all content into <p> clausure
-			preg_match_all('%(<p[^>]*>.*?</p>)%i', $advancedContent['text'], $array, PREG_SET_ORDER);
-			if (!empty($array)) {
-				foreach ($array as $key => $src) {
-					// Search images
-					$pos = strpos($src[1], 'src="file.php?file=');
+            case 'GoogleMap':
+                $lat = $advancedContent["latitude"];
+                $long = $advancedContent["longitude"];
+                $zoom = $advancedContent["zoom"];
+                $post_content .= '<br/><iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=' . $lat . ',' . $long . '&amp;output=embed&z=' . $zoom . '"></iframe><br/><br/>';
+                break;
 
-					if($pos !== FALSE){
-						// Embedded image
-						$partsA = explode("=", $src[1]);
-						$partsB = explode("\"", $partsA[2]);
-						array_push($images, $partsB[0]);
-					}else {
-						$post['post_content'] .= $src[1];
-					}
-				}
-			}
+            case 'Quote':
+                $post_content .= "<p>";
+                $post_content .= $advancedContent['text'] . "<br/>";
+                $post_content .= $advancedContent['source'] . "<br/>";
+                ;
+                $post_content .= $advancedContent['desc'];
+                $post_content .= "</p>";
+                break;
 
-			// URI
-			if ($advancedContent['source'] && $advancedContent ['desc']) {
-				$post['post_content'] .=  '<br/><a href="'.$advancedContent['source'].'">'.$advancedContent['desc'].'</a><br/>';
-			}
+            case 'ComputerCode':
+                $post_content .= "<p>";
+                $post_content .= $advancedContent['text'] . "<br/>";
+                $post_content .= "</p>";
+                break;
 
-			// Video Clip
-			if ($advancedContent['url']) {
-				$post['post_content'] .=  '<br/><a href="'.$advancedContent['url'].'">'.$advancedContent['clipId'].'</a><br/>';
-			}
-		}
+            case 'Html':
+                // Get the local images in the text
+                $images = array_merge($images, get_local_images($advancedContent['text']));
+
+                $post_content .= "<p>";
+                $post_content .= $advancedContent['text'] . '<br/>';
+                $post_content .= "</p>";
+
+                // break omitted on purpose
+
+            default:
+                // URI
+                if ($advancedContent['source'] && $advancedContent['desc']) {
+                    $post_content .= '<br/><a href="' . $advancedContent['source'] . '">' . $advancedContent['desc'] . '</a><br/>';
+                }
+
+                // Video Clip
+                if ($advancedContent['url']) {
+                    $post_content .= '<br/><a href="' . $advancedContent['url'] . '">' . $advancedContent['clipId'] . '</a><br/>';
+                }
+        }
 	}
-	return array($post['post_content'], $images);
+
+	return array($post_content, $images);
 }
 
 /**
@@ -564,16 +568,19 @@ function getAdvancedContent($new_data, $table, $report, $privacity) {
 	$post['post_author']	= $userId;
 	$post['post_parent']	= $page_root_id;
 
+    // Get all the contents of a page
 	$queryData = "SELECT `con_type`, `con_data` FROM content_content WHERE con_pageid = '$new_data->page_id' AND con_active = 1 ORDER BY con_areaindex ASC ";
 	$resultData = $wpdb->get_results($queryData);
 	manageDataBaseErrors($wpdb);
 
+    // Process the contents
 	if ($resultData) {
 		list($post['post_content'], $images) = parseAdvancedContent($resultData);
 	}
-
+    
 	if ($result) {
 		$post['ID']	= $result->id_wp_post;
+
 		$update = wp_update_post($post);
 		if ($update === false) {
 			$report['error'][] = __('Error Updating Post content: ', 'intranet-importer').'&nbsp;'.$new_data->page_title;
@@ -585,7 +592,7 @@ function getAdvancedContent($new_data, $table, $report, $privacity) {
 			}
 			$report['update']++;
 		}
-	}else {
+	} else {
 		$post_id = wp_insert_post($post);
 
 		if (!$post_id) {
@@ -882,4 +889,38 @@ function manageBPDocsPermissions($post_id, $privacity) {
 			);
 		}
 	}
+}
+
+
+/**
+ *  Extract path of the images located in zkdata
+ * 
+ *  @author Toni Ginard
+ *  @param string $text HTML text that may include links to local images
+ *  @return array Images found in the text
+ */
+function get_local_images($text) {
+
+    $dom = new DOMDocument;
+    libxml_use_internal_errors(true); // Don't show warnings due to malformed HTML code
+    $dom->loadHTML($text);
+    $images = array();
+
+    foreach ($dom->getElementsByTagName('img') as $node) {
+        $dom->saveHtml($node);
+
+        if ($node->hasAttribute('src')) {
+            $src = $node->getAttribute('src');
+            $pos = 0;
+            $offset = 'file.php?file=';
+
+            // Get the relative path of the public images in Intraweb
+            while (($pos = strpos($src, $offset, $pos)) !== false) {
+                $pos += strlen($offset);
+                $images[] = substr($src, $pos);
+            }
+        }
+    }
+
+    return $images;
 }
