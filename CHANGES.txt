@@ -21,6 +21,7 @@ Changes in progress
 - XTEC-mailer: Moved idApp from database to code (Trello #894)
 - BuddyPress: Updated from version 2.3.2.1 to version 2.4.3 (Trello #1040)
 - Intraweb-importer: Improved import of 'Content' module (Trello #1051)
+- Invite anyone: Changed activation URL to avoid problems if users_can_register is disabled (Trello #1114)
 
 
 Changes 15.12.14
