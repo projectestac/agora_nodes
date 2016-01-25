@@ -687,3 +687,36 @@ function has_page_from_emails_subscribers_available_by_role()
 
     return $is_page_from_emails_subscribers;
 }
+
+
+/**
+ * To change accept link (because register page is disabled)
+ * @param  string $accept_link accept URL
+ * @return string Replaced accept_link for groups link
+ * @author Sara Arjona
+ */
+function change_invite_anyone_accept_url($accept_link) {
+    if (! get_option('users_can_register')){
+        return site_url('wp-login.php').'?redirect_to='.bp_get_root_domain(). '/' .bp_get_groups_root_slug(). '/';
+    }
+    return $accept_link;
+}
+add_filter('invite_anyone_accept_url', 'change_invite_anyone_accept_url');
+
+
+/**
+ * To remove out link (because register page is disabled)
+ * @param  string $msg Message with the text and the link
+ * @return string New message text to replace the original one
+ * @author Sara Arjona
+ */
+function remove_invite_anyone_opt_out_footer_message($msg) {
+    if (! get_option('users_can_register')){
+        return '';
+    }
+    return $msg;
+}
+add_filter('invite_anyone_opt_out_footer_message', 'remove_invite_anyone_opt_out_footer_message');
+
+
+
