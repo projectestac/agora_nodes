@@ -22,7 +22,7 @@ Changes in progress
 - BuddyPress: Updated from version 2.3.2.1 to version 2.4.3 (Trello #1040)
 - Intraweb-importer: Improved import of 'Content' module (Trello #1051)
 - Invite anyone: Changed activation URL to avoid problems if users_can_register is disabled (Trello #1114)
-
+- GCE: Added default gce_feed_[start/end] default values for admin (Trello #1071)
 
 Changes 15.12.14
 ---------------------------------------------------------------------------------------
