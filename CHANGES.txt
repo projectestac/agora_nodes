@@ -24,6 +24,7 @@ Changes in progress
 - Invite anyone: Changed activation URL to avoid problems if users_can_register is disabled (Trello #1114)
 - GCE: Added default gce_feed_[start/end] default values for admin (Trello #1071)
 - xtec-ldap-login: Added first version of the plugin (Trello #1105)
+- Enllaços educatius: Replaced aplitic.xtec.cat references for ePergam
 
 
 Changes 15.12.14
