@@ -22,11 +22,11 @@ class XTEC_Widget extends WP_Widget {
         'edu365' => ['nom' => "Edu365", 'url' => 'http://edu365.cat', 'img' => 'edu365-icon.png', 'desc' => 'Recursos educatius'],
         'edu3' => ['nom' => "Edu3", 'url' => 'http://www.edu3.cat', 'img' => 'edu3-icon.png', 'desc' => 'Videos educatius'],
         'xarxa-docent' => ['nom' => "Xarxa Docent", 'url' => 'http://educat.xtec.cat', 'img' => 'xarxa-docent-icon.png', 'desc' => 'Xarxa de support amb més de 10.000 docents inscrits'],
-        'ateneu' => ['nom' => "Ateneu", 'url' => 'http://ateneu.xtec.cat/wikiform/wikiexport/cursos/index', 'img' => 'ateneu-icon.png', 'desc' => 'Materials i recursos per la formació'],
+        'ateneu' => ['nom' => "Ateneu", 'url' => 'http://ateneu.xtec.cat', 'img' => 'ateneu-icon.png', 'desc' => 'Materials i recursos per la formació'],
         'alexandria' => ['nom' => "Alexandria", 'url' => 'http://alexandria.xtec.cat', 'img' => 'alexandria-icon.png', 'desc' => 'Cursos moodle i activitats PDI per descarregar'],
         'linkat' => ['nom' => "Linkat", 'url' => 'http://linkat.xtec.cat/', 'img' => 'linkat-icon.png', 'desc' => 'Linux pels centres educatius'],
         'jclic' => ['nom' => "JClic", 'url' => 'http://clic.xtec.cat/ca/jclic/', 'img' => 'jclic-icon.png', 'desc' => 'Activitats jClic'],
-        'merli' => ['nom' => "Merlí", 'url' => 'http://aplitic.xtec.cat/merli', 'img' => 'merli-icon.png', 'desc' => 'Catàleg de recursos XTEC'],
+        'merli' => ['nom' => "Merlí", 'url' => 'http://merli.xtec.cat', 'img' => 'merli-icon.png', 'desc' => 'Catàleg de recursos XTEC'],
         'arc' => ['nom' => "ARC", 'url' => 'http://apliense.xtec.cat/arc/', 'img' => 'arc-icon.png', 'desc' => 'Aplicació de recursos al Currículum'],
         'odissea' => ['nom' => "Odissea", 'url' => 'http://odissea.xtec.cat', 'img' => 'odissea-icon.png', 'desc' => 'Entorn virtual de formació per a docents'],
         'ampa' => ['nom' => "AMPA", 'url' => '', 'img' => 'ampa-icon.png', 'desc' => 'La associació de Pares d\'alumnes del centre'],
@@ -56,7 +56,7 @@ class XTEC_Widget extends WP_Widget {
         $this->recursos['moodle']['url'] = get_home_url() . "/moodle";
         $this->recursos['ampa']['url'] = get_home_url() . "/ampa";
         $this->recursos['intraweb']['url'] = get_home_url() . "/intranet";
-        $this->recursos['epergam']['url'] = "http://aplitic.xtec.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
+        $this->recursos['epergam']['url'] = "https://aplicacions.ensenyament.gencat.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
     }
 
 
