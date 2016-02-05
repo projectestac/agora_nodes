@@ -5,6 +5,11 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Common: Moved edit cat description with HTML editor to common and added also tags (Trello #1129)
+
+
+Changes 16.02.01
+---------------------------------------------------------------------------------------
 - Added custom image for categories in page header (Trello #1054)
 - Themes reactor-primaria-1 and reactor-serveis-educatius: Minor format improvements in code
 - Themes: Moved common code to parent theme and done minor improvements (Trello #1094)
