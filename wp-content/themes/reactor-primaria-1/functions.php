@@ -205,40 +205,6 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
-// Allow HTML in description category/tag
-// remove the html filtering
-/*
-Plugin Name: Tinymce Category Description
-Description: Adds a tinymce editor to the category description box
-Author: Paulund
-Author URI: http://www.paulund.co.uk
-Version: 1.0
-License: GPL2
-*/
-// remove the html filtering
-remove_filter( 'pre_term_description', 'wp_filter_kses' );
-
-remove_filter( 'term_description', 'wp_kses_data' );
-
-function cat_description($tag)
-{ ?>
-    <table class="form-table">
-        <tr class="form-field">
-            <th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
-            <td>
-            <?php
-                $settings = array('wpautop' => true, 'media_buttons' => true, 'quicktags' => true, 'textarea_rows' => '15', 'textarea_name' => 'description' );
-                wp_editor(htmlspecialchars_decode(wp_kses_post($tag->description , ENT_QUOTES, 'UTF-8'),ENT_QUOTES), 'cat_description', $settings);
-            ?>
-            <br />
-            <span class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></span>
-            </td>
-        </tr>
-    </table>
-    <?php
-}
-
-add_filter('edit_category_form_fields', 'cat_description');
 
 function remove_default_category_description()
 {
