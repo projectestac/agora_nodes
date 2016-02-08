@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Common: Moved edit cat description with HTML editor to common and added also tags (Trello #1129)
 - Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
+- Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
 
 
 
