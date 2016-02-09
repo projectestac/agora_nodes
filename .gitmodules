@@ -50,3 +50,6 @@
 [submodule "wp-content/plugins/xtec-ldap-login"]
 	path = wp-content/plugins/xtec-ldap-login
 	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git
+[submodule "wp-content/plugins/buddypress-docs"]
+	path = wp-content/plugins/buddypress-docs
+	url = https://github.com/projectestac/wordpress-buddypress-docs.git
