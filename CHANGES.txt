@@ -9,6 +9,8 @@ Changes in progress
 - Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
 - Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
 - Added again some Reading options for XTECBlocs administrators which are hidden in Nodes (Trello #1028)
+- mu-common: Added filter to remove content of attribute onerror in images (Trello #1050)
+
 
 
 Changes 16.02.01
