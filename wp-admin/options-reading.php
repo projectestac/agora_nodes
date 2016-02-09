@@ -84,11 +84,10 @@ else :
 <table class="form-table" role="presentation">
 
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
+<!-- 2014.09.09 @aginard -->
 <!-- 2015.07.11 @nacho -->
-<?php if (!is_xtec_super_admin()) { ?>
-<!--
-<?php } ?>
+<?php if (is_xtecblocs() || is_xtecadmin()) : ?>
+<!-- ************ FI -->
 
 <tr>
 <th scope="row"><?php _e( 'Your homepage displays' ); ?></th>
@@ -162,11 +161,9 @@ else :
 </tr>
 
 <!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
-<!--// 2014.09.09 @aginard
-	// 2015.07.31 @nacho
-<?php if (!is_xtec_super_admin()) { ?>
--->
-<?php } ?>
+<!--// 2014.09.09 @aginard -->
+<!--// 2015.07.31 @nacho -->
+<?php endif; ?>
 <!-- ************ FI -->
 
 <tr>
@@ -175,12 +172,10 @@ else :
 </tr>
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag
-	 2015.07.11 @nacho
--->
-<?php if (!is_xtec_super_admin()) { ?>
-<!--
-<?php } ?>
+<!-- 2014.09.09 @aginard -->
+<!-- 2015.07.11 @nacho -->
+<?php if (is_xtecblocs() || is_xtecadmin()) : ?>
+<!-- ************ FI -->
 
 <tr>
 <th scope="row"><?php _e( 'For each post in a feed, include' ); ?> </th>
@@ -235,11 +230,9 @@ else :
 </tr>
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
-<!-- 2014.09.09 @aginard
-	 2015.07.11 @nacho
-<?php if (!is_xtec_super_admin()) { ?>
--->
-<?php } ?>
+<!-- 2014.09.09 @aginard -->
+<!-- 2015.07.11 @nacho -->
+<?php endif; ?>
 <!-- ************ FI -->
 
 <?php do_settings_fields( 'reading', 'default' ); ?>
