@@ -10,6 +10,7 @@ Changes in progress
 - Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
 - Added again some Reading options for XTECBlocs administrators which are hidden in Nodes (Trello #1028)
 - mu-common: Added filter to remove content of attribute onerror in images (Trello #1050)
+- BuddyPress Docs: Upgraded to version 1.8.8 and converted to submodule (Trello #1041)
 
 
 
