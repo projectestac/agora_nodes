@@ -73,14 +73,9 @@ else :
 	}
 	?>
 <table class="form-table">
-
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<!-- 2015.07.11 @nacho -->
-<?php if (!is_xtec_super_admin()) { ?>
-<!--
-<?php } ?>
-
+<?php if (is_xtecblocs() || is_xtecadmin()) : ?>
+<!-- ************ FI -->
 <tr>
 <th scope="row"><?php _e( 'Your homepage displays' ); ?></th>
 <td id="front-static-pages"><fieldset><legend class="screen-reader-text"><span><?php _e( 'Your homepage displays' ); ?></span></legend>
@@ -134,34 +129,29 @@ else :
 </fieldset></td>
 </tr>
 <?php endif; ?>
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<?php endif; ?>
+<!-- ************ FI -->
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<?php if (is_xtecblocs() || is_xtecadmin()) : ?>
+<!-- ************ FI -->
 <tr>
 <th scope="row"><label for="posts_per_page"><?php _e( 'Blog pages show at most' ); ?></label></th>
 <td>
 <input name="posts_per_page" type="number" step="1" min="1" id="posts_per_page" value="<?php form_option( 'posts_per_page' ); ?>" class="small-text" /> <?php _e( 'posts' ); ?>
 </td>
 </tr>
-
-<!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
-<!--// 2014.09.09 @aginard
-	// 2015.07.31 @nacho
-<?php if (!is_xtec_super_admin()) { ?>
--->
-<?php } ?>
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<?php endif; ?>
 <!-- ************ FI -->
 
 <tr>
 <th scope="row"><label for="posts_per_rss"><?php _e( 'Syndication feeds show the most recent' ); ?></label></th>
 <td><input name="posts_per_rss" type="number" step="1" min="1" id="posts_per_rss" value="<?php form_option( 'posts_per_rss' ); ?>" class="small-text" /> <?php _e( 'items' ); ?></td>
 </tr>
-
-<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag
-	 2015.07.11 @nacho
--->
-<?php if (!is_xtec_super_admin()) { ?>
-<!--
-<?php } ?>
-
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<?php if (is_xtecblocs() || is_xtecadmin()) : ?>
+<!-- ************ FI -->
 <tr>
 <th scope="row"><?php _e( 'For each article in a feed, show' ); ?> </th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'For each article in a feed, show' ); ?> </span></legend>
@@ -202,13 +192,8 @@ else :
 <?php endif; ?>
 </fieldset></td>
 </tr>
-
-<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
-<!-- 2014.09.09 @aginard
-	 2015.07.11 @nacho
-<?php if (!is_xtec_super_admin()) { ?>
--->
-<?php } ?>
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<?php endif; ?>
 <!-- ************ FI -->
 
 <?php do_settings_fields( 'reading', 'default' ); ?>
