@@ -116,48 +116,6 @@ function custom_toolbar($wp_toolbar) {
 }
 add_action('admin_bar_menu', 'custom_toolbar',98);
 
-// Moved and extended function at agora-functions.php file
-// 2015.12.04 @nacho
-/* Camps extra per definir disposició de noticies a cada categoria*/
-/*
-function extra_category_fields( $tag ) {    //check for existing featured ID
-    $t_id = $tag->term_id;
-    $cat_meta = get_option( "category_$t_id");
-?>
-
-<tr class="form-field">
-<th scope="row" valign="top"><label for="articles_fila"><?php _e('Articles per fila'); ?></label></th>
-<td>
-<input type="text" name="Cat_meta[articles_fila]" id="Cat_meta[articles_fila]" size="25" style="width:60%;" value="<?php echo $cat_meta['articles_fila'] ? $cat_meta['articles_fila'] : ''; ?>"><br />
-        <span class="description"><?php _e('Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)'); ?></span>
-    </td>
-</tr>
-
-<?php }
-
-// Moved and extended function at agora-functions.php file
-// 2015.12.04 @nacho
-add_action ( 'edit_category_form_fields', 'extra_category_fields');
-
-// save extra category extra fields callback function
-function save_extra_category_fields( $term_id ) {
-    if ( isset( $_POST['Cat_meta'] ) ) {
-        $t_id = $term_id;
-        $cat_meta = get_option( "category_$t_id");
-        $cat_keys = array_keys($_POST['Cat_meta']);
-        foreach ($cat_keys as $key){
-            if (isset($_POST['Cat_meta'][$key])){
-                $cat_meta[$key] = $_POST['Cat_meta'][$key];
-            }
-        }
-        //save the option array
-        update_option( "category_$t_id", $cat_meta );
-    }
-}
-// save extra category extra fields hook
-add_action ( 'edited_category', 'save_extra_category_fields');
-*/
-
 //Filtre categoria
 function filter_by_taxonomy($query) {
     global $categoria;
@@ -204,24 +162,6 @@ $allowed_tags='<a>,<ul>,<li>,<ol>';
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
-
-
-function remove_default_category_description()
-{
-    global $current_screen;
-    if ( $current_screen->id == 'edit-category' )
-    {
-    ?>
-        <script type="text/javascript">
-        jQuery(function($) {
-            $('textarea#description').closest('tr.form-field').remove();
-        });
-        </script>
-    <?php
-    }
-}
-add_action('admin_head', 'remove_default_category_description');
-
 
 add_action("reactor_content_before","menu_principal");
 
