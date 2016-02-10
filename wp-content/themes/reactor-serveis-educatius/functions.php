@@ -205,24 +205,6 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
-
-function remove_default_category_description()
-{
-    global $current_screen;
-    if ( $current_screen->id == 'edit-category' )
-    {
-    ?>
-        <script type="text/javascript">
-        jQuery(function($) {
-            $('textarea#description').closest('tr.form-field').remove();
-        });
-        </script>
-    <?php
-    }
-}
-add_action('admin_head', 'remove_default_category_description');
-
-
 add_action("reactor_content_before","menu_principal");
 
 // Zona de Ginys per categories
