@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.2.7
 - Common: Moved edit cat description with HTML editor to common and added also tags (Trello #1129)
 - Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
 - Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
