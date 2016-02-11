@@ -13,6 +13,7 @@ Changes in progress
 - mu-common: Added filter to remove content of attribute onerror in images (Trello #1050)
 - mu-common: Moved and improved code to remove the field "description" in category edition and in bp-docs tags (Trello #1129)
 - BuddyPress Docs: Upgraded to version 1.8.8 and converted to submodule (Trello #1041)
+- xtec-ldap-login: Completed support for single site. General improvements (Trello #1105)
 
 
 
