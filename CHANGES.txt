@@ -14,6 +14,7 @@ Changes in progress
 - mu-common: Moved and improved code to remove the field "description" in category edition and in bp-docs tags (Trello #1129)
 - BuddyPress Docs: Upgraded to version 1.8.8 and converted to submodule (Trello #1041)
 - xtec-ldap-login: Completed support for single site. General improvements (Trello #1105)
+- mu-common and reactor: Get multiple categories and filter posts from URL (Trello #1142)
 
 
 
