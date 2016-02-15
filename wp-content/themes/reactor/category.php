@@ -7,41 +7,58 @@
  * @since 1.0.0
  */
 ?>
+<?php
+    global $categoria;
+    $categoria=  get_query_var('cat');
+?>
 
 <?php get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content cat">
     
     	<?php reactor_content_before(); ?>
     
         <div id="content" role="main">
         	<div class="row">
-                <div class="<?php reactor_columns(); ?>">
-                
-                <?php reactor_inner_content_before(); ?>
-                
-				<?php if ( have_posts() ) : ?>
-                    <header class="archive-header">
-                        <h1 class="archive-title"><?php printf( __('Category: %s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1>
+		
+		<?php get_sidebar("category"); ?>                    
+
+        <div class="articles <?php reactor_columns(); ?>">
         
+                <?php reactor_inner_content_before(); ?>
+
                     <?php // show an optional category description 
-					if ( category_description() ) : ?>
-                        <div class="archive-meta">
-                        <?php echo category_description(); ?>
-                        </div>
+                    if ( category_description() ) : ?>
+                        <header class="archive-header">
+                       <div class="archive-meta">
+                       <?php echo category_description(); ?>
+                       </div>
+                       </header><!-- .archive-header -->
+
                     <?php endif; ?>
-                    </header><!-- .archive-header -->
-                <?php endif; // end have_posts() check ?> 
-                
-				<?php // get the loop
-				get_template_part('loops/loop', 'index'); ?>
-                
-                <?php reactor_inner_content_after(); ?>
+
+                    <?php
+                        // TODO: get values from tag settings
+                        $cat_meta = get_option( "category_$categoria");
+                        if (!isset($cat_meta ['articles_fila']) ||
+                            $cat_meta ['articles_fila'] < 1 ||
+                            $cat_meta ['articles_fila'] > 4) {
+                            $posts_per_fila = 2;
+                        } else {
+                            $posts_per_fila=$cat_meta ['articles_fila'];
+                        }
+
+                        $posts_per_fila1 = $posts_per_fila2 = $posts_per_filan = $posts_per_fila;
+
+                        reactor_loop_before();
+                        get_template_part('loops/loop', 'taxonomy');
+                        reactor_loop_after();
+                    ?>
+
+                    <?php reactor_inner_content_after(); ?>
                 
                 </div><!-- .columns -->
-                
-                <?php get_sidebar(); ?>
-                
+                                
             </div><!-- .row -->
         </div><!-- #content -->
         
