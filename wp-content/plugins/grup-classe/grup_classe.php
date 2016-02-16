@@ -230,7 +230,7 @@ class Grup_classe_Widget extends WP_Widget {
                 echo "<br>";
             }
             if ($calendari_list){
-                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=list&paging=true');
+                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=list-grouped&paging=true');
                 echo "<br>";
             }
         }
