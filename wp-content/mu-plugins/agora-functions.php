@@ -1,11 +1,10 @@
 <?php
-
-/*
-  Plugin Name: AgoraFunctions
-  Plugin URI: https://github.com/projectestac/agora_nodes
-  Description: A pluggin to include specific functions which affects only to Àgora-Nodes
-  Version: 1.0
-  Author: Àrea TAC - Departament d'Ensenyament de Catalunya
+/**
+ * Plugin Name: AgoraFunctions
+ * Plugin URI: https://github.com/projectestac/agora_nodes
+ * Description: Additional functions to customize Àgora-Nodes
+ * Version: 1.0
+ * Author: Àrea TAC - Departament d'Ensenyament de Catalunya
  */
 
 load_muplugin_textdomain('agora-functions', '/languages');
@@ -719,4 +718,26 @@ function remove_invite_anyone_opt_out_footer_message($msg) {
 add_filter('invite_anyone_opt_out_footer_message', 'remove_invite_anyone_opt_out_footer_message');
 
 
+/**
+ * Fixed upload of images in bbpress using fancy upload when user is not admin nor mod.
+ * Taken from: https://bbpress.org/forums/topic/solved-only-keymasters-admin-can-upload-images/
+ * @author: aginard
+ */
+function ml_pre_media_buttons($editor_id) {
+    if (!$editor_id == 'bbp_reply_content') {
+        return;
+    }
+    $GLOBALS['post_temp'] = $GLOBALS['post'];
+    $GLOBALS['post'] = null;
+}
+
+function ml_post_media_buttons($editor_id) {
+    if (!$editor_id == 'bbp_reply_content') {
+        return;
+    }
+    $GLOBALS['post'] = $GLOBALS['post_temp'];
+}
+
+add_action('media_buttons', 'ml_pre_media_buttons', 1);
+add_action('media_buttons', 'ml_post_media_buttons', 20);
 
