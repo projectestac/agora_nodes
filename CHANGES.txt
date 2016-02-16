@@ -15,6 +15,8 @@ Changes in progress
 - BuddyPress Docs: Upgraded to version 1.8.8 and converted to submodule (Trello #1041)
 - xtec-ldap-login: Completed support for single site. General improvements (Trello #1105)
 - mu-common and reactor: Get multiple categories and filter posts from URL (Trello #1142)
+- Grup-classe: changed param to call GCE widget in list view
+- bbpress: Fixed upload of images in bbpress using fancy upload when user is not admin nor mod (Trello #1143)
 
 
 
