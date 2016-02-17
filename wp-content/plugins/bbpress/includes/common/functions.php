@@ -391,6 +391,15 @@ function bbp_past_edit_lock( $post_date_gmt ) {
 		// Now
 		$cur_time  = current_time( 'timestamp', true );
 
+
+		//XTEC ************ AFEGIT - Added time zone (GMT) to fix editing time
+		//2015.04.28 @aginard
+        
+		$post_date_gmt .= ' GMT';
+		
+        //************ FI
+
+
 		// Add lockable time to post time
 		$lock_time = strtotime( $lockable, strtotime( $post_date_gmt ) );
 
