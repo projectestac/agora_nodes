@@ -18,6 +18,7 @@ Changes 16.02.22
 - Grup-classe: changed param to call GCE widget in list view
 - bbpress: Fixed upload of images in bbpress using fancy upload when user is not admin nor mod (Trello #1143)
 - wp_stats: Added additional stats information when deleting some comments (Trello #627)
+- bbpress: Fixed editing time of the posts and comments (Trello #1143)
 
 
 Changes 16.02.01
@@ -42,7 +43,6 @@ Changes 16.02.01
 - GCE: Added default gce_feed_[start/end] default values for admin (Trello #1071)
 - xtec-ldap-login: Added first version of the plugin (Trello #1105)
 - Enllaços educatius: Replaced aplitic.xtec.cat references for ePergam
-- bbpress: Fixed editing time of the posts and comments (Trello #1143)
 
 
 Changes 15.12.14
