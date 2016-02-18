@@ -18,7 +18,3 @@
  * @since 1.0.0
  */
 load_theme_textdomain('reactor', get_template_directory() . '/library/inc/translation');
-	$locale = get_locale();
-	$locale_file = '/library/inc/translation/' . $locale . '.php';
-if ( is_readable( $locale_file ) ) locate_template( $locale_file, true, true );
-?>
