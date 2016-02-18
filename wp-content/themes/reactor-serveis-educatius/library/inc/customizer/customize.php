@@ -112,7 +112,7 @@ if ( !function_exists('reactor_customize_register') ) {
 		 
 		// Capçalera
 		$wp_customize->add_section('reactor_customizer_capcalera', array( 
-			'title'    => __('Capçalera', 'custom_tac'),
+			'title'    => __('Capçalera', 'reactor'),
 			'priority' => 1,
 		 ) );
 		 
@@ -124,7 +124,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 //				$wp_customize->add_control('nodesbox_name', array(
-//					'label'    => __('Nom del centre', 'custom_tac'),
+//					'label'    => __('Nom del centre', 'reactor'),
 //                                        'type' => 'textarea',
 //					'section'  => 'reactor_customizer_capcalera',
 //					'priority' => 1,
@@ -138,7 +138,7 @@ if ( !function_exists('reactor_customize_register') ) {
 			 ) );
 			 
 //			$wp_customize->add_control('reactor_options[tamany_font_nom]', array(
-//				'label'   => __('Mida de la lletra', 'custom_tac'),
+//				'label'   => __('Mida de la lletra', 'reactor'),
 //				'section' => 'reactor_customizer_capcalera',
 //				'type'    => 'select',
 //				'choices' => array(
@@ -163,7 +163,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 //				$wp_customize->add_control('blogdescription', array(
-//					'label'    => __('Descripció / Lema', 'custom_tac'),
+//					'label'    => __('Descripció / Lema', 'reactor'),
 //					'section'  => 'reactor_customizer_capcalera',
 //                                        'type' => 'textarea',
 //					'priority' => 3,
@@ -179,7 +179,7 @@ if ( !function_exists('reactor_customize_register') ) {
 			$wp_customize->add_control( 
 			    new WP_Customize_Image_Control(
 				$wp_customize,'reactor_options[imatge_capcalera]',array(
-				    'label' => __('Imatge de capçalera', 'custom_tac'),
+				    'label' => __('Imatge de capçalera', 'reactor'),
 				    'section' => 'reactor_customizer_capcalera',
                                     'description'=> 'Recomanacions: 1000 x 220 px i menys de 500 KB', 
 				    'settings' => 'reactor_options[imatge_capcalera]',
@@ -231,7 +231,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
                             $wp_customize->add_control( new simpleHTML($wp_customize, 'icones_capcalera', array( 
-                                    'label'    => __('Graella d\'icones', 'custom_tac'),
+                                    'label'    => __('Graella d\'icones', 'reactor'),
                                     'section'  => 'reactor_customizer_capcalera',
                                     'priority' => 6,
                              ) ));
@@ -252,7 +252,7 @@ if ( !function_exists('reactor_customize_register') ) {
 
 			//Pestanya Identificació del centre
 			$wp_customize->add_section('reactor_customizer_idcentre', array( 
-				'title'    => __('Identificació del centre', 'custom_tac'),
+				'title'    => __('Identificació del centre', 'reactor'),
 				'priority' => 2,
 			 ) );
 
@@ -266,7 +266,7 @@ if ( !function_exists('reactor_customize_register') ) {
 
 			if(is_xtecadmin()) {
 				$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'reactor_logo_image', array(
-					'label'    => __('Logotip', 'custom-tac'),
+					'label'    => __('Logotip', 'reactor'),
 					'section'  => 'reactor_customizer_idcentre',
 					'settings' => 'reactor_options[logo_image]',
 					'priority' => 1,
@@ -321,7 +321,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 				$wp_customize->add_control('reactor_options[telCentre]', array( 
-					'label'    => __('Telèfon', 'custom_tac'),
+					'label'    => __('Telèfon', 'reactor'),
 					'section'  => 'reactor_customizer_idcentre',
 					'priority' => 6,
 				 ) );
@@ -333,7 +333,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 				$wp_customize->add_control('reactor_options[googleMaps]', array( 
-					'label'    => __('Mapa', 'custom_tac'),
+					'label'    => __('Mapa', 'reactor'),
                                         'description' => 'Adreça de Google Maps',
 					'section'  => 'reactor_customizer_idcentre',
 					'priority' => 7,
@@ -346,7 +346,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );
 				$wp_customize->add_control('reactor_options[emailCentre]', array( 
-					'label'    => __('Contacte principal', 'custom_tac'),
+					'label'    => __('Contacte principal', 'reactor'),
 					'section'  => 'reactor_customizer_idcentre',
                                         'description' => 'Email o pàgina de contacte',
 					'priority' => 8,
@@ -431,7 +431,7 @@ if ( !function_exists('reactor_customize_register') ) {
 			 ) );
 			 
                     $wp_customize->add_control('reactor_options[frontpage_layout]', array( 
-				'label'   => __('Composició', 'custom_tac'),
+				'label'   => __('Composició', 'reactor'),
 				'section' => 'frontpage_settings',
 				'type'    => 'select',
 				'choices' => array( 
@@ -518,7 +518,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				'theme_supports' => 'reactor-page-templates'
 			 ) );
                     $wp_customize->add_control('reactor_options[frontpage_number_posts]', array( 
-					'label'    => __('Nombre d\'articles per pàgina', 'custom_tac'),
+					'label'    => __('Nombre d\'articles per pàgina', 'reactor'),
 					'section'  => 'frontpage_settings',
 					'type'     => 'text',
 					'priority' => 7,

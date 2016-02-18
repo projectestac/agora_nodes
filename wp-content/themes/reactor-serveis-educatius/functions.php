@@ -211,7 +211,7 @@ add_action("reactor_content_before","menu_principal");
 if ( function_exists('register_sidebar') ) {
     register_sidebars( 1,
     array(
-    'name'          => __( 'Categories (Barra esquerra)', 'custom_tac' ),
+    'name'          => __( 'Categories (Barra esquerra)', 'reactor' ),
     'id'            => 'categoria',
     'description'   => 'Barra lateral a les pàgines de categories (ESO, ESO1, ESO1A...)',
     'class'         => '',
