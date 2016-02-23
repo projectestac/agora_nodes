@@ -23,7 +23,7 @@ function reactor_register_sidebars() {
 		register_sidebar( array( 
 			'name'          => __('Primary Sidebar', 'reactor'),
 			'id'            => 'sidebar',
-			'description'   => 'The primary sidebar for 2 column layouts',
+			'description'   => 'Barra esquerra a les pàgines normals (excepte pàgines de categories)',
 			'class'         => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -31,12 +31,12 @@ function reactor_register_sidebars() {
 			'after_title'   => '</h4>',
 		) );
 	}
-	
-	if ( in_array( 'secondary', $sidebars[0] ) ) {	
-		register_sidebar( array( 
+
+	if ( in_array( 'secondary', $sidebars[0] ) ) {
+		register_sidebar( array(
 			'name'          => __('Secondary Sidebar', 'reactor'),
 			'id'            => 'sidebar-2',
-			'description'   => 'The secondary sidebar for 3 column layouts',
+			'description'   => 'Barra dreta a les pàgines normals (excepte pàgines de categories)',
 			'class'         => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -49,7 +49,7 @@ function reactor_register_sidebars() {
 		register_sidebar( array(
 			'name'          => __('Front Page Primary', 'reactor'),
 			'id'            => 'sidebar-frontpage',
-			'description'   => 'Primary sidebar for the front page template',
+			'description'   => 'Barra esquerra a la Portada',
 			'class'         => '',
 			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
 			'after_widget'  => '</div>',
@@ -57,12 +57,12 @@ function reactor_register_sidebars() {
 			'after_title'   => '</h4>',
 		) );
 	}
-	
+
 	if ( in_array( 'front-secondary', $sidebars[0] ) ) {
 		register_sidebar( array(
 			'name'          => __('Front Page Secondary', 'reactor'),
 			'id'            => 'sidebar-frontpage-2',
-			'description'   => 'Secondary sidebar for the front page template',
+			'description'   => 'Barra dreta a la Portada',
 			'class'         => '',
 			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
 			'after_widget'  => '</div>',
@@ -76,9 +76,9 @@ function reactor_register_sidebars() {
 		$footer .= 'large-' . reactor_get_widget_columns('sidebar-footer');
 		$footer .= ' columns %2$s">';
 		register_sidebar( array(
-			'name'          => __('Footer', 'reactor'),
+			'name'          => __('Peu', 'reactor'),
 			'id'            => 'sidebar-footer',
-			'description'   => 'Footer widget area',
+			'description'   => 'Peu de pàgina',
 			'class'         => '',
 			'before_widget' => $footer,
 			'after_widget'  => '</div>',

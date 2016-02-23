@@ -84,25 +84,20 @@ function menu_principal() {
 }
 
 function menu_etiquetes() {
-    $description_text = get_description_text();
     $options = get_option('my_option_name');
     ?>
-    <div id="sidebar-frontpage" class="" role="complementary">
-        <div id="sidebar-frontpage-inner">
-            <!-- Graella d'icones -->
-            <div class='box-content-grid'>
-            <?php for ($i = 1; $i <= 5; $i++): ?>
-                    <div id="icon-<?php echo $i; ?>">
-                        <a title="<?php echo $options['title_icon' . $i]; ?>"
-                           href="<?php echo $options['link_icon' . $i]; ?>"
-                           class="dashicons dashicons-<?php echo $options['icon' . $i]; ?>"
-                    <?php echo set_target($options['link_icon' . $i]); ?>>
-                            <span style="font-size:0.8em !important;" class="text_icon"><?php echo $options['title_icon' . $i]; ?> </span>
-                        </a>
-                    </div>
-            <?php endfor; ?>
-            </div>
+        <!-- Graella d'icones -->
+        <div class='box-content-grid'>
+        <?php for ($i = 1; $i <= 5; $i++): ?>
+                <div id="icon-<?php echo $i; ?>">
+                    <a title="<?php echo $options['title_icon' . $i]; ?>"
+                       href="<?php echo $options['link_icon' . $i]; ?>"
+                       class="dashicons dashicons-<?php echo $options['icon' . $i]; ?>"
+                <?php echo set_target($options['link_icon' . $i]); ?>>
+                        <span style="font-size:0.8em !important;" class="text_icon"><?php echo $options['title_icon' . $i]; ?> </span>
+                    </a>
+                </div>
+        <?php endfor; ?>
         </div>
-    </div><!-- #sidebar-frontpage -->
     <?php
 }

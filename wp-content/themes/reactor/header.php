@@ -12,18 +12,25 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 <head>
-<!-- WordPress head -->
-<?php wp_head(); ?>
-<!-- end WordPress head -->
-<?php reactor_head(); ?>
+
+    <?php include get_stylesheet_directory()."/style.php"; ?>
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <?php wp_head(); reactor_head(); ?>
+
+    <?php
+        $favicon = reactor_option("favicon_image");
+        if (!$favicon)
+            $favicon = get_stylesheet_directory_uri()."/favicon.ico";
+    ?>
+    <link rel="shortcut icon" href="<?php echo $favicon; ?>"/>
 </head>
 
 <body <?php body_class(); ?>>
-
-	<?php reactor_body_inside(); ?>
-
-    <div id="page" class="hfeed site"> 
-    
+    <?php reactor_body_inside(); ?>
+    <div id="page" class="hfeed site">
         <?php reactor_header_before(); ?>
     
         <header id="header" class="site-header" role="banner">

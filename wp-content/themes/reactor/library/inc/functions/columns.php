@@ -51,16 +51,11 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 			case '1c': 
 				$classes[] = '';
 				break;
-			case '3c-l':
-			case '3c-r':
-			case '3c-c':
-				$classes[] = 'large-3';
-				break;
 			case 'side-menu':
 				if ( 'accordion' == reactor_option('side_nav_type', 'accordion') ) {
-					$classes[] = 'large-3';
+					$classes[] = 'large-3 small-12 pull-9';
 				} elseif ( 'side_nav' == reactor_option('side_nav_type', 'accordion') ) {
-					$classes[] = 'large-2';
+					$classes[] = 'large-2 small-12 push-10';
 				}
 				break;
 			default:
@@ -68,7 +63,7 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
                 // XTEC ************ MODIFICAT - Customization
                 // 2015.12.28 @aginard - Change by jmeler
 
-                $classes[] = 'large-3';
+                $classes[] = 'large-3 small-12 pull-9';
 
                 //************ ORIGINAL
                 /*
@@ -80,16 +75,6 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
                 break;
 		}
 			
-		// pull the content above left sidebar on small screens
-		if ( '3c-r' == $layout ) {
-			$classes[] = 'pull-6';
-		}
-		elseif ( '3c-c' == $layout && 1 == $sidebar_id ) {
-			$classes[] = 'pull-6';
-		}
-		elseif ( '2c-r' == $layout ) {
-			$classes[] = 'pull-8';
-		}
 
 	// else apply columns based on template layout or meta
 	} else {
@@ -105,36 +90,25 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 					$classes[] = 'large-12';
 				}
 				break;
-			case '3c-l':
-			case '3c-r':
-			case '3c-c':
-				// subtract 1 and offset by 1 if using tumblog icons
-				if ( $tumblog && is_home() ) {
-					$classes[] = 'large-5';
-					$classes[] = 'large-offset-1';
-				} else {
-					$classes[] = 'large-6';
-				}
-				break;
 			case 'side-menu':
 				if ( 'accordion' == reactor_option('side_nav_type', 'accordion') ) {
-					$classes[] = 'large-9';
+					$classes[] = 'large-9 small-12 push-3';
 				} elseif ( 'side_nav' == reactor_option('side_nav_type', 'accordion') ) {
-					$classes[] = 'large-10';
+					$classes[] = 'large-10 small-12  push-2';
 				}
 				break;
 			default:
 				/* 8 is the default number of columns for a page with 1 sidebar
 				subtract 1 and offset by 1 if using tumblog icons */
 				if ( $tumblog && is_home() ) {
-					$classes[] = 'large-7';
+					$classes[] = 'large-7 small-11  push-4';
 					$classes[] = 'large-offset-1';
 				} else {
 
                     // XTEC ************ MODIFICAT - Customization
                     // 2015.12.28 @aginard - Change by jmeler
 
-                    $classes[] = 'large-9';
+                    $classes[] = 'large-9 small-12 push-3';
 
                     //************ ORIGINAL
                     /*
@@ -143,19 +117,6 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
                     //************ FI
 
                 }
-				break;
-		}
-			
-		// push columns for left sidebars	
-		switch ( $layout ) {
-			case '3c-r':
-				$classes[] = 'push-6';
-				break;
-			case '3c-c':
-				$classes[] = 'push-3';
-				break;
-			case '2c-r':
-				$classes[] = 'push-4';
 				break;
 		}
 	}

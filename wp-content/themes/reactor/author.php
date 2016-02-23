@@ -16,35 +16,22 @@
     
         <div id="content" role="main">
         	<div class="row">
-                <div class="<?php reactor_columns(); ?>">
+                <div class="articles <?php reactor_columns(); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
                 
-				<?php if ( have_posts() ) : the_post(); ?>
-        
-                    <header class="archive-header">
-                        <h1 class="archive-title"><?php printf( __('Author: %s', 'reactor'), get_the_author() ); ?></h1>
-                    </header><!-- .archive-header -->
-        
-                    <?php rewind_posts(); ?>
-        
-                    <?php // If a user has filled out their description, show a bio on their entries.
-                    if ( get_the_author_meta('description') ) : ?>
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <?php echo get_avatar( get_the_author_meta('user_email'), apply_filters('reactor_author_bio_avatar_size', 60) ); ?>
-                        </div><!-- .author-avatar -->
-                        <div class="author-description">
-                            <h2><?php printf( __('About %s', 'reactor'), get_the_author() ); ?></h2>
-                            <p><?php the_author_meta('description'); ?></p>
-                        </div><!-- .author-description	-->
-                    </div><!-- .author-info -->
-                    <?php endif; ?>
+                <?php if ( have_posts() ) : ?>
+                       
+                        <?php reactor_loop_before(); ?>
 
-                <?php endif; // end have_posts() check ?> 
-                
-				<?php // get the loop
-				get_template_part('loops/loop', 'index'); ?>
+                         <?php get_template_part('loops/loop', 'taxonomy'); ?>
+
+                         <?php reactor_loop_after(); ?>
+
+                         <?php // if no posts are found
+                         else : reactor_loop_else(); ?>
+				
+			<?php endif; // end have_posts() check ?> 
                 
                 <?php reactor_inner_content_after(); ?>
                 
