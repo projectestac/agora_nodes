@@ -1425,10 +1425,6 @@ body.login .wp-social-login-widget {
         width: 100%;
     }
 
-    html .site-content.sub-page #side-menu {
-        margin-top: -70px;
-    }
-
     a.menu-responsive.dashicons.dashicons-menu {
         display: block;
         height: auto;
