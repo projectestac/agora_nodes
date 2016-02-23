@@ -23,9 +23,6 @@ class Reactor {
 		add_action('after_setup_theme', array( &$this, 'functions' ), 13);
 		add_action('after_setup_theme', array( &$this, 'content' ), 14);
 		
-		// Begin 3rd party support for WooCommerce
-        remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-    	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 	}
 	
 	function options() {	
