@@ -3,6 +3,13 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Reactor: Moved hard coded language strings to po file (Trello #963)
+- Reactor: Moved equalization of cards to a file previously loaded to increase speed (Trello #963)
+- Reactor: Merged files from primaria and serveis-education to the parent theme (Trello #963)
+
+
 Changes 16.02.22
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.7
