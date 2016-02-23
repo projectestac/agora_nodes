@@ -33,17 +33,14 @@
     */
 	var SideMenuWalker = {
 		init: function() {
-			var sections = $('div.section');
-			var content = sections.find('div.content');
-			sections.each(function(index, value){
+			$('div.section').each(function(){
 				var self = jQuery(this);
-				var content = self.find('div.content');
-				if (!content.length) {
+				if (!self.find('div.content').length) {
 					self.addClass("noChildren");
 				}
 			});
 		}
-    }
+    };
 	SideMenuWalker.init();
 
 	/**
@@ -52,13 +49,10 @@
 	$('.dropDown').on('click', function(e) {
 		e.preventDefault();
 		var section = $(this).parent().closest('div');
-
 		if (section.hasClass('section')){
-			section.removeClass("section");
-			section.addClass("customSection active");
+			section.removeClass("section").addClass("customSection active");
 		}else {
-			section.removeClass("customSection active");
-			section.addClass("section");
+			section.removeClass("customSection active").addClass("section");
 		}
 	});
 
@@ -68,8 +62,7 @@
 	$('.section a').on('click', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		var href = $(this);
-		window.location.href = href.attr('href');
+		window.location.href = $(this).attr('href');
 	});
 	//************ FI
 
@@ -83,7 +76,7 @@
   }); /* end $(document).ready */
 
 	/* Off Canvas - http://www.zurb.com/playground/off-canvas-layouts */
-	events = 'click.fndtn';
+	var events = 'click.fndtn';
 	var $selector = $('#mobileMenuButton');
 	if ($selector.length > 0) {
 		$('#mobileMenuButton').on(events, function(e) {
