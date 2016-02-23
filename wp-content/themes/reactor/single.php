@@ -17,13 +17,6 @@
         <div id="content" role="main">
         	<div class="row">
 
-                <?php // XTEC ************ AFEGIT - Customization
-                      // 2015.12.29 @aginard ?>
-
-                <?php get_sidebar(); ?>
-
-                <?php //************ FI ?>
-
                 <div class="<?php reactor_columns(); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
@@ -45,13 +38,8 @@
                 
                 </div><!-- .columns -->
 
-                <?php // XTEC ************ ELIMINAT - Customization
-                      // 2015.12.29 @aginard 
-                      /*
-                      <?php get_sidebar(); ?>
-                      */
-                     //************ FI ?>
-                
+                <?php get_sidebar(); ?>
+
             </div><!-- .row -->
         </div><!-- #content -->
         
