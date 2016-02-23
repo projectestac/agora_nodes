@@ -26,9 +26,9 @@
                 <?php reactor_inner_content_after(); ?>
                 
                 </div><!-- .columns -->
-                
+
                 <?php get_sidebar(); ?>
-                
+
             </div><!-- .row -->
         </div><!-- #content -->
         

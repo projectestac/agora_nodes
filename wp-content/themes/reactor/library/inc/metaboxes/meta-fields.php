@@ -16,13 +16,16 @@
 	if ( !is_array( $layouts[0] ) ) {
 		$layouts[0] = array();
 	}
-	if ( in_array( '1c', $layouts[0] ) ) {   $theme_layouts['1c']   = __('One Column', 'reactor'); }
-	if ( in_array( '2c-l', $layouts[0] ) ) { $theme_layouts['2c-l'] = __('Two Columns, Left', 'reactor'); }
-	if ( in_array( '2c-r', $layouts[0] ) ) { $theme_layouts['2c-r'] = __('Two Columns, Right', 'reactor'); }
+	//TODO: Nodes - No hardcoded translations 
+	//if ( in_array( '1c', $layouts[0] ) ) {   $theme_layouts['1c']   = __('One Column', 'reactor'); }
+	if ( in_array( '1c', $layouts[0] ) ) {   $theme_layouts['1c']   = __('Sense barres laterals', 'reactor'); }
+	//if ( in_array( '2c-l', $layouts[0] ) ) { $theme_layouts['2c-l'] = __('Two Columns, Left', 'reactor'); }
+	if ( in_array( '2c-l', $layouts[0] ) ) { $theme_layouts['2c-l'] = __('Barra esquerra (Ginys)', 'reactor'); }
+	/*if ( in_array( '2c-r', $layouts[0] ) ) { $theme_layouts['2c-r'] = __('Two Columns, Right', 'reactor'); }
 	if ( in_array( '3c-l', $layouts[0] ) ) { $theme_layouts['3c-l'] = __('Three Columns, Left', 'reactor'); }
 	if ( in_array( '3c-r', $layouts[0] ) ) { $theme_layouts['3c-r'] = __('Three Columns, Right', 'reactor'); }
 	if ( in_array( '3c-c', $layouts[0] ) ) { $theme_layouts['3c-c'] = __('Three Columns, Center', 'reactor'); }
-
+	*/
 /**
  * Variables above this line
  * --------------------------------------------
@@ -173,7 +176,9 @@
 		
 		$layout_fields = array(
 		 	array(
-				'label'	=> __('Select a template layout', 'reactor'),
+				//TODO: No hardcoded translations
+				//'label'	=> __('Select a template layout', 'reactor'),
+				'label'	=> __('Només aplica si la Plantilla és del tipus "Plantilla predeterminada"', 'reactor'),
 				'desc'	=> '',
 				'id'	=> '_template_layout',
 				'type'	=> 'radio',
@@ -197,5 +202,8 @@
  */
 //$sample_box = new Custom_Add_Meta_Box( '_sample_box', 'Sample Box', 'post', 'normal', 'high', $sample_fields );
 $slide_meta = new Reactor_Add_Meta_Box( 'slide_meta', __('Slide Link', 'reactor'), 'slide', 'normal', 'high', $slide_fields );
-$layout_meta = new Reactor_Add_Meta_Box( 'layout_meta', __('Layout', 'reactor'), array('post', 'page', 'portfolio'), 'side', 'default', $layout_fields );
+
+//TODO: No hardcoded translations
+//$layout_meta = new Reactor_Add_Meta_Box( 'layout_meta', __('Layout', 'reactor'), array('post', 'page', 'portfolio'), 'side', 'default', $layout_fields );
+$layout_meta = new Reactor_Add_Meta_Box( 'layout_meta', __('Esquema', 'reactor'), array('post', 'page', 'portfolio'), 'side', 'default', $layout_fields );
 

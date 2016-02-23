@@ -1247,6 +1247,15 @@ body.login .wp-social-login-widget{
 
 @media screen and (max-width: 767px) {
 
+    .small-12 {
+        clear:both;
+        float: none;
+    }
+
+    #wpadminbar {
+        padding-right: 5px;
+    }
+
     .box-grid {
         position: relative;
         width: 100%;
