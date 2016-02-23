@@ -26,7 +26,13 @@ if ( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERV
 
 	<?php if ( have_comments() ) : ?>
     <h4 class="comments-title">
-		<?php comments_number('<span>No</span> Comments', '<span>1</span> Comment', '<span>%</span> Comments');?> on &#8220;<?php the_title(); ?>&#8221;
+<!-- // XTEC ************ MODIFICAT - Added language support
+	 // 2015.05.12 @nacho
+ -->
+    <?php comments_number( __('NO Comments', 'reactor'), __('1 Comment', 'reactor'), __('% Comments', 'reactor') ); ?>
+<!-- //************ ORIGINAL -->
+    <!--<?php //comments_number('<span>No</span> Comments', '<span>1</span> Comment', '<span>%</span> Comments');?> on &#8220;<?php //the_title(); ?>&#8221;-->
+<!-- //************ FI -->
     </h4>
     <ol class="commentlist">
 		<?php wp_list_comments( array('callback' => 'reactor_comments', 'style' => 'ol') ); ?>
@@ -40,7 +46,7 @@ if ( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERV
 		<?php endif; ?>
     
 	<?php elseif ( !comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments') ) : ?>
-        <p class="nocomments"><?php _e('Comments are closed.', 'reactor'); ?></p>
+        <p class="nocomments"><?php _e('Comments are closed.'); ?></p>
     <?php endif; ?>
     
     <?php if ( comments_open() ) : ?>
@@ -55,12 +61,11 @@ if ( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERV
 		<div class="alert help">
 			<p><?php printf('You must be %1$slogged in%2$s to post a comment.', '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>'); ?></p>
 		</div>
-      
-      <?php else : 
-	       comment_form( array( 
-                'logged_in_as' => '<p class="comments-logged-in-as">' . __('Logged in as', 'reactor') . ' <a href="' . get_option('url') .'/wp-admin/profile.php">' . $user_identity . '</a>. <a href="' . wp_logout_url( get_permalink() ) . '" title="' . __('Log out of this account', 'reactor') . '">' . __('Log out', 'reactor') . '&raquo;</a></p>', 
-				
-                'fields' => array( 
+
+      <?php else :
+	       comment_form( array(
+				'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+                'fields' => array(
                     'author' => '<div class="row"><p class="comment-form-author six columns"><label for="author">' . __('Name ', 'reactor') . ( $req ? __('( required )', 'reactor') : '') . '</label> '.'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __('Your Name*', 'reactor') . '" tabindex="1" ' . ( $req ? __( "aria-required='true'" ) : '') . ' /></p>',
 				
 					'email' => '<p class="comment-form-email six columns"><label for="email">' . __('Email ', 'reactor') . ( $req ? __('( required )', 'reactor') : '') . '</label> '.'<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . __('Your E-Mail*', 'reactor') . '" tabindex="2" ' . ( $req ? __( "aria-required='true'" ) : '') . ' /></p>',
@@ -71,9 +76,9 @@ if ( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERV
 					'comment_field' => '<div class="row"><p class="comment-form-comment twelve columns"><textarea name="comment" id="comment" placeholder="' . __('Your Comment here...', 'reactor') . '" rows="8" tabindex="4"></textarea></p>',
 				
 					'comment_notes_after' => '<div class="alert info"><p id="allowed_tags" class="form-allowed-tags small twelve columns"><strong>XHTML: </strong>' . __('You can use these tags', 'reactor') . ' <code>' . allowed_tags() . '</code></p></div></div>',
-				
-					'label_submit' => __('Submit', 'reactor'),
-				
+
+					'label_submit' => __('Submit'),
+
 					'id_submit' => 'submit',
 				
 					'class_submit' => 'button'
