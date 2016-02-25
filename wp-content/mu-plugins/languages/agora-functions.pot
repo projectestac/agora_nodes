@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2015-04-23 09:53+0100\n"
-"PO-Revision-Date: 2015-04-23 10:10+0100\n"
-"Last-Translator: nacho <nacho@test.com>\n"
+"POT-Creation-Date: 2016-02-25 10:19+0100\n"
+"PO-Revision-Date: 2016-02-25 10:19+0100\n"
+"Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -12,32 +12,151 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
-"mu-plugins\n"
+"X-Poedit-SearchPath-0: /home/sarjona/workspace/git/agora/html/wordpress/wp-"
+"content/mu-plugins\n"
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:31
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:33
 msgid "My Articles"
 msgstr ""
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:54
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:57
 msgid "Published"
 msgstr ""
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:76
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:68
+#, fuzzy
+msgid "Pending Review"
+msgstr "En revisó"
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:79
 msgid "Drafts"
 msgstr ""
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:182
-msgid "Categories "
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:185
+msgid "Categories"
 msgstr ""
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:189
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:192
 msgid "Comments"
 msgstr ""
 
-#: /home/agora/workspace/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:202
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:204
 msgid "Article not found"
 msgstr ""
 
-#~ msgid "Pendind Revision"
-#~ msgstr "En revisó"
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:281
+msgid "You have exceeded your disk quota limit"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:312
+msgid "The page you were trying to delete is protected."
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:331
+msgid "The page name you were trying to create is protected."
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:332
+msgid "Page name is required."
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:412
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:364
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:428
+msgid "Articles by row"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:431
+msgid "Articles to be displayed per row on category page (between 1 and 4)"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:438
+msgid "Image"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:450
+msgid "Current header image"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:455
+msgid "Upload image"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:456
+msgid "Provide an image for the category"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:459
+msgid "Remove image"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:555
+msgid "Subscribers"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:556
+msgid "Compose"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:557
+msgid "Send Email"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:558
+msgid "Notification"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:559
+msgid "Cron Mail"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:560
+msgid "Settings"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:561
+msgid "Roles"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:562
+msgid "Sent Mails"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:563
+msgid "Help & Info"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:620
+msgid "Options"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:645
+msgid "Email subscribers"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+msgid "Image files must be smaller than "
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+msgid "Recommended width image:"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:268
+msgid "No item"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:272
+msgid ">"
+msgstr ""
+
+#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:546
+msgid ""
+"The description is not prominent by default; however, some themes may show "
+"it."
+msgstr ""
