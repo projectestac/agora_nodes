@@ -440,20 +440,23 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
         </th>
         <!-- Extra field to load an image into category -->
         <td>
-            <label for="upload_image">
+            <?php
+            $exists_current_cat_image = !empty($cat_meta['image']);
+            ?>
+            <input type="hidden" size="50" name="Cat_meta[image]" id="Cat_meta[image]" value="<?php echo esc_attr($cat_meta['image']); ?>" readonly>
+            <!-- Only display current image if defined -->
+            <div id="current_cat_image_layer" style="<?php echo $exists_current_cat_image?'display: block; visibility: visible;':'display: none; visibility: hidden;'; ?>">
+                <input type="image" id="current_cat_image" src="<?php echo $cat_meta['image'];?>" height=110 alt="actual image" border=0 >
+                <p class="description"><?php _e( 'Current header image', 'agora-functions' ); ?></p>
+            </div>
+            <br/>
+            <!-- Only display upload image button if there is no image -->
+            <label id="upload_cat_image_label" for="upload_image" style="<?php echo !$exists_current_cat_image?'display: block; visibility: visible;':'display: none; visibility: hidden;'; ?>" >
                 <input id="upload_image_button" class="button" type="button" value="<?php _e( 'Upload image', 'agora-functions' );?>" />
-                <input type="text" size="50" name="Cat_meta[image]" id="Cat_meta[image]" value="<?php echo esc_attr( $cat_meta['image'] ) ? esc_attr( $cat_meta['image'] ) : ''; ?>" readonly>
                 <p class="description"><?php _e( 'Provide an image for the category', 'agora-functions' ); ?></p>
             </label>
-            <br/>
-            <?php
-            if (!empty($cat_meta['image'])) {
-                ?>
-                <input type=image src="<?php echo $cat_meta['image'];?>" height=110 width=160 alt="actual image" border=0 >
-                <p class="description"><?php _e( 'Current header image', 'agora-functions' ); ?></p>
-                <?php
-            }
-            ?>
+            <!-- Only display remove image button if exists -->
+            <input id="remove_image_button" class="button" type="button" value="<?php _e( 'Remove image', 'agora-functions' );?>"  style="<?php echo $exists_current_cat_image?'display: block; visibility: visible;':'display: none; visibility: hidden;'; ?>" />
         </td>
 
         <!-- Open the WP gallery and insert the URL image into text button (term_meta)-->
@@ -484,10 +487,22 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 
                         // Save img URL into input Cat_meta[image] field
                         $("#Cat_meta\\[image\\]").val(attachment.url);
+                        $("#current_cat_image").attr('src', attachment.url);
+                        $("#current_cat_image_layer").attr('style', 'display:block; visibility:visible;');
+                        $("#upload_cat_image_label").attr('style', 'display:none; visibility:hidden;');
+                        $("#remove_image_button").attr('style', 'display:block; visibility:visible;');
                     });
 
                     //Open the uploader dialog
                     custom_uploader.open();
+                });
+
+                $('#remove_image_button').click(function(e) {
+                     $("#Cat_meta\\[image\\]").val('');
+                     $("#current_cat_image_layer").attr('style', 'display:none; visibility:hidden;');
+                     $("#remove_image_button").attr('style', 'display:none; visibility:hidden;');
+                     $("#upload_cat_image_label").attr('style', 'display:block; visibility:visible;');
+                     $("#current_cat_image").attr('src', '');
                 });
             });
         </script>
