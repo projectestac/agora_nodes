@@ -8,7 +8,7 @@ Changes in progress
 - Reactor: Moved hard coded language strings to po file (Trello #963)
 - Reactor: Moved equalization of cards to a file previously loaded to increase speed (Trello #963)
 - Reactor: Merged files from primaria and serveis-education to the parent theme (Trello #963)
-
+- mu-common: Improved add category image option to let remove it (Trello #1150)
 
 Changes 16.02.22
 ---------------------------------------------------------------------------------------
