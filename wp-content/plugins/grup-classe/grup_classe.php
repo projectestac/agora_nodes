@@ -53,7 +53,7 @@ function grup_classe_register_widgets(){
 class Grup_classe_Widget extends WP_Widget {
     
     // Constructor
-    function Grup_classe_Widget(){
+    function __construct(){
         $widget_ops =array (
             'classname' => 'grup_classe_widget_class',
             //Catalan, default language here. Gettext doesn't work in description :S
