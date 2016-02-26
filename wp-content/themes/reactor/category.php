@@ -38,21 +38,36 @@
                     <?php endif; ?>
 
                     <?php
-                        // TODO: get values from tag settings
-                        $cat_meta = get_option( "category_$categoria");
-                        if (!isset($cat_meta ['articles_fila']) ||
-                            $cat_meta ['articles_fila'] < 1 ||
-                            $cat_meta ['articles_fila'] > 4) {
-                            $posts_per_fila = 2;
-                        } else {
-                            $posts_per_fila=$cat_meta ['articles_fila'];
-                        }
+                    // Get the sticky posts on top
+                    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+                    $tempquery = $wp_query;
 
-                        $posts_per_fila1 = $posts_per_fila2 = $posts_per_filan = $posts_per_fila;
+                    $args = array(
+                       'post_type'      => 'post',
+                       'posts_per_page' => 10,
+                       'paged' => $paged
+                    );
 
-                        reactor_loop_before();
-                        get_template_part('loops/loop', 'taxonomy');
-                        reactor_loop_after();
+                    $wp_query = new WP_Query( $args );
+
+                    // TODO: get values from tag settings
+                    $cat_meta = get_option( "category_$categoria");
+                    if (!isset($cat_meta ['articles_fila']) ||
+                        $cat_meta ['articles_fila'] < 1 ||
+                        $cat_meta ['articles_fila'] > 4) {
+                        $posts_per_fila = 2;
+                    } else {
+                        $posts_per_fila=$cat_meta ['articles_fila'];
+                    }
+
+                    $posts_per_fila1 = $posts_per_fila2 = $posts_per_filan = $posts_per_fila;
+
+                    reactor_loop_before();
+                    get_template_part('loops/loop', 'taxonomy');
+                    reactor_loop_after();
+
+                    wp_reset_postdata();
+                    $wp_query = $tempquery;
                     ?>
 
                     <?php reactor_inner_content_after(); ?>
