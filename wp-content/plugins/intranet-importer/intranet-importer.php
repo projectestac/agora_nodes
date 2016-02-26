@@ -34,7 +34,7 @@ if (class_exists('WP_Importer')) {
 
 	class Intranet_Import extends WP_Importer {
 
-		function Intranet_Import() {
+		function __construct() {
 		}
 
 		// Called from intranet_importer_init
