@@ -48,4 +48,3 @@ function pending_submission_send_email( $new_status, $old_status, $post ) {
             }
 }
 
-?>
