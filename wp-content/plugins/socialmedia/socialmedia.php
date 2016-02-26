@@ -42,7 +42,7 @@ class SocialMedia_Widget extends WP_Widget {
         );
 
     // Constructor
-    public function SocialMedia_Widget() {
+    public function __construct() {
         parent::__construct(
             'socialmedia_widget', 
             'Enllaços social media', 
@@ -102,9 +102,9 @@ class SocialMedia_Widget extends WP_Widget {
     
     // Front-End Display of the Widget
     public function widget($args, $instance) {
-        extract( $args );
+        extract( $args ); // TODO: delete that shit
         echo $before_widget;
-       
+
         $title = $instance['title'];
         $mida =  $instance['mida'];
        
