@@ -10,7 +10,7 @@ Changes in progress
 - Reactor: Merged files from primaria and serveis-education to the parent theme (Trello #963)
 - mu-common: Improved add category image option to let remove it (Trello #1150)
 - xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
-
+- bp-moderation: Fixed bug with incorrect viewing link from inappropriate admin comments page (Trello #1160)
 
 Changes 16.02.22
 ---------------------------------------------------------------------------------------
