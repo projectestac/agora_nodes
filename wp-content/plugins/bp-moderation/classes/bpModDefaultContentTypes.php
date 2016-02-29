@@ -201,7 +201,14 @@ class bpModDefaultContentTypes
 			return false;
 		}
 
+// XTEC ************ MODIFICAT - Fixed bug with incorrect viewing link from inappropriate admin comments page
+// 2016.02.29 @sarjona
+		$url = bp_core_get_root_domain() . '/' .  bp_get_activity_root_slug() . '/p/' . $id . '/';
+//************ ORIGINAL
+/*
 		$url = bp_core_get_root_domain() . '/' . BP_ACTIVITY_SLUG . '/p/' . $id . '/';
+*/
+//************ FI
 
 		return array('author' => $act->user_id, 'url' => $url, 'date' => $act->date_recorded);
 	}
