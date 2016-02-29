@@ -9,6 +9,8 @@ Changes in progress
 - Reactor: Moved equalization of cards to a file previously loaded to increase speed (Trello #963)
 - Reactor: Merged files from primaria and serveis-education to the parent theme (Trello #963)
 - mu-common: Improved add category image option to let remove it (Trello #1150)
+- xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
+
 
 Changes 16.02.22
 ---------------------------------------------------------------------------------------
