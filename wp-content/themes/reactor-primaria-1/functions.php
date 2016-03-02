@@ -60,17 +60,12 @@ function reactor_child_theme_setup() {
         array('1c','2c-l', '2c-r', '3c-c')
     );
 
-    /* Support for custom post types */
-    remove_theme_support('reactor-post-types');
-
     /* Support for page templates */
     add_theme_support(
         'reactor-page-templates',
         array('front-page'/*, 'news-page', 'portfolio', 'contact'*/)
     );
 
-    /* Remove support for background options in customizer */
-    remove_theme_support('reactor-backgrounds');
     add_theme_support('reactor-tumblog-icons');
 }
 

@@ -6,7 +6,7 @@
  * must be used in the loop
  * gets the post format and outputs the appropriate icon
  * can be hidden within customizer
- * uses Foundation Icon Fonts 
+ * uses Foundation Icon Fonts
  *
  * @package Reactor
  * @author Anthony Wilhelm (@awshout / anthonywilhelm.com)
@@ -25,27 +25,27 @@ if (!function_exists('reactor_tumblog_icon')) {
 
         switch ($icon_type) {
             case 'carrusel' :
-                $icon .= '<i class="fi-camera"></i>';
+                $icon .= '<i class="fa fa-camera"></i>';
                 $title = "Inclou fotografies";
                 break;
             case 'video' :
-                $icon .= '<i class="fi-play-video"></i>';
+                $icon .= '<i class="fa fa-film"></i>';
                 $title = "Inclou vídeo";
                 break;
             case 'alerta' :
-                $icon .= '<i class="fi-alert"></i>';
+                $icon .= '<i class="fa fa-exclamation-triangle"></i>';
                 $title = "Avís Important";
                 break;
             case 'musica' :
-                $icon .= '<i class="fi-music"></i>';
+                $icon .= '<i class="fa fa-music"></i>';
                 $title = "Inclou música";
                 break;
             case 'podcast' :
-                $icon .= '<i class="fi-microphone"></i>';
+                $icon .= '<i class="fa fa-microphonee"></i>';
                 $title = "Inclou podcast";
                 break;
             case 'document' :
-                $icon .= '<i class="fi-page"></i>';
+                $icon .= '<i class="fa fa-file-o"></i>';
                 $title = "Inclou documents";
                 break;
             default:

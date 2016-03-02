@@ -18,12 +18,12 @@ function reactor_theme_setup() {
 
 	/**
 	 * Reactor features
-	 */	
+	 */
 	add_theme_support(
 		'reactor-menus',
 		array('top-bar-l', 'top-bar-r', 'main-menu', 'side-menu', 'footer-links')
 	);
-	
+
 	add_theme_support(
 		'reactor-sidebars',
 		array('primary', 'secondary', 'front-primary', 'front-secondary', 'footer')
@@ -33,58 +33,54 @@ function reactor_theme_setup() {
 			'reactor-layouts',
 			array('1c','2c-l', '2c-r', '3c-c')
 	);
-	
+
 	add_theme_support(
 		'reactor-page-templates',
 		array('front-page', 'news-page', 'portfolio', 'contact')
 	);
-	
-	add_theme_support('reactor-fonts');
 
 	add_theme_support('reactor-breadcrumbs');
-	
+
 	add_theme_support('reactor-page-links');
-	
+
 	add_theme_support('reactor-post-meta');
-	
-	add_theme_support('reactor-shortcodes');
-	
+
 	add_theme_support('reactor-custom-login');
-	
+
 	add_theme_support('reactor-taxonomy-subnav');
-	
+
 	add_theme_support('reactor-tumblog-icons');
-	
+
 	add_theme_support('reactor-translation');
-	
+
 	/**
 	 * WordPress features
-	 */	
+	 */
 	add_theme_support('menus');
-	
+
 	// different post formats for tumblog style posting
 	add_theme_support(
 		'post-formats',
 		array('aside', 'gallery','link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
 	);
-	
+
 	add_theme_support('post-thumbnails');
 	// thumbnail sizes - you can add more
 	add_image_size('thumb-300', 300, 250, true);
 	add_image_size('thumb-200', 200, 150, true);
-	
+
 	// these are not needed
 	// add_theme_support('custom-background');
 	// add_theme_support('custom-header');
-	
+
 	// RSS feed links to header.php for posts and comments.
 	add_theme_support('automatic-feed-links');
-	
+
 	// editor stylesheet for TinyMCE
 	add_editor_style('/library/css/editor.css');
-	
+
 	if ( !isset( $content_width ) ) $content_width = 1000;
-	
+
 }
 
 /**************************************************************
