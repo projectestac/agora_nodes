@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Reactor Columns
  * a function to set grid columns based on selected layout
@@ -31,25 +31,28 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 		return;
 	}
 
-	
+
 	// get the template layout from meta
 	$default = reactor_option('page_layout', '2c-l');
 	$layout = reactor_option('', $default, '_template_layout');
-	
+
 	if ( is_page_template('page-templates/side-menu.php') ) {
 		$layout = 'side-menu';
 	}
-	
+
 	// check if tumblog icons are used in blog
 	$tumblog = reactor_option('tumblog_icons', false);
-		
+
 	// else check if columns are for a sidebar
 	if ( true == $sidebar ) {
 
 		// sidebar columns based on layout
 		switch ( $layout ) {
-			case '1c': 
+			case '1c':
 				$classes[] = '';
+				break;
+			case '3c-c':
+				$classes[] = 'large-3  small-12';
 				break;
 			case 'side-menu':
 				if ( 'accordion' == reactor_option('side_nav_type', 'accordion') ) {
@@ -71,15 +74,22 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
                 $classes[] = 'large-4';
                 */
                 //************ FI
-                
+
                 break;
 		}
-			
+
+		// pull the content above left sidebar on small screens
+		if ( '3c-c' == $layout && 1 == $sidebar_id ) {
+			$classes[] = 'pull-6 small-12';
+		}
+		elseif ( '2c-r' == $layout ) {
+			$classes[] = 'pull-8 small-12';
+		}
 
 	// else apply columns based on template layout or meta
 	} else {
 
-		// number of columns for main content based on layout		
+		// number of columns for main content based on layout
 		switch ( $layout ) {
 			case '1c':
 				// subtract 1 and offset by 1 if using tumblog icons
@@ -88,6 +98,15 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
 					$classes[] = 'large-offset-1';
 				} else {
 					$classes[] = 'large-12';
+				}
+				break;
+			case '3c-c':
+				// subtract 1 and offset by 1 if using tumblog icons
+				if ( $tumblog && is_home() ) {
+					$classes[] = 'large-5 small-12';
+					$classes[] = 'large-offset-1 small-12';
+				} else {
+					$classes[] = 'large-6';
 				}
 				break;
 			case 'side-menu':
@@ -119,17 +138,24 @@ function reactor_columns( $columns = '', $echo = true, $sidebar = false, $sideba
                 }
 				break;
 		}
+
+		// push columns for left sidebars
+ 		switch ( $layout ) {
+ 			case '3c-c':
+ 				$classes[] = 'push-3';
+ 				break;
+ 		}
 	}
-	
+
 	//always add the columns class
 	$classes[] = 'columns';
-	
+
 	// remove empty values
 	$classes = array_filter( $classes );
-		
+
 	// add spaces
 	$columns = implode( ' ', array_map( 'esc_attr', $classes ) );
-	
+
 	// echo classes unless echo false
 	if ( false == $echo ) {
 		return apply_filters('reactor_content_cols', $columns);
