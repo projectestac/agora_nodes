@@ -14,5 +14,5 @@
   </div>
 </div><!-- #sidebar-frontpage -->
 <?php reactor_sidebar_after(); ?>
-    
-    
+
+
