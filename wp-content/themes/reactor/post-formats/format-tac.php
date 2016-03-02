@@ -9,29 +9,29 @@
  global $layout;
  global $card_bgcolor;
  global $amplada;
- 
+
  switch ($layout) {
-    case 1: $amplada="large-12";            
+    case 1: $amplada="large-12";
             break;
-    case 66:$amplada="large-8";		
+    case 66:$amplada="large-8";
             break;
-    case 2: $amplada="large-6";		
+    case 2: $amplada="large-6";
             break;
-    case 33:$amplada="large-4";		
+    case 33:$amplada="large-4";
             break;
-    case 3: $amplada="large-4";		
+    case 3: $amplada="large-4";
             break;
-    case 4: $amplada="large-3";		
+    case 4: $amplada="large-3";
             break;
-    default:	
-            $amplada="large-6";		 
+    default:
+            $amplada="large-6";
  }
 ?>
-  		
+
 <?php if ($amplada!="large-12") { ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
             <div class="entry-body">
-                
+
                 <header class="entry-header">
                     <?php echo reactor_tumblog_icon(); ?>
                     <?php reactor_post_header(); ?>
@@ -44,7 +44,7 @@
                 </footer>
              </div><!-- .entry-body -->
  	 </article><!-- #post -->
-   <?php } else {   
+   <?php } else {
             // Targeta ocupa tota l'amplada
             $ample="large-12";
             if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on" ){
@@ -55,7 +55,7 @@
                  $ample="large-8";
                 }
             }
-         ?> 
+         ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
               <div class="row entry-body">
               <div class="<?php echo $ample;?> columns">
@@ -68,17 +68,17 @@
                     <?php ($bloc_html)? the_content() : the_excerpt(); ?>
                     </div>
               </div>
-              
+
               <?php if (!$bloc_html && has_post_thumbnail() ) { ?>
-                        <div class="large-3 columns">   
+                        <div class="large-3 columns">
                             <?php reactor_do_standard_thumbnail(); ?>
-                        </div> 
+                        </div>
                     <?php } ?>
-                <div>    
+                <div>
                     <footer style="padding:0.8em" class="entry-footer">
                         <?php  reactor_post_footer();?>
                     </footer>
-                </div>   
+                </div>
               </div><!-- .entry-body -->
            </article><!-- #post -->
 <?php } ?>
