@@ -31,7 +31,7 @@ function reactor_theme_setup() {
 
 	add_theme_support(
 			'reactor-layouts',
-			array('1c','2c-l')
+			array('1c','2c-l', '2c-r', '3c-c')
 	);
 	
 	add_theme_support(
