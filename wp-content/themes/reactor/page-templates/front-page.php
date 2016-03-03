@@ -60,35 +60,36 @@ get_header();
                 'page_id'             => reactor_option('frontpage_page'));
 
             $wp_frontpage = new WP_Query( $args );
-            $wp_frontpage ->the_post();
+            $wp_frontpage->the_post();
 
-            if (strlen(trim(get_the_content()))){
+            if (strlen(trim(get_the_content()))) {
                 get_template_part('post-formats/format', 'page');
             }
             wp_reset_postdata();
             $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
             //Es necessari utilitzar $wp_query per tenir paginació
-            $temp=$wp_query;
-            $wp_query=null;
+            $temp = $wp_query;
+
             //Articles. No es pot establir la categoria directament perquè perdem els stickys
             $args = array(
                 'post_type'           => 'post',
                 'posts_per_page'      => $number_posts,
                 'paged'               => $paged );
             $wp_query = new WP_Query( $args );
+
             //action: filter_by_categoria
             $posts_per_filan = reactor_option('frontpage_posts_per_fila_n', 2);
-            if ($paged==1){
+            if ($paged == 1){
                 $posts_per_fila1 = reactor_option('frontpage_posts_per_fila_1', 2);
                 $posts_per_fila2 = reactor_option('frontpage_posts_per_fila_2', 2);
             } else{
-                $posts_per_fila1=$posts_per_fila2=$posts_per_filan;
+                $posts_per_fila1 = $posts_per_fila2 = $posts_per_filan;
             }
             reactor_loop_before();
             get_template_part('loops/loop', 'taxonomy');
             reactor_loop_after();
             wp_reset_postdata();
-            $wp_query=$temp;
+            $wp_query = $temp;
             reactor_inner_content_after();
         ?>
         </div><!-- .columns --><!--Contingut central -->
