@@ -16,10 +16,6 @@ ul.sub-menu > li:before {
 
 /* Header */
 
-.box-description {
-    width: 12.5%;
-}
-
 .box-title .box-content a,
 .box-description .box-content {
     padding: 0.8em;
@@ -30,7 +26,6 @@ ul.sub-menu > li:before {
 }
 
 .box-image {
-    width: 58.35%;
     background: white;
 }
 
@@ -41,7 +36,7 @@ ul.sub-menu > li:before {
     color: white !important;
 }
 
-.box-content-grid{
+.box-content-grid {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,24 +45,25 @@ ul.sub-menu > li:before {
     color: white;
 }
 
-.box-content-grid div {
-    display: table;
-    width: 33.333333333%;
-    height: 50.5%;
-    float: left;
+.box-content-grid.icon-box .topicons {
+    height: 50%;
+    border: 0;
 }
 
-.box-content-grid a:before {
-    font-size: 2.5vw;
-}
-
-.box-content-grid a {
-    display: table-cell;
+.box-content-grid.icon-box .topicons button {
+    height: 100%;
+    width: 100%;
+    border: 0;
     text-align: center;
-    vertical-align: middle;
     font-size: 1vw;
     text-transform: lowercase;
     color: white !important;
+    margin: 0;
+    box-shadow: none;
+}
+
+.box-content-grid .topicons button:before {
+    font-size: 2.5vw;
 }
 
 .box-content-slider {
@@ -81,8 +77,11 @@ ul.sub-menu > li:before {
 
 .text_icon {
     display: block;
-    padding: 0 0.3em;
+    padding: 0.3em 0;
     line-height: 0.8em;
+    left: 0;
+    position: absolute;
+    right: 0;
 }
 
 #icon-22 {
@@ -217,28 +216,22 @@ body.login {
         line-height: 36px;
     }
 
-    .box-content-grid div {
-        display: table;
-        width: 33.333333333%;
-        height: 33.33%;
-        float: left;
-    }
-
-    .box-content-grid div.topicons {
-        display: table !important;
-    }
-
-    .box-content-grid a:before {
+    .box-content-grid button:before {
         font-size: 2.5em !important;
     }
 
-    .box-content-grid a {
-        display: table-cell;
+    .box-content-grid.icon-box .topicons {
+        height: 33.33%;
+    }
+    .box-content-grid button {
+        height: 100%;
+        width: 100%;
+        border: 0;
         text-align: center;
-        vertical-align: middle;
         font-size: 1em !important;
         text-transform: lowercase;
         color: white !important;
+        margin: 0;
     }
 
     #wp-admin-bar-recursosXTEC,
@@ -252,7 +245,7 @@ body.login {
     }
 
     .text_icon {
-        display:none;
+        font-size: 1em !important;
     }
 }
 
@@ -276,10 +269,10 @@ body.login {
         font-size: 30px !important;
     }
 
-    .box-content-grid a:before{
+    .box-content-grid button:before{
         font-size: 2em !important;
     }
-    .box-content-grid a,.box-content-grid span {
+    .box-content-grid button,.box-content-grid span {
         font-size: 1em !important;
     }
 }
