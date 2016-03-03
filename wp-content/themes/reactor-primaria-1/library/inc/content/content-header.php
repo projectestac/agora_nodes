@@ -54,9 +54,9 @@ function show_header_icon($options, $icon_number) {
     $font_size = get_icon_font_size( $options['title_icon'.$icon_number]);
     $title = $options['title_icon'.$icon_number];
     $icon = $options['icon'.$icon_number];
-    echo '<div id="icon-'.$icon_number.'">';
-    echo '<a title="'.$title.'" href="'.$link.'" class="dashicons dashicons-'.$icon.'" '.$target.'>';
-    echo '<span style="font-size: ' . $font_size . ';" class="text_icon">'.$title.'</span></a></div>';
+    echo '<div class="topicons small-4 large-4 columns">';
+    echo '<button id="icon-'.$icon_number.'" title="'.$title.'" onclick="window.location.href=\''.$link.'\'" class="dashicons dashicons-'.$icon.'" '.$target.'>';
+    echo '<span style="font-size: ' . $font_size . ';" class="text_icon">'.$title.'</span></button></div>';
 }
 
 /**
@@ -88,45 +88,32 @@ function reactor_do_title_logo()
     ?>
 
     <!-- Caixa amb el nom del centre -->
-    <div class='box-title hide-for-small'>
-        <div class='box-content'>
-            <div>
-                <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
-                   href="<?php echo home_url();?>">
-                    <?php echo nl2br(get_option('nodesbox_name')); ?>
-                </a>
+    <div class="hide-for-small large-3 columns">
+        <div class="row">
+            <div class="box-title large-6 columns">
+                <div class="box-content">
+                    <div>
+                        <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
+                           href="<?php echo home_url();?>">
+                            <?php echo nl2br(get_option('nodesbox_name')); ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Caixa amb la descripció del centre -->
+            <div class="box-description large-6 columns">
+                <div class="box-content">
+                    <div>
+                    <span style="font-size:<?php echo $description_font_size;?>">
+                    <?php echo nl2br($description_text); ?>
+                    </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Logo i nom per mobils -->
-    <div class='box-titlemobile show-for-small'>
-        <div class="box-titlemobile-inner row">
-            <div class="box-titlemobile-logo">
-                <img src="<?php echo reactor_option('logo_image'); ?>">
-            </div>
-            <div class="box-titlemobile-schoolName">
-                <a href="<?php echo home_url();?>">
-                    <span><?php echo esc_attr(get_bloginfo('name', 'display')); ?></span>
-                </a><br>
-                <?php $addr = explode(" ",reactor_option("cpCentre"),2);?>
-                <span id="schoolCity"><?php echo $addr[1];?></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Caixa amb la descripció del centre -->
-    <div class='box-description hide-for-small'>
-        <div class='box-content'>
-            <div>
-            <span style="font-size:<?php echo $description_font_size;?>">
-            <?php echo nl2br($description_text); ?>
-            </span>
-            </div>
-        </div>
-    </div>
-
-    <div class='box-image hide-for-small'>
+    <div class="box-image hide-for-small large-7 columns">
         <!-- Imatge/Carrusel -->
         <?php
         /**
@@ -141,7 +128,7 @@ function reactor_do_title_logo()
         if (is_category()){
             $image = get_category_image();
             if (!empty($image)){ ?>
-                <div class='box-content'>
+                <div class="box-content">
                     <div class='CoverImage FlexEmbed FlexEmbed--3by1'
                          style="background-image:url(<?php echo $image;?>)">
                     </div>
@@ -177,31 +164,55 @@ function reactor_do_title_logo()
         }?>
     </div>
 
+    <!-- Logo i nom per mobils -->
+    <div class="small-12 columns box-titlemobile show-for-small">
+        <div class="box-titlemobile-inner row">
+            <div class="box-titlemobile-logo">
+                <img src="<?php echo reactor_option('logo_image'); ?>">
+            </div>
+            <div class="box-titlemobile-schoolName">
+                <a href="<?php echo home_url();?>">
+                    <span><?php echo esc_attr(get_bloginfo('name', 'display')); ?></span>
+                </a><br>
+                <?php $addr = explode(" ", reactor_option("cpCentre"), 2);?>
+                <span id="schoolCity"><?php echo $addr[1];?></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <!-- Graella d'icones -->
-    <div id="box-grid" class='box-grid'>
-        <div class='box-content-grid'>
-            <div id="icon-email" class="topicons show-for-small">
-                <a href="mailto:<?php echo reactor_option('emailCentre'); ?>" class="dashicons dashicons-email"></a>
+    <div id="box-grid" class="box-grid large-2 small-12 columns">
+        <div class="box-content-grid row icon-box">
+            <div class="topicons large-4 small-4 columns show-for-small">
+                <button id="icon-email" onclick="window.location.href='mailto:<?php echo reactor_option('emailCentre'); ?>'" class="dashicons dashicons-email">
                 <span class="text_icon">Correu</span>
+                </button>
             </div>
-            <div id="icon-maps" class="topicons show-for-small">
-                <a title="Mapa" href="<?php echo reactor_option('googleMaps'); ?>" class="dashicons dashicons-location-alt"></a>
+            <div class="topicons large-4 small-4 columns show-for-small">
+                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>'" class="dashicons dashicons-location-alt">
                 <span class="text_icon">Mapa</span>
+                </button>
             </div>
-            <div id="icon-phone" class="topicons show-for-small">
-                <a title="Trucar" href="tel:<?php echo reactor_option('telCentre'); ?>" class="dashicons dashicons-phone"></a>
+            <div class="topicons large-4 small-4 columns show-for-small">
+                <button id="icon-phone" title="Trucar" onclick="window.location.href='tel:<?php echo reactor_option('telCentre'); ?>'" class="dashicons dashicons-phone">
                 <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>
+                </button>
+
             </div>
             <?php
             show_header_icon($options, 11);
             show_header_icon($options, 12);
             ?>
-            <div id="icon-13">
-                <a class="dashicons dashicons-search" title="CERCA" href="javascript:void(0);" onclick='cerca_toggle();'>
+            <div class="topicons small-4 large-4 columns">
+                <button id="icon-13" class="dashicons dashicons-search" title="CERCA" onclick="cerca_toggle();">
                     <span class="text_icon">cerca</span>
-                </a>
+                </button>
             </div>
-            <div id="search-panel">
+            <div id="search-panel" class="small-12 large-12 columns">
                 <form role="search" method="get" class="search-form" action="<?php echo get_home_url();?>">
                     <input type="search" class="search-field" placeholder="Cerca i pulsa enter…" value="" name="s" title="Cerca:">
                     <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
@@ -211,17 +222,15 @@ function reactor_do_title_logo()
             show_header_icon($options, 21);
             show_header_icon($options, 22);
             ?>
-            <div id="icon-23">
-                <a class="dashicons dashicons-menu"
+            <div class="topicons small-4 large-4 columns">
+                <button id="icon-23" class="dashicons dashicons-menu"
                    title="MENU"
-                   href="javascript:void(0);"
-                   onclick='menu_toggle();'>
+                   onclick="menu_toggle();">
                    <span class="text_icon">menú</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>
-    <div style="clear:both"></div>
 
 <?php }
 
