@@ -7,34 +7,30 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-// Wordpress Classes needed by importer
-require_once ABSPATH . 'wp-admin/includes/import.php';
-
 if (!class_exists('WP_Importer')) {
 	$class_wp_importer = ABSPATH . 'wp-admin/includes/class-wp-importer.php';
 	if (file_exists($class_wp_importer))
 		require_once $class_wp_importer;
 }
 
-if (!class_exists('WP_Error')) {
-	$class_wp_error = ABSPATH . 'wp-includes/class-wp-error.php';
-	if (file_exists($class_wp_error))
-		require_once $class_wp_error;
-}
-
-require_once dirname( __FILE__ ) . '/lib/import.php';
-
-// Added css style
-wp_enqueue_style( 'intranet-css', plugin_dir_url( __FILE__ ) . 'css/intranet.css', array( 'editor-buttons' ), '4.0' );
-
-// Added language support
-load_plugin_textdomain('intranet-importer', false, basename(dirname(__FILE__)) . '/language');
-
 if (class_exists('WP_Importer')) {
 
 	class Intranet_Import extends WP_Importer {
 
 		function __construct() {
+			if (!class_exists('WP_Error')) {
+				$class_wp_error = ABSPATH . 'wp-includes/class-wp-error.php';
+				if (file_exists($class_wp_error))
+					require_once $class_wp_error;
+			}
+
+			// Wordpress Classes needed by importer
+			require_once ABSPATH . 'wp-admin/includes/import.php';
+			require_once dirname( __FILE__ ) . '/lib/import.php';
+			// Added css style
+			wp_enqueue_style( 'intranet-css', plugin_dir_url( __FILE__ ) . 'css/intranet.css', array( 'editor-buttons' ), '4.0' );
+			// Added language support
+			load_plugin_textdomain('intranet-importer', false, basename(dirname(__FILE__)) . '/language');
 		}
 
 		// Called from intranet_importer_init
@@ -107,7 +103,7 @@ if (class_exists('WP_Importer')) {
 					}
 
 					echo '<br/>';
-                    
+
 					echo '<div>';
 					echo __('Select the privacity:', 'intranet-importer')."<br/>";
 					echo '<select id="privacity" name="privacity">
@@ -116,7 +112,7 @@ if (class_exists('WP_Importer')) {
 							<option value=\'private\'>' . __('Private', 'intranet-importer') . '</option>
 						 </select>';
 					echo '</div>';
-                    
+
 					echo '<div class="info-text">';
 
 					$info_url  = get_site_url().'/docs';
