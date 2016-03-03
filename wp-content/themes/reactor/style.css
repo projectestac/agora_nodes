@@ -434,12 +434,13 @@ li#wp-admin-bar-bp-login {
 
 /* Header */
 
-.box-title {
-    position: relative;
-    width: 12.5%;
-    overflow: hidden;
-    float: left;
+#header .columns{
+    padding :0;
     margin: 0;
+}
+
+.box-title, .box-description, .box-image, .box-grid {
+    overflow: hidden;
 }
 
 .box-title:before {
@@ -450,12 +451,6 @@ li#wp-admin-bar-bp-login {
 
 .box-title a:hover {
     text-decoration: none;
-}
-
-.box-description {
-    position: relative;
-    overflow: hidden;
-    float: left;
 }
 
 .box-description:before {
@@ -471,8 +466,6 @@ li#wp-admin-bar-bp-login {
 }
 
 .box-grid {
-    position: relative;
-    overflow: hidden;
     background: whitesmoke;
 }
 
@@ -493,12 +486,6 @@ li#wp-admin-bar-bp-login {
     padding-top: 21.45%;
 }
 
-.box-image {
-    position: relative;
-    overflow: hidden;
-    float: left;
-}
-
 .box-content {
     position: absolute;
     top: 0;
@@ -514,8 +501,12 @@ li#wp-admin-bar-bp-login {
     height: 100%;
 }
 
-#search-panel {
+#header div.row > div.columns .box-content-grid #search-panel {
+    display: none;
+    background-color: #fdd300;
+    width: 100%;
     padding: 0.5em;
+    height: 3em;
 }
 
 #box-grid div[id^='icon']:hover {
@@ -525,16 +516,6 @@ li#wp-admin-bar-bp-login {
 .slideshow_description, .slideshow_title {
     padding: 10px !important;
     line-height: 1.2em;
-}
-
-#search-panel {
-    display: none;
-    background-color: #fdd300;
-    width: 100%;
-}
-
-#search-panel {
-    height: 3em;
 }
 
 .text_icon {
@@ -1304,10 +1285,6 @@ body.login .wp-social-login-widget {
     #wpadminbar .quicklinks > ul > li > a {
         height: 36px;
         line-height: 36px;
-    }
-
-    .box-content-grid div.topicons {
-        display: table !important;
     }
 
     #wp-admin-bar-recursosXTEC,
