@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Side Menu
+ * Template Name: Barra esquerra (Subpàgines)
  *
  * @package Reactor
  * @subpackge Page-Templates
@@ -10,7 +10,7 @@
 
 <?php get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content sub-page">
     
     	<?php reactor_content_before(); ?>
     
