@@ -6,30 +6,13 @@
  * @subpackage Post-Formats
  * @since 1.0.0
  */
- global $layout;
- global $card_bgcolor;
- global $amplada;
 
- switch ($layout) {
-    case 1: $amplada="large-12";
-            break;
-    case 66:$amplada="large-8";
-            break;
-    case 2: $amplada="large-6";
-            break;
-    case 33:$amplada="large-4";
-            break;
-    case 3: $amplada="large-4";
-            break;
-    case 4: $amplada="large-3";
-            break;
-    default:
-            $amplada="large-6";
- }
+global $column_amplada;
+global $card_bgcolor;
 ?>
 
-<?php if ($amplada!="large-12") { ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
+<?php if ($column_amplada < 12) { ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class("large-$column_amplada small-12 columns $card_bgcolor"); ?>>
             <div class="entry-body">
 
                 <header class="entry-header">
@@ -46,17 +29,17 @@
  	 </article><!-- #post -->
    <?php } else {
             // Targeta ocupa tota l'amplada
-            $ample="large-12";
-            if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on" ){
-                $bloc_html=true;
-            }else {
-                $bloc_html=false;
-                if (has_post_thumbnail()){
-                 $ample="large-8";
+            $ample = "large-12";
+            if (get_post_meta( get_the_ID(), '_bloc_html', true ) == "on" ) {
+                $bloc_html = true;
+            } else {
+                $bloc_html = false;
+                if (has_post_thumbnail()) {
+                  $ample = "large-8";
                 }
             }
          ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class("$amplada columns $card_bgcolor"); ?>>
+          <article id="post-<?php the_ID(); ?>" <?php post_class("large-12 small-12 columns $card_bgcolor"); ?>>
               <div class="row entry-body">
               <div class="<?php echo $ample;?> columns">
                    <header class="entry-header fullwidth">
@@ -81,4 +64,4 @@
                 </div>
               </div><!-- .entry-body -->
            </article><!-- #post -->
-<?php } ?>
+<?php }
