@@ -11,6 +11,13 @@ Changes in progress
 - mu-common: Improved add category image option to let remove it (Trello #1150)
 - xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
 - bp-moderation: Fixed bug with incorrect viewing link from inappropriate admin comments page (Trello #1160)
+- Themes: Revert changes made to avoid 3 columns (Trello #1173)
+- Themes: Merged css files (Trello #1173)
+- Themes: Deleted unused functions and fonts (Trello #1173)
+- Intraweb Importer: Optimize intranet importer loading (Trello #1173)
+- Themes: Merge side-menu template (Trello #1173)
+- Themes: Create a grid to display a header properly (Trello #1173)
+
 
 Changes 16.02.22
 ---------------------------------------------------------------------------------------
