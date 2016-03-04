@@ -70,7 +70,7 @@ class graellaIcones {
 
                     <?php
                     // $dashicons1 =array (icones...), dashicons2, dashicons3
-                    include "dashicons.php";
+                    include get_theme_root() . '/reactor/custom-tac/capcalera/dashicons.php';
                     ?>
 
                     <?php
