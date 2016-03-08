@@ -367,6 +367,7 @@ body.login {
 .noChildren .dashicons {
     display: none;
 }
-/**
- *End @nacho
-*/
+
+#box-grid button:hover {
+    background-color: #fdd300;
+}
