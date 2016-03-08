@@ -63,7 +63,6 @@ function reactor_do_title_logo()
 {
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
-    $options = get_option('my_option_name');
     ?>
     <div class="row">
         <!-- Logo i nom per mobils -->
