@@ -43,20 +43,22 @@ add_action('wp_head', 'reactor_do_reactor_head', 1);
  * @param $icon_number number of the icon to be used
  */
 function show_header_icon($options, $icon_number) {
-    $url = parse_url($options['link_icon'.$icon_number]);
-    if ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http') ){
-        $link = $options['link_icon'.$icon_number];
+    $url = parse_url($options['link_icon' . $icon_number]);
+    if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
+        $link = $options['link_icon' . $icon_number];
         $target = set_target($link);
-    }else {
-        $link = get_home_url()."/".$options['link_icon'.$icon_number];
-        $target = "";
+    } else {
+        $link = get_home_url() . '/' . $options['link_icon' . $icon_number];
+        $target = '_self';
     }
-    $font_size = get_icon_font_size( $options['title_icon'.$icon_number]);
-    $title = $options['title_icon'.$icon_number];
-    $icon = $options['icon'.$icon_number];
+
+    $font_size = get_icon_font_size($options['title_icon' . $icon_number]);
+    $title = $options['title_icon' . $icon_number];
+    $icon = $options['icon' . $icon_number];
+
     echo '<div class="topicons small-4 large-4 columns">';
-    echo '<button id="icon-'.$icon_number.'" title="'.$title.'" onclick="window.location.href=\''.$link.'\'" class="dashicons dashicons-'.$icon.'" '.$target.'>';
-    echo '<span style="font-size: ' . $font_size . ';" class="text_icon">'.$title.'</span></button></div>';
+    echo '<button id="icon-' . $icon_number . '" title="' . $title . '" onclick="window.open(\'' . $link . '\', \'' . $target . '\')" class="dashicons dashicons-' . $icon . '" ' . $target . '>';
+    echo '<span style="font-size: ' . $font_size . ';" class="text_icon">' . $title . '</span></button></div>';
 }
 
 /**
@@ -179,10 +181,6 @@ function reactor_do_title_logo()
             </div>
         </div>
     </div>
-
-
-
-
 
     <!-- Graella d'icones -->
     <div id="box-grid" class="box-grid large-2 small-12 columns">
