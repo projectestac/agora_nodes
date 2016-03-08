@@ -625,9 +625,10 @@ function set_target($link) {
 	$siteURL = str_replace('https://', '://', $siteURL);
 
 	if (!strpos($link, $siteURL)) {
-		return 'target="_blank"';
-	}
-	return "";
+		return '_blank';
+	} else {
+		return '_self';
+    }
 }
 
 /**
