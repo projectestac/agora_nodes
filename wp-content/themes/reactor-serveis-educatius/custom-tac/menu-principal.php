@@ -83,21 +83,33 @@ function menu_principal() {
     echo '</div>';
 }
 
+/**
+ * Mostra la graella d'icones (5 icones horitzontals al costat del menú)
+ */
 function menu_etiquetes() {
     $options = get_option('my_option_name');
-    ?>
-        <!-- Graella d'icones -->
-        <div class='box-content-grid'>
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-                <div id="icon-<?php echo $i; ?>">
-                    <a title="<?php echo $options['title_icon' . $i]; ?>"
-                       href="<?php echo $options['link_icon' . $i]; ?>"
-                       class="dashicons dashicons-<?php echo $options['icon' . $i]; ?>"
-                <?php echo set_target($options['link_icon' . $i]); ?>>
-                        <span style="font-size:0.8em !important;" class="text_icon"><?php echo $options['title_icon' . $i]; ?> </span>
-                    </a>
-                </div>
-        <?php endfor; ?>
-        </div>
-    <?php
+
+    echo '<div class="box-content-grid">';
+    for ($i = 1; $i <= 5; $i++) {
+        $title = $options['title_icon' . $i];
+        $class = 'dashicons dashicons-' . $options['icon' . $i];
+        $title_icon = $options['title_icon' . $i];
+
+        $url = parse_url($options['link_icon' . $i]);
+
+        if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
+            $link = $options['link_icon' . $i];
+            $target = set_target($link);
+        } else {
+            $link = get_home_url() . '/' . $options['link_icon' . $i];
+            $target = '_self';
+        }
+
+        echo '<div id="icon-' . $i . '">';
+        echo '<a title="' . $title . '" href="' . $link . '" target="' . $target . '" class="' . $class . '">';
+        echo '<span style="font-size:0.8em !important;" class="text_icon">' . $title_icon . '</span>';
+        echo '</a>';
+        echo '</div>';
+    }
+    echo '</div>';
 }
