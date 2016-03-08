@@ -40,6 +40,10 @@ ul.sub-menu > li:before {
     margin-top: -1em;
 }
 
+.box-content-grid div[id^='icon']:hover {
+    background-color: #fdd300 !important;
+}
+
 .box-image {
     /*width: 58.35%;*/
     width: 100%;
