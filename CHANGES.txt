@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 16.03.14
 ---------------------------------------------------------------------------------------
 - Reactor: Moved hard coded language strings to po file (Trello #963)
 - Reactor: Moved equalization of cards to a file previously loaded to increase speed (Trello #963)
@@ -17,6 +17,7 @@ Changes in progress
 - Intraweb Importer: Optimize intranet importer loading (Trello #1173)
 - Themes: Merge side-menu template (Trello #1173)
 - Themes: Create a grid to display a header properly (Trello #1173)
+- GCE: Fixed warning for non-superadmin users
 
 
 Changes 16.02.22
