@@ -371,3 +371,11 @@ body.login {
 #box-grid button:hover {
     background-color: #fdd300;
 }
+
+.box-content-grid.icon-box .topicons button {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+.text_icon {
+  padding: 0;
+}
