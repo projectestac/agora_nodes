@@ -22,7 +22,7 @@ function get_columns($frontpage_layout) {
         return 9;
     }
     if ($frontpage_layout == '3c-c') {
-        return 6;
+        return 7;
     }
     return 12;
 }
