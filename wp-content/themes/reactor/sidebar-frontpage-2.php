@@ -8,7 +8,7 @@
  */
 ?>
 <?php reactor_sidebar_before(); ?>
-<div id="sidebar-frontpage-2" class="sidebar <?php reactor_columns( 3 ); ?>" role="complementary">
+<div id="sidebar-frontpage-2" class="sidebar <?php reactor_columns( 2 ); ?>" role="complementary">
     <div id="sidebar-frontpage-inner">
         <?php dynamic_sidebar('sidebar-frontpage-2'); ?>
     </div>
