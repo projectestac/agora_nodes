@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Reactor: Fixed bug with right column size (#Trello 1185)
 - Reactor: Fixed bug with menu icons with 2-lines text (#Trello #1184)
+- Reactor: Fixed bug when resizing cards (Trello #1187)
 
 
 Changes 16.03.14

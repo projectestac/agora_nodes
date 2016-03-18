@@ -142,7 +142,7 @@
     if (!wp_is_mobile()){ ?>
 
     <script type="text/javascript">
-        equalize_cards();
+        addFunction_onload(equalize_cards);
     </script>
     
 <?php } ?>
