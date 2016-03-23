@@ -3,6 +3,12 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Theme reactor-serveis-educatius: Fixed menu options set to _blank not opening in new window (Trello #1175)
+
+
+
 Changes 16.03.30
 ---------------------------------------------------------------------------------------
 - Reactor: Fixed bug with right column size (Trello #1185)
