@@ -99,7 +99,13 @@
                     href = self.attr("href");
 
                 if(href) {
-                    window.location.href = href;
+                    // Check the value of the target because is configurable in wp-admin/nav-menus.php
+                    target = self.attr("target");
+                    if (target !== '_blank') {
+                        // The value can be undefined, so force a safe default value
+                        target = '_self';
+                    }
+                    window.open(href, target);
                 }
 
                 return false;
