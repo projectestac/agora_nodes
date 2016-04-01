@@ -9,6 +9,7 @@
 
 global $column_amplada;
 global $card_bgcolor;
+$ample = 'large-3';
 ?>
 
 <?php if ($column_amplada < 12) { ?>
@@ -29,14 +30,11 @@ global $card_bgcolor;
  	 </article><!-- #post -->
    <?php } else {
             // Targeta ocupa tota l'amplada
-            $ample = "large-12";
+            $ample = 'large-12';
             if (get_post_meta( get_the_ID(), '_bloc_html', true ) == "on" ) {
                 $bloc_html = true;
             } else {
                 $bloc_html = false;
-                if (has_post_thumbnail()) {
-                  $ample = "large-8";
-                }
             }
          ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class("large-12 small-12 columns $card_bgcolor"); ?>>
@@ -47,16 +45,16 @@ global $card_bgcolor;
                        <?php reactor_do_standard_header_titles(); ?>
                        <?php reactor_do_meta_autor_date(); ?>
                    </header>
+                   <?php if (!$bloc_html && has_post_thumbnail() ) { ?>
+                        <div class="<?php echo $ample;?> columns">
+                            <?php reactor_do_standard_thumbnail(); ?>
+                        </div>
+                    <?php } ?>
                     <div class="entry-summary">
                     <?php ($bloc_html)? the_content() : the_excerpt(); ?>
                     </div>
               </div>
 
-              <?php if (!$bloc_html && has_post_thumbnail() ) { ?>
-                        <div class="large-3 columns">
-                            <?php reactor_do_standard_thumbnail(); ?>
-                        </div>
-                    <?php } ?>
                 <div>
                     <footer style="padding:0.8em" class="entry-footer">
                         <?php  reactor_post_footer();?>
