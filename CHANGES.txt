@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
 
 
 
