@@ -18,8 +18,11 @@ function has_right_bar($frontpage_layout) {
 }
 
 function get_columns($frontpage_layout) {
-    if ($frontpage_layout == '2c-l' || $frontpage_layout == '2c-r') {
+    if ($frontpage_layout == '2c-l') {
         return 9;
+    }
+    if ($frontpage_layout == '2c-r') {
+        return 10;
     }
     if ($frontpage_layout == '3c-c') {
         return 7;
