@@ -53,6 +53,9 @@ define('DISALLOW_FILE_MODS', true);
 // Completely disable all types of automatic updates, core or otherwise
 define('AUTOMATIC_UPDATER_DISABLED', true);
 
+// Disable asynchronous default cron
+define('DISABLE_WP_CRON', 'true');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
