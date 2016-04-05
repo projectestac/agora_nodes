@@ -756,3 +756,23 @@ function ml_post_media_buttons($editor_id) {
 add_action('media_buttons', 'ml_pre_media_buttons', 1);
 add_action('media_buttons', 'ml_post_media_buttons', 20);
 
+/**
+ * In WSL, when a new user is created through Google Provider, the user_login gets
+ * the form NAME_SURNAME1_SURNAME2, which is not compatible with plugin xtec-ldap-login.
+ * This filter changes user_login and, indirectly, user_nicename to be the XTEC 
+ * username. The change is done only when the e-mail domain is xtec.cat.
+ * 
+ * @param Array $userdata
+ * @author Toni Ginard
+ * @return Array $userdata with user_login changed if domain is xtec.cat
+ */
+function fix_wsl_google_username($userdata) {
+    // If domain is @xtec.cat, change the username to make it compatible with XTEC LDAP
+    if (strpos($userdata['user_email'], '@xtec.cat')) {
+        $userdata['user_login'] = substr($userdata['user_email'], 0, -strlen('@xtec.cat'));
+    }
+
+    return $userdata;
+}
+
+add_filter('wsl_hook_process_login_alter_wp_insert_user_data', 'fix_wsl_google_username');
