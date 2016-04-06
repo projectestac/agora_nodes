@@ -8,6 +8,8 @@ Changes in progress
 - Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
 - Reactor: Fixed bug with icon in last card (Trello #1187)
 - Disable asynchronous default cron because there's an hourly system cron (Trello #1112)
+- xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
+
 
 
 Changes 16.03.30
