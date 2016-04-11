@@ -759,3 +759,18 @@ function ml_post_media_buttons($editor_id) {
 add_action('media_buttons', 'ml_pre_media_buttons', 1);
 add_action('media_buttons', 'ml_post_media_buttons', 20);
 
+
+
+/**
+ * Replace template if current page is frontpage
+ * @param  string $template Path to the current template
+ * @return string Template's path
+ * @author Sara Arjona
+ */
+function change_template_for_frontpage($template) {
+    if (get_the_ID() == get_option('page_on_front') && strrpos($template, 'front-page') === false) {
+        $template = get_template_directory().'/page-templates/front-page.php';
+    }
+    return $template;
+}
+add_filter('page_template', 'change_template_for_frontpage');
