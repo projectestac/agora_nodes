@@ -293,13 +293,16 @@ add_action('remove_stats', 'remove_old_stats');
 
 /**
  *  Avoid delete this pages: Activitat, Membres, Nodes and Initial Page
- * @param unknown $post_ID
+ * @param int $post_id Post ID.
  */
 function restrict_post_deletion($post_ID){
-
 	$pagesList = array("Membres", "Pàgines d'inici", "Activitat", "Nodes");
 	$restricted_pages = array();
 
+    if (get_option('page_on_front')) {
+        // Avoid delete page_on_front because frontpage is not shown if it doesnt exist
+        array_push($restricted_pages, get_option('page_on_front'));
+    }
 	if (!is_xtec_super_admin()) {
 		foreach ($pagesList as $pageTitle){
 			$page = get_page_by_title($pageTitle);
