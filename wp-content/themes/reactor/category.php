@@ -45,6 +45,12 @@
                        'posts_per_page' => 10,
                        'paged' => $paged
                     );
+                    if (get_query_var('category__and')){
+                        $args['category__and'] = get_query_var('category__and');
+                    }
+                    if (get_query_var('category__in')){
+                        $args['category__in'] = get_query_var('category__in');
+                    }
 
                     $wp_query = new WP_Query( $args );
 
