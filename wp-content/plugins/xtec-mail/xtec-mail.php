@@ -256,8 +256,22 @@ if (!function_exists('wp_mail')) {
 
 
     function wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
-
     	$sender = get_mailsender();
+
+        // Get if there is reply-to in headers to change default one (is used, for instance, for email-subscriber)
+        if (!empty($headers)) {
+            $headers_arr = explode("\n", $headers);
+            $replyto = '';
+            foreach ($headers_arr as $header) {
+                if (strrpos($header, 'Reply-To: ') !== FALSE) {
+                    $replyto = substr(substr($header,0, -1), strrpos($header, "<")+1);
+                    break;
+                }
+            }
+            if (!empty($replyto)){
+                $sender->set_replyAddress($replyto);
+            }
+        }
 
         if (!$sender) {
             return false;
