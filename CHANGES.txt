@@ -13,6 +13,7 @@ Changes in progress
 - mu-common: Avoid delete page_on_front because frontpage is not shown if it doesnt exist (Trello #1178)
 - mu-common: Replace template if front-page page is not using correct one (Trello #1178)
 - xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
+- xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
 
 
 Changes 16.03.30
