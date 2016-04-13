@@ -41,17 +41,51 @@ function xtec_mail_network_admin_menu() {
  */
 function xtec_mail_options() {
 
+    // Check for WordPress multisite
+    $page = (is_multisite()) ? 'ms-mail' : 'mail';
+
     // If it's MultiSite (XTECBlocs) is not necessary that is_xtecadmin() exists because first condition fails
     if (!is_multisite() && !is_xtecadmin()) {
+        if (isset($_GET['action'])) {
+            switch ($_GET['action']) {
+                case 'siteoptions':
+                    if (isset($_POST['xtec_mail_replyto'])) {
+                        update_site_option('xtec_mail_replyto', $_POST['xtec_mail_replyto']);
+                    }
+                    ?>
+                        <div id="message" class="updated">
+                            <p><?php _e('Options saved.', 'xtec-mail') ?></p>
+                        </div>
+                    <?php
+                    break;
+            }
+        }
+
+
         ?>
-        <div class="wrap">
-            <h2><?php _e('XTEC Mail', 'xtec-mail'); ?></h2>
+    <div class="wrap">
+        <form method="post" action="?page=<?php echo $page; ?>&action=siteoptions">
+            <h2><?php _e('XTEC Mail', 'xtec-mail') ?></h2>
             <div id="message" class="updated">
                 <p>
                     <?php _e('XTEC Mail is active', 'xtec-mail'); ?>
                 </p>
             </div>
-        </div>
+            <table class="form-table">
+                <tbody>
+                    <tr valign="top">
+                        <th scope="row"><?php _e('replyto', 'xtec-mail') ?></th>
+                        <td>
+                            <input type="text" name="xtec_mail_replyto" value="<?php echo get_site_option('xtec_mail_replyto') ?>" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="submit">
+                <input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save', 'xtec-mail') ?>">
+            </p>
+        </form>
+    </div>
         <?php
         return ;
     }
@@ -86,9 +120,6 @@ function xtec_mail_options() {
                 break;
         }
     }
-
-    // Check for WordPress multisite
-    $page = (is_multisite()) ? 'ms-mail' : 'mail';
     ?>
 
     <div class="wrap">
