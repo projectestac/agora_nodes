@@ -53,3 +53,6 @@
 [submodule "wp-content/plugins/buddypress-docs"]
 	path = wp-content/plugins/buddypress-docs
 	url = https://github.com/projectestac/wordpress-buddypress-docs.git
+[submodule "wp-content/plugins/buddypress-activity-plus"]
+	path = wp-content/plugins/buddypress-activity-plus
+	url = https://github.com/projectestac/wordpress-buddypress-activity-plus.git
