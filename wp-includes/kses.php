@@ -167,6 +167,15 @@ if ( ! CUSTOM_TAGS ) {
 		'dl' => array(),
 		'dt' => array(),
 		'em' => array(),
+// XTEC ************ AFEGIT -
+		'embed' => array(
+			'height' => true,
+			'src' => true,
+			'style' => true,
+			'type' => true,
+			'width' => true,
+		),
+//************ FI
 		'fieldset' => array(),
 		'figure' => array(
 			'align' => true,
@@ -252,6 +261,23 @@ if ( ! CUSTOM_TAGS ) {
 			'style' => true,
 //************ FI
 		),
+// XTEC ************ AFEGIT -
+		'iframe' => array(
+			'align' => true,
+			'frameborder' => true,
+			'height' => true,
+			'longdesc' => true,
+			'marginheight' => true,
+			'marginwidth' => true,
+			'name' => true,
+			'sandbox' => true,
+			'style' => true,
+			'scrolling' => true,
+			'src' => true,
+			'srcdoc' => true,
+			'width' => true,
+		),
+//************ FI
 		'ins' => array(
 			'datetime' => true,
 			'cite' => true,
