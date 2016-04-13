@@ -168,14 +168,23 @@ if ( ! CUSTOM_TAGS ) {
 			'style' => true,
 //************ FI
 		),
-		'dl'         => array(),
-		'dt'         => array(),
-		'em'         => array(),
-		'fieldset'   => array(),
-		'figure'     => array(
-			'align'    => true,
-			'dir'      => true,
-			'lang'     => true,
+		'dl' => array(),
+		'dt' => array(),
+		'em' => array(),
+// XTEC ************ AFEGIT -
+		'embed' => array(
+			'height' => true,
+			'src' => true,
+			'style' => true,
+			'type' => true,
+			'width' => true,
+		),
+//************ FI
+		'fieldset' => array(),
+		'figure' => array(
+			'align' => true,
+			'dir' => true,
+			'lang' => true,
 			'xml:lang' => true,
 		),
 		'figcaption' => array(
@@ -246,8 +255,25 @@ if ( ! CUSTOM_TAGS ) {
 // XTEC ************ AFEGIT -
 			'style' => true,
 //************ FI
-        ),
-		'ins'        => array(
+		),
+// XTEC ************ AFEGIT -
+		'iframe' => array(
+			'align' => true,
+			'frameborder' => true,
+			'height' => true,
+			'longdesc' => true,
+			'marginheight' => true,
+			'marginwidth' => true,
+			'name' => true,
+			'sandbox' => true,
+			'style' => true,
+			'scrolling' => true,
+			'src' => true,
+			'srcdoc' => true,
+			'width' => true,
+		),
+//************ FI
+		'ins' => array(
 			'datetime' => true,
 			'cite'     => true,
 		),
