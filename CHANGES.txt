@@ -14,6 +14,7 @@ Changes in progress
 - mu-common: Replace template if front-page page is not using correct one (Trello #1178)
 - xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
 - xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
+- enllacos-educatius: Changed xtec.cat to xtec.gencat.cat (Trello #1207)
 
 
 Changes 16.03.30
