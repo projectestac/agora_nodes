@@ -233,7 +233,6 @@ function tweak_admin_bar() {
 	global $wp_admin_bar;
 
 	$wp_admin_bar->remove_menu('wp-admin-wordpress-social-login');
-
 }
 
 add_action('wp_before_admin_bar_render', 'tweak_admin_bar');
@@ -248,7 +247,7 @@ function bp_options_page() {
 	?>
 	<div class="wrap">
 
-		<div style="width:150px; padding:20px; float:left;">
+		<div style="width:180px; height:250px; padding:20px; float:left;">
 			<h3 style="height:40px;"><?php _e('BuddyPress', 'buddypress'); ?></h3>
 			<p><a href="admin.php?page=bp-components"><?php _e('Components', 'buddypress'); ?></a></p>
 			<p><a href="admin.php?page=bp-activity"><?php _e('Activity', 'buddypress'); ?></a></p>
@@ -258,7 +257,7 @@ function bp_options_page() {
 			<p><a href="admin.php?page=ass_admin_options"><?php _e('Group Email Options', 'bp-ass'); ?></a></p>
 		</div>
 
-		<div style="width:150px; padding:20px; float:left;">
+		<div style="width:160px; height:250px; padding:20px; float:left;">
 			<h3 style="height:40px;"><?php _e('BuddyPress Docs', 'bp-docs'); ?></h3>
 			<p><a href="edit.php?post_type=bp_doc"><?php _e('BuddyPress Docs', 'bp-docs'); ?></a></p>
 			<p><a href="post-new.php?post_type=bp_doc"><?php _ex( 'Add New', 'add new', 'bp-docs' ) ?></a></p>
@@ -267,16 +266,16 @@ function bp_options_page() {
 			<p><a href="edit.php?post_type=bp_doc&page=bp-docs-settings"><?php _e('Settings', 'bp-docs'); ?></a></p>
 		</div>
 
-		<div style="width:150px; padding:20px; float:left;">
-			<h3 style="height:40px;"><?php _e('BuddyPress Invitations', 'bp-invite-anyone'); ?></h3>
-			<p><a href="admin.php?page=invite-anyone"><?php _e('Invite Anyone', 'bp-invite-anyone'); ?></a></p>
-			<p><a href="edit.php?post_type=ia_invites"><?php _e('BuddyPress Invitations', 'bp-invite-anyone'); ?></a></p>
-			<p><a href="post-new.php?post_type=ia_invites"><?php _e('Add New', 'bp-invite-anyone'); ?></a></p>
-			<p><a href="edit-tags.php?taxonomy=ia_invitees&post_type=ia_invites"><?php _e('Invitee', 'bp-invite-anyone'); ?></a></p>
-			<p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Group', 'bp-invite-anyone'); ?></a></p>
+		<div style="width:160px; height:250px; padding:20px; float:left;">
+			<h3 style="height:40px;"><?php _e('BuddyPress Invitations', 'invite-anyone'); ?></h3>
+			<p><a href="admin.php?page=invite-anyone"><?php _e('Invite Anyone', 'invite-anyone'); ?></a></p>
+			<p><a href="edit.php?post_type=ia_invites"><?php _e('Manage Invitations', 'invite-anyone'); ?></a></p>
+			<p><a href="post-new.php?post_type=ia_invites"><?php _e('Add New Invitation', 'invite-anyone'); ?></a></p>
+			<p><a href="edit-tags.php?taxonomy=ia_invitees&post_type=ia_invites"><?php _e('Invitees', 'invite-anyone'); ?></a></p>
+			<p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Groups', 'invite-anyone'); ?></a></p>
 		</div>
 
-		<div style="width:150px; padding:20px; float:left;">
+		<div style="width:160px; height:250px; padding:20px; float:left;">
 			<h3 style="height:40px;"><?php _e('BP Moderation', 'bp-moderation'); ?></h3>
 			<p><a href="admin.php?page=bp-moderation&view=contents"><?php _e('Contents', 'bp-moderation'); ?></a></p>
 			<p><a href="admin.php?page=bp-moderation&view=users"><?php _e('Users', 'bp-moderation'); ?></a></p>
@@ -309,7 +308,6 @@ function rebuild_bp_menus_step_1() {
 	add_submenu_page('xtec-bp-options', __('BuddyPress Like', 'buddypress-like'), __('BuddyPress Like', 'buddypress-like'), 'manage_options' , 'bp-like-settings' , 'bp_like_admin_page');
 	add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
 	add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
-
 }
 
 /**
@@ -340,21 +338,21 @@ function rebuild_bp_menus_step_2() {
 function bbpress_options_page() {
 	?>
 	<div class="wrap">
-		<div style="width:150px; padding:20px; float:left;">
-			<h3><?php _e('Forums', 'bbpress'); ?></h3>
+		<div style="width:150px; height:160px; padding:20px; float:left;">
+			<h3 style="height:30px;"><?php _e('Forums', 'bbpress'); ?></h3>
 			<p><a href="edit.php?post_type=forum"><?php _e('All Forums', 'bbpress'); ?></a></p>
 			<p><a href="post-new.php?post_type=forum"><?php _e('New Forum', 'bbpress'); ?></a></p>
 		</div>
 
-		<div style="width:150px; padding:20px; float:left;">
-			<h3><?php _e('Topics', 'bbpress'); ?></h3>
+		<div style="width:150px; height:160px; padding:20px; float:left;">
+			<h3 style="height:30px;"><?php _e('Topics', 'bbpress'); ?></h3>
 			<p><a href="edit.php?post_type=topic"><?php _e('All Topics', 'bbpress'); ?></a></p>
 			<p><a href="post-new.php?post_type=topic"><?php _e('New Topic', 'bbpress'); ?></a></p>
 			<p><a href="edit-tags.php?taxonomy=topic-tag&post_type=topic"><?php _e('Topic Tags', 'bbpress'); ?></a></p>
 		</div>
 
-		<div style="width:150px; padding:20px; float:left;">
-			<h3><?php _e('Replies', 'bbpress'); ?></h3>
+		<div style="width:150px; height:160px; padding:20px; float:left;">
+			<h3 style="height:30px;"><?php _e('Replies', 'bbpress'); ?></h3>
 			<p><a href="edit.php?post_type=reply"><?php _e('All Replies', 'bbpress'); ?></a></p>
 			<p><a href="post-new.php?post_type=reply"><?php _e('New Reply', 'bbpress'); ?></a></p>
 		</div>
@@ -380,20 +378,20 @@ function rebuild_bbpress_menus() {
  */
 function remove_admin_menus() {
 
-	if (!is_xtecadmin()) {
-		// Forum
-		remove_submenu_page('options-general.php', 'bbpress');
+    if (!is_xtecadmin()) {
+        // Forum
+        remove_submenu_page('options-general.php', 'bbpress');
 
-		// BuddyPress
-		remove_submenu_page('options-general.php', 'bp-page-settings'); // Tab in BuddyPress
-		remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
+        // BuddyPress
+        remove_submenu_page('options-general.php', 'bp-page-settings'); // Tab in BuddyPress
+        remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
 
-		// Private BP Pages
-		remove_submenu_page('options-general.php', 'bphelp-pbp-settings'); // In this case, it doesn't block access
+        // Private BP Pages
+        remove_submenu_page('options-general.php', 'bphelp-pbp-settings'); // In this case, it doesn't block access
 
-		// Settings | Writing
-		remove_submenu_page('options-general.php', 'options-writing.php'); // In this case, it doesn't block access
-	}
+        // Settings | Writing
+        remove_submenu_page('options-general.php', 'options-writing.php'); // In this case, it doesn't block access
+    }
 }
 
 /**
@@ -419,34 +417,11 @@ add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
 /**
- * Avoid delete this pages: Activitat(5), Membres(6), Nodes(sec 16,pri 141)
- *
- * @author Xavi Meler & Toni Ginard
- */
-
-// XTEC ************ ELIMINAT - moved and extended function at agora-functions.php file
-// 2015.07.31 @nacho
-/*
-
-/*add_action('wp_trash_post', 'restrict_post_deletion', 10, 1);
-
-function restrict_post_deletion($post_ID){
-
-    $restricted_pages = array(5,6,16,141);
-    if(get_post_type( $post_ID )=="page" && in_array($post_ID, $restricted_pages)){
-        echo "Aquesta p&agrave;gina forma part de l'estructura de NODES. No es pot esborrar.";
-        exit;
-    }
-}*/
-//************ FI
-
-/**
  * Remove Page Templates
  *
  * @author Xavi Meler
  * Thanks Alex Angas
  */
-
 function remove_page_templates( $templates ) {
 	unset( $templates['page-templates/contact.php'] );
 	unset( $templates['page-templates/portfolio.php'] );
@@ -497,7 +472,6 @@ add_shortcode('menu', 'menu_function');
  * @author Xavi Meler
  *
  */
-
 function get_description_text (){
 	switch (true){
 		case is_category():
@@ -527,7 +501,6 @@ function get_description_text (){
  * @author Xavi Meler
  *
  */
-
 function get_description_font_size($description){
 
 	$description_len = strlen($description);
@@ -568,7 +541,6 @@ function get_icon_font_size($icon_text){
  *
  * @author Xavi Meler
  */
-
 add_action('reactor_footer_after', 'footer_mediaprint');
 
 function footer_mediaprint(){
@@ -582,7 +554,6 @@ function footer_mediaprint(){
  *
  * @author Xavi Meler
  */
-
 add_filter("pre_option_show_on_front","show_on_front_page");
 function show_on_front_page($value) {
 	return "page";
@@ -592,22 +563,6 @@ add_filter("pre_option_page_on_front","set_page_on_front");
 function set_page_on_front($value) {
 	return reactor_option("frontpage_page");
 }
-
-/**
- * Canvia la galeta perquè no sigui secura (wordpress_ enlloc de wordpress_sec) per no haver de validar dues vegades en accedir al Tauler
- *
- * @author Sara Arjona
- *
- */
-// @aginard: Code commented because it breaks access to wp-admin in WordPress 4.0.1. Looks like
-//            it is no longer necessary. Possibly it can be removed.
-/*
-add_filter('secure_auth_cookie', 'wpadmin_secure_cookie_filter');
-
-function wpadmin_secure_cookie_filter( ) {
-return false;
-}
-*/
 
 /**
  * If external address, open link on new window
@@ -637,7 +592,6 @@ function set_target($link) {
  *
  * @author Xavi Meler
  */
-
 add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
 
 function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
@@ -654,7 +608,6 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
  * I has valorated getimagesize, but is disabled for security reasons.
  * @author Xavier Meler
  */
-
 //Logo image from customizer
 function show_logo () {
 	echo "<div id='login_logo'><img src=" . reactor_option('logo_image') . ">"
