@@ -16,7 +16,8 @@ Changes in progress
 - xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
 - enllacos-educatius: Changed xtec.cat to xtec.gencat.cat (Trello #1207)
 - Added embed and iframe support in kses
-- buddypress-activity-plus:: Updated from version 1.6.2 to 1.6.4 (Trello #1039)
+- buddypress-activity-plus: Updated from version 1.6.2 to 1.6.4 (Trello #1039)
+- buddypress + invite-anyone: Reviewed catalan translation (Trello #1209)
 
 
 Changes 16.03.30
