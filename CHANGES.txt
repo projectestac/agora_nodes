@@ -18,6 +18,7 @@ Changes in progress
 - Added embed and iframe support in kses
 - buddypress-activity-plus: Updated from version 1.6.2 to 1.6.4 (Trello #1039)
 - buddypress + invite-anyone: Reviewed catalan translation (Trello #1209)
+- Hidden options in Settings menu (Trello #1219)
 
 
 Changes 16.03.30
