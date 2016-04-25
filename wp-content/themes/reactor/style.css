@@ -1318,3 +1318,7 @@ body.login .wp-social-login-widget {
         font-size: 30px !important;
     }
 }
+
+div.dir-search {
+   margin: 0!important;
+}
