@@ -7,9 +7,9 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
 - Reactor: Fixed bug with icon in last card (Trello #1187)
-- Disable asynchronous default cron because there's an hourly system cron (Trello #1112)
+- Reactor: Fixed bug getting multiple categories posts from URL (Trello #1142)
+- Disabled asynchronous default cron because there's an hourly system cron (Trello #1112)
 - xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
-- reactor: Fixed bug getting multiple categories posts from URL (Trello #1142)
 - mu-common: Avoid delete page_on_front because frontpage is not shown if it doesnt exist (Trello #1178)
 - mu-common: Replace template if front-page page is not using correct one (Trello #1178)
 - xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
@@ -19,6 +19,7 @@ Changes in progress
 - buddypress-activity-plus: Updated from version 1.6.2 to 1.6.4 (Trello #1039)
 - buddypress + invite-anyone: Reviewed catalan translation (Trello #1209)
 - Hidden options in Settings menu (Trello #1219)
+- WSL: Upgraded to version 2.3.0 (Trello #1035)
 
 
 Changes 16.03.30
