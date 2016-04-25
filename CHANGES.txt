@@ -20,6 +20,7 @@ Changes in progress
 - buddypress + invite-anyone: Reviewed catalan translation (Trello #1209)
 - Hidden options in Settings menu (Trello #1219)
 - WSL: Upgraded to version 2.3.0 (Trello #1035)
+- Fixed bug with searching members or groups box (Trello #1216)
 
 
 Changes 16.03.30
