@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Grup-classe Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-24 13:35+0100\n"
-"PO-Revision-Date: 2015-06-03 18:29+0100\n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"PO-Revision-Date: 2016-04-28 13:51+0100\n"
+"Last-Translator: Xavier Meler <jmeler@xtec.cat>\n"
 "Language-Team: Xavier Meler <jmeler@xtec.cat>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -57,6 +57,12 @@ msgstr "Adreça electrònica del tutor/a:"
 msgid "Timetable for attending to families:"
 msgstr "Horari d'atenció a les famílies:"
 
+msgid "Subscription"
+msgstr "Subscripció de correu"
+
+msgid "We will notice you"
+msgstr "T'avisarem quan hi hagin notícies noves a "
+
 msgid "Links (associated menu)"
 msgstr "Enllaços (menú associat)"
 
@@ -67,6 +73,9 @@ msgid "Mon. 00:00-00:00"
 msgstr "dl. 00:00-00:00"
 
 # Description
-msgid "Includes calendar, tutor's information and two html sections. Useful for classroom blog"
-msgstr "Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/html. Útil per al blog de classe."
-
+msgid ""
+"Includes calendar, tutor's information and two html sections. Useful for "
+"classroom blog"
+msgstr ""
+"Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/"
+"html. Útil per al blog de classe."
