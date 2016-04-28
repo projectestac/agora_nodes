@@ -21,6 +21,7 @@ Changes in progress
 - Hidden options in Settings menu (Trello #1219)
 - WSL: Upgraded to version 2.3.0 (Trello #1035)
 - Fixed bug with searching members or groups box (Trello #1216)
+- Grup-Classe: Added Email subscribers integration to Grup-Classe widget (GitHub #193)
 
 
 Changes 16.03.30
