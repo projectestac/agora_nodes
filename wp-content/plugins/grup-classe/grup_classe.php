@@ -28,38 +28,32 @@
  
  */
 
-/* Load textdomain */
-add_action( 'init', 'grup_classe_load_textdomain' );
-
-function grup_classe_load_textdomain() {
-  load_plugin_textdomain( 'grup-classe', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
-}
-
-/* Enqueve plugin css */
-add_action( 'wp_enqueue_scripts', 'grup_classe_css' );
-
-function grup_classe_css() {
-    wp_enqueue_style( 'style-grup_classe', plugins_url().'/grup-classe/css/grup_classe.css' );
-}	
-
 // Register plugin
-add_action('widgets_init','grup_classe_register_widgets');
+add_action('widgets_init', 'grup_classe_register_widgets');
 
-function grup_classe_register_widgets(){
+function grup_classe_register_widgets() {
     register_widget('grup_classe_widget');
 }
 
+/* Enqueue plugin css */
+add_action('wp_enqueue_scripts', 'grup_classe_css');
+
+function grup_classe_css() {
+    wp_enqueue_style('style-grup_classe', plugins_url() . '/grup-classe/css/grup_classe.css');
+}
+
+load_plugin_textdomain('grup-classe', false, plugin_basename(dirname(__FILE__)) . '/languages');
+
 // The plugin
-class Grup_classe_Widget extends WP_Widget {
-    
-    // Constructor
-    function __construct(){
-        $widget_ops =array (
-            'classname' => 'grup_classe_widget_class',
-            //Catalan, default language here. Gettext doesn't work in description :S
-            'description' => __("Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/html. Util per al blog de classe.",'grup-classe')
-             );
-        $this->WP_Widget('grup_classe_widget', 'Grup-classe', $widget_ops);
+class grup_classe_widget extends WP_Widget {
+
+    function __construct() {
+		$widget_ops = array (
+			'description' => __('Includes a calendar, information about the tutor and two blocks of type text/html. Useful for the class blog.', 'grup-classe'),
+			'name' => __('Group-class', 'grup-classe'),
+		);
+        
+		parent::__construct('grup_classe_widget', __('Group-class', 'grup-classe'), $widget_ops);
     }
     
     // Show form in admin back-end
@@ -85,7 +79,7 @@ class Grup_classe_Widget extends WP_Widget {
         
         ?>
     
-        <p><?php _e("Title:","grup-classe");?><br>
+        <p><?php _e('Title:', 'grup-classe'); ?><br>
         <input id=  "<?php echo $this->get_field_id( 'title' ); ?>" 
                name="<?php echo $this->get_field_name( 'title' ); ?>" 
                type="text" value="<?php echo esc_attr( $title ); ?>">
@@ -104,12 +98,12 @@ class Grup_classe_Widget extends WP_Widget {
         ?>
         <div>
             <strong><span class="dashicons dashicons-calendar"></span> <?php _e("Calendar","grup-classe");?> </strong><br>
-            <?php _e("Calendar's title:","grup-classe");?>
+            <?php _e("Calendar's title:", "grup-classe"); ?>
             <input id="<?php echo $this->get_field_id( 'nom_calendari' ); ?>" 
                    name="<?php echo $this->get_field_name( 'nom_calendari' ); ?>" 
                    type="text" value="<?php echo esc_attr( $nom_calendari ); ?>">
             <br>
-            <?php _e("Calendar:","grup-classe");?><br>
+            <?php _e("Calendar:", "grup-classe"); ?><br>
             <select id="<?php echo $this->get_field_id('id_calendari'); ?>" 
                     name="<?php echo $this->get_field_name('id_calendari'); ?>">
             <option value="0"></option>
@@ -122,7 +116,7 @@ class Grup_classe_Widget extends WP_Widget {
             ?>
             </select>
             <br>
-            <?php _e("Show:","grup-classe");?>
+            <?php _e("Show:", "grup-classe"); ?>
             <br><input id="<?php echo $this->get_field_id('calendari_grid'); ?>" name="<?php echo $this->get_field_name('calendari_grid'); ?>" type="checkbox" <?php checked(isset($instance['calendari_grid']) ? $instance['calendari_grid'] : 0); ?> /> <?php _e("Grid","grup-classe");?> </label>
             <br><input id="<?php echo $this->get_field_id('calendari_list'); ?>" name="<?php echo $this->get_field_name('calendari_list'); ?>" type="checkbox" <?php checked(isset($instance['calendari_list']) ? $instance['calendari_list'] : 0); ?> /> <?php _e("List","grup-classe");?> </label>        
         </div>
@@ -130,15 +124,15 @@ class Grup_classe_Widget extends WP_Widget {
         <!-- Tutor's information -->
         <div>
             <strong><span class="dashicons dashicons-admin-users"></span><?php _e("Tutor's information","grup-classe");?></strong><br>
-                <?php _e("Tutor's name:","grup-classe");?><br>
+                <?php _e("Tutor's name:", "grup-classe"); ?><br>
                 <input name="<?php echo $this->get_field_name('nom_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $nom_tutor ); ?>" /></br>
-                <?php _e("Tutor's email:","grup-classe");?><br>
+                <?php _e("Tutor's email:", "grup-classe"); ?><br>
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
                        value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
-                <?php _e("Timetable for attending to families:","grup-classe");?><br>
+                <?php _e("Timetable for attending to families:", 'grup-classe');?><br>
                 <input name="<?php echo $this->get_field_name('horari_families');?>"
                        type="text" 
                        value="<?php echo esc_attr( $horari_families ); ?>" /></br>    
@@ -150,18 +144,18 @@ class Grup_classe_Widget extends WP_Widget {
         $es_note_group = isset( $instance['es_note_group'] ) ? $instance['es_note_group'] : '';
         
         global $wpdb;
-        $subcription_groups = $wpdb->get_col( 'SELECT DISTINCT(es_note_group) FROM wp_es_notification', 0 );
+        $subscription_groups = $wpdb->get_col('SELECT DISTINCT(es_note_group) FROM '. $wpdb->prefix . 'es_notification', 0);
         ?>
-        <div>
-        <strong><span class="dashicons dashicons-email-alt"></span> <?php _e("Subcription Group:","grup-classe");?></strong>
-        <select id="<?php echo $this->get_field_id('es_note_group'); ?>" 
-                name="<?php echo $this->get_field_name('es_note_group'); ?>">
-        <option value="0"></option>
+            <div>
+            <strong><span class="dashicons dashicons-email-alt"></span> <?php _e('Subscription Group:', 'grup-classe'); ?></strong>
+            <select id="<?php echo $this->get_field_id('es_note_group'); ?>" 
+                    name="<?php echo $this->get_field_name('es_note_group'); ?>">
+            <option value="0"></option>
         <?php
-            foreach ( $subcription_groups as $subscription_group ) {
-                echo '<option value="' . $subscription_group . '"'
-                        . selected( $es_note_group, $subscription_group, false )
-                        . '>'. esc_html( $subscription_group ) . '</option>';
+        foreach ($subscription_groups as $subscription_group) {
+            echo '<option value="' . $subscription_group . '"'
+            . selected( $es_note_group, $subscription_group, false )
+            . '>'. esc_html( $subscription_group ) . '</option>';
             }
         ?>
         </select>
@@ -173,7 +167,7 @@ class Grup_classe_Widget extends WP_Widget {
             $nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
             $menus = wp_get_nav_menus();
             ?>
-            <strong><span class="dashicons dashicons-admin-links"></span> <?php _e("Links (associated menu)","grup-classe");?></strong> 
+            <strong><span class="dashicons dashicons-admin-links"></span> <?php _e('Links (associated menu)', 'grup-classe');?></strong> 
             <select id="<?php echo $this->get_field_id('nav_menu'); ?>" 
                     name="<?php echo $this->get_field_name('nav_menu'); ?>">
                 <option value="0"></option>
@@ -189,7 +183,7 @@ class Grup_classe_Widget extends WP_Widget {
         <br>
         <!-- Custom html/text block -->
         <div>
-            <strong><span class="dashicons dashicons-format-quote"></span> <?php _e("Text/HTML","grup-classe");?> </strong> 
+            <strong><span class="dashicons dashicons-format-quote"></span> <?php _e('Text/HTML', 'grup-classe');?> </strong> 
             <textarea class='widefat' rows=5 id="<?php echo $this->get_field_id('text_close'); ?>" name="<?php echo $this->get_field_name('text_close'); ?>"><?php echo $text_close; ?></textarea>
         </div>
         <br>
@@ -249,8 +243,9 @@ class Grup_classe_Widget extends WP_Widget {
         }
         // Calendar
         if (!empty($id_calendari)){
-            if (!empty($nom_calendari))
+            if (!empty($nom_calendari)) {
                 echo $before_title . $nom_calendari .$after_title;
+            }
             if ($calendari_grid){
                 the_widget('GCE_Widget','id='.$id_calendari.'&display_type=grid&paging=true');
                 echo "<br>";
@@ -274,14 +269,14 @@ class Grup_classe_Widget extends WP_Widget {
         }
         // Email subscribers 
         if (!empty($es_note_group)){
-            echo $before_title . __('Subscription','grup-classe') . $after_title;
-            echo  __('We will notice you','grup-classe').$es_note_group ;
+            echo $before_title . __('Subscription', 'grup-classe') . $after_title;
+            echo  __('We will notice you', 'grup-classe').$es_note_group ;
             the_widget('es_widget_register','es_name=YES&es_group='.$es_note_group);
             echo "<br>";
         }
         // Links (Menu)
         if (!empty($nav_menu)){
-            echo $before_title . __("Links","grup-classe") . $after_title;
+            echo $before_title . __('Links', 'grup-classe') . $after_title;
             the_widget('WP_Nav_Menu_Widget','nav_menu='.$nav_menu);
             echo "<br>";
         }
