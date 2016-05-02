@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grup-classe Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-24 13:35+0100\n"
-"PO-Revision-Date: 2016-04-28 13:51+0100\n"
-"Last-Translator: Xavier Meler <jmeler@xtec.cat>\n"
-"Language-Team: Xavier Meler <jmeler@xtec.cat>\n"
+"POT-Creation-Date: 2016-05-04 11:56+0100\n"
+"PO-Revision-Date: 2016-05-04 12:26+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: Àgora <agora@xtec.cat>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,69 +13,97 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-msgid "Classroom"
-msgstr "Grup classe"
-
-msgid "Title:"
-msgstr "Títol:"
-
-msgid "Text/HTML"
-msgstr "Text/HTML"
-
-msgid "Calendar"
-msgstr "Agenda"
-
-msgid "Calendar's title:"
-msgstr "Títol de l'agenda:"
-
-msgid "Calendar:"
-msgstr "Calendari associat:"
-
-msgid "Show:"
-msgstr "Mostra:"
-
-msgid "Grid"
-msgstr "Calendari"
-
-msgid "List"
-msgstr "Llista"
-
-msgid "Tutor's information"
-msgstr "Tutoria"
-
-msgid "Tutor's info"
-msgstr "Tutoria"
-
-msgid "Tutor's name:"
-msgstr "Nom del tutor/a:"
-
-msgid "Tutor's email:"
-msgstr "Adreça electrònica del tutor/a:"
-
-msgid "Timetable for attending to families:"
-msgstr "Horari d'atenció a les famílies:"
-
-msgid "Subscription"
-msgstr "Subscripció de correu"
-
-msgid "We will notice you"
-msgstr "T'avisarem quan hi hagin notícies noves a "
-
-msgid "Links (associated menu)"
-msgstr "Enllaços (menú associat)"
-
-msgid "Links"
-msgstr "Enllaços"
-
-msgid "Mon. 00:00-00:00"
-msgstr "dl. 00:00-00:00"
-
-# Description
+#: grup_classe.php:69
 msgid ""
-"Includes calendar, tutor's information and two html sections. Useful for "
-"classroom blog"
+"Includes a calendar, information about the tutor and two blocks of type text/"
+"html. Useful for the class blog."
 msgstr ""
 "Inclou un calendari, informació sobre el tutor/a i dos blocs de tipus text/"
 "html. Útil per al blog de classe."
+
+#: grup_classe.php:70 grup_classe.php:73
+msgid "Group-class"
+msgstr "Grup-classe"
+
+#: grup_classe.php:79
+msgid "Mon. 00:00-00:00"
+msgstr "dl. 00:00-00:00"
+
+#: grup_classe.php:99
+msgid "Title:"
+msgstr "Títol:"
+
+#: grup_classe.php:106 grup_classe.php:203
+msgid "Text/HTML"
+msgstr "Text/HTML"
+
+#: grup_classe.php:117
+msgid "Calendar"
+msgstr "Agenda"
+
+#: grup_classe.php:118
+msgid "Calendar's title:"
+msgstr "Títol de l'agenda:"
+
+#: grup_classe.php:123
+msgid "Calendar:"
+msgstr "Calendari associat:"
+
+#: grup_classe.php:136
+msgid "Show:"
+msgstr "Mostra:"
+
+#: grup_classe.php:137
+msgid "Grid"
+msgstr "Calendari"
+
+#: grup_classe.php:138
+msgid "List"
+msgstr "Llista"
+
+#: grup_classe.php:143
+msgid "Tutor's information"
+msgstr "Tutoria"
+
+#: grup_classe.php:144
+msgid "Tutor's name:"
+msgstr "Nom del tutor/a:"
+
+#: grup_classe.php:148
+msgid "Tutor's email:"
+msgstr "Adreça electrònica del tutor/a:"
+
+#: grup_classe.php:152
+msgid "Timetable for attending to families:"
+msgstr "Horari d'atenció a les famílies:"
+
+#: grup_classe.php:167
+msgid "Subscription Group:"
+msgstr "Subscripció de correu:"
+
+#: grup_classe.php:187
+msgid "Links (associated menu)"
+msgstr "Enllaços (menú associat)"
+
+#: grup_classe.php:276
+msgid "Tutor's info"
+msgstr "Tutoria"
+
+#: grup_classe.php:288
+msgid "Subscription"
+msgstr "Subscripció de correu"
+
+#: grup_classe.php:289
+msgid "We will notice you"
+msgstr "T'avisarem quan hi hagi notícies noves a "
+
+#: grup_classe.php:295
+msgid "Links"
+msgstr "Enllaços"
+
+#~ msgid "Classroom"
+#~ msgstr "Grup classe"
