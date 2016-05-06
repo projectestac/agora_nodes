@@ -56,3 +56,6 @@
 [submodule "wp-content/plugins/buddypress-activity-plus"]
 	path = wp-content/plugins/buddypress-activity-plus
 	url = https://github.com/projectestac/wordpress-buddypress-activity-plus.git
+[submodule "wp-content/plugins/import-users-from-csv-with-meta"]
+	path = wp-content/plugins/import-users-from-csv-with-meta
+	url = https://github.com/projectestac/wordpress-import-users-from-csv-with-meta.git
