@@ -373,9 +373,28 @@ body.login {
 }
 
 .box-content-grid.icon-box .topicons button {
-  padding-top: 0;
-  padding-bottom: 8px;
+    padding-top: 0;
+    padding-bottom: 8px;
 }
 .text_icon {
-  padding: 0;
+    padding: 0;
+}
+
+// Customize links_as_buttons class for Customized Menu Widget
+.links_as_buttons li .sub-menu{
+    visibility: hidden;
+}
+
+.links_as_buttons li{
+    height: 35px;
+    background-color: #EEEEEE;
+    padding: 5px;
+    margin: 2px 0px 0px -18px;
+    list-style-type: none;
+}
+
+.links_as_buttons a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
 }

@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Development\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-10-06 12:47+0100\n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"PO-Revision-Date: 2015-11-24 17:44+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: wp-signup.php:716
 msgid "The site you were looking for, <strong>%s</strong>, does not exist."
@@ -8132,6 +8132,11 @@ msgstr "Codi d'activació:"
 #: wp-activate.php:73
 msgid "Activation Key Required"
 msgstr "Cal un codi d'activació"
+
+# MODIFICAT XTEC
+#: wp-includes/default-widgets.php:1457
+msgid "Show links as buttons"
+msgstr "Mostra enllaços com botons"
 
 # MODIFICAT XTEC
 #, fuzzy
