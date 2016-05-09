@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.4.3
 - Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
 - Reactor: Fixed bug with icon in last card (Trello #1187)
 - Reactor: Fixed bug getting multiple categories posts from URL (Trello #1142)
