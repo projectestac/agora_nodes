@@ -86,6 +86,7 @@ function reactor_do_title_logo()
 {
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
+    $description_link = 
     $options = get_option('my_option_name');
     ?>
 
@@ -106,9 +107,16 @@ function reactor_do_title_logo()
             <div class="box-description large-6 columns">
                 <div class="box-content">
                     <div>
-                    <span style="font-size:<?php echo $description_font_size;?>">
-                    <?php echo nl2br($description_text); ?>
-                    </span>
+                    <?php if (reactor_option('blogdescription_link')) { ?>
+                        <a style="font-size:<?php echo $description_font_size;?>"
+                           href="<?php echo reactor_option('blogdescription_link');?>" >
+                            <?php echo nl2br($description_text); ?>
+                        </a>
+                    <?php } else { ?>
+                        <span style="font-size:<?php echo $description_font_size;?>">
+                        <?php echo nl2br($description_text); ?>
+                        </span>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
