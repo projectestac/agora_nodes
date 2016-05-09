@@ -72,22 +72,40 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 
 	$db_table_name = $wpdb->prefix . 'import_intranet';
 	$post = array();
+    
+    $ids_intraweb = array (
+        'news' => $new_data->sid,
+        'pages' => $new_data->pageid,
+        'message' => $new_data->mid,
+        'IWdocmanager' => $new_data->documentId
+    );
+
+    // If imported content is deleted by WordPress admin / editor, import it again and delete record
+    $id = $ids_intraweb[$table];
+    $query = "SELECT * FROM $db_table_name WHERE id_intraweb = '$id' AND type = '$table' ";
+    $result = $wpdb->get_row($query);
+
+    $check_record = $wpdb->get_results('SELECT ID FROM ' . $wpdb->prefix . 'posts WHERE ID = ' . $result->id_wp_post);
+    if (count($check_record) == 0) {
+        $wpdb->query($wpdb->prepare('DELETE FROM ' . $wpdb->prefix . 'import_intranet WHERE id_wp_post = %d', $result->id_wp_post));
+        $result = false;
+    }
+
+    manageDataBaseErrors($wpdb);
 
 	if ($table === 'news') {
-		$query = "SELECT * FROM `$db_table_name` WHERE id_intraweb = '$new_data->sid' AND type = '$table' ";
-		$result = $wpdb->get_row($query);
-		manageDataBaseErrors($wpdb);
 
 		$userId = getUserId($new_data->cr_uid);
 
-		$post['post_content'] = parseSingleContent($new_data->hometext).parseSingleContent($new_data->bodytext);
+		$post['post_content'] = parseSingleContent($new_data->hometext) . parseSingleContent($new_data->bodytext);
 		$post['post_name'] 	  = $new_data->urltitle;
 		$post['post_title']   = $new_data->title;
 		$post['post_status']  = $privacity;
 		$post['post_type'] 	  = 'post';
 		$post['post_author']  = $userId;
+		$post['post_date']    = $new_data->ffrom;
 
-		if ($result) {
+        if ($result) {
 			$post['ID'] = $result->id_wp_post;
 			$update = wp_update_post($post);
 
@@ -111,20 +129,16 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 
 	} elseif ($table === 'pages') {
 		$page_root_id = rootIntranetPage();
-
-		$query = "SELECT * FROM `$db_table_name` WHERE id_intraweb = '$new_data->pageid' AND type = '$table' ";
-		$result = $wpdb->get_row($query);
-		manageDataBaseErrors($wpdb);
-
 		$userId = getUserId($new_data->cr_uid);
 
-		$post['post_content'] 	= parseSingleContent($new_data->content)."<br/>".parseSingleContent($new_data->metakeywords);
-		$post['post_name'] 		= $new_data->title;
-		$post['post_title'] 	= $new_data->title;
-		$post['post_status'] 	= $privacity;
-		$post['post_type'] 		= 'page';
-		$post['post_author'] 	= $userId;
-		$post['post_parent']	= $page_root_id;
+		$post['post_content'] = parseSingleContent($new_data->content) . ' <br/> ' . parseSingleContent($new_data->metakeywords);
+		$post['post_name']    = $new_data->title;
+		$post['post_title']   = $new_data->title;
+		$post['post_status']  = $privacity;
+		$post['post_type'] 	  = 'page';
+		$post['post_author']  = $userId;
+		$post['post_parent']  = $page_root_id;
+		$post['post_date']    = $new_data->cr_date;
 
 		if ($result) {
 			$post['ID'] = $result->id_wp_post;
@@ -150,16 +164,13 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 		return $report;
 
 	} elseif ($table === 'message') {
-		$query = "SELECT * FROM `$db_table_name` WHERE id_intraweb = '$new_data->mid' AND type = '$table' ";
-		$result = $wpdb->get_row($query);
-		manageDataBaseErrors($wpdb);
-
-		$post['post_content'] 	= parseSingleContent($new_data->content);
-		$post['post_name'] 		= $new_data->title;
-		$post['post_title'] 	= $new_data->title;
-		$post['post_status'] 	= $privacity;
-		$post['post_type'] 		= 'post';
-		$post['post_author'] 	= 1;
+		$post['post_content'] = parseSingleContent($new_data->content);
+		$post['post_name']    = $new_data->title;
+		$post['post_title']   = $new_data->title;
+		$post['post_status']  = $privacity;
+		$post['post_type'] 	  = 'post';
+		$post['post_author']  = 1;
+        $post['post_date']    = date('Y-m-d H:i:s', $new_data->date);
 
 		if ($result) {
 			$post['ID'] = $result->id_wp_post;
@@ -184,16 +195,13 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 		return $report;
 
 	} elseif ($table === 'IWdocmanager') {
-		$query = "SELECT * FROM `$db_table_name` WHERE id_intraweb = '$new_data->documentId' AND type = '$table' ";
-		$result = $wpdb->get_row($query);
-		manageDataBaseErrors($wpdb);
-
-		$post['post_author'] 	= 1;
-		$post['post_name'] 		= $new_data->documentName;
-		$post['post_type'] 		= 'bp_doc';
-		$post['post_status'] 	= 'publish';
-		$post['post_title'] 	= $new_data->documentName;
-		$post['post_content']	= $new_data->description;
+		$post['post_author']  = 1;
+		$post['post_name'] 	  = $new_data->documentName;
+		$post['post_type']    = 'bp_doc';
+		$post['post_status']  = 'publish';
+		$post['post_title']   = $new_data->documentName;
+		$post['post_content'] = $new_data->description;
+		$post['post_date']    = $new_data->pn_cr_date;
 
 		if ($result) {
 			$post['ID'] = $result->id_wp_post;
@@ -209,7 +217,7 @@ function addToWordPress($table, $new_data, $report, $privacity) {
 
 			if (!$post_id) {
 				$report['error'][] = __('Error inserting Post content: ', 'intranet-importer').'&nbsp;'.$new_data->documentName;
-			}else {
+			} else {
 				addBPDocsCategories($post_id, $new_data->categoryId);
 				manageAttachmentDPDocs($post_id, $new_data->fileName, $new_data->fileOriginalName);
 				manageBPDocsPermissions($post_id, $privacity);
@@ -553,20 +561,29 @@ function getAdvancedContent($new_data, $table, $report, $privacity) {
 
 	$db_table_name = $wpdb->prefix . 'import_intranet';
 	$query = "SELECT * FROM `$db_table_name` WHERE id_intraweb = '$new_data->page_id' AND type = '$table' ";
-	$result = $wpdb->get_row($query);
-	manageDataBaseErrors($wpdb);
+    $result = $wpdb->get_row($query);
+
+    // If imported content is deleted by WordPress admin / editor, import it again and delete record
+    $check_record = $wpdb->get_results('SELECT ID FROM ' . $wpdb->prefix . 'posts WHERE ID = ' . $result->id_wp_post);
+    if (count($check_record) == 0) {
+        $wpdb->query($wpdb->prepare('DELETE FROM ' . $wpdb->prefix . 'import_intranet WHERE id_wp_post = %d', $result->id_wp_post));
+        $result = false;
+    }
+
+    manageDataBaseErrors($wpdb);
 
 	$page_root_id = rootIntranetPage();
 	$userId = getUserId($new_data->page_cr_uid);
 
 	$post = array();
 
-	$post['post_name']		= $new_data->page_urlname;
-	$post['post_title'] 	= $new_data->page_title;
-	$post['post_status'] 	= $privacity;
-	$post['post_type'] 		= 'page';
-	$post['post_author']	= $userId;
-	$post['post_parent']	= $page_root_id;
+	$post['post_name']   = $new_data->page_urlname;
+	$post['post_title']  = $new_data->page_title;
+	$post['post_status'] = $privacity;
+	$post['post_type']   = 'page';
+	$post['post_author'] = $userId;
+	$post['post_parent'] = $page_root_id;
+	$post['post_date']   = $new_data->page_cr_date;
 
     // Get all the contents of a page
 	$queryData = "SELECT `con_type`, `con_data` FROM content_content WHERE con_pageid = '$new_data->page_id' AND con_active = 1 ORDER BY con_areaindex ASC ";
