@@ -449,7 +449,7 @@ li#wp-admin-bar-bp-login {
     padding-top: 100%;
 }
 
-.box-title a:hover {
+.box-title a:hover, .box-description a:hover  {
     text-decoration: none;
 }
 
@@ -460,7 +460,8 @@ li#wp-admin-bar-bp-login {
 }
 
 .box-title .box-content a,
-.box-description .box-content {
+.box-description .box-content,
+.box-description .box-content a {
     font-family: 'Oswald';
     font-weight: 300;
 }
