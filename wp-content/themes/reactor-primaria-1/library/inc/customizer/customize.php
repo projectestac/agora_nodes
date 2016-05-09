@@ -162,12 +162,24 @@ if ( !function_exists('reactor_customize_register') ) {
 				'capability' => 'manage_options',
 				'transport'  => 'postMessage',
 			 ) );
-				$wp_customize->add_control('blogdescription', array(
-					'label'    => __('Descripció / Lema', 'reactor'),
-					'section'  => 'reactor_customizer_capcalera',
-                                        'type' => 'textarea',
-					'priority' => 3,
-				 ) );
+			$wp_customize->add_control('blogdescription', array(
+				'label'    => __('Descripció / Lema', 'reactor'),
+				'section'  => 'reactor_customizer_capcalera',
+				'type' => 'textarea',
+				'priority' => 3,
+			) );
+
+			$wp_customize->add_setting('reactor_options[blogdescription_link]', array(
+				'default'    => "",
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				'transport'  => 'postMessage',
+			 ) );
+			$wp_customize->add_control('reactor_options[blogdescription_link]', array(
+				'label'    => __('Enllaç descripció / lema', 'reactor'),
+				'section'  => 'reactor_customizer_capcalera',
+				'priority' => 4,
+			 ) );
 
 			$wp_customize->add_setting('reactor_options[imatge_capcalera]',array(
 				'default'    => "",
@@ -183,7 +195,7 @@ if ( !function_exists('reactor_customize_register') ) {
 				    'section' => 'reactor_customizer_capcalera',
                                     'description'=> 'Recomanacions: 1000 x 220 px i menys de 500 KB',
 				    'settings' => 'reactor_options[imatge_capcalera]',
-				    'priority' => 4
+				    'priority' => 5
 				)
 			    )
 			);
@@ -207,7 +219,7 @@ if ( !function_exists('reactor_customize_register') ) {
 					'section'  => 'reactor_customizer_capcalera',
 					'type'     => 'select',
 					'choices'  => $aCarrusel,
-					'priority' => 5,
+					'priority' => 6,
 				 ) );
 
 			// Graella d'icones
@@ -232,7 +244,7 @@ if ( !function_exists('reactor_customize_register') ) {
                             $wp_customize->add_control( new simpleHTML($wp_customize, 'icones_capcalera', array(
                                     'label'    => __('Graella d\'icones', 'reactor'),
                                     'section'  => 'reactor_customizer_capcalera',
-                                    'priority' => 6,
+                                    'priority' => 7,
                              ) ));
 
 
@@ -246,7 +258,7 @@ if ( !function_exists('reactor_customize_register') ) {
 					'section'  => 'reactor_customizer_capcalera',
 					'settings' => 'reactor_options[favicon_image]',
                                         'description' => 'Icona a la pestanya del navegador',
-					'priority' => 7,
+					'priority' => 8,
 				 ) ) );
 
 			//Pestanya Identificació del centre
