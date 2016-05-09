@@ -258,6 +258,10 @@ if (!function_exists('wp_mail')) {
     function wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
     	$sender = get_mailsender();
 
+        if (!$sender) {
+            return false;
+        }
+
         // Get if there is reply-to in headers to change default one (is used, for instance, for email-subscriber)
         if (!empty($headers)) {
             $headers_arr = explode("\n", $headers);
@@ -271,10 +275,6 @@ if (!function_exists('wp_mail')) {
             if (!empty($replyto)){
                 $sender->set_replyAddress($replyto);
             }
-        }
-
-        if (!$sender) {
-            return false;
         }
 
         // Compact the input, apply the filters, and extract them back out
