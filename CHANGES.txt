@@ -24,7 +24,8 @@ Changes in progress
 - Fixed bug with searching members or groups box (Trello #1216)
 - Grup-Classe: Added Email subscribers integration to Grup-Classe widget (GitHub #193)
 - Reactor: Added description link (Trello #1218)
-- intraweb-importer: Copy and update creation date of content. Import again deleted content
+- intraweb-importer: Copy and update creation date of content. Import again deleted content (Trello #1236)
+- import-users-from-csv-with-meta: Upgraded to version 1.8.7.2 (Trello #1043)
 
 
 Changes 16.03.30
