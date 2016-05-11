@@ -110,12 +110,12 @@ $colors_nodes = array(
         'secondary' => '#923917'
         ),
     'blaufosc-taronja' => array(
-        'nom' => 'Blau fosc i taronja',
+        'nom' => 'Taronja i blau',
         'primary' => '#ff5a26',
         'secondary' => '#087eb6'
         ),
     'lila-verd clar' => array(
-        'nom' => 'Lila i verd clar',
+        'nom' => 'Verd clar i lila',
         'primary' => '#92AE01',
         'secondary' => '#5E3A73'
         ),
@@ -123,5 +123,22 @@ $colors_nodes = array(
         'nom' => 'Bordeus',
         'primary' => '#B5196E',
         'secondary' => '#770E4B'
+        ),
+    'taronja-oliva' => array(
+        'nom' => 'Taronja i oliva',
+        'primary' => '#EA6A00',
+        'secondary' => '#768703',
+        'link' => '#6A7A00'
+        ),
+    'lila-vermell' => array(
+        'nom' => 'Lila i vermell',
+        'primary' => '#9068be',
+        'secondary' => '#e62739'
+        ),
+    'blaunegre-taronja' => array(
+        'nom' => 'Blau fosc i taronja',
+        'primary' => '#3A5863',
+        'secondary' => '#D86E3E',
+        'link' => '#D85E27'
         )
 );
