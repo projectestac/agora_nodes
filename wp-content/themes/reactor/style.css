@@ -362,6 +362,10 @@ li#wp-admin-bar-bp-login {
     z-index: 999;
 }
 
+.entry-icon i.fa{
+    font-size:0.7em;
+}
+
 .fullwidth .entry-icon {
     position: absolute;
     top: -15px;
@@ -547,8 +551,6 @@ ul.breadcrumbs {
     border-radius: 0;
     padding: 1.5em;
 }
-
-/* Barra lateral */
 
 /* Barra lateral */
 
@@ -963,7 +965,7 @@ Footer
 }
 
 #footer a {
-    text-decoration: underline;
+    text-decoration: underline;   
 }
 
 .widget_socialmedia_widget a {
@@ -980,7 +982,13 @@ Footer
     filter: alpha(opacity=40);
 }
 
-#footer * {
+.site-footer input, 
+.site-footer select option,
+.site-footer select.postform{ 
+    color:black !important;
+}
+
+.site-footer *{
     color: white !important;
 }
 
