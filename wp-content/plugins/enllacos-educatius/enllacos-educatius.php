@@ -40,6 +40,8 @@ class XTEC_Widget extends WP_Widget {
         'intraweb' => ['nom' => "Intraweb", 'url' => '', 'img' => 'intraweb-icon.png', 'desc' => 'Enllaç a la intraweb'],
         'epergam' => ['nom' => "ePergam", 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
         'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
+        'serveiseducatius' => ['nom' => "Serveis educatius", 'url' => '', 'img' => 'serveis-icon.png', 'desc' => 'Enllaç al vostre servei educatiu'],
+        'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
     
     public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'xarxa-docent', 'ateneu', 'alexandria',
@@ -57,6 +59,7 @@ class XTEC_Widget extends WP_Widget {
         $this->recursos['ampa']['url'] = get_home_url() . "/ampa";
         $this->recursos['intraweb']['url'] = get_home_url() . "/intranet";
         $this->recursos['epergam']['url'] = "https://aplicacions.ensenyament.gencat.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
+        
     }
 
 
@@ -77,6 +80,14 @@ class XTEC_Widget extends WP_Widget {
 
         if (trim($instance['moodle_url']) != '') {
             $this->recursos["moodle"]["url"] = $instance['moodle_url'];
+        }
+        
+        if (trim($instance['serveiseducatius_url']) != '') {
+            $this->recursos["serveiseducatius"]["url"] = $instance['serveiseducatius_url'];
+        }
+        
+        if (trim($instance['classroom_url']) != '') {
+            $this->recursos["classroom"]["url"] = $instance['classroom_url'];
         }
 
         // Display information
@@ -100,9 +111,11 @@ class XTEC_Widget extends WP_Widget {
     public function form($instance) {
         // Check for values
         $title = isset($instance['title']) ? $instance['title'] : "Enllaços educatius";
-        $this->recursos["ampa"]["url"] = $instance['ampa_url'];
-        $this->recursos["escola-verda"]["url"] = $instance['escola-verda_url'];
-        $this->recursos["moodle"]["url"] = $instance['moodle_url'];
+        $this->recursos["ampa"]["url"] = $instance['ampa_url']? $instance['ampa_url'] : get_home_url() . "/ampa";
+        $this->recursos["escola-verda"]["url"] = $instance['escola-verda_url']? $instance['escola-verda_url'] : "http://www.gencat.cat/mediamb/escolesverdes/";
+        $this->recursos["moodle"]["url"] = $instance['moodle_url']? $instance['moodle_url'] : get_home_url() . "/moodle";
+        $this->recursos["serveiseducatius"]["url"] = $instance['serveiseducatius_url'];
+        $this->recursos["classroom"]["url"] = isset($instance['classroom_url']) ? $instance['classroom_url'] : "https://classroom.google.com/";
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">Títol:</label> 
@@ -138,6 +151,8 @@ class XTEC_Widget extends WP_Widget {
         $instance['ampa_url'] = (!empty($new_instance['ampa_url']) ) ? sanitize_text_field($new_instance['ampa_url']) : get_home_url() . "/ampa";
         $instance['escola-verda_url'] = (!empty($new_instance['escola-verda_url']) ) ? sanitize_text_field($new_instance['escola-verda_url']) : 'http://www.gencat.cat/mediamb/escolesverdes/';
         $instance['moodle_url'] = (!empty($new_instance['moodle_url']) ) ? sanitize_text_field($new_instance['moodle_url']) : get_home_url() . "/moodle";
+        $instance['serveiseducatius_url'] = (!empty($new_instance['serveiseducatius_url']) ) ? sanitize_text_field($new_instance['serveiseducatius_url']) : "";
+        $instance['classroom_url'] = (!empty($new_instance['classroom_url']) ) ? sanitize_text_field($new_instance['classroom_url']) : "https://classroom.google.com/";
 
         return $instance;
     }
