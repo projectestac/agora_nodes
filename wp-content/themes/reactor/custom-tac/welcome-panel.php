@@ -1,11 +1,11 @@
 <?php
+
 /* Hide default welcome dashboard message and create a custom one
  *
  * @access      public
  * @since       1.0 
  * @return      void
  */
-
 function rc_my_welcome_panel() {
     ?>
 
@@ -18,12 +18,12 @@ function rc_my_welcome_panel() {
     </script>
 
     <div class="custom-welcome-panel-content">
-        <h3><?php _e('Welcome to NODES', 'reactor'); ?></h3>
+        <h2><?php _e('Welcome to NODES', 'reactor'); ?></h2>
         <p class="about-description"><?php _e('Project for the new website from Departament d\'Ensenyament', 'reactor'); ?></p>
         <div class="welcome-panel-column-container">
 
             <div class="welcome-panel-column">
-                <h4><?php _e('Actions', 'reactor'); ?></h4>
+                <h3><?php _e('Actions', 'reactor'); ?></h3>
                 <ul>
                     <li><?php printf('<a href="%s" class="welcome-icon welcome-view-site">' . __('Customize', 'reactor') . '</a>', 'customize.php'); ?></li>
                     <?php if ('page' == get_option('show_on_front') && !get_option('page_for_posts')) : ?>
@@ -39,8 +39,9 @@ function rc_my_welcome_panel() {
                     <?php endif; ?>
                 </ul>
             </div>
+
             <div class="welcome-panel-column">
-                <h4><?php _e('More Actions', 'reactor'); ?></h4>
+                <h3><?php _e('More Actions', 'reactor'); ?></h3>
                 <ul>
                     <li><?php printf('<div class="welcome-icon welcome-widgets-menus">' . __('Manage <a href="%1$s">widgets</a> or <a href="%2$s">menus</a>', 'reactor') . '</div>', admin_url('widgets.php'), admin_url('nav-menus.php')); ?></li>
                     <li><?php printf('<a href="%s" class="welcome-icon welcome-add-page">' . __('Bookings', 'reactor') . '</a>', 'http://agora.xtec.cat/nodes/reserva-de-recursos'); ?></li>
@@ -49,7 +50,7 @@ function rc_my_welcome_panel() {
             </div>
 
             <div style="margin-bottom:1.5em" class="welcome-panel-column welcome-panel-last">
-                <h4><?php _e('Do you need help?', 'reactor'); ?></h4>
+                <h3><?php _e('Do you need help?', 'reactor'); ?></h3>
 
                 <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1302"><?php _e('FAQ', 'reactor'); ?></a> 
                 <a class="button button-primary button-hero" target="_blank" href="http://agora.xtec.cat/moodle/moodle/mod/forum/view.php?id=1721"><?php _e('Support', 'reactor'); ?></a>
