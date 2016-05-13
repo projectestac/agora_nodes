@@ -169,6 +169,7 @@ body.login {
         overflow: hidden;
         background-color: white;
         padding: 0.4em 0.5em 1em 0.5em;
+        margin-bottom: 1em !important;
     }
 
     .box-titlemobile img {
