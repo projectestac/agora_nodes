@@ -774,3 +774,24 @@ function change_template_for_frontpage($template) {
     return $template;
 }
 add_filter('page_template', 'change_template_for_frontpage');
+
+/**
+ * Modify the list of roles in widget visibility
+ *
+ * @author Toni Ginard
+ */
+function translate_roles () {
+    global $wp_roles;
+    $allowed_roles = array ('Administrator', 'Editor', 'Author', 'Contributor', 'Subscriber' );
+
+    foreach ($wp_roles->roles as $role_key => $role) {
+        if (in_array($wp_roles->roles[ $role_key ]['name'], $allowed_roles)) {
+            $wp_roles->roles[ $role_key ]['name'] = translate_user_role( $wp_roles->roles[ $role_key ]['name'] );
+        } else {
+            unset($wp_roles->roles[ $role_key ]);
+        }
+    }
+
+    return ;
+}
+add_action( 'widget_visibility_roles', 'translate_roles' );

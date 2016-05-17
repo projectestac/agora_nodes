@@ -75,6 +75,11 @@ class Jetpack_Widget_Conditions {
 			case 'role':
 				global $wp_roles;
 
+				// XTEC ************ AFEGIT - Add hook to cleanly modify $wp_roles from agora-functions.php
+				// 2016.05.17 @jaginard
+				do_action( 'widget_visibility_roles' );
+				//************ FI
+
 				foreach ( $wp_roles->roles as $role_key => $role ) {
 					?>
 					<option value="<?php echo esc_attr( $role_key ); ?>" <?php selected( $role_key, $minor ); ?> ><?php echo esc_html( $role['name'] ); ?></option>
