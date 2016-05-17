@@ -76,7 +76,7 @@ class Jetpack_Widget_Conditions {
 				global $wp_roles;
 
 				// XTEC ************ AFEGIT - Add hook to cleanly modify $wp_roles from agora-functions.php
-				// 2016.05.17 @jaginard
+				// 2016.05.17 @aginard
 				do_action( 'widget_visibility_roles' );
 				//************ FI
 
@@ -335,9 +335,16 @@ class Jetpack_Widget_Conditions {
 									<option value="date" <?php selected( "date", $rule['major'] ); ?>><?php echo esc_html_x( 'Date', 'Noun, as in: "This page is a date archive."', 'jetpack' ); ?></option>
 									<option value="page" <?php selected( "page", $rule['major'] ); ?>><?php echo esc_html_x( 'Page', 'Example: The user is looking at a page, not a post.', 'jetpack' ); ?></option>
 									<option value="post_type" <?php selected( "post_type", $rule['major'] ); ?>><?php echo esc_html_x( 'Post Type', 'Example: the user is viewing a custom post type archive.', 'jetpack' ); ?></option>
+
+									<!-- XTEC ************ ELIMINAT - Removed option "Taxonomy" -->
+									<!-- 2016.05.17 @aginard -->
+									<!--
 									<?php if ( get_taxonomies( array( '_builtin' => false ) ) ) : ?>
 										<option value="taxonomy" <?php selected( "taxonomy", $rule['major'] ); ?>><?php echo esc_html_x( 'Taxonomy', 'Noun, as in: "This post has one taxonomy."', 'jetpack' ); ?></option>
 									<?php endif; ?>
+									-->
+									<!-- ************ FI -->
+
 								</select>
 
 								<?php _ex( 'is', 'Widget Visibility: {Rule Major [Page]} is {Rule Minor [Search results]}', 'jetpack' ); ?>
