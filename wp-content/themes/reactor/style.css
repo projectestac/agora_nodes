@@ -432,6 +432,14 @@ li#wp-admin-bar-bp-login {
     filter: alpha(opacity=65);
 }
 
+.post.format-audio p, 
+.post.format-gallery p, 
+.post.format-image p, 
+.post.format-link p, 
+.post.format-video p {
+    line-height: 1.6em;
+}
+
 #sidebar-footer .widget_logo_centre_widget {
     margin: 0 0 2em 0;
 }
