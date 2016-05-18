@@ -11,6 +11,7 @@ Changes in progress
 - Reactor: Fixed bug getting multiple categories posts from URL (Trello #1142)
 - Reactor: Minor improvements in CSS
 - Reactor: Added three color palettes (GitHub #275)
+- Reactor: Fixed line-height in default WordPress formats, used by imported posts (GitHub #412)
 - reactor-serveis-educatius: Options of depth 0 in menu don't break in two lines if they're long
 - Disabled asynchronous default cron because there's an hourly system cron (Trello #1112)
 - xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
