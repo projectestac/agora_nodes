@@ -320,6 +320,15 @@ if ( ! CUSTOM_TAGS ) {
 		),
 		's' => array(),
 		'samp' => array(),
+// XTEC ************ AFEGIT -
+		'script' => array(
+			'async' => true,
+			'charset' => true,
+			'defer' => true,
+			'src' => true,
+			'type' => true,
+		),
+//************ FI
 		'span' => array(
 			'dir' => true,
 			'align' => true,
