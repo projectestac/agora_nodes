@@ -19,6 +19,7 @@ Changes in progress
 - mu-common: Replace template if front-page page is not using correct one (Trello #1178)
 - xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
 - xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
+- xtec-mailer: Compress log files to zip
 - enllacos-educatius: Changed xtec.cat to xtec.gencat.cat (Trello #1207)
 - enllacos-educatius: Added links to Google Classroom and to Serveis Educatius (GitHub #241)
 - Added embed, iframe and script support in kses
