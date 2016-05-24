@@ -37,6 +37,7 @@ Changes in progress
 - add-to-any: Upgraded plugin to version 1.6.16
 - buddypress-docs: Upgraded plugin to version 1.9.0
 - google-analyticator: Upgraded plugin to version 6.4.9.7
+- raw-html: Upgraded plugin to version 1.4.16
 
 
 Changes 16.03.30
