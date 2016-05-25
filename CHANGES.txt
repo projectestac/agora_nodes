@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 16.05.03
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.4.3 (Trello #1176)
 - Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
