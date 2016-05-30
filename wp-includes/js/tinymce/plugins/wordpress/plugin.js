@@ -363,11 +363,17 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 		stateSelector: 'code'
 	});
 
-	// Menubar
-	// Insert->Add Media
-	if ( wp && wp.media && wp.media.editor ) {
+
+	­­­if ( wp && wp.media && wp.media.editor ) {
 		editor.addMenuItem( 'add_media', {
+			//XTEC ************ MODIFICAT ­ Translate to catalan button title 'Add Media'. To apply the changes, we need change to "min.js" file
+			////2016.06.10 @xaviernietosanchez
+			text: 'Afegeix un fitxer multimèdia',
+			//************ ORIGINAL
+			/*
 			text: 'Add Media',
+			*/
+			//************ FI
 			icon: 'wp-media-library',
 			context: 'insert',
 			cmd: 'WP_Medialib'
