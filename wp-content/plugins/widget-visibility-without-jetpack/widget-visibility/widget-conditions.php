@@ -610,7 +610,14 @@ class Jetpack_Widget_Conditions {
 									$condition_result = $wp_query->is_posts_page;
 								} else {
 									// $rule['minor'] is a page ID
+// XTEC ************ MODIFICAT - To avoid problem with activity menus after upgrading to WP 4.4
+// 2016.05.30 @sarjona
+									$condition_result = is_page( $rule['minor'] );
+//************ ORIGINAL
+/*
 									$condition_result = is_page() && ( $rule['minor'] == get_the_ID() );
+*/
+//************ FI
 
 									// Check if $rule['minor'] is parent of page ID
 									if ( ! $condition_result && isset( $rule['has_children'] ) && $rule['has_children'] )
