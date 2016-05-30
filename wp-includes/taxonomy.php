@@ -3806,6 +3806,23 @@ function _split_shared_term( $term_id, $term_taxonomy_id, $record = true ) {
 
 	$new_term_id = (int) $wpdb->insert_id;
 
+// XTEC ************ AFEGIT - Fixed bug with nav_menu (Menu personalitzat) when splitting terms
+// 2016.05.30 @sarjona
+    $i = 1;
+    // Look for widget_nav_menu to update term_id
+    $widget_nav_menu_data = get_option( 'widget_nav_menu', array() );
+    foreach ($widget_nav_menu_data as $widget_nav_menu_item) {
+        // If menu_nav contains any reference to old term_id, replace it
+        if (!empty($widget_nav_menu_item) && is_array($widget_nav_menu_item) && array_key_exists('nav_menu', $widget_nav_menu_item) === TRUE) {
+            if ($widget_nav_menu_item['nav_menu'] === $term_id) {
+                $widget_nav_menu_data[$i]['nav_menu'] = $new_term_id;
+            }
+        }
+        $i++;
+    }
+    // Update changes made in widget_nav_menu option
+    update_option( 'widget_nav_menu', $widget_nav_menu_data );
+//************ FI
 	// Update the existing term_taxonomy to point to the newly created term.
 	$wpdb->update(
 		$wpdb->term_taxonomy,
