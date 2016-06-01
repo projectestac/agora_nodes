@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Reviewed embed support in kses to let contributors add Picasa web albums (Trello #1182)
+
+
 Changes 16.05.03
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.4.3 (Trello #1176)
@@ -15,7 +20,7 @@ Changes 16.05.03
 - Reactor: Added description link (Trello #1218)
 - reactor-serveis-educatius: Options of depth 0 in menu don't break in two lines if they're long
 - Disabled asynchronous default cron because there's an hourly system cron (Trello #1112)
-- Added embed, iframe and script support in kses
+- Added embed, iframe and script support in kses (Trello #1182)
 - Hidden options in Settings menu (Trello #1219)
 - Fixed bug with searching members or groups box (Trello #1216)
 - xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)

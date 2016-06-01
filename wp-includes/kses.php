@@ -168,13 +168,15 @@ if ( ! CUSTOM_TAGS ) {
 		'dl' => array(),
 		'dt' => array(),
 		'em' => array(),
-// XTEC ************ AFEGIT -
+// XTEC ************ AFEGIT - Let contributors use this tag
 		'embed' => array(
 			'height' => true,
 			'src' => true,
 			'style' => true,
 			'type' => true,
 			'width' => true,
+			'flashvars' => true,
+			'pluginspage' => true,
 		),
 //************ FI
 		'fieldset' => array(),
@@ -262,7 +264,7 @@ if ( ! CUSTOM_TAGS ) {
 			'style' => true,
 //************ FI
 		),
-// XTEC ************ AFEGIT -
+// XTEC ************ AFEGIT - Let contributors use this tag
 		'iframe' => array(
 			'align' => true,
 			'frameborder' => true,
@@ -321,7 +323,7 @@ if ( ! CUSTOM_TAGS ) {
 		),
 		's' => array(),
 		'samp' => array(),
-// XTEC ************ AFEGIT -
+// XTEC ************ AFEGIT - Let contributors use this tag
 		'script' => array(
 			'async' => true,
 			'charset' => true,
