@@ -59,3 +59,6 @@
 [submodule "wp-content/plugins/import-users-from-csv-with-meta"]
 	path = wp-content/plugins/import-users-from-csv-with-meta
 	url = https://github.com/projectestac/wordpress-import-users-from-csv-with-meta.git
+[submodule "wp-content/plugins/buddypress-group-email-subscription"]
+	path = wp-content/plugins/buddypress-group-email-subscription
+	url = https://github.com/projectestac/wordpress-buddypress-group-email-subscription.git
