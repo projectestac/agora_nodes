@@ -17,7 +17,7 @@ add_action('widgets_init', function() {
 class XTEC_Widget extends WP_Widget {
 
     public $recursos = [
-        'ensenyament' => ['nom' => "Dep.Ensenyament", 'url' => 'http://www20.gencat.cat/portal/site/ensenyament', 'img' => 'ensenyament-icon.png', 'desc' => 'Pàgina del Departament d\'ensenyament'],
+        'ensenyament' => ['nom' => "Dep.Ensenyament", 'url' => 'http://ensenyament.gencat.cat/', 'img' => 'ensenyament-icon.png', 'desc' => 'Pàgina del Departament d\'ensenyament'],
         'xtec' => ['nom' => "XTEC", 'url' => 'http://xtec.gencat.cat', 'img' => 'xtec-icon.png', 'desc' => 'Recursos educatius'],
         'edu365' => ['nom' => "Edu365", 'url' => 'http://edu365.cat', 'img' => 'edu365-icon.png', 'desc' => 'Recursos educatius'],
         'edu3' => ['nom' => "Edu3", 'url' => 'http://www.edu3.cat', 'img' => 'edu3-icon.png', 'desc' => 'Videos educatius'],
