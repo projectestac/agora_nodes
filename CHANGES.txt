@@ -10,6 +10,7 @@ Changes in progress
 - enllacos-educatius: Replaced Ministry of Education link
 - BuddyPress: Converted to submodule and upgraded to version 2.5.3 (Trello #1057)
 - add-to-any: Upgraded module to version 1.6.17. Added more options for xtecadmin (Trello #1031)
+- wordpress-php-info: Upgraded from version 14.12 to version 15
 
 
 Changes 16.05.03
