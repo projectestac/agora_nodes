@@ -8,6 +8,7 @@ Changes in progress
 - Reviewed embed support in kses to let contributors add Picasa web albums (Trello #1182)
 - BuddyPress Group Email Subscription: Converted to submodule and updated to 3.6.1 (Trello #1042)
 - enllacos-educatius: Replaced Ministry of Education link
+- BuddyPress: Converted to submodule
 
 
 Changes 16.05.03
