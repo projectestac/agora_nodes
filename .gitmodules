@@ -62,3 +62,6 @@
 [submodule "wp-content/plugins/buddypress-group-email-subscription"]
 	path = wp-content/plugins/buddypress-group-email-subscription
 	url = https://github.com/projectestac/wordpress-buddypress-group-email-subscription.git
+[submodule "wp-content/plugins/buddypress"]
+	path = wp-content/plugins/buddypress
+	url = https://github.com/projectestac/wordpress-buddypress.git
