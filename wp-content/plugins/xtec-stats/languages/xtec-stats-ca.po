@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xtec-stats\n"
-"POT-Creation-Date: 2016-01-15 14:41+0100\n"
-"PO-Revision-Date: 2016-01-15 14:43+0100\n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"POT-Creation-Date: 2016-06-20 10:01+0100\n"
+"PO-Revision-Date: 2016-06-28 11:18+0100\n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: xtec-stats.php:31
@@ -29,3 +29,89 @@ msgstr "Títol:"
 #: xtec-stats.php:61
 msgid "Count administrators stats"
 msgstr "Compta les visites dels administradors"
+
+#: xtec-stats.php:180
+msgid "Id"
+msgstr "Identificador"
+
+#: xtec-stats.php:181 xtec-stats.php:291
+msgid "Datetime"
+msgstr "Data"
+
+#: xtec-stats.php:182 xtec-stats.php:315
+msgid "IP"
+msgstr "IP"
+
+#: xtec-stats.php:183
+msgid "IP Forward"
+msgstr "IP directa"
+
+#: xtec-stats.php:184
+msgid "IP Client"
+msgstr "IP del client"
+
+#: xtec-stats.php:185
+msgid "User agent"
+msgstr "Informació d'usuari"
+
+#: xtec-stats.php:186
+msgid "Uri"
+msgstr "Uri"
+
+#: xtec-stats.php:187
+msgid "Uid"
+msgstr "Uid"
+
+#: xtec-stats.php:188
+msgid "Is admin"
+msgstr "És administrador"
+
+#: xtec-stats.php:189 xtec-stats.php:269 xtec-stats.php:299
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: xtec-stats.php:190
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: xtec-stats.php:191 xtec-stats.php:270 xtec-stats.php:307
+msgid "Content"
+msgstr "Contingut"
+
+#: xtec-stats.php:263
+msgid "Search options"
+msgstr "Opcions de cerca"
+
+#: xtec-stats.php:277
+msgid "Number elements to show"
+msgstr "Nombre d'elements a mostrar"
+
+#: xtec-stats.php:327
+msgid "Not data found"
+msgstr "No hi ha resultats"
+
+#: xtec-stats.php:381
+msgid "Export to CSV"
+msgstr "Exporta a un fitxer CSV"
+
+#: xtec-stats.php:390
+msgid "Show logs WP_Stats"
+msgstr "Consulta els missatges esborrats"
+
+#: xtec-stats.php:390
+msgid "Logs"
+msgstr "Registres"
+
+#: xtec-stats.php:401
+msgid "User name"
+msgstr "Nom d'usuari"
+
+#: xtec-stats.php:402
+msgid "Message content"
+msgstr "Contingut del missatge"
+
+#~ msgid "All"
+#~ msgstr "Tots"
+
+#~ msgid "URI"
+#~ msgstr "URI"

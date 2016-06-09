@@ -255,6 +255,7 @@ function bp_options_page() {
 			<p><a href="admin.php?page=bp-components"><?php _e('Components', 'reactor'); ?></a></p>
 			<p><a href="admin.php?page=bp-groups"><?php _e('Groups', 'buddypress'); ?></a></p>
 			<p><a href="admin.php?page=bp-like-settings"><?php _e('BuddyPress Like', 'buddypress-like'); ?></a></p>
+			<p><a href="tools.php?page=xtec_stats"><?php _e('Logs', 'xtec-stats'); ?></a></p>
 			<p><a href="admin.php?page=ass_admin_options"><?php _e('Group Email Options', 'bp-ass'); ?></a></p>
 			<p><a href="admin.php?page=bp-settings"><?php _e('Configuració', 'reactor'); ?></a></p>
 		</div>

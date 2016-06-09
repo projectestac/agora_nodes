@@ -22,6 +22,7 @@ Changes in progress
 - mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 - XTEC lib: Added a new operation in the portal to fix the Email Subscribers configuration (Trello #1266)
 - raw-html: Removed plugin (Trello #568)
+- xtec-stats: Let administrators view log information: admin only "deleted" entries; xtecadmin all entries (Trello #627)
 
 
 Changes 16.05.03
