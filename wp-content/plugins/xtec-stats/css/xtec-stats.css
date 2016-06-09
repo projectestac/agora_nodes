@@ -1,4 +1,4 @@
-/** 
+/**
 Document   : xtec-stats.css
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 Description: Stylesheet of xtec-stats plugin
@@ -23,3 +23,63 @@ Description: Stylesheet of xtec-stats plugin
     border-radius:2px;
     padding: 8px;
 }
+
+table.xtec-stats-width{
+    max-width: 99%;
+}
+
+.xtec-stats-limit{
+    float:right;
+    margin-bottom:5px;
+    margin-right: 10px;
+}
+
+button.xtec-stats-orderBy{
+    border: 0px;
+    background-color: white;
+    cursor:pointer;
+    color:#0091e4;
+}
+
+.xtec-stats-no-show{
+    display:none;
+}
+
+th a button:hover > span.xtec-stats-arrow{
+    display:block;
+    float:right;
+}
+
+.xtec-stats-pagination{
+    float:right;
+    margin-right:30px;
+}
+
+.xtec-stats-pagination-arrow{
+    border:0;
+    width:100px;
+    background-color: #f1f1f1;
+    color:#0091e4;
+    cursor:pointer;
+}
+
+.xtec-stats-export-csv{
+    float:right;
+    margin-top: 20px;
+    border:0;
+    background-color: #f1f1f1;
+    cursor:pointer;
+    color:#0091e4;
+}
+
+.buttonSearch{
+    border:0;
+    background-color: #f1f1f1;
+    cursor:pointer;
+    color:#0091e4;
+}
+
+.buttonSearch:hover, button.xtec-stats-export-csv:hover, button.xtec-stats-pagination-arrow:hover{
+    color:#37d4fa;
+}
+
