@@ -363,16 +363,34 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 		stateSelector: 'code'
 	});
 
-	// Menubar
-	// Insert->Add Media
-	if ( wp && wp.media && wp.media.editor ) {
+
+	//XTEC ************ MODIFICAT ­ Translate to catalan button title 'Add Media'. IMPORTANT: Code catch text to ".min.js"
+	//2016.05.30 @xaviernietosanchez
+	­­­if ( wp && wp.media && wp.media.editor ) {
 		editor.addMenuItem( 'add_media', {
-			text: 'Add Media',
+			text: 'Afegeix un fitxer multimèdia',
 			icon: 'wp-media-library',
 			context: 'insert',
 			cmd: 'WP_Medialib'
 		});
 	}
+	//************ ORIGINAL 
+	// 
+	­­­// Menubar
+	// Insert->Add Media
+	//if ( wp && wp.media && wp.media.editor ) {
+	//	editor.addMenuItem( 'add_media', {
+	//		text: 'Add Media',
+	//		icon: 'wp-media-library',
+	//		context: 'insert',
+	//		cmd: 'WP_Medialib'
+	//	});
+	//}
+	// 
+	//************ FI 
+
+
+	
 
 	// Insert "Read More..."
 	editor.addMenuItem( 'wp_more', {
