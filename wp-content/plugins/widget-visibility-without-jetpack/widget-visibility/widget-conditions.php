@@ -154,6 +154,26 @@ class Jetpack_Widget_Conditions {
 				</optgroup>
 				<?php
 			break;
+
+			// XTEC ************ AFEGIT ­ - Show nodes to select
+			// 2016.06.13 @xaviernietosanchez
+			case 'node':
+				global $wpdb;
+				$nodes = $wpdb->get_results("SELECT * FROM wp_bp_groups ORDER BY name ASC");
+
+				?>
+				<option value="" <?php selected( $nodes[$i]->id, $minor ); ?>><?php echo _e( 'All groups', 'jetpack' ); ?></option>
+				<?php 
+
+				for($i=0;$i<count($nodes);$i++){
+					?>
+					<option value="<?php echo $nodes[$i]->id ?>" <?php selected( $nodes[$i]->id, $minor ); ?>><?php echo $nodes[$i]->name ?></option>
+					<?php
+				}
+
+			break;
+			//************ FI
+
 			case 'taxonomy':
 				?>
 				<option value=""><?php _e( 'All taxonomy pages', 'jetpack' ); ?></option>
@@ -335,6 +355,11 @@ class Jetpack_Widget_Conditions {
 									<option value="date" <?php selected( "date", $rule['major'] ); ?>><?php echo esc_html_x( 'Date', 'Noun, as in: "This page is a date archive."', 'jetpack' ); ?></option>
 									<option value="page" <?php selected( "page", $rule['major'] ); ?>><?php echo esc_html_x( 'Page', 'Example: The user is looking at a page, not a post.', 'jetpack' ); ?></option>
 									<option value="post_type" <?php selected( "post_type", $rule['major'] ); ?>><?php echo esc_html_x( 'Post Type', 'Example: the user is viewing a custom post type archive.', 'jetpack' ); ?></option>
+
+									<!-- XTEC ************ AFEGIT - Added option "Node"  -->
+									<!-- 2016.06.13 @xaviernietosanchez -->
+									<option value="node" <?php selected( "node", $rule['major'] ); ?>><?php echo esc_html_x( 'Group', 'Example: The user is looking at a page, not a post.', 'jetpack' ); ?></option>
+									<!-- ************ FI -->
 
 									<!-- XTEC ************ ELIMINAT - Removed option "Taxonomy" -->
 									<!-- 2016.05.17 @aginard -->
@@ -715,6 +740,24 @@ class Jetpack_Widget_Conditions {
 							}
 						}
 					break;
+
+					// XTEC ************ AFEGIT ­ Check minor options to display or not display at the current page
+					// 2016.06.13 @xaviernietosanchez ­ reference
+					case 'node':
+						if ( ! $rule['minor'] && bp_is_group() ) {
+							$condition_result = true;
+						} else {
+							$current_group = bp_get_current_group_id();
+							$rule['minor'] = self::maybe_get_split_term( $rule['minor'], $rule['major'] );
+							if ( bp_is_group( $rule['minor'] ) && $current_group == $rule['minor'] ) {
+								$condition_result = true;
+							} else {
+								$condition_result = false;
+                            }
+                        }
+					break;
+					//************ FI
+
 				}
 
 				if ( $condition_result || self::$passed_template_redirect ) {
