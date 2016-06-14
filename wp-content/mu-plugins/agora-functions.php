@@ -795,3 +795,11 @@ function translate_roles () {
     return ;
 }
 add_action( 'widget_visibility_roles', 'translate_roles' );
+
+/**
+ * Charge shortcodes into description to category, tags and taxonomies
+ *
+ * @author Xavi Nieto
+ */
+add_filter( 'term_description', 'shortcode_unautop');
+add_filter( 'term_description', 'do_shortcode');
