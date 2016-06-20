@@ -329,7 +329,8 @@ function rebuild_bp_menus_step_2() {
 	remove_submenu_page('options-general.php', 'bp-components'); // Tab in BuddyPress
 	remove_submenu_page('bp-general-settings', 'ass_admin_options'); // Group Email
 	remove_submenu_page('options-general.php', 'bp-like-settings'); // BuddyPress Like
-	remove_submenu_page('options-general.php', 'slideshare'); 
+	remove_submenu_page('options-general.php', 'slideshare');
+	remove_submenu_page('themes.php', 'bp-emails-customizer-redirect'); // Email option under Themes
 
 }
 
