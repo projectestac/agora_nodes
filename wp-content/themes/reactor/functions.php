@@ -420,6 +420,14 @@ add_action('admin_menu', 'rebuild_bp_menus_step_1', 1); // Priority 1 is importa
 add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is important!
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
+// Unregister bp-mail post type to disable functionality
+function unregister_bp_mail () {
+	global $wp_post_types;
+	unregister_post_type( 'bp-email' );
+}
+// Fires after WordPress has finished loading but before any headers are sent
+add_action('init', 'unregister_bp_mail');
+
 /**
  * Remove Page Templates
  *
