@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2016-02-25 10:19+0100\n"
-"PO-Revision-Date: 2016-02-25 10:24+0100\n"
+"POT-Creation-Date: 2016-06-23 13:17+0100\n"
+"PO-Revision-Date: 2016-06-28 10:07+0100\n"
 "Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -11,39 +11,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/agora/workspace/agora/html/wordpress/wp-content/"
-"mu-plugins\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:33
+#: agora-functions.php:33
 msgid "My Articles"
 msgstr "Articles"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:57
+#: agora-functions.php:57
 msgid "Published"
 msgstr "Publicats"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:68
+#: agora-functions.php:68
 msgid "Pending Review"
 msgstr "Pendent de revisió"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:79
+#: agora-functions.php:79
 msgid "Drafts"
 msgstr "Esborranys"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:185
+#: agora-functions.php:185
 msgid "Categories"
 msgstr "Categories"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:192
+#: agora-functions.php:192
 msgid "Comments"
 msgstr "Comentaris"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:204
+#: agora-functions.php:204
 msgid "Article not found"
 msgstr "No s'ha trobat cap article"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:281
+#: agora-functions.php:281
 msgid "You have exceeded your disk quota limit"
 msgstr ""
 "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que "
@@ -52,119 +51,128 @@ msgstr ""
 "PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?"
 "id=461&mode=entry&hook=561"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:312
+#: agora-functions.php:315
 msgid "The page you were trying to delete is protected."
 msgstr ""
 "Aquesta pàgina no es pot esborrar perquè és necessària pel funcionament del "
 "Nodes"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:331
+#: agora-functions.php:334
 msgid "The page name you were trying to create is protected."
 msgstr ""
 "El nom de pàgina que voleu utilitzar està reservat. Si us plau, utilitzeu-ne "
 "un altre."
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:332
+#: agora-functions.php:335
 msgid "Page name is required."
 msgstr "El nom de la pàgina és obligatori"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:412
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:364
+#: agora-functions.php:415 common/lib.php:364
 msgid "You do not have permission to do that."
 msgstr "No teniu autorització per fer això"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:428
+#: agora-functions.php:431
 msgid "Articles by row"
 msgstr "Articles per fila"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:431
+#: agora-functions.php:434
 msgid "Articles to be displayed per row on category page (between 1 and 4)"
 msgstr ""
 "Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:438
+#: agora-functions.php:441
 msgid "Image"
 msgstr "Imatge"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:450
+#: agora-functions.php:453
 msgid "Current header image"
 msgstr "Imatge actual de la capçalera"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:455
+#: agora-functions.php:458
 msgid "Upload image"
 msgstr "Puja una imatge"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:456
+#: agora-functions.php:459
 msgid "Provide an image for the category"
 msgstr "Defineix una imatge de capçalera per la categoria"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:459
+#: agora-functions.php:462
 msgid "Remove image"
 msgstr "Suprimeix la imatge"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:555
+#: agora-functions.php:558
 msgid "Subscribers"
 msgstr "Subscriptors"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:556
+#: agora-functions.php:559
 msgid "Compose"
 msgstr "Composa"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:557
+#: agora-functions.php:560
 msgid "Send Email"
 msgstr "Envia missatge"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:558
+#: agora-functions.php:561
 msgid "Notification"
 msgstr "Notificació"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:559
+#: agora-functions.php:562
 msgid "Cron Mail"
 msgstr "Cron"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:560
+#: agora-functions.php:563
 msgid "Settings"
 msgstr "Configuració"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:561
+#: agora-functions.php:564
 msgid "Roles"
 msgstr "Rols"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:562
+#: agora-functions.php:565
 msgid "Sent Mails"
 msgstr "Missatges enviats"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:563
+#: agora-functions.php:566
 msgid "Help & Info"
 msgstr "Ajuda i informació"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:620
+#: agora-functions.php:623
 msgid "Options"
 msgstr "Opcions"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/agora-functions.php:645
+#: agora-functions.php:648
 msgid "Email subscribers"
 msgstr "Subscripcions correu"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+#: agora-functions.php:815
+msgid "Home page configuration"
+msgstr "Configuració del mur"
+
+#: agora-functions.php:830
+msgid "Posts to home page"
+msgstr "Comentaris al mur"
+
+#: agora-functions.php:877
+msgid "Allow to registry users direct post into home page"
+msgstr "Permet als usuaris registrats escriure directament al mur general"
+
+#: common/lib.php:194 common/lib.php:209
 msgid "Image files must be smaller than "
 msgstr "Les imatges no poden ser més grans de "
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:194
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:209
+#: common/lib.php:194 common/lib.php:209
 msgid "Recommended width image:"
 msgstr "Amplada recomanada: "
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:268
+#: common/lib.php:268
 msgid "No item"
 msgstr "No s'ha trobat cap element"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:272
+#: common/lib.php:272
 msgid ">"
 msgstr "Fa"
 
-#: /home/sarjona/workspace/git/agora/html/wordpress/wp-content/mu-plugins/common/lib.php:546
+#: common/lib.php:546
 msgid ""
 "The description is not prominent by default; however, some themes may show "
 "it."
