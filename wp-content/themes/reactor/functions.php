@@ -241,6 +241,7 @@ add_action('wp_before_admin_bar_render', 'tweak_admin_bar');
  * Build HTML page to centralize all BuddyPress-related stuff
  *
  * @author Toni Ginard
+ * @author Xavier Nieto
  *
  */
 function bp_options_page() {
@@ -249,12 +250,13 @@ function bp_options_page() {
 
 		<div style="width:180px; height:250px; padding:20px; float:left;">
 			<h3 style="height:40px;"><?php _e('BuddyPress', 'buddypress'); ?></h3>
-			<p><a href="admin.php?page=bp-components"><?php _e('Components', 'buddypress'); ?></a></p>
 			<p><a href="admin.php?page=bp-activity"><?php _e('Activity', 'buddypress'); ?></a></p>
 			<p><a href="admin.php?page=bpfb-settings"><?php _e('Activity Plus', 'bpfb'); ?></a></p>
+			<p><a href="admin.php?page=bp-components"><?php _e('Components', 'reactor'); ?></a></p>
 			<p><a href="admin.php?page=bp-groups"><?php _e('Groups', 'buddypress'); ?></a></p>
 			<p><a href="admin.php?page=bp-like-settings"><?php _e('BuddyPress Like', 'buddypress-like'); ?></a></p>
 			<p><a href="admin.php?page=ass_admin_options"><?php _e('Group Email Options', 'bp-ass'); ?></a></p>
+			<p><a href="admin.php?page=bp-settings"><?php _e('Configuració', 'reactor'); ?></a></p>
 		</div>
 
 		<div style="width:160px; height:250px; padding:20px; float:left;">
@@ -292,25 +294,14 @@ function bp_options_page() {
  * need to be done later, depending on the implementation of every plugin.
  *
  * @author Toni Ginard
- *
+ * @author Xavier Nieto
  */
 function rebuild_bp_menus_step_1() {
 
 	add_menu_page(__('BuddyPress', 'buddypress'), __('BuddyPress', 'buddypress'), 'manage_options', 'xtec-bp-options', 'bp_options_page', '', 59);
 
-	add_submenu_page('xtec-bp-options', __('Components', 'buddypress'), __('Components', 'buddypress'), 'manage_options', 'bp-components', 'bp_core_admin_components_settings');
 	add_submenu_page('xtec-bp-options', __('Activity', 'buddypress'), __('Activity', 'buddypress'), 'manage_options', 'bp-activity');
-	add_submenu_page('xtec-bp-options', __('Groups', 'buddypress'), __('Groups', 'buddypress'), 'manage_options', 'bp-groups');
-	add_submenu_page('xtec-bp-options', __('BuddyPress Like', 'buddypress-like'), __('BuddyPress Like', 'buddypress-like'), 'manage_options' , 'bp-like-settings' , 'bp_like_admin_page');
-	add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
 
-    // Don't load Invite Anyone menu
-    remove_action('admin_menu', 'invite_anyone_admin_add', 80);
-
-    // Reproduce the actions in the function previously cancelled
-    $plugin_page = add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
-    add_action("admin_print_scripts-$plugin_page", 'invite_anyone_admin_scripts');
-    add_action("admin_print_styles-$plugin_page", 'invite_anyone_admin_styles');
 }
 
 /**
@@ -327,10 +318,26 @@ function rebuild_bp_menus_step_2() {
 	remove_menu_page('bp-groups');
 
 	remove_submenu_page('options-general.php', 'bp-components'); // Tab in BuddyPress
+	remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
 	remove_submenu_page('bp-general-settings', 'ass_admin_options'); // Group Email
 	remove_submenu_page('options-general.php', 'bp-like-settings'); // BuddyPress Like
 	remove_submenu_page('options-general.php', 'slideshare');
-	remove_submenu_page('themes.php', 'bp-emails-customizer-redirect'); // Email option under Themes
+
+	add_submenu_page('xtec-bp-options', __('Components', 'buddypress'), __('Components', 'buddypress'), 'manage_options', 'bp-components', 'bp_core_admin_components_settings');
+
+	add_submenu_page('xtec-bp-options', __('Groups', 'buddypress'), __('Groups', 'buddypress'), 'manage_options', 'bp-groups');
+	add_submenu_page('xtec-bp-options', __('BuddyPress Like', 'buddypress-like'), __('BuddyPress Like', 'buddypress-like'), 'manage_options' , 'bp-like-settings' , 'bp_like_admin_page');
+	add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
+
+    // Don't load Invite Anyone menu
+    remove_action('admin_menu', 'invite_anyone_admin_add', 80);
+
+    // Reproduce the actions in the function previously cancelled
+    $plugin_page = add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
+    add_action("admin_print_scripts-$plugin_page", 'invite_anyone_admin_scripts');
+    add_action("admin_print_styles-$plugin_page", 'invite_anyone_admin_styles');
+
+    add_submenu_page('xtec-bp-options', __('Configuració', 'reactor'), __('Configuració', 'reactor'), 'manage_options', 'bp-settings', 'bp_core_admin_settings');
 
 }
 

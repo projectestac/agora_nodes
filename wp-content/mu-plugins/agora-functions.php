@@ -819,3 +819,89 @@ function suggest_label() {
 
 add_action( 'wp_ajax_suggest_label', 'suggest_label' );
 add_action( 'wp_ajax_nopriv_suggest_label', 'suggest_label' );
+
+/**
+ * New setting option to disable/enabled post to home page into buddypress
+ * @author Xavi Nieto
+ */
+
+/**
+ * Your setting main function
+ */
+function bp_plugin_admin_settings() {
+
+    /* This is how you add a new section to BuddyPress settings */
+    add_settings_section(
+        /* the id of your new section */
+        'bd_admin_node_setting',
+
+        /* the title of your section */
+        __( 'Home page configuration',  'agora-functions' ),
+
+        /* the display function for your section's description */
+        'bp_plugin_setting_callback_section',
+
+        /* BuddyPress settings */
+        'buddypress'
+    );
+
+    /* This is how you add a new field to your plugin's section */
+    add_settings_field(
+        /* the option name you want to use for your plugin */
+        'bp-plugin-enabled-post-home',
+
+        /* The title for your setting */
+        __( 'Posts to home page', 'agora-functions' ),
+
+        /* Display function */
+        'bp_plugin_setting_field_callback',
+
+        /* BuddyPress settings */
+        'buddypress',
+
+        /* Your plugin's section id */
+        'bd_admin_node_setting'
+    );
+
+    /*
+       This is where you add your setting to BuddyPress ones
+       Here you are directly using intval as your validation function
+    */
+    register_setting(
+        /* BuddyPress settings */
+        'buddypress',
+
+        /* the option name you want to use for your plugin */
+        'bp-plugin-enabled-post-home',
+
+        /* the validatation function you use before saving your option to the database */
+        'intval'
+    );
+
+}
+
+/**
+ * You need to hook bp_register_admin_settings to register your settings
+ */
+add_action( 'bp_register_admin_settings', 'bp_plugin_admin_settings' );
+
+/**
+ * This is the display function for your section's description
+ */
+function bp_plugin_setting_callback_section() {}
+
+/**
+ * This is the display function for your field
+ */
+function bp_plugin_setting_field_callback() {
+    /* if you use bp_get_option(), then you are sure to get the option for the blog BuddyPress is activated on */
+    $bp_plugin_option_value = bp_get_option( 'bp-plugin-enabled-post-home' );
+    if( ! is_numeric($bp_plugin_option_value ) ){
+        bp_update_option( 'bp-plugin-enabled-post-home', '1' );
+        $bp_plugin_option_value = bp_get_option( 'bp-plugin-enabled-post-home' );
+    }
+    ?>
+    <input id="bp-plugin-enabled-post-home" name="bp-plugin-enabled-post-home" type="checkbox" value="1" <?php checked( $bp_plugin_option_value ); ?> />
+    <label for="bp-plugin-enabled-post-home"><?php _e( 'Allow to registry users direct post into home page', 'agora-functions' ); ?></label>
+    <?php
+}
