@@ -13,6 +13,7 @@ Changes in progress
 - add-to-any: Upgraded module to version 1.6.17. Added more options for xtecadmin (Trello #1031)
 - wordpress-php-info: Upgraded from version 14.12 to version 15
 - mu-common: Deactivate pingback to avoid attacks to other sites (Trello #1275)
+- mu-common: Removed fix for post thumbnails broken due to upgrading to WP 4.4. No longer necessary in WP 4.5
 
 
 Changes 16.05.03
