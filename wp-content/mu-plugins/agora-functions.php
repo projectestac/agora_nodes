@@ -795,3 +795,27 @@ function translate_roles () {
     return ;
 }
 add_action( 'widget_visibility_roles', 'translate_roles' );
+
+/**
+ * Suggest labels to buddypress-docs
+ *
+ * @author Xavi Nieto
+ */
+function suggest_label() {
+    $term = '%'.strtolower( $_GET['term'] ).'%';
+    $suggestions = [];
+
+    global $wpdb;
+    $results = $wpdb->get_results($wpdb->prepare("SELECT name, slug FROM wp_terms INNER JOIN wp_term_taxonomy ON wp_terms.term_id = wp_term_taxonomy.term_id  WHERE  name LIKE '%s' AND wp_term_taxonomy.taxonomy = 'bp_docs_tag'",$term));
+
+    foreach( $results as $result ){
+        $suggestions[] = $result->name;
+    }
+
+    $response = json_encode( $suggestions );
+    echo $response;
+    exit();
+}
+
+add_action( 'wp_ajax_suggest_label', 'suggest_label' );
+add_action( 'wp_ajax_nopriv_suggest_label', 'suggest_label' );
