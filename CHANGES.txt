@@ -16,6 +16,7 @@ Changes in progress
 - mu-common: Removed fix for post thumbnails broken due to upgrading to WP 4.4. No longer necessary in WP 4.5
 - buddypress-docs: Suggest labels when adding new documents (Trello #1228)
 - widget-visibility-without-jetpack: Added option to show content only in selected groups of buddypress (Trello #1262)
+- Translated menu option "Add Media" to catalan (Trello #1254)
 
 
 Changes 16.05.03
