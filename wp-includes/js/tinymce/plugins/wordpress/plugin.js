@@ -441,7 +441,14 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 		} );
 
 		editor.addMenuItem( 'add_media', {
+			// XTEC ************ MODIFICAT ­ Translate to catalan button title 'Add Media'. To apply the changes, we need change to "min.js" file. Is necesary change "min.js" when update wordpress or this plugin.
+			// 2016.06.10 @xaviernietosanchez
+			text: 'Afegeix un fitxer multimèdia',
+			//************ ORIGINAL
+			/*
 			text: 'Add Media',
+			*/
+			//************ FI
 			icon: 'wp-media-library',
 			context: 'insert',
 			cmd: 'WP_Medialib'
