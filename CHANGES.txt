@@ -17,6 +17,7 @@ Changes in progress
 - buddypress-docs: Suggest labels when adding new documents (Trello #1228)
 - widget-visibility-without-jetpack: Added option to show content only in selected groups of buddypress (Trello #1262)
 - Translated menu option "Add Media" to catalan (Trello #1254)
+- mu-common: Check script label to only allow Gallery.io scripts to contributor users rol (Trello #1182)
 
 
 Changes 16.05.03
