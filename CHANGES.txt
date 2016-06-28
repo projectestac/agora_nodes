@@ -19,6 +19,7 @@ Changes in progress
 - Translated menu option "Add Media" to catalan (Trello #1254)
 - mu-common: Check script label to only allow Gallery.io scripts to contributor users rol (Trello #1182)
 - mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
+- XTEC lib: Added a new operation in the portal to fix the Email Subscribers configuration (Trello #1266)
 
 
 Changes 16.05.03
