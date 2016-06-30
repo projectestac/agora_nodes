@@ -142,7 +142,6 @@ if (class_exists('WP_Importer')) {
 
 			$title   = __('Intranet Import', 'intranet-importer');
 			$submit  = __('Return', 'intranet-importer');
-			$summary = '';
 
 			echo '<div class="wrap"><h2>' . $title . '</h2></div>';
 			echo '<div class="wrap"><br/>';
@@ -238,7 +237,7 @@ if (class_exists('WP_Importer')) {
 			$summary .= '</ul>';
 			$summary .= '</div>';
 
-			$body .= "<p>".__('Process finished', 'intranet-importer')."</p>";
+			$body = "<p>" . __('Process finished', 'intranet-importer') . "</p>";
 			$body .= $summary;
 
 			echo '<div class="wrap">' . $body . '</div>';
