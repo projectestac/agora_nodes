@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- BPDOCS: Fixed bug when uploading files when editing them if protocol it is not HTTPS (Trello #1205)
+
+
 Changes 16.08.22
 ---------------------------------------------------------------------------------------
 - intranet-importer: Fixed import of images with capital letters in extensions
