@@ -760,8 +760,7 @@ function parseSingleContent($content) {
  */
 
 function processSingleContent($content, $srcArray, $pdf) {
-	global $wpdb;
-	global $agora;
+	global $wpdb, $agora;
 
 	if (!empty($srcArray)) {
 		foreach ($srcArray as $tag => $src) {
@@ -769,16 +768,17 @@ function processSingleContent($content, $srcArray, $pdf) {
 			if($pos !== FALSE){
 				$path = explode("file.php?file=", $src[0]);
 				$srcPath = str_replace('"',"", $path[1]);
+				$srcPath = str_replace('%20'," ", $srcPath);
 
 				if ($pdf == true) {
 					$extension = explode(".", $srcPath);
 					if ($extension[1] != 'pdf') {
-						// Its a link witout an embedded pdf file
+						// It's a link without an embedded pdf file
 						continue;
 					}
 				}
 
-				$file  =  $agora['server']['root'].$agora['intranet']['datadir'].$wpdb->dbname.'/data/'.$srcPath;
+				$file = $agora['server']['root'] . $agora['intranet']['datadir'] . $wpdb->dbname . '/data/' . $srcPath;
 				$filename = basename($srcPath);
 				$wp_upload_dir = wp_upload_dir();
 
