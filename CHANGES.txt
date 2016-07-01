@@ -24,6 +24,7 @@ Changes 16.07.04
 - raw-html: Removed plugin (Trello #568)
 - xtec-stats: Let administrators view log information: admin only "deleted" entries; xtecadmin all entries (Trello #627)
 - intranet-importer: Fixed import of files in directories that contain blank spaces in its name
+- intranet-importer: Import names and surnames of the users
 
 
 Changes 16.05.03
