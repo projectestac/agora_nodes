@@ -385,7 +385,7 @@ function importUsers(){
 
 	$importedUsers = 0;
 
-	$query = " SELECT * FROM users";
+	$query = 'SELECT * FROM users u LEFT JOIN IWusers iwu ON u.uid=iwu.iw_uid';
 	$result = $wpdb->get_results($query);
 	manageDataBaseErrors($wpdb);
 
@@ -403,7 +403,17 @@ function importUsers(){
 					// Create user without password
 					$new_user_id = wp_create_user($new_user->uname, '', $new_user->email);
 					// Assign intranet hash password for the user
-					$wpdb->update($wpdb->users, array('user_pass' => $user_password), array('ID' => $new_user_id) );
+					$wpdb->update(
+						$wpdb->users,
+						array( // data
+							'user_pass' => $user_password,
+							'display_name' => $new_user->iw_nom . ' ' . $new_user->iw_cognom1 . ' ' . $new_user->iw_cognom2
+						),
+						array('ID' => $new_user_id) // where
+					);
+					// Update name and surname in wp_usermeta
+					update_user_meta( $new_user_id, 'first_name', $new_user->iw_nom );
+					update_user_meta( $new_user_id, 'last_name', $new_user->iw_cognom1 . ' ' . $new_user->iw_cognom2 );
 					$importedUsers ++;
 					echo "<li>";
 					echo __('User created: ', 'intranet-importer')."&nbsp;".$new_user->uname."<br/>";
