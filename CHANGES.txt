@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Fixed removal of users by admins (Trello #1298)
+
+
 Changes 16.07.04
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.3 (Trello #1272)
