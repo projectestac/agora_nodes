@@ -343,14 +343,6 @@ switch ( $wp_list_table->current_action() ) {
 		$go_delete = 0;
 		foreach ( $all_userids as $id ) {
 
-                        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (confirmation step)
-                        // 2014.09.03 @aginard
-                        // 2015.07.31 @nacho
-                        if (!is_xtec_super_admin()) {
-                            wp_die(__('You do not have permission to do that.'));
-                        }
-                        //************ FI
-
 			$user = get_userdata( $id );
 
                         // XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
