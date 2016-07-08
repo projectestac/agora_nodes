@@ -1,0 +1,62 @@
+/* CALENDAR INTO BOOKING */
+.cal-row-fluid{
+	height: 50px;
+	overflow: hidden;
+}
+
+#cal-week-box{
+	visibility: hidden;
+}
+
+.events-list{
+	position: static !important;
+}
+
+.event{
+	float: left !important;
+	width: 6px !important;
+	height: 6px !important;
+}
+
+#cal-slide-content a.event-item, #cal-slide-content a.event-item:hover, #cal-slide-content a.event-item:focus{
+	text-decoration: none;
+	cursor: default !important;
+}
+
+span[data-cal-date]{
+	font-size: 0.8em !important;
+}
+
+.cal-month-box .cal-day-today span[data-cal-date]{
+	font-size: 1em !important;
+}
+
+.cal-row-head{
+	height: 30px;
+}
+
+/* THUMBNAIL */
+
+.resource_no_data{
+	height: 140px;
+	background-color: #CCCCCC;
+	padding-top: 40%;
+}
+
+.select_resource{
+	color: white;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.resource_thumbnail{
+	overflow: hidden;
+}
+
+.xtec-non-italic{
+	font-style: normal !important;
+}
+
+label[for="visibility-radio-password"], label[for="visibility-radio-private"], #visibility-radio-password, #visibility-radio-private, .misc-pub-section.curtime.misc-pub-curtime{
+	display: none;
+}
