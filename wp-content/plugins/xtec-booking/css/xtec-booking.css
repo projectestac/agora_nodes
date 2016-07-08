@@ -1,0 +1,286 @@
+
+/* Form resources page */
+input[type='text'], select{
+	min-width: 30%;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+	color: #cccccc;
+	font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: #cccccc;
+	font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #cccccc;
+	font-style: italic;
+}
+
+/* List Resources Page */
+option.xtec-booking-firts-option{
+	color: #cccccc;
+	font-style: italic;
+}
+
+span.xtec-not-data{
+	font-style: italic;
+}
+
+span.xtec-warning{
+	font-size: 10px;
+	color:red;
+}
+
+div.xtec-search-form{
+	float: right;
+}
+
+.style_message{
+
+    font-size: 12px !important;
+    white-space: nowrap;
+    width: 246px;
+    background-color: #A1C4E4;
+    padding: 4px 6px 4px 6px;
+    margin-left: 1px;
+    border: 1px solid #006799;
+}
+
+@-moz-document url-prefix() {
+    .style_message{
+        padding:  4px 5px 4px 5px;
+    }
+}
+
+.border_info_date{
+	border: 1px solid #006799 !important;
+}
+
+/* Form Booking page */
+div.xtec-booking-datetime{
+	float:left;
+	width: 40%;
+}
+
+input.xtec-booking-input-datetime{
+	width: 3em%;
+}
+
+input.xtec-booking-input-time{
+	width: 5em;
+	margin-right: 10px;
+}
+
+
+tr.xtec-booking-display-none{
+	display: none;
+}
+
+textarea.xtec-booking-textarea{
+	width: 100%;
+	height: 100px;
+}
+
+div.xtec-red{
+	background-color: #f2dede;
+}
+
+p.xtec-white{
+	color: #dc3232;
+}
+
+input.xtec-input-list-resource{
+	margin-left: 5px;
+	float: left;
+}
+
+.xtec-bullet-resource-list{
+	margin-top: 4px;
+	margin-left: 10px;
+	float: right;
+}
+
+.xtec-booking-collapse{
+	float: right;
+	margin-right: 0;
+}
+
+.xtec-booking-selected{
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin-left: -4px;
+	background-color: #EEEEEE;
+	border: 4px solid white;
+	border-radius: 10px;
+}
+
+.xtec-booking-not-selected{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.xtec-booking-unstyle-link, .xtec-booking-unstyle-link:hover, .xtec-booking-unstyle-link:visited, .xtec-booking-unstyle-link:active{
+	color: black;
+	text-decoration: none !important;
+}
+
+.xtec-row-panel{
+	overflow: hidden;
+}
+
+/* BOOTSTRAP CALENDAR CSS */
+
+.all-resources {
+  background-color: #FE9A2E !important;
+}
+
+li a[data-event-class*="grey"]{
+	color: #848484 !important;
+}
+
+.xtec-booking-error{
+	color: red;
+	font-style: italic;
+}
+
+select#admin_filter{
+	min-width: 0;
+}
+
+select.xtec-booking-input{
+	min-width: 300px;
+}
+
+input.xtec-booking-check-resources{
+	margin: 2px 0 0 !important;
+}
+
+.click_cursor:hover{
+	cursor: s-resize;
+}
+
+div.div_wait_ajax{
+	position:absolute;
+	margin-left:50px;
+	width:90.2%;
+	height:64%;
+	background-color:#BBBBBB;
+	z-index:9999999;
+	opacity:0.5;
+	padding-top:25%
+}
+
+div.div_wait_ajax_booking{
+	position:absolute;
+	width:90.2%;
+	height:60%;
+	background-color:#BBBBBB;
+	z-index:9999999;
+	opacity:0.5;
+	padding-top:25%
+}
+
+
+div.display_div_wait{
+	display: none;
+}
+
+.display_message_date{
+	display: none;
+}
+
+/* THUMBNAIL */
+div#img_resource > img{
+	max-width: 150px !important;
+	margin-left: 55px;
+}
+
+/* MODAL */
+div.xtec_booking_modal_content{
+	overflow: hidden;
+	max-height: 85%;
+
+}
+
+strong.xtec_booking_color{
+	color: #337AB7;
+}
+
+.modal-content{
+	margin-top: 20% !important;
+}
+
+.xtec_booking_titles{
+	width: 100%;
+}
+
+.xtec_booking_titles_hour{
+	width: 40%;
+}
+
+.xtec_booking_float{
+	float: left;
+}
+
+.xtec_booking_clear{
+	clear: both;
+}
+
+.xtec_booking_modal_by{
+	margin-top: 5px;
+	float: right;
+	position: relative;
+}
+
+#modalContent{
+	margin-top: 10px;
+}
+
+span.weekdays{
+	font-weight: bold;
+}
+
+#text_days{
+	margin-bottom: -20px !important;
+}
+
+/* RESOURCES COLORS */
+
+.event-orange {
+  	background-color: #DF8A48 !important;
+}
+.day-highlight.dh-event-orange:hover,
+.day-highlight.dh-event-orange {
+	background-color:  #DF8A48 !important;
+}
+
+.event-pink {
+  	background-color: #ff6bd2 !important;
+}
+.day-highlight.dh-event-pink:hover,
+.day-highlight.dh-event-pink {
+	background-color:  #ff6bd2 !important;
+}
+
+.event-brown {
+	background-color: #8B4500 !important;
+}
+.day-highlight.dh-event-brown:hover,
+.day-highlight.dh-event-brown {
+	background-color:  #8B4500 !important;
+}
+
+.event-lightBlue{
+	background-color: #7AE7BF !important;
+}
+.day-highlight.dh-event-brown:hover,
+.day-highlight.dh-event-brown {
+	background-color:  #7AE7BF !important;
+}
+
+div.pull-left.day-event.day-highlight.dh-event-important span.cal-hours{
+	display: none;
+}
