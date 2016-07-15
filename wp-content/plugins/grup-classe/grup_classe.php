@@ -92,7 +92,7 @@ class grup_classe_widget extends WP_Widget {
         <br>        
         <!-- Calendar / Classroom -->
         <?php 
-         $args = array( 'posts_per_page' => -1, 'post_type' => 'gce_feed', 'order' => 'ASC');
+         $args = array( 'posts_per_page' => -1, 'post_type' => 'calendar', 'order' => 'ASC');
          $calendaris = get_posts($args);
          wp_reset_query();
         ?>
