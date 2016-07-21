@@ -696,7 +696,6 @@ function getBPDocsPath() {
 
 	$path = $filePath."/".$docsFolder;
 	return $path;
-
 }
 
 /**
@@ -745,6 +744,20 @@ function manageAttachmentDPDocs($postId, $fileName, $fullFileName){
 	}
 }
 
+
+/**
+ * Get relative path of public folder of module IWforms
+ */
+function getIWformsDir() {
+    global $wpdb;
+
+    $query = "SELECT `value` FROM `module_vars` WHERE `modname`='IWforms' AND `name`='publicFolder'";
+    $result = $wpdb->get_results($query);
+    manageDataBaseErrors($wpdb);
+
+    return unserialize($result[0]->value);
+}
+
 /**
  * Search Images and Pdf files into the content
  * Then calls processSingleContent function to process
@@ -774,13 +787,24 @@ function processSingleContent($content, $srcArray, $pdf) {
 
 	if (!empty($srcArray)) {
 		foreach ($srcArray as $tag => $src) {
-			$pos = strpos($src[0], 'file.php?file=');
-			if($pos !== FALSE){
-				$path = explode("file.php?file=", $src[0]);
-				$srcPath = str_replace('"',"", $path[1]);
-				$srcPath = str_replace('%20'," ", $srcPath);
+			$pos_files = strpos($src[0], 'file.php?file=');
+            $pos_iwforms = strpos($src[0], 'download') && strpos($src[0], 'fid') && strpos($src[0], 'fndid') && strpos($src[0], 'fileName');
 
-				if ($pdf == true) {
+			if (($pos_files !== false) || ($pos_iwforms !== false)) {
+			    if ($pos_files !== false) {
+                    $path = explode('file.php?file=', $src[0]);
+                    $srcPath = $path[1];
+                }
+                elseif ($pos_iwforms !== false) {
+                    $file = explode('fileName=', $src[0]);
+                    $relativePath = getIWformsDir();
+                    $srcPath = $relativePath . $file[1];
+                }
+
+                $srcPath = str_replace('"',"", $srcPath);
+                $srcPath = str_replace('%20'," ", $srcPath);
+
+                if ($pdf == true) {
 					$extension = explode(".", $srcPath);
 					if (($extension[1] != 'pdf') && ($extension[1] != 'PDF')) {
 						// It's a link without an embedded pdf file
