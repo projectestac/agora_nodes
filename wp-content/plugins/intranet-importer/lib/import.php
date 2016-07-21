@@ -782,7 +782,7 @@ function processSingleContent($content, $srcArray, $pdf) {
 
 				if ($pdf == true) {
 					$extension = explode(".", $srcPath);
-					if ($extension[1] != 'pdf') {
+					if (($extension[1] != 'pdf') && ($extension[1] != 'PDF')) {
 						// It's a link without an embedded pdf file
 						continue;
 					}
@@ -808,16 +808,18 @@ function processSingleContent($content, $srcArray, $pdf) {
 							$content = str_replace($src[0], '<img src="'.$newPath.'"', $content);
 						}
 					} else {
-						// Embedded content doesnt exists, upload and change src
+						// Embedded content doesn't exist, upload and change src
 						$upload_file = wp_upload_bits($filename, null, file_get_contents($file));
+                        // Get the new file name (WordPress changes capitalization)
+                        $new_filename = basename($upload_file['file']);
 
 						if (!$upload_file['error']) {
-							createAttachment($upload_file, $filename, $wp_upload_dir);
-							$newPath = $wp_upload_dir['url'].'/'.$filename;
+							createAttachment($upload_file, $new_filename, $wp_upload_dir);
+							$newPath = $wp_upload_dir['url'].'/'.$new_filename;
 							if ($pdf == true) {
-								$content = str_replace($src[0], '<a href="'.$newPath.'"', $content);
+								$content = str_replace($src[0], '<a href="' . $newPath . '"', $content);
 							}else {
-								$content = str_replace($src[0], '<img src="'.$newPath.'"', $content);
+								$content = str_replace($src[0], '<img src="' . $newPath . '"', $content);
 							}
 						}
 					}
