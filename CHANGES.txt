@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - intranet-importer: Fixed import of images with capital letters in extensions
+- intranet-importer: Added import of images uploaded using IWforms
 
 
 Changes 16.07.20
