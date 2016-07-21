@@ -5,6 +5,12 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- intranet-importer: Fixed import of images with capital letters in extensions
+
+
+Changes 16.07.20
+---------------------------------------------------------------------------------------
+NODES
 - Fixed removal of users by admins (Trello #1298)
 
 
