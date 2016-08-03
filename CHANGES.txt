@@ -7,11 +7,11 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - intranet-importer: Fixed import of images with capital letters in extensions
 - intranet-importer: Added import of images uploaded using IWforms
+- add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
 
 
 Changes 16.07.20
 ---------------------------------------------------------------------------------------
-NODES
 - Fixed removal of users by admins (Trello #1298)
 
 
