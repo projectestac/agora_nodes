@@ -3,11 +3,12 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 16.08.22
 ---------------------------------------------------------------------------------------
 - intranet-importer: Fixed import of images with capital letters in extensions
 - intranet-importer: Added import of images uploaded using IWforms
 - add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
+- xtec: Added es_c_unsubtext field to fix site name in Email subscribers (Trello #1315)
 
 
 Changes 16.07.20
