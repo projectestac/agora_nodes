@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2016-06-23 13:17+0100\n"
-"PO-Revision-Date: 2016-06-28 10:07+0100\n"
-"Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
+"POT-Creation-Date: 2016-09-14 08:00+0100\n"
+"PO-Revision-Date: 2016-09-14 08:01+0100\n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -144,17 +144,46 @@ msgstr "Opcions"
 msgid "Email subscribers"
 msgstr "Subscripcions correu"
 
-#: agora-functions.php:815
+#: agora-functions.php:839
 msgid "Home page configuration"
 msgstr "Configuració del mur"
 
-#: agora-functions.php:830
+#: agora-functions.php:854
 msgid "Posts to home page"
 msgstr "Comentaris al mur"
 
-#: agora-functions.php:877
+#: agora-functions.php:905
 msgid "Allow to registry users direct post into home page"
 msgstr "Permet als usuaris registrats escriure directament al mur general"
+
+#: agora-functions.php:922
+msgid "Teacher"
+msgstr "Professor"
+
+#: agora-functions.php:941 agora-functions.php:977 agora-functions.php:1007
+#: agora-functions.php:1039
+msgid "Select name to teacher's node"
+msgstr "Selecciona el node de professor"
+
+#: agora-functions.php:1048
+msgid "Node that containing all user's with teacher's role"
+msgstr "Grup on tenen accés només aquells usuaris que són professors."
+
+#: agora-functions.php:1049
+msgid ""
+"New members of this group, if they have Contributor role will be "
+"automatically promoted to the role teachers. This will have access to the "
+"reservations of spaces and equipment. This change does not affect users who "
+"already belong to the node, or those who have other roles."
+msgstr ""
+"Els membres nous d'aquest grup, si tenen rol Col·laborador, seran "
+"promocionats automàticament al rol Professorat. D'aquesta manera tindran "
+"accés a les reserves d'espais i equips. Aquest canvi no afecta als usuaris "
+"que ja pertanyen al Node, ni als que tenen altres rols."
+
+#: agora-functions.php:1058
+msgid "Teacher's group"
+msgstr "Node de professors"
 
 #: common/lib.php:194 common/lib.php:209
 msgid "Image files must be smaller than "
