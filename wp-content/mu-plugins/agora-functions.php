@@ -909,3 +909,164 @@ function bp_plugin_setting_field_callback() {
     <label for="bp-plugin-enabled-post-home"><?php _e( 'Allow to registry users direct post into home page', 'agora-functions' ); ?></label>
     <?php
 }
+
+/**
+ * Add custom role: 'xtec_teacher'.
+ * @author Xavi Nieto
+ */
+function xtec_booking_add_xtec_teacher_role(){
+
+    global $wpdb;
+
+    $roleTeacher = get_role('xtec_teacher');
+    if ( is_null($roleTeacher) ){
+
+        $result = add_role(
+            'xtec_teacher',
+            __( 'Teacher', 'agora-functions' ),
+            array(
+                'edit_posts'                => true,
+                'read'                      => true,
+                'level_1'                   => true,
+                'level_0'                   => true,
+                'delete_posts'              => true,
+                'upload_files'              => true,
+                'edit_published_posts'      => true,
+                'delete_published_posts'    => true,
+                'delete_pages'              => true,
+                'delete_pages_bookings'     => true,
+                'edit_posts_bookings'       => true,
+                'delete_posts_bookings'     => true,
+                'publish_posts_bookings'    => true,
+            )
+        );
+
+        $node = get_option('xtec_principal_node');
+        $not_selected = __("Select name to teacher's node",'agora-functions');
+
+        if ( $node != $not_selected ){
+            $results = $wpdb->get_results('SELECT * FROM wp_bp_groups_members as WM, wp_bp_groups as WG WHERE  WM.group_id = WG.id and WM.is_confirmed = 1 and WG.name = "'.$node.'"');
+        } else {
+            $results = $wpdb->get_results('SELECT * FROM wp_bp_groups_members as WM, wp_bp_groups as WG WHERE  WM.group_id = WG.id and WM.is_confirmed = 1 and ( WG.name = "Mestres" or WG.name = "Professorat" )');
+        }
+
+        /**
+         * Assign role to users can acces 'Mestres' or 'Professorat'
+         */
+        foreach ($results as $result) {
+            $user = new WP_User($result->user_id);
+
+            if ( in_array( 'contributor', (array) $user->roles ) ){
+                $user->remove_role('contributor');
+                $user->add_role('xtec_teacher');
+            }
+        }
+    }
+}
+
+add_action('admin_menu','xtec_booking_add_xtec_teacher_role');
+
+/**
+ * Add teacher's role to users when access node
+ * @author Xavi Nieto
+ */
+function xtec_groups_join_group( $membership_user_id, $membership_group_id, $true ) {
+
+    global $wpdb;
+
+    $group_name = $wpdb->get_var( $wpdb->prepare( "SELECT name FROM wp_bp_groups WHERE id = %d", $membership_group_id) );
+
+    $user = new WP_User($membership_user_id);
+    $node = get_option('xtec_principal_node');
+    $not_selected = __("Select name to teacher's node",'agora-functions');
+
+    if( in_array('contributor',(array) $user->roles) && ( $group_name == $node ) ){
+
+        $user->remove_role('contributor');
+        $user->add_role('xtec_teacher');
+
+    } else if( $node == $not_selected || $node == false ){
+
+        if( in_array('contributor',(array) $user->roles) && ( $group_name == 'Mestres' || $group_name == 'Professorat' ) ) {
+            $user->remove_role('contributor');
+            $user->add_role('xtec_teacher');
+        }
+    }
+
+};
+add_action( 'groups_membership_accepted', 'xtec_groups_join_group', 10, 3);
+
+/**
+ * Remove teacher's role to users when leave node's teacher
+ * @author Xavi Nieto
+ */
+function xtec_member_leave_group( $group_id, $user_id ) {
+
+    global $wpdb;
+
+    $group_name = $wpdb->get_var( $wpdb->prepare( "SELECT name FROM wp_bp_groups WHERE id = %d", $group_id) );
+
+    $user = new WP_User($user_id);
+    $node = get_option('xtec_principal_node');
+    $not_selected = __("Select name to teacher's node",'agora-functions');
+
+    if( in_array('xtec_teacher',(array) $user->roles) && ( $group_name == $node ) ){
+
+        $user->remove_role('xtec_teacher');
+        $user->add_role('contributor');
+
+    } else if( $node == $not_selected || $node == false ){
+
+        if( in_array('xtec_teacher',(array) $user->roles) && ( $group_name == 'Mestres' || $group_name == 'Professorat' ) ) {
+            $user->remove_role('xtec_teacher');
+            $user->add_role('contributor');
+        }
+
+    }
+
+};
+add_action( 'groups_remove_member', 'xtec_member_leave_group', 10, 2);
+add_action( 'groups_leave_group', 'xtec_member_leave_group', 10, 2);
+
+/**
+ * Add parameter to change name teacher's Node.
+ * The teacher's node is necessary to add or remove role teacher's to users.
+ * @author Xavi Nieto
+ */
+function xtec_booking_recovery_name(){
+    global $wpdb;
+
+    $nodes = $wpdb->get_results("SELECT * FROM wp_bp_groups WHERE status = 'private' ORDER BY name DESC");
+    $option = get_option('xtec_principal_node');
+
+    $html = '<select id="xtec_principal_node" name="xtec_principal_node">';
+    $html .= '<option val="-1">'.__("Select name to teacher's node",'agora-functions').'</option>';
+    foreach( $nodes as $node ){
+        if( $option == $node->name ){
+            $html .= '<option val="'.$node->id.'" selected>'.$node->name.'</option>';
+        } else {
+            $html .= '<option val="'.$node->id.'">'.$node->name.'</option>';
+        }
+    }
+    $html .= '</select>';
+    $html .= '<p class="description">'.__("Node that containing all user's with teacher's role","agora-functions").'</p>';
+    $html .= '<p class="timezone-info">'.__('New members of this group, if they have Contributor role will be automatically promoted to the role teachers. This will have access to the reservations of spaces and equipment. This change does not affect users who already belong to the node, or those who have other roles.','agora-functions').'</p>';
+
+    echo $html;
+}
+
+function xtec_booking_nodes_name() {
+
+    add_settings_field(
+        'xtec_principal_node',
+        __("Teacher's group","agora-functions"),
+        'xtec_booking_recovery_name',
+        'general'
+    );
+
+     register_setting(
+        'general',
+        'xtec_principal_node'
+    );
+}
+add_action('admin_init', 'xtec_booking_nodes_name');
