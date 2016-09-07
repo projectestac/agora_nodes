@@ -94,7 +94,8 @@
     .gce-today span.gce-day-number{
         border: 3px solid <?php echo $color_calendar;?>!important;
     }
-    .gce-widget-grid .gce-calendar th abbr {
+    .gce-widget-grid .gce-calendar th abbr,
+    .simcal-week-day {
         color: <?php echo $color_calendar;?>
     }
     .button {
