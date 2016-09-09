@@ -11,6 +11,7 @@ Changes in progress
 - New users: Fixed URL to change password not showing in email sent to new users
 - blogger-importer: Fixed import of images (Trello #1340)
 - xtec-booking: Added plugin (Trello #1166)
+- Added custom tool boxes for timetables and events management. Removed bp and categories boxes (Trello #1342)
 
 
 Changes 16.09.07
