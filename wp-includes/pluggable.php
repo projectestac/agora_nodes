@@ -1986,9 +1986,12 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 		/* translators: %s: user login */
 		$message  = sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
 		$message .= __( 'To set your password, visit the following address:' ) . "\r\n\r\n";
-		$message .= '<' . network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user->user_login ), 'login' ) . ">\r\n\r\n";
+        // XTEC ************ MODIFICAT - Fixed URL to change password not showing in email sent to new users
+        // 2016.09.09 @aginard
+        $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . "\r\n\r\n";
+        //************ FI
 
-		$message .= wp_login_url() . "\r\n";
+        $message .= wp_login_url() . "\r\n";
 
 		$wp_new_user_notification_email = array(
 			'to'      => $user->user_email,
