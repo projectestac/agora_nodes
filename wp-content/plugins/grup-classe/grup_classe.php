@@ -68,13 +68,11 @@ class grup_classe_widget extends WP_Widget {
         $text_open      = esc_textarea($instance['text_open']);
         $id_calendari   = $instance ['id_calendari'];
         $nom_calendari  = $instance ['nom_calendari'];
-        $calendari_grid = $instance ['calendari_grid'];
-        $calendari_list = $instance ['calendari_list'];
         $nom_tutor      = $instance ['nom_tutor'];
         $email_tutor    = $instance ['email_tutor'];
         $horari_families= $instance ['horari_families'];
-        $es_note_group  = $instance ['es_note_group'];
-        $nav_menu       = $instance ['nav_menu'];
+        $es_note_group  = isset( $instance['es_note_group'] ) ? $instance['es_note_group'] : '';
+        $nav_menu       = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
         $text_close     = esc_textarea($instance['text_close']);
         
         ?>
@@ -116,9 +114,6 @@ class grup_classe_widget extends WP_Widget {
             ?>
             </select>
             <br>
-            <?php _e("Show:", "grup-classe"); ?>
-            <br><input id="<?php echo $this->get_field_id('calendari_grid'); ?>" name="<?php echo $this->get_field_name('calendari_grid'); ?>" type="checkbox" <?php checked(isset($instance['calendari_grid']) ? $instance['calendari_grid'] : 0); ?> /> <?php _e("Grid","grup-classe");?> </label>
-            <br><input id="<?php echo $this->get_field_id('calendari_list'); ?>" name="<?php echo $this->get_field_name('calendari_list'); ?>" type="checkbox" <?php checked(isset($instance['calendari_list']) ? $instance['calendari_list'] : 0); ?> /> <?php _e("List","grup-classe");?> </label>        
         </div>
         <br>          
         <!-- Tutor's information -->
@@ -127,22 +122,21 @@ class grup_classe_widget extends WP_Widget {
                 <?php _e("Tutor's name:", "grup-classe"); ?><br>
                 <input name="<?php echo $this->get_field_name('nom_tutor');?>"
                        type="text" 
-                       value="<?php echo esc_attr( $nom_tutor ); ?>" /></br>
+                       value="<?php echo esc_attr( $nom_tutor ); ?>" /><br />
                 <?php _e("Tutor's email:", "grup-classe"); ?><br>
                 <input name="<?php echo $this->get_field_name('email_tutor');?>"
                        type="text" 
-                       value="<?php echo esc_attr( $email_tutor ); ?>" /><br>
-                <?php _e("Timetable for attending to families:", 'grup-classe');?><br>
+                       value="<?php echo esc_attr( $email_tutor ); ?>" /><br />
+                <?php _e("Timetable for attending to families:", 'grup-classe');?><br />
                 <input name="<?php echo $this->get_field_name('horari_families');?>"
                        type="text" 
-                       value="<?php echo esc_attr( $horari_families ); ?>" /></br>    
+                       value="<?php echo esc_attr( $horari_families ); ?>" /><br />
         </div>
         <br>   
         
         <!-- Email subscribers -->
         <?php 
-        $es_note_group = isset( $instance['es_note_group'] ) ? $instance['es_note_group'] : '';
-        
+
         global $wpdb;
         $subscription_groups = $wpdb->get_col('SELECT DISTINCT(es_note_group) FROM '. $wpdb->prefix . 'es_notification', 0);
         ?>
@@ -164,7 +158,6 @@ class grup_classe_widget extends WP_Widget {
         <!-- Links -->
         <div>
             <?php
-            $nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
             $menus = wp_get_nav_menus();
             ?>
             <strong><span class="dashicons dashicons-admin-links"></span> <?php _e('Links (associated menu)', 'grup-classe');?></strong> 
@@ -190,16 +183,14 @@ class grup_classe_widget extends WP_Widget {
 <?php        
     }
     
-    //Save options
+    // Save options
     function update($new_instance, $old_instance){
-        $instance=$old_instance;
+        $instance = $old_instance;
         
         $instance['title']           = sanitize_text_field($new_instance['title']);
         $instance['id_calendari']    = $new_instance['id_calendari'];
         $instance['nom_calendari']   = sanitize_text_field($new_instance['nom_calendari']);
-        $instance['calendari_grid']  = isset($new_instance['calendari_grid']);
-        $instance['calendari_list']  = isset($new_instance['calendari_list']);
-        $instance['nom_tutor']       = sanitize_text_field($new_instance['nom_tutor']); 
+        $instance['nom_tutor']       = sanitize_text_field($new_instance['nom_tutor']);
         $instance['email_tutor']     = sanitize_text_field($new_instance['email_tutor']); 
         $instance['horari_families'] = sanitize_text_field($new_instance['horari_families']);
         $instance['es_note_group']   = sanitize_text_field($new_instance['es_note_group']);
@@ -209,84 +200,78 @@ class grup_classe_widget extends WP_Widget {
             $instance['text_open']  =  $new_instance['text_open'];
             $instance['text_close'] =  $new_instance['text_close'];
         } else{
-            $instance['text_open']  = stripslashes( wp_filter_post_kses( addslashes($new_instance['text_open']) ) ); 
-            $instance['text_close'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text_close']) ) ); 
+            $instance['text_open']  = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text_open'] )));
+            $instance['text_close'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text_close'] )));
         }
         
         return $instance;
     }
     
     // Show widget at frontend
-    function widget ($args, $instance){
-        extract( $args );
-        echo $before_widget;
-        
+    function widget ($args, $instance) {
+
         $title          = apply_filters( 'widget_title', $instance['title']);
         $nom_tutor      = (empty($instance['nom_tutor']))?'':$instance['nom_tutor'];
         $email_tutor    = (empty($instance['email_tutor']))?'':$instance['email_tutor'];
         $horari_families= (empty($instance['horari_families']))?'':$instance['horari_families'];
         $id_calendari   = (empty($instance['id_calendari']))?'':$instance['id_calendari'];
         $nom_calendari  = (empty($instance['nom_calendari']))?'':$instance['nom_calendari'];
-        $calendari_grid = (empty($instance['calendari_grid']))?'':$instance['calendari_grid'];
-        $calendari_list = (empty($instance['calendari_list']))?'':$instance['calendari_list'];
         $es_note_group  = (empty($instance['es_note_group']))?'':$instance['es_note_group'];
         $nav_menu       = (empty($instance['nav_menu']))?'':$instance['nav_menu'];
         $text_open      = (empty($instance['text_open']))?'':$instance['text_open'];
         $text_close     = (empty($instance['text_close']))?'':$instance['text_close'];
-        
+
+        echo $args['before_widget'];
+
         if (!empty($title)){
-            echo $before_title . esc_html($title) . $after_title;
+            echo $args['before_title'] . esc_html($title) . $args['after_title'];
         }
-        //  Custom html/text block 
+
+        //  Custom html/text block
         if (strlen(trim($text_open))>0){
             the_widget( 'WP_Widget_Text',"text=$text_open&filter=true");
         }
+
         // Calendar
-        if (!empty($id_calendari)){
+        if (!empty($id_calendari)) {
             if (!empty($nom_calendari)) {
-                echo $before_title . $nom_calendari .$after_title;
+                echo $args['before_title'] . esc_html($nom_calendari) . $args['after_title'];
             }
-            if ($calendari_grid){
-                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=grid&paging=true');
-                echo "<br>";
-            }
-            if ($calendari_list){
-                the_widget('GCE_Widget','id='.$id_calendari.'&display_type=list-grouped&paging=true');
-                echo "<br>";
-            }
+            the_widget('SimpleCalendar\Widgets\Calendar', 'calendar_id=' . $id_calendari);
         }
+
         // Tutor's info
         if (!empty($nom_tutor) || !empty($email_tutor) || !empty($horari_families)){
-            echo $before_title . __("Tutor's info","grup-classe") . $after_title;
-            echo "<ul>";
+            echo $args['before_title'] . __("Tutor's info", 'grup-classe') . $args['after_title'];
+            echo '<ul>';
             if (!empty($nom_tutor))
               echo "<li><span class='dashicons dashicons-admin-users'></span> $nom_tutor";
             if (!empty($email_tutor))
               echo "<li><span class='dashicons dashicons-email-alt'></span> $email_tutor";
             if (!empty($horari_families))
               echo "<li><span class='dashicons dashicons-clock'></span> $horari_families";
-            echo "</ul>";
+            echo '</ul>';
         }
-        // Email subscribers 
+
+        // Email subscribers
         if (!empty($es_note_group)){
-            echo $before_title . __('Subscription', 'grup-classe') . $after_title;
+            echo $args['before_title'] . __('Subscription', 'grup-classe') . $args['after_title'];
             echo  __('We will notice you', 'grup-classe').$es_note_group ;
             the_widget('es_widget_register','es_name=YES&es_group='.$es_note_group);
-            echo "<br>";
+            echo '<br>';
         }
+
         // Links (Menu)
         if (!empty($nav_menu)){
-            echo $before_title . __('Links', 'grup-classe') . $after_title;
+            echo $args['before_title'] . __('Links', 'grup-classe') . $args['after_title'];
             the_widget('WP_Nav_Menu_Widget','nav_menu='.$nav_menu);
-            echo "<br>";
+            echo '<br>';
         }
         
         // Custom html/text block 
         if (strlen(trim($text_close))>0) {
             the_widget( 'WP_Widget_Text',"text=$text_close&filter=true");
         }
-        echo $after_widget;
+        echo $args['after_widget'];
     }
-   
 }
-
