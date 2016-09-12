@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - GCE: Updated from 2.2.5 (Legacy Google Calendar Events 2.4) to 3.1.2 (Simple Calendar - Google Calendar Plugin) (Trello #1034)
+- grup-classe: Removed option to select format of the calendar due to the changes in GCE v3.x (Trello #1034)
 - New users: Fixed URL to change password not showing in email sent to new users
 
 
