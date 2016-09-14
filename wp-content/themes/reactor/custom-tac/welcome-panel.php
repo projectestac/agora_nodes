@@ -44,7 +44,7 @@ function rc_my_welcome_panel() {
                 <h3><?php _e('More Actions', 'reactor'); ?></h3>
                 <ul>
                     <li><?php printf('<div class="welcome-icon welcome-widgets-menus">' . __('Manage <a href="%1$s">widgets</a> or <a href="%2$s">menus</a>', 'reactor') . '</div>', admin_url('widgets.php'), admin_url('nav-menus.php')); ?></li>
-                    <li><?php printf('<a href="%s" class="welcome-icon welcome-add-page">' . __('Bookings', 'reactor') . '</a>', 'http://agora.xtec.cat/nodes/reserva-de-recursos'); ?></li>
+                    <li><?php printf('<a href="%s" class="welcome-icon welcome-add-page">' . __('Bookings', 'reactor') . '</a>', 'edit.php?post_type=calendar_booking'); ?></li>
                     <li><?php printf('<a href="%s" class="welcome-icon welcome-add-page">' . __('BuddyPress', 'reactor') . '</a>', 'admin.php?page=xtec-bp-options'); ?></li>
                 </ul>
             </div>
