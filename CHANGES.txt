@@ -11,7 +11,7 @@ Work in progress
 - mu-common: Allow more attributes in embed tag in visual editor (Trello #1297)
 - mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
 - mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
-
+- xtec-stats: Fixed Javascript error in Safari in statistics page (Trello #1361)
 
 
 Changes 16.09.19
