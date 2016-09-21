@@ -57,7 +57,7 @@ jQuery(document).ready(function(e){
 		jQuery('#xtec-stats-form-search').submit();
 	});
 
-	jQuery('input[name=search_type').on('change',function(e){
+	jQuery('input[name="search_type"]').on('change',function(e){
 
 		if(typeof xtec_stats_username === 'undefined'){
 			xtec_stats_username = 'username';
@@ -66,8 +66,6 @@ jQuery(document).ready(function(e){
 		if(typeof xtec_stats_content === 'undefined'){
 			xtec_stats_content = 'content';
 		}
-
-		console.log(xtec_stats_username,xtec_stats_content);
 
 		xtec_stats_change_placeholder(e,xtec_stats_username,xtec_stats_content);
 	});
