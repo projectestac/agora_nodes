@@ -156,6 +156,12 @@ function xtec_save_post_meta( $data ){
 
 	if ( isset( $_POST['_xtec-booking-resource'] ) ){
 
+		// start_time and finish_time must have correct values; if not, booking couldn't be published
+		if ( empty( $_POST['_xtec-booking-start-time'] ) || ( $_POST['_xtec-booking-start-time'] === '__:__' ) || empty( $_POST['_xtec-booking-finish-time'] )) {
+			$data['post_status'] = 'pending';
+			add_filter('redirect_post_location', 'xtec_post_location_filter', 99, 2);
+		}
+
 		$xtec_booking_resource = get_post( $_POST['_xtec-booking-resource'] );
 
 		global $current_user;
