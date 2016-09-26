@@ -1,5 +1,7 @@
 <?php
 
+const LOOP_LIMIT = 200; // Used in xtec_booking_get_event()
+
 function xtec_booking_show_calendar_page( $shortcode = null ){
 
 	$data = xtec_booking_get_events();
@@ -183,7 +185,8 @@ function xtec_booking_get_events( $resourceID = false ){
 					$startDateTime = mktime( $timeStart[0],$timeStart[1],0,$dateStart[1],$dateStart[0],$dateStart[2] );
 					$endDateTime = mktime( $timeEnd[0],$timeEnd[1],0,$dateEnd[1],$dateEnd[0],$dateEnd[2] );
 
-					while ( $startDateTime <= $endDateTime ){
+					$iteration = 0; // Set a limit to the number of iterations to avoid too-big-loops when viewing the calendar
+					while (( $startDateTime <= $endDateTime ) && ( $iteration++ < LOOP_LIMIT )) {
 
 						$startEndDateTime = mktime( $timeEnd[0],$timeEnd[1],0,$dateStart[1],$day,$dateStart[2] );
 
