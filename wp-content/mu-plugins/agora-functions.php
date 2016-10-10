@@ -1090,11 +1090,11 @@ function add_custom_box_exportador_horaris(){
         }
     </style>
     <div class="card">
-        <h2 class="title">Exportador d'horaris</h2>
-        <p>A partir d'un full de càlcul de Google, aquesta eina permet exportar a format web els horaris de cada grup, professor, assignatura o aula. El codi generat es pot inserir fàcilment a qualsevol pàgina de Nodes editant-la i enganxant el codi a la pestanya Text.</p>
-        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/16/exportador-dhoraris-web/" target="_blank"><img src="../wp-content/themes/reactor/custom-tac/imatges/export_hora.png" style="max-width:320px;border:1px solid black"></a></p>
-        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/16/exportador-dhoraris-web/" target="_blank">Enllaç a l'exportador d'horaris</a></p>
-        <p>Desenvolupat per: Felix Tejero</p>
+        <h2 class="title"><?php _e("Exporter schedule","agora-functions"); ?></h2>
+        <p><?php _e("From a Google Spreadsheet, this tool allows you to export to web format schedules for each group, teacher, subject or classroom. The generated code can easily insert to any page to Nodes and paste the code in the text tab.","agora-functions"); ?></p>
+        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/16/exportador-dhoraris-web/" target="_blank"><img src="../wp-content/themes/reactor/custom-tac/imatges/export_hora.png" title="<?php _e("Exporter schedule","agora-functions"); ?>" style="max-width:320px;border:1px solid black"></a></p>
+        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/16/exportador-dhoraris-web/" target="_blank"><?php _e("Link to exporter schedule","agora-functions"); ?></a></p>
+        <p><?php _e("Developed by: Felix Tejero","agora-functions"); ?></p>
     </div>
 <?php
 }
@@ -1106,11 +1106,11 @@ add_action('tool_box','add_custom_box_exportador_horaris');
 function add_custom_box_gestor_esdeveniments(){
 ?>
     <div class="card">
-        <h2 class="title">Gestor de Calendaris</h2>
-        <p>A partir d'un full de càlcul de Google, aquesta eina permet actualitzar els calendaris del curs amb un sol clic. Tanmateix, si afegiu nous esdeveniments als calendaris, s'incorporen al full de càlcul.</p>
-        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/21/gestio-dels-esdeveniments-del-curs/" target="_blank"><img src="../wp-content/themes/reactor/custom-tac/imatges/img_gestor_esdeveniments.png" title="gestor de calendaris"></a></p>
-        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/21/gestio-dels-esdeveniments-del-curs/" target="_blank">Enllaç al gestor de calendaris</a></p>
-        <p>Desenvolupat per: Pepi Garrote</p>
+        <h2 class="title"><?php _e("Calendar manager","agora-functions"); ?></h2>
+        <p><?php _e("From a Google Spreadsheet, this tool allows you to upgrade the course calendars with one click. However, if you add new events to the calendar, joining the spreadsheet.","agora-functions"); ?></p>
+        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/21/gestio-dels-esdeveniments-del-curs/" target="_blank"><img src="../wp-content/themes/reactor/custom-tac/imatges/img_gestor_esdeveniments.png" title="<?php _e("Calendar manager","agora-functions"); ?>"></a></p>
+        <p><a href="http://blocs.xtec.cat/coordinaciotac/2015/09/21/gestio-dels-esdeveniments-del-curs/" target="_blank"><?php _e("Link to calendar manager","agora-functions"); ?></a></p>
+        <p><?php _e("Developed by: Pepi Garrote","agora-functions"); ?></p>
     </div>
 <?php
     remove_action('tool_box','bp_core_admin_available_tools_page');
