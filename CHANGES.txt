@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Work in progress
 ---------------------------------------------------------------------------------------
 - GCE: Prevent grouped calendars to belong to categories used to create that calendars (Trello #1371)
+- Dashboard: Reviewed access to menu options in dashboard for roles xtec_teacher and contributor (Trello #1354)
 - wordpress-importer: Upgraded plugin from 0.6.1 to 0.6.3
 
 
