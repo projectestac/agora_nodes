@@ -10,6 +10,7 @@ Work in progress
 - wordpress-importer: Upgraded plugin from 0.6.1 to 0.6.3
 - mu-common: Allow more attributes in embed tag in visual editor (Trello #1297)
 - mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
+- mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
 
 
 
