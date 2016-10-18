@@ -239,6 +239,11 @@ strong.xtec_booking_color{
 	margin-top: 10px;
 }
 
+#modalContent > img{
+	max-width: 560px;
+	max-height: 340px;
+}
+
 span.weekdays{
 	font-weight: bold;
 }
