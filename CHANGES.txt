@@ -15,6 +15,7 @@ Work in progress
 - xtec-stats: Fixed Javascript error in Safari in statistics page (Trello #1361)
 - xtec-booking: Fixed size image in modal window with the booking details (Trello #1399)
 - xtec-booking: Fixed styles in day view (Trello #1399)
+- buddypress-docs: Tag searches use 'and' as a default condition. Changed text link accordingly (Trello #1368)
 
 
 Changes 16.09.19
