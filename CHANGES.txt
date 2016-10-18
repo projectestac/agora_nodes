@@ -13,6 +13,8 @@ Work in progress
 - mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
 - mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
 - xtec-stats: Fixed Javascript error in Safari in statistics page (Trello #1361)
+- xtec-booking: Fixed size image in modal window with the booking details (Trello #1399)
+- xtec-booking: Fixed styles in day view (Trello #1399)
 
 
 Changes 16.09.19

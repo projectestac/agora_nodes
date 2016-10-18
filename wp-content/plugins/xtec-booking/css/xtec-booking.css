@@ -259,7 +259,8 @@ span.weekdays{
 }
 .day-highlight.dh-event-orange:hover,
 .day-highlight.dh-event-orange {
-	background-color:  #DF8A48 !important;
+	border-color: #DF8A48 !important;
+	background-color:  #ffc67f !important;
 }
 
 .event-pink {
@@ -267,7 +268,8 @@ span.weekdays{
 }
 .day-highlight.dh-event-pink:hover,
 .day-highlight.dh-event-pink {
-	background-color:  #ff6bd2 !important;
+	border-color: #ff6bd2;
+	background-color:  #ffe3eb;
 }
 
 .event-brown {
@@ -275,17 +277,19 @@ span.weekdays{
 }
 .day-highlight.dh-event-brown:hover,
 .day-highlight.dh-event-brown {
-	background-color:  #8B4500 !important;
+	border-color:  #8B4500 !important;
+	background-color:  #e1c38f !important;
 }
 
 .event-lightBlue{
 	background-color: #7AE7BF !important;
 }
-.day-highlight.dh-event-brown:hover,
-.day-highlight.dh-event-brown {
-	background-color:  #7AE7BF !important;
+.day-highlight.dh-event-lightBlue:hover,
+.day-highlight.dh-event-lightBlue {
+	border-color:  #7AE7BF !important;
+	background-color:  #d3e1ff !important;
 }
 
-div.pull-left.day-event.day-highlight.dh-event-important span.cal-hours{
+div.pull-left.day-event.day-highlight span.cal-hours{
 	display: none;
 }
