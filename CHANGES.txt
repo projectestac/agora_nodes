@@ -17,6 +17,7 @@ Work in progress
 - xtec-booking: Fixed size image in modal window with the booking details (Trello #1399)
 - xtec-booking: Fixed styles in day view (Trello #1399)
 - buddypress-docs: Tag searches use 'and' as a default condition. Changed text link accordingly (Trello #1368)
+- add-to-any: Upgraded to version 1.7 (Trello #1283)
 
 
 Changes 16.09.19
