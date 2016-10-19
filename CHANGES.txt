@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Work in progress
+Changes 16.10.24
 ---------------------------------------------------------------------------------------
 - GCE: Prevent grouped calendars to belong to categories used to create that calendars (Trello #1371)
 - CGE: Fixed grouped calendars not showing in dropdown menu in customizer (Trello #1384)
@@ -17,7 +17,7 @@ Work in progress
 - xtec-booking: Fixed size image in modal window with the booking details (Trello #1399)
 - xtec-booking: Fixed styles in day view (Trello #1399)
 - buddypress-docs: Tag searches use 'and' as a default condition. Changed text link accordingly (Trello #1368)
-- add-to-any: Upgraded to version 1.7 (Trello #1283)
+- add-to-any: Upgraded plugin from 1.6.17 to 1.7 (Trello #1283)
 - buddypress: Corrected translation in register page (Trello #1382)
 - buddypress: Removed submenu Appearance | Emails (Trello #1301)
 - Role of xtecadmin cannot be changed (Trello #1390)
