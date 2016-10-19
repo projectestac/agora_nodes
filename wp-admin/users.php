@@ -137,7 +137,15 @@ case 'promote':
 		}
 
 		$user = get_userdata( $id );
+		// XTEC ************ AFEGIT - cannot be change role for Xtecadmin
+		// 2016.10.19 @xaviernietosanchez
+		if ( is_super_admin($id) !== true ){
+		//************ FI
 		$user->set_role( $role );
+		// XTEC ************ AFEGIT - cannot be change role for Xtecadmin
+		// 2016.10.19 @xaviernietosanchez
+		}
+		//************ FI
 	}
 
 	wp_redirect(add_query_arg('update', $update, $redirect));
