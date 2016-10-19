@@ -398,6 +398,7 @@ function remove_admin_menus() {
         // BuddyPress
         remove_submenu_page('options-general.php', 'bp-page-settings'); // Tab in BuddyPress
         remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
+        remove_submenu_page('themes.php', 'bp-emails-customizer-redirect'); // Submenu in Appearance
 
         // Private BP Pages
         remove_submenu_page('options-general.php', 'bphelp-pbp-settings'); // In this case, it doesn't block access
@@ -431,7 +432,6 @@ add_action('admin_menu', 'rebuild_bbpress_menus');
 
 // Unregister bp-mail post type to disable functionality
 function unregister_bp_mail () {
-	global $wp_post_types;
 	unregister_post_type( 'bp-email' );
 }
 // Fires after WordPress has finished loading but before any headers are sent
