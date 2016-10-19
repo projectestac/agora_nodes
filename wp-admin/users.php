@@ -127,6 +127,14 @@ switch ( $wp_list_table->current_action() ) {
 		$update  = 'promote';
 		foreach ( $userids as $id ) {
 			$id = (int) $id;
+            // XTEC ************ AFEGIT - Role of xtecadmin cannot be changed
+            // 2016.10.19 @aginard
+            global $isAgora;
+
+            if ( $isAgora && ( get_xtecadmin_id() == $id )) {
+                continue;
+            }
+            //************ FI
 
 			if ( ! current_user_can( 'promote_user', $id ) ) {
 				wp_die( __( 'Sorry, you are not allowed to edit this user.' ), 403 );
