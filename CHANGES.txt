@@ -18,6 +18,7 @@ Work in progress
 - xtec-booking: Fixed styles in day view (Trello #1399)
 - buddypress-docs: Tag searches use 'and' as a default condition. Changed text link accordingly (Trello #1368)
 - add-to-any: Upgraded to version 1.7 (Trello #1283)
+- buddypress: Corrected translation in register page (Trello #1382)
 
 
 Changes 16.09.19
