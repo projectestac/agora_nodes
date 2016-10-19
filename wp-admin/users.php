@@ -137,6 +137,16 @@ case 'promote':
 		}
 
 		$user = get_userdata( $id );
+
+		// XTEC ************ AFEGIT - Role of xtecadmin cannot be changed
+		// 2016.10.19 @aginard
+		global $isAgora;
+
+		if ( $isAgora && ( get_xtecadmin_id() == $id )) {
+			continue;
+		}
+		//************ FI
+
 		$user->set_role( $role );
 	}
 
