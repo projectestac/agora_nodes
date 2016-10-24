@@ -21,11 +21,18 @@
     <?php wp_head(); reactor_head(); ?>
 
     <?php
+    // XTEC ************* ELIMINAT - Delete incorrect icon favicon
+    // 2016.10.25 @xaviernietosanchez
+    /*
         $favicon = reactor_option("favicon_image");
         if (!$favicon)
             $favicon = get_stylesheet_directory_uri()."/favicon.ico";
+
     ?>
     <link rel="shortcut icon" href="<?php echo $favicon; ?>"/>
+    */
+    // ************* FI
+    ?>
 </head>
 
 <body <?php body_class(); ?>>
