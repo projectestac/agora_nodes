@@ -239,7 +239,7 @@ strong.xtec_booking_color{
 	margin-top: 10px;
 }
 
-#modalContent > img{
+#modalContent img{
 	max-width: 560px;
 	max-height: 340px;
 }
@@ -264,12 +264,12 @@ span.weekdays{
 }
 
 .event-pink {
-  	background-color: #ff6bd2 !important;
+  	background-color: #ff789e !important;
 }
 .day-highlight.dh-event-pink:hover,
 .day-highlight.dh-event-pink {
-	border-color: #ff6bd2;
-	background-color:  #ffe3eb;
+	border-color: #ff789e !important;
+	background-color:  #ffe3eb !important;
 }
 
 .event-brown {
@@ -282,12 +282,17 @@ span.weekdays{
 }
 
 .event-lightBlue{
-	background-color: #7AE7BF !important;
+	background-color: #4cdefd !important;
 }
 .day-highlight.dh-event-lightBlue:hover,
 .day-highlight.dh-event-lightBlue {
-	border-color:  #7AE7BF !important;
-	background-color:  #d3e1ff !important;
+	border-color:  #4cdefd !important;
+	background-color:  #dbf8ff !important;
+}
+
+/* REPLACE COLOR ORIGINAL */
+.dh-event-special{
+	background-color:  #ecd9f8 !important;
 }
 
 div.pull-left.day-event.day-highlight span.cal-hours{
