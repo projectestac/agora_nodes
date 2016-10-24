@@ -10,6 +10,7 @@ Changes in progress
 - add-to-any: Upgraded plugin from version 1.7 to 1.7.1 (Trello #1441)
 - add-to-any: Added support for featured image (imatge resum) when sharing to facebook (Trello #1283)
 - xtec-booking: Improved colors for spaces and fixed max size of images (Trello #1420)
+- Theme reactor: Deleted duplicated favicon (Trello #1419)
 
 
 Changes 16.10.24
