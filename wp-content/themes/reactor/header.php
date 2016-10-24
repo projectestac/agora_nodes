@@ -18,14 +18,11 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <?php wp_head(); reactor_head(); ?>
-
     <?php
-        $favicon = reactor_option("favicon_image");
-        if (!$favicon)
-            $favicon = get_stylesheet_directory_uri()."/favicon.ico";
+        wp_head();
+        reactor_head();
     ?>
-    <link rel="shortcut icon" href="<?php echo $favicon; ?>"/>
+
 </head>
 
 <body <?php body_class(); ?>>
