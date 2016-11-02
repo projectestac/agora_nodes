@@ -47,7 +47,9 @@ function create_post_type() {
 		'delete_pages' 	=> 'delete_pages_bookings',
 		'edit_posts' 	=> 'edit_posts_bookings',
 		'delete_posts' 	=> 'delete_posts_bookings',
-		'publish_posts' => 'publish_posts_bookings'
+		'publish_posts' => 'publish_posts_bookings',
+		'edit_published_posts' => 'edit_published_posts_bookings',
+		'delete_published_posts' => 'delete_published_posts_bookings'
 	);
 
 	if ( in_array( 'administrator', (array) $user->roles ) || in_array( 'editor', (array) $user->roles ) ) {
