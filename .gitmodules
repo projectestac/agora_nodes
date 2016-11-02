@@ -43,7 +43,6 @@
 [submodule "wp-content/plugins/email-subscribers"]
 	path = wp-content/plugins/email-subscribers
 	url = https://github.com/projectestac/wordpress-email-subscribers.git
-
 [submodule "wp-content/plugins/xtec-ldap-login"]
 	path = wp-content/plugins/xtec-ldap-login
 	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git

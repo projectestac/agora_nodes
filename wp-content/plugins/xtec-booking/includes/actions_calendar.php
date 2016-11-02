@@ -127,6 +127,8 @@ function xtec_booking_active_plugin(){
     $roleAdmin->add_cap('delete_posts_bookings');
     $roleAdmin->add_cap('delete_pages_bookings');
     $roleAdmin->add_cap('publish_posts_bookings');
+    $roleAdmin->add_cap('edit_published_posts_bookings');
+    $roleAdmin->add_cap('delete_published_posts_bookings');
 
     // Add capabilities to role Editor
 	$roleEditor = get_role('editor');
@@ -134,6 +136,8 @@ function xtec_booking_active_plugin(){
     $roleEditor->add_cap('delete_posts_bookings');
     $roleEditor->add_cap('delete_pages_bookings');
     $roleEditor->add_cap('publish_posts_bookings');
+    $roleEditor->add_cap('edit_published_posts_bookings');
+    $roleEditor->add_cap('delete_published_posts_bookings');
 
 	// Add capabilities to role Author
 	$roleAuthor = get_role('author');
@@ -142,15 +146,21 @@ function xtec_booking_active_plugin(){
     $roleAuthor->add_cap('delete_posts_bookings');
     $roleAuthor->add_cap('publish_posts_bookings');
     $roleAuthor->add_cap('delete_pages');
+    $roleAuthor->add_cap('edit_published_posts_bookings');
+    $roleAuthor->add_cap('delete_published_posts_bookings');
 
     // Add capabilities to role Teacher
-	$roleTeacher = get_role('xtec_teacher');
-	if ( ! is_null( $roleTeacher ) ){
-		$roleTeacher->add_cap('delete_pages_bookings');
-		$roleTeacher->add_cap('edit_posts_bookings');
-	    $roleTeacher->add_cap('delete_posts_bookings');
-	    $roleTeacher->add_cap('publish_posts_bookings');
-	}
+    $roleTeacher = get_role('xtec_teacher');
+    if ( ! is_null( $roleTeacher ) ) {
+        $roleTeacher->add_cap('delete_pages_bookings');
+        $roleTeacher->add_cap('edit_posts_bookings');
+        $roleTeacher->add_cap('delete_posts_bookings');
+        $roleTeacher->add_cap('publish_posts_bookings');
+        $roleTeacher->remove_cap('edit_published_posts');
+        $roleTeacher->remove_cap('delete_published_posts');
+        $roleTeacher->add_cap('edit_published_posts_bookings');
+        $roleTeacher->add_cap('delete_published_posts_bookings');
+    }
 
 	// Add capabilities to role Contributor
 	$roleContributor = get_role('contributor');
@@ -169,6 +179,8 @@ function xtec_booking_deactive_plugin(){
     $roleAdmin->remove_cap('delete_posts_bookings');
     $roleAdmin->remove_cap('delete_pages_bookings');
     $roleAdmin->remove_cap('publish_posts_bookings');
+    $roleAdmin->remove_cap('edit_published_posts_bookings');
+    $roleAdmin->remove_cap('delete_published_posts_bookings');
 
     // Remove capabilities to role Editor
 	$roleEditor = get_role('editor');
@@ -176,6 +188,8 @@ function xtec_booking_deactive_plugin(){
     $roleEditor->remove_cap('delete_posts_bookings');
     $roleEditor->remove_cap('delete_pages_bookings');
     $roleEditor->remove_cap('publish_posts_bookings');
+    $roleEditor->remove_cap('edit_published_posts_bookings');
+    $roleEditor->remove_cap('delete_published_posts_bookings');
 
 	// Remove capabilities to role Author
 	$roleAuthor = get_role('author');
@@ -184,14 +198,20 @@ function xtec_booking_deactive_plugin(){
     $roleAuthor->remove_cap('delete_posts_bookings');
     $roleAuthor->remove_cap('publish_posts_bookings');
     $roleAuthor->remove_cap('delete_pages');
+    $roleAuthor->remove_cap('edit_published_posts_bookings');
+    $roleAuthor->remove_cap('delete_published_posts_bookings');
 
     // Add capabilities to role Teacher
 	$roleTeacher = get_role('xtec_teacher');
 	if ( ! is_null( $roleTeacher ) ){
-		$roleTeacher->remove_cap('delete_pages_bookings');
-		$roleTeacher->remove_cap('edit_posts_bookings');
-	    $roleTeacher->remove_cap('delete_posts_bookings');
-	    $roleTeacher->remove_cap('publish_posts_bookings');
+        $roleTeacher->remove_cap('delete_published_posts');
+        $roleTeacher->remove_cap('edit_published_posts');
+        $roleTeacher->remove_cap('delete_pages_bookings');
+        $roleTeacher->remove_cap('edit_posts_bookings');
+        $roleTeacher->remove_cap('delete_posts_bookings');
+        $roleTeacher->remove_cap('publish_posts_bookings');
+        $roleTeacher->remove_cap('edit_published_posts_bookings');
+        $roleTeacher->remove_cap('delete_published_posts_bookings');
 	}
 
 	// Add capabilities to role Contributor
