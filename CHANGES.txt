@@ -12,6 +12,7 @@ Changes in progress
 - xtec-booking: Improved colors for spaces and fixed max size of images (Trello #1420)
 - xtec-booking: Role teacher can no longer edit posts edited by admins or editors, but can still edit bookings (Trello #1421)
 - Theme reactor: Deleted duplicated favicon (Trello #1419)
+- xtec-ldap-login: Don't send e-mail when user password is updated
 
 
 Changes 16.10.24
