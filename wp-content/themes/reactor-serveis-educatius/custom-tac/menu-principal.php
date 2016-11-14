@@ -97,13 +97,12 @@ function menu_etiquetes() {
 
         $url = parse_url($options['link_icon' . $i]);
 
-        if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
-            $link = $options['link_icon' . $i];
-            $target = set_target($link);
-        } else {
-            $link = get_home_url() . '/' . $options['link_icon' . $i];
-            $target = '_self';
-        }
+        // Check if link is a mail direction and assign target
+        $result = xtec_mail_direction_into_header_icons( $options, $i );
+
+        // Assign link and target
+        $link = $result['link'];
+        $target = $result['target'];
 
         echo '<div id="icon-' . $i . '">';
         echo '<a title="' . $title . '" href="' . $link . '" target="' . $target . '" class="' . $class . '">';

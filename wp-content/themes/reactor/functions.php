@@ -652,3 +652,51 @@ function theme_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 add_action('login_enqueue_scripts', 'theme_enqueue_styles'); // Required for login form
+
+/**
+ * Allow mail direction into headers icons.
+ * Available to "reactor-primaria-1" and "reactor-serveis-educatius" themes.
+ *
+ * @author xaviernietosanchez
+ * @param $options, $icon_number
+ * @return array
+ */
+function xtec_mail_direction_into_header_icons( $options, $icon_number ){
+
+    $url = parse_url($options['link_icon' . $icon_number]);
+
+    $homeUrl = get_site_url();
+    $result = array();
+
+    // Change target link if is the same domain
+    if ( strpos( $options['link_icon' . $icon_number], $homeUrl ) !== false ){
+        $result['link'] = esc_url($options['link_icon' . $icon_number]);
+        $result['target'] = '_self';
+    // if the url contains protocol, open in new tab
+    }else if ( isset($url['scheme']) && ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http')) ) {
+        $result['link'] = esc_url($options['link_icon' . $icon_number]);
+        $result['target'] = set_target($link);
+    } else {
+        // Allow include a mail direction instead of a url
+        if ( preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $options['link_icon' . $icon_number]) ){
+            $result['link'] = "mailto:" . sanitize_email($options['link_icon' . $icon_number]);
+            $result['target'] = '_self';
+        } else {
+            // if the url contains dots " . ", open in new tab
+            if( strpos($options['link_icon' . $icon_number],'.') !== false ){
+                $result['link'] = esc_url('https://' . trim($options['link_icon' . $icon_number]));
+                $result['target'] = set_target($link);
+            } else {
+                if ( substr ( trim($options['link_icon' . $icon_number]) , 0 , 1 ) == '/' ){
+                    $result['link'] = get_home_url() . trim($options['link_icon' . $icon_number]);
+                } else {
+                    $result['link'] = get_home_url() . '/' . trim($options['link_icon' . $icon_number]);
+                }
+                $result['target'] = '_self';
+            }
+        }
+    }
+
+    // return link and target
+    return $result;
+}
