@@ -48,7 +48,17 @@ function show_header_icon($options, $icon_number) {
         $link = $options['link_icon' . $icon_number];
         $target = set_target($link);
     } else {
+        // XTEC ************ AFEGIT - Allow include a mail direction instead of a url
+        // 2016.11.14 @xaviernietosanchez
+        if ( preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $options['link_icon' . $icon_number]) ){
+            $link = "mailto:" . $options['link_icon' . $icon_number];
+        } else {
+        // ************ FI
         $link = get_home_url() . '/' . $options['link_icon' . $icon_number];
+        // XTEC ************ AFEGIT - Allow include a mail direction instead of a url
+        // 2016.11.14 @xaviernietosanchez
+        }
+        // ************ FI
         $target = '_self';
     }
 
