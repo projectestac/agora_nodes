@@ -44,11 +44,23 @@ add_action('wp_head', 'reactor_do_reactor_head', 1);
  */
 function show_header_icon($options, $icon_number) {
     $url = parse_url($options['link_icon' . $icon_number]);
-    if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
+
+    $currentDomain = str_replace( 'www.', '', $_SERVER['HTTP_HOST'] );
+
+    // Change target link if is the same domain
+    if ( str_replace( 'www.', '', $url['host'] ) == $currentDomain ){
+        $link = $options['link_icon' . $icon_number];
+        $target = '_self';
+    }else if ( ( $url['scheme'] == 'https' ) || ( $url['scheme'] == 'http' ) ) {
         $link = $options['link_icon' . $icon_number];
         $target = set_target($link);
     } else {
+        // Allow include a mail direction instead of a url
+        if ( preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $options['link_icon' . $icon_number]) ){
+            $link = "mailto:" . $options['link_icon' . $icon_number];
+        } else {
         $link = get_home_url() . '/' . $options['link_icon' . $icon_number];
+        }
         $target = '_self';
     }
 
