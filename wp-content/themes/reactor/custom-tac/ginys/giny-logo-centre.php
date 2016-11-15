@@ -22,7 +22,21 @@ class Logo_Centre_Widget extends WP_Widget {
             echo '<h4 class="widget-title">' . $title . '</h4>';
         }
 
-        $contacte = (strstr(reactor_option('emailCentre'), '@')) ? "mailto:" . reactor_option('emailCentre') : reactor_option('emailCentre');
+        // Check options to print url link or mailto link
+        $contacteCentre = reactor_option('contacteCentre');
+        $correuCentre = reactor_option('correuCentre');
+        $contacte_mobile_enabled = false;
+
+        ( ! empty($contacteCentre) ) ? $contacte = $contacteCentre : $contacte = false;
+        ( ! empty($correuCentre) ) ? $contacte_mobile = "mailto:" . $correuCentre : $contacte_mobile = false;
+
+        if ( $contacte == false && $contacte_mobile != false ){
+            $contacte = $contacte_mobile;
+            $contacte_mobile_enabled = true;
+        } else if ( $contacte_mobile == false && $contacte != false ){
+            $contacte_mobile = $contacte;
+        }
+
         ?>
         <div class="targeta_id_centre row">
             <?php
@@ -63,10 +77,88 @@ class Logo_Centre_Widget extends WP_Widget {
                         <div class="tel">
                             <span><?php echo reactor_option('telCentre'); ?></span>
                         </div>
-                        <a id="tar-mapa" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a> 
-                        <span class="pipe" >|</span> 
-                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        <?php
 
+                            // Get home url to check behavior target link
+                            $currentDomain = get_home_url();
+                            $searchDomain = array('http://','https://');
+                            $currentDomain = str_replace($searchDomain,'',$currentDomain);
+                            $contacteDomain = str_replace($searchDomain,'',$contacte);
+
+                            // Check if googleMaps is empty to show or not
+                            $showPipe = false;
+                            $emptyMaps = reactor_option('googleMaps');
+                            if ( ! empty($emptyMaps)){
+                                $showPipe = true;
+                                if ( strpos(reactor_option('googleMaps'),$currentDomain) !== false ){
+                        ?>
+                                    <a id="tar-mapa" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a>
+                        <?php   
+                                } else if ( strpos(reactor_option('googleMaps'),'http') === false ){
+                                    if ( strpos(reactor_option('googleMaps'),'.') !== false ){
+                        ?>
+                                        <a id="tar-mapa" target="_blank" href="<?php echo esc_url("http://" . reactor_option('googleMaps')); ?>">mapa</a>
+                        <?php
+                                    } else {
+                                        if ( substr ( trim(reactor_option('googleMaps')) , 0 , 1 ) == '/' ){
+                        ?>
+                                            <a id="tar-mapa" href=" <?php echo esc_url(get_home_url() . reactor_option('googleMaps')); ?>">mapa</a>
+                        <?php
+                                        } else {
+                        ?>
+                                            <a id="tar-mapa" href=" <?php echo esc_url(get_home_url() . '/' . reactor_option('googleMaps')); ?>">mapa</a>
+                        <?php
+                                        }
+                                    }
+                                } else {
+                        ?>
+                                    <a id="tar-mapa" target="_blank" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a>
+                        <?php
+                                }
+                            } 
+                        ?>
+                        <?php 
+                            // Check if $contacte is empty to show or not
+                            if ( $contacte != false && $contacte_mobile != false ){
+                                if( $showPipe == true ){
+                        ?>
+                                    <span class="pipe" >|</span>
+                        <?php 
+                                } 
+
+                                if ( $contacte_mobile_enabled == true ){
+                        ?>
+                                    <a id="tar-contacte" href="<?php echo esc_url($contacte); ?>">contacte</a>
+                        <?php 
+                                } else {
+                                    if ( strpos($contacteDomain,$currentDomain) !== false ){
+                        ?>
+                                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        <?php
+                                    } else if ( strpos($contacte,'http') === false ){
+                                        if ( strpos($contacte,'.') !== false ){
+                        ?>
+                                            <a id="tar-contacte" target="_blank" href="<?php echo esc_url("https://" . $contacte); ?>">contacte</a>
+                        <?php
+                                        } else {
+                                            if ( substr ( trim($contacte) , 0 , 1 ) == '/' ){
+                        ?>
+                                                <a id="tar-contacte" href="<?php echo esc_url($currentDomain . $contacte); ?>">contacte</a>
+                        <?php
+                                            } else {
+                        ?>
+                                                <a id="tar-contacte" href="<?php echo esc_url($currentDomain . '/' . $contacte); ?>">contacte</a>
+                        <?php
+                                            }
+                                        }
+                                    } else {
+                        ?>
+                        <a id="tar-contacte" target="_blank" href="<?php echo esc_url($contacte); ?>">contacte</a>
+                        <?php
+                                    }
+                                }
+                            }
+                        ?>
                     </div>		 
                 </div>	
             </div>		 

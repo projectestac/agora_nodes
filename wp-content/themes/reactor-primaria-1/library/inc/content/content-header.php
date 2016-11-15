@@ -194,12 +194,83 @@ function reactor_do_title_logo()
     <div id="box-grid" class="box-grid large-2 small-12 columns">
         <div class="box-content-grid row icon-box">
             <div class="topicons large-4 small-4 columns show-for-small">
-                <button id="icon-email" onclick="window.location.href='mailto:<?php echo reactor_option('emailCentre'); ?>'" class="dashicons dashicons-email">
+                <?php
+
+                    // Get type contact by modify behavior
+                    $contacte_mobile = reactor_option('correuCentre');
+                    $correu_centre_enabled = false;
+                    if ( empty($contacte_mobile) ){
+                        $contacte_mobile = reactor_option('contacteCentre');
+                    } else if( $contacte_mobile != '' ) {
+                        $contacte_mobile = "mailto:" . $contacte_mobile;
+                        $correu_centre_enabled = true;
+                    }
+
+                    // Get home url
+                    $currentDomain = get_home_url();
+                    $searchDomain = array('http://','https://');
+                    $currentDomain = str_replace($searchDomain,'',$currentDomain);
+                    $contacteDomain = str_replace($searchDomain,'',$contacte_mobile);
+
+                    if( $correu_centre_enabled === true ){
+                ?>
+                <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                <?php 
+                    } else if ( ! empty($contacte_mobile) ){
+                        if ( strpos($contacteDomain,$currentDomain) !== false ){
+                ?>
+                            <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                <?php
+                        } else if ( strpos($contacte_mobile,'http') === false ){
+                            if ( strpos($contacte_mobile,'.') !== false ){
+                ?>
+                                <button id="icon-email" onclick="window.open('<?php echo "http://" . $contacte_mobile; ?>','_blank')" class="dashicons dashicons-email">
+                <?php
+                            } else {
+                ?>
+                                <button id="icon-email" onclick="window.location.href='<?php echo $currentDomain . $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                <?php
+                            }
+                        } else {
+                ?>
+                            <button id="icon-email" onclick="window.open('<?php echo $contacte_mobile; ?>','_blank')" class="dashicons dashicons-email">
+                <?php   } ?>
+                <?php } else { ?>
+                        <button id="icon-email" class="dashicons dashicons-email">
+                <?php } ?>
                 <span class="text_icon">Correu</span>
                 </button>
             </div>
             <div class="topicons large-4 small-4 columns show-for-small">
-                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>'" class="dashicons dashicons-location-alt">
+                <?php 
+                    // Get if GoogleMaps is empty or not by modify behavior
+                    $emptyMaps = reactor_option('googleMaps');
+                    if ( ! empty($emptyMaps) ){
+                        if ( strpos(reactor_option('googleMaps'),$currentDomain) !== false ){
+                ?>
+                            <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>" class="dashicons dashicons-location-alt">
+                <?php
+                        } else if ( strpos(reactor_option('googleMaps'),'http') === false ){
+                            if ( strpos(reactor_option('googleMaps'),'.') !== false ){
+                ?>
+                                 <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo "https://" . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                <?php
+                            } else {
+                ?>
+                                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo $currentDomain . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                <?php
+                            }
+                        } else {
+                ?>
+                            <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                <?php
+                        }
+                    } else {
+                ?>
+                        <button id="icon-maps" title="Mapa" class="dashicons dashicons-location-alt">
+                <?php
+                    }
+                ?>
                 <span class="text_icon">Mapa</span>
                 </button>
             </div>
