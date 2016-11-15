@@ -13,17 +13,18 @@ $isBlocs = false;
 define('CENTRE', $centre);
 define('DB_NAME', $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 define('DB_HOST', $school_info['dbhost_nodes']);
-define('WP_SITEURL', $agora['server']['html'] . $centre . '/');
 define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $school_info['id_nodes']);
-
 define('ENVIRONMENT', $agora['server']['enviroment']);
 define('SCHOOL_CODE', $school_info['clientCode']);
 
-if (isset($school_info['diskPercent_nodes'])) {
-    $diskPercentNodes = $school_info['diskPercent_nodes'];
+// Check for subdomain
+if (!empty($school_info['url_type']) && ($school_info['url_type'] == 'subdomain') && !empty($school_info['url_host'])) {
+    define('WP_SITEURL', $agora['server']['html']);
 } else {
-    $diskPercentNodes = 0;
+    define('WP_SITEURL', $agora['server']['html'] . $centre . '/');
 }
+
+$diskPercentNodes = (isset($school_info['diskPercent_nodes'])) ? $school_info['diskPercent_nodes'] : 0;
 
 if (isset($agora['iseoi']) && $agora['iseoi']) {
     define('XTEC_MAIL_IDAPP', 'AGORAEOI');
