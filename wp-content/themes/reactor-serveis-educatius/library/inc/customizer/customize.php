@@ -338,18 +338,34 @@ if ( !function_exists('reactor_customize_register') ) {
 					'priority' => 7,
 				 ) );
 
-			$wp_customize->add_setting('reactor_options[emailCentre]', array(
+			// Field to contact page
+			$wp_customize->add_setting('reactor_options[contacteCentre]', array(
 				'default'    => "",
 				'type'       => 'option',
 				'capability' => 'manage_options',
 				'transport'  => 'postMessage',
 			 ) );
-				$wp_customize->add_control('reactor_options[emailCentre]', array(
+				// Field to contact page
+				$wp_customize->add_control('reactor_options[contacteCentre]', array(
 					'label'    => __('Contacte principal', 'reactor'),
 					'section'  => 'reactor_customizer_idcentre',
-                                        'description' => 'Email o pàgina de contacte',
+                    'description' => " <a style='float:left;margin-top:-44px; margin-left:135px;height:0px;width:0px;font-style: normal;' target='_blank' href='http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1741&mode=entry&hook=2681'> <br> (" . __('Ajuda','reactor') . ")</a>" . __('Pàgina de contacte','reactor'),
 					'priority' => 8,
-				 ) );
+				) );
+
+			// Add field mail
+			$wp_customize->add_setting('reactor_options[correuCentre]', array(
+				'default'    => "",
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				'transport'  => 'postMessage',
+			 ) );
+			$wp_customize->add_control('reactor_options[correuCentre]', array(
+				'label'    => __('Email principal', 'reactor'),
+				'section'  => 'reactor_customizer_idcentre',
+                'description' => __('Adreça electrònica','reactor'),
+				'priority' => 9,
+			 ) );
 
                         global $colors_nodes;
 
