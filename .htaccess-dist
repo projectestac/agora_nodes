@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteBase /agora/
+
+# rewrite any unknown directories and files
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^(.*)$ - [NC,L]
+RewriteRule ^(.*)$ wordpress/index.php [QSA,L]
