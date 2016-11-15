@@ -22,7 +22,27 @@ class Logo_Centre_Widget extends WP_Widget {
             echo '<h4 class="widget-title">' . $title . '</h4>';
         }
 
+        // XTEC ************ - MODIFICAT - Check options to print url link or mailto link
+        // 2016.11.15 @xaviernietosanchez
+        $contacteCentre = reactor_option('contacteCentre');
+        $correuCentre = reactor_option('correuCentre');
+        $contacte_mobile_enabled = false;
+
+        ( ! empty($contacteCentre) ) ? $contacte = $contacteCentre : $contacte = false;
+        ( ! empty($correuCentre) ) ? $contacte_mobile = "mailto:" . $correuCentre : $contacte_mobile = false;
+
+        if ( $contacte == false && $contacte_mobile != false ){
+            $contacte = $contacte_mobile;
+            $contacte_mobile_enabled = true;
+        }else if ( $contacte_mobile == false && $contacte != false ){
+            $contacte_mobile = $contacte;
+        }
+        // ************ ORIGINAL
+        /*
         $contacte = (strstr(reactor_option('emailCentre'), '@')) ? "mailto:" . reactor_option('emailCentre') : reactor_option('emailCentre');
+        */
+        // ************ FI
+
         ?>
         <div class="targeta_id_centre row">
             <?php list($postal_code, $locality) = explode(" ", reactor_option("cpCentre"), 1); ?>
@@ -44,10 +64,62 @@ class Logo_Centre_Widget extends WP_Widget {
                         <div class="tel">
                             <span><?php echo reactor_option('telCentre'); ?></span>
                         </div>
-                        <a id="tar-mapa" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a> 
-                        <span class="pipe" >|</span> 
-                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        <!--
+                        // XTEC ************ - AFEGIT - Check if googleMaps is empty to show or not
+                        // 2016.11.15 @xaviernietosanchez
+                        -->
+                        <?php 
+                            $showPipe = false;
+                            if ( ! empty(reactor_option('googleMaps') )){ 
+                                $showPipe = true;
+                        ?>
+                        <!--
+                        // ************ FI
+                        -->
+                        <a id="tar-mapa" target="_blank" href="<?php echo reactor_option('googleMaps'); ?>">mapa</a> 
+                        <!--
+                        // XTEC ************ - AFEGIT - Check if googleMaps is empty to show or not
+                        // 2016.11.15 @xaviernietosanchez
+                        -->
+                        <?php } ?>
+                        <!--
+                        // ************ FI
+                        -->
+                        <!--
+                        // XTEC ************ - MODIFICAT - Check if $contacte is empty to show or not
+                        // 2016.11.15 @xaviernietosanchez
+                        -->
+                        <?php 
+                            if ( $contacte != false && $contacte_mobile != false ){
+                                if( $showPipe == true ){
+                        ?>
+                        <span class="pipe" >|</span>
+                        <?php 
+                                } 
 
+                                if ( $contacte_mobile_enabled == true ){
+                        ?>
+                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        <?php 
+                                } else { 
+                                    if ( strpos($contacte,'http') === false ){
+                        ?>
+                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        <?php
+                                    } else {
+                        ?>
+                        <a id="tar-contacte" target="_blank" href="<?php echo $contacte; ?>">contacte</a>
+                        <?php
+                                    }
+                                }
+                            }
+                        ?>
+                        <!--
+                        // ************ ORIGINAL
+                        <span class="pipe" >|</span>
+                        <a id="tar-contacte" href="<?php echo $contacte; ?>">contacte</a>
+                        // ************ FI
+                        -->
                     </div>		 
                 </div>	
             </div>		 

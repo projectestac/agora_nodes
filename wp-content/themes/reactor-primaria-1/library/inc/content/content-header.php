@@ -194,12 +194,57 @@ function reactor_do_title_logo()
     <div id="box-grid" class="box-grid large-2 small-12 columns">
         <div class="box-content-grid row icon-box">
             <div class="topicons large-4 small-4 columns show-for-small">
+                <!--
+                // XTEC ************ - MODIFICAT - Get type contact by modify behavior
+                // 2016.11.15 @xaviernietosanchez
+                -->
+                <?php
+                    $contacte_mobile = reactor_option('correuCentre');
+                    $correu_centre_enabled = false;
+                    if ( empty($contacte_mobile) ){
+                        $contacte_mobile = reactor_option('contacteCentre');
+                    } else if( $contacte_mobile != '' ) {
+                        $contacte_mobile = "mailto:" . $contacte_mobile;
+                        $correu_centre_enabled = true;
+                    }
+
+                    if( $correu_centre_enabled === true ){
+                ?>
+                <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                <?php 
+                    } else if ( ! empty($contacte_mobile) ){ 
+                        if ( strpos($contacte_mobile,'http') === false ){
+                ?>
+                <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                <?php   } else { ?>
+                <button id="icon-email" onclick="window.open('<?php echo $contacte_mobile; ?>','_blank')" class="dashicons dashicons-email">
+                <?php   } ?>
+                <?php } else { ?>
+                <button id="icon-email" class="dashicons dashicons-email">
+                <?php } ?>
+                <!--
+                // ************ ORIGINAL
                 <button id="icon-email" onclick="window.location.href='mailto:<?php echo reactor_option('emailCentre'); ?>'" class="dashicons dashicons-email">
+                // ************ FI
+                -->
                 <span class="text_icon">Correu</span>
                 </button>
             </div>
             <div class="topicons large-4 small-4 columns show-for-small">
+                <!--
+                // XTEC ************ - MODIFICAT - Get if GoogleMaps is empty or not by modify behavior
+                // 2016.11.15 @xaviernietosanchez
+                -->
+                <?php if ( ! empty(reactor_option('googleMaps')) ){ ?>
+                <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                <?php } else { ?>
+                <button id="icon-maps" title="Mapa" class="dashicons dashicons-location-alt">
+                <?php } ?>
+                <!--
+                // ************ ORIGINAL
                 <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>'" class="dashicons dashicons-location-alt">
+                // ************ FI
+                -->
                 <span class="text_icon">Mapa</span>
                 </button>
             </div>

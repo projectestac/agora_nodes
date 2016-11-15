@@ -357,18 +357,51 @@ if ( !function_exists('reactor_customize_register') ) {
 					'priority' => 7,
 				 ) );
 
+			// XTEC ************ - MODIFICAT - Field to contact page
+			// 2016.11.15 @xaviernietosanchez
+			$wp_customize->add_setting('reactor_options[contacteCentre]', array(
+			// ************ ORIGINAL
+			/*
 			$wp_customize->add_setting('reactor_options[emailCentre]', array(
+			*/
+			// ************ FI
 				'default'    => "",
 				'type'       => 'option',
 				'capability' => 'manage_options',
 				'transport'  => 'postMessage',
 			 ) );
+				// XTEC ************ - MODIFICAT - Field to contact page
+				// 2016.11.15 @xaviernietosanchez
+				$wp_customize->add_control('reactor_options[contacteCentre]', array(
+					'label'    => __('Contacte principal', 'reactor'),
+					'section'  => 'reactor_customizer_idcentre',
+                                        'description' => 'Pàgina de contacte (prioritari al web)',
+					'priority' => 8,
+				// ************ ORIGINAL
+				/*
 				$wp_customize->add_control('reactor_options[emailCentre]', array(
 					'label'    => __('Contacte principal', 'reactor'),
 					'section'  => 'reactor_customizer_idcentre',
                                         'description' => 'Email o pàgina de contacte',
 					'priority' => 8,
-				 ) );
+				*/
+				// ************ FI
+				) );
+
+			// XTEC ************ - AFEGIT - Add field mail
+			// 2016.11.15 @xaviernietosanchez
+			$wp_customize->add_setting('reactor_options[correuCentre]', array(
+				'default'    => "",
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				'transport'  => 'postMessage',
+			 ) );
+			$wp_customize->add_control('reactor_options[correuCentre]', array(
+				'section'  => 'reactor_customizer_idcentre',
+                                    'description' => 'Correu electrònic (prioritari al mòbil)',
+				'priority' => 9,
+			 ) );
+			// ************ FI
 
                         global $colors_nodes;
 
