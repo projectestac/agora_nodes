@@ -15,6 +15,7 @@ Changes in progress
 - xtec-ldap-login: Don't send e-mail when user password is updated
 - agora-functions: Moved Automatic creation of featured image (Imatge resum) from mu-common to agora-functions (Trello #1284)
 - mu-common: Allow external requests to gencat.cat from RSS
+- google-analyticator: Upgraded plugin from 6.4.9.7 to 6.5.0.0 (Trello #1372)
 
 
 Changes 16.10.24
