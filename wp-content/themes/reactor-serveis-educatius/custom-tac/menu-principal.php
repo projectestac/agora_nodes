@@ -97,11 +97,22 @@ function menu_etiquetes() {
 
         $url = parse_url($options['link_icon' . $i]);
 
-        if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
+        $currentDomain = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+
+        // Change target link if is the same domain
+        if ( str_replace('www.', '', $url['host']) == $currentDomain ){
+            $link = $options['link_icon' . $i];
+            $target = '_self';
+        }else if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
             $link = $options['link_icon' . $i];
             $target = set_target($link);
         } else {
+            // Allow include a mail direction instead of a url
+            if ( preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $options['link_icon' . $i]) ){
+                $link = "mailto:" . $options['link_icon' . $i];
+            } else {
             $link = get_home_url() . '/' . $options['link_icon' . $i];
+            }
             $target = '_self';
         }
 
