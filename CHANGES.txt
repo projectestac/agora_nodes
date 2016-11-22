@@ -16,6 +16,9 @@ Changes in progress
 - agora-functions: Moved Automatic creation of featured image (Imatge resum) from mu-common to agora-functions (Trello #1284)
 - mu-common: Allow external requests to gencat.cat from RSS
 - google-analyticator: Upgraded plugin from 6.4.9.7 to 6.5.0.0 (Trello #1372)
+- google-calendar-events: Upgraded plugin from 3.1.2 to 3.1.8 (Trello #1447)
+- google-calendar-events: In calendar widget, show event information on mouse over (Trello #1462)
+- google-calendar-events: Show parameter _default_calendar_expand_multi_day_events for all users (Trello #1352)
 
 
 Changes 16.10.24
