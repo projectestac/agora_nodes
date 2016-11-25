@@ -406,11 +406,11 @@ function remove_general_bbpress_options(){
 
 	// Get current URL
 	$pageURL = 'http';
-	if ($_SERVER["HTTPS"] == "on") {
-		$pageURL .= "s";
+	if ( array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] == 'on' ) {
+		$pageURL .= 's';
 	}
 
-	$pageURL .= "://". $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+	$pageURL .= '://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 	// Check if url contains the restricted page
 	$pos = strpos($pageURL, $restrictedPage);
