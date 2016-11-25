@@ -15,11 +15,15 @@ function xtec_stats_register_widgets(){
 }
 
 // Load pugin css
+function xtec_stats_css() {
+    // add files .js and .css
+    wp_register_script('xtec-stats-js', plugins_url().'/xtec-stats/js/xtec-stats.js', array('jquery'),'1.1', true);
+    wp_enqueue_script('xtec-stats-js');
+    wp_enqueue_style( 'style-xtec-stats', plugins_url().'/xtec-stats/css/xtec-stats.css' );
+
+}
 add_action('wp_enqueue_scripts', 'xtec_stats_css');
 
-function xtec_stats_css() {
-	wp_enqueue_style( 'style-xtec-stats', plugins_url().'/xtec-stats/css/xtec-stats.css' );
-}
 
 load_plugin_textdomain('xtec-stats', false, plugin_basename(dirname(__FILE__)). '/languages');
 
@@ -486,10 +490,3 @@ function get_data_xtec_stats(){
     xtec_stats_output_data($offset,$limit,$dataResults,$searchType,$fieldContent,$sufix,$limit,$placeholder_username,$placeholder_content,$fieldOrder,$directionArrow);
 
 }
-
-// add files .js and .css
-wp_register_script('xtec-stats-js', plugins_url().'/xtec-stats/js/xtec-stats.js', array('jquery'),'1.1', true);
-wp_enqueue_script('xtec-stats-js');
-wp_enqueue_style( 'style-xtec-stats', plugins_url().'/xtec-stats/css/xtec-stats.css' );
-
-//************ FI 

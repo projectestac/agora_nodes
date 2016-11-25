@@ -19,6 +19,7 @@ Changes in progress
 - google-calendar-events: Upgraded plugin from 3.1.2 to 3.1.8 (Trello #1447)
 - google-calendar-events: In calendar widget, show event information on mouse over (Trello #1462)
 - google-calendar-events: Show parameter _default_calendar_expand_multi_day_events for all users (Trello #1352)
+- Fixed some debug warnings
 
 
 Changes 16.10.24
