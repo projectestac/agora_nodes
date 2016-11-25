@@ -44,7 +44,7 @@ add_action('wp_head', 'reactor_do_reactor_head', 1);
  */
 function show_header_icon($options, $icon_number) {
     $url = parse_url($options['link_icon' . $icon_number]);
-    if (($url['scheme'] == 'https') || ($url['scheme'] == 'http')) {
+    if ( isset($url['scheme']) && ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http')) ) {
         $link = $options['link_icon' . $icon_number];
         $target = set_target($link);
     } else {
