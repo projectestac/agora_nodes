@@ -85,10 +85,10 @@ function xtec_booking_get_events( $resourceID = false ){
 	$numCharacters = 50;
 	$events = array();
 	$args = array(
-		'post_type'   		=> 'calendar_booking',
-		'post_status' 		=> 'publish',
-		'posts_per_page' 	=> -1,
-  		'caller_get_posts'	=> 1
+		'post_type'   			=> 'calendar_booking',
+		'post_status' 			=> 'publish',
+		'posts_per_page' 		=> -1,
+  		'ignore_sticky_posts'	=> 1
 	);
 
 	$posts = get_posts( $args );
@@ -194,13 +194,13 @@ function xtec_booking_get_events( $resourceID = false ){
 						$addEvent = false;
 
 						switch ($nDay) {
-							case 'Mon': if ( $data['_xtec-booking-day-monday'] == true ){ $addEvent = true; } break;
-							case 'Tue': if ( $data['_xtec-booking-day-tuesday'] == true ){ $addEvent = true; } break;
-							case 'Wed': if ( $data['_xtec-booking-day-wednesday'] == true ){ $addEvent = true; } break;
-							case 'Thu': if ( $data['_xtec-booking-day-thursday'] == true ){ $addEvent = true; } break;
-							case 'Fri': if ( $data['_xtec-booking-day-friday'] == true ){ $addEvent = true; } break;
-							case 'Sat': if ( $data['_xtec-booking-day-saturday'] == true ){ $addEvent = true; } break;
-							case 'Sun': if ( $data['_xtec-booking-day-sunday'] == true ){ $addEvent = true; } break;
+							case 'Mon': if ( isset($data['_xtec-booking-day-monday']) && $data['_xtec-booking-day-monday'] == true ){ $addEvent = true; } break;
+							case 'Tue': if ( isset($data['_xtec-booking-day-tuesday']) && $data['_xtec-booking-day-tuesday'] == true ){ $addEvent = true; } break;
+							case 'Wed': if ( isset($data['_xtec-booking-day-wednesday']) && $data['_xtec-booking-day-wednesday'] == true ){ $addEvent = true; } break;
+							case 'Thu': if ( isset($data['_xtec-booking-day-thursday']) && $data['_xtec-booking-day-thursday'] == true ){ $addEvent = true; } break;
+							case 'Fri': if ( isset($data['_xtec-booking-day-friday']) && $data['_xtec-booking-day-friday'] == true ){ $addEvent = true; } break;
+							case 'Sat': if ( isset($data['_xtec-booking-day-saturday']) && $data['_xtec-booking-day-saturday'] == true ){ $addEvent = true; } break;
+							case 'Sun': if ( isset($data['_xtec-booking-day-sunday']) && $data['_xtec-booking-day-sunday'] == true ){ $addEvent = true; } break;
 							default: $addEvent = false; break;
 						}
 
@@ -372,7 +372,7 @@ function xtec_display_calendar($data,$shortcode){
 
 	} else {
 
-		$resource = get_post( $_GET['resource'] );
+		$resource = isset($_GET['resource'])?get_post( $_GET['resource'] ):new stdClass();
 
 		$calendar .= __('Resources','xtec-booking').'<span class="dashicons dashicons-arrow-down xtec-booking-collapse xtec-booking-unstyle-link click_cursor"></span>';
 
@@ -392,6 +392,7 @@ function xtec_display_calendar($data,$shortcode){
 						    <div id="collapse1" class="panel-collapse collapse xtec-row-panel">';
 		}
 
+		$i = 0;
 		foreach ( $posts as $post ) {
 
 			$color = get_post_meta( $post->ID, '_xtec_resources_color', true );
