@@ -52,6 +52,11 @@ add_action('reactor_post_header', 'reactor_do_meta_autor_date', 2);
  */
 function reactor_do_standard_thumbnail() { 
 
+// XTEC ************ AFEGIT - Added to avoid warnings when debug is enabled
+// 2016.11.25 @sarjona
+global $post;
+//************ FI
+
     if (get_post_meta( get_the_ID(), '_bloc_html', true )=="on")
             return;
     
