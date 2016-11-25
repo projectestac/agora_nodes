@@ -78,9 +78,9 @@ function xtec_add_metabox_parameters_booking( $post ){
 		</div>
 <?php
 	}
-
-	$data['parameters']['_xtec-booking-data'] = unserialize($data['parameters']['_xtec-booking-data'][0]);
-
+	if ( !empty($data['parameters']) ) {
+		$data['parameters']['_xtec-booking-data'] = unserialize($data['parameters']['_xtec-booking-data'][0]);
+	}
 ?>
 	<table class="form-table">
 		<tbody>
@@ -118,19 +118,19 @@ function xtec_add_metabox_parameters_booking( $post ){
 					<div class="xtec-booking-datetime">
 						<span id="xtec_booking_startDate_message" class="description"><?php _e('Start date','xtec-booking'); ?></span>
 						<br>
-						<input id="xtec-booking-start-date" name="_xtec-booking-start-date" type="text" class="xtec-booking-input-datetime" style="width:246px;margin-bottom: 5px;" value="<?php echo $data['parameters']['_xtec-booking-data']['_xtec-booking-start-date']; ?>" required><span id="xtec-booking-before-date" class="style_message display_message_date"><?php _e('Date before at actual date','xtec-booking'); ?></span>
+						<input id="xtec-booking-start-date" name="_xtec-booking-start-date" type="text" class="xtec-booking-input-datetime" style="width:246px;margin-bottom: 5px;" value="<?php echo (!empty($data['parameters']['_xtec-booking-data']))?$data['parameters']['_xtec-booking-data']['_xtec-booking-start-date']:''; ?>" required><span id="xtec-booking-before-date" class="style_message display_message_date"><?php _e('Date before at actual date','xtec-booking'); ?></span>
 					</div>
 				</td>
 				<td colspan="2" rowspan="2">
 					<div class="xtec-booking-datetime">
 						<span class="description"><?php _e('Start time','xtec-booking'); ?></span>
 						<br>
-						<input id="xtec-booking-start-time" name="_xtec-booking-start-time" class="xtec-booking-input-time" value="<?php echo $data['parameters']['_xtec-booking-data']['_xtec-booking-start-time']; ?>" type="text" class="xtec-booking-input-datetime" required>
+						<input id="xtec-booking-start-time" name="_xtec-booking-start-time" class="xtec-booking-input-time" value="<?php echo (!empty($data['parameters']['_xtec-booking-data']))?$data['parameters']['_xtec-booking-data']['_xtec-booking-start-time']:''; ?>" type="text" class="xtec-booking-input-datetime" required>
 					</div>
 					<div class="xtec-booking-datetime">
 						<span class="description"><?php _e('Finish time','xtec-booking'); ?></span>
 						<br>
-						<input id="xtec-booking-finish-time" name="_xtec-booking-finish-time" class="xtec-booking-input-time" value="<?php echo $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-time']; ?>" type="text" class="xtec-booking-input-datetime" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-time'] == '' ){ ?> disabled <?php } ?> required>
+						<input id="xtec-booking-finish-time" name="_xtec-booking-finish-time" class="xtec-booking-input-time" value="<?php echo (!empty($data['parameters']['_xtec-booking-data']))?$data['parameters']['_xtec-booking-data']['_xtec-booking-finish-time']:''; ?>" type="text" class="xtec-booking-input-datetime" <?php if ( isset($data['parameters']['_xtec-booking-data']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-time'] == '' ){ ?> disabled <?php } ?> required>
 					</div>
 				</td>
 			</tr>
@@ -139,7 +139,7 @@ function xtec_add_metabox_parameters_booking( $post ){
 					<div class="xtec-booking-datetime">
 						<span class="description"><?php _e('Finish date','xtec-booking'); ?></span>
 						<br>
-						<input id="xtec-booking-finish-date" name="_xtec-booking-finish-date" type="text" class="xtec-booking-input-datetime" style="width:246px;margin-bottom: 4px;" value="<?php echo $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-date']; ?>" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-date'] == ''){ ?> disabled <?php } ?>required><span id="xtec-booking-before-date-finish" class="style_message display_message_date"><?php _e('Date before at actual date','xtec-booking'); ?></span>
+						<input id="xtec-booking-finish-date" name="_xtec-booking-finish-date" type="text" class="xtec-booking-input-datetime" style="width:246px;margin-bottom: 4px;" value="<?php echo (!empty($data['parameters']['_xtec-booking-data']))?$data['parameters']['_xtec-booking-data']['_xtec-booking-finish-date']:''; ?>" <?php if ( !empty($data['parameters']['_xtec-booking-data']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-date'] == ''){ ?> disabled <?php } ?>required><span id="xtec-booking-before-date-finish" class="style_message display_message_date"><?php _e('Date before at actual date','xtec-booking'); ?></span>
 					</div>
 				</td>
 			</tr>
@@ -154,32 +154,32 @@ function xtec_add_metabox_parameters_booking( $post ){
 			</tr>
 			<tr id="xtec-booking-row-days" <?php if ( empty( $data['parameters'] ) or ( $data['parameters']['_xtec-booking-data']['_xtec-booking-start-date'] == $data['parameters']['_xtec-booking-data']['_xtec-booking-finish-date'] ) ){ ?> class="xtec-booking-display-none" <?php } ?> >
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-monday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-monday'] == 1 ) { ?> checked <?php } ?>>
+					<input type="checkbox" name="_xtec-booking-day-monday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-monday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-monday'] == 1 ) { ?> checked <?php } ?>>
 					<span class="description xtec-non-italic"><?php _e('Monday','xtec-booking'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-tuesday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-tuesday'] == 1 ) { ?> checked <?php } ?>>
+					<input type="checkbox" name="_xtec-booking-day-tuesday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-tuesday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-tuesday'] == 1 ) { ?> checked <?php } ?>>
 					<span class="description xtec-non-italic"><?php _e('Tuesday','xtec-booking'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-wednesday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-wednesday'] == 1 ) { ?> checked <?php } ?>>
+					<input type="checkbox" name="_xtec-booking-day-wednesday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-wednesday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-wednesday'] == 1 ) { ?> checked <?php } ?>>
 					<span class="description xtec-non-italic"><?php _e('Wednesday','xtec-booking'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-thursday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-thursday'] == 1 ) { ?> checked <?php } ?>>
+					<input type="checkbox" name="_xtec-booking-day-thursday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-thursday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-thursday'] == 1 ) { ?> checked <?php } ?>>
 					<span class="description xtec-non-italic"><?php _e('Thursday','xtec-booking'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-friday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-friday'] == 1 ) { ?> checked <?php } ?> >
+					<input type="checkbox" name="_xtec-booking-day-friday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-friday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-friday'] == 1 ) { ?> checked <?php } ?> >
 					<span class="description xtec-non-italic"><?php _e('Friday','xtec-booking'); ?></span>
 				</td>
 				<td>|</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-saturday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-saturday'] == 1 ) { ?> checked <?php } ?> >
+					<input type="checkbox" name="_xtec-booking-day-saturday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-saturday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-saturday'] == 1 ) { ?> checked <?php } ?> >
 					<span class="description xtec-non-italic"><?php _e('Saturday','xtec-booking'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" name="_xtec-booking-day-sunday" <?php if ( $data['parameters']['_xtec-booking-data']['_xtec-booking-day-sunday'] == 1 ) { ?> checked <?php } ?> >
+					<input type="checkbox" name="_xtec-booking-day-sunday" <?php if ( isset($data['parameters']['_xtec-booking-data']['_xtec-booking-day-sunday']) && $data['parameters']['_xtec-booking-data']['_xtec-booking-day-sunday'] == 1 ) { ?> checked <?php } ?> >
 					<span class="description xtec-non-italic"><?php _e('Sunday','xtec-booking'); ?></span>
 				</td>
 			</tr>

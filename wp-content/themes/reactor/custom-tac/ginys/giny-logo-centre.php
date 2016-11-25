@@ -48,8 +48,9 @@ class Logo_Centre_Widget extends WP_Widget {
             }
             ?>
 
-        <?php list($postal_code, $locality) = explode(" ", reactor_option("cpCentre"), 1); ?>
-
+        <?php
+            list($postal_code, $locality) = explode( ' ', reactor_option('cpCentre'), 2);
+        ?>
             <div class="<?php reactor_columns($amplada); echo ' ' . $class_addr; ?> ">
                 <div class="vcard">
                     <span id="tar-nomCentre"><?php echo reactor_option('nomCanonicCentre'); ?></span>

@@ -70,23 +70,23 @@ class XTEC_Widget extends WP_Widget {
         // Saved widget options
         $title = $instance['title'];
 
-        if (trim($instance['ampa_url']) != '') {
+        if ( isset($instance['ampa_url']) && trim($instance['ampa_url']) != '' ) {
             $this->recursos["ampa"]["url"] = $instance['ampa_url'];
         }
 
-        if (trim($instance['escola-verda_url']) != '') {
+        if ( isset($instance['escola-verda_url']) && trim($instance['escola-verda_url']) != '' ) {
             $this->recursos["escola-verda"]["url"] = $instance['escola-verda_url'];
         }
 
-        if (trim($instance['moodle_url']) != '') {
+        if ( isset($instance['moodle_url']) && trim($instance['moodle_url']) != '' ) {
             $this->recursos["moodle"]["url"] = $instance['moodle_url'];
         }
-        
-        if (trim($instance['serveiseducatius_url']) != '') {
+
+        if ( isset($instance['serveiseducatius_url']) && trim($instance['serveiseducatius_url']) != '' ) {
             $this->recursos["serveiseducatius"]["url"] = $instance['serveiseducatius_url'];
         }
-        
-        if (trim($instance['classroom_url']) != '') {
+
+        if ( isset($instance['classroom_url']) && trim($instance['classroom_url']) != '' ) {
             $this->recursos["classroom"]["url"] = $instance['classroom_url'];
         }
 
@@ -97,7 +97,7 @@ class XTEC_Widget extends WP_Widget {
         }
         echo "<div class='grid-icon'>";
         foreach ($this->recursos as $idRecurs => $nomRecurs) {
-            $idRecurs = $instance[$idRecurs];
+            $idRecurs = isset($instance[$idRecurs])?$instance[$idRecurs]:'';
             if (!empty($idRecurs)) {
                 echo "<a target='_blank' title=\"" . $nomRecurs['nom'] . "\" href=\"" . esc_url($nomRecurs['url']) . "\"><img class=\"iconedu\" src=\"" . get_template_directory_uri() . "/custom-tac/imatges/" . $nomRecurs['img'] . "\"></a>";
             }
