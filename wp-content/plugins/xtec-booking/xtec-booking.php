@@ -238,8 +238,12 @@ function xtec_booking_load_css_js() {
 	global $post;
 	$current_url = $_SERVER['REQUEST_URI'];
 
-	if ( !empty( $post ) ) {
-		if ( $post->post_type == 'calendar_booking' || $post->post_type == 'calendar_resources' || strpos($current_url,'post_type=calendar_booking&page=xtec-booking.php') || strpos($current_url,'xtec-booking.php') ){
+	$check_calendar_booking = strpos($current_url,'post_type=calendar_booking&page=xtec-booking.php');
+	$check_xtec_booking = strpos($current_url,'xtec-booking.php');
+
+	if ( !empty( $post ) || $check_calendar_booking !== false || $check_xtec_booking !== false ) {
+
+		if ( isset($post->post_type) == 'calendar_booking' || isset($post->post_type) == 'calendar_resources' || $check_calendar_booking !== false || $check_xtec_booking !== false ){
 			wp_register_script( 'xtec-booking-js', plugins_url() . '/xtec-booking/js/xtec-booking.js', array('jquery'),'1.1', true );
 			wp_enqueue_script( 'xtec-booking-js' );
 			wp_enqueue_style( 'style-xtec-booking', plugins_url() . '/xtec-booking/css/xtec-booking.css' );
@@ -248,12 +252,12 @@ function xtec_booking_load_css_js() {
 			add_action('admin_footer','xtec_booking_text_javascript');
 		}
 
-		if( $post->post_type == 'calendar_resources' ){
+		if( isset($post->post_type) == 'calendar_resources' ){
 			wp_register_script( 'xtec-booking-resources-js', plugins_url() . '/xtec-booking/js/xtec-booking-resources.js', array('jquery'),'1.1', true );
 			wp_enqueue_script( 'xtec-booking-resources-js' );
 		}
 
-		if ( $post->post_type == 'calendar_booking' ){
+		if ( isset($post->post_type) == 'calendar_booking' ){
 			xtec_booking_calendar_libraries('booking');
 		} else if ( strpos($current_url,'post_type=calendar_booking&page=xtec-booking.php') ){
 			xtec_booking_calendar_libraries();
