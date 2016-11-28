@@ -20,6 +20,7 @@ Changes in progress
 - google-calendar-events: In calendar widget, show event information on mouse over (Trello #1462)
 - google-calendar-events: Show parameter _default_calendar_expand_multi_day_events for all users (Trello #1352)
 - Fixed some debug warnings
+- buddypress: Upgraded plugin from 2.5.3 to 2.7.2 (Trello #1446)
 
 
 Changes 16.10.24
