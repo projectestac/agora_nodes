@@ -64,3 +64,6 @@
 [submodule "wp-content/plugins/widget-visibility-without-jetpack"]
 	path = wp-content/plugins/widget-visibility-without-jetpack
 	url = https://github.com/projectestac/wordpress-widget-visibility-without-jetpack.git
+[submodule "wp-content/plugins/buddypress-like"]
+	path = wp-content/plugins/buddypress-like
+	url = https://github.com/projectestac/wordpress-buddypress-like.git
