@@ -866,77 +866,6 @@ ul.bbp-topics, .bbp-topic-form {
     clear: inherit !important;
 }
 
-/* Calendari */
-
-.gce-widget-grid .gce-calendar td {
-    background-color: #efefef;
-    border: 0.1em solid white !important;
-    color: #55556a !important;
-}
-
-.gce-widget-grid .gce-calendar td.gce-day-future,
-.gce-widget-grid .gce-calendar td.gce-day-past {
-    color: #55556a !important;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.8em;
-    background-color: #e7e7e7;
-    border: 0.1em solid white !important;
-}
-
-.gce-widget-grid .gce-calendar th {
-    border: 0 !important;
-}
-
-.gce-widget-grid .gce-calendar {
-    border: 0 !important;
-}
-
-.gce-widget-grid .gce-calendar .gce-caption {
-    background-color: #e7e7e7;
-    color: #55556a;
-    text-transform: capitalize;
-    padding-top: 0.3em;
-}
-
-.gce-has-events {
-    background-color: #cfcfcf !important;
-    font-weight: bold;
-}
-
-.gce-widget-grid {
-    padding-right: 1em;
-}
-
-.gce-today span.gce-day-number {
-    border-radius: 75%;
-    padding: 5px;
-}
-
-div.gce-widget-grid table tr th,
-div.gce-widget-grid table tr td {
-    padding: 0.5em 0.25em;
-}
-
-.gce-prev .gce-change-month {
-    padding-left: 10px;
-}
-
-div.gce-next .gce-change-month {
-    padding-right: 10px;
-}
-
-.gce-prev .gce-change-month-list:after {
-    content: "Anterior";
-}
-
-div.gce-next .gce-change-month-list:before {
-    content: "Següent";
-}
-
-.gce-widget-list {
-    margin-bottom: 1.5em;
-}
-
 /* Pagination */
 
 ul.pagination {
@@ -1339,3 +1268,85 @@ body.login .wp-social-login-widget {
 div.dir-search {
    margin: 0!important;
 }
+
+/* SIMPLE CALENDAR: ESTILS WIDGET CALENDAR */
+.widget span.simcal-no-events, .simcal-events-dots b{
+        display: none !important;
+}
+
+.widget div.simcal-calendar table.simcal-calendar-grid tr.simcal-week td div span.simcal-events-dots b, .widget .simcal-default-calendar-grid .simcal-events-dots{
+    display: inline !important;
+}
+
+.widget .simcal-day-label.simcal-day-number{
+    background-color: #e7e7e7 !important;
+    color: #59544E !important;
+}
+
+.widget tr.simcal-week{
+    background-color: #e7e7e7;
+}
+
+.widget tr.simcal-week td{
+    border: 1px solid white !important;
+}
+
+.widget .simcal-day-void{
+    background-color: #f5f5f5 !important;
+}
+
+.widget tr.simcal-week div{
+    padding-top: 5px !important;
+    background-color: #e7e7e7;
+
+}
+
+.widget .simcal-current-month, 
+.widget .simcal-current-year{
+    text-transform: capitalize;
+    font-size: 0.7em;
+    color: #59544E !important;
+    font-weight: bold;
+    line-height: 1em;
+    margin-top: -7px !important;
+}
+
+#sidebar-frontpage-2 .widget .simcal-current-month, 
+#sidebar-frontpage-2 .widget .simcal-current-year{
+    font-size: 0.6em !important;
+
+}
+
+.widget .simcal-today > div{
+    border: none !important;
+}
+
+.widget .simcal-today > div > span.simcal-day-label.simcal-day-number{
+    border: none;
+    background-color: transparent !important;
+}
+
+.widget .simcal-default-calendar-grid .simcal-day-number{
+        padding: 0px !important;
+    }
+
+.widget .simcal-default-calendar-grid .simcal-calendar-head .simcal-nav{
+    padding: 5px !important;
+}
+
+#sidebar-frontpage-2 .widget .simcal-default-calendar-grid .simcal-calendar-head .simcal-nav{
+    padding: 2px !important;
+}
+
+#sidebar-frontpage-2 .simcal-calendar-head h3,
+#sidebar-frontpage .simcal-calendar-head h3{
+    margin-top: -7px;
+}
+
+.widget .simcal-today > div > span.simcal-day-label.simcal-day-number{
+    border-radius: 14px !important;
+    margin: 0 auto !important;
+    width: 23px !important;
+    padding: 2px 2px 3px 2px !important;
+}
+/* SIMPLE CALENDAR: FI ESTILS WIDGET CALENDAR */
