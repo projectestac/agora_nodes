@@ -120,6 +120,97 @@
         }
     }
 
+    /* ESTILS WIDGET CALENDAR */
+    .widget span.simcal-no-events, .simcal-events-dots b{
+        display: none !important;
+    }
+
+    .widget div.simcal-calendar table.simcal-calendar-grid tr.simcal-week td div span.simcal-events-dots b, .widget .simcal-default-calendar-grid .simcal-events-dots{
+        display: inline !important;
+    }
+
+    .widget .simcal-events-dots b{
+        color: <?php echo $color_calendar ?> !important;
+    }
+
+    .widget .simcal-day-label.simcal-day-number{
+        background-color: #e7e7e7 !important;
+        color: #59544E !important;
+    }
+
+    .widget tr.simcal-week{
+        background-color: #e7e7e7;
+    }
+
+    .widget tr.simcal-week td{
+        border: 1px solid white !important;
+    }
+
+    .widget .simcal-day-void{
+        background-color: #f5f5f5 !important;
+    }
+
+    .widget tr.simcal-week div{
+        padding-top: 5px !important;
+        background-color: #e7e7e7;
+
+    }
+
+    .widget .simcal-current-month, 
+    .widget .simcal-current-year{
+        text-transform: capitalize;
+        font-size: 0.7em;
+        color: #59544E !important;
+        font-weight: bold;
+        line-height: 1em;
+        margin-top: -7px !important;
+    }
+
+    #sidebar-frontpage-2 .widget .simcal-current-month, 
+    #sidebar-frontpage-2 .widget .simcal-current-year{
+        font-size: 0.6em !important;
+
+    }
+
+    .widget .simcal-today > div{
+        border: none !important;
+    }
+
+    .widget .simcal-today > div > span.simcal-day-label.simcal-day-number{
+        border: none !important;
+        background-color: transparent !important;
+    }
+
+    .widget .simcal-today > div > span.simcal-day-label.simcal-day-number{
+        border: 2px solid <?php echo $color_calendar ?> !important;
+        border-radius: 15px;
+        margin: 0 auto;
+        width: 23px !important;
+        padding: 2px !important;
+        padding-bottom: 3px !important;
+    }
+
+    .widget .simcal-default-calendar-grid .simcal-day-number{
+        padding: 0px !important;
+    }
+
+
+    .widget .simcal-default-calendar-grid .simcal-calendar-head .simcal-nav{
+        padding: 5px !important;
+    }
+
+    #sidebar-frontpage-2 .widget .simcal-default-calendar-grid .simcal-calendar-head .simcal-nav{
+        padding: 2px !important;
+    }
+
+    #sidebar-frontpage-2 .simcal-calendar-head h3,
+    #sidebar-frontpage .simcal-calendar-head h3{
+        margin-top: -7px;
+    }
+
+
+    /* FI ESTILS WIDGET CALENDAR */
+
     <?php echo get_option( 'common_css', '' );?>
     <?php echo get_option( 'school_css', '' );?>
 
