@@ -26,6 +26,7 @@ Changes in progress
 - Theme reactor: Deleted duplicated favicon (Trello #1419)
 - Themes reactor-primaria-1 and reactor-serveis-educatius: Added field email to Fitxa del Centre and modified behaviour of links for contact and map (Trello #1459)
 - Themes reactor-primaria-1 and reactor-serveis-educatius: Added id attribute to site logo (Trello #1477)
+- Themes reactor-primaria-1 and reactor-serveis-educatius: Changed styles for simple calendar widget to look closer to 2.x version (Trello #1397)
 
 
 Changes 16.10.24
