@@ -13,6 +13,9 @@
 
 <head>
 
+    <!-- Add common styles to all themes -->
+    <?php include get_theme_root()."/reactor/custom-tac/styles/styles.php"; ?>
+
     <?php include get_stylesheet_directory()."/style.php"; ?>
 
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
