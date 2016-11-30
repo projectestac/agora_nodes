@@ -27,6 +27,7 @@ Changes in progress
 - buddypress-docs: Contributors and Subscribers cannot create documents (Trello #1434)
 - reactor: Deleted duplicated favicon (Trello #1419)
 - reactor: Allow e-mail in header icons. Changed behaviour when a link is clicked (opening in new window or in current window) (Trello #1437)
+- reactor: Changed appearance of widget of Google Calendar Events (Trello #1397)
 - reactor-primaria-1 and reactor-serveis-educatius: Added field email to Fitxa del Centre and modified behaviour of links for contact and map (Trello #1459)
 - reactor-primaria-1 and reactor-serveis-educatius: Added id attribute to site logo (Trello #1477)
 - bbpress: Converted into a submodule (Trello #1454)
