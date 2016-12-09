@@ -53,7 +53,7 @@ class Logo_Centre_Widget extends WP_Widget {
                 ?>
                 <div class="<?php reactor_columns(array($amplada, 12));
                 echo " " . $class_logo; ?> hide-for-small"> 
-                    <img src="<?php echo reactor_option('logo_image'); ?>">					
+                    <img id="logo_entity" src="<?php echo reactor_option('logo_image'); ?>">					
                 </div> 
             <?php
             } else {
