@@ -90,7 +90,7 @@ function reactor_do_title_logo()
                 <div class='box-content'>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
                         <span style="font-size:<?php echo $description_font_size; ?>">
-                            <img src="<?php echo reactor_option('logo_image'); ?>">
+                            <img id="logo_entity" src="<?php echo reactor_option('logo_image'); ?>">
                         </span>
                     </a>
                 </div>
