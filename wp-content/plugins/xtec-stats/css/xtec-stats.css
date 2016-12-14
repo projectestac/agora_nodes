@@ -83,3 +83,14 @@ th a button:hover > span.xtec-stats-arrow{
     color:#37d4fa;
 }
 
+.hidden-container{
+    display: none;
+}
+
+.tab-container{
+    padding: 10px;
+}
+
+.xtec-stats-notice{
+    margin: 10px 0 -10px 0 !important;
+}
