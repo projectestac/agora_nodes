@@ -50,6 +50,26 @@ function xtec_stats_change_arrow_direction(object){
 	}
 }
 
+function xtec_stats_change_view(id){
+	if( id == "tab_1" ){
+		if ( jQuery('#message').length > 0 ){
+			jQuery('#message').addClass('hidden-container');
+		}
+		jQuery('#target_2').addClass('hidden-container');
+		jQuery('#target_1').removeClass('hidden-container');
+		jQuery('#tab_1').addClass('nav-tab-active');
+		jQuery('#tab_2').removeClass('nav-tab-active');
+	} else {
+		if ( jQuery('#message').length > 0 ){
+			jQuery('#message').removeClass('hidden-container');
+		}
+		jQuery('#target_1').addClass('hidden-container');
+		jQuery('#target_2').removeClass('hidden-container');
+		jQuery('#tab_2').addClass('nav-tab-active');
+		jQuery('#tab_1').removeClass('nav-tab-active');
+	}
+}
+
 //Add events
 jQuery(document).ready(function(e){
 
@@ -85,6 +105,10 @@ jQuery(document).ready(function(e){
 	if(typeof xtec_stats_limitResults !== 'undefined'){
 		xtec_stats_change_select(xtec_stats_limitResults);
 	}
+
+	jQuery('a[id*="tab_"]').on('click',function(e){
+		xtec_stats_change_view(e.target.id);
+	});
 
 });
 
