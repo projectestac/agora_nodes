@@ -10,18 +10,6 @@
 load_muplugin_textdomain('agora-functions', '/languages');
 
 /**
- * To avoid error uploading files from HTTP pages
- * @param  string $url create docs URL
- * @return string Create docs URL always with HTTPS
- * @author Sara Arjona
- */
-function bp_docs_get_create_link_filter($url) {
-    return preg_replace('/^http:/i', 'https:', $url);
-}
-
-add_filter('bp_docs_get_create_link', 'bp_docs_get_create_link_filter');
-
-/**
  * Build a navigation link and add it to the profile main menu
  * @author Nacho Abejaro
  */
@@ -38,7 +26,6 @@ function bp_profile_menu_posts() {
             )
     );
 }
-
 add_action('bp_setup_nav', 'bp_profile_menu_posts', 301);
 
 /**
@@ -85,7 +72,6 @@ function bp_profile_submenu_posts() {
             )
     );
 }
-
 add_action('bp_setup_nav', 'bp_profile_submenu_posts', 302);
 
 /**
@@ -325,7 +311,6 @@ add_action('before_delete_post', 'restrict_post_deletion');
  * Prevents the creation of restricted pages
  * @author Nacho Abejaro
  */
-
 function force_post_title_init() {
 	wp_enqueue_script('jquery');
 }
@@ -1347,3 +1332,36 @@ add_action('draft_to_publish', 'automatic_summary_image');
 add_action('new_to_publish', 'automatic_summary_image');
 add_action('pending_to_publish', 'automatic_summary_image');
 add_action('future_to_publish', 'automatic_summary_image');
+
+// Buddypress-docs
+
+/**
+ * To avoid error uploading files from HTTP pages
+ * @param  string $url create docs URL
+ * @return string Create docs URL always with HTTPS
+ * @author Sara Arjona
+ */
+function bp_docs_get_create_link_filter($url) {
+    return preg_replace('/^http:/i', 'https:', $url);
+}
+add_filter('bp_docs_get_create_link', 'bp_docs_get_create_link_filter');
+
+
+/**
+ * Users with Contributor or suscriptor role can't create documents into bpdocs plugin
+ *
+ * @author Xavier Nieto
+ *
+ * @return string
+ */
+function xtec_caps_bpdocs($caps, $cap, $user_id, $args){
+    $bpuser_docs = get_user_by('ID',$user_id);
+    $bproles_docs = (array) $bpuser_docs->roles;
+
+    if ( in_array( 'contributor', $bproles_docs ) || in_array( 'subscriber', $bproles_docs ) ) {
+        $caps[] = 'do_not_allow';
+    }
+
+    return $caps;
+}
+add_filter('bp_docs_map_meta_caps','xtec_caps_bpdocs', 10, 4);
