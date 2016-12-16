@@ -1347,3 +1347,22 @@ add_action('draft_to_publish', 'automatic_summary_image');
 add_action('new_to_publish', 'automatic_summary_image');
 add_action('pending_to_publish', 'automatic_summary_image');
 add_action('future_to_publish', 'automatic_summary_image');
+
+/**
+ * Users with Contributor or suscriptor role can't create documents into bpdocs plugin
+ *
+ * @author Xavier Nieto
+ *
+ * @return string
+ */
+function xtec_caps_bpdocs($caps, $cap, $user_id, $args){
+    $bpuser_docs = get_user_by('ID',$user_id);
+    $bproles_docs = (array) $bpuser_docs->roles;
+
+    if ( ! in_array( 'contributor', $bproles_docs ) && ! in_array( 'subscriber', $bproles_docs ) ){
+        $caps[] = 'do_not_allow';
+    }
+
+    return $caps;
+}
+add_filter('bp_docs_map_meta_caps','xtec_caps_bpdocs', 10, 4);
