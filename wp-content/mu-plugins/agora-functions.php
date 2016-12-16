@@ -1330,6 +1330,7 @@ add_action('new_to_publish', 'automatic_summary_image');
 add_action('pending_to_publish', 'automatic_summary_image');
 add_action('future_to_publish', 'automatic_summary_image');
 
+
 // Buddypress-docs
 
 /**
@@ -1342,7 +1343,6 @@ function bp_docs_get_create_link_filter($url) {
     return preg_replace('/^http:/i', 'https:', $url);
 }
 add_filter('bp_docs_get_create_link', 'bp_docs_get_create_link_filter');
-
 
 /**
  * Users with Contributor or suscriptor role can't create documents into bpdocs plugin
@@ -1367,3 +1367,26 @@ function xtec_caps_bpdocs($caps, $cap, $user_id, $args){
     }
 }
 add_filter('bp_docs_map_meta_caps','xtec_caps_bpdocs', 10, 4);
+
+
+// Buddypress
+
+/**
+ * Don't allow change of bbpress role to xtecadmin. Forced to be keymaster.
+ *
+ * @author Xavier Nieto
+ *
+ * @return string
+ */
+function xtec_filter_bbp_set_user_role( $new_role, $user_id, $user ) {
+    if( $user->data->user_login == get_xtecadmin_username() ) {
+        foreach ( $user->roles as $role ) {
+            if( substr( $role, 0, 4 ) == 'bbp_' ) {
+                $user->remove_role( $new_role ); // At this point the role was already changed, so it must be removed
+                $user->add_role( 'bbp_keymaster' );
+            }
+        }
+    }
+    return $new_role;
+}
+add_filter( 'bbp_set_user_role', 'xtec_filter_bbp_set_user_role', 10, 3 );
