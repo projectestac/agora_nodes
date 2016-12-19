@@ -67,3 +67,6 @@
 [submodule "wp-content/plugins/buddypress-like"]
 	path = wp-content/plugins/buddypress-like
 	url = https://github.com/projectestac/wordpress-buddypress-like.git
+[submodule "wp-content/plugins/bbpress"]
+	path = wp-content/plugins/bbpress
+	url = https://github.com/projectestac/wordpress-bbpress.git
