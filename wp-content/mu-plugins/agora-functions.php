@@ -1330,7 +1330,6 @@ add_action('new_to_publish', 'automatic_summary_image');
 add_action('pending_to_publish', 'automatic_summary_image');
 add_action('future_to_publish', 'automatic_summary_image');
 
-
 // Buddypress-docs
 
 /**
@@ -1368,9 +1367,6 @@ function xtec_caps_bpdocs($caps, $cap, $user_id, $args){
 }
 add_filter('bp_docs_map_meta_caps','xtec_caps_bpdocs', 10, 4);
 
-
-// Buddypress
-
 /**
  * Don't allow change of bbpress role to xtecadmin. Forced to be keymaster.
  *
@@ -1390,3 +1386,17 @@ function xtec_filter_bbp_set_user_role( $new_role, $user_id, $user ) {
     return $new_role;
 }
 add_filter( 'bbp_set_user_role', 'xtec_filter_bbp_set_user_role', 10, 3 );
+
+/**
+ * Hidden some metaboxes in nav-menus for buddypress-docs
+ *
+ * @author Xavier Nieto
+ */
+function remove_nav_menu_metaboxes_nodes( $metaboxes ) {
+    if ( !is_xtec_super_admin() ) {
+        remove_meta_box( 'add-bp_docs_folder_in_user', 'nav-menus', 'side' );
+        remove_meta_box( 'add-bp_docs_folder_in_group', 'nav-menus', 'side' );
+        remove_meta_box( 'add-bp_docs_access', 'nav-menus', 'side' );
+    }
+}
+add_action( 'admin_head-nav-menus.php', 'remove_nav_menu_metaboxes_nodes', 10, 1 );
