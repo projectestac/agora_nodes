@@ -14,7 +14,8 @@ Changes in progress
 - xtec-booking: Fixed some PHP warnings (Trello #1470)
 - xtec-ldap-login: Don't send e-mail when user password is updated
 - agora-functions: Moved Automatic creation of featured image (Imatge resum) from mu-common to agora-functions (Trello #1284)
-- agora-functions: Don't allow change of bbpress role of xtecadmin. Forced to be keymaster. (Trello #1422)
+- agora-functions: Don't allow change of bbpress role of xtecadmin. Forced to be keymaster (Trello #1422)
+- agora-functions and mu-common: Hidden menu metaboxes for buddypress-docs and gce in Appearance | Menus (Trello #1435)
 - mu-common: Allow external requests to gencat.cat from RSS
 - google-analyticator: Upgraded plugin from 6.4.9.7 to 6.5.0.0 (Trello #1372)
 - google-calendar-events: Upgraded plugin from 3.1.2 to 3.1.8 (Trello #1447)
