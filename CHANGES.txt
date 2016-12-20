@@ -30,6 +30,8 @@ Changes in progress
 - bbpress: Converted into a submodule (Trello #1454)
 - bbpress: Upgraded from version 2.5.8 to 2.5.11 (Trello #1454)
 - tinymce-advanced: Upgraded from version 4.2.8 to 4.3.10.1 (Trello #1445)
+- slideshare: Converted into a submodule (Trello #1453)
+- slideshare: Upgraded from version 1.9.1 to 1.9.2 (Trello #1453)
 
 
 Changes 16.10.24
