@@ -14,8 +14,6 @@ load_muplugin_textdomain('agora-functions', '/languages');
  * @author Nacho Abejaro
  */
 function bp_profile_menu_posts() {
-    global $bp;
-
     bp_core_new_nav_item(
             array(
                 'name' => __('My Articles', 'agora-functions'),
@@ -33,18 +31,17 @@ add_action('bp_setup_nav', 'bp_profile_menu_posts', 301);
  * @author Nacho Abejaro
  */
 function bp_profile_submenu_posts() {
-    global $bp;
-
     $publishCount = get_user_posts_count('publish');
     $pendingCount = get_user_posts_count('pending');
     $draftCount = get_user_posts_count('draft');
+    $parent_slug = 'myposts';
 
     bp_core_new_subnav_item(
             array(
                 'name' => __('Published', 'agora-functions') . '<span>' . $publishCount . '</span>',
                 'slug' => 'mypublished',
-                'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
-                'parent_slug' => $bp->bp_nav['myposts']['slug'],
+                'parent_url' => bp_displayed_user_domain() . $parent_slug . '/',
+                'parent_slug' => $parent_slug,
                 'position' => 10,
                 'screen_function' => 'mb_author_posts' // the function is declared below
             )
@@ -54,8 +51,8 @@ function bp_profile_submenu_posts() {
             array(
                 'name' => __('Pending Review', 'agora-functions') . '<span>' . $pendingCount . '</span>',
                 'slug' => 'myunder-review',
-                'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
-                'parent_slug' => $bp->bp_nav['myposts']['slug'],
+                'parent_url' => bp_displayed_user_domain() . $parent_slug . '/',
+                'parent_slug' => $parent_slug,
                 'position' => 20,
                 'screen_function' => 'mb_author_pending' // the function is declared below
             )
@@ -65,8 +62,8 @@ function bp_profile_submenu_posts() {
             array(
                 'name' => __('Drafts', 'agora-functions') . '<span>' . $draftCount . '</span>',
                 'slug' => 'mydrafts',
-                'parent_url' => bp_displayed_user_domain() . $bp->bp_nav['myposts']['slug'] . '/',
-                'parent_slug' => $bp->bp_nav['myposts']['slug'],
+                'parent_url' => bp_displayed_user_domain() . $parent_slug . '/',
+                'parent_slug' => $parent_slug,
                 'position' => 30,
                 'screen_function' => 'mb_author_drafts' // the function is declared below
             )
@@ -148,7 +145,7 @@ function myTemplate($query) {
             echo '<div style="width: 100%; min-height: 90px; float: left; border-bottom: 2px solid #F2F0F0; background: white;	margin-left: 0px; position: relative;">';
             echo '<div style="max-width: 100px; max-height: 100px; float: left; margin-top: 10px; position: relative; width: 200%;" >';
             echo '<a href="' . get_edit_post_link() . '">';
-            the_post_thumbnail(thumbnail);
+            the_post_thumbnail('thumbnail');
             echo '</a>';
             echo '</div>';
 
@@ -159,7 +156,7 @@ function myTemplate($query) {
             echo '</a>';
             echo '</h3>';
 
-            echo '<span style="float: left; width: 100%; height: 10px; margin-bottom: 5px; color: #A0A5A9; font-size: 11px; font-style: italic; font: 08px "Droid Serif", Georgia, "Times New Roman", Times, serif; text-align: right; ">' . get_the_date() . '</span>';
+            echo '<span style="width:100%; height:10px; margin-bottom:7px; color:#A0A5A9; font-size:11px; font-style:italic;">' . get_the_date() . '</span>';
 
             echo '<div class="excerpt">';
             echo limit_text(get_the_excerpt(), 30);
@@ -174,7 +171,7 @@ function myTemplate($query) {
             if (get_comments_number()) {
                 echo '<div style="width: 40%; float: right; color: #1fa799 !important;">';
                 echo '<span style="float: right; margin: 0 0 0 7px; font-size: 26px; font-weight: bold; line-height: 1; text-shadow: 0 1px 0 white; font-style: italic;">' . get_comments_number() . '</span>';
-                echo '<span style="font-size:11px; line-height: 28px; float: right; margin: 0 0 0 7px; font: italic 11px "Droid Serif",Georgia,"Times New Roman",Times,serif;">';
+                echo '<span style="font-size:11px; line-height:28px; float:right; margin:0 0 0 7px; font-style:italic;">';
                 echo __('Comments', 'agora-functions');
                 echo "</span>";
                 echo '</div>';
