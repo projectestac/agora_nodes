@@ -21,6 +21,7 @@ Changes in progress
 - google-calendar-events: Show parameter _default_calendar_expand_multi_day_events for all users (Trello #1352)
 - Fixed some debug warnings
 - buddypress: Upgraded plugin from 2.5.3 to 2.7.2 (Trello #1446)
+- buddypress: Fixed PHP warnings and notices (Trello #1472)
 - buddypress-like: Upgraded plugin from 0.2 to 0.3 and converted into a submodule (Trello #1452)
 - buddypress-docs: Upgraded plugin from 1.9.0 to 1.9.2 (Trello #1442)
 - buddypress-docs: Contributors and Subscribers cannot create documents (Trello #1434)
