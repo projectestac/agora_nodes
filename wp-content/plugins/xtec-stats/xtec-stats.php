@@ -7,18 +7,24 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-// Load js and css files
-wp_register_script( 'xtec-stats-js', plugins_url() . '/xtec-stats/js/xtec-stats.js', array( 'jquery' ), '1.1', true );
-wp_enqueue_script( 'xtec-stats-js' );
-wp_enqueue_style( 'style-xtec-stats', plugins_url() . '/xtec-stats/css/xtec-stats.css' );
+function xtec_stats_init() {
+    // Load javascript
+    wp_register_script( 'xtec_stats_js', plugins_url( 'js/xtec-stats.js', __FILE__ ), array( 'jquery' ), '1.1', true );
+    wp_enqueue_script( 'xtec_stats_js' );
 
-load_plugin_textdomain('xtec-stats', false, plugin_basename(dirname(__FILE__)). '/languages');
+    // Load CSS
+    wp_enqueue_style( 'xtec_stats_css', plugins_url( 'css/xtec-stats.css', __FILE__ ) );
 
-// Register plugin
-function xtec_stats_register_widgets(){
-	register_widget('xtec_stats_widget');
+    // Load language file
+    load_plugin_textdomain( 'xtec-stats', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
-add_action('widgets_init','xtec_stats_register_widgets');
+add_action( 'init', 'xtec_stats_init' );
+
+// Register widget
+function xtec_stats_register_widgets() {
+    register_widget( 'xtec_stats_widget' );
+}
+add_action( 'widgets_init', 'xtec_stats_register_widgets' );
 
 class Xtec_stats_widget extends WP_Widget {
 
@@ -116,7 +122,7 @@ function xtec_stats_get_results($whereSQL,$offset,$limit,$searchContent,$field,$
     global $wpdb;
 
     // Construct Query
-    if( ! isset( $whereSQL ) ){
+    if ( false === $whereSQL ) {
         if ( is_xtec_super_admin() ){
             $dataResults = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_stats AS wps ORDER BY wps.datetime DESC LIMIT %d,%d", $offset, $limit+1));
         } else {
@@ -189,10 +195,14 @@ function xtec_stats_compile_csv( $dataCSV = null, $dataResults = null ){
         // Catch the message to content field
         $dataContent = explode("content' => '",$dataResults->content);
 
-        $dataContent = str_replace("\n","",$dataContent[1]);
-        $dataContent = str_replace('\'','',$dataContent);
-        $dataContent = str_replace(',',' ',$dataContent);
-        $dataContent = substr($dataContent, 0, strlen($dataContent) - 1);
+        if ( isset( $dataContent[1] ) ) {
+            $dataContent = str_replace( "\n", "", $dataContent[1] );
+            $dataContent = str_replace( '\'', '', $dataContent );
+            $dataContent = str_replace( ',', ' ', $dataContent );
+            $dataContent = substr( $dataContent, 0, strlen( $dataContent ) - 1 );
+        } else {
+            $dataContent = '';
+        }
 
         $dataCSV .= "\"".$dataContent."\",\n";
     }
@@ -204,7 +214,7 @@ function xtec_stats_compile_csv( $dataCSV = null, $dataResults = null ){
 // Generate CSV
 function xtec_stats_generate_csv(){
 
-    if ( ! empty($_POST) && $_POST['action'] == 'csv' ){
+    if ( ! empty( $_POST ) && isset( $_POST['action'] ) && ( $_POST['action'] == 'csv' )) {
 
         $searchType = $_POST['search_type'];
         $searchContent = "%".$_POST['search_content']."%";
@@ -247,7 +257,7 @@ function xtec_stats_output_data($offset,$limit,$dataResults,$searchType,$fieldCo
             <a id="tab_2" href="#" class="nav-tab <?php if( isset($_GET['tab']) ){ ?> nav-tab-active <?php } ?>"><?php _e('Configuration options','xtec-stats'); ?></a>
         </h2>
 
-        <div id="target_1" class="tab-container <?php if( isset($_GET['tab']) ){ ?> hidden-container <?php } ?>"">
+        <div id="target_1" class="tab-container <?php if( isset($_GET['tab']) ){ ?> hidden-container <?php } ?>">
             <br>
         <?php // Show search form ?>
             <form method="POST" id="xtec-stats-form-search" name="form_search" action="tools.php?page=xtec_stats">
@@ -339,10 +349,14 @@ function xtec_stats_output_data($offset,$limit,$dataResults,$searchType,$fieldCo
         <?php
                             $dataContent = explode("content' => '",$dataResults[$i]->content);
 
-                            $dataContent = str_replace("\n","",$dataContent[1]);
-                            $dataContent = str_replace('\'','',$dataContent);
-                            $dataContent = str_replace(',',' ',$dataContent);
-                            $dataContent = substr($dataContent, 0, strlen($dataContent) - 1);
+                            if ( isset( $dataContent[1] ) ) {
+                                $dataContent = str_replace("\n","",$dataContent[1]);
+                                $dataContent = str_replace('\'','',$dataContent);
+                                $dataContent = str_replace(',',' ',$dataContent);
+                                $dataContent = substr($dataContent, 0, strlen($dataContent) - 1);
+                            } else {
+                                $dataContent = '';
+                            }
         ?>
                             <td><?php echo $dataContent ?></td>
                             <td><?php echo $dataResults[$i]->ip ?></td>
@@ -415,13 +429,19 @@ add_action('admin_menu','show_xtec_stats_create_menu');
 
 function get_data_xtec_stats(){
 
-    // initialize variables
+    // Initialize variables
     $field = "wps.datetime DESC";
     $limit = 10;
     $offset = 0;
     $placeholder_username = __('User name','xtec-stats');
     $placeholder_content = __('Message content','xtec-stats');
     $fieldOrder = 'datetime';
+
+    // Default values
+    $searchType = 1;
+    $fieldContent = '';
+    $searchContent = '';
+    $whereSQL = false;
 
     $suffix = array (
         'datetime' => '-up',
@@ -443,21 +463,22 @@ function get_data_xtec_stats(){
     if( ! empty($_POST) ){
 
         if( isset($_POST['xtec_config']) ){
-            try{
-                update_option( 'xtec-stats-include-admin', $_POST['exclude_admin'] );
+            try {
+                $exclude_admin = ( isset( $_POST['exclude_admin'] )) ? $_POST[ 'exclude_admin' ] : false;
+                update_option( 'xtec-stats-include-admin', $exclude_admin );
                 ?>
                 <div id="message" class="updated notice notice-success is-dismissible xtec-stats-notice">
                     <p class="xtec-white"><?php _e('Successfully updated.','xtec-stats'); ?></p>
                 </div>
                 <?php
-            }catch (\Exception $e){
+            } catch (\Exception $e){
                 ?>
                 <div id="message" class="error notice notice-error is-dismissible xtec-stats-notice">
                     <p class="xtec-white"><?php _e($e); ?></p>
                 </div>
                 <?php
             }
-        } else if( $_POST['action'] == 'csv' ){
+        } else if( isset($_POST['action'] ) && ( $_POST['action'] == 'csv' ) ) {
             xtec_stats_generate_csv();
         } else {
             $searchType = $_POST['search_type'];
@@ -468,23 +489,23 @@ function get_data_xtec_stats(){
             // Prepare Pagination to Query
             if ( isset($_POST['limitResults']) ){$limit = $_POST['limitResults']; }
 
-            // Pagination
-            if ( $_POST['action'] == 'next' ){ $offset = ($_POST['limit']+1)*$limit; }
-            if ( $_POST['action'] == 'previous'){ $offset = ($_POST['limit']-1)*$limit; }
-
-            // Order by
-            if ( $_POST['action'] == 'datetime-up' ){ $field = "wps.datetime ASC"; $fieldOrder = "datetime"; $suffix['datetime'] = "-down"; $directionArrow['datetime'] = "-up"; }
-            if ( $_POST['action'] == 'datetime-down' ){ $field = "wps.datetime DESC"; $directionArrow['datetime'] = "-down"; $fieldOrder = "datetime"; }
-            if ( $_POST['action'] == 'username-up' ){ $field = "wps.username ASC"; $fieldOrder = "username"; $directionArrow['username'] = "-up"; }
-            if ( $_POST['action'] == 'username-down' ){ $field = "wps.username DESC"; $suffix['username'] = "-up"; $directionArrow['username'] = "-down"; $fieldOrder = "username"; }
-            if ( $_POST['action'] == 'content-up' ){ $field = "wps.content ASC"; $fieldOrder = "content"; $directionArrow['content'] = "-up"; }
-            if ( $_POST['action'] == 'content-down' ){ $field = "wps.content DESC"; $suffix['content'] = "-up"; $directionArrow['content'] = "-down"; $fieldOrder = "content"; }
-            if ( $_POST['action'] == 'uri-up' ){ $field = "wps.uri ASC"; $fieldOrder = "uri"; $directionArrow['uri'] = "-up"; }
-            if ( $_POST['action'] == 'uri-down' ){ $field = "wps.uri DESC"; $suffix['uri'] = "-up"; $directionArrow['ùri'] = "-down"; $fieldOrder = "uri"; }
-            if ( $_POST['action'] == 'ip-up' ){ $field = "wps.ip ASC"; $fieldOrder = "ip"; $directionArrow['ip'] = "-up";}
-            if ( $_POST['action'] == 'ip-down' ){ $field = "wps.ip DESC"; $suffix['ip'] = "-up"; $directionArrow['ip'] = "-down"; $fieldOrder = "ip"; }
+            if ( isset( $_POST[ 'action' ] )) {
+                // Pagination
+                if ( $_POST['action'] == 'next' ){ $offset = ($_POST['limit']+1)*$limit; }
+                if ( $_POST['action'] == 'previous'){ $offset = ($_POST['limit']-1)*$limit; }
+                // Order by
+                if ( $_POST['action'] == 'datetime-up' ){ $field = "wps.datetime ASC"; $fieldOrder = "datetime"; $suffix['datetime'] = "-down"; $directionArrow['datetime'] = "-up"; }
+                if ( $_POST['action'] == 'datetime-down' ){ $field = "wps.datetime DESC"; $directionArrow['datetime'] = "-down"; $fieldOrder = "datetime"; }
+                if ( $_POST['action'] == 'username-up' ){ $field = "wps.username ASC"; $fieldOrder = "username"; $directionArrow['username'] = "-up"; }
+                if ( $_POST['action'] == 'username-down' ){ $field = "wps.username DESC"; $suffix['username'] = "-up"; $directionArrow['username'] = "-down"; $fieldOrder = "username"; }
+                if ( $_POST['action'] == 'content-up' ){ $field = "wps.content ASC"; $fieldOrder = "content"; $directionArrow['content'] = "-up"; }
+                if ( $_POST['action'] == 'content-down' ){ $field = "wps.content DESC"; $suffix['content'] = "-up"; $directionArrow['content'] = "-down"; $fieldOrder = "content"; }
+                if ( $_POST['action'] == 'uri-up' ){ $field = "wps.uri ASC"; $fieldOrder = "uri"; $directionArrow['uri'] = "-up"; }
+                if ( $_POST['action'] == 'uri-down' ){ $field = "wps.uri DESC"; $suffix['uri'] = "-up"; $directionArrow['ùri'] = "-down"; $fieldOrder = "uri"; }
+                if ( $_POST['action'] == 'ip-up' ){ $field = "wps.ip ASC"; $fieldOrder = "ip"; $directionArrow['ip'] = "-up";}
+                if ( $_POST['action'] == 'ip-down' ){ $field = "wps.ip DESC"; $suffix['ip'] = "-up"; $directionArrow['ip'] = "-down"; $fieldOrder = "ip"; }
+            }
         }
-
     }
 
     // Initialize javascripts variables
