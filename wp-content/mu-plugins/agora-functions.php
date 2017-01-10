@@ -1353,17 +1353,14 @@ add_filter('bp_docs_get_create_link', 'bp_docs_get_create_link_filter');
 function xtec_caps_bpdocs($caps, $cap, $user_id, $args){
     $bpuser_docs = get_user_by( 'ID', $user_id );
 
-    if ( false !== $bpuser_docs) { // If there's no logged user, get_user_by() returns null
+    if ( false !== $bpuser_docs ) { // If there's no logged user, get_user_by() returns null
         $bproles_docs = (array) $bpuser_docs->roles;
-
-        if ( in_array( 'contributor', $bproles_docs ) || in_array( 'subscriber', $bproles_docs ) ) {
+        if ( ( in_array( 'contributor', $bproles_docs ) || in_array( 'subscriber', $bproles_docs ) ) && $cap == 'bp_docs_create' ) {
             $caps[] = 'do_not_allow';
         }
-
-        return $caps;
-    } else {
-        return false;
     }
+
+    return $caps;
 }
 add_filter('bp_docs_map_meta_caps','xtec_caps_bpdocs', 10, 4);
 
