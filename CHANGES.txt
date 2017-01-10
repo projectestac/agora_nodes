@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 17.01.16
 ---------------------------------------------------------------------------------------
 - widget-visibility-without-jetpack: Converted into a submodule and grouped commits (Trello #1300)
 - widget-visibility-without-jetpack: Fixed styles to avoid overlap of menu and Add and Delete options (Trello #1300)
