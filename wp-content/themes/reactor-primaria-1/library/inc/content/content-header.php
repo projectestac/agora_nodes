@@ -33,7 +33,7 @@ function reactor_do_reactor_head()
     <link rel="shortcut icon" href="<?php echo $favicon_uri; ?>">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<?php
+    <?php
 }
 
 add_action('wp_head', 'reactor_do_reactor_head', 1);
@@ -86,7 +86,7 @@ function reactor_do_title_logo()
 {
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
-    $description_link = 
+    $description_link =
     $options = get_option('my_option_name');
     ?>
 
@@ -107,16 +107,16 @@ function reactor_do_title_logo()
             <div class="box-description large-6 columns">
                 <div class="box-content">
                     <div>
-                    <?php if (reactor_option('blogdescription_link')) { ?>
-                        <a style="font-size:<?php echo $description_font_size;?>"
-                           href="<?php echo reactor_option('blogdescription_link');?>" >
-                            <?php echo nl2br($description_text); ?>
-                        </a>
-                    <?php } else { ?>
-                        <span style="font-size:<?php echo $description_font_size;?>">
+                        <?php if (reactor_option('blogdescription_link')) { ?>
+                            <a style="font-size:<?php echo $description_font_size;?>"
+                               href="<?php echo reactor_option('blogdescription_link');?>" >
+                                <?php echo nl2br($description_text); ?>
+                            </a>
+                        <?php } else { ?>
+                            <span style="font-size:<?php echo $description_font_size;?>">
                         <?php echo nl2br($description_text); ?>
                         </span>
-                    <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -194,40 +194,123 @@ function reactor_do_title_logo()
     <div id="box-grid" class="box-grid large-2 small-12 columns">
         <div class="box-content-grid row icon-box">
             <div class="topicons large-4 small-4 columns show-for-small">
-                <button id="icon-email" onclick="window.location.href='mailto:<?php echo reactor_option('emailCentre'); ?>'" class="dashicons dashicons-email">
+                <?php
+
+                // Get type contact by modify behavior
+                $contacte_mobile = reactor_option('correuCentre');
+                $correu_centre_enabled = false;
+                if ( empty($contacte_mobile) ){
+                    $contacte_mobile = reactor_option('contacteCentre');
+                } else if( $contacte_mobile != '' ) {
+                    $contacte_mobile = "mailto:" . $contacte_mobile;
+                    $correu_centre_enabled = true;
+                }
+
+                // Get home url
+                $currentDomain = get_home_url();
+                $searchDomain = array('http://','https://');
+                $currentDomain = str_replace($searchDomain,'',$currentDomain);
+                $contacteDomain = str_replace($searchDomain,'',$contacte_mobile);
+
+                if( $correu_centre_enabled === true ) {
+                    ?>
+                    <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                    <?php
+                } elseif ( ! empty($contacte_mobile) ) {
+                    if ( strpos($contacteDomain,$currentDomain) !== false ) {
+                        ?>
+                        <button id="icon-email" onclick="window.location.href='<?php echo $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                        <?php
+                    } elseif ( strpos($contacte_mobile,'http') === false ) {
+                        if ( strpos($contacte_mobile,'.') !== false ) {
+                            ?>
+                            <button id="icon-email" onclick="window.open('<?php echo "http://" . $contacte_mobile; ?>','_blank')" class="dashicons dashicons-email">
+                            <?php
+                        } else {
+                            ?>
+                            <button id="icon-email" onclick="window.location.href='<?php echo $currentDomain . $contacte_mobile; ?>'" class="dashicons dashicons-email">
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <button id="icon-email" onclick="window.open('<?php echo $contacte_mobile; ?>','_blank')" class="dashicons dashicons-email">
+                        <?php
+                    }
+                    ?>
+                    <?php
+                } else {
+                    ?>
+                    <button id="icon-email" class="dashicons dashicons-email">
+                    <?php
+                }
+                ?>
                 <span class="text_icon">Correu</span>
                 </button>
             </div>
+
             <div class="topicons large-4 small-4 columns show-for-small">
-                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>'" class="dashicons dashicons-location-alt">
+                <?php
+                // Get if GoogleMaps is empty or not by modify behavior
+                $emptyMaps = reactor_option('googleMaps');
+                if ( ! empty($emptyMaps) ) {
+                    if ( strpos(reactor_option('googleMaps'),$currentDomain) !== false ) {
+                        ?>
+                        <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>" class="dashicons dashicons-location-alt">
+                        <?php
+                    } elseif ( strpos(reactor_option('googleMaps'),'http') === false ) {
+                        if ( strpos(reactor_option('googleMaps'),'.') !== false ) {
+                            ?>
+                            <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo "https://" . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                            <?php
+                        } else {
+                            ?>
+                            <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo $currentDomain . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <button id="icon-maps" title="Mapa" class="dashicons dashicons-location-alt">
+                    <?php
+                }
+                ?>
                 <span class="text_icon">Mapa</span>
                 </button>
             </div>
+
             <div class="topicons large-4 small-4 columns show-for-small">
                 <button id="icon-phone" title="Trucar" onclick="window.location.href='tel:<?php echo reactor_option('telCentre'); ?>'" class="dashicons dashicons-phone">
-                <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>
+                    <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>
                 </button>
-
             </div>
+
             <?php
             show_header_icon($options, 11);
             show_header_icon($options, 12);
             ?>
+
             <div class="topicons small-4 large-4 columns">
                 <button id="icon-13" class="dashicons dashicons-search" title="CERCA" onclick="cerca_toggle();">
                     <span class="text_icon">cerca</span>
                 </button>
             </div>
+
             <div id="search-panel" class="small-12 large-12 columns">
                 <form role="search" method="get" class="search-form" action="<?php echo get_home_url();?>">
                     <input type="search" class="search-field" placeholder="Cerca i pulsa enter…" value="" name="s" title="Cerca:">
                     <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;">
                 </form>
             </div>
+
             <?php
             show_header_icon($options, 21);
             show_header_icon($options, 22);
             ?>
+
             <div class="topicons small-4 large-4 columns">
                 <button id="icon-23" class="dashicons dashicons-menu"
                    title="MENU"
