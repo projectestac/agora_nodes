@@ -40,6 +40,8 @@ if ( 'grid' === $mode ) {
 			unset( $vars[ $key ] );
 		}
 	}*/
+	// Declared var to avoid warning messages when debugging
+ 	$vars = array();
 	//************ FI
 
 	wp_localize_script( 'media-grid', '_wpMediaGridSettings', array(
