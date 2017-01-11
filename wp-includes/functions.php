@@ -3932,7 +3932,14 @@ function _doing_it_wrong( $function, $message, $version ) {
 	 *
 	 * @param bool $trigger Whether to trigger the error for _doing_it_wrong() calls. Default true.
 	 */
-	if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true ) ) {
+	// XTEC ************ MODIFICAT - Fixed to avoid warning messages when debug is enabled
+	// 2016.12.28 @sarjona
+		if ( WP_DEBUG  && (!is_xtecblocs() || $function != 'hyperdb' || (XTEC_DEBUG_HYPERDB != null && XTEC_DEBUG_HYPERDB) ) && apply_filters( 'doing_it_wrong_trigger_error', true ) ) {
+	//************ ORIGINAL
+	/*
+		if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true ) ) {
+	*/
+	//************ FI
 		if ( function_exists( '__' ) ) {
 			$version = is_null( $version ) ? '' : sprintf( __( '(This message was added in version %s.)' ), $version );
 			/* translators: %s: Codex URL */
