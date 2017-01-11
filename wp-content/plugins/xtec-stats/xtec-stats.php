@@ -11,14 +11,16 @@ function xtec_stats_init() {
     // Load javascript
     wp_register_script( 'xtec_stats_js', plugins_url( 'js/xtec-stats.js', __FILE__ ), array( 'jquery' ), '1.1', true );
     wp_enqueue_script( 'xtec_stats_js' );
-
     // Load CSS
     wp_enqueue_style( 'xtec_stats_css', plugins_url( 'css/xtec-stats.css', __FILE__ ) );
-
-    // Load language file
-    load_plugin_textdomain( 'xtec-stats', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'xtec_stats_init' );
+
+// Load language file
+function xtec_stats_load_plugin_textdomain() {
+    load_plugin_textdomain( 'xtec-stats', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+add_action( 'plugins_loaded', 'xtec_stats_load_plugin_textdomain' );
 
 // Register widget
 function xtec_stats_register_widgets() {
