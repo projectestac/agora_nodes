@@ -4655,7 +4655,10 @@ function _doing_it_wrong( $function, $message, $version ) {
 	 * @param string $message  A message explaining what has been done incorrectly.
 	 * @param string $version  The version of WordPress where the message was added.
 	 */
-	if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true, $function, $message, $version ) ) {
+	// XTEC ************ MODIFICAT - Fixed to avoid warning messages when debug is enabled
+	// 2016.12.28 @sarjona
+		if ( WP_DEBUG  && (!is_xtecblocs() || $function != 'hyperdb' || (XTEC_DEBUG_HYPERDB != null && XTEC_DEBUG_HYPERDB) ) && apply_filters( 'doing_it_wrong_trigger_error', true, $function, $message, $version ) ) {
+	//************ FI
 		if ( function_exists( '__' ) ) {
 			if ( is_null( $version ) ) {
 				$version = '';
