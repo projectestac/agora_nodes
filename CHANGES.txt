@@ -3,6 +3,12 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- reactor: Fixed PHP warning with header icons (Trello #1472)
+- xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
+
+
 Changes 17.01.20
 ---------------------------------------------------------------------------------------
 - xtec-booking: Fixed error that blocked edition of post date
