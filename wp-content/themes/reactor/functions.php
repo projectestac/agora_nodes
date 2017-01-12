@@ -675,7 +675,7 @@ function xtec_mail_direction_into_header_icons( $options, $icon_number ){
     // if the url contains protocol, open in new tab
     }else if ( isset($url['scheme']) && ( ($url['scheme'] == 'https') || ($url['scheme'] == 'http')) ) {
         $result['link'] = esc_url($options['link_icon' . $icon_number]);
-        $result['target'] = set_target($link);
+        $result['target'] = '_blank';
     } else {
         // Allow include a mail direction instead of a url
         if ( preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $options['link_icon' . $icon_number]) ){
@@ -685,7 +685,7 @@ function xtec_mail_direction_into_header_icons( $options, $icon_number ){
             // if the url contains dots " . ", open in new tab
             if( strpos($options['link_icon' . $icon_number],'.') !== false ){
                 $result['link'] = esc_url('https://' . trim($options['link_icon' . $icon_number]));
-                $result['target'] = set_target($link);
+                $result['target'] = '_blank';
             } else {
                 if ( substr ( trim($options['link_icon' . $icon_number]) , 0 , 1 ) == '/' ){
                     $result['link'] = get_home_url() . trim($options['link_icon' . $icon_number]);
