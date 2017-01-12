@@ -290,6 +290,10 @@ span.weekdays{
 	background-color:  #dbf8ff !important;
 }
 
+.cal-cell1.cal-cell.day-highlight{
+	border-color: #E1E1E1 !important;
+}
+
 /* REPLACE COLOR ORIGINAL */
 .dh-event-special{
 	background-color:  #ecd9f8 !important;
