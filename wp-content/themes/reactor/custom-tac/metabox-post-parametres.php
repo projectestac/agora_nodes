@@ -109,11 +109,11 @@ function metabox1_savedata($post_id) {
       } */
 
 
-    $mostrar_titol = $_POST['amaga_titol'];
-    $mostrar_metadata = $_POST['amaga_metadata'];
-    $bloc_html = $_POST['bloc_html'];
-    $original_size = $_POST['original_size'];
-    $entry_icon = $_POST['entry_icon'];
+    $mostrar_titol = isset($_POST['amaga_titol'])?$_POST['amaga_titol']:'';
+    $mostrar_metadata = isset($_POST['amaga_metadata'])?$_POST['amaga_metadata']:'';
+    $bloc_html = isset($_POST['bloc_html'])?$_POST['bloc_html']:'';
+    $original_size = isset($_POST['original_size'])?$_POST['original_size']:'';
+    $entry_icon = isset($_POST['entry_icon'])?$_POST['entry_icon']:'';
 
     // Update the meta field in the database.
     update_post_meta($post_id, '_amaga_titol', $mostrar_titol);
