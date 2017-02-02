@@ -5,7 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- reactor: Fixed PHP warning with header icons (Trello #1472)
+- reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
 - xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
 - mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
 - Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)

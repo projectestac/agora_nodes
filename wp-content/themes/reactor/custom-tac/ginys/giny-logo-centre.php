@@ -15,7 +15,7 @@ class Logo_Centre_Widget extends WP_Widget {
     public function widget($args, $instance) {
 
         // Saved widget options
-        $title = $instance['title'];
+        $title = isset($instance['title'])?$instance['title']:'';
         echo $args['before_widget'];
 
         if (!empty($title)) {
