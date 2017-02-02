@@ -15,7 +15,7 @@ class Logo_Centre_Widget extends WP_Widget {
     public function widget($args, $instance) {
 
         // Saved widget options
-        $title = $instance['title'];
+        $title = isset($instance['title'])?$instance['title']:'';
         echo $args['before_widget'];
 
         if (!empty($title)) {
@@ -39,11 +39,15 @@ class Logo_Centre_Widget extends WP_Widget {
 
         ?>
         <div class="targeta_id_centre row">
-            <?php list($postal_code, $locality) = explode(" ", reactor_option("cpCentre"), 1); ?>
             <?php
-            $amplada = "12";
-            $class = "no_logo";
-            $class_addr = "logo_inline";
+                $xtec_cpCentre = explode(" ", reactor_option("cpCentre"), 1);
+                $postal_code = '';
+                $locality = '';
+                if( isset($xtec_cpCentre[0]) ){ $postal_code = $xtec_cpCentre[0]; }
+                if( isset($xtec_cpCentre[1]) ){ $locality = $xtec_cpCentre[1]; }
+                $amplada = "12";
+                $class = "no_logo";
+                $class_addr = "logo_inline";
             ?>
 
             <div class="<?php reactor_columns($amplada); echo ' ' . $class_addr; ?> ">
