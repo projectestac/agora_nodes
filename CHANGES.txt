@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - reactor: Fixed PHP warning with header icons (Trello #1472)
 - xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
+- mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
 
 
 Changes 17.01.20
