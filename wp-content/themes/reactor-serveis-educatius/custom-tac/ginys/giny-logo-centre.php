@@ -39,7 +39,13 @@ class Logo_Centre_Widget extends WP_Widget {
 
         ?>
         <div class="targeta_id_centre row">
-            <?php list($postal_code, $locality) = explode(" ", reactor_option("cpCentre"), 1); ?>
+            <?php
+                $xtec_cpCentre = explode(" ", reactor_option("cpCentre"), 1);
+                $postal_code = '';
+                $locality = '';
+                if( isset($xtec_cpCentre[0]) ){ $postal_code = $xtec_cpCentre[0]; }
+                if( isset($xtec_cpCentre[1]) ){ $locality = $xtec_cpCentre[1]; }
+            ?>
             <?php
             $amplada = "12";
             $class = "no_logo";
