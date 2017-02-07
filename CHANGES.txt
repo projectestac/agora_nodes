@@ -8,10 +8,11 @@ Changes in progress
 - reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
 - xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
 - mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
-- Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)
 - mu-common: Expired in session instead of default 10 days the cookie for posts protected with password (Trello #1461)
+- Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)
 - carrusel: Translate roles in configuration tab (Trello #1504)
 - carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
+- google-calendar-events: Improved catalan translation (Trello #1504)
 
 
 Changes 17.01.20
