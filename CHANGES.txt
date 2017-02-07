@@ -5,16 +5,17 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
 - xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
 - mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
 - mu-common: Expired in session instead of default 10 days the cookie for posts protected with password (Trello #1461)
+- Theme reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
 - Theme reactor: Improved catalan translation (Trello #1504)
 - Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)
 - carrusel: Translate roles in configuration tab (Trello #1504)
 - carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
 - google-calendar-events: Improved catalan translation (Trello #1504)
 - add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
+- WordPress translation: Fixed plural translation of Administrator (Trello #1504)
 
 
 Changes 17.01.20
