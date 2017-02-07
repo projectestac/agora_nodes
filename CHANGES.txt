@@ -13,6 +13,7 @@ Changes in progress
 - carrusel: Translate roles in configuration tab (Trello #1504)
 - carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
 - google-calendar-events: Improved catalan translation (Trello #1504)
+- add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
 
 
 Changes 17.01.20
