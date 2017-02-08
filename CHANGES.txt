@@ -15,6 +15,7 @@ Changes in progress
 - carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
 - google-calendar-events: Improved catalan translation (Trello #1504)
 - add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
+- add-to-any: Fixed strings that could not be translated in widgets administration (Trello #1504)
 - WordPress translation: Fixed plural translation of Administrator (Trello #1504)
 - bp-moderation: Removed plugin due to its incompatibility with the current version of WordPress and BuddyPress (Trello #1486)
 - intranet-importer: Removed plugin because it is no longer necessary (Trello #1255)
