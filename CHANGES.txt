@@ -16,6 +16,7 @@ Changes in progress
 - google-calendar-events: Improved catalan translation (Trello #1504)
 - add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
 - WordPress translation: Fixed plural translation of Administrator (Trello #1504)
+- bp-moderation: Removed plugin due to its incompatibility with the current version of WordPress and BuddyPress (Trello #1486)
 
 
 Changes 17.01.20
