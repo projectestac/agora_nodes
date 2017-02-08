@@ -19,6 +19,7 @@ Changes in progress
 - bp-moderation: Removed plugin due to its incompatibility with the current version of WordPress and BuddyPress (Trello #1486)
 - intranet-importer: Removed plugin because it is no longer necessary (Trello #1255)
 - buddypress-like: Updated catalan translation (Although the affected string are in database) (Trello #1452)
+- google-analyticator: Fixed warning message shown in debug mode (Trello #1372)
 
 
 Changes 17.01.20
