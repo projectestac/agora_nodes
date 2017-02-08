@@ -18,6 +18,7 @@ Changes in progress
 - WordPress translation: Fixed plural translation of Administrator (Trello #1504)
 - bp-moderation: Removed plugin due to its incompatibility with the current version of WordPress and BuddyPress (Trello #1486)
 - intranet-importer: Removed plugin because it is no longer necessary (Trello #1255)
+- buddypress-like: Updated catalan translation (Although the affected string are in database) (Trello #1452)
 
 
 Changes 17.01.20
