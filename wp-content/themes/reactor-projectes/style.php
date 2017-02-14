@@ -230,7 +230,7 @@
         }
     }
 
-    #wp-admin-bar-gencat, #wp-admin-bar-recursosXTEC {
+    #wp-admin-bar-gencat, #wp-admin-bar-recursosXTEC, #wp-admin-bar-consorci {
         display: none !important;
     }
 
