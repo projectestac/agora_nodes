@@ -42,8 +42,18 @@ function xtec_booking_calendar_libraries( $shortcode = false ){
 	// CALENDAR
 	wp_register_script( 'calendar-js', plugins_url() . '/xtec-booking/includes/vendor/calendar/js/calendar.min.js', array('jquery'),'1.1', true );
 	wp_enqueue_script( 'calendar-js' );
-	wp_register_script( 'calendar-ca-js', plugins_url() . '/xtec-booking/includes/vendor/calendar/js/language/ca-ES.js', array('jquery'),'1.1', true );
-	wp_enqueue_script( 'calendar-ca-js' );
+
+	$language_locale = get_locale();
+
+	if( strpos($language_locale,'_') === false ) {
+		$language_locale = $language_locale.'-ES.js';
+	} else {
+		$language_locale = str_replace('_', '-', $language_locale).'.js';
+	}
+
+	// Add Catalan translation
+	wp_register_script( 'calendar-language-js', plugins_url() . '/xtec-booking/includes/vendor/calendar/js/language/'.$language_locale, array('jquery'),'1.1', true );
+	wp_enqueue_script( 'calendar-language-js' );
 	wp_enqueue_style( 'calendar-css', plugins_url() . '/xtec-booking/includes/vendor/calendar/css/calendar.min.css' );
 
 }
