@@ -8,6 +8,7 @@ Changes in progress
 - xtec lib: Remove the visits of the robots older than two months (Trello #1296)
 - import-users-from-csv-with-meta: Upgraded plugin from version 1.8.7.2 to 1.10.2 (Trello #1260)
 - Added WordPress translation to Basque, Galician and French (Trello #1534)
+- xtec-booking: Added support for translations to javascript calendar (Trello #1534)
 
 
 Changes 17.02.13

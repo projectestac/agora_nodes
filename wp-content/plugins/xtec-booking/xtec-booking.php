@@ -244,7 +244,17 @@ function xtec_booking_load_css_js() {
 	if ( !empty( $post ) || $check_calendar_booking !== false || $check_xtec_booking !== false ) {
 
 		if ( isset($post->post_type) == 'calendar_booking' || isset($post->post_type) == 'calendar_resources' || $check_calendar_booking !== false || $check_xtec_booking !== false ){
+
 			wp_register_script( 'xtec-booking-js', plugins_url() . '/xtec-booking/js/xtec-booking.js', array('jquery'),'1.1', true );
+
+			// Get language wordpress
+			$language_locale = array(
+				'locale' => get_locale()
+			);
+
+			// Add js variable with language
+			wp_localize_script( 'xtec-booking-js', 'locale', $language_locale );
+
 			wp_enqueue_script( 'xtec-booking-js' );
 			wp_enqueue_style( 'style-xtec-booking', plugins_url() . '/xtec-booking/css/xtec-booking.css' );
 
