@@ -65,6 +65,22 @@ function xtec_add_calendar(data, booking = false){
 
 	if ( jQuery('#xtec_calendar').length > 0 ){
 
+		// Chekc language
+		switch(locale.locale){
+			case 'ca':
+				var lang_locale = 'ca-ES';
+				break;
+			case 'es_ES':
+				var lang_locale = 'es-ES';
+				break;
+			case 'fr_FR':
+				var lang_locale = 'fr-FR';
+				break;
+			default:
+				var lang_locale = '';
+				break;
+		}
+
 		var d = new Date();
 		dateNow =  d.getFullYear()+'-';
 		if ( d.getMonth()+1 > 9 ){ dateNow += (d.getMonth()+1)+'-'; } else { dateNow += '0'+(d.getMonth()+1)+'-'; }
@@ -77,7 +93,7 @@ function xtec_add_calendar(data, booking = false){
 			tmpl_path: tmplsCalendar,
 			tmpl_cache: false,
 			day: dateNow,
-			language: 'ca-ES',
+			language: lang_locale,
 			modal: "#events-modal",
 			modal_title: function(events) {
 				get_booking_content(events);
