@@ -17,6 +17,7 @@ Changes 17.02.13
 - xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
 - mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
 - mu-common: Expired in session instead of default 10 days the cookie for posts protected with password (Trello #1461)
+- Themes: In themes list (wp-admin/themes.php), show only the theme already in use in that site (Trello #1538)
 - Theme reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
 - Theme reactor: Improved catalan translation (Trello #1504)
 - Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)

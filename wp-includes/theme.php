@@ -67,25 +67,6 @@ function wp_get_themes( $args = array() ) {
 
 	foreach ( $theme_directories as $theme => $theme_root ) {
 
-// XTEC ************ AFEGIT - It only shows the correct theme in the themes selector
-// 2015.10.23 @dgras
-// 2017.01.30 @xaviernietosanchez
-		$CheckServei = isServeiEducatiu();
-		$CheckProject = isProjecte();
-
-        if( is_agora() && 
-            (( $CheckServei === true && strcmp( 'reactor-primaria-1', $theme ) === 0 ) ||
-             ( $CheckServei === true && strcmp( 'reactor-projectes', $theme ) === 0 ) ||
-             ( $CheckServei === false && strcmp( 'reactor-serveis-educatius', $theme ) === 0 ) ||
-             ( $CheckServei === false  && strcmp( 'reactor-projectes', $theme ) === 0 ) ||
-             ( $CheckProject === true && strcmp( 'reactor-primaria-1', $theme ) === 0 ) ||
-             ( $CheckProject === true && strcmp( 'reactor-serveis-educatius', $theme ) === 0 ) ||
-             ( $theme == 'reactor' ) )
-        ) {
-            continue;
-        }
-//************ FI
-
 		if ( isset( $_themes[ $theme_root['theme_root'] . '/' . $theme ] ) )
 			$themes[ $theme ] = $_themes[ $theme_root['theme_root'] . '/' . $theme ];
 		else
