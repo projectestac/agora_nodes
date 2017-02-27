@@ -73,17 +73,19 @@ function wp_get_themes( $args = array() ) {
 		$CheckServei = isServeiEducatiu();
 		$CheckProject = isProjecte();
 
-        if( is_agora() && 
+		if( is_agora() && 
             (( $CheckServei === true && strcmp( 'reactor-primaria-1', $theme ) === 0 ) ||
              ( $CheckServei === true && strcmp( 'reactor-projectes', $theme ) === 0 ) ||
              ( $CheckServei === false && strcmp( 'reactor-serveis-educatius', $theme ) === 0 ) ||
              ( $CheckServei === false  && strcmp( 'reactor-projectes', $theme ) === 0 ) ||
+             ( $CheckServei === false  && strcmp( 'reactor-primaria-1', $theme ) === 0 ) ||
              ( $CheckProject === true && strcmp( 'reactor-primaria-1', $theme ) === 0 ) ||
              ( $CheckProject === true && strcmp( 'reactor-serveis-educatius', $theme ) === 0 ) ||
              ( $theme == 'reactor' ) )
         ) {
             continue;
         }
+
 //************ FI
 
 		if ( isset( $_themes[ $theme_root['theme_root'] . '/' . $theme ] ) )
