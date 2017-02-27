@@ -1397,3 +1397,21 @@ function remove_nav_menu_metaboxes_nodes( $metaboxes ) {
     }
 }
 add_action( 'admin_head-nav-menus.php', 'remove_nav_menu_metaboxes_nodes', 10, 1 );
+
+/**
+ * In themes list (wp-admin/themes.php), show only the theme already in use in that site
+ *
+ * @param $prepared_themes array
+ * @return mixed
+ * @author Xavier Nieto
+ */
+function xtec_check_themes_to_show( $prepared_themes ){
+    foreach ( $prepared_themes as $theme ) {
+        $id_theme = $theme['id'];
+        if( $theme['active'] !== true ){
+            unset( $prepared_themes[$id_theme] );
+        }
+    }
+    return $prepared_themes;
+}
+add_filter( 'wp_prepare_themes_for_js', 'xtec_check_themes_to_show', 10, 1 );
