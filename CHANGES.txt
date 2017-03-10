@@ -11,6 +11,7 @@ Changes in progress
 - Added WordPress translation to Basque, Galician, French and Occitan (Trello #1534)
 - xtec-booking: Added support for translations to javascript calendar (Trello #1534)
 - Themes: In themes list (wp-admin/themes.php), show only the theme already in use in that site (Trello #1538)
+- GCE: Fixed hover effect and customized calendar list view (Trello #1547)
 
 
 Changes 17.02.13
