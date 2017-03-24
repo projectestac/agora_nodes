@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 17.03.28
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.7 (Trello #1543)
 - xtec lib: Remove the visits of the robots older than two months (Trello #1296)
