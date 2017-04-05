@@ -26,7 +26,7 @@ class graellaIcones {
         // This page will be under "Settings"
         add_theme_page(
             'Settings Admin',
-            'Icones de capçalera',
+            __('Icones de capçalera', 'reactor'),
             'manage_options',
             'my-setting-admin',
             array($this, 'create_admin_page')
@@ -36,245 +36,235 @@ class graellaIcones {
     /**
      * Options page callback
      */
-    public function create_admin_page()
-    {
-
+    public function create_admin_page() {
 
         // Set class property
         $this->options = get_option('my_option_name');
         ?>
+
         <div class="wrap row">
             <div style="float:left;margin-right:30px;">
-                <?php screen_icon(); ?>
-                <h2>Icones de capçalera</h2>
-
+                <h2><?php _e( 'Icones de capçalera', 'reactor' ); ?></h2>
                 <form method="post" action="options.php">
-
                     <?php
                     // This prints out all hidden setting fields
-                    settings_fields('my_option_group');
-                    do_settings_sections('my-setting-admin');
+                    settings_fields( 'my_option_group' );
+                    do_settings_sections( 'my-setting-admin' );
                     submit_button();
                     ?>
                 </form>
             </div>
+        </div>
 
-            <div style="float:right;padding:10px;border-left:1px solid silver;">
-                <h3>Icones disponibles</h3>
+        <div style="float:right;padding:10px;border-left:1px solid silver;">
+            <h3><?php _e('Icones disponibles', 'reactor'); ?></h3>
+            <p><?php _e( 'Copia el nom de la icona i enganxa\'l a la posició desitjada.', 'reactor' ); ?></p>
 
-                <p>Copia el nom de la icona i enganxa'l a la posició desitjada.</p>
+            <div style="float:left; margin-right:10px">
 
-                <div style="float:left;margin-right:10px">
+                <?php
+                // $dashicons1 =array (icones...), dashicons2, dashicons3
+                include "dashicons.php";
+                foreach ($dashicons1 as $icon) {
+                    echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                }
+                ?>
+            </div>
 
-                    <?php
-                    // $dashicons1 =array (icones...), dashicons2, dashicons3
-                    include "dashicons.php";
-                    ?>
+            <div style="float:left; margin-right:10px">
+                <?php
+                foreach ($dashicons2 as $icon) {
+                    echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                }
+                ?>
+            </div>
 
-                    <?php
-                    foreach ($dashicons1 as $icon) {
-                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
-                    }
-                    ?>
-                </div>
-
-                <div style="float:left;margin-right:10px">
-                    <?php
-                    foreach ($dashicons2 as $icon) {
-                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
-                    }
-                    ?>
-                </div>
-
-                <div style="float:left;margin-right:10px">
-                    <?php
-                    foreach ($dashicons3 as $icon) {
-                        echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
-                    }
-                    ?>
-                </div>
-
+            <div style="float:left; margin-right:10px">
+                <?php
+                foreach ($dashicons3 as $icon) {
+                    echo "<div> <span class=\"dashicons $icon\"></span> " . str_replace("dashicons-", "", $icon) . " </div>";
+                }
+                ?>
             </div>
 
         </div>
+
         <?php
     }
 
     /**
      * Register and add settings
      */
-    public function page_init()
-    {
+    public function page_init() {
         register_setting(
             'my_option_group', // Option group
             'my_option_name', // Option name
-            array($this, 'sanitize') // Sanitize
+            array( $this, 'sanitize' ) // Sanitize
         );
 
-        // Fila1
+        // Fila 1
         add_settings_section(
             'setting_icons_fila1', // ID
-            'Icones a la fila 1', // Title
-            array($this, 'print_section_info'), // Callback
-            'my-setting-admin' // Page
-        );  
-
-        // Icon 11  
-    	add_settings_field(
-            'title_icon11', // ID
-            'Element 1:', // Title 
-            array( $this, 'title_icon11_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );    
-
-        add_settings_field(
-            'icon11', // ID
-            'Icona:', // Title 
-            array( $this, 'icon11_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );    
-
-        add_settings_field(
-            'link_icon11', // ID
-            'Enllaç:', // Title 
-            array( $this, 'link_icon11_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        ); 
-        
-        add_settings_field(
-            'separador11', // ID
-            '<hr>', // Title 
-            array( $this, 'sep_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );
- 	
-        // Icon 12  
-		add_settings_field(
-            'title_icon12', // ID
-            'Element 2:', // Title 
-            array( $this, 'title_icon12_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );    
-
-        add_settings_field(
-            'icon12', // ID
-            'Icona:', // Title 
-            array( $this, 'icon12_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );    
-
-        add_settings_field(
-            'link_icon12', // ID
-            'Enllaç:', // Title 
-            array( $this, 'link_icon12_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        ); 
-
-        add_settings_field(
-            'separador12', // ID
-            '<hr>', // Title 
-            array( $this, 'sep_callback' ), // Callback
-            'my-setting-admin', // Page
-            'setting_icons_fila1' // Section           
-        );      
-
-        // Fila2 
-       	add_settings_section(
-            'setting_icons_fila2', // ID
-            'Icones a la fila 2', // Title
+            __( 'Icones a la fila 1', 'reactor' ), // Title
             array( $this, 'print_section_info' ), // Callback
             'my-setting-admin' // Page
         );
 
-        // Icon 21	
+        // Icon 11
         add_settings_field(
-            'title_icon21', // ID
-            'Element 1:', // Title 
+            'title_icon11_', // ID
+            __( 'Element 1:', 'reactor' ), // Title
+            array( $this, 'title_icon11_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'icon11_', // ID
+            __( 'Icona:', 'reactor' ), // Title
+            array( $this, 'icon11_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'link_icon11_', // ID
+            __( 'Enllaç:', 'reactor' ), // Title
+            array( $this, 'link_icon11_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'separador11', // ID
+            '<hr>', // Title
+            array( $this, 'sep_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        // Icon 12
+        add_settings_field(
+            'title_icon12_', // ID
+            __( 'Element 2:', 'reactor' ), // Title
+            array( $this, 'title_icon12_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'icon12_', // ID
+            __( 'Icona:', 'reactor' ), // Title
+            array( $this, 'icon12_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'link_icon12_', // ID
+            __( 'Enllaç:', 'reactor' ), // Title
+            array( $this, 'link_icon12_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        add_settings_field(
+            'separador12', // ID
+            '<hr>', // Title
+            array( $this, 'sep_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila1' // Section
+        );
+
+        // Fila 2
+        add_settings_section(
+            'setting_icons_fila2', // ID
+            __( 'Icones a la fila 2', 'reactor' ), // Title
+            array( $this, 'print_section_info' ), // Callback
+            'my-setting-admin' // Page
+        );
+
+        // Icon 21
+        add_settings_field(
+            'title_icon21_', // ID
+            __( 'Element 1:', 'reactor' ), // Title
             array( $this, 'title_icon21_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
-        );      
+            'setting_icons_fila2' // Section
+        );
 
         add_settings_field(
-            'icon21', // ID
-            'Icona:', // Title 
+            'icon21_', // ID
+            __( 'Icona:', 'reactor' ), // Title
             array( $this, 'icon21_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
-        ); 
+            'setting_icons_fila2' // Section
+        );
 
         add_settings_field(
-            'link_icon21', // ID
-            'Enllaç:', // Title 
+            'link_icon21_', // ID
+            __( 'Enllaç:', 'reactor' ), // Title
             array( $this, 'link_icon21_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
+            'setting_icons_fila2' // Section
         );
 
         add_settings_field(
             'separador21', // ID
-            '<hr>', // Title 
+            '<hr>', // Title
             array( $this, 'sep_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
+            'setting_icons_fila2' // Section
         );
 
         // Icon 22
         add_settings_field(
-            'title_icon22', // ID
-            'Element 2:', // Title 
+            'title_icon22_', // ID
+            __( 'Element 2:', 'reactor' ), // Title
             array( $this, 'title_icon22_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
-        ); 
+            'setting_icons_fila2' // Section
+        );
 
         add_settings_field(
-            'icon22', // ID
-            'Icona:', // Title 
+            'icon22_', // ID
+            __( 'Icona:', 'reactor' ), // Title
             array( $this, 'icon22_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
-        );    
-        
+            'setting_icons_fila2' // Section
+        );
+
         add_settings_field(
-            'link_icon22', // ID
-            'Enllaç:', // Title 
+            'link_icon22_', // ID
+            __( 'Enllaç:', 'reactor' ), // Title
             array( $this, 'link_icon22_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_icons_fila2' // Section           
-        ); 
-        
-        add_settings_field(
-          'separador22', // ID
-          '<hr>', // Title 
-          array( $this, 'sep_callback' ), // Callback
-          'my-setting-admin', // Page
-          'setting_icons_fila2' // Section           
+            'setting_icons_fila2' // Section
         );
-        
+
+        add_settings_field(
+            'separador22', // ID
+            '<hr>', // Title
+            array( $this, 'sep_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_icons_fila2' // Section
+        );
+
         add_settings_section(
             'setting_general', // ID
-            'General', // Title
-            array($this, 'print_section_info'), // Callback
+            __( 'General', 'reactor' ), // Title
+            array( $this, 'print_section_info' ), // Callback
             'my-setting-admin' // Page
         );
 
-        // Mostrar text sota les icones 
+        // Mostrar text sota les icones
         add_settings_field(
             'show_text_icon', // ID
-            'Mostra text sota la icona:', // Title 
-            array($this, 'show_text_icon_callback'), // Callback
+            __( 'Mostra text sota la icona:', 'reactor' ), // Title
+            array( $this, 'show_text_icon_callback' ), // Callback
             'my-setting-admin', // Page
-            'setting_general' // Section           
+            'setting_general' // Section
         );
-
     }
 
     /**
@@ -282,41 +272,40 @@ class graellaIcones {
      *
      * @param array $input Contains all settings fields as array keys
      */
-    public function sanitize($input)
-    {
+    public function sanitize( $input ) {
         $new_input = array();
 
-		if( isset( $input['icon11'] ) )
-		    	$new_input['icon11'] = sanitize_text_field( $input['icon11'] );
-		if( isset( $input['link_icon11'] ) )
-			    $new_input['link_icon11'] = sanitize_text_field( $input['link_icon11']); 
-	 	if( isset( $input['title_icon11'] ) )
-		    $new_input['title_icon11'] = sanitize_text_field( $input['title_icon11'] );
-		
-		if( isset( $input['icon12'] ) )
-	            $new_input['icon12'] = sanitize_text_field( $input['icon12'] );
-		if( isset( $input['link_icon12'] ) )
-	            $new_input['link_icon12'] = sanitize_text_field( $input['link_icon12'] );
-	 	if( isset( $input['title_icon12'] ) )
-	            $new_input['title_icon12'] = sanitize_text_field( $input['title_icon12'] );
-	
-		if( isset( $input['icon21'] ) )
-	    		$new_input['icon21'] = sanitize_text_field( $input['icon21'] );
-		if( isset( $input['link_icon21'] ) )
-	            $new_input['link_icon21'] = sanitize_text_field( $input['link_icon21'] );
-	 	if( isset( $input['title_icon21'] ) )
-	            $new_input['title_icon21'] = sanitize_text_field( $input['title_icon21'] );
-	
-		if( isset( $input['icon22'] ) )
-	    		$new_input['icon22'] = sanitize_text_field( $input['icon22'] );
-		if( isset( $input['link_icon22'] ) )
-	            $new_input['link_icon22'] = sanitize_text_field( $input['link_icon22'] );
-	 	if( isset( $input['title_icon22'] ) )
-	            $new_input['title_icon22'] = sanitize_text_field( $input['title_icon22'] );
-		
-                $new_input['show_text_icon'] =$input['show_text_icon'];
-                
-	        return $new_input;
+        if ( isset( $input['icon11'] ) )
+            $new_input['icon11'] = sanitize_text_field( $input['icon11'] );
+        if ( isset( $input['link_icon11'] ) )
+            $new_input['link_icon11'] = sanitize_text_field( $input['link_icon11'] );
+        if ( isset( $input['title_icon11'] ) )
+            $new_input['title_icon11'] = sanitize_text_field( $input['title_icon11'] );
+
+        if ( isset( $input['icon12'] ) )
+            $new_input['icon12'] = sanitize_text_field( $input['icon12'] );
+        if ( isset( $input['link_icon12'] ) )
+            $new_input['link_icon12'] = sanitize_text_field( $input['link_icon12'] );
+        if ( isset( $input['title_icon12'] ) )
+            $new_input['title_icon12'] = sanitize_text_field( $input['title_icon12'] );
+
+        if ( isset( $input['icon21'] ) )
+            $new_input['icon21'] = sanitize_text_field( $input['icon21'] );
+        if ( isset( $input['link_icon21'] ) )
+            $new_input['link_icon21'] = sanitize_text_field( $input['link_icon21'] );
+        if ( isset( $input['title_icon21'] ) )
+            $new_input['title_icon21'] = sanitize_text_field( $input['title_icon21'] );
+
+        if ( isset( $input['icon22'] ) )
+            $new_input['icon22'] = sanitize_text_field( $input['icon22'] );
+        if ( isset( $input['link_icon22'] ) )
+            $new_input['link_icon22'] = sanitize_text_field( $input['link_icon22'] );
+        if ( isset( $input['title_icon22'] ) )
+            $new_input['title_icon22'] = sanitize_text_field( $input['title_icon22'] );
+
+        $new_input['show_text_icon'] = $input['show_text_icon'];
+
+        return $new_input;
     }
 
     /**
