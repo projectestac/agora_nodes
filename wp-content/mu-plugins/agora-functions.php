@@ -1415,3 +1415,41 @@ function xtec_check_themes_to_show( $prepared_themes ){
     return $prepared_themes;
 }
 add_filter( 'wp_prepare_themes_for_js', 'xtec_check_themes_to_show', 10, 1 );
+
+/** Polylang customizations */
+function xtec_polylang_load_language_file() {
+    // Load polylang translation
+    load_plugin_textdomain( 'polylang', false, basename( POLYLANG_DIR ) . '/languages' );
+
+    // Load translation of some extensions that polylang blocks (Yes, It's duplicated intentionally!)
+    load_plugin_textdomain( 'grup-classe', false, 'grup-classe/languages' );
+}
+
+function xtec_polylang_check() {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+    if( is_plugin_active( 'polylang/polylang.php' )) {
+
+        // Load polylang translation
+        load_plugin_textdomain( 'polylang', false, basename( POLYLANG_DIR ) . '/languages' );
+
+        // Reload translation of some extensions that polylang blocks
+        load_plugin_textdomain( 'slideshow-jquery-image-gallery', false, 'slideshow-jquery-image-gallery/languages' );
+        load_plugin_textdomain( 'google-calendar-events', false, dirname( plugin_basename( SIMPLE_CALENDAR_MAIN_FILE ) ) . '/i18n' );
+        load_plugin_textdomain( 'xtec-stats', false, 'xtec-stats/languages' );
+        load_plugin_textdomain( 'buddypress', false, 'buddypress/bp-languages' );
+        load_plugin_textdomain( 'bp-docs', false, 'buddypress-docs/languages' );
+        load_plugin_textdomain( 'invite-anyone', false, 'invite-anyone/languages' );
+        load_plugin_textdomain( 'email-subscribers', false, 'email-subscribers/languages' );
+        load_plugin_textdomain( 'grup-classe', false, 'grup-classe/languages' );
+        load_plugin_textdomain( 'add-to-any', false, 'add-to-any/languages' );
+        load_plugin_textdomain( 'bpfb', false, 'buddypress-activity-plus/languages' );
+        load_plugin_textdomain( 'buddypress-like', false, 'buddypress-like/languages' );
+        load_plugin_textdomain( 'tinymce-advanced', false, 'tinymce-advanced/langs' );
+        load_plugin_textdomain( 'wordpress-social-login', false, 'wordpress-social-login/languages' );
+
+        // Reload translation of polylang and other plugins (TODO: Load language files only once)
+        add_action( 'pll_language_defined', 'xtec_polylang_load_language_file' );
+    }
+}
+add_action ( 'init', 'xtec_polylang_check', 1 );
