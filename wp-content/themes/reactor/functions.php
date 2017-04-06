@@ -278,13 +278,6 @@ function bp_options_page() {
 			<p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Groups', 'invite-anyone'); ?></a></p>
 		</div>
 
-		<div style="width:160px; height:250px; padding:20px; float:left;">
-			<h3 style="height:40px;"><?php _e('BP Moderation', 'bp-moderation'); ?></h3>
-			<p><a href="admin.php?page=bp-moderation&view=contents"><?php _e('Contents', 'bp-moderation'); ?></a></p>
-			<p><a href="admin.php?page=bp-moderation&view=users"><?php _e('Users', 'bp-moderation'); ?></a></p>
-			<p><a href="admin.php?page=bp-moderation&view=settings"><?php _e('Settings', 'bp-moderation'); ?></a></p>
-		</div>
-
 	</div>
 	<?php
 }
