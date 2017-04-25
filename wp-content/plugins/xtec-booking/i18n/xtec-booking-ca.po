@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Booking Calendar 1.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2016-09-14 11:24+0100\n"
+"POT-Creation-Date: 2017-04-25 12:37+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
@@ -18,374 +18,19 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
-"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: xtec-booking.php:30 xtec-booking.php:31 xtec-booking.php:32
-msgid "Bookings"
-msgstr "Reserves"
-
-#: xtec-booking.php:33 xtec-booking.php:85
-msgid "Parent Booking"
-msgstr "Reserva mare"
-
-#: xtec-booking.php:34
-msgid "All Bookings"
-msgstr "Totes les reserves"
-
-#: xtec-booking.php:35
-msgid "View Booking"
-msgstr "Visualitza la reserva"
-
-#: xtec-booking.php:36
-msgid "Add New Booking"
-msgstr "Afegeix una reserva nova"
-
-#: xtec-booking.php:37 xtec-booking.php:89
-msgid "Add New"
-msgstr "Afegeix"
-
-#: xtec-booking.php:38
-msgid "Edit Booking"
-msgstr "Edita la reserva"
-
-#: xtec-booking.php:39
-msgid "Update Booking"
-msgstr "Actualitza la reserva"
-
-#: xtec-booking.php:40
-msgid "Search Booking"
-msgstr "Cerca la reserva"
-
-#: xtec-booking.php:41 xtec-booking.php:93
-msgid "Not Found"
-msgstr "No s'ha trobat"
-
-#: xtec-booking.php:42 xtec-booking.php:94
-msgid "Not found in Trash"
-msgstr "No s'ha trobat a la paperera"
-
-#: xtec-booking.php:70
-msgid "Booking"
-msgstr "Reserves"
-
-#: xtec-booking.php:71
-msgid "Resources to booking"
-msgstr "Espais o equips disponibles"
-
-#: xtec-booking.php:82 xtec-booking.php:83 includes/booking.php:73
-msgid "Add Resource"
-msgstr "Afegeix un espai o un equip"
-
-#: xtec-booking.php:84
-msgid "Add Resources"
-msgstr "Afegeix espais o equips"
-
-#: xtec-booking.php:86 includes/calendar.php:368 includes/calendar.php:374
-msgid "Resources"
-msgstr "Espais i equips"
-
-#: xtec-booking.php:87
-msgid "View Resource"
-msgstr "Visualitza espais i equips"
-
-#: xtec-booking.php:88
-msgid "Add New Resource"
-msgstr "Afegeix un espai o un equip"
-
-#: xtec-booking.php:90
-msgid "Edit Resource"
-msgstr "Edita un espai o un equip"
-
-#: xtec-booking.php:91
-msgid "Update Resource"
-msgstr "Actualitza un espai o un equip"
-
-#: xtec-booking.php:92
-msgid "Search Resource"
-msgstr "Cerca espais o equips"
-
-#: xtec-booking.php:119
-msgid "Calendar"
-msgstr "Calendari"
-
-#: xtec-booking.php:138 xtec-booking.php:143
-msgid ""
-"Booking not allowed. The resource is not allowed to data selected. Please, "
-"try other data."
-msgstr ""
-"Reserva no disponible. L'espai o l'equip no està disponible per a les dates "
-"seleccionades. Si us plau, proveu amb unes altres dades."
-
-#: xtec-booking.php:264
-msgid "You must choose which day of booking."
-msgstr "Heu d'escollir els dies en els que es realitzarà la reserva."
-
-#: xtec-booking.php:265
-msgid ""
-"This resource has associated reserves. To remove it, you must first remove "
-"their reservations."
-msgstr ""
-"Aquest espai o equip té reserves associades. Per poder-ho esborrar, heu "
-"d'esborrar primer les seves reserves."
-
-#: xtec-booking.php:266
-msgid "Do you want to permanently delete bookings selected?"
-msgstr "Voleu eliminar definitivament les reserves seleccionades?"
-
-#: xtec-booking.php:267
-msgid "Remove"
-msgstr "Elimina"
-
-#: xtec-booking.php:268
-msgid "Do you want to permanently delete current booking?"
-msgstr "Voleu eliminar definitivament la reserva actual?"
-
-#: xtec-booking.php:269
-msgid "mo."
-msgstr "dl."
-
-#: xtec-booking.php:269
-msgid "tu."
-msgstr "dt."
-
-#: xtec-booking.php:269
-msgid "we."
-msgstr "dm."
-
-#: xtec-booking.php:269
-msgid "th."
-msgstr "dj."
-
-#: xtec-booking.php:269
-msgid "fr."
-msgstr "dv."
-
-#: xtec-booking.php:269
-msgid "sa."
-msgstr "ds."
-
-#: xtec-booking.php:269
-msgid "su."
-msgstr "dg."
-
-#: xtec-booking.php:283 xtec-booking.php:301 includes/calendar.php:316
-msgid "Description"
-msgstr "Descripció"
-
-#: xtec-booking.php:284
-msgid "Author"
-msgstr "Autor"
-
-#: xtec-booking.php:285 includes/calendar.php:297
-msgid "Resource"
-msgstr "Espai o equip"
-
-#: xtec-booking.php:302
-msgid "Status"
-msgstr "Estat"
-
-#: xtec-booking.php:321 includes/calendar.php:120
-msgid "Not available resource"
-msgstr "Recurs no disponible"
-
-#: xtec-booking.php:325
-msgid "Only admin users"
-msgstr "Disponible només per als administradors"
-
-#: xtec-booking.php:337 xtec-booking.php:403 includes/resources.php:26
-msgid "Available"
-msgstr "Disponible"
-
-#: xtec-booking.php:340 xtec-booking.php:404 includes/resources.php:27
-msgid "Not available"
-msgstr "No disponible"
-
-#: xtec-booking.php:402
-msgid "Filter by status"
-msgstr "Filtra per l'estat"
-
-#: xtec-booking.php:419
-msgid "All resources"
-msgstr "Tots els espais i equips"
-
-#: xtec-booking.php:468
-msgid "booking updated"
-msgstr "reserva actualitzada"
-
-#: xtec-booking.php:469
-msgid "booking not updated, somebody is editing them"
-msgstr "la reserva no s'ha actualitzat, algú l'està editant"
-
-#: xtec-booking.php:470 xtec-booking.php:471
-msgid "Deleted permanently booking."
-msgstr "La reserva s'ha eliminat de forma permanent."
-
-#: xtec-booking.php:487
-msgid "resources updated"
-msgstr "espais i equips actualitzats"
-
-#: xtec-booking.php:488
-msgid "resources not updated, somebody is editing them"
-msgstr "l'espai o l'equip no s'ha actualitzat, algú l'està editant"
-
-#: xtec-booking.php:489
-msgid "Deleted permanently resources"
-msgstr "L'espai o l'equip s'ha eliminat de forma permanent"
-
-#: xtec-booking.php:490
-msgid "Deleted resources"
-msgstr "Espai o equip eliminat"
-
-#: xtec-booking.php:505 xtec-booking.php:506
-msgid "Book updated"
-msgstr "S'ha actualitzat la reserva"
-
-#: xtec-booking.php:507
-msgid "Book published"
-msgstr "Reserva publicada"
-
-#: xtec-booking.php:508
-msgid "Book saved"
-msgstr "Reserva desada"
-
-#: xtec-booking.php:509
-msgid "Book sended"
-msgstr "Reserva enviada"
-
-#: xtec-booking.php:510
-msgid "Updated draft of the book"
-msgstr "S'ha actualitzat l'esborrany de la reserva"
-
-#: xtec-booking.php:516 xtec-booking.php:517
-msgid "Resource updated"
-msgstr "S'ha actualitzat l'espai o l'equip."
-
-#: xtec-booking.php:518
-msgid "Resource published"
-msgstr "S'ha publicat l'espai o l'equip"
-
-#: xtec-booking.php:519
-msgid "Resource saved"
-msgstr "S'ha desat l'espai o l'equip"
-
-#: xtec-booking.php:520
-msgid "Resource sended"
-msgstr "S'ha enviat l'espai o l'equip"
-
-#: xtec-booking.php:521
-msgid "Updated draft of the resource"
-msgstr "S'ha actualitzat l'esborrany de l'espai o l'equip"
-
-#: xtec-booking.php:582 includes/booking.php:23
-msgid "Booking calendar"
-msgstr "Calendari de reserves"
-
-#: includes/resources.php:8
-msgid "Resources parameters"
-msgstr "Paràmetres de l'equip o l'espai"
-
-#: includes/resources.php:23
-msgid "Select availability resource"
-msgstr "Seleccioneu la disponibilitat de l'espai o l'equip"
-
-#: includes/resources.php:35
-msgid "Select color resource"
-msgstr "Seleccioneu un color per a l'espai o l'equip"
-
-#: includes/resources.php:38
-msgid "Red"
-msgstr "Vermell"
-
-#: includes/resources.php:39
-msgid "Yellow"
-msgstr "Groc"
-
-#: includes/resources.php:40
-msgid "Blue"
-msgstr "Blau"
-
-#: includes/resources.php:41
-msgid "Black"
-msgstr "Negre"
-
-#: includes/resources.php:42
-msgid "Green"
-msgstr "Verd"
-
-#: includes/resources.php:43
-msgid "Purple"
-msgstr "Lila"
-
-#: includes/resources.php:44
-msgid "Orange"
-msgstr "Taronja"
-
-#: includes/resources.php:45
-msgid "Pink"
-msgstr "Rosa"
-
-#: includes/resources.php:46
-msgid "Brown"
-msgstr "Marró"
-
-#: includes/resources.php:47
-msgid "Light blue"
-msgstr "Blau cel"
-
-#: includes/calendar.php:302 includes/booking.php:126
-msgid "Start time"
-msgstr "Hora d'inici"
-
-#: includes/calendar.php:306
-msgid "End Hour"
-msgstr "Hora de finalització"
-
-#: includes/calendar.php:311
-msgid "Booking make by"
-msgstr "Reserva feta per"
-
-#: includes/calendar.php:321
-msgid "Close"
-msgstr "Tanca"
-
-#: includes/calendar.php:345 includes/calendar.php:466
-msgid "Prev"
-msgstr "Previ"
-
-#: includes/calendar.php:346 includes/calendar.php:467
-msgid "Today"
-msgstr "Avui"
-
-#: includes/calendar.php:347 includes/calendar.php:468
-msgid "Next"
-msgstr "Següent"
-
-#: includes/calendar.php:350
-msgid "Year"
-msgstr "Any"
-
-#: includes/calendar.php:351
-msgid "Month"
-msgstr "Mes"
-
-#: includes/calendar.php:352
-msgid "Week"
-msgstr "Setmana"
-
-#: includes/calendar.php:353
-msgid "Day"
-msgstr "Dia"
-
-#: includes/calendar.php:368
-msgid "Not resources available"
-msgstr "No hi ha recursos disponibles"
 
 #: includes/booking.php:14
 msgid "Parametes to booking"
 msgstr "Paràmetres de la reserva"
+
+#: includes/booking.php:23 xtec-booking.php:603
+msgid "Booking calendar"
+msgstr "Calendari de reserves"
 
 #: includes/booking.php:32
 msgid "Resource information"
@@ -394,6 +39,10 @@ msgstr "Informació del recurs"
 #: includes/booking.php:69 includes/booking.php:94
 msgid "Not allow any resources to select."
 msgstr "No hi ha cap espai o equip disponible"
+
+#: includes/booking.php:73 xtec-booking.php:84 xtec-booking.php:85
+msgid "Add Resource"
+msgstr "Afegeix un espai o un equip"
 
 #: includes/booking.php:92
 msgid "Select resource or classroom"
@@ -406,6 +55,10 @@ msgstr "Data d'inici"
 #: includes/booking.php:121 includes/booking.php:142
 msgid "Date before at actual date"
 msgstr "La data seleccionada és anterior a l'actual"
+
+#: includes/booking.php:126 includes/calendar.php:317
+msgid "Start time"
+msgstr "Hora d'inici"
 
 #: includes/booking.php:131
 msgid "Finish time"
@@ -454,6 +107,362 @@ msgstr "És necessari seleccionar com a mínim un dia"
 #: includes/booking.php:247
 msgid "Select resource to show image"
 msgstr "Seleccioneu un recurs per obtenir més informació"
+
+#: includes/calendar.php:132 xtec-booking.php:342
+msgid "Not available resource"
+msgstr "Recurs no disponible"
+
+#: includes/calendar.php:292 includes/calendar.php:409
+msgid "Unselect resources"
+msgstr "No en seleccionis cap"
+
+#: includes/calendar.php:293
+msgid "Select resources"
+msgstr "Selecciona'ls tots"
+
+#: includes/calendar.php:312 xtec-booking.php:306
+msgid "Resource"
+msgstr "Espai o equip"
+
+#: includes/calendar.php:321
+msgid "End Hour"
+msgstr "Hora de finalització"
+
+#: includes/calendar.php:326
+msgid "Booking make by"
+msgstr "Reserva feta per"
+
+#: includes/calendar.php:331 xtec-booking.php:304 xtec-booking.php:322
+msgid "Description"
+msgstr "Descripció"
+
+#: includes/calendar.php:336
+msgid "Close"
+msgstr "Tanca"
+
+#: includes/calendar.php:360 includes/calendar.php:489
+msgid "Prev"
+msgstr "Previ"
+
+#: includes/calendar.php:361 includes/calendar.php:490
+msgid "Today"
+msgstr "Avui"
+
+#: includes/calendar.php:362 includes/calendar.php:491
+msgid "Next"
+msgstr "Següent"
+
+#: includes/calendar.php:365
+msgid "Year"
+msgstr "Any"
+
+#: includes/calendar.php:366
+msgid "Month"
+msgstr "Mes"
+
+#: includes/calendar.php:367
+msgid "Week"
+msgstr "Setmana"
+
+#: includes/calendar.php:368
+msgid "Day"
+msgstr "Dia"
+
+#: includes/calendar.php:383 includes/calendar.php:389 xtec-booking.php:88
+msgid "Resources"
+msgstr "Espais i equips"
+
+#: includes/calendar.php:383
+msgid "Not resources available"
+msgstr "No hi ha recursos disponibles"
+
+#: includes/resources.php:8
+msgid "Resources parameters"
+msgstr "Paràmetres de l'equip o l'espai"
+
+#: includes/resources.php:23
+msgid "Select availability resource"
+msgstr "Seleccioneu la disponibilitat de l'espai o l'equip"
+
+#: includes/resources.php:26 xtec-booking.php:358 xtec-booking.php:424
+msgid "Available"
+msgstr "Disponible"
+
+#: includes/resources.php:27 xtec-booking.php:361 xtec-booking.php:425
+msgid "Not available"
+msgstr "No disponible"
+
+#: includes/resources.php:35
+msgid "Select color resource"
+msgstr "Seleccioneu un color per a l'espai o l'equip"
+
+#: includes/resources.php:38
+msgid "Red"
+msgstr "Vermell"
+
+#: includes/resources.php:39
+msgid "Yellow"
+msgstr "Groc"
+
+#: includes/resources.php:40
+msgid "Blue"
+msgstr "Blau"
+
+#: includes/resources.php:41
+msgid "Black"
+msgstr "Negre"
+
+#: includes/resources.php:42
+msgid "Green"
+msgstr "Verd"
+
+#: includes/resources.php:43
+msgid "Purple"
+msgstr "Lila"
+
+#: includes/resources.php:44
+msgid "Orange"
+msgstr "Taronja"
+
+#: includes/resources.php:45
+msgid "Pink"
+msgstr "Rosa"
+
+#: includes/resources.php:46
+msgid "Brown"
+msgstr "Marró"
+
+#: includes/resources.php:47
+msgid "Light blue"
+msgstr "Blau cel"
+
+#: xtec-booking.php:30 xtec-booking.php:31 xtec-booking.php:32
+msgid "Bookings"
+msgstr "Reserves"
+
+#: xtec-booking.php:33 xtec-booking.php:87
+msgid "Parent Booking"
+msgstr "Reserva mare"
+
+#: xtec-booking.php:34
+msgid "All Bookings"
+msgstr "Totes les reserves"
+
+#: xtec-booking.php:35
+msgid "View Booking"
+msgstr "Visualitza la reserva"
+
+#: xtec-booking.php:36
+msgid "Add New Booking"
+msgstr "Afegeix una reserva nova"
+
+#: xtec-booking.php:37 xtec-booking.php:91
+msgid "Add New"
+msgstr "Afegeix"
+
+#: xtec-booking.php:38
+msgid "Edit Booking"
+msgstr "Edita la reserva"
+
+#: xtec-booking.php:39
+msgid "Update Booking"
+msgstr "Actualitza la reserva"
+
+#: xtec-booking.php:40
+msgid "Search Booking"
+msgstr "Cerca la reserva"
+
+#: xtec-booking.php:41 xtec-booking.php:95
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: xtec-booking.php:42 xtec-booking.php:96
+msgid "Not found in Trash"
+msgstr "No s'ha trobat a la paperera"
+
+#: xtec-booking.php:72
+msgid "Booking"
+msgstr "Reserves"
+
+#: xtec-booking.php:73
+msgid "Resources to booking"
+msgstr "Espais o equips disponibles"
+
+#: xtec-booking.php:86
+msgid "Add Resources"
+msgstr "Afegeix espais o equips"
+
+#: xtec-booking.php:89
+msgid "View Resource"
+msgstr "Visualitza espais i equips"
+
+#: xtec-booking.php:90
+msgid "Add New Resource"
+msgstr "Afegeix un espai o un equip"
+
+#: xtec-booking.php:92
+msgid "Edit Resource"
+msgstr "Edita un espai o un equip"
+
+#: xtec-booking.php:93
+msgid "Update Resource"
+msgstr "Actualitza un espai o un equip"
+
+#: xtec-booking.php:94
+msgid "Search Resource"
+msgstr "Cerca espais o equips"
+
+#: xtec-booking.php:121
+msgid "Calendar"
+msgstr "Calendari"
+
+#: xtec-booking.php:140 xtec-booking.php:145
+msgid ""
+"Booking not allowed. The resource is not allowed to data selected. Please, "
+"try other data."
+msgstr ""
+"Reserva no disponible. L'espai o l'equip no està disponible per a les dates "
+"seleccionades. Si us plau, proveu amb unes altres dades."
+
+#: xtec-booking.php:285
+msgid "You must choose which day of booking."
+msgstr "Heu d'escollir els dies en els que es realitzarà la reserva."
+
+#: xtec-booking.php:286
+msgid ""
+"This resource has associated reserves. To remove it, you must first remove "
+"their reservations."
+msgstr ""
+"Aquest espai o equip té reserves associades. Per poder-ho esborrar, heu "
+"d'esborrar primer les seves reserves."
+
+#: xtec-booking.php:287
+msgid "Do you want to permanently delete bookings selected?"
+msgstr "Voleu eliminar definitivament les reserves seleccionades?"
+
+#: xtec-booking.php:288
+msgid "Remove"
+msgstr "Elimina"
+
+#: xtec-booking.php:289
+msgid "Do you want to permanently delete current booking?"
+msgstr "Voleu eliminar definitivament la reserva actual?"
+
+#: xtec-booking.php:290
+msgid "mo."
+msgstr "dl."
+
+#: xtec-booking.php:290
+msgid "tu."
+msgstr "dt."
+
+#: xtec-booking.php:290
+msgid "we."
+msgstr "dm."
+
+#: xtec-booking.php:290
+msgid "th."
+msgstr "dj."
+
+#: xtec-booking.php:290
+msgid "fr."
+msgstr "dv."
+
+#: xtec-booking.php:290
+msgid "sa."
+msgstr "ds."
+
+#: xtec-booking.php:290
+msgid "su."
+msgstr "dg."
+
+#: xtec-booking.php:305
+msgid "Author"
+msgstr "Autor"
+
+#: xtec-booking.php:323
+msgid "Status"
+msgstr "Estat"
+
+#: xtec-booking.php:346
+msgid "Only admin users"
+msgstr "Disponible només per als administradors"
+
+#: xtec-booking.php:423
+msgid "Filter by status"
+msgstr "Filtra per l'estat"
+
+#: xtec-booking.php:440
+msgid "All resources"
+msgstr "Tots els espais i equips"
+
+#: xtec-booking.php:489
+msgid "booking updated"
+msgstr "reserva actualitzada"
+
+#: xtec-booking.php:490
+msgid "booking not updated, somebody is editing them"
+msgstr "la reserva no s'ha actualitzat, algú l'està editant"
+
+#: xtec-booking.php:491 xtec-booking.php:492
+msgid "Deleted permanently booking."
+msgstr "La reserva s'ha eliminat de forma permanent."
+
+#: xtec-booking.php:508
+msgid "resources updated"
+msgstr "espais i equips actualitzats"
+
+#: xtec-booking.php:509
+msgid "resources not updated, somebody is editing them"
+msgstr "l'espai o l'equip no s'ha actualitzat, algú l'està editant"
+
+#: xtec-booking.php:510
+msgid "Deleted permanently resources"
+msgstr "L'espai o l'equip s'ha eliminat de forma permanent"
+
+#: xtec-booking.php:511
+msgid "Deleted resources"
+msgstr "Espai o equip eliminat"
+
+#: xtec-booking.php:526 xtec-booking.php:527
+msgid "Book updated"
+msgstr "S'ha actualitzat la reserva"
+
+#: xtec-booking.php:528
+msgid "Book published"
+msgstr "Reserva publicada"
+
+#: xtec-booking.php:529
+msgid "Book saved"
+msgstr "Reserva desada"
+
+#: xtec-booking.php:530
+msgid "Book sended"
+msgstr "Reserva enviada"
+
+#: xtec-booking.php:531
+msgid "Updated draft of the book"
+msgstr "S'ha actualitzat l'esborrany de la reserva"
+
+#: xtec-booking.php:537 xtec-booking.php:538
+msgid "Resource updated"
+msgstr "S'ha actualitzat l'espai o l'equip."
+
+#: xtec-booking.php:539
+msgid "Resource published"
+msgstr "S'ha publicat l'espai o l'equip"
+
+#: xtec-booking.php:540
+msgid "Resource saved"
+msgstr "S'ha desat l'espai o l'equip"
+
+#: xtec-booking.php:541
+msgid "Resource sended"
+msgstr "S'ha enviat l'espai o l'equip"
+
+#: xtec-booking.php:542
+msgid "Updated draft of the resource"
+msgstr "S'ha actualitzat l'esborrany de l'espai o l'equip"
 
 #~ msgid "by"
 #~ msgstr "per"
