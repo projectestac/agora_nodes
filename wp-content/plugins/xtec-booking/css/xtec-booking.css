@@ -302,3 +302,8 @@ span.weekdays{
 div.pull-left.day-event.day-highlight span.cal-hours{
 	display: none;
 }
+
+/* BUTTONS ADDED TO CALENDAR */
+.xtec-button-unselect{
+    margin: 20px 0px 15px 15px !important;
+}
