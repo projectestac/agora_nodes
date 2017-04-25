@@ -181,6 +181,25 @@ function xtec_add_calendar(data, booking = false){
 
 }
 
+function xtec_change_button(){
+	option = false;
+	jQuery('input[id^="resource-"]').each(function() {
+		select = jQuery(this).attr('checked');
+		if( select ){
+			option = true;
+			return false;
+		}
+	});
+
+	if( ! option ){
+		jQuery('#xtec_selection').attr('data-action','select');
+		jQuery('#xtec_selection').attr('value',selectResources);
+	} else {
+		jQuery('#xtec_selection').attr('data-action','unselect');
+		jQuery('#xtec_selection').attr('value',unselectResources);
+	}
+}
+
 function xtec_events( update = false, booking = false ){
 
 	if ( update !== false ){
@@ -211,12 +230,19 @@ function xtec_events( update = false, booking = false ){
 		    	} else {
 		    		xtec_add_calendar(request);
 		    	}
+
+		    	jQuery('#xtec_selection').removeAttr('disabled',true);
+
+		    	xtec_change_button();
 		    } )
 		    .fail( function( response ){
 		    	jQuery('input[id^="resource-"]').each(function() {
 					jQuery(this).removeAttr('disabled',true);
 				});
 
+				xtec_change_button();
+
+		    	jQuery('#xtec_selection').removeAttr('disabled',true);
 				jQuery("body").css("cursor", "default");
 				jQuery("#xtec_calendar_wait").addClass('display_div_wait');
 		    } );
@@ -704,5 +730,32 @@ jQuery( document ).ready( function() {
 			}
 		});
 	}
+
+	// SELECT / UNSELECT RESOURCES
+	jQuery('#xtec_selection').on('click',function(){
+
+		jQuery('#xtec_selection').attr('disabled',true);
+		option = jQuery('#xtec_selection').attr('data-action');
+
+		if ( option == 'unselect' ){
+			jQuery('[name^="resource-"]').each(function(){
+				jQuery(this).attr('checked',false);
+			});
+			jQuery('#xtec_selection').attr('data-action','select');
+			jQuery('#xtec_selection').attr('value',selectResources);
+		} else {
+			jQuery('[name^="resource-"]').each(function(){
+				jQuery(this).attr('checked',true);
+			});
+			jQuery('#xtec_selection').attr('data-action','unselect');
+			jQuery('#xtec_selection').attr('value',unselectResources);
+		}
+
+		jQuery('[name^="resource-"]').each(function(){
+			jQuery(this).trigger('change');
+			return false;
+		});
+
+	});
 
 });
