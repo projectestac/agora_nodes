@@ -287,8 +287,10 @@ function xtec_display_calendar($data,$shortcode){
 			$calendar = "<script>
 			var events = [];";
 	} else {
-		$calendar = "<script>
-			var events = ". $data .";";
+		$calendar = '<script>
+			var events = '. $data .';
+			var unselectResources = "'. __('Unselect resources','xtec-booking') .'";
+			var selectResources = "'. __('Select resources','xtec-booking') .'";';
 	}
 
 	$calendar .= '
@@ -395,14 +397,21 @@ function xtec_display_calendar($data,$shortcode){
 		if ( ( ! is_null( $shortcode ) ) and $shortcode != '' ){
 			$calendar .=      '</h4>
 						    </div>
-						    <div id="collapse1" class="panel-collapse collapse xtec-row-panel" style="visbility:hidden;height:0px;">';
+						    <div id="collapse1" class="panel-collapse collapse xtec-row-panel" style="visibility:hidden;height:0px;">';
 		} else {
 			$calendar .=      '</h4>
 						    </div>
 						    <div id="collapse1" class="panel-collapse collapse xtec-row-panel">';
 		}
 
+		$calendar .= 	'<div class="row">
+							<div class="col-md-12">
+								<input id="xtec_selection" data-action="unselect" type="button" class="btn btn-primary xtec-button-unselect" value="'.__('Unselect resources','xtec-booking').'">
+							</div>
+						</div>';
+
 		$i = 0;
+
 		foreach ( $posts as $post ) {
 
 			$color = get_post_meta( $post->ID, '_xtec_resources_color', true );
