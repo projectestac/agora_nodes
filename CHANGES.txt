@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Discussion: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
+
+
 Changes 17.04.24
 ---------------------------------------------------------------------------------------
 - Polylang: Added plugin (Trello #1198)
