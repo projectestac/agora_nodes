@@ -5,9 +5,10 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Discussion: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
+- mu-common: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
 - email-subscribers: Upgraded plugin from version 2.9.2 to 3.2.6 (Trello #1444)
 - xtec-booking: Added button to calendar view to select and deselect a batch of resources (Trello #1537)
+- mu-common: Customized order posts into homepage and categories (Trello #1579)
 
 
 Changes 17.04.24
