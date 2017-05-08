@@ -8,6 +8,14 @@
  */
 
 load_muplugin_textdomain('agora-functions', '/languages');
+/**
+ * Load agora-functions javascript file
+ */
+function agora_functions_load_js() {
+    wp_register_script( 'agora-functions-js', plugins_url( '/javascript/agora-functions.js', __FILE__ ), array( 'jquery' ) );
+    wp_enqueue_script( 'agora-functions-js' );
+}
+add_action( 'wp_enqueue_scripts', 'agora_functions_load_js' );
 
 /**
  * Build a navigation link and add it to the profile main menu
@@ -1453,3 +1461,228 @@ function xtec_polylang_check() {
     }
 }
 add_action ( 'init', 'xtec_polylang_check', 1 );
+
+/**
+ * BuddyPress and bbpress moderation feature. Code begins here.
+ * @author Toni Ginard
+ */
+
+/**
+ * Add a report button to buddypress stream activity
+ */
+function xtec_bp_report_button() {
+    $id = bp_get_activity_id();
+
+    echo '<a
+          id = "xtec_bp_report-' . $id . '"
+          class="button item-button bp-secondary-action xtec-report" 
+          href=""
+          title="' . __( 'Report to administrators', 'agora-functions' ) . '"
+          ><span class="fa fa-flag-o"></span></a>';
+}
+add_action( 'bp_activity_entry_meta', 'xtec_bp_report_button' );
+
+/**
+ * Add a report button to bbpress posts
+ *
+ * @param $retval
+ * @param $r
+ * @return string
+ */
+function xtec_bbpress_report_button( $retval, $r ) {
+
+    $id = bbp_get_reply_id();
+
+    $r['links']['report'] = '<a
+          id = "xtec_bbpress_report-' . $id . '"
+          class="bbp-report-link xtec-report" 
+          href=""
+          title="' . __( 'Report to administrators', 'agora-functions' ) . '"
+          >' . __( 'Report this', 'agora-functions' ) . '</a>';
+
+    $links = implode( $r['sep'], array_filter( $r['links'] ) );
+    $retval = $r['before'] . $links . $r['after'];
+
+    return $retval;
+}
+add_filter( 'bbp_get_topic_admin_links', 'xtec_bbpress_report_button', 10, 2 );
+add_filter( 'bbp_get_reply_admin_links', 'xtec_bbpress_report_button', 10, 2 );
+
+/**
+ * Create custom post type xtec_report
+ */
+function xtec_create_post_type_report() {
+    register_post_type( 'xtec_report',
+        array(
+            'labels' => array(
+                'name' => __( 'Reports', 'agora-functions' ),
+                'singular_name' => __( 'Report', 'agora-functions' ),
+            ),
+            'public' => false,
+            'show_ui' => true,
+            'show_in_menu' => 'xtec-bp-options',
+            'publicly_queryable' => false,
+            'exclude_from_search' => true,
+            'show_in_nav_menus' => false,
+            'supports' => array(
+                'title',
+                'author',
+            ),
+        )
+    );
+}
+add_action( 'init', 'xtec_create_post_type_report' );
+
+/**
+ * Add report to wp_posts (post type xtec_report) and send an e-mail to site e-mail address
+ */
+function xtec_report() {
+    $id = $_POST['id'];
+    $plugin = $_POST['plugin'];
+    $user_login = $user_display_name = $permalink = $post_content = $post_date = '';
+
+    if ( 'buddypress' == $plugin ) {
+        $activity = bp_activity_get_specific( array( 'activity_ids' => $id ) )['activities'][0];
+        $user_login = $activity->user_login;
+        $user_display_name = $activity->display_name;
+        $post_content = $activity->content;
+        $post_date = $activity->date_recorded;
+
+        // General wall
+        if ( 0 == $activity->item_id ) {
+            global $bp;
+            $permalink = trailingslashit( bp_get_root_domain() . '/' . $bp->activity->root_slug );
+        } else {
+            $group = groups_get_group( array( 'group_id' => $activity->item_id ) );
+            $permalink = trailingslashit( bp_get_root_domain() . '/' . bp_get_groups_root_slug() . '/' . $group->slug . '/' );
+        }
+    }
+    elseif ( 'bbpress' == $plugin ) {
+        // The reported post can be a topic or a reply. Need to support both possibilities
+        $reply = bbp_get_reply( $id );
+        $topic = bbp_get_topic( $id );
+
+        if ( null == $reply ) {
+            $post_content = $topic->post_content;
+            $permalink = $topic->guid;
+            $user_login = get_user_by( 'id', $topic->post_author )->data->user_login;
+            $user_display_name = get_user_by( 'id', $topic->post_author )->data->display_name;
+        }
+        elseif ( null == $topic ) {
+            $post_content = $reply->post_content;
+            $permalink = $reply->guid;
+            $user_login = get_user_by( 'id', $reply->post_author )->data->user_login;
+            $user_display_name = get_user_by( 'id', $reply->post_author )->data->display_name;
+        }
+
+        $post_date = $reply->post_date;
+    }
+
+    $title = $user_login
+        . ' (' . $user_display_name . ') '
+        . __( 'posted on' , 'agora-functions' ) . ' '
+        . date( 'd-m-Y H:i:s', strtotime( $post_date ) );
+
+    $content = '<a href="' . $permalink . '" target="_blank">'
+        . __( 'See it in its context', 'agora-functions')
+        . '</a><br /><hr />'
+        . $post_content;
+
+    // Save report to wp_posts
+    wp_insert_post( array(
+        'post_type' => 'xtec_report',
+        'post_title' => $title,
+        'post_content' => $content,
+        'post_status' => 'publish',
+        'comment_status' => 'closed',
+        'ping_status' => 'closed',
+    ));
+
+    // Update the button seen by the user
+    _e( 'Notified to admins', 'agora-functions' );
+
+    // Send the e-mail to site address
+    $user_reporter = wp_get_current_user();
+    $admin_email = get_bloginfo('admin_email');
+    $subject = '[' . get_bloginfo('name') . '] ' . __( 'Activity report in social network', 'agora-functions' );
+    $email_content = '<p>' . sprintf(
+            __( 'The user <strong>%1$s (%2$s)</strong> has reported the following content published by <strong>%3$s (%4$s)</strong>:', 'agora-functions' ),
+            $user_reporter->data->user_login,
+            $user_reporter->data->display_name,
+            $user_login,
+            $user_display_name)
+        . '</p><br />'
+        . '<blockquote><hr style="color: #ccc; height: 1px; border-style: dashed;" />'
+        . '<p>' . $post_content . '</p><br />'
+        . '<hr style="color: #ccc; height: 1px; border-style: dashed;" /></blockquote>'
+        . '<p>'
+        . '<a href="' . $permalink . '" target="_blank">' . __( 'See it in its context', 'agora-functions') . '</a><br />'
+        . '<a href="' . admin_url( 'edit.php?post_type=xtec_report' ) . '" target="_blank">' . __( 'Go to the report admin', 'agora-functions') . '</a>'
+        . '</p>'
+        . '<p>' . __( 'P.S.: This is an automatic notification. Please do not reply', 'agora-functions' ) .'</p><br />';
+
+    wp_mail( $admin_email, $subject, $email_content );
+
+    // This function is called via ajax
+    wp_die();
+}
+add_action( 'wp_ajax_xtec_report', 'xtec_report' );
+
+/**
+ * Adds 'Content' column to xtec_report posts screen
+ *
+ * @param $columns
+ * @return array
+ */
+function add_xtec_report_columns($columns) {
+    $part_before = array_slice($columns, 0, 2, true);
+    $part_after = array_slice($columns, 2, null, true);
+
+    return $input = $part_before + array('content' => __( 'Content', 'agora-functions' )) + $part_after;
+}
+add_filter('manage_xtec_report_posts_columns', 'add_xtec_report_columns');
+
+/**
+ * Populate column 'Content' in xtec_report posts screen
+ *
+ * @param $column
+ * @param $post_id
+ */
+function custom_columns($column, $post_id) {
+    if ('content' == $column) {
+        echo get_post($post_id)->post_content;
+    }
+}
+add_action('manage_posts_custom_column', 'custom_columns', 10, 2);
+
+/**
+ * Hide links that cannot be removed in xtec_report posts screen
+ */
+function hide_xtec_report_actions() {
+    global $post_type;
+
+    if ($post_type == 'xtec_report') {
+        echo '<style>
+            span.edit, span.inline, a.page-title-action { display:none; }
+            a.row-title { pointer-events: none; cursor: default; }
+            </style>';
+    }
+}
+add_action('admin_head', 'hide_xtec_report_actions');
+
+/**
+ * Remove option for massive edition of post type xtec_report in xtec_report posts screen
+ *
+ * @param $actions
+ * @return mixed
+ */
+function remove_xtec_report_bulk_actions( $actions ){
+    unset( $actions['edit'] );
+    return $actions;
+}
+add_filter('bulk_actions-edit-xtec_report','remove_xtec_report_bulk_actions');
+
+/**
+ * BuddyPress and bbpress moderation feature. Code ends here.
+ * @author Toni Ginard
+ */
