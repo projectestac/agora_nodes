@@ -269,16 +269,21 @@ function bp_options_page() {
 			<p><a href="edit.php?post_type=bp_doc&page=bp-docs-settings"><?php _e('Settings', 'bp-docs'); ?></a></p>
 		</div>
 
-		<div style="width:160px; height:250px; padding:20px; float:left;">
-			<h3 style="height:40px;"><?php _e('BuddyPress Invitations', 'invite-anyone'); ?></h3>
-			<p><a href="admin.php?page=invite-anyone"><?php _e('Invite Anyone', 'invite-anyone'); ?></a></p>
-			<p><a href="edit.php?post_type=ia_invites"><?php _e('Manage Invitations', 'invite-anyone'); ?></a></p>
-			<p><a href="post-new.php?post_type=ia_invites"><?php _e('Add New Invitation', 'invite-anyone'); ?></a></p>
-			<p><a href="edit-tags.php?taxonomy=ia_invitees&post_type=ia_invites"><?php _e('Invitees', 'invite-anyone'); ?></a></p>
-			<p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Groups', 'invite-anyone'); ?></a></p>
-		</div>
+        <div style="width:160px; height:250px; padding:20px; float:left;">
+            <h3 style="height:40px;"><?php _e('BuddyPress Invitations', 'invite-anyone'); ?></h3>
+            <p><a href="admin.php?page=invite-anyone"><?php _e('Invite Anyone', 'invite-anyone'); ?></a></p>
+            <p><a href="edit.php?post_type=ia_invites"><?php _e('Manage Invitations', 'invite-anyone'); ?></a></p>
+            <p><a href="post-new.php?post_type=ia_invites"><?php _e('Add New Invitation', 'invite-anyone'); ?></a></p>
+            <p><a href="edit-tags.php?taxonomy=ia_invitees&post_type=ia_invites"><?php _e('Invitees', 'invite-anyone'); ?></a></p>
+            <p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Groups', 'invite-anyone'); ?></a></p>
+        </div>
 
-	</div>
+        <div style="width:160px; height:250px; padding:20px; float:left;">
+            <h3 style="height:40px;"><?php _e( 'Reports', 'agora-functions' ); ?></h3>
+            <p><a href="edit.php?post_type=xtec_report"><?php _e( 'Activity report in social network', 'agora-functions' ); ?></a></p>
+        </div>
+
+    </div>
 	<?php
 }
 

@@ -1,231 +1,281 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: agora-functions\n"
-"POT-Creation-Date: 2016-09-14 08:00+0100\n"
-"PO-Revision-Date: 2016-10-18 09:40+0200\n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"POT-Creation-Date: 2017-05-16 13:57+0100\n"
+"PO-Revision-Date: 2017-05-17 16:54+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: agora-functions.php:33
+#: agora-functions.php:27
 msgid "My Articles"
 msgstr "Articles"
 
-#: agora-functions.php:57
+#: agora-functions.php:49
 msgid "Published"
 msgstr "Publicats"
 
-#: agora-functions.php:68
+#: agora-functions.php:60
 msgid "Pending Review"
 msgstr "Pendent de revisió"
 
-#: agora-functions.php:79
+#: agora-functions.php:71
 msgid "Drafts"
 msgstr "Esborranys"
 
-#: agora-functions.php:185
+#: agora-functions.php:176
 msgid "Categories"
 msgstr "Categories"
 
-#: agora-functions.php:192
+#: agora-functions.php:183
 msgid "Comments"
 msgstr "Comentaris"
 
-#: agora-functions.php:204
+#: agora-functions.php:195
 msgid "Article not found"
 msgstr "No s'ha trobat cap article"
 
-#: agora-functions.php:281
+#: agora-functions.php:272
 msgid "You have exceeded your disk quota limit"
-msgstr "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o sol·licitar una ampliació de la quota. Trobareu més informació en aquesta PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=461&mode=entry&hook=561"
+msgstr ""
+"No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que "
+"té assignada. Podeu esborrar fitxers que ja no necessiteu a la mediateca o "
+"sol·licitar una ampliació de la quota. Trobareu més informació en aquesta "
+"PMF d'Àgora: http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?"
+"id=461&mode=entry&hook=561"
 
-#: agora-functions.php:315
+#: agora-functions.php:306
 msgid "The page you were trying to delete is protected."
-msgstr "Aquesta pàgina no es pot esborrar perquè és necessària pel funcionament del Nodes"
+msgstr ""
+"Aquesta pàgina no es pot esborrar perquè és necessària pel funcionament del "
+"Nodes"
 
-#: agora-functions.php:334
+#: agora-functions.php:324
 msgid "The page name you were trying to create is protected."
-msgstr "El nom de pàgina que voleu utilitzar està reservat. Si us plau, utilitzeu-ne un altre."
+msgstr ""
+"El nom de pàgina que voleu utilitzar està reservat. Si us plau, utilitzeu-ne "
+"un altre."
 
-#: agora-functions.php:335
+#: agora-functions.php:325
 msgid "Page name is required."
 msgstr "El nom de la pàgina és obligatori"
 
-#: agora-functions.php:415 common/lib.php:364
-msgid "You do not have permission to do that."
-msgstr "No teniu autorització per fer això"
-
-#: agora-functions.php:431
+#: agora-functions.php:425
 msgid "Articles by row"
 msgstr "Articles per fila"
 
-#: agora-functions.php:434
+#: agora-functions.php:428
 msgid "Articles to be displayed per row on category page (between 1 and 4)"
-msgstr "Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)"
+msgstr ""
+"Articles per fila que es mostraran a la pàgina de la categoria (entre 1 i 4)"
 
-#: agora-functions.php:441
+#: agora-functions.php:435
 msgid "Image"
 msgstr "Imatge"
 
-#: agora-functions.php:453
+#: agora-functions.php:447
 msgid "Current header image"
 msgstr "Imatge actual de la capçalera"
 
-#: agora-functions.php:458
+#: agora-functions.php:452
 msgid "Upload image"
 msgstr "Puja una imatge"
 
-#: agora-functions.php:459
+#: agora-functions.php:453
 msgid "Provide an image for the category"
 msgstr "Defineix una imatge de capçalera per la categoria"
 
-#: agora-functions.php:462
+#: agora-functions.php:456
 msgid "Remove image"
 msgstr "Suprimeix la imatge"
 
-#: agora-functions.php:558
+#: agora-functions.php:552
 msgid "Subscribers"
 msgstr "Subscriptors"
 
-#: agora-functions.php:559
+#: agora-functions.php:553
 msgid "Compose"
 msgstr "Composa"
 
-#: agora-functions.php:560
+#: agora-functions.php:554
 msgid "Send Email"
 msgstr "Envia missatge"
 
-#: agora-functions.php:561
+#: agora-functions.php:555
 msgid "Notification"
 msgstr "Notificació"
 
-#: agora-functions.php:562
+#: agora-functions.php:556
 msgid "Cron Mail"
 msgstr "Cron"
 
-#: agora-functions.php:563
+#: agora-functions.php:557
 msgid "Settings"
 msgstr "Configuració"
 
-#: agora-functions.php:564
+#: agora-functions.php:558
 msgid "Roles"
 msgstr "Rols"
 
-#: agora-functions.php:565
+#: agora-functions.php:559
 msgid "Sent Mails"
 msgstr "Missatges enviats"
 
-#: agora-functions.php:566
+#: agora-functions.php:560
 msgid "Help & Info"
 msgstr "Ajuda i informació"
 
-#: agora-functions.php:623
+#: agora-functions.php:617
 msgid "Options"
 msgstr "Opcions"
 
-#: agora-functions.php:648
+#: agora-functions.php:642
 msgid "Email subscribers"
 msgstr "Subscripcions correu"
 
-#: agora-functions.php:839
+#: agora-functions.php:828
 msgid "Home page configuration"
 msgstr "Configuració del mur"
 
-#: agora-functions.php:854
+#: agora-functions.php:843
 msgid "Posts to home page"
 msgstr "Comentaris al mur"
 
-#: agora-functions.php:905
+#: agora-functions.php:894
 msgid "Allow to registry users direct post into home page"
 msgstr "Permet als usuaris registrats escriure directament al mur general"
 
-#: agora-functions.php:922
+#: agora-functions.php:911
 msgid "Teacher"
 msgstr "Professor"
 
-#: agora-functions.php:941 agora-functions.php:977 agora-functions.php:1007 agora-functions.php:1039
+#: agora-functions.php:930 agora-functions.php:965 agora-functions.php:995
+#: agora-functions.php:1027
 msgid "Select name to teacher's node"
 msgstr "Selecciona el node de professor"
 
-#: agora-functions.php:1048
+#: agora-functions.php:1036
 msgid "Node that containing all user's with teacher's role"
 msgstr "Grup on tenen accés només aquells usuaris que són professors."
 
-#: agora-functions.php:1049
-msgid "New members of this group, if they have Contributor role will be automatically promoted to the role teachers. This will have access to the reservations of spaces and equipment. This change does not affect users who already belong to the node, or those who have other roles."
-msgstr "Els membres nous d'aquest grup, si tenen rol Col·laborador, seran promocionats automàticament al rol Professorat. D'aquesta manera tindran accés a les reserves d'espais i equips. Aquest canvi no afecta als usuaris que ja pertanyen al Node, ni als que tenen altres rols."
+#: agora-functions.php:1037
+msgid ""
+"New members of this group, if they have Contributor role will be "
+"automatically promoted to the role teachers. This will have access to the "
+"reservations of spaces and equipment. This change does not affect users who "
+"already belong to the node, or those who have other roles."
+msgstr ""
+"Els membres nous d'aquest grup, si tenen rol Col·laborador, seran "
+"promocionats automàticament al rol Professorat. D'aquesta manera tindran "
+"accés a les reserves d'espais i equips. Aquest canvi no afecta als usuaris "
+"que ja pertanyen al Node, ni als que tenen altres rols."
 
-#: agora-functions.php:1058
+#: agora-functions.php:1046
 msgid "Teacher's group"
 msgstr "Node de professors"
 
-#: common/lib.php:194 common/lib.php:209
-msgid "Image files must be smaller than "
-msgstr "Les imatges no poden ser més grans de "
-
-#: common/lib.php:194 common/lib.php:209
-msgid "Recommended width image:"
-msgstr "Amplada recomanada: "
-
-#: common/lib.php:268
-msgid "No item"
-msgstr "No s'ha trobat cap element"
-
-#: common/lib.php:272
-msgid ">"
-msgstr "Fa"
-
-#: common/lib.php:546
-msgid "The description is not prominent by default; however, some themes may show it."
-msgstr "La descripció no prové per defecte; no obstant això, alguns temes poden mostrar-la"
-
-#: agora-functions.php:1093
+#: agora-functions.php:1076 agora-functions.php:1078
 msgid "Exporter schedule"
 msgstr "Exportador d'horaris"
 
-#: agora-functions.php:1094
-msgid "From a Google Spreadsheet, this tool allows you to export to web format schedules for each group, teacher, subject or classroom. The generated code can easily insert to any page to Nodes and paste the code in the text tab."
-msgstr "A partir d'un full de càlcul de Google, aquesta eina permet exportar a format web els horaris de cada grup, professor, assignatura o aula. El codi generat es pot inserir fàcilment a qualsevol pàgina de Nodes editant-la i enganxant el codi a la pestanya Text."
+#: agora-functions.php:1077
+msgid ""
+"From a Google Spreadsheet, this tool allows you to export to web format "
+"schedules for each group, teacher, subject or classroom. The generated code "
+"can easily insert to any page to Nodes and paste the code in the text tab."
+msgstr ""
+"A partir d'un full de càlcul de Google, aquesta eina permet exportar a "
+"format web els horaris de cada grup, professor, assignatura o aula. El codi "
+"generat es pot inserir fàcilment a qualsevol pàgina de Nodes editant-la i "
+"enganxant el codi a la pestanya Text."
 
-#: agora-functions.php:1096
+#: agora-functions.php:1079
 msgid "Link to exporter schedule"
 msgstr "Enllaç a l'exportador d'horaris"
 
-#: agora-functions.php:1097
+#: agora-functions.php:1080
 msgid "Developed by: Felix Tejero"
 msgstr "Desenvolupat per: Felix Tejero"
 
-#: agora-functions.php:1109
+#: agora-functions.php:1092 agora-functions.php:1094
 msgid "Calendar manager"
 msgstr "Gestor de Calendaris"
 
-#: agora-functions.php:1110
-msgid "From a Google Spreadsheet, this tool allows you to upgrade the course calendars with one click. However, if you add new events to the calendar, joining the spreadsheet."
-msgstr "A partir d'un full de càlcul de Google, aquesta eina permet actualitzar els calendaris del curs amb un sol clic. Tanmateix, si afegiu nous esdeveniments als calendaris, s'incorporen al full de càlcul."
+#: agora-functions.php:1093
+msgid ""
+"From a Google Spreadsheet, this tool allows you to upgrade the course "
+"calendars with one click. However, if you add new events to the calendar, "
+"joining the spreadsheet."
+msgstr ""
+"A partir d'un full de càlcul de Google, aquesta eina permet actualitzar els "
+"calendaris del curs amb un sol clic. Tanmateix, si afegiu nous esdeveniments "
+"als calendaris, s'incorporen al full de càlcul."
 
-#: agora-functions.php:1112
+#: agora-functions.php:1095
 msgid "Link to calendar manager"
 msgstr "Enllaç al gestor de calendaris"
 
-#: agora-functions.php:1113
+#: agora-functions.php:1096
 msgid "Developed by: Pepi Garrote"
 msgstr "Desenvolupat per: Pepi Garrote"
 
-#~ msgid "Thumbnail"
-#~ msgstr "Miniatura"
+#: agora-functions.php:1475 agora-functions.php:1495
+msgid "Report to administrators"
+msgstr "Informa als administradors"
 
-#~ msgid "Medium"
-#~ msgstr "Mitjana"
+#: agora-functions.php:1476 agora-functions.php:1496
+msgid "Report this"
+msgstr "Informa"
 
-#~ msgid "Large"
-#~ msgstr "Gran"
+#: agora-functions.php:1510
+msgid "Reports"
+msgstr "Notificacions"
 
-#~ msgid "You have exceeded your disk quota"
-#~ msgstr "No podeu pujar fitxers al vostre espai Nodes perquè heu excedit la quota que té assignada."
+#: agora-functions.php:1511
+msgid "Report"
+msgstr "Notificació"
+
+#: agora-functions.php:1575
+msgid "posted on"
+msgstr "publicat el"
+
+#: agora-functions.php:1579 agora-functions.php:1611
+msgid "See it in its context"
+msgstr "Mostra-ho en el seu context"
+
+#: agora-functions.php:1594
+msgid "Notified to admins"
+msgstr "S'ha informat als administradors"
+
+#: agora-functions.php:1599
+msgid "Activity report in social network"
+msgstr "Activitat notificada a la xarxa social"
+
+#: agora-functions.php:1601
+#, php-format
+msgid ""
+"The user <strong>%1$s (%2$s)</strong> has reported the following content "
+"published by <strong>%3$s (%4$s)</strong>:"
+msgstr ""
+"L'usuari <strong>%1$s (%2$s)</strong> ha demanat que es revisi el contingut "
+"següent publicat per <strong>%3$s (%4$s)</strong>:"
+
+#: agora-functions.php:1612
+msgid "Go to the report admin"
+msgstr "Vés a l'administració de les notificacions"
+
+#: agora-functions.php:1614
+msgid "P.S.: This is an automatic notification. Please do not reply"
+msgstr ""
+"P.D.: Aquest missatge s'envia automàticament. Si us plau, no el respongueu."
+
+#: agora-functions.php:1632
+msgid "Content"
+msgstr "Contingut"
