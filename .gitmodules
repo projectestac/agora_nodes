@@ -73,3 +73,6 @@
 [submodule "wp-content/plugins/polylang"]
 	path = wp-content/plugins/polylang
 	url = https://github.com/projectestac/wordpress-polylang.git
+[submodule "wp-content/plugins/table-of-contents-plus"]
+	path = wp-content/plugins/table-of-contents-plus
+	url = https://github.com/projectestac/wordpress-table-of-contents-plus.git
