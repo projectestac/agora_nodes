@@ -1,6 +1,6 @@
 <?php
 
-const LOOP_LIMIT = 200; // Used in xtec_booking_get_event()
+const LOOP_LIMIT = 400; // Used in xtec_booking_get_event()
 
 function xtec_booking_show_calendar_page( $shortcode = null ){
 

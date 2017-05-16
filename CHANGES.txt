@@ -11,6 +11,7 @@ Changes in progress
 - email-subscribers: Upgraded plugin from version 2.9.2 to 3.2.6 (Trello #1444)
 - xtec-booking: Added button to calendar view to select and deselect a batch of resources (Trello #1537)
 - bp-like: Fixed removal of activity when you like and then unlike your own activity post
+- xtec-booking: Increased maximum number of events displayed in calendar view (Trello #1583)
 
 
 Changes 17.04.24
