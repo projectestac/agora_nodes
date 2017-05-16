@@ -12,6 +12,7 @@ Changes in progress
 - xtec-booking: Added button to calendar view to select and deselect a batch of resources (Trello #1537)
 - bp-like: Fixed removal of activity when you like and then unlike your own activity post
 - xtec-booking: Increased maximum number of events displayed in calendar view (Trello #1583)
+- table-of-contents-plus: Added plugin (Trello #1370)
 
 
 Changes 17.04.24
