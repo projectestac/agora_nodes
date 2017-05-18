@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - buddypress-group-email-subscription: Upgraded plugin from version 3.6.1 to 3.7.0
+- xtec-booking: Added cron to remove old bookings
 
 
 Changes 17.05.23
