@@ -13,6 +13,7 @@ include( plugin_dir_path( __FILE__ ) . 'includes/resources.php' );
 include( plugin_dir_path( __FILE__ ) . 'includes/booking.php' );
 include( plugin_dir_path( __FILE__ ) . 'includes/calendar.php' );
 include( plugin_dir_path( __FILE__ ) . 'includes/actions_calendar.php' );
+include( plugin_dir_path( __FILE__ ) . 'includes/cron.php' );
 
 // LOAD LANGUAGE FILE
 function xtec_booking_load_language_file(){
@@ -606,3 +607,6 @@ function xtec_booking_calendar_title($title){
 	return $title;
 }
 add_action('admin_title','xtec_booking_calendar_title');
+
+// CRON TO REMOVE OLD BOOKINGS
+add_action( 'cron_xtec_booking', 'check_old_bookings' );
