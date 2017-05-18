@@ -5,7 +5,7 @@ development home at https://github.com/projectestac/agora_nodes
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Upgraded WordPress to version 4.5.8 (Trello #1592)
+- Upgraded WordPress to version 4.5.9 (Trello #1592)
 - mu-common: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
 - mu-common: Customized order posts into homepage and categories (Trello #1579)
 - email-subscribers: Upgraded plugin from version 2.9.2 to 3.2.6 (Trello #1444)
