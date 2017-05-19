@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 17.05.23
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.9 (Trello #1592)
 - mu-common: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
