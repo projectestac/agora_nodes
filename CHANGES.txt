@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- buddypress-group-email-subscription: Upgraded plugin from version 3.6.1 to 3.7.0
+
+
 Changes 17.05.23
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.9 (Trello #1592)
