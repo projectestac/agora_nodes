@@ -76,3 +76,9 @@
 [submodule "wp-content/plugins/table-of-contents-plus"]
 	path = wp-content/plugins/table-of-contents-plus
 	url = https://github.com/projectestac/wordpress-table-of-contents-plus.git
+[submodule "wp-content/plugins/tabs-responsive"]
+	path = wp-content/plugins/tabs-responsive
+	url = https://github.com/projectestac/tabs-responsive.git
+[submodule "wp-content/plugins/h5p"]
+	path = wp-content/plugins/h5p
+	url = https://github.com/h5p/h5p-wordpress-plugin.git
