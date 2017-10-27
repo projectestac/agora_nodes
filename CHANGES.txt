@@ -8,6 +8,13 @@ Changes in progress
 - buddypress-group-email-subscription: Upgraded plugin from version 3.6.1 to 3.7.0
 - xtec-booking: Added cron to remove old bookings
 
+
+Changes 17.10.27
+---------------------------------------------------------------------------------------
+- Added H5P plugin
+- Added tabs responsive plugin
+
+
 Changes 17.06.23
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.7.5
