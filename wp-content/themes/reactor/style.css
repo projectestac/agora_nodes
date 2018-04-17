@@ -60,6 +60,20 @@ h2 {
     font-size: 1.5em;
 }
 
+/**
+ * 2017.04.17 @nacho: Hide the css class galleria-errors
+*/
+h3 {
+    font-size: 1.375em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+/*
+* end @nacho
+*/
+
 .button {
     box-shadow: 0 !important;
     background-color: white;
@@ -663,6 +677,16 @@ li.cat-item {
     list-style: none;
     font-size: 18px;
 }
+
+/**
+ * 2017.04.17 @nacho: Hide the css class galleria-errors
+*/
+galleria-errors {
+    display: none;
+}
+/*
+* end @nacho
+*/
 
 div.addr-centre {
     padding-left: 0.5em;
