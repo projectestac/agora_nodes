@@ -39,7 +39,12 @@ class XTEC_Widget extends WP_Widget {
         'portalcentre' => ['nom' => "Portal de centre", 'url' => 'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda', 'img' => 'portalcentre-icon.png', 'desc' => 'Enllaç al portal de centre'],
         'intraweb' => ['nom' => "Intraweb", 'url' => '', 'img' => 'intraweb-icon.png', 'desc' => 'Enllaç a la intraweb'],
         'epergam' => ['nom' => "ePergam", 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
-        'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
+    // XTEC ************ MODIFICAT - modified url value
+    // 2018.04.17 @nacho
+        'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'http://xtec.gencat.cat/ca/la-meva-xtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
+    //************ ORIGINAL
+    //'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
+    //************ FI
         'serveiseducatius' => ['nom' => "Serveis educatius", 'url' => '', 'img' => 'serveis-icon.png', 'desc' => 'Enllaç al vostre servei educatiu'],
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
