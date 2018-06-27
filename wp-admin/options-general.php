@@ -1,4 +1,4 @@
-<?php
+    <?php
 /**
  * General settings administration panel.
  *
@@ -117,7 +117,7 @@ if ( ! is_multisite() ) {
 </tr>
  -->
 <!-- //************ FI -->
-
+<?php } ?>
 <tr>
 <th scope="row"><label for="new_admin_email"><?php _e( 'Email Address' ); ?></label></th>
 <td><input name="new_admin_email" type="email" id="new_admin_email" aria-describedby="new-admin-email-description" value="<?php form_option( 'admin_email' ); ?>" class="regular-text ltr" />
