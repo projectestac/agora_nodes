@@ -10,6 +10,7 @@ CVS
 /.cache
 /.settings/
 /.project
+/.idea
 /.buildpath
 /.cache
 sftp-config*.json
