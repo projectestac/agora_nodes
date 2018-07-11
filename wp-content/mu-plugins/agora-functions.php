@@ -1512,6 +1512,12 @@ add_filter( 'bbp_get_reply_admin_links', 'xtec_bbpress_report_button', 10, 2 );
  * Create custom post type xtec_report
  */
 function xtec_create_post_type_report() {
+    global $current_user;
+    if (is_xtec_super_admin() || $current_user->roles[0] == 'administrator') {
+        $show_in_menu_value = 'xtec-bp-options';
+    } else {
+        $show_in_menu_value = false;
+    }
     register_post_type( 'xtec_report',
         array(
             'labels' => array(
@@ -1520,7 +1526,7 @@ function xtec_create_post_type_report() {
             ),
             'public' => false,
             'show_ui' => true,
-            'show_in_menu' => 'xtec-bp-options',
+            'show_in_menu' => $show_in_menu_value,
             'publicly_queryable' => false,
             'exclude_from_search' => true,
             'show_in_nav_menus' => false,
