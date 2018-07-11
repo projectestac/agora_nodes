@@ -356,9 +356,9 @@ add_action('edit_page_form', 'force_post_title');
  * @author Xavier Nieto
  */
 function bbp_get_forum_doc_permalink_filter($permalink) {
-	
+
 	$url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-	
+
 	if ( strpos($url,'forum') !== false || strpos($url,'docs') !== false ) {
 		return preg_replace('/^http:/i', 'https:', $permalink);
 	}else {
@@ -377,7 +377,7 @@ add_filter('bp_docs_get_doc_link', 'bbp_get_forum_doc_permalink_filter');
 
 /**
  * Disable Add_To_Any Module widgets if user is not xtecadmin
- * @author Nacho Abejaro 
+ * @author Nacho Abejaro
  */
 function unregister_AddToAny_widgets() {
 	if (!is_xtec_super_admin()) {
@@ -1488,7 +1488,7 @@ function xtec_bp_report_button() {
 
     echo '<a
           id = "xtec_bp_report-' . $id . '"
-          class="button item-button bp-secondary-action xtec-report" 
+          class="button item-button bp-secondary-action xtec-report"
           href=""
           title="' . __( 'Report to administrators', 'agora-functions' ) . '"
           ><span class="fa fa-flag-o"></span></a>';
@@ -1508,7 +1508,7 @@ function xtec_bbpress_report_button( $retval, $r ) {
 
     $r['links']['report'] = '<a
           id = "xtec_bbpress_report-' . $id . '"
-          class="bbp-report-link xtec-report" 
+          class="bbp-report-link xtec-report"
           href=""
           title="' . __( 'Report to administrators', 'agora-functions' ) . '"
           >' . __( 'Report this', 'agora-functions' ) . '</a>';
@@ -1525,6 +1525,7 @@ add_filter( 'bbp_get_reply_admin_links', 'xtec_bbpress_report_button', 10, 2 );
  * Create custom post type xtec_report
  */
 function xtec_create_post_type_report() {
+    // XTEC *** 603 - Add filter to show only for admin and xtecadmin - 2018.07.13 @adriagarrido
     global $current_user;
     if (is_xtec_super_admin() || $current_user->roles[0] == 'administrator') {
         $show_in_menu_value = 'xtec-bp-options';
