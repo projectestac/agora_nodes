@@ -37,10 +37,19 @@ function add_recursos( $wp_admin_bar ) {
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'alexandria',     
+		'id' => 'sinapsi',
+		'href' => 'http://sinapsi.xtec.cat',
+		'title' => 'Sinapsi',
+		'parent' => 'recursosXTEC'
+	);
+	
+	$wp_admin_bar->add_node( $args );
+
+	$args = array(
+		'id'     => 'alexandria',
 		'title'  => 'Alexandria',
-		'href' => 'http://alexandria.xtec.cat/', 
-		'parent' => 'recursosXTEC',          
+		'href' => 'http://alexandria.xtec.cat/',
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
