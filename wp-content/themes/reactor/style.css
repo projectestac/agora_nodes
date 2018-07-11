@@ -291,6 +291,12 @@ header.entry-header {
     position: relative;
 }
 
+/* // XTEC *** 610 - Aesthetic improvement in the presentation of the articles #418 - 2018.07.13 @adriagarrido */
+.entry-thumbnail,
+.entry-original-featured-image {
+    margin: 10px 0 15px 0;
+}
+
 .label.secondary {
     background-color: #4ad0d2;
     color: white;
@@ -446,10 +452,10 @@ li#wp-admin-bar-bp-login {
     filter: alpha(opacity=65);
 }
 
-.post.format-audio p, 
-.post.format-gallery p, 
-.post.format-image p, 
-.post.format-link p, 
+.post.format-audio p,
+.post.format-gallery p,
+.post.format-image p,
+.post.format-link p,
 .post.format-video p {
     line-height: 1.6em;
 }
@@ -926,7 +932,7 @@ Footer
 }
 
 #footer a {
-    text-decoration: underline;   
+    text-decoration: underline;
 }
 
 .widget_socialmedia_widget a {
@@ -943,9 +949,9 @@ Footer
     filter: alpha(opacity=40);
 }
 
-.site-footer input, 
+.site-footer input,
 .site-footer select option,
-.site-footer select.postform{ 
+.site-footer select.postform{
     color:black !important;
 }
 
@@ -1325,7 +1331,7 @@ div.dir-search {
 
 }
 
-.widget .simcal-current-month, 
+.widget .simcal-current-month,
 .widget .simcal-current-year{
     text-transform: capitalize;
     font-size: 0.7em;
@@ -1335,7 +1341,7 @@ div.dir-search {
     margin-top: -7px !important;
 }
 
-#sidebar-frontpage-2 .widget .simcal-current-month, 
+#sidebar-frontpage-2 .widget .simcal-current-month,
 #sidebar-frontpage-2 .widget .simcal-current-year{
     font-size: 0.6em !important;
 

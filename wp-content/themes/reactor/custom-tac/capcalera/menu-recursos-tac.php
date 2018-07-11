@@ -2,47 +2,48 @@
 function add_recursos( $wp_admin_bar ) {
 
 	$args = array(
-		'id'     => 'recursosXTEC',     
+		'id'     => 'recursosXTEC',
 		'title'  => '<img src="'.get_template_directory_uri().'/custom-tac/imatges/logo_xtec.png'."\">",
-		'parent' => false,          
+		'parent' => false,
 	);
 
 	$wp_admin_bar->add_node( $args );
-	
+
 	$args = array(
-		'id'     => 'xtec',     
+		'id'     => 'xtec',
 		'title' => 'XTEC',
-		'href'=>'http://www.xtec.cat/', 
-		'parent' => 'recursosXTEC',          
+		'href'=>'http://www.xtec.cat/',
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'edu365',     
+		'id'     => 'edu365',
 		'href' => 'http://www.edu365.cat/',
 		'title' => 'Edu365',
-		'parent' => 'recursosXTEC',         
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'edu3',     
+		'id'     => 'edu3',
 		'href'=> 'http://www.edu3.cat/',
-		'title'  => 'Edu3', 
-		'parent' => 'recursosXTEC',          
+		'title'  => 'Edu3',
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
+	// XTEC ************ 601 - Add Sinapsi to the list of links XTEC (upper bar) #579 - 2018.07.13 @adriagarrido
 	$args = array(
 		'id' => 'sinapsi',
 		'href' => 'http://sinapsi.xtec.cat',
 		'title' => 'Sinapsi',
 		'parent' => 'recursosXTEC'
 	);
-	
+
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
@@ -55,64 +56,64 @@ function add_recursos( $wp_admin_bar ) {
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'xarxadocent',     
-		'title'  => 'Xarxa Docent', 
+		'id'     => 'xarxadocent',
+		'title'  => 'Xarxa Docent',
 		'href'=>'http://educat.xtec.cat/',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'arc',     
-		'title'  => 'ARC', 
+		'id'     => 'arc',
+		'title'  => 'ARC',
 		'href' => 'http://apliense.xtec.cat/arc/',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'merli',     
-		'title'  => 'Merlí', 
+		'id'     => 'merli',
+		'title'  => 'Merlí',
 		'href'=>'http://aplitic.xtec.cat/merli/',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'jclic',     
-		'title'  => 'jClic', 
+		'id'     => 'jclic',
+		'title'  => 'jClic',
 		'href'	=> 'http://clic.xtec.cat/ca/index.htm',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'linkat',     
-		'title'  => 'Linkat', 
+		'id'     => 'linkat',
+		'title'  => 'Linkat',
 		'href' => 'http://linkat.xtec.cat/portal/index.php',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
 
 	$args = array(
-		'id'     => 'odissea',     
-		'title'  => 'Odissea', 
+		'id'     => 'odissea',
+		'title'  => 'Odissea',
 		'href' => 'http://odissea.xtec.cat/',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
-	
+
 	$args = array(
-		'id'     => 'agora',     
-		'title'  => 'Àgora', 
+		'id'     => 'agora',
+		'title'  => 'Àgora',
 		'href' => 'http://agora.xtec.cat/',
-		'parent' => 'recursosXTEC',          
+		'parent' => 'recursosXTEC',
 	);
 
 	$wp_admin_bar->add_node( $args );
