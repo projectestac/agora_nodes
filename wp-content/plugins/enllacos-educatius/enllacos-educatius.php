@@ -37,7 +37,7 @@ class XTEC_Widget extends WP_Widget {
         'internet-segura' => ['nom' => "Internet Segura", 'url' => 'http://www.xtec.cat/web/recursos/tecinformacio/internet_segura', 'img' => 'internet-segura-icon.png', 'desc' => 'Recursos per utilitzar Internet de manera segura'],
         'moodle' => array('nom' => "MOODLE", 'url' => '', 'img' => 'moodle-icon.png', 'desc' => 'Enllaç al moodle del centre'),
         'portalcentre' => ['nom' => "Portal de centre", 'url' => 'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda', 'img' => 'portalcentre-icon.png', 'desc' => 'Enllaç al portal de centre'],
-        // 'intraweb' => ['nom' => "Intraweb", 'url' => '', 'img' => 'intraweb-icon.png', 'desc' => 'Enllaç a la intraweb'],
+        // XTEC *** 595 - Delete Intraweb - 2018.07.13 @adriagarrido
         'epergam' => ['nom' => "ePergam", 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
     // XTEC ************ MODIFICAT - modified url value
     // 2018.04.17 @nacho
@@ -45,6 +45,7 @@ class XTEC_Widget extends WP_Widget {
     //************ ORIGINAL
     //'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
     //************ FI
+        // XTEC *** 595 - Added esfera, evalisa, ioc and sinapsi - 2018.07.13 @adriagarrido
         'esfera' => ['nom' => "Esfer@", 'url' => 'https://bfgh.aplicacions.ensenyament.gencat.cat/bfgh/', 'img' => 'esfera-icon.png', 'desc' => "Enllaç al portal Esfer@"],
         'evalisa' => ['nom' => "eValisa", 'url' => 'https://idpeacat.gencat.cat/group/1/valisa', 'img' => 'evalisa-icon.png', 'desc' => "Enllaç al portal eValisa"],
         'ioc' => ['nom' => "Institut Obert de Catalunya", 'url' => 'http://ioc.xtec.cat/', 'img' => 'ioc-icon.png', 'desc' => "Enllaç al portal de l'Institut Obert de Catalunya"],
@@ -52,10 +53,11 @@ class XTEC_Widget extends WP_Widget {
         'serveiseducatius' => ['nom' => "Serveis educatius", 'url' => '', 'img' => 'serveis-icon.png', 'desc' => 'Enllaç al vostre servei educatiu'],
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
-    
+
+    // XTEC *** 595 - Delete Intraweb and added esfera, evalisa, ioc and sinapsi - 2018.07.13 @adriagarrido
     public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'xarxa-docent', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
-        'internet-segura', 'portalcentre',/* 'intraweb',*/ 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
+        'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
 
     // Create widget
     public function __construct() {
@@ -66,9 +68,9 @@ class XTEC_Widget extends WP_Widget {
         );
         $this->recursos['moodle']['url'] = get_home_url() . "/moodle";
         $this->recursos['ampa']['url'] = get_home_url() . "/ampa";
-        // $this->recursos['intraweb']['url'] = get_home_url() . "/intranet";
+        // XTEC *** 595 - Delete Intraweb - 2018.07.13 @adriagarrido
         $this->recursos['epergam']['url'] = "https://aplicacions.ensenyament.gencat.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
-        
+
     }
 
 
@@ -127,17 +129,17 @@ class XTEC_Widget extends WP_Widget {
         $this->recursos["classroom"]["url"] = isset($instance['classroom_url']) ? $instance['classroom_url'] : "https://classroom.google.com/";
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Títol:</label> 
+            <label for="<?php echo $this->get_field_id('title'); ?>">Títol:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
-        <label>Tria enllaços:</label><br> 
+        <label>Tria enllaços:</label><br>
         <?php foreach ($this->recursos as $idRecurs => $nomRecurs) { ?>
             <p>
-                <input class="checkbox" type="checkbox" <?php checked($instance[$idRecurs], 'on'); ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>" /> 
+                <input class="checkbox" type="checkbox" <?php checked($instance[$idRecurs], 'on'); ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>" />
                 <label for="<?php echo $this->get_field_id($idRecurs); ?>"><?php echo "<strong>" . $nomRecurs['nom'] . "</strong> (" . $nomRecurs['desc'] . ") <a target='_blank' href=\"" . esc_url($nomRecurs['url']) . "\">>></a>"; ?><br>
             <?php if (!in_array($idRecurs, $this->recursosXtec)) { ?>
                         Adreça web:
-                        <input class="widefat" id="<?php echo $this->get_field_id($idRecurs); ?>_url" name="<?php echo $this->get_field_name($idRecurs . "_url"); ?>" type="text" value="<?php echo esc_attr($nomRecurs['url']); ?>">  
+                        <input class="widefat" id="<?php echo $this->get_field_id($idRecurs); ?>_url" name="<?php echo $this->get_field_name($idRecurs . "_url"); ?>" type="text" value="<?php echo esc_attr($nomRecurs['url']); ?>">
                     <?php } ?>
                 </label>
             </p>
