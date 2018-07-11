@@ -291,6 +291,12 @@ header.entry-header {
     position: relative;
 }
 
+.entry-thumbnail,
+.slideshow_container,
+.entry-original-featured-image {
+    margin: 10px 0 15px 0 !important;
+}
+
 .label.secondary {
     background-color: #4ad0d2;
     color: white;
