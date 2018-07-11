@@ -37,7 +37,7 @@ class XTEC_Widget extends WP_Widget {
         'internet-segura' => ['nom' => "Internet Segura", 'url' => 'http://www.xtec.cat/web/recursos/tecinformacio/internet_segura', 'img' => 'internet-segura-icon.png', 'desc' => 'Recursos per utilitzar Internet de manera segura'],
         'moodle' => array('nom' => "MOODLE", 'url' => '', 'img' => 'moodle-icon.png', 'desc' => 'Enllaç al moodle del centre'),
         'portalcentre' => ['nom' => "Portal de centre", 'url' => 'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda', 'img' => 'portalcentre-icon.png', 'desc' => 'Enllaç al portal de centre'],
-        'intraweb' => ['nom' => "Intraweb", 'url' => '', 'img' => 'intraweb-icon.png', 'desc' => 'Enllaç a la intraweb'],
+        // 'intraweb' => ['nom' => "Intraweb", 'url' => '', 'img' => 'intraweb-icon.png', 'desc' => 'Enllaç a la intraweb'],
         'epergam' => ['nom' => "ePergam", 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
     // XTEC ************ MODIFICAT - modified url value
     // 2018.04.17 @nacho
@@ -45,13 +45,17 @@ class XTEC_Widget extends WP_Widget {
     //************ ORIGINAL
     //'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
     //************ FI
+        'esfera' => ['nom' => "Esfer@", 'url' => 'https://bfgh.aplicacions.ensenyament.gencat.cat/bfgh/', 'img' => 'esfera-icon.png', 'desc' => "Enllaç al portal Esfer@"],
+        'evalisa' => ['nom' => "eValisa", 'url' => 'https://idpeacat.gencat.cat/group/1/valisa', 'img' => 'evalisa-icon.png', 'desc' => "Enllaç al portal eValisa"],
+        'ioc' => ['nom' => "Institut Obert de Catalunya", 'url' => 'http://ioc.xtec.cat/', 'img' => 'ioc-icon.png', 'desc' => "Enllaç al portal de l'Institut Obert de Catalunya"],
+        'sinapsi' => ['nom' => "Sinapsi", 'url' => 'http://sinapsi.xtec.cat', 'img' => 'sinapsi-icon.png', 'desc' => "Enllaç al portal Sinapsi"],
         'serveiseducatius' => ['nom' => "Serveis educatius", 'url' => '', 'img' => 'serveis-icon.png', 'desc' => 'Enllaç al vostre servei educatiu'],
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
     
     public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'xarxa-docent', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
-        'internet-segura', 'portalcentre', 'intraweb', 'epergam', 'lamevaxtec'];
+        'internet-segura', 'portalcentre',/* 'intraweb',*/ 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
 
     // Create widget
     public function __construct() {
@@ -62,7 +66,7 @@ class XTEC_Widget extends WP_Widget {
         );
         $this->recursos['moodle']['url'] = get_home_url() . "/moodle";
         $this->recursos['ampa']['url'] = get_home_url() . "/ampa";
-        $this->recursos['intraweb']['url'] = get_home_url() . "/intranet";
+        // $this->recursos['intraweb']['url'] = get_home_url() . "/intranet";
         $this->recursos['epergam']['url'] = "https://aplicacions.ensenyament.gencat.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
         
     }
