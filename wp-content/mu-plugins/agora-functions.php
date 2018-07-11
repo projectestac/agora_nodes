@@ -1407,6 +1407,19 @@ function remove_nav_menu_metaboxes_nodes( $metaboxes ) {
 add_action( 'admin_head-nav-menus.php', 'remove_nav_menu_metaboxes_nodes', 10, 1 );
 
 /**
+ * Show metaboxes in $visible_metaboxes as default.
+ * @author adriagarrido
+ */
+function default_meta_box() {
+    $current_metaboxes = get_user_option( 'metaboxhidden_nav-menus' );
+    $visible_metaboxes = array( 'add-post-type-page', 'add-post-type-post', 'add-custom-links', 'add-category', 'add-post-type-bp_doc' );
+    $result = array_diff($current_metaboxes, $visible_metaboxes);
+    $user = wp_get_current_user();
+	update_user_option( $user->ID, 'metaboxhidden_nav-menus', $result, true );
+}
+add_action( 'admin_head-nav-menus.php', 'default_meta_box' );
+
+/**
  * In themes list (wp-admin/themes.php), show only the theme already in use in that site
  *
  * @param $prepared_themes array
