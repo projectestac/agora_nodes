@@ -1407,6 +1407,19 @@ function remove_nav_menu_metaboxes_nodes( $metaboxes ) {
 add_action( 'admin_head-nav-menus.php', 'remove_nav_menu_metaboxes_nodes', 10, 1 );
 
 /**
+ * Show metaboxes in $visible_metaboxes as default.
+ * @author adriagarrido
+ */
+function default_meta_box() {
+    $current_metaboxes = get_user_option( 'metaboxhidden_nav-menus' );
+    $visible_metaboxes = array( 'add-post-type-page', 'add-post-type-post', 'add-custom-links', 'add-category', 'add-post-type-bp_doc' );
+    $result = array_diff($current_metaboxes, $visible_metaboxes);
+    $user = wp_get_current_user();
+	update_user_option( $user->ID, 'metaboxhidden_nav-menus', $result, true );
+}
+add_action( 'admin_head-nav-menus.php', 'default_meta_box' );
+
+/**
  * In themes list (wp-admin/themes.php), show only the theme already in use in that site
  *
  * @param $prepared_themes array
@@ -1512,6 +1525,12 @@ add_filter( 'bbp_get_reply_admin_links', 'xtec_bbpress_report_button', 10, 2 );
  * Create custom post type xtec_report
  */
 function xtec_create_post_type_report() {
+    global $current_user;
+    if (is_xtec_super_admin() || $current_user->roles[0] == 'administrator') {
+        $show_in_menu_value = 'xtec-bp-options';
+    } else {
+        $show_in_menu_value = false;
+    }
     register_post_type( 'xtec_report',
         array(
             'labels' => array(
@@ -1520,7 +1539,7 @@ function xtec_create_post_type_report() {
             ),
             'public' => false,
             'show_ui' => true,
-            'show_in_menu' => 'xtec-bp-options',
+            'show_in_menu' => $show_in_menu_value,
             'publicly_queryable' => false,
             'exclude_from_search' => true,
             'show_in_nav_menus' => false,
