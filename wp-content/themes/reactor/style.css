@@ -291,6 +291,7 @@ header.entry-header {
     position: relative;
 }
 
+/* // XTEC *** 610 - Aesthetic improvement in the presentation of the articles #418 - 2018.07.13 @adriagarrido */
 .entry-thumbnail,
 .entry-original-featured-image {
     margin: 10px 0 15px 0;
