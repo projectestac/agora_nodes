@@ -350,32 +350,6 @@ add_action('edit_form_advanced', 'force_post_title');
 add_action('edit_page_form', 'force_post_title');
 
 /**
- * To avoid error uploading files from HTTP pages
- * @return string Create forums and docs URL always with HTTPS
- * @author Sara Arjona
- * @author Xavier Nieto
- */
-function bbp_get_forum_doc_permalink_filter($permalink) {
-
-	$url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-
-	if ( strpos($url,'forum') !== false || strpos($url,'docs') !== false ) {
-		return preg_replace('/^http:/i', 'https:', $permalink);
-	}else {
-		return preg_replace('/^https:/i', 'http:', $permalink);
-	}
-}
-
-add_filter('bbp_get_forum_permalink', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bbp_get_topic_permalink', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bbp_get_reply_permalink', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bbp_get_topic_stick_link', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bp_get_group_permalink', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bp_docs_get_doc_permalink', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bp_docs_get_tag_link_url', 'bbp_get_forum_doc_permalink_filter');
-add_filter('bp_docs_get_doc_link', 'bbp_get_forum_doc_permalink_filter');
-
-/**
  * Disable Add_To_Any Module widgets if user is not xtecadmin
  * @author Nacho Abejaro
  */
