@@ -370,24 +370,6 @@ function retrieve_password() {
 		return $key;
 	}
 
-	$message = __('Someone has requested a password reset for the following account:') . "\r\n\r\n";
-	$message .= network_home_url( '/' ) . "\r\n\r\n";
-	$message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
-	$message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
-	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
-
-// XTEC ************ MODIFICAT - In Nodes al e-mail are HTML, but this is plain text, so we need to
-//                               remove the less than and greater than characters in order to Gmail 
-//                               and others show the link to the user.
-// 2014.10.09 @aginard
-    
-    $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . "\r\n";
-
-//************ ORIGINAL
-/*
-	$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . ">\r\n";
-*/
-//************ FI
 	if ( is_multisite() ) {
 		$site_name = get_network()->site_name;
 	} else {
@@ -405,7 +387,8 @@ function retrieve_password() {
 	$message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
 	$message .= __( 'If this was a mistake, just ignore this email and nothing will happen.' ) . "\r\n\r\n";
 	$message .= __( 'To reset your password, visit the following address:' ) . "\r\n\r\n";
-	$message .= '<' . network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . ">\r\n";
+	// XTEC --- Modificat - Removed "< >" to solve problem with visualizations.
+	$message .= network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . "\r\n";
 
 	/* translators: Password reset email subject. %s: Site name */
 	$title = sprintf( __( '[%s] Password Reset' ), $site_name );
