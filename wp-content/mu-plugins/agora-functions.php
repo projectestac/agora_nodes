@@ -417,7 +417,7 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
             <input type="hidden" size="50" name="Cat_meta[image]" id="Cat_meta[image]" value="<?php echo esc_attr($cat_meta['image']); ?>" readonly>
             <!-- Only display current image if defined -->
             <div id="current_cat_image_layer" style="<?php echo $exists_current_cat_image?'display: block; visibility: visible;':'display: none; visibility: hidden;'; ?>">
-                <input type="image" id="current_cat_image" src="<?php echo $cat_meta['image'];?>" height=110 alt="actual image" border=0 >
+                <image id="current_cat_image" src="<?php echo $cat_meta['image'];?>" height=110 alt="actual image" border=0 >
                 <p class="description"><?php _e( 'Current header image', 'agora-functions' ); ?></p>
             </div>
             <br/>
