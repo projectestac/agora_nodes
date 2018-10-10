@@ -1,0 +1,1 @@
+../mu-plugins/functions-es_ES.mo
