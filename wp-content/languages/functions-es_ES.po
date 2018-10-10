@@ -1,0 +1,329 @@
+# Copyright (C) 2018 {package-name}
+# This file is distributed under the same license as the {package-name} package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://make.wordpress.org/polyglots/\n"
+"POT-Creation-Date: 2018-10-10 07:17:44+00:00\n"
+"PO-Revision-Date: 2018-07-18 17:08+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: common/lib.php:249
+msgid ">"
+msgstr ">"
+
+#: agora-functions.php:1601
+msgid "Activity report in social network"
+msgstr "Informe de actividad en la red social"
+
+#: common/lib.php:851
+msgid "Allow comments."
+msgstr "Permitir comentarios."
+
+#: agora-functions.php:868
+msgid "Allow to registry users direct post into home page"
+msgstr ""
+"Permitir a los usuarios de registro publicar directamente en la página de "
+"inicio"
+
+#: agora-functions.php:195
+msgid "Article not found"
+msgstr "Artículo no encontrado"
+
+#: agora-functions.php:399
+msgid "Articles by row"
+msgstr "Artículos por fila"
+
+#: agora-functions.php:402
+msgid "Articles to be displayed per row on category page (between 1 and 4)"
+msgstr ""
+"Artículos que se mostrarán por fila en la página de categoría (entre 1 y 4)"
+
+#: agora-functions.php:1066 agora-functions.php:1068
+msgid "Calendar manager"
+msgstr "Administrador de calendario"
+
+#: agora-functions.php:176
+msgid "Categories"
+msgstr "Categorías"
+
+#: agora-functions.php:183
+msgid "Comments"
+msgstr "Comentarios"
+
+#: agora-functions.php:527
+msgid "Compose"
+msgstr "Componer"
+
+#: agora-functions.php:1635
+msgid "Content"
+msgstr "Contenido"
+
+#: agora-functions.php:530
+msgid "Cron Mail"
+msgstr "Cron Mail"
+
+#: agora-functions.php:421
+msgid "Current header image"
+msgstr "Imagen del encabezado actual"
+
+#: common/lib.php:552
+msgctxt "Taxonomy Description"
+msgid "Description"
+msgstr "Descripción"
+
+#: agora-functions.php:1054
+msgid "Developed by: Felix Tejero"
+msgstr "Desarrollado por: Felix Tejero"
+
+#: agora-functions.php:1070
+msgid "Developed by: Pepi Garrote"
+msgstr "Desarrollado por: Pepi Garrote"
+
+#: common/lib.php:838
+msgid "Discussion"
+msgstr "Discusión"
+
+#: agora-functions.php:71
+msgid "Drafts"
+msgstr "Borradores"
+
+#: agora-functions.php:616
+msgid "Email subscribers"
+msgstr "Suscriptores de correo electrónico"
+
+#: agora-functions.php:1050 agora-functions.php:1052
+msgid "Exporter schedule"
+msgstr "Calendario de exportadores"
+
+#: agora-functions.php:1051
+msgid ""
+"From a Google Spreadsheet, this tool allows you to export to web format "
+"schedules for each group, teacher, subject or classroom. The generated code "
+"can easily insert to any page to Nodes and paste the code in the text tab."
+msgstr ""
+"Desde una hoja de cálculo de Google, esta herramienta le permite exportar a "
+"horarios de formato web para cada grupo, maestro, materia o aula. El código "
+"generado puede insertarse fácilmente en cualquier página en Nodos y pegar el "
+"código en la pestaña de texto."
+
+#: agora-functions.php:1067
+msgid ""
+"From a Google Spreadsheet, this tool allows you to upgrade the course "
+"calendars with one click. However, if you add new events to the calendar, "
+"joining the spreadsheet."
+msgstr ""
+"Desde una hoja de cálculo de Google, esta herramienta le permite actualizar "
+"los calendarios del curso con un solo clic. Sin embargo, si agrega eventos "
+"nuevos al calendario, únase a la hoja de cálculo."
+
+#: agora-functions.php:1614
+msgid "Go to the report admin"
+msgstr "Ir al administrador del informe"
+
+#: agora-functions.php:534
+msgid "Help & Info"
+msgstr "Ayuda e información"
+
+#: agora-functions.php:802
+msgid "Home page configuration"
+msgstr "Configuración de página de inicio"
+
+#: agora-functions.php:409
+msgid "Image"
+msgstr "Imagen"
+
+#: common/lib.php:171 common/lib.php:186
+msgid "Image files must be smaller than "
+msgstr "Los archivos de imagen deben ser más pequeños que "
+
+#: agora-functions.php:1069
+msgid "Link to calendar manager"
+msgstr "Enlace al administrador de calendario"
+
+#: agora-functions.php:1053
+msgid "Link to exporter schedule"
+msgstr "Enlace al cronograma del exportador"
+
+#: agora-functions.php:27
+msgid "My Articles"
+msgstr "Mis artículos"
+
+#: agora-functions.php:1011
+msgid ""
+"New members of this group, if they have Contributor role will be "
+"automatically promoted to the role teachers. This will have access to the "
+"reservations of spaces and equipment. This change does not affect users who "
+"already belong to the node, or those who have other roles."
+msgstr ""
+"Los nuevos miembros de este grupo, si tienen el rol de Colaborador, se "
+"promocionarán automáticamente al rol de docentes. Esto tendrá acceso a las "
+"reservas de espacios y equipos. Este cambio no afecta a los usuarios que ya "
+"pertenecen al nodo, o aquellos que tienen otros roles."
+
+#: common/lib.php:878 common/lib.php:980
+msgid "Newest first"
+msgstr "El más reciente primero"
+
+#: common/lib.php:245
+msgid "No item"
+msgstr "Sin objeto"
+
+#: agora-functions.php:1010
+msgid "Node that containing all user's with teacher's role"
+msgstr "Nodo que contiene todos los usuarios con el rol del profesor"
+
+#: agora-functions.php:529
+msgid "Notification"
+msgstr "Notificación"
+
+#: agora-functions.php:1596
+msgid "Notified to admins"
+msgstr "Notificado a los administradores"
+
+#: common/lib.php:879 common/lib.php:981
+msgid "Oldest first"
+msgstr "Los más viejos primero"
+
+#: agora-functions.php:591
+msgid "Options"
+msgstr "Opciones"
+
+#: agora-functions.php:1616
+msgid "P.S.: This is an automatic notification. Please do not reply"
+msgstr "PD: Esta es una notificación automática. Por favor, no responda"
+
+#: agora-functions.php:325
+msgid "Page name is required."
+msgstr "El nombre de la página es obligatorio."
+
+#: agora-functions.php:60
+msgid "Pending Review"
+msgstr "Revisión pendiente"
+
+#: common/lib.php:875
+msgid "Posts order"
+msgstr "Orden de los artiículos"
+
+#: common/lib.php:963
+msgid "Posts order into home page"
+msgstr "Ordenación de artícules en la página de inicio"
+
+#: agora-functions.php:817
+msgid "Posts to home page"
+msgstr "Publicar en la página de inicio"
+
+#: agora-functions.php:427
+msgid "Provide an image for the category"
+msgstr "Proporcione una imagen para la categoría"
+
+#: agora-functions.php:49
+msgid "Published"
+msgstr "Publicado"
+
+#: common/lib.php:171 common/lib.php:186
+msgid "Recommended width image:"
+msgstr "Ancho de imagen recomendado:"
+
+#: agora-functions.php:430
+msgid "Remove image"
+msgstr "Quita la imagen"
+
+#: agora-functions.php:1513
+msgid "Report"
+msgstr "Informe"
+
+#: agora-functions.php:1488
+msgid "Report this"
+msgstr "Reporta esto"
+
+#: agora-functions.php:1467 agora-functions.php:1487
+msgid "Report to administrators"
+msgstr "Informe a los administradores"
+
+#: agora-functions.php:1512
+msgid "Reports"
+msgstr "Informes"
+
+#: agora-functions.php:532
+msgid "Roles"
+msgstr "Roles"
+
+#: agora-functions.php:1581 agora-functions.php:1613
+msgid "See it in its context"
+msgstr "Véalo en su contexto"
+
+#: agora-functions.php:904 agora-functions.php:939 agora-functions.php:969
+#: agora-functions.php:1001
+msgid "Select name to teacher's node"
+msgstr "Seleccione el nombre al nodo del maestro"
+
+#: agora-functions.php:528
+msgid "Send Email"
+msgstr "Enviar correo electrónico"
+
+#: agora-functions.php:533
+msgid "Sent Mails"
+msgstr "Correo enviado"
+
+#: agora-functions.php:531
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: agora-functions.php:526
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+#: agora-functions.php:885
+msgid "Teacher"
+msgstr "Profesor"
+
+#: agora-functions.php:1020
+msgid "Teacher's group"
+msgstr "Grupo de profesores"
+
+#: common/lib.php:559
+msgid ""
+"The description is not prominent by default; however, some themes may show "
+"it."
+msgstr ""
+"La descripción no es prominente por defecto; sin embargo, algunos temas "
+"pueden mostrarla."
+
+#: agora-functions.php:324
+msgid "The page name you were trying to create is protected."
+msgstr "El nombre de la página que intentabas crear está protegido."
+
+#: agora-functions.php:306
+msgid "The page you were trying to delete is protected."
+msgstr "La página que intentabas eliminar está protegida."
+
+#: agora-functions.php:1603
+msgid ""
+"The user <strong>%1$s (%2$s)</strong> has reported the following content "
+"published by <strong>%3$s (%4$s)</strong>:"
+msgstr ""
+"El usuario <strong>%1$s (%2$s)</ strong> informó sobre el siguiente "
+"contenido publicado por <strong>%3$s (%4$s)</ strong>:"
+
+#: agora-functions.php:426
+msgid "Upload image"
+msgstr "Cargar imagen"
+
+#: agora-functions.php:383 common/lib.php:338 common/lib.php:356
+msgid "You do not have permission to do that."
+msgstr "No tienes permiso para hacer eso."
+
+#: agora-functions.php:272
+msgid "You have exceeded your disk quota limit"
+msgstr "Has excedido tu límite de cuota de disco"
+
+#: agora-functions.php:1577
+msgid "posted on"
+msgstr "publicado en"
