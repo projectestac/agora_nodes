@@ -1681,21 +1681,85 @@ add_filter('bulk_actions-edit-xtec_report','remove_xtec_report_bulk_actions');
  * @author Toni Ginard
  */
 
- /**
-  * Remove shortcodes from post content when there ins't excerpt.
-  * It's used to solve problem with the Tab responsive plugin.
-  *
-  * @param $post_excerpt
-  * @param $post
-  * @return string
-  * @author adriagarrido
-  */
- function strip_shortcode_from_excerpt( $post_excerpt, $post ) {
-     $excerpt = strip_shortcodes( $post->post_content );
-     if ($excerpt != '') {
-         return $excerpt;
-     } else {
-         return __("Clica a 'Llegeix més' per carregar el contingut de l'article.");
-     }
- }
- add_filter('get_the_excerpt', 'strip_shortcode_from_excerpt', 10, 2);
+/**
+ * Remove shortcodes from post content when there ins't excerpt.
+ * It's used to solve problem with the Tab responsive plugin.
+ *
+ * @param $post_excerpt
+ * @param $post
+ * @return string
+ * @author adriagarrido
+ */
+function strip_shortcode_from_excerpt( $post_excerpt, $post ) {
+    $excerpt = strip_shortcodes( $post->post_content );
+    if ($excerpt != '') {
+        return $excerpt;
+    } else {
+        return __("Clica a 'Llegeix més' per carregar el contingut de l'article.");
+    }
+}
+add_filter('get_the_excerpt', 'strip_shortcode_from_excerpt', 10, 2);
+
+/**
+ * Activate the user, join into group and login into his page instead
+ * of sending activation email.
+ *
+ * @param $array
+ * @return void
+ * @author adriagarrido
+ */
+function xtec_validate_user_to_bdpress( $array ) {
+    // Check email type
+    $email_type = $array->get( 'type' );
+    switch ( $email_type ) {
+        case 'core-user-registration':
+            // Get data from the email.
+            $tokens = $array->get_tokens();
+            session_start();
+            $_SESSION['invited_user'][$tokens['user.id']] = null;
+            session_write_close();
+            // Activate user
+            $user_id = bp_core_activate_signup( $tokens['key'] );
+            // Login the user to avoid login screen.
+            if ( $user_id != null ) {
+                $user = get_user_by( 'id', $user_id );
+                $username = $user->get( 'user_login' );
+                wp_set_current_user( $user_id, $username );
+                wp_set_auth_cookie( $user_id );
+                do_action( 'wp_login', $username );
+                // redirect to group page
+                session_start();
+                $slug = $_SESSION['invited_user'][$user_id];
+                session_write_close();
+                if ( $slug != null ) {
+                    session_start();
+                    unset( $_SESSION['invited_user'][$user_id] );
+                    session_write_close();
+                    wp_redirect( get_home_url() . "/nodes/$slug" );
+                } else {
+                    // or to user page
+                    wp_redirect( get_home_url() . "/membres/$username" );
+                }
+                exit;
+            }
+            break;
+        case 'groups-invitation':
+            // Check if this email is from an invited user.
+            $to = $array->get( 'to' );
+            $user_id = $to[0]->get_user()->get( 'id' );
+            session_start();
+            $invited_user = $_SESSION['invited_user'];
+            session_write_close();
+            if ( array_key_exists( $user_id, $invited_user ) ) {
+                $tokens = $array->get( 'tokens' );
+                $group = $tokens['group'];
+                groups_join_group( $group->id, $user_id );
+                BP_Notifications_Notification::delete( array( 'user_id' => $user_id, 'component_action' => 'group_invite' ) );
+                session_start();
+                $_SESSION['invited_user'][$user_id] = $group->slug;
+                session_write_close();
+            }
+            break;
+    }
+}
+add_action( 'bp_send_email', 'xtec_validate_user_to_bdpress' );
