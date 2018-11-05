@@ -1682,6 +1682,25 @@ add_filter('bulk_actions-edit-xtec_report','remove_xtec_report_bulk_actions');
  */
 
 /**
+ * Replace shortcode 'bpfb_images' for img tag into the notifications emails.
+ * @param $args
+ * @param $email_type
+ * @return array
+ * @author adriagarrido
+ */
+function xtec_send_email_args($args, $email_type) {
+    $url = wp_upload_dir();
+    $args['content'] = str_replace(
+            '[bpfb_images]',
+            '<img src="'.substr($url['url'], 0, -7).'bpfb/',
+            $args['content']
+    );
+    $args['content'] = str_replace('[/bpfb_images]', '">', $args['content']);
+    return $args;
+}
+add_filter('ass_send_email_args', 'xtec_send_email_args', 10, 2);
+
+/**
  * Activate the user, join into group and login into his page instead
  * of sending activation email.
  *
