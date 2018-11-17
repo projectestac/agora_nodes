@@ -7,11 +7,20 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - xtec-booking: Added cron to remove old bookings
 
+Changes 18.11.05
+---------------------------------------------------------------------------------------
+- Upgrade H5P
+- Fix the mail format of Buddypress
+- Show url to restart password
+- Change type button to image to show images for categories
+- Upgrade translation binaries for version 4.9.5
+- Non-operating external invitation process
+
+
 Changes 18.08.13
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.9.5
 - Remove bbp_get_forum_doc_permalink_filter funtion because the only accepted protocol is https
-
 - Update core translation binaries for 4.9.5
 - Aesthetic improvement in the presentation of the articles #610
 - Include "Documents" to the constructor of menus #596
@@ -40,10 +49,21 @@ Changes 18.08.13
 - author-category - 0.8
 - Core languages
 
+
+Changes 18.04.20
+---------------------------------------------------------------------------------------
+- Update blogger-importer and google-analyticator
+- Fixed css styles and url links
+- Updated buddypress-group-email-subscription
+- Updated slideshow-jquery-image-gallery
+- Updated wordpress-social-login
+
+
 Changes 17.10.27
 ---------------------------------------------------------------------------------------
 - Added H5P plugin
 - Added tabs responsive plugin
+- Updated translation
 
 
 Changes 17.06.23
