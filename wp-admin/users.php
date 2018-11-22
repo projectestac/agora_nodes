@@ -201,7 +201,7 @@ switch ( $wp_list_table->current_action() ) {
                         // 2014.09.03 @aginard
                         // 2015.07.31 @nacho
                         // 2019.03.15 @svalld2e2
-                        if (!is_xtec_super_admin()) {
+                        if ($id == get_xtecadmin_id()) {
                             wp_die(__('You do not have permission to do that.'));
                         }
                         //************ FI
