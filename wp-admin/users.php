@@ -183,10 +183,11 @@ case 'dodelete':
         // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
         // 2014.09.03 @aginard
 		// 2015.07.31 @nacho
+	//XTEC *** Change condition to provide acces to admin users - 2018.11.29 @adriagarrido
         if ($id == get_xtecadmin_id()) {
             wp_die(__('You do not have permission to do that.'));
         }
-		//************ FI
+	//************ FI
 
         if ( ! current_user_can( 'delete_user', $id ) )
 			wp_die(__( 'You can&#8217;t delete that user.' ) );
