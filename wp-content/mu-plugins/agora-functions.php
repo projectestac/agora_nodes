@@ -1763,3 +1763,24 @@ function xtec_validate_user_to_bdpress( $array ) {
     }
 }
 add_action( 'bp_send_email', 'xtec_validate_user_to_bdpress' );
+
+/**
+  * Remove shortcodes from post content when there ins't excerpt.
+  * It's used to solve problem with the Tab responsive plugin.
+  *
+  * @param $post_excerpt
+  * @param $post
+  * @return string
+  * @author adriagarrido
+  */
+ function strip_shortcode_from_excerpt( $post_excerpt, $post ) {
+     $excerpt = strip_shortcodes( $post->post_content );
+     if ($excerpt != '') {
+         return $excerpt;
+     } else {
+         return __("Clica a 'Llegeix més' per carregar el contingut de l'article.");
+     }
+ }
+ add_filter('get_the_excerpt', 'strip_shortcode_from_excerpt', 10, 2);
+
+ 
