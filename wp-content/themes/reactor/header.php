@@ -12,6 +12,8 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 <head>
+    <link rel="manifest" crossorigin="use-credentials" href="/manifest.json" />
+    <script src="/app.js"></script>
 
     <!-- Add common styles to all themes -->
     <?php include get_theme_root()."/reactor/custom-tac/styles/styles.php"; ?>
@@ -32,17 +34,17 @@
     <?php reactor_body_inside(); ?>
     <div id="page" class="hfeed site">
         <?php reactor_header_before(); ?>
-    
+
         <header id="header" class="site-header" role="banner">
             <div class="row">
                 <div class="<?php reactor_columns( 12 ); ?>">
-                    
+
                     <?php reactor_header_inside(); ?>
-                    
+
                 </div><!-- .columns -->
             </div><!-- .row -->
         </header><!-- #header -->
-        
+
         <?php reactor_header_after(); ?>
-        
+
         <div id="main" class="wrapper">
