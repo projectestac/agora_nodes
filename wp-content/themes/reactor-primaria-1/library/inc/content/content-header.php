@@ -56,7 +56,7 @@ function show_header_icon($options, $icon_number) {
     $title = $options['title_icon' . $icon_number];
     $icon = $options['icon' . $icon_number];
 
-    echo '<div class="topicons small-4 large-4 columns">';
+    echo '<div class="topicons small-3 large-4 columns">';
     echo '<button id="icon-' . $icon_number . '" title="' . $title . '" onclick="window.open(\'' . $link . '\', \'' . $target . '\')" class="dashicons dashicons-' . $icon . '" ' . $target . '>';
     echo '<span style="font-size: ' . $font_size . ';" class="text_icon">' . $title . '</span></button></div>';
 }
@@ -193,7 +193,7 @@ function reactor_do_title_logo()
     <!-- Graella d'icones -->
     <div id="box-grid" class="box-grid large-2 small-12 columns">
         <div class="box-content-grid row icon-box">
-            <div class="topicons large-4 small-4 columns show-for-small">
+            <div class="topicons large-4 small-3 columns show-for-small">
                 <?php
 
                 // Get type contact by modify behavior
@@ -248,41 +248,7 @@ function reactor_do_title_logo()
                 </button>
             </div>
 
-            <div class="topicons large-4 small-4 columns show-for-small">
-                <?php
-                // Get if GoogleMaps is empty or not by modify behavior
-                $emptyMaps = reactor_option('googleMaps');
-                if ( ! empty($emptyMaps) ) {
-                    if ( strpos(reactor_option('googleMaps'),$currentDomain) !== false ) {
-                        ?>
-                        <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>" class="dashicons dashicons-location-alt">
-                        <?php
-                    } elseif ( strpos(reactor_option('googleMaps'),'http') === false ) {
-                        if ( strpos(reactor_option('googleMaps'),'.') !== false ) {
-                            ?>
-                            <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo "https://" . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
-                            <?php
-                        } else {
-                            ?>
-                            <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo $currentDomain . reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
-                            <?php
-                        }
-                    } else {
-                        ?>
-                        <button id="icon-maps" title="Mapa" onclick="window.open('<?php echo reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <button id="icon-maps" title="Mapa" class="dashicons dashicons-location-alt">
-                    <?php
-                }
-                ?>
-                <span class="text_icon">Mapa</span>
-                </button>
-            </div>
-
-            <div class="topicons large-4 small-4 columns show-for-small">
+            <div class="topicons large-4 small-3 columns show-for-small">
                 <button id="icon-phone" title="Trucar" onclick="window.location.href='tel:<?php echo reactor_option('telCentre'); ?>'" class="dashicons dashicons-phone">
                     <span class="text_icon"><?php echo reactor_option('telCentre'); ?></span>
                 </button>
@@ -293,7 +259,7 @@ function reactor_do_title_logo()
             show_header_icon($options, 12);
             ?>
 
-            <div class="topicons small-4 large-4 columns">
+            <div class="topicons small-3 large-4 columns">
                 <button id="icon-13" class="dashicons dashicons-search" title="CERCA" onclick="cerca_toggle();">
                     <span class="text_icon">cerca</span>
                 </button>
@@ -306,12 +272,51 @@ function reactor_do_title_logo()
                 </form>
             </div>
 
+            <div class="topicons large-4 small-3 columns show-for-small">
+                <?php
+                // Get if GoogleMaps is empty or not by modify behavior
+                $emptyMaps = reactor_option('googleMaps');
+                if (!empty($emptyMaps)) {
+                if (strpos(reactor_option('googleMaps'), $currentDomain) !== false) {
+                ?>
+                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>"
+                        class="dashicons dashicons-location-alt">
+                    <?php
+                    } else if (strpos(reactor_option('googleMaps'), 'http') === false) {
+                    if (strpos(reactor_option('googleMaps'), '.') !== false) {
+                    ?>
+                    <button id="icon-maps" title="Mapa"
+                            onclick="window.open('<?php echo "https://" . reactor_option('googleMaps'); ?>','_blank')"
+                            class="dashicons dashicons-location-alt">
+                        <?php
+                        } else {
+                        ?>
+                        <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo $currentDomain .
+                                reactor_option('googleMaps'); ?>','_blank')" class="dashicons dashicons-location-alt">
+                            <?php
+                            }
+                            } else {
+                            ?>
+                            <button id="icon-maps" title="Mapa"
+                                    onclick="window.open('<?php echo reactor_option('googleMaps'); ?>','_blank')"
+                                    class="dashicons dashicons-location-alt">
+                                <?php
+                                }
+                                } else {
+                                ?>
+                                <button id="icon-maps" title="Mapa" class="dashicons dashicons-location-alt">
+                                    <?php
+                                    }
+                                    ?>
+                                    <span class="text_icon">Mapa</span>
+                                </button>
+            </div>
             <?php
             show_header_icon($options, 21);
             show_header_icon($options, 22);
             ?>
 
-            <div class="topicons small-4 large-4 columns">
+            <div class="topicons small-3 large-4 columns">
                 <button id="icon-23" class="dashicons dashicons-menu"
                    title="MENU"
                    onclick="menu_toggle();">
