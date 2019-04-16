@@ -1,0 +1,1 @@
+wordpress-telegram-es_ES.mo
