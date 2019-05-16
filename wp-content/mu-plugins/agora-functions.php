@@ -520,39 +520,39 @@ function get_category_image (){
 /**
  * Get pages available from email-subscribers plugin
  * @author David Gras
+ * @nacho: Modified submenu items for version 4.0.9
  */
 function get_submenu_items_emails_subscribers() {
     return array(
-        0 => array('name' => __("Subscribers", 'email-subscribers'), 'link' => "admin.php?page=es-view-subscribers", "page" => "es-view-subscribers"),
-        1 => array('name' => __("Compose", 'email-subscribers'), 'link' => "admin.php?page=es-compose", "page" => "es-compose"),
-        2 => array('name' => __("Send Email", 'email-subscribers'), 'link' => "admin.php?page=es-sendemail", "page" => "es-sendemail"),
-        3 => array('name' => __("Notification", 'email-subscribers'), 'link' => "admin.php?page=es-notification", "page" => "es-notification"),
-        4 => array('name' => __("Cron Mail", 'email-subscribers'), 'link' => "admin.php?page=es-cron", "page" => "es-cron"),
-        5 => array('name' => __("Settings", 'email-subscribers'), 'link' => "admin.php?page=es-settings", "page" => "es-settings"),
-        6 => array('name' => __("Roles", 'email-subscribers'), 'link' => "admin.php?page=es-roles", "page" => "es-roles"),
-        7 => array('name' => __("Sent Mails", 'email-subscribers'), 'link' => "admin.php?page=es-sentmail", "page" => "es-sentmail"),
-        8 => array('name' => __("Help & Info", 'email-subscribers'), 'link' => "admin.php?page=es-general-information", "target" => "_blank", "page" => "es-general-information"),
+        0 => array('name' => __("Contactes", 'es_dashboard'), 'link' => "admin.php?page=es_subscribers", "page" => "es_subscribers"),
+        1 => array('name' => __("Formularis", 'es_dashboard'), 'link' => "admin.php?page=es_forms", "page" => "es_forms"),
+        2 => array('name' => __("Campanyes", 'es_dashboard'), 'link' => "admin.php?page=es_campaigns", "page" => "es_campaigns"),
+        3 => array('name' => __("Informes", 'es_dashboard'), 'link' => "admin.php?page=es_reports", "page" => "es_reports"),
+        4 => array('name' => __("Eines", 'es_dashboard'), 'link' => "admin.php?page=es_tools", "page" => "es_tools"),
+        5 => array('name' => __("Opcions", 'es_dashboard'), 'link' => "admin.php?page=es_settings", "page" => "es_settings"),
+        6 => array('name' => __("Help & Info", 'es_dashboard'), 'link' => "admin.php?page=es_general_information", "page" => "es_general_information"),
+        7 => array('name' => __("Pricing", 'es_dashboard'), 'link' => "admin.php?page=es_pricing", "page" => "es_pricing"),
     );
 }
 
 /**
  * Get pages available from email-subscribers plugin by user role
  * @author David Gras
+ * @nacho: Update for email subscribers version 4.0.9
  */
 function get_submenu_items_emails_subscribers_by_role()
 {
     $pages = get_submenu_items_emails_subscribers();
 
     if (!is_xtec_super_admin()) {
-
-        $pages_restricted = array(4, 5, 6);
-
+        $pages_restricted = array(6, 7);
         foreach ($pages_restricted as $pages_restricted) {
             if (isset($pages[$pages_restricted])) {
                 unset($pages[$pages_restricted]);
             }
         }
-
+        // Create link to redirect users to FAQS
+        $pages[8]['name'] = 'Ajuda';
         $pages[8]['link'] = 'http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1741&mode=entry&hook=2501';
     }
 
@@ -562,17 +562,16 @@ function get_submenu_items_emails_subscribers_by_role()
 /**
  * Removes pages available from email-subscribers plugin by user role
  * @author David Gras
+ * @nacho: Update for email subscribers version 4.0.9
  */
-function remove_submenu_items_emails_subscribers_by_role()
-{
+function remove_submenu_items_emails_subscribers_by_role() {
     if (!is_xtec_super_admin()) {
-
         $pages = get_submenu_items_emails_subscribers();
-        $pages_restricted = array(4, 5, 6);
+        $pages_restricted = array(7, 8);
 
         foreach ($pages_restricted as $pages_restricted) {
             if (isset($pages[$pages_restricted])) {
-                remove_submenu_page('email-subscribers', $pages[$pages_restricted]['page']);
+                remove_submenu_page('es_dashboard', $pages[$pages_restricted]['page']);
             }
         }
     }
@@ -581,20 +580,20 @@ function remove_submenu_items_emails_subscribers_by_role()
 /**
  * Render available pages from email-subscribers plugin by role
  * @author David Gras
+ * @nacho: Update for email subscribers version 4.0.9
  */
-function email_subscribers_options_page()
-{
+function email_subscribers_options_page() {
     $pagesEmailSubscribers = get_submenu_items_emails_subscribers_by_role();
     ?>
     <div class="wrap">
         <div style="width:150px; padding:20px; float:left;">
-            <h3><?php _e('Options', 'email-subscribers'); ?></h3>
+            <h3><?php _e('Options', 'es_dashboard'); ?></h3>
             <?php foreach ($pagesEmailSubscribers as $pageEmailSubscribers) : ?>
                 <p>
                     <a href="<?php echo $pageEmailSubscribers['link'] ?>"
                         <?php echo isset($pageEmailSubscribers['target']) ? "target=" . $pageEmailSubscribers['target'] : ''; ?>
                         >
-                        <?php echo __($pageEmailSubscribers['name'], 'email-subscribers'); ?>
+                        <?php echo __($pageEmailSubscribers['name'], 'es_dashboard'); ?>
                     </a>
                 </p>
             <?php endforeach; ?>
@@ -606,71 +605,18 @@ function email_subscribers_options_page()
 /**
  * Build email_subscribers custom menu
  * @author David Gras
+ * @nacho: Update for email subscribers version 4.0.9
  */
 add_action('admin_menu', 'rebuild_email_subscribers_menus', 900);
-function rebuild_email_subscribers_menus()
-{
-    global $submenu;
+function rebuild_email_subscribers_menus() {
+    global $submenu, $current_user;
 
-    if (isset($submenu['email-subscribers'])) {
-        add_options_page(__('Email subscribers', 'email-subscribers'), __('Email subscribers', 'email-subscribers'), 'manage_options', 'email-subscribers', 'email_subscribers_options_page', '', 10);
-        remove_menu_page('email-subscribers');
+    if (isset($submenu['es_dashboard'])) {
+        // Remove menu from page, use only Settings --> Email Subscribers
+        add_options_page(__('Email subscribers', 'es_dashboard'), __('Email subscribers', 'es_dashboard'), 'manage_options', 'es_dashboard', 'email_subscribers_options_page', '', 10);
         remove_submenu_items_emails_subscribers_by_role();
+        remove_menu_page( 'es_dashboard' );
     }
-}
-
-/**
- * Displays the option-general menu when you are browsing a page of  email-subscribers  plugin
- * @author David Gras
- */
-
-add_action('contextual_help', 'check_page_from_emails_subscribers_available_by_role', 999);
-function check_page_from_emails_subscribers_available_by_role()
-{
-
-    if (has_page_from_emails_subscribers_available_by_role()) {
-        echo "<script type='text/javascript'>\n";
-        echo "
-                jQuery(function() {
-                      var menuSeetings = jQuery('#menu-settings'),
-                      emaiSubscribers = menuSeetings.find( \"a[href='options-general.php?page=email-subscribers']\"),
-                      itemEmaiSubscribers = emaiSubscribers.parent('li');
-
-                      menuSeetings.removeAttr('class');
-                      menuSeetings.addClass('wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-settings menu-top-last menu-top-last menu-top-last');
-                      itemEmaiSubscribers.addClass('current');
-                });
-            ";
-        echo "</script>\n";
-    }
-}
-
-/**
- * Returns if there is a page from plugin emails subscribers and it is available by role
- * @author David Gras
- */
-function has_page_from_emails_subscribers_available_by_role()
-{
-    global $submenu;
-    $is_page_from_emails_subscribers = false;
-
-    if (isset($submenu['email-subscribers'])) {
-        $current_Screen = get_current_screen();
-        $pos = strpos($current_Screen ->id, '_page_');
-
-        if ($pos !== false) {
-            $page = substr($current_Screen ->id, $pos +  strlen('_page_'));
-            $pagesEmailSubscribers = get_submenu_items_emails_subscribers();
-
-            foreach ($pagesEmailSubscribers as $pageEmailSubscribers) {
-                if (strcmp($pageEmailSubscribers['page'], $page) === 0) {
-                    $is_page_from_emails_subscribers = true;
-                }
-            }
-        }
-    }
-
-    return $is_page_from_emails_subscribers;
 }
 
 /**
@@ -1782,5 +1728,3 @@ add_action( 'bp_send_email', 'xtec_validate_user_to_bdpress' );
      }
  }
  add_filter('get_the_excerpt', 'strip_shortcode_from_excerpt', 10, 2);
-
- 
