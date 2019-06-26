@@ -5,11 +5,10 @@
  * */
 
 const cacheName = 'Àgora cache';
-const startPage = window.location.href;
-const offlinePage = window.location.href;
+const startPage = self.location.href;
+const offlinePage = self.location.href;
 const filesToCache = [startPage, offlinePage];
 const neverCacheUrls = ['/wp-admin/(.*)'];
-
 // Install
 self.addEventListener('install', function(e) {
     e.waitUntil(
