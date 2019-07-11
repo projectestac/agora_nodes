@@ -110,16 +110,17 @@ class XTEC_Widget extends WP_Widget {
         echo $after_widget;
     }
 
-
     // Back-end form of the Widget
     public function form($instance) {
         // Check for values
+
         $title = isset($instance['title']) ? $instance['title'] : "Enllaços educatius";
-        $this->recursos["ampa"]["url"] = $instance['ampa_url']? $instance['ampa_url'] : get_home_url() . "/ampa";
-        $this->recursos["escola-verda"]["url"] = $instance['escola-verda_url']? $instance['escola-verda_url'] : "http://www.gencat.cat/mediamb/escolesverdes/";
-        $this->recursos["moodle"]["url"] = $instance['moodle_url']? $instance['moodle_url'] : get_home_url() . "/moodle";
-        $this->recursos["serveiseducatius"]["url"] = $instance['serveiseducatius_url'];
-        $this->recursos["classroom"]["url"] = isset($instance['classroom_url']) ? $instance['classroom_url'] : "https://classroom.google.com/";
+        $this->recursos["ampa"]["url"]              = isset($instance['ampa_url']) ? $instance['ampa_url'] : get_home_url() . "/ampa";
+        $this->recursos["escola-verda"]["url"]      = isset($instance['escola-verda_url']) ? $instance['escola-verda_url'] : "http://www.gencat.cat/mediamb/escolesverdes/";
+        $this->recursos["moodle"]["url"]            = isset($instance['moodle_url']) ? $instance['moodle_url'] : get_home_url() . "/moodle";
+        $this->recursos["serveiseducatius"]["url"]  = isset($instance['serveiseducatius_url']) ? $instance['serveiseducatius_url'] : "";
+        $this->recursos["classroom"]["url"]         = isset($instance['classroom_url']) ? $instance['classroom_url'] : "https://classroom.google.com/";
+
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">Títol:</label>
@@ -128,9 +129,10 @@ class XTEC_Widget extends WP_Widget {
         <label>Tria enllaços:</label><br>
         <?php foreach ($this->recursos as $idRecurs => $nomRecurs) { ?>
             <p>
-                <input class="checkbox" type="checkbox" <?php checked($instance[$idRecurs], 'on'); ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>" />
-                <label for="<?php echo $this->get_field_id($idRecurs); ?>"><?php echo "<strong>" . $nomRecurs['nom'] . "</strong> (" . $nomRecurs['desc'] . ") <a target='_blank' href=\"" . esc_url($nomRecurs['url']) . "\">>></a>"; ?><br>
-            <?php if (!in_array($idRecurs, $this->recursosXtec)) { ?>
+                <input class="checkbox" type="checkbox" <?php checked(isset($instance[$idRecurs]), 'on'); ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>" />
+                <label for="<?php echo $this->get_field_id($idRecurs); ?>"><?php echo "<strong>" . $nomRecurs['nom'] . "</strong> (" . $nomRecurs['desc'] . ") <a target='_blank' href=\"" . esc_url($nomRecurs['url']) . "\">>></a>"; ?>
+                    <br>
+                    <?php if (!in_array($idRecurs, $this->recursosXtec)) { ?>
                         Adreça web:
                         <input class="widefat" id="<?php echo $this->get_field_id($idRecurs); ?>_url" name="<?php echo $this->get_field_name($idRecurs . "_url"); ?>" type="text" value="<?php echo esc_attr($nomRecurs['url']); ?>">
                     <?php } ?>
@@ -139,7 +141,6 @@ class XTEC_Widget extends WP_Widget {
         <?php } ?>
         <?php
     }
-
 
     // Sanitize and return the safe form values
     public function update($new_instance, $old_instance) {
