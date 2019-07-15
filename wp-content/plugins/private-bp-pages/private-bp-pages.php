@@ -5,7 +5,15 @@ global $bp;
 //IMPORTANT: Do not alter the following line. 
 $bphelp_my_redirect_slug = get_option( 'bphelp-my-redirect-slug', 'register' );
 
-if ( bp_is_activity_component() || bp_is_groups_component() || bp_is_group_forum() || bbp_is_single_forum() || bbp_is_single_topic() || bp_is_forums_component() || bp_is_blogs_component() || bp_is_members_component() || bp_is_profile_component() ) {
+// XTEC ************ MODIFICAT - Removed deprecated function
+// 2019.07.16 @nacho
+if ( bp_is_activity_component() || bp_is_groups_component() || bbp_is_single_forum() || bbp_is_single_topic() || bp_is_forums_component() || bp_is_blogs_component() || bp_is_members_component() || bp_is_profile_component() ) {
+
+//************ ORIGINAL
+/*
+    if ( bp_is_activity_component() || bp_is_groups_component() || bp_is_group_forum() || bbp_is_single_forum() || bbp_is_single_topic() || bp_is_forums_component() || bp_is_blogs_component() || bp_is_members_component() || bp_is_profile_component() ) {
+*/
+//************ FI
 
 	if(!is_user_logged_in()) { 
 		bp_core_redirect( get_option('home') . '/' .  $bphelp_my_redirect_slug );
