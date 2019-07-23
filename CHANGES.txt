@@ -6,6 +6,9 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - xtec-booking: Added cron to remove old bookings
+- phpinfo: Fixed access restriction to superadmins
+- email-subscribers: Hidden technical information to users
+
 
 Changes 19.04.15
 ---------------------------------------------------------------------------------------
