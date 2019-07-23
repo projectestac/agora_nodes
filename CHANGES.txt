@@ -3,13 +3,13 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 19.07.24
 ---------------------------------------------------------------------------------------
 - xtec-booking: Added cron to remove old bookings
 - phpinfo: Fixed access restriction to superadmins
 - email-subscribers: Hidden technical information to users
 - xtec lib: Added action to replace http by https in reactor_options
-
+- Fixed service worker
 
 Changes 19.04.15
 ---------------------------------------------------------------------------------------
