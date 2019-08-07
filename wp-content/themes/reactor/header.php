@@ -12,8 +12,8 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 <head>
-    <link rel="manifest" crossorigin="use-credentials" href="manifest.php" />
-    <script src="app.js"></script>
+    <link rel="manifest" crossorigin="use-credentials" href="<?php echo get_home_url(); ?>/manifest.php" />
+    <script src="<?php echo get_home_url(); ?>/app.js"></script>
 
     <!-- Add common styles to all themes -->
     <?php include get_theme_root()."/reactor/custom-tac/styles/styles.php"; ?>
