@@ -158,6 +158,10 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 				</div>
 			</div>
 
+            <!-- @Nacho - Info to enable/disable menu-fields
+             - menu-fields are stored into database, table "wp_usermeta" and field "managenav-menuscolumnshidden"
+             - to configure any field modify wp_nav_menu_setup function in nav-menu.php file
+            -->
 			<div class="menu-item-settings wp-clearfix" id="menu-item-settings-<?php echo $item_id; ?>">
 				<?php if ( 'custom' == $item->type ) : ?>
 					<p class="field-url description description-wide">

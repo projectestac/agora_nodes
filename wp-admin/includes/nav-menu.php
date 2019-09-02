@@ -146,22 +146,41 @@ function wp_nav_menu_setup() {
 	// Register advanced menu items (columns)
 	add_filter( 'manage_nav-menus_columns', 'wp_nav_menu_manage_columns' );
 
-	// If first time editing, disable advanced items by default.
-	if ( false === get_user_option( 'managenav-menuscolumnshidden' ) ) {
-		$user = wp_get_current_user();
-		update_user_option(
-			$user->ID,
-			'managenav-menuscolumnshidden',
-			array(
-				0 => 'link-target',
-				1 => 'css-classes',
-				2 => 'xfn',
-				3 => 'description',
-				4 => 'title-attribute',
-			),
-			true
-		);
-	}
+    //XTEC ************ MODIFICAT - Configure menu items by default
+    //2019.09.02 @nacho
+    $user = wp_get_current_user();
+    update_user_option(
+        $user->ID,
+        'managenav-menuscolumnshidden',
+        array(
+            0 => 'css-classes',
+            1 => 'xfn',
+            2 => 'description',
+            3 => 'title-attribute',
+        ),
+        true
+    );
+
+    //************ ORIGINAL
+    /*
+    // If first time editing, disable advanced items by default.
+    if ( false === get_user_option( 'managenav-menuscolumnshidden' ) ) {
+        $user = wp_get_current_user();
+        update_user_option(
+            $user->ID,
+            'managenav-menuscolumnshidden',
+            array(
+                0 => 'link-target',
+                1 => 'css-classes',
+                2 => 'xfn',
+                3 => 'description',
+                4 => 'title-attribute',
+            ),
+            true
+        );
+    }
+    */
+    //************ FI
 }
 
 /**
