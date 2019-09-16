@@ -84,16 +84,16 @@
 	url = https://github.com/h5p/h5p-wordpress-plugin.git
 [submodule "wp-content/plugins/bbpress"]
 	path = wp-content/plugins/bbpress
-	url = git@github.com:projectestac/wordpress-bbpress.git
+	url = https://github.com/projectestac/wordpress-bbpress.git
 [submodule "wp-content/plugins/wordpress-telegram"]
 	path = wp-content/plugins/wordpress-telegram
-	url = git@github.com:projectestac/wordpress-telegram.git
+	url = https://github.com/projectestac/wordpress-telegram.git
 [submodule "wp-content/plugins/author-category"]
 	path = wp-content/plugins/author-category
-	url = git@github.com:projectestac/wordpress-author-category.git
+	url = https://github.com/projectestac/wordpress-author-category.git
 [submodule "wp-content/plugins/pods"]
 	path = wp-content/plugins/pods
-	url = git@github.com:projectestac/wordpress-pods.git
+	url = https://github.com/projectestac/wordpress-pods.git
 [submodule "wp-content/plugins/disable-gutenberg"]
 	path = wp-content/plugins/disable-gutenberg
-	url = git@github.com:projectestac/wordpress-disable-gutenberg.git
+	url = https://github.com/projectestac/wordpress-disable-gutenberg.git
