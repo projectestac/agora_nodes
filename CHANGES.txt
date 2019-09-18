@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - WordPress Social Login: Fixed login to WordPress via Moodle
+- TOC+: Fixed compatibility with WordPress 5.1
 
 
 Changes 19.08.29
