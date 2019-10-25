@@ -428,6 +428,18 @@ add_action('admin_menu', 'rebuild_bp_menus_step_1', 1); // Priority 1 is importa
 add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is important!
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
+/**
+ * Remove access to email_subscribers' menu if user role is not administrator or editor
+ * 
+ * @author Toni Ginard
+ */
+function hide_es_menu() {
+    if (!current_user_can('administrator') && !current_user_can('editor')) {
+        remove_menu_page('es_dashboard');
+    }
+}
+add_action('admin_menu', 'hide_es_menu');
+
 // Unregister bp-mail post type to disable functionality
 function unregister_bp_mail () {
 	unregister_post_type( 'bp-email' );
