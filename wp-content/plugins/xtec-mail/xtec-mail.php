@@ -399,6 +399,15 @@ if (!function_exists('wp_mail')) {
         $msg->set_to($to);
         $msg->set_cc($cc);
         $msg->set_bcc($bcc);
+
+        // Ensure the email subject starts with the blog name
+        $blogname = get_option('blogname');
+        if (!empty($blogname)) {
+            if (strpos($subject, '[' . $blogname . ']') !== 0) {
+                $subject = '[' . $blogname . '] ' . $subject;
+            }
+        }
+
         $msg->set_subject($subject);
         $msg->set_bodyContent(nl2br($message));
 
