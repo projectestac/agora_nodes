@@ -11,6 +11,7 @@ Changes in progress
 - xtec-mailer: Fixed compatibility with PHP 7.3
 - Code Snippets: Added plugin
 - xtec lib: Updated script to replace email subscribers fields
+- Grup-classe: Fixed support for new version of email subscribers
 
 
 Changes 19.09.25
