@@ -35,17 +35,10 @@ class XTEC_Widget extends WP_Widget {
         'saga' => ['nom' => "SAGA", 'url' => 'https://saga.xtec.cat/entrada', 'img' => 'saga-icon.png', 'desc' => 'Aplicatiu SAGA'],
         'familia-escola' => ['nom' => "Familia i escola", 'url' => 'http://www20.gencat.cat/portal/site/familiaescola/', 'img' => 'familiaescola-icon.png', 'desc' => 'Pàgina amb consells i recursos per les famílies'],
         'internet-segura' => ['nom' => "Internet Segura", 'url' => 'http://www.xtec.cat/web/recursos/tecinformacio/internet_segura', 'img' => 'internet-segura-icon.png', 'desc' => 'Recursos per utilitzar Internet de manera segura'],
-        'moodle' => array('nom' => "MOODLE", 'url' => '', 'img' => 'moodle-icon.png', 'desc' => 'Enllaç al moodle del centre'),
+        'moodle' => ['nom' => "MOODLE", 'url' => '', 'img' => 'moodle-icon.png', 'desc' => 'Enllaç al moodle del centre'],
         'portalcentre' => ['nom' => "Portal de centre", 'url' => 'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda', 'img' => 'portalcentre-icon.png', 'desc' => 'Enllaç al portal de centre'],
-        // XTEC *** 595 - Delete Intraweb - 2018.07.13 @adriagarrido
         'epergam' => ['nom' => "ePergam", 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
-    // XTEC ************ MODIFICAT - modified url value
-    // 2018.04.17 @nacho
         'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'http://xtec.gencat.cat/ca/la-meva-xtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
-    //************ ORIGINAL
-    //'lamevaxtec' => ['nom' => "La meva XTEC", 'url' => 'https://sites.google.com/a/xtec.cat/aplicacionsxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
-    //************ FI
-        // XTEC *** 595 - Added esfera, evalisa, ioc and sinapsi - 2018.07.13 @adriagarrido
         'esfera' => ['nom' => "Esfer@", 'url' => 'https://bfgh.aplicacions.ensenyament.gencat.cat/bfgh/', 'img' => 'esfera-icon.png', 'desc' => "Enllaç al portal Esfer@"],
         'evalisa' => ['nom' => "eValisa", 'url' => 'https://idpeacat.gencat.cat/group/1/valisa', 'img' => 'evalisa-icon.png', 'desc' => "Enllaç al portal eValisa"],
         'ioc' => ['nom' => "Institut Obert de Catalunya", 'url' => 'http://ioc.xtec.cat/', 'img' => 'ioc-icon.png', 'desc' => "Enllaç al portal de l'Institut Obert de Catalunya"],
@@ -54,21 +47,21 @@ class XTEC_Widget extends WP_Widget {
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
 
-    // XTEC *** 595 - Delete Intraweb and added esfera, evalisa, ioc and sinapsi - 2018.07.13 @adriagarrido
     public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'xarxa-docent', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
         'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
 
     // Create widget
     public function __construct() {
+
         parent::__construct(
                 'xtec_widget', // Base ID
                 'Enllaços Educatius', // Name
                 array('description' => 'Enllaços a portals, recursos i serveis de la Xarxa Telemàtica Educativa de Catalunya (XTEC)')
         );
+
         $this->recursos['moodle']['url'] = get_home_url() . "/moodle";
         $this->recursos['ampa']['url'] = get_home_url() . "/ampa";
-        // XTEC *** 595 - Delete Intraweb - 2018.07.13 @adriagarrido
         $this->recursos['epergam']['url'] = "https://aplicacions.ensenyament.gencat.cat/epergam/web/biblioteca.jsp?codi=" . SCHOOL_CODE;
 
     }
@@ -110,7 +103,7 @@ class XTEC_Widget extends WP_Widget {
         foreach ($this->recursos as $idRecurs => $nomRecurs) {
             $idRecurs = isset($instance[$idRecurs])?$instance[$idRecurs]:'';
             if (!empty($idRecurs)) {
-                echo "<a target='_blank' title=\"" . $nomRecurs['nom'] . "\" href=\"" . esc_url($nomRecurs['url']) . "\"><img class=\"iconedu\" src=\"" . get_template_directory_uri() . "/custom-tac/imatges/" . $nomRecurs['img'] . "\"></a>";
+                echo "<a target='_blank' title=\"" . $nomRecurs['nom'] . "\" href=\"" . esc_url($nomRecurs['url']) . "\"><img alt=\"Logotip de " . $nomRecurs['nom'] . "\" class=\"iconedu\" src=\"" . get_template_directory_uri() . "/custom-tac/imatges/" . $nomRecurs['img'] . "\"></a>";
             }
         }
         echo "</div>";
