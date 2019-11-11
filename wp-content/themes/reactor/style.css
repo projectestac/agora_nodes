@@ -154,7 +154,7 @@ iframe {
 .vcard span {
     font-size: 0.8em;
     line-height: 1.2em;
-    color: #777;
+    color: #555;
 }
 
 #tar-mapa,
@@ -414,7 +414,7 @@ li#wp-admin-bar-bp-login {
 
 .entry-date,
 .entry-author a {
-    color: #A9AAA8 !important;
+    color: #666 !important;
     margin-bottom: 0.8em;
     margin-right: 0.5em;
     display: inline-block;
@@ -447,9 +447,9 @@ li#wp-admin-bar-bp-login {
 
 .entry-footer {
     margin-top: 1em;
-    color: silver;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
+    color: black;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
 }
 
 .post.format-audio p,

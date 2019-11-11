@@ -51,10 +51,13 @@ if (!function_exists('reactor_tumblog_icon')) {
             default:
                 $icon .= '';
         }
-        $output = '<div class="entry-icon">';
-        $output .= '<a href="' . get_permalink(get_the_ID()) . '" title="' . $title . '" rel="bookmark">';
-        $output .= $icon;
-        $output .= '</a></div>';
+
+        if (!empty($icon)) {
+            $output = '<div class="entry-icon">';
+            $output .= '<a href="' . get_permalink(get_the_ID()) . '" title="' . $title . '" rel="bookmark">';
+            $output .= $icon;
+            $output .= '</a></div>';
+        }
 
         if (isset($args['echo'])) {
             echo apply_filters('reactor_tumblog_icon', $output);
