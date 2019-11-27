@@ -79,9 +79,6 @@
 [submodule "wp-content/plugins/tabs-responsive"]
 	path = wp-content/plugins/tabs-responsive
 	url = https://github.com/projectestac/tabs-responsive.git
-[submodule "wp-content/plugins/h5p"]
-	path = wp-content/plugins/h5p
-	url = https://github.com/h5p/h5p-wordpress-plugin.git
 [submodule "wp-content/plugins/bbpress"]
 	path = wp-content/plugins/bbpress
 	url = https://github.com/projectestac/wordpress-bbpress.git
@@ -100,3 +97,6 @@
 [submodule "wp-content/plugins/code-snippets"]
 	path = wp-content/plugins/code-snippets
 	url = https://github.com/projectestac/wordpress-code-snippets.git
+[submodule "wp-content/plugins/h5p"]
+	path = wp-content/plugins/h5p
+	url = https://github.com/projectestac/wordpress-h5p.git
