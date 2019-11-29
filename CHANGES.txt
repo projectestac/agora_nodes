@@ -3,7 +3,7 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
-Changes in progress
+Changes 19.12.04
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.1.3
 - H5P: Upgraded to version 1.15
