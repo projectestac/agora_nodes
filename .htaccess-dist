@@ -2,7 +2,13 @@ RewriteEngine On
 
 RewriteBase /agora/
 
-# rewrite any unknown directories and files
+# Block access to file xmlrpc.php
+<Files xmlrpc.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Rewrite any unknown directories and files
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -l
