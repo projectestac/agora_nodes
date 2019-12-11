@@ -31,7 +31,7 @@ class XTEC_Widget extends WP_Widget {
         'odissea' => ['nom' => "Odissea", 'url' => 'http://odissea.xtec.cat', 'img' => 'odissea-icon.png', 'desc' => 'Entorn virtual de formació per a docents'],
         'ampa' => ['nom' => "AMPA", 'url' => '', 'img' => 'ampa-icon.png', 'desc' => 'La associació de Pares d\'alumnes del centre'],
         'escola-verda' => ['nom' => "Escola verda", 'url' => 'http://mediambient.gencat.cat/ca/05_ambits_dactuacio/educacio_i_sostenibilitat/educacio_per_a_la_sostenibilitat/escoles_verdes', 'img' => 'escola-verda-icon.png', 'desc' => 'Escola verda'],
-        'atri' => ['nom' => "ATRI", 'url' => 'https://atri.gencat.cat', 'img' => 'atri-icon.png', 'desc' => 'Portal ATRI'],
+        'atri' => ['nom' => "ATRI", 'url' => 'https://atriportal.gencat.cat', 'img' => 'atri-icon.png', 'desc' => 'Portal ATRI'],
         'saga' => ['nom' => "SAGA", 'url' => 'https://saga.xtec.cat/entrada', 'img' => 'saga-icon.png', 'desc' => 'Aplicatiu SAGA'],
         'familia-escola' => ['nom' => "Familia i escola", 'url' => 'http://www20.gencat.cat/portal/site/familiaescola/', 'img' => 'familiaescola-icon.png', 'desc' => 'Pàgina amb consells i recursos per les famílies'],
         'internet-segura' => ['nom' => "Internet Segura", 'url' => 'http://www.xtec.cat/web/recursos/tecinformacio/internet_segura', 'img' => 'internet-segura-icon.png', 'desc' => 'Recursos per utilitzar Internet de manera segura'],
