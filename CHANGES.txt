@@ -8,6 +8,7 @@ Changes in progress
 - Upgraded WordPress to version 5.1.4
 - H5P: Upgraded to version 1.15
 - Blocked access to file xmlrpc.php
+- Enllacos-educatius: Fixed ATRI URL
 
 
 Changes 19.11.14
