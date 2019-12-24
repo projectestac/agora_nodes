@@ -400,12 +400,18 @@ if (!function_exists('wp_mail')) {
         $msg->set_cc($cc);
         $msg->set_bcc($bcc);
 
-        // Ensure the email subject starts with the blog name
-        $blogname = get_option('blogname');
-        if (!empty($blogname)) {
-            if (strpos($subject, '[' . $blogname . ']') !== 0) {
-                $subject = '[' . $blogname . '] ' . $subject;
-            }
+        // Ensure the email subject starts with the blogname
+        // Necessary check because the blogname may contain special characters (example l'Urgell)
+        $blogname = get_bloginfo('name');
+        $blogname   = html_entity_decode($blogname, ENT_QUOTES, "UTF-8");
+
+        $invalid_characters = array("[", "]");
+        $newsubject    = str_replace($invalid_characters, "", $subject);
+        $newsubject    = html_entity_decode($newsubject, ENT_QUOTES, "UTF-8");
+
+        $pos = strpos($newsubject, $blogname);
+        if ($pos === false) {
+            $subject = '[' . $blogname . '] ' .$newsubject;
         }
 
         $msg->set_subject($subject);
