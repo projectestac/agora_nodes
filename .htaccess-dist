@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteBase /agora/
+RewriteBase /
 
 # Block access to file xmlrpc.php
 <Files xmlrpc.php>
