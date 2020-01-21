@@ -401,7 +401,7 @@ if (!function_exists('wp_mail')) {
         $msg->set_bcc($bcc);
 
         // Ensure the email subject starts with the blog name
-        $blogname = get_option('blogname');
+        $blogname = html_entity_decode(get_option('blogname'), ENT_QUOTES, "UTF-8");
         if (!empty($blogname)) {
             if (strpos($subject, '[' . $blogname . ']') !== 0) {
                 $subject = '[' . $blogname . '] ' . $subject;
