@@ -9,6 +9,7 @@ Changes in progress
 - H5P: Upgraded to version 1.15
 - Blocked access to file xmlrpc.php
 - Enllacos-educatius: Fixed ATRI URL
+- mu-plugins: Fixed PHP warnings
 
 
 Changes 19.11.14
