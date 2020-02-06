@@ -64,7 +64,7 @@ if ( !empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERV
 
       <?php else :
 	       comment_form( array(
-				'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+				'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>' ), get_edit_user_link(), $user_identity, wp_logout_url() ) . '</p>',
                 'fields' => array(
                     'author' => '<div class="row"><p class="comment-form-author six columns"><label for="author">' . __('Name ', 'reactor') . ( $req ? __('( required )', 'reactor') : '') . '</label> '.'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . __('Your Name*', 'reactor') . '" tabindex="1" ' . ( $req ? __( "aria-required='true'" ) : '') . ' /></p>',
 				

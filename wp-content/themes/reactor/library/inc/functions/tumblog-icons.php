@@ -59,10 +59,14 @@ if (!function_exists('reactor_tumblog_icon')) {
             $output .= '</a></div>';
         }
 
-        if (isset($args['echo'])) {
-            echo apply_filters('reactor_tumblog_icon', $output);
-        } else {
-            return apply_filters('reactor_tumblog_icon', $output);
+        if (isset($output)) {
+            if (isset($args['echo'])) {
+                echo apply_filters('reactor_tumblog_icon', $output);
+            } else {
+                return apply_filters('reactor_tumblog_icon', $output);
+            }
         }
+
+        return '';
     }
 }
