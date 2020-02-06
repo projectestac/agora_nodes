@@ -1501,7 +1501,7 @@ add_filter( 'bbp_get_reply_admin_links', 'xtec_bbpress_report_button', 10, 2 );
 function xtec_create_post_type_report() {
     // XTEC *** 603 - Add filter to show only for admin and xtecadmin - 2018.07.13 @adriagarrido
     global $current_user;
-    if (is_xtec_super_admin() || $current_user->roles[0] == 'administrator') {
+    if (is_xtec_super_admin() || (isset($current_user->roles[0]) && $current_user->roles[0] == 'administrator')) {
         $show_in_menu_value = 'xtec-bp-options';
     } else {
         $show_in_menu_value = false;
