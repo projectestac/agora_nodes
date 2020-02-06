@@ -1,7 +1,7 @@
 jQuery( document ).ready( function() {
 
     // Feature "report content" for BuddyPress and bbpress
-    jQuery('.xtec-report').live('click', function () {
+    jQuery('.xtec-report').on('click', function () {
 
         var id = jQuery(this).attr('id');
 
