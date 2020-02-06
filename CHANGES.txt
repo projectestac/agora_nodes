@@ -12,6 +12,7 @@ Changes in progress
 - mu-plugins: Fixed PHP warnings
 - xtec-mail: Fixed apostrophes in e-mail
 - BuddyPress: Fixed change of password in user profile
+- GCE: Fixed PHP warnings
 
 
 Changes 19.11.14
