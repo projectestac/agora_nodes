@@ -1074,7 +1074,6 @@ class Breadcrumb_Trail {
 					if ( $terms ) {
 
 						/* Sort the terms by ID and get the first category. */
-						usort( $terms, '_usort_terms_by_ID' );
 						$term = get_term( $terms[0], 'category' );
 
 						/* If the category has a parent, add the hierarchy to the trail. */
