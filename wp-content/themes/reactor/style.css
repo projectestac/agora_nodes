@@ -1380,3 +1380,14 @@ div.dir-search {
     padding: 2px 2px 3px 2px !important;
 }
 /* SIMPLE CALENDAR: FI ESTILS WIDGET CALENDAR */
+
+/**
+ * 2020.02.10 @jmeler: Hide media button (because it's included in WYSIWYG editor)
+*/
+#whats-new-textarea #insert-media-button {
+    display:none;
+}
+
+.bp_activity #whats-new-post-in-box{
+    display:none;
+}
