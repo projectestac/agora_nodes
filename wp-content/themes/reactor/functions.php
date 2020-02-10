@@ -710,3 +710,75 @@ function xtec_mail_direction_into_header_icons( $options, $icon_number ){
     // return link and target
     return $result;
 }
+
+
+/**
+ * 2020.02.10 @jmeler: TinyMCE on BuddyPress
+*/
+
+function besocial_buddypress_activity_allowed_tags() {
+    return array(
+        // Iframes
+        'iframe'          => array(
+            'src'             => array(),
+            'height'          => array(),
+            'width'           => array(),
+            'frameborder'     => array(),
+            'allowfullscreen' => array(),
+        ),
+		'span' => array(
+			'class' => array()
+		),
+	    'a' => array(
+			'class' => array(),
+			'id' => array(),
+			'rel'=> array()
+		),
+	   'strong' => array(),
+	   'img'=> array(	
+		   'src' => array(),
+		   'alt' => array(),
+	       'class' =>  array(),
+	       'width' => array(),
+	       'height' => array(),
+	       'class'  => array(),
+		   'id'    => array(),
+		   'title' => array()
+	   )
+    );
+}
+	 
+add_filter( 'bp_activity_allowed_tags', 'besocial_buddypress_activity_allowed_tags' );
+
+function tinymce_custom( $in ) {
+    $in['menubar'] = false;
+	$in['toolbar'] = '';
+	$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard ';
+	$in['toolbar2'] = '';
+	$in['statusbar'] = true;
+	return $in;
+}
+
+add_filter( 'tiny_mce_before_init', 'tinymce_custom' );
+
+add_filter( 'bp_is_activity_embeds_active', '__return_true' );
+
+function bpfr_whats_new_tiny_editor() {
+      
+        // building the what's new textarea
+        if ( isset( $_GET['r'] ) ) :
+           $content = esc_textarea( $_GET['r'] ); 
+        endif;
+
+        // adding tinymce tools
+        $editor_id = 'whats-new';
+        $settings = array( 
+                'textarea_name' => 'whats-new', 
+                'media_buttons' => true, 
+			    'drag_drop_upload' => true,
+				'quicktags' => false,
+            );
+	    // get the editor       
+        wp_editor( $content, $editor_id, $settings );
+}
+add_action( 'whats_new_textarea', 'bpfr_whats_new_tiny_editor' );
