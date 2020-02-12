@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 Plugin Name: BP-TinyMCE
 Plugin URI: http://teleogistic.net
@@ -14,5 +14,3 @@ function bptmce_loader() {
 	require_once( dirname(__FILE__) . '/bp-tinymce.php' );
 }
 add_action( 'bp_include', 'bptmce_loader' );
-
-?>
