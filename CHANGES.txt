@@ -11,9 +11,13 @@ Changes in progress
 - Enllacos-educatius: Fixed ATRI URL
 - mu-plugins: Fixed PHP warnings
 - xtec-mail: Fixed apostrophes in e-mail
+- BuddyPress: Upgraded to version 5.1.2
 - BuddyPress: Fixed change of password in user profile
 - GCE: Fixed PHP warnings
 - wp-recaptcha: Fixed PHP warnings
+- bp-tinymce: Added plugin
+- giphypress: Added plugin
+- super-emoji-plus: Added plugin
 
 
 Changes 19.11.14
