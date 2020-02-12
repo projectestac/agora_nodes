@@ -132,5 +132,3 @@ class BP_TinyMCE {
 endif;
 
 $bp_tinymce = new BP_TinyMCE;
-
-?>
