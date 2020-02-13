@@ -790,6 +790,15 @@ address {
     height: 3em !important;
 }
 
+#buddypress #item-body form#whats-new-form {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+#buddypress form#whats-new-form .activity-greeting {
+    padding-top: 15px;
+}
+
 #buddypress form#whats-new-form #whats-new-content {
     padding: 0 0 0 10px;
 }
