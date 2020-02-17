@@ -1393,7 +1393,7 @@ div.dir-search {
 /**
  * 2020.02.10 @jmeler: Hide media button (because it's included in WYSIWYG editor)
 */
-#whats-new-textarea #insert-media-button {
+#whats-new-textarea #insert-media-button, #wp-whats-new-media-buttons {
     display:none;
 }
 
