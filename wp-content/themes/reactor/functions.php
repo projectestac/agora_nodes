@@ -751,15 +751,18 @@ function besocial_buddypress_activity_allowed_tags() {
 add_filter( 'bp_activity_allowed_tags', 'besocial_buddypress_activity_allowed_tags' );
 
 function tinymce_custom( $in ) {
-    $in['menubar'] = false;
-	$in['toolbar'] = '';
-	$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard ';
-	$in['toolbar2'] = '';
-	$in['statusbar'] = true;
+
+	if ($in['selector'] ==  '#whats-new'){
+		$in['menubar'] = false;
+		$in['toolbar'] = '';
+		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard ';
+		$in['toolbar2'] = '';
+		$in['statusbar'] = true;
+	}
 	return $in;
 }
 
-add_filter( 'tiny_mce_before_init', 'tinymce_custom' );
+add_filter( 'tiny_mce_before_init', 'tinymce_custom');
 
 add_filter( 'bp_is_activity_embeds_active', '__return_true' );
 
@@ -773,11 +776,12 @@ function bpfr_whats_new_tiny_editor() {
         // adding tinymce tools
         $editor_id = 'whats-new';
         $settings = array( 
-                'textarea_name' => 'whats-new', 
+			    'textarea_name' => 'whats-new', 
                 'media_buttons' => true, 
 			    'drag_drop_upload' => true,
 				'quicktags' => false,
-            );
+			);			
+					
 	    // get the editor       
         wp_editor( $content, $editor_id, $settings );
 }
