@@ -730,6 +730,8 @@ function besocial_buddypress_activity_allowed_tags() {
 			'class' => array()
 		),
 	    'a' => array(
+			'href' => array(),
+			'target' => array(),
 			'class' => array(),
 			'id' => array(),
 			'rel'=> array()
