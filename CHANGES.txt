@@ -8,6 +8,7 @@ Changes in progress
 - WSL: Allow login from Moodle in any domain
 - wordpress-telegram: Updated to version 2.1.15
 - enllacos-educatius: Fixed checkboxes not showing checked after saving changes
+- Buddypress: Added href and target as allowed attributes
 
 
 Changes 20.04.15
