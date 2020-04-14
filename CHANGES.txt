@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes 20.04.15
+---------------------------------------------------------------------------------------
+- Added support for new service states: migrated and saturated
+
+
 Changes 20.02.18
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.1.4
