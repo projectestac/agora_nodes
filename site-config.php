@@ -8,8 +8,20 @@ $centre = getSchoolInfo('nodes');
 global $agora, $isAgora, $isBlocs, $diskPercentNodes;
 
 if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] == '-5')) {
-    setcookie($agora['server']['cookie'], '', 1, '/'); // Force cookie to expire
+    setcookie($agora['server']['cookie'], '', time(), '/'); // Force cookie to expire
     header('Location: ' . WWWROOT . 'error.php?s=&migrating=' . $centre);
+    exit();
+}
+
+if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] == '-6')) {
+    setcookie($agora['server']['cookie'], '', time(), '/'); // Force cookie to expire
+    header('Location: ' . WWWROOT . 'error.php?s=&migrated=' . $centre);
+    exit();
+}
+
+if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] == '-7')) {
+    setcookie($agora['server']['cookie'], '', time(), '/'); // Force cookie to expire
+    header('Location: ' . WWWROOT . 'error.php?s=&saturated=' . $centre);
     exit();
 }
 
