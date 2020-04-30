@@ -129,7 +129,7 @@ class XTEC_Widget extends WP_Widget {
         <label>Tria enllaços:</label><br>
         <?php foreach ($this->recursos as $idRecurs => $nomRecurs) { ?>
             <p>
-                <input class="checkbox" type="checkbox" <?php checked(isset($instance[$idRecurs]), 'on'); ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>" />
+                <input class="checkbox" type="checkbox" <?php echo ($instance[$idRecurs] == 'on') ? 'checked' : ''; ?> id="<?php echo $this->get_field_id($idRecurs); ?>" name="<?php echo $this->get_field_name($idRecurs); ?>
                 <label for="<?php echo $this->get_field_id($idRecurs); ?>"><?php echo "<strong>" . $nomRecurs['nom'] . "</strong> (" . $nomRecurs['desc'] . ") <a target='_blank' href=\"" . esc_url($nomRecurs['url']) . "\">>></a>"; ?>
                     <br>
                     <?php if (!in_array($idRecurs, $this->recursosXtec)) { ?>
