@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/agora_nodes
 Changes in progress
 ---------------------------------------------------------------------------------------
 - WSL: Allow login from Moodle in any domain
+- wordpress-telegram: Updated to version 2.1.15
 
 
 Changes 20.04.15
