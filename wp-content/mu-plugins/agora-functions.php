@@ -1763,3 +1763,31 @@ function xtec_validate_user_to_bdpress( $array ) {
     }
 }
 add_action( 'bp_send_email', 'xtec_validate_user_to_bdpress' );
+
+/**
+ * Configure PHPMailer object to use SMTP instead of default sendmail. The parameter is
+ * passed by reference, so it is not necessary to return it
+ *
+ * @param $phpmailer PHPMailer object (passed by reference)
+ * @return void
+ * @author Toni Ginard
+ */
+function xtec_configure_mailer($phpmailer) {
+
+    global $agora;
+
+    $phpmailer->IsSMTP(); // use SMTP
+    $phpmailer->SMTPDebug = 0;
+    $phpmailer->Debugoutput = 'html';
+    $phpmailer->Host = $agora['mail']['server'];
+    $phpmailer->Port = 587;
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Username = $agora['mail']['username'];
+    $phpmailer->Password = $agora['mail']['userpwd'];
+    $phpmailer->From = $agora['mail']['reply'];
+    $phpmailer->FromName = get_option('blogname');
+
+    return ;
+}
+add_action('phpmailer_init', 'xtec_configure_mailer');
