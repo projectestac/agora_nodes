@@ -3,6 +3,13 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes 20.07.27
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.6
+- email-subscribers: Removed headers that causes e-mail to be blocked in AWS' SES
+- agora-functions: Added function to configure e-mail to use SMTP
+
+
 Changes 20.05.12
 ---------------------------------------------------------------------------------------
 - WSL: Allow login from Moodle in any domain
