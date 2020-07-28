@@ -3,6 +3,11 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes 20.08.03
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.6
+
+
 Changes 20.05.12
 ---------------------------------------------------------------------------------------
 - WSL: Allow login from Moodle in any domain
