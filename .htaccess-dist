@@ -8,9 +8,14 @@ RewriteBase /
     Deny from all
 </Files>
 
+# Specific files in wp-content should not return the Not Found page
+RewriteCond %{REQUEST_URI} ^([^.]*)/wp-content/(.*)$
+RewriteRule ^(.*)$ - [NC,L]
+
 # Rewrite any unknown directories and files
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -l
 RewriteRule ^(.*)$ - [NC,L]
+
 RewriteRule ^(.*)$ wordpress/index.php [QSA,L]
