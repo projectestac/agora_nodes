@@ -3,6 +3,13 @@ Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+Changes 20.09.02
+---------------------------------------------------------------------------------------
+- xtec-mail: Removed plugin (not used in AWS)
+- xtec-ldap-login: Removed plugin (not used in AWS)
+- buddypress-activity-plus: Removed plugin
+
+
 Changes 20.07.27
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.1.6
