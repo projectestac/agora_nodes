@@ -1791,3 +1791,13 @@ function xtec_configure_mailer($phpmailer) {
     return ;
 }
 add_action('phpmailer_init', 'xtec_configure_mailer');
+
+/**
+ * Modify default cache time of 12 hours down to 1 hour for all feeds
+ *
+ * @author Nacho Abejaro
+ */
+function custom_change_feed_cache_transient_lifetime() {
+    return 3600;
+}
+add_filter('wp_feed_cache_transient_lifetime', 'custom_change_feed_cache_transient_lifetime', 2);
