@@ -1786,9 +1786,8 @@ function xtec_configure_mailer($phpmailer) {
     $phpmailer->Username = $agora['mail']['username'];
     $phpmailer->Password = $agora['mail']['userpwd'];
     $phpmailer->From = $agora['mail']['reply'];
-    $phpmailer->FromName = get_option('blogname');
+    $phpmailer->FromName = $phpmailer->Subject;
 
-    return ;
 }
 add_action('phpmailer_init', 'xtec_configure_mailer');
 
