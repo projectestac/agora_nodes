@@ -1,7 +1,16 @@
-Release notes for Agora-Nodes (http://agora.xtec.cat/nodes)
+Release notes for Agora-Nodes (https://agora.xtec.cat/nodes)
 
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
+
+
+Changes 21.02.09
+---------------------------------------------------------------------------------------
+- Fixed codification of email subjects
+- email-subscribers: Upgraded to version 4.6.6
+- wordpress-social-login: Removed old duplicated translation file
+- wp-recaptcha: Fixed missing whitespace between HTML attributes
+- Added new dashicons
 
 
 Changes 20.12.10
