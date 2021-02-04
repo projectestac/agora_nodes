@@ -111,6 +111,7 @@ $dashicons2 = array(
     'dashicons-email-alt',
     'dashicons-facebook',
     'dashicons-facebook-alt',
+    'dashicons-instagram',
     'dashicons-googleplus',
     'dashicons-networking',
     'dashicons-hammer',
