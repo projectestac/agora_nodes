@@ -731,8 +731,11 @@ add_action('media_buttons', 'ml_post_media_buttons', 20);
  * @author Sara Arjona
  */
 function change_template_for_frontpage($template) {
-    if (get_the_ID() == get_option('page_on_front') && strrpos($template, 'front-page') === false) {
-        $template = get_template_directory().'/page-templates/front-page.php';
+    // Exception for Astra theme
+    if ('Astra' == wp_get_theme()->Name) {
+        return $template;
+    } elseif (get_the_ID() == get_option('page_on_front') && strrpos($template, 'front-page') === false) {
+        $template = get_template_directory() . '/page-templates/front-page.php';
     }
     return $template;
 }
@@ -1399,14 +1402,21 @@ add_action( 'admin_head-nav-menus.php', 'default_meta_box' );
  * @param $prepared_themes array
  * @return mixed
  * @author Xavier Nieto
+ * @author Toni Ginard
  */
-function xtec_check_themes_to_show( $prepared_themes ){
-    foreach ( $prepared_themes as $theme ) {
-        $id_theme = $theme['id'];
-        if( $theme['active'] !== true ){
-            unset( $prepared_themes[$id_theme] );
+function xtec_check_themes_to_show(array $prepared_themes) {
+    // xtecadmin can change the theme
+    if (is_xtec_super_admin()) {
+        return $prepared_themes;
+    }
+
+    // Remove all themes but the active
+    foreach ($prepared_themes as $theme) {
+        if ($theme['active'] !== true) {
+            unset($prepared_themes[$theme['id']]);
         }
     }
+
     return $prepared_themes;
 }
 add_filter( 'wp_prepare_themes_for_js', 'xtec_check_themes_to_show', 10, 1 );
