@@ -4,6 +4,14 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 21.03.01
+---------------------------------------------------------------------------------------
+- Allow xtecadmin change the active theme
+- Added theme Astra 3.0.3
+- Added plugin Astra Addon 3.0.1
+- Fixed codification of email subjects
+
+
 Changes 21.02.09
 ---------------------------------------------------------------------------------------
 - Fixed codification of email subjects
