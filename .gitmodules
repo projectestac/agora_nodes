@@ -55,3 +55,6 @@
 [submodule "wp-content/plugins/pods"]
 	path = wp-content/plugins/pods
 	url = https://github.com/projectestac/wordpress-pods.git
+[submodule "wp-content/plugins/polylang"]
+	path = wp-content/plugins/polylang
+	url = https://github.com/projectestac/wordpress-polylang.git
