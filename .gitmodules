@@ -82,3 +82,6 @@
 [submodule "wp-content/plugins/wordpress-social-login"]
 	path = wp-content/plugins/wordpress-social-login
 	url = https://github.com/projectestac/wordpress-social-login
+[submodule "wp-content/plugins/wordpress-telegram"]
+	path = wp-content/plugins/wordpress-telegram
+	url = https://github.com/projectestac/wordpress-telegram.git
