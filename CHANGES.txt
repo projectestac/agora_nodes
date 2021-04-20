@@ -1,0 +1,634 @@
+Release notes for Agora-Nodes (https://agora.xtec.cat/nodes)
+
+More information on each of the fixes can be found in the project
+development home at https://github.com/projectestac/agora_nodes
+
+
+Changes 21.03.01
+---------------------------------------------------------------------------------------
+- Allow xtecadmin change the active theme
+- Added theme Astra 3.0.3
+- Added plugin Astra Addon 3.0.1
+- Fixed codification of email subjects
+
+
+Changes 21.02.09
+---------------------------------------------------------------------------------------
+- Fixed codification of email subjects
+- email-subscribers: Upgraded to version 4.6.6
+- wordpress-social-login: Removed old duplicated translation file
+- wp-recaptcha: Fixed missing whitespace between HTML attributes
+- Added new dashicons
+
+
+Changes 20.12.10
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.8
+- agora-functions: Changed feed_cache_transient lifetime from 12 hours to 1 hour
+- Enllacos-educatius: Fixed URL eValisa
+
+
+Changes 20.10.26
+---------------------------------------------------------------------------------------
+- WSL: Updated information URLs
+
+
+Changes 20.09.02
+---------------------------------------------------------------------------------------
+- xtec-mail: Removed plugin (not used in AWS)
+- xtec-ldap-login: Removed plugin (not used in AWS)
+- buddypress-activity-plus: Removed plugin
+
+
+Changes 20.07.27
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.6
+- email-subscribers: Removed headers that causes e-mail to be blocked in AWS' SES
+- agora-functions: Added function to configure e-mail to use SMTP
+
+
+Changes 20.05.12
+---------------------------------------------------------------------------------------
+- WSL: Allow login from Moodle in any domain
+- wordpress-telegram: Upgraded to version 2.1.15
+- add-to-any: Upgraded to version 1.7.40
+- email-subscribers: Upgraded to version 4.3.13
+- enllacos-educatius: Fixed checkboxes not showing checked after saving changes
+- Buddypress: Added href and target as allowed attributes
+
+
+Changes 20.04.15
+---------------------------------------------------------------------------------------
+- Added support for new service states: migrated and saturated
+
+
+Changes 20.02.18
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.4
+- H5P: Upgraded to version 1.15
+- Blocked access to file xmlrpc.php
+- Enllacos-educatius: Fixed ATRI URL
+- mu-plugins: Fixed PHP warnings
+- xtec-mail: Fixed apostrophes in e-mail
+- BuddyPress: Upgraded to version 5.1.2
+- BuddyPress: Fixed change of password in user profile
+- GCE: Fixed PHP warnings
+- wp-recaptcha: Fixed PHP warnings
+- giphypress: Added plugin
+- super-emoji-plus: Added plugin
+
+
+Changes 19.11.14
+---------------------------------------------------------------------------------------
+- Accessibility improvements in themes
+- Email_subscribers: Remove access to email_subscribers' menu if user role is not administrator or editor
+- Simple Calendar: Upgraded to version 3.1.22
+- xtec-mail: Ensure the email subject starts with the blog name
+- xtec-mailer: Fixed compatibility with PHP 7.3
+- Code Snippets: Added plugin
+- xtec lib: Updated script to replace email subscribers fields
+- Grup-classe: Fixed support for new version of email subscribers
+
+
+Changes 19.09.25
+---------------------------------------------------------------------------------------
+- WordPress Social Login: Fixed login to WordPress via Moodle
+- TOC+: Fixed compatibility with WordPress 5.1
+- H5P: Upgraded to version 1.14.1
+- Added script to delete duplicated records in email subscribers tables
+- Added script to create missing tables in buddypress subscriptions
+
+
+Changes 19.08.29
+---------------------------------------------------------------------------------------
+- Removed loading of PWA code to fix cache issues
+
+
+Changes 19.07.24
+---------------------------------------------------------------------------------------
+- xtec-booking: Added cron to remove old bookings
+- phpinfo: Fixed access restriction to superadmins
+- email-subscribers: Hidden technical information to users
+- xtec lib: Added action to replace http by https in reactor_options
+- Fixed service worker
+
+
+Changes 19.04.15
+---------------------------------------------------------------------------------------
+- Upgrade Wordpress to version 5.1.1
+- Updates translation binaries for version 5.1.1
+- Remove core themes
+- Give PWA functionality
+- Adjust custom menu for the mobile version
+- Add function strip_shortcode_from_excerpt
+- Add comment
+- Let user admin delete users
+- Add Educació logo and rename Ensenyament logo
+- Update bbpress
+- Update buddypress-doc
+- Update buddypress-activity-plus
+- Update email-subscribers
+- Update import-users-from-csv-with-meta
+- Update invite-anyone
+- Update polylang
+- Update tabs-responsive
+- Update tinymce-advanced
+- Update wp-recaptcha
+- Add dop plugin
+- Add disable Gutenberg plugin
+
+
+Changes 18.11.05
+---------------------------------------------------------------------------------------
+- Upgrade H5P
+- Fix the mail format of Buddypress
+- Show url to restart password
+- Change type button to image to show images for categories
+- Upgrade translation binaries for version 4.9.5
+- Non-operating external invitation process
+
+
+Changes 18.08.13
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.9.5
+- Remove bbp_get_forum_doc_permalink_filter funtion because the only accepted protocol is https
+- Update core translation binaries for 4.9.5
+- Aesthetic improvement in the presentation of the articles #610
+- Include "Documents" to the constructor of menus #596
+- Send Invitations to one Node #603
+- Modifications into widget "Educational Links" #605
+- Add Sinapsi to the list of links XTEC (upper bar) #601
+- Fixed css styles and url links
+- google-analyticator - 6.5.4
+- slideshow-jquery-image-gallery - 2.3.0
+- tinymce-advanced - 4.7.11
+- wordpress-importer - 0.6.4
+- wordpress-social-login - 2.3.1
+- add-to-any - 1.7.9
+- invite-anyone - 1.3.9
+- email-subscribers - 3.5.1
+- buddypress-docs - 2.0.1
+- buddypress-activity-plus - 1.6.4
+- import-users-from-csv-with-meta - 1.11.3.4
+- buddypress-group-email-subscription - 3.8.2
+- buddypress - 3.0.0
+- buddypress-like - 0.2.0
+- bbpress - 2.5.14
+- slideshare - 1.9.2
+- polylang - 2.3.6
+- wptelegram - 1.8.0
+- author-category - 0.8
+- Core languages
+
+
+Changes 18.04.20
+---------------------------------------------------------------------------------------
+- Update blogger-importer and google-analyticator
+- Fixed css styles and url links
+- Updated buddypress-group-email-subscription
+- Updated slideshow-jquery-image-gallery
+- Updated wordpress-social-login
+
+
+Changes 17.10.27
+---------------------------------------------------------------------------------------
+- Added H5P plugin
+- Added tabs responsive plugin
+- Updated translation
+
+
+Changes 17.06.23
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.7.5
+
+
+Changes 17.05.23
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.9 (Trello #1592)
+- mu-common: Hidden options to allow admins to activate pingbacks and trackbacks (Trello #1551)
+- mu-common: Customized order posts into homepage and categories (Trello #1579)
+- email-subscribers: Upgraded plugin from version 2.9.2 to 3.2.6 (Trello #1444)
+- xtec-booking: Added button to calendar view to select and deselect a batch of resources (Trello #1537)
+- bp-like: Fixed removal of activity when you like and then unlike your own activity post
+- xtec-booking: Increased maximum number of events displayed in calendar view (Trello #1583)
+- table-of-contents-plus: Added plugin (Trello #1370)
+- agora-functions: Added feature to replace bp-moderation (Trello #1580)
+
+
+Changes 17.04.24
+---------------------------------------------------------------------------------------
+- Polylang: Added plugin (Trello #1198)
+- bp-moderation: Removed links in BuddyPress index page
+
+
+Changes 17.03.28
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.7 (Trello #1543)
+- xtec lib: Remove the visits of the robots older than two months (Trello #1296)
+- import-users-from-csv-with-meta: Upgraded plugin from version 1.8.7.2 to 1.10.2 (Trello #1260)
+- Added WordPress translation to Basque, Galician, French and Occitan (Trello #1534)
+- xtec-booking: Added support for translations to javascript calendar (Trello #1534)
+- Themes: In themes list (wp-admin/themes.php), show only the theme already in use in that site (Trello #1538)
+- GCE: Fixed hover effect and customized calendar list view (Trello #1547)
+- GCE: Fixed access to protected with password and private calendars (Trello #1548)
+- GCE: Added loading of JQuery library, required by some themes in XTECBlocs (Trello #1034)
+
+
+Changes 17.02.13
+---------------------------------------------------------------------------------------
+- xtec-booking: Fixed color of the right border on mouse over with some colors (Trello #1495)
+- mu-common: Fixed access to Comments and Tools for Contributors (Trello #1354)
+- mu-common: Expired in session instead of default 10 days the cookie for posts protected with password (Trello #1461)
+- Theme reactor: Fixed PHP warning with header icons (Trello #1472 i #1470)
+- Theme reactor: Improved catalan translation (Trello #1504)
+- Theme reactor-projectes: First version, based on reactor-serveis-educatius (Trello #1512)
+- carrusel: Translate roles in configuration tab (Trello #1504)
+- carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
+- google-calendar-events: Improved catalan translation (Trello #1504)
+- add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
+- add-to-any: Fixed strings that could not be translated in widgets administration (Trello #1504)
+- WordPress translation: Fixed plural translation of Administrator (Trello #1504)
+- bp-moderation: Removed plugin due to its incompatibility with the current version of WordPress and BuddyPress (Trello #1486)
+- intranet-importer: Removed plugin because it is no longer necessary (Trello #1255)
+- buddypress-like: Updated catalan translation (Although the affected string are in database) (Trello #1452)
+- google-analyticator: Fixed warning message shown in debug mode (Trello #1372)
+
+
+Changes 17.01.20
+---------------------------------------------------------------------------------------
+- xtec-booking: Fixed error that blocked edition of post date
+- reactor: Fixed PHP warning
+
+
+Changes 17.01.16
+---------------------------------------------------------------------------------------
+- widget-visibility-without-jetpack: Converted into a submodule and grouped commits (Trello #1300)
+- widget-visibility-without-jetpack: Fixed styles to avoid overlap of menu and Add and Delete options (Trello #1300)
+- add-to-any: Upgraded plugin from version 1.7 to 1.7.1 (Trello #1441)
+- add-to-any: Added support for featured image (imatge resum) when sharing to facebook (Trello #1283)
+- xtec-booking: Improved colors for spaces and fixed max size of images (Trello #1420)
+- xtec-booking: Role teacher can no longer edit posts edited by admins or editors, but can still edit bookings (Trello #1421)
+- xtec-booking: Fixed some PHP warnings (Trello #1470)
+- xtec-ldap-login: Don't send e-mail when user password is updated
+- agora-functions: Moved Automatic creation of featured image (Imatge resum) from mu-common to agora-functions (Trello #1284)
+- agora-functions: Don't allow change of bbpress role of xtecadmin. Forced to be keymaster (Trello #1422)
+- agora-functions and mu-common: Hidden menu metaboxes for buddypress-docs and gce in Appearance | Menus (Trello #1435)
+- mu-common: Allow external requests to gencat.cat from RSS
+- google-analyticator: Upgraded plugin from 6.4.9.7 to 6.5.0.0 (Trello #1372)
+- google-calendar-events: Upgraded plugin from 3.1.2 to 3.1.9 (Trello #1447 #1488)
+- google-calendar-events: In calendar widget, show event information on mouse over (Trello #1462)
+- google-calendar-events: Show parameter _default_calendar_expand_multi_day_events for all users (Trello #1352)
+- Fixed some debug warnings
+- buddypress: Upgraded plugin from 2.5.3 to 2.7.2 (Trello #1446)
+- buddypress: Fixed PHP warnings and notices (Trello #1472)
+- buddypress-like: Upgraded plugin from 0.2 to 0.3 and converted into a submodule (Trello #1452)
+- buddypress-docs: Upgraded plugin from 1.9.0 to 1.9.2 (Trello #1442)
+- buddypress-docs: Contributors and Subscribers cannot create documents (Trello #1434)
+- reactor: Deleted duplicated favicon (Trello #1419)
+- reactor: Allow e-mail in header icons. Changed behaviour when a link is clicked (opening in new window or in current window) (Trello #1437)
+- reactor: Changed appearance of widget of Google Calendar Events (Trello #1397)
+- reactor-primaria-1 and reactor-serveis-educatius: Added field email to Fitxa del Centre and modified behaviour of links for contact and map (Trello #1459)
+- reactor-primaria-1 and reactor-serveis-educatius: Added id attribute to site logo (Trello #1477)
+- bbpress: Converted into a submodule (Trello #1454)
+- bbpress: Upgraded from version 2.5.8 to 2.5.11 (Trello #1454)
+- tinymce-advanced: Upgraded from version 4.2.8 to 4.3.10.1 (Trello #1445)
+- slideshare: Converted into a submodule (Trello #1453)
+- slideshare: Upgraded from version 1.9.1 to 1.9.2 (Trello #1453)
+- invite-anyone: Upgraded from version 1.3.9 to 1.3.12 (Trello #1443)
+- xtec-stats: Fixed error in widget when saving data. Moved option to save admin visits to admin pages (Trello #1289)
+- wp-recaptcha: Fixed some debug warnings
+
+
+Changes 16.10.24
+---------------------------------------------------------------------------------------
+- GCE: Prevent grouped calendars to belong to categories used to create that calendars (Trello #1371)
+- GCE: Fixed grouped calendars not showing in dropdown menu in customizer (Trello #1384)
+- Dashboard: Reviewed access to menu options in dashboard for roles xtec_teacher and contributor (Trello #1354)
+- wordpress-importer: Upgraded plugin from 0.6.1 to 0.6.3
+- agora-functions: Translated text to english and added translation to .po file (Trello #1394)
+- mu-common: Allow more attributes in embed tag in visual editor (Trello #1297)
+- mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
+- mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
+- xtec-stats: Fixed Javascript error in Safari in statistics page (Trello #1361)
+- xtec-booking: Fixed size image in modal window with the booking details (Trello #1399)
+- xtec-booking: Fixed styles in day view (Trello #1399)
+- buddypress-docs: Tag searches use 'and' as a default condition. Changed text link accordingly (Trello #1368)
+- add-to-any: Upgraded plugin from 1.6.17 to 1.7 (Trello #1283)
+- buddypress: Corrected translation in register page (Trello #1382)
+- buddypress: Removed submenu Appearance | Emails (Trello #1301)
+- Role of xtecadmin cannot be changed (Trello #1390)
+
+
+Changes 16.09.19
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.4 (Trello #1345)
+- GCE: Updated from 2.2.5 (Legacy Google Calendar Events 2.4) to 3.1.2 (Simple Calendar - Google Calendar Plugin) (Trello #1034)
+- GCE: Included fix for grouped calendars (Trello #1371)
+- grup-classe: Removed option to select format of the calendar due to the changes in GCE v3.x (Trello #1034)
+- New users: Fixed URL to change password, which was not being shown in email sent to new users
+- blogger-importer: Fixed import of images (Trello #1340)
+- xtec-booking: Added plugin for bookings of spaces or equipment (Trello #1166)
+- xtec-booking: Included fix for bookings without start and finish hours (Trello #1373)
+- Added role Professor (Trello #1166)
+- Role Professor: Removed links to comments and tools (Trello #1354)
+- Tools: Added custom tool boxes for timetables and events management. Removed bp and categories boxes (Trello #1342)
+- buddypress-docs: Fixed upload of image using editor's menu option when creating a new document (Trello #1229)
+
+
+Changes 16.09.07
+---------------------------------------------------------------------------------------
+- buddypress-docs: Fixed bug when uploading files when editing them if protocol it is not HTTPS (Trello #1205)
+
+
+Changes 16.08.22
+---------------------------------------------------------------------------------------
+- intranet-importer: Fixed import of images with capital letters in extensions
+- intranet-importer: Added import of images uploaded using IWforms
+- add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
+- xtec: Added es_c_unsubtext field to fix site name in Email subscribers (Trello #1315)
+
+
+Changes 16.07.20
+---------------------------------------------------------------------------------------
+- Fixed removal of users by admins (Trello #1298)
+
+
+Changes 16.07.04
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.3 (Trello #1272)
+- Reviewed embed support in kses to let contributors add Picasa web albums (Trello #1182)
+- BuddyPress Group Email Subscription: Converted to submodule and updated to 3.6.1 (Trello #1042)
+- buddypress-docs: Suggest labels when adding new documents (Trello #1228)
+- BuddyPress: Converted to submodule and upgraded to version 2.5.3 (Trello #1057)
+- BuddyPress: Added option to disable direct post into general wall (Trello #1264)
+- enllacos-educatius: Replaced Ministry of Education link
+- add-to-any: Upgraded module to version 1.6.17. Added more options for xtecadmin (Trello #1031)
+- wordpress-php-info: Upgraded from version 14.12 to version 15
+- widget-visibility-without-jetpack: Added option to show content only in selected groups of buddypress (Trello #1262)
+- Translated menu option "Add Media" to catalan (Trello #1254)
+- mu-common: Deactivate pingback to avoid attacks to other sites (Trello #1275)
+- mu-common: Removed fix for post thumbnails broken due to upgrading to WP 4.4. No longer necessary in WP 4.5
+- mu-common: Check script label to only allow Gallery.io scripts to contributor users rol (Trello #1182)
+- mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
+- XTEC lib: Added a new operation in the portal to fix the Email Subscribers configuration (Trello #1266)
+- raw-html: Removed plugin (Trello #568)
+- xtec-stats: Let administrators view log information: admin only "deleted" entries; xtecadmin all entries (Trello #627)
+- intranet-importer: Fixed import of files in directories that contain blank spaces in its name
+- intranet-importer: Import names and surnames of the users
+
+
+Changes 16.05.03
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.4.3 (Trello #1176)
+- Reactor: Fixed bug with right column size if only right column is enabled (Trello #1185)
+- Reactor: Fixed bug with icon in last card (Trello #1187)
+- Reactor: Fixed bug getting multiple categories posts from URL (Trello #1142)
+- Reactor: Minor improvements in CSS
+- Reactor: Added three color palettes (GitHub #275)
+- Reactor: Fixed line-height in default WordPress formats, used by imported posts (GitHub #412)
+- Reactor: Added description link (Trello #1218)
+- reactor-serveis-educatius: Options of depth 0 in menu don't break in two lines if they're long
+- Disabled asynchronous default cron because there's an hourly system cron (Trello #1112)
+- Added embed, iframe and script support in kses (Trello #1182)
+- Hidden options in Settings menu (Trello #1219)
+- Fixed bug with searching members or groups box (Trello #1216)
+- xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
+- agora-functions: Avoid delete page_on_front because front page is not shown if it doesn't exist (Trello #1178)
+- agora-functions: Replace template if front-page page is not using correct one (Trello #1178)
+- xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
+- xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
+- xtec-mailer: Compress log files to zip
+- enllacos-educatius: Changed xtec.cat to xtec.gencat.cat (Trello #1207)
+- enllacos-educatius: Added links to Google Classroom and to Serveis Educatius (GitHub #241)
+- buddypress-activity-plus: Upgraded from version 1.6.2 to 1.6.4 (Trello #1039)
+- buddypress + invite-anyone: Reviewed catalan translation (Trello #1209)
+- WSL: Upgraded to version 2.3.0 (Trello #1035)
+- Grup-Classe: Added Email subscribers integration to Grup-Classe widget (GitHub #193)
+- Email Subscribers: Improved widget design (GitHub #193)
+- intraweb-importer: Copy and update creation date of content. Import again deleted content (Trello #1236)
+- import-users-from-csv-with-meta: Upgraded to version 1.8.7.2 (Trello #1043)
+- widget-visibility-without-jetpack: Fixed button "Visibility" not showing in Customizer under WP 4.4 (Trello #1176)
+- add-to-any: Upgraded plugin to version 1.6.16
+- buddypress-docs: Upgraded plugin to version 1.9.0
+- google-analyticator: Upgraded plugin to version 6.4.9.7
+- raw-html: Upgraded plugin to version 1.4.16
+- Carrusel: Added textarea for album extension content
+- tinymce-advanced: Upgraded plugin to version 4.2.8 (Trello #985)
+
+
+Changes 16.03.30
+---------------------------------------------------------------------------------------
+- Reactor: Fixed bug with right column size (Trello #1185)
+- Reactor: Fixed bug with menu icons with 2-lines text (Trello #1184)
+- Reactor: Fixed bug when resizing cards (Trello #1187)
+- XTEC lib: Added support for extension Email Subscriber in service activation and in URL replace (Trello #1174)
+- Theme reactor-serveis-educatius: Fixed menu options set to _blank not opening in new window (Trello #1175)
+- Email Subscribers: Changed default group from Public to Portada (Trello #833)
+
+
+Changes 16.03.14
+---------------------------------------------------------------------------------------
+- Reactor: Moved hard coded language strings to po file (Trello #963)
+- Reactor: Moved equalization of cards to a file previously loaded to increase speed (Trello #963)
+- Reactor: Merged files from primaria and serveis-education to the parent theme (Trello #963)
+- mu-common: Improved add category image option to let remove it (Trello #1150)
+- xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
+- bp-moderation: Fixed bug with incorrect viewing link from inappropriate admin comments page (Trello #1160)
+- Themes: Revert changes made to avoid 3 columns (Trello #1173)
+- Themes: Merged css files (Trello #1173)
+- Themes: Deleted unused functions and fonts (Trello #1173)
+- Intraweb Importer: Optimize intranet importer loading (Trello #1173)
+- Themes: Merge side-menu template (Trello #1173)
+- Themes: Create a grid to display a header properly (Trello #1173)
+- GCE: Fixed warning for non-superadmin users
+
+
+Changes 16.02.22
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.2.7
+- Common: Moved edit cat description with HTML editor to common and added also tags (Trello #1129)
+- Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
+- Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
+- Added again some Reading options for XTECBlocs administrators which are hidden in Nodes (Trello #1028)
+- mu-common: Added filter to remove content of attribute onerror in images (Trello #1050)
+- mu-common: Moved and improved code to remove the field "description" in category edition and in bp-docs tags (Trello #1129)
+- BuddyPress Docs: Upgraded to version 1.8.8 and converted to submodule (Trello #1041)
+- xtec-ldap-login: Completed support for single site. General improvements (Trello #1105)
+- mu-common and reactor: Get multiple categories and filter posts from URL (Trello #1142)
+- Grup-classe: changed param to call GCE widget in list view
+- bbpress: Fixed upload of images in bbpress using fancy upload when user is not admin nor mod (Trello #1143)
+- wp_stats: Added additional stats information when deleting some comments (Trello #627)
+- bbpress: Fixed editing time of the posts and comments (Trello #1143)
+
+
+Changes 16.02.01
+---------------------------------------------------------------------------------------
+- Added custom image for categories in page header (Trello #1054)
+- Themes reactor-primaria-1 and reactor-serveis-educatius: Minor format improvements in code
+- Themes: Moved common code to parent theme and done minor improvements (Trello #1094)
+- Intraweb Importer: Improved information text for users (Trello #1068)
+- Intraweb Importer: Improved import of 'Content' module (Trello #1051)
+- Carrusel: Allow loading picasa albums from URL (Trello #1056)
+- Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
+- Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
+- Wordpress Importer: Removed XTEC change that was only used in multisite configuration (XTECBlocs) (Trello #936)
+- Mailer lib: Added latest changes
+- xtec-mailer: Moved idApp from database to code (Trello #894)
+- Google Analyticator: Upgraded to version 6.4.9.6 (Trello #994)
+- Email Subscribers: Added version 2.9.2 with first version of XTEC changes (Trello #833)
+- xtec-stats: Added register in wp_options to keep the number of visits and get the information from there (Trello #1098)
+- xtec-stats: Added option to allow not to count the visits of the administrators (Trello #1098)
+- BuddyPress: Updated from version 2.3.2.1 to version 2.4.3 (Trello #1040)
+- Invite anyone: Changed activation URL to avoid problems if users_can_register is disabled (Trello #1114)
+- GCE: Added default gce_feed_[start/end] default values for admin (Trello #1071)
+- xtec-ldap-login: Added first version of the plugin (Trello #1105)
+- Enllaços educatius: Replaced aplitic.xtec.cat references for ePergam
+
+
+Changes 15.12.14
+---------------------------------------------------------------------------------------
+- XTEC lib: Changed replace_url to support only a single URL (Trello #1027)
+- Theme reactor-serveis-educatius: Improved menu and added search option in responsive version (Trello #981)
+- Theme reactor: Fixed position of the legends of the images in custom galleries inserted in articles (Trello #1011)
+- Theme reactor-primaria-1: Fixed side menu in pages when there are subpages. (Trello #1010)
+- BuddyPress: Updated catalan translation (Trello #987)
+- XTEC lib Fixed parsing apostrophes when activating a service and add support for table wp_term_taxonomy (Trello #1075)
+- Invite Anyone: Upgraded extension to version 1.3.9 (Trello #987)
+- Carrusel: Upgraded extension to version 2.3.1 (Trello #986)
+
+
+Changes 15.11.16
+---------------------------------------------------------------------------------------
+- Moved activation script of Nodes to WordPress (Trello #996)
+- Added support to activation script to serialized data in wp_postmeta (Trello #937)
+- Blogger Importer: Upgraded to version 0.9 (Trello #936)
+- wordpress-mu-common: Synced code with XTECBlocs. Changes have no effects to Nodes
+- Stats widget: Added margin-bottom (Trello #1009)
+- Theme reactor-primaria-1: Added new Color Palette "Purple and Green" (GitHub #307)
+- Theme reactor-primaria-1: Improvements to CSS styles and moved content from common_css to code (GitHub #303)
+- wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926)
+- Added ability to decide if a client is "Servei Educatiu" (Trello #981)
+- Added theme reactor-serveis-educatius (Trello #981)
+- Check if the path is absolute or relative to mount the header link (Trello #1008)
+- Fixed admin users not being able to delete users (Trello #991)
+- Blocked access to install.php (Trello #521)
+- Blocked access to bbpress administration to all users but xtecadmin (Trello #980)
+
+
+Changes 15.10.09
+---------------------------------------------------------------------------------------
+- Updated catalan translation for WordPress 4.2.2 (Trello #793)
+- Avoid deletion of main pages (Trello #909)
+- Modified code to check if is xtecadmin or superadmin (Trello #902)
+- Prevent the creation of restricted pages (Trello #871)
+- Hidden text icon in the mobile version (GitHub #229)
+- Grup-Classe: Second HTML box independent of first box (GitHub #228)
+- Social Media: Fixed automatic links (GitHub #108)
+- Enllaços educatius: Updated URL of edu3 (GitHub #225)
+- Changed login form layout (GitHub #79)
+- WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
+- WSL: Added access control using black and white lists (GitHub #62)
+- BuddyPress-Group-Email-Subscription: Updated module to version 3.5.1 and revised catalan translation (Trello #793)
+- BudyyPress-Like: Updated module to version 0.2.0 and improved catalan translation (Trello #793)
+- bbPress: Updated module to version 2.5.8 (Trello #793)
+- bbPress: Fixed media upload using Fancy Editor (GitHub #130)
+- Theme reactor-primaria-1: Added fields for custom CSS (GitHub #268)
+- Set default selected image size to large on page and article creation
+- BuddyPress Activity Plus: Updated module to version 1.6.2 (Trello #793)
+- Raw HTML: Upgraded to version 1.4.15 (Trello #793)
+- BuddyPress: Updated module to version 2.3.2.1 (Trello #965)
+- AddToAny: Installed version 1.6.6 (Trello #918)
+- Added and improved translations (Trello #963)
+- Add specific variable for frontpage blog name in order to allow especial chars, like \n (Trello #972)
+- Wordpress-Importer: Added spanish translation
+- Added recaptcha plugin
+
+
+Changes 15.08.10
+---------------------------------------------------------------------------------------
+- Added new function to manage superadmin and xtecadmin
+- Updated Mailer WSDL's
+
+
+Changes 15.07.20
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.2.2 (Trello #793)
+- Added submodule of Multisite common functions
+- Added message to warn user about quota exceeded in BuddyPress Activity+
+- Improved some styles (GCE, buttons, table and image margin with text and code styling) (GitHub #208)
+- GCE: Changed default cache duration to 300 seconds (Trello #875)
+- GCE: Fixed visualitzation of calendar in list mode (GitHub #219)
+- Convert Socialmedia to a plugin (GitHub #64 - Partial fix)
+- Convert Enllaços educatius to a plugin (GitHub #213)
+- Removed link to Social Articles in BuddyPress admin page
+- Updated mailer library
+- Added some information to replace URL script, for PORTAL
+- Fixed catalan spelling in Appearance | Customize | Colors (GitHub #206)
+- XTEC Stats: Added first version which includes just a widget to count visits (Trello #821)
+- BP-Docs: Hidden "Associated elements" in document edition (Trello #883)
+- Reactor-primaria-1: Deleted unused files for theme colours (GitHub #214)
+- Updated mailer library
+- Added two colour palettes to theme (GitHub #216)
+- Improved visualitzation of Visibility block in Appearance | Customize (GitHub #204)
+- Intraweb Importer: Added plugin import data from Intraweb (Trello #732)
+- Fixed removal of statistics older than one year (Trello #820)
+- Fixed language string in attachment view in Media Library (Trello #898)
+
+
+Changes 15.06.18
+---------------------------------------------------------------------------------------
+- Forbidden access to admin-tools and edit-comments for Collaborator user roles (Trello #790)
+- Don't allow admins to modify WordPress URL on wp-admin/options-general.php (Trello #797)
+- Role names translated in import-users-with-csv (Trello #625)
+- Widget Grup-classe: Add navigation buttons to calendar (GitHub #182)
+- Widget Grup-classe: Internationalization (GitHub #88)
+- Upgraded GCE to version 2.2.5 (Trello #800)
+- Added disk quota control (Trello #733)
+- Removed plugin Social Articles (Trello #693)
+- Improvements in bpdocs styles (Pull request #195)
+
+
+
+Changes 15.05.19
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.0.5
+- CSV: Included first version of the import-users-from-csv-with-meta plugin. #95
+- If user is not logged in, redirects at login screen on BuddyPress tabs
+- Solved categories error on breadcrumbs #2
+- Disabled gravatar requests. #122
+- PhpInfo for xtecadmins.
+- Avoid upload large images (>2MB).
+- Hide full size option post insertion (maximum size width 1024)
+- Slideshow: Added proportional mode
+- Added proxy support
+- Giny Enllaços educatius: added 'ePergam', 'La meva XTEC' and bug fix #111
+- Added constant SCHOOL_CODE
+- Added shortcode to embed rss into post and page
+- Added author link in metadata author post
+- Added 'myposts' functions to replace Social Articles
+- Added script to massive upgrade of WordPress (script_upgrade.class.php)
+- Added Docs page to visibility widget params.
+- Empty categories showed also in visibility widget.  #103
+- Hidden some categories for contributor role (Tools, Google Calendar and Comments). #115
+- Reviewed comments translation. #118
+- Fixed bug to let users edit its forum messages during specific time interval. #120
+
+
+Changes 15.03.20
+---------------------------------------------------------------------------------------
+- Set user priority on the boxes
+- Hidden unnecessary boxes
+- Added external links for Google Fonts
+- Sets the order and the position for the boxes
+- GCE: Added default values for hidden parameters and remove some metaboxes to simplify user experience
+- GCE: Fixed warning message in list of calendars
+- MU-PLUGIN: Created common-functions.php pluggin to include common functions which are not related only with the theme
+- Fix: Show left sidebar on mobile version
+- Improved header image adjustament
+- Improved visualization for high screen sizes
+- Add upload images capability to contributor & Restricting contributors to view only media library items they upload
+- Enllaços educatius: Added two new icons ("intraweb" and "Portal de centre")
+- BPDOCS: Fixed bug when uploading files
+- THEME: Show comments in pages when they are enabled
+- MU-PLUGIN: Reviewed default position, hiddent and collapsed meta-boxes for pages and posts
+- THEME: Added some missing strings to Catalan translation like comments and edit (still is not complete)
