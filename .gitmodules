@@ -94,3 +94,6 @@
 [submodule "wp-content/plugins/wordpress-telegram"]
 	path = wp-content/plugins/wordpress-telegram
 	url = https://github.com/projectestac/wordpress-telegram.git
+[submodule "wp-content/plugins/wp-recaptcha"]
+	path = wp-content/plugins/wp-recaptcha
+	url = https://github.com/projectestac/wordpress-recaptcha.git
