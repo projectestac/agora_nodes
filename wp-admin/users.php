@@ -139,6 +139,16 @@ switch ( $wp_list_table->current_action() ) {
 		$update   = 'promote';
 
 		foreach ( $user_ids as $id ) {
+
+                        // XTEC ************ AFEGIT - Role of xtecadmin cannot be changed
+                        // 2016.10.19 @aginard
+                        global $isAgora;
+
+                        if ( $isAgora && ( get_xtecadmin_id() == $id )) {
+                            continue;
+                        }
+                        //************ FI
+
 			if ( ! current_user_can( 'promote_user', $id ) ) {
 				wp_die( __( 'Sorry, you are not allowed to edit this user.' ), 403 );
 			}
@@ -197,6 +207,16 @@ switch ( $wp_list_table->current_action() ) {
 		$delete_count = 0;
 
 		foreach ( $user_ids as $id ) {
+
+                        // XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
+                        // 2014.09.03 @aginard
+                        // 2015.07.31 @nacho
+                        // 2019.03.15 @svallde2
+                        if ( $isAgora && ( get_xtecadmin_id() == $id )) {
+                            wp_die(__('You do not have permission to do that.'));
+                        }
+                        //************ FI
+
 			if ( ! current_user_can( 'delete_user', $id ) ) {
 				wp_die( __( 'Sorry, you are not allowed to delete that user.' ), 403 );
 			}
@@ -363,7 +383,18 @@ switch ( $wp_list_table->current_action() ) {
 		foreach ( $all_user_ids as $id ) {
 			$user = get_userdata( $id );
 
+                        // XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
+                        // 2015.11.05 @nacho
+
+                        $username = $user->user_login;
+		        if ( $id == $current_user->ID || $username == ADMIN_USERNAME || $username == XTECADMIN_USERNAME ) {
+
+                        //************ ORIGINAL
+                        /*
 			if ( $id === $current_user->ID ) {
+                        */
+                        //************ FI
+
 				echo '<li>';
 				printf(
 					/* translators: 1: User ID, 2: User login. */
@@ -372,6 +403,12 @@ switch ( $wp_list_table->current_action() ) {
 					$user->user_login
 				);
 				echo "</li>\n";
+
+                        // XTEC ************ AFEGIT - Xtecadmin and admin user cannot be deleted (confirmation step)
+                        // 2015.11.05 @nacho
+                            exit;
+                        //************ FI
+
 			} else {
 				echo '<li>';
 				printf(

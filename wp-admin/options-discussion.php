@@ -51,6 +51,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 	_e( 'Default post settings' );
 	?>
 </span></legend>
+
+<!-- XTEC ************ AFEGIT - Disable retropings for all users except superadmin user -->
+<!-- 2017.04.11 @nacho -->
+<?php
+if (is_xtec_super_admin()){
+?>
+<!--************ FI-->
+
 <label for="default_pingback_flag">
 <input name="default_pingback_flag" type="checkbox" id="default_pingback_flag" value="1" <?php checked( '1', get_option( 'default_pingback_flag' ) ); ?> />
 <?php _e( 'Attempt to notify any blogs linked to from the post' ); ?></label>
@@ -58,6 +66,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <label for="default_ping_status">
 <input name="default_ping_status" type="checkbox" id="default_ping_status" value="open" <?php checked( 'open', get_option( 'default_ping_status' ) ); ?> />
 <?php _e( 'Allow link notifications from other blogs (pingbacks and trackbacks) on new posts' ); ?></label>
+
+<!-- XTEC ************ AFEGIT - Disable retropings for all users except superadmin user -->
+<!-- 2017.04.11 @nacho -->
+<?php
+}
+?>
+<!--************ FI-->
+
 <br />
 <label for="default_comment_status">
 <input name="default_comment_status" type="checkbox" id="default_comment_status" value="open" <?php checked( 'open', get_option( 'default_comment_status' ) ); ?> />
@@ -258,6 +274,15 @@ if ( ! $show_avatars ) {
 	</label>
 </td>
 </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hide default avatars and punctuation. It's only shown to xtecadmin.
+// 2015.02.20 @vsaavedr
+// 2015.07.31 @nacho
+if (is_xtec_super_admin()) {
+?>
+<!--************ FI-->
+
 <tr class="avatar-settings<?php echo $show_avatars_class; ?>">
 <th scope="row"><?php _e( 'Maximum Rating' ); ?></th>
 <td><fieldset><legend class="screen-reader-text"><span>
@@ -349,6 +374,16 @@ echo apply_filters( 'default_avatar_select', $avatar_list );
 
 </fieldset></td>
 </tr>
+
+<?php
+// XTEC ************ AFEGIT - hide default avatars and punctuation. It's only shown to xtecadmin.
+// 2015.02.20 @vsaavedr
+// 2015.07.31 @nacho
+}
+?>
+<!--************ FI-->
+
+
 <?php do_settings_fields( 'discussion', 'avatars' ); ?>
 </table>
 
