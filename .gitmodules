@@ -43,3 +43,6 @@
 [submodule "wp-content/plugins/google-calendar-events"]
 	path = wp-content/plugins/google-calendar-events
 	url = https://github.com/projectestac/wordpress-gce.git
+[submodule "wp-content/plugins/h5p"]
+	path = wp-content/plugins/h5p
+	url = https://github.com/projectestac/wordpress-h5p.git
