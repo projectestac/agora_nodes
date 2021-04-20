@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/astra"]
+	path = wp-content/themes/astra
+	url = https://github.com/projectestac/wordpress-theme-astra.git
