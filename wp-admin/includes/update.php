@@ -342,6 +342,9 @@ function update_nag() {
 		);
 	}
 
+        // XTEC ************ ELIMINAT - Remove upgrade Wordpress version message
+        // 2014.09.19 @aginard
+        /*
 	wp_admin_notice(
 		$msg,
 		array(
@@ -350,6 +353,9 @@ function update_nag() {
 			'paragraph_wrap'     => false,
 		)
 	);
+        */
+        //************ FI
+
 }
 
 /**
