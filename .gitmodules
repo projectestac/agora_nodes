@@ -40,3 +40,6 @@
 [submodule "wp-content/plugins/google-analyticator"]
 	path = wp-content/plugins/google-analyticator
 	url = https://github.com/projectestac/wordpress-google-analyticator
+[submodule "wp-content/plugins/google-calendar-events"]
+	path = wp-content/plugins/google-calendar-events
+	url = https://github.com/projectestac/wordpress-gce.git
