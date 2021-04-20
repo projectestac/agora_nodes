@@ -1,0 +1,1 @@
+bbpress-enable-tinymce-visual-tab-es_ES.mo
