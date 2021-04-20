@@ -4,3 +4,6 @@
 [submodule "wp-content/plugins/astra-addon"]
 	path = wp-content/plugins/astra-addon
 	url = https://github.com/projectestac/wordpress-astra-addon.git
+[submodule "wp-content/mu-plugins/common"]
+	path = wp-content/mu-plugins/common
+	url = https://github.com/projectestac/wordpress-mu-common.git
