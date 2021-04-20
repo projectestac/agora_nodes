@@ -34,9 +34,6 @@
 [submodule "wp-content/plugins/code-snippets"]
 	path = wp-content/plugins/code-snippets
 	url = https://github.com/projectestac/wordpress-code-snippets.git
-[submodule "wp-content/plugins/email-subscribers"]
-	path = wp-content/plugins/email-subscribers
-	url = https://github.com/projectestac/wordpress-email-subscribers.git
 [submodule "wp-content/plugins/google-analyticator"]
 	path = wp-content/plugins/google-analyticator
 	url = https://github.com/projectestac/wordpress-google-analyticator
@@ -79,3 +76,6 @@
 [submodule "wp-content/plugins/wordpress-importer"]
 	path = wp-content/plugins/wordpress-importer
 	url = https://github.com/projectestac/wordpress-importer
+[submodule "wp-content/plugins/email-subscribers"]
+	path = wp-content/plugins/email-subscribers
+	url = https://github.com/projectestac/wordpress-email-subscribers.git
