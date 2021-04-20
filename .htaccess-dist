@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteBase /
+
+# Block access to file xmlrpc.php
+<Files xmlrpc.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Rewrite any unknown directories and files
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^(.*)$ - [NC,L]
+RewriteRule ^(.*)$ wordpress/index.php [QSA,L]
