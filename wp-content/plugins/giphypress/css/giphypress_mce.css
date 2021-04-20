@@ -1,0 +1,7 @@
+.mce-i-giphypresswizard {
+    background: transparent url("../img/giphyiconoff20px.png") no-repeat scroll center center !important;
+}
+
+.mce-i-giphypresswizard:hover {
+    background-image: url("../img/giphyicon20px.png") !important;
+}
