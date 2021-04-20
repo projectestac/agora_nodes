@@ -61,3 +61,6 @@
 [submodule "wp-content/plugins/slideshare"]
 	path = wp-content/plugins/slideshare
 	url = https://github.com/projectestac/wordpress-slideshare.git
+[submodule "wp-content/plugins/slideshow-jquery-image-gallery"]
+	path = wp-content/plugins/slideshow-jquery-image-gallery
+	url = https://github.com/projectestac/wordpress-slideshow-jig
