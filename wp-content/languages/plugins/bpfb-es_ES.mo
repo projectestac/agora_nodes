@@ -1,0 +1,1 @@
+buddypress-activity-plus-es_ES.mo
