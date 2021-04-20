@@ -191,6 +191,16 @@ switch ( $action ) {
 	default:
 		$profile_user = get_user_to_edit( $user_id );
 
+                // XTEC ************ AFEGIT - Only xtecadmin is allowed to edit xtecadmin
+                // 2014.09.03 @aginard
+                // 2015.07.31 @nacho
+                if (!is_xtec_super_admin()){
+                    if ( $profileuser->user_login == get_xtecadmin_username() ) {
+                        wp_die(__('You do not have permission to edit this user.'));
+                    }
+               }
+               //************ FI
+
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
 			wp_die( __( 'Sorry, you are not allowed to edit this user.' ) );
 		}
