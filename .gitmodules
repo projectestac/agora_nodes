@@ -10,3 +10,6 @@
 [submodule "wp-includes/xtec"]
 	path = wp-includes/xtec
 	url = https://github.com/projectestac/wordpress-xtec
+[submodule "wp-content/plugins/add-to-any"]
+	path = wp-content/plugins/add-to-any
+	url = https://github.com/projectestac/wordpress-add-to-any.git
