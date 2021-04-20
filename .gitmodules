@@ -19,3 +19,6 @@
 [submodule "wp-content/plugins/bbpress"]
 	path = wp-content/plugins/bbpress
 	url = https://github.com/projectestac/wordpress-bbpress.git
+[submodule "wp-content/plugins/blogger-importer"]
+	path = wp-content/plugins/blogger-importer
+	url = https://github.com/projectestac/wordpress-blogger-importer
