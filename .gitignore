@@ -1,0 +1,8 @@
+/.idea
+*.log
+.htaccess
+wp-content/advanced-cache.php
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/uploads/*
+wp-content/wp-cache-config.php
