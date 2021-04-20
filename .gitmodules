@@ -85,3 +85,6 @@
 [submodule "wp-content/plugins/wordpress-importer"]
 	path = wp-content/plugins/wordpress-importer
 	url = https://github.com/projectestac/wordpress-importer
+[submodule "wp-content/plugins/wordpress-php-info"]
+	path = wp-content/plugins/wordpress-php-info
+	url = https://github.com/projectestac/wordpress-php-info
