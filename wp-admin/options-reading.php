@@ -83,6 +83,13 @@ else :
 	}
 	?>
 <table class="form-table" role="presentation">
+
+<!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<!-- 2014.09.09 @aginard -->
+<!-- 2015.07.11 @nacho -->
+<?php if (!is_xtec_super_admin()) : ?>
+<!-- ************ FI -->
+
 <tr>
 <th scope="row"><?php _e( 'Your homepage displays' ); ?></th>
 <td id="front-static-pages"><fieldset>
@@ -175,10 +182,24 @@ else :
 <input name="posts_per_page" type="number" step="1" min="1" id="posts_per_page" value="<?php form_option( 'posts_per_page' ); ?>" class="small-text" /> <?php _e( 'posts' ); ?>
 </td>
 </tr>
+
+<!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
+<!--// 2014.09.09 @aginard -->
+<!--// 2015.07.31 @nacho -->
+<?php endif; ?>
+<!-- ************ FI -->
+
 <tr>
 <th scope="row"><label for="posts_per_rss"><?php _e( 'Syndication feeds show the most recent' ); ?></label></th>
 <td><input name="posts_per_rss" type="number" step="1" min="1" id="posts_per_rss" value="<?php form_option( 'posts_per_rss' ); ?>" class="small-text" /> <?php _e( 'items' ); ?></td>
 </tr>
+
+<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
+<!-- 2014.09.09 @aginard -->
+<!-- 2015.07.11 @nacho -->
+<?php if (!is_xtec_super_admin()) : ?>
+<!-- ************ FI -->
+
 <tr>
 <th scope="row"><?php _e( 'For each post in a feed, include' ); ?> </th>
 <td><fieldset>
@@ -246,6 +267,12 @@ else :
 <?php endif; ?>
 </fieldset></td>
 </tr>
+
+<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
+<!-- 2014.09.09 @aginard -->
+<!-- 2015.07.11 @nacho -->
+<?php endif; ?>
+<!-- ************ FI -->
 
 <?php do_settings_fields( 'reading', 'default' ); ?>
 </table>
