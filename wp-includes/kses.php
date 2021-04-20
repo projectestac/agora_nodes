@@ -69,6 +69,11 @@ if ( ! CUSTOM_TAGS ) {
 			'download' => array(
 				'valueless' => 'y',
 			),
+
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI
+
 		),
 		'abbr'       => array(),
 		'acronym'    => array(),
@@ -159,10 +164,30 @@ if ( ! CUSTOM_TAGS ) {
 			'dir'      => true,
 			'lang'     => true,
 			'xml:lang' => true,
+
+// XTEC ************ AFEGIT -
+			'role' => true,
+			'tabindex' => true,
+			'style' => true,
+//************ FI
+
 		),
 		'dl'         => array(),
 		'dt'         => array(),
 		'em'         => array(),
+
+// XTEC ************ AFEGIT - Let contributors use this tag
+		'embed' => array(
+			'height' => true,
+			'src' => true,
+			'style' => true,
+			'type' => true,
+			'width' => true,
+			'flashvars' => true,
+			'pluginspage' => true,
+		),
+//************ FI
+
 		'fieldset'   => array(),
 		'figure'     => array(
 			'align'    => true,
@@ -236,7 +261,31 @@ if ( ! CUSTOM_TAGS ) {
 			'src'      => true,
 			'usemap'   => true,
 			'width'    => true,
+
+// XTEC ************ AFEGIT -
+			'style' => true,
+//************ FI
+
 		),
+
+// XTEC ************ AFEGIT - Let contributors use this tag
+		'iframe' => array(
+			'align' => true,
+			'frameborder' => true,
+			'height' => true,
+			'longdesc' => true,
+			'marginheight' => true,
+			'marginwidth' => true,
+			'name' => true,
+			'sandbox' => true,
+			'style' => true,
+			'scrolling' => true,
+			'src' => true,
+			'srcdoc' => true,
+			'width' => true,
+		),
+//************ FI
+
 		'ins'        => array(
 			'datetime' => true,
 			'cite'     => true,
@@ -279,6 +328,17 @@ if ( ! CUSTOM_TAGS ) {
 		),
 		's'          => array(),
 		'samp'       => array(),
+
+// XTEC ************ AFEGIT - Let contributors use this tag
+		'script' => array(
+			'async' => true,
+			'charset' => true,
+			'defer' => true,
+			'src' => true,
+			'type' => true,
+		),
+//************ FI
+
 		'span'       => array(
 			'dir'      => true,
 			'align'    => true,
@@ -335,6 +395,12 @@ if ( ! CUSTOM_TAGS ) {
 			'scope'   => true,
 			'valign'  => true,
 			'width'   => true,
+
+// XTEC ************ AFEGIT -
+			'style' => true,
+			'class' => true,
+//************ FI
+
 		),
 		'textarea'   => array(
 			'cols'     => true,
@@ -378,6 +444,11 @@ if ( ! CUSTOM_TAGS ) {
 			'char'    => true,
 			'charoff' => true,
 			'valign'  => true,
+
+// XTEC ************ AFEGIT -
+			'class' => true,
+//************ FI
+
 		),
 		'track'      => array(
 			'default' => true,
