@@ -34,3 +34,6 @@
 [submodule "wp-content/plugins/buddypress-like"]
 	path = wp-content/plugins/buddypress-like
 	url = https://github.com/projectestac/wordpress-buddypress-like.git
+[submodule "wp-content/plugins/code-snippets"]
+	path = wp-content/plugins/code-snippets
+	url = https://github.com/projectestac/wordpress-code-snippets.git
