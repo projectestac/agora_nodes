@@ -70,3 +70,6 @@
 [submodule "wp-content/plugins/tabs-responsive"]
 	path = wp-content/plugins/tabs-responsive
 	url = https://github.com/projectestac/tabs-responsive.git
+[submodule "wp-content/plugins/tinymce-advanced"]
+	path = wp-content/plugins/tinymce-advanced
+	url = https://github.com/projectestac/wordpress-tinymce-advanced
