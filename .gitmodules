@@ -16,3 +16,6 @@
 [submodule "wp-content/plugins/author-category"]
 	path = wp-content/plugins/author-category
 	url = https://github.com/projectestac/wordpress-author-category.git
+[submodule "wp-content/plugins/bbpress"]
+	path = wp-content/plugins/bbpress
+	url = https://github.com/projectestac/wordpress-bbpress.git
