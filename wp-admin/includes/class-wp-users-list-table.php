@@ -291,6 +291,10 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
+		// ************ FI
 		$id        = 'bottom' === $which ? 'new_role2' : 'new_role';
 		$button_id = 'bottom' === $which ? 'changeit2' : 'changeit';
 		?>
@@ -328,6 +332,11 @@ class WP_Users_List_Table extends WP_List_Table {
 		 * @param string $which The location of the extra table nav markup: 'top' or 'bottom'.
 		 */
 		do_action( 'manage_users_extra_tablenav', $which );
+
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		}
+		// ************ FI
 	}
 
 	/**
@@ -451,13 +460,46 @@ class WP_Users_List_Table extends WP_List_Table {
 
 			if ( current_user_can( 'edit_user', $user_object->ID ) ) {
 				$edit            = "<strong><a href=\"{$edit_link}\">{$user_object->user_login}</a>{$super_admin}</strong><br />";
+
+                                // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (opening if)
+                                // 2014.09.03 @aginard
+                                // 2015.07.31 @nacho
+                                if (!is_xtec_super_admin()){
+                                    if (($user_object->user_login != get_xtecadmin_username())) {
+                                        $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
+                                    }
+                                } else {
+                                //************ FI
+
 				$actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
+
+                                // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
+                                // 2014.09.03 @aginard
+                                }
+                                //************ FI
 			} else {
 				$edit = "<strong>{$user_object->user_login}{$super_admin}</strong><br />";
 			}
 
 			if ( ! is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) ) {
+
+                            // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (opening if)
+                            // 2014.09.03 @aginard
+                            // 2015.07.31 @nacho
+                            if (!is_xtec_super_admin()){
+                                if ($user_object->user_login != get_xtecadmin_username()) {
+                                    $actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . "</a>";
+                                }
+                            } else {
+                            //************ FI
+
 				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . '</a>';
+
+                            // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (closing ifs)
+                            // 2014.09.03 @aginard
+                            }
+                            //************ FI
+
 			}
 			if ( is_multisite() && current_user_can( 'remove_user', $user_object->ID ) ) {
 				$actions['remove'] = "<a class='submitdelete' href='" . wp_nonce_url( $url . "action=remove&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Remove' ) . '</a>';
