@@ -25,3 +25,6 @@
 [submodule "wp-content/plugins/buddypress"]
 	path = wp-content/plugins/buddypress
 	url = https://github.com/projectestac/wordpress-buddypress.git
+[submodule "wp-content/plugins/buddypress-docs"]
+	path = wp-content/plugins/buddypress-docs
+	url = https://github.com/projectestac/wordpress-buddypress-docs.git
