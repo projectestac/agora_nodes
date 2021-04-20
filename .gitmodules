@@ -31,3 +31,6 @@
 [submodule "wp-content/plugins/buddypress-group-email-subscription"]
 	path = wp-content/plugins/buddypress-group-email-subscription
 	url = https://github.com/projectestac/wordpress-buddypress-group-email-subscription.git
+[submodule "wp-content/plugins/code-snippets"]
+	path = wp-content/plugins/code-snippets
+	url = https://github.com/projectestac/wordpress-code-snippets.git
