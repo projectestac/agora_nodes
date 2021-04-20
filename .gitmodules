@@ -52,3 +52,6 @@
 [submodule "wp-content/plugins/invite-anyone"]
 	path = wp-content/plugins/invite-anyone
 	url = https://github.com/projectestac/wordpress-invite-anyone.git
+[submodule "wp-content/plugins/pods"]
+	path = wp-content/plugins/pods
+	url = https://github.com/projectestac/wordpress-pods.git
