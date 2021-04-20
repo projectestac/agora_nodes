@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xtec-stats\n"
+"POT-Creation-Date: 2016-12-15 12:11+0100\n"
+"PO-Revision-Date: 2017-01-03 11:55+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: xtec-stats.php:35
+msgid "Visits counter"
+msgstr "Comptador de visites"
+
+#: xtec-stats.php:36
+msgid "Statistics"
+msgstr "Estadístiques"
+
+#: xtec-stats.php:50
+msgid "Title:"
+msgstr "Títol:"
+
+#: xtec-stats.php:171
+msgid "Id"
+msgstr "Identificador"
+
+#: xtec-stats.php:172 xtec-stats.php:285
+msgid "Datetime"
+msgstr "Data"
+
+#: xtec-stats.php:173 xtec-stats.php:309
+msgid "IP"
+msgstr "IP"
+
+#: xtec-stats.php:174
+msgid "IP Forward"
+msgstr "IP directa"
+
+#: xtec-stats.php:175
+msgid "IP Client"
+msgstr "IP del client"
+
+#: xtec-stats.php:176
+msgid "User agent"
+msgstr "Informació d'usuari"
+
+#: xtec-stats.php:177 xtec-stats.php:320
+msgid "Uri"
+msgstr "URI"
+
+#: xtec-stats.php:178
+msgid "Uid"
+msgstr "UID"
+
+#: xtec-stats.php:179
+msgid "Is admin"
+msgstr "És administrador"
+
+#: xtec-stats.php:180 xtec-stats.php:263 xtec-stats.php:293
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: xtec-stats.php:181
+msgid "Email"
+msgstr "Adreça electrònica"
+
+#: xtec-stats.php:182 xtec-stats.php:264 xtec-stats.php:301
+msgid "Content"
+msgstr "Contingut"
+
+#: xtec-stats.php:254
+msgid "Search options"
+msgstr "Opcions de cerca"
+
+#: xtec-stats.php:255
+msgid "Configuration options"
+msgstr "Opcions de configuració"
+
+#: xtec-stats.php:271
+msgid "Number elements to show"
+msgstr "Nombre d'elements a mostrar"
+
+#: xtec-stats.php:337
+msgid "Not data found"
+msgstr "No hi ha resultats"
+
+#: xtec-stats.php:398
+msgid "Export to CSV"
+msgstr "Exporta a un fitxer CSV"
+
+#: xtec-stats.php:411
+msgid "Count administrators stats"
+msgstr "Compta les visites dels administradors"
+
+#: xtec-stats.php:413
+msgid "Save"
+msgstr "Desa"
+
+#: xtec-stats.php:421
+msgid "Show logs WP_Stats"
+msgstr "Consulta els missatges esborrats"
+
+#: xtec-stats.php:421
+msgid "Logs"
+msgstr "Registres"
+
+#: xtec-stats.php:432
+msgid "User name"
+msgstr "Nom d'usuari"
+
+#: xtec-stats.php:433
+msgid "Message content"
+msgstr "Contingut del missatge"
+
+#: xtec-stats.php:461
+msgid "Successfully updated."
+msgstr "S'ha actualitzat correctament."
+
+#: xtec-stats.php:465
+msgid "Not update correctly. Try again."
+msgstr "No s'ha actualitzat correctament. Proveu-ho de nou."
