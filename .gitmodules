@@ -22,3 +22,6 @@
 [submodule "wp-content/plugins/blogger-importer"]
 	path = wp-content/plugins/blogger-importer
 	url = https://github.com/projectestac/wordpress-blogger-importer
+[submodule "wp-content/plugins/buddypress"]
+	path = wp-content/plugins/buddypress
+	url = https://github.com/projectestac/wordpress-buddypress.git
