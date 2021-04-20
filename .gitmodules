@@ -13,3 +13,6 @@
 [submodule "wp-content/plugins/add-to-any"]
 	path = wp-content/plugins/add-to-any
 	url = https://github.com/projectestac/wordpress-add-to-any.git
+[submodule "wp-content/plugins/author-category"]
+	path = wp-content/plugins/author-category
+	url = https://github.com/projectestac/wordpress-author-category.git
