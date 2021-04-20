@@ -1271,6 +1271,13 @@ function get_terms( $args = array(), $deprecated = '' ) {
 		'suppress_filter' => false,
 	);
 
+	// XTEC ************ AFEGIT - Show all categories for visibility plugin
+	// 2015.03.31 @nacho
+
+	$defaults['hide_empty'] = !is_agora();
+
+	//************ FI
+
 	/*
 	 * Legacy argument format ($taxonomy, $args) takes precedence.
 	 *

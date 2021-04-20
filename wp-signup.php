@@ -209,7 +209,20 @@ function show_blog_form( $blogname = '', $blog_title = '', $errors = '' ) {
 	<div id="privacy">
 		<fieldset class="privacy-intro">
 			<legend>
-				<span class="label-heading"><?php _e( 'Privacy:' ); ?></span>
+
+			<?php
+			// XTEC ************ MODIFICAT - Changed term privacy for visibility
+			// 2013.12.17 @mespinosaz
+
+			<span class="label-heading"><?php _e( 'Visibility:' ); ?></span>
+
+			//************ ORIGINAL
+			/*
+			<span class="label-heading"><?php _e( 'Privacy:' ); ?></span>
+			*/
+			//************ FI
+			?>
+
 				<?php _e( 'Allow search engines to index this site.' ); ?>
 			</legend>
 			<p class="wp-signup-radio-buttons">
