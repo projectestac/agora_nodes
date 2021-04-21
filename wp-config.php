@@ -108,6 +108,9 @@ define('AUTOSAVE_INTERVAL', 300); // 5 minuts
 // Number of revisions of each post
 define('WP_POST_REVISIONS', 3);
 
+// Reduce the number of requests
+const CONCATENATE_SCRIPTS = true;
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
