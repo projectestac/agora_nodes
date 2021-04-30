@@ -9,6 +9,13 @@
 /** WordPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
+// XTEC ************ AFEGIT - Blocked access to site health to all users but xtecadmin
+// 2021.04.30 @aginard
+if ( ! is_xtec_super_admin() ) {
+    wp_die( __( 'Sorry, you are not allowed to access this page.' ), 403 );
+}
+//************ FI
+
 $action = ! empty( $_REQUEST['action'] ) ? sanitize_text_field( $_REQUEST['action'] ) : '';
 
 $tabs = array(
