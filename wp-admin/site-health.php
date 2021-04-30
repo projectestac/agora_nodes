@@ -14,6 +14,13 @@ if ( isset( $_GET['tab'] ) && 'debug' === $_GET['tab'] ) {
 /** WordPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
+// XTEC ************ AFEGIT - Blocked access to site health to all users but xtecadmin
+// 2021.04.30 @aginard
+if ( ! is_xtec_super_admin() ) {
+    wp_die( __( 'Sorry, you are not allowed to access this page.' ), 403 );
+}
+//************ FI
+
 wp_reset_vars( array( 'action' ) );
 
 $title = __( 'Site Health Status' );
