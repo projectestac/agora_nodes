@@ -425,7 +425,7 @@ function xtec_stats_output_data($offset,$limit,$dataResults,$searchType,$fieldCo
 }
 
 function show_xtec_stats_create_menu(){
-    add_management_page( __('Show logs WP_Stats', 'xtec-stats'),__('Logs', 'xtec-stats'),'manage_options','xtec_stats','get_data_xtec_stats','/images/wordpress.png');
+    add_management_page( __('Show logs WP_Stats', 'xtec-stats'),__('Logs', 'xtec-stats'),'manage_options','xtec_stats','get_data_xtec_stats');
 }
 add_action('admin_menu','show_xtec_stats_create_menu');
 
