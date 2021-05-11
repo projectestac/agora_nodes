@@ -282,28 +282,12 @@ body.login {
 
 /* Large > 1480px */
 @media (min-width: 1480px) {
-    html {
-        background-color: #E2E2E2;
 
-    }
-
-    body {
-        width: 1480px;
-        margin-left: auto;
-        margin-right: auto;
-        border-left: 3px solid #ddd;
-        border-right: 3px solid #ddd;
-    }
-
-    .box-content a,
-    .box-content span {
-        font-size: 30px !important;
-    }
-
-    .box-content-grid button:before{
+    .box-content-grid button:before {
         font-size: 2em !important;
     }
-    .box-content-grid button,.box-content-grid span {
+
+    .box-content-grid button, .box-content-grid span {
         font-size: 1em !important;
     }
 }
