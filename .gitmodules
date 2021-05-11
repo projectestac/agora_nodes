@@ -94,3 +94,6 @@
 [submodule "wp-content/plugins/wp-recaptcha"]
 	path = wp-content/plugins/wp-recaptcha
 	url = https://github.com/projectestac/wordpress-recaptcha.git
+[submodule "wp-content/plugins/gif-master"]
+	path = wp-content/plugins/gif-master
+	url = https://github.com/projectestac/wordpress-gif-master.git
