@@ -1298,7 +1298,7 @@ body.login .wp-social-login-widget {
 
     .box-content a,
     .box-content span {
-        font-size: 30px !important;
+        font-size: 30px;
     }
 }
 
