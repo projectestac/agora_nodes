@@ -751,7 +751,7 @@ function tinymce_custom( $in ) {
 	if ($in['selector'] ==  '#whats-new'){
 		$in['menubar'] = false;
 		$in['toolbar'] = '';
-		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard ';
+		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard gifmaster_new ';
 		$in['toolbar2'] = '';
 		$in['statusbar'] = true;
 	}
@@ -759,8 +759,12 @@ function tinymce_custom( $in ) {
 }
 
 add_filter( 'tiny_mce_before_init', 'tinymce_custom');
-
 add_filter( 'bp_is_activity_embeds_active', '__return_true' );
+
+// Enqueue scripts for gif-master
+if (function_exists('gifm_reg_admin_scripts')) {
+    add_action('wp_enqueue_scripts', 'gifm_reg_admin_scripts');
+}
 
 function bpfr_whats_new_tiny_editor() {
       
