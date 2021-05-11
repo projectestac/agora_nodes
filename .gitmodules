@@ -85,3 +85,6 @@
 [submodule "wp-content/plugins/wordpress-telegram"]
 	path = wp-content/plugins/wordpress-telegram
 	url = https://github.com/projectestac/wordpress-telegram.git
+[submodule "wp-content/plugins/gif-master"]
+	path = wp-content/plugins/gif-master
+	url = https://github.com/projectestac/wordpress-gif-master.git
