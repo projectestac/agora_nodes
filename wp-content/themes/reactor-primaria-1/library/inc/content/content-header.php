@@ -86,7 +86,6 @@ function reactor_do_title_logo()
 {
     $description_text = get_description_text();
     $description_font_size = get_description_font_size($description_text);
-    $description_link =
     $options = get_option('my_option_name');
     ?>
 
@@ -96,7 +95,7 @@ function reactor_do_title_logo()
             <div class="box-title large-6 columns">
                 <div class="box-content">
                     <div>
-                        <a style="font-size:<?php echo reactor_option('tamany_font_nom');?>"
+                        <a style="font-size:<?php echo reactor_option('tamany_font_nom'); ?>"
                            href="<?php echo home_url();?>">
                             <?php echo nl2br(get_option('nodesbox_name')); ?>
                         </a>
@@ -108,12 +107,12 @@ function reactor_do_title_logo()
                 <div class="box-content">
                     <div>
                         <?php if (reactor_option('blogdescription_link')) { ?>
-                            <a style="font-size:<?php echo $description_font_size;?>"
-                               href="<?php echo reactor_option('blogdescription_link');?>" >
+                            <a style="font-size:<?php echo reactor_option('tamany_font_nom'); ?>"
+                               href="<?php echo reactor_option('blogdescription_link'); ?>" >
                                 <?php echo nl2br($description_text); ?>
                             </a>
                         <?php } else { ?>
-                            <span style="font-size:<?php echo $description_font_size;?>">
+                            <span style="font-size:<?php echo reactor_option('tamany_font_nom'); ?>">
                         <?php echo nl2br($description_text); ?>
                         </span>
                         <?php } ?>
