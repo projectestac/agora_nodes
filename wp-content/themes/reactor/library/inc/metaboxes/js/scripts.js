@@ -11,7 +11,7 @@ jQuery(function($) {
 	
 	// the upload image button, saves the id and outputs a preview of the image
 	var imageFrame;
-	$('.meta_box_upload_image_button').live( 'click', function(event) {
+	$('.meta_box_upload_image_button').on( 'click', null, function(event) {
 		event.preventDefault();
 		
 		var options, attachment;
@@ -60,7 +60,7 @@ jQuery(function($) {
 	});
 	
 	// the remove image link, removes the image id from the hidden field and replaces the image preview
-	$('.meta_box_clear_image_button').live('click', function() {
+	$('.meta_box_clear_image_button').on('click', null, function() {
 		var defaultImage = $(this).parent().siblings('.meta_box_default_image').text();
 		$(this).parent().siblings('.meta_box_upload_image').val('');
 		$(this).parent().siblings('.meta_box_preview_image').attr('src', defaultImage);
@@ -69,7 +69,7 @@ jQuery(function($) {
 	
 	// the file image button, saves the id and outputs the file name
 	var fileFrame;
-	$('.meta_box_upload_file_button').live('click', function(e) {
+	$('.meta_box_upload_file_button').on('click', null, function(e) {
 		e.preventDefault();
 		
 		var options, attachment;
@@ -119,7 +119,7 @@ jQuery(function($) {
 	});
 	
 	// the remove image link, removes the image id from the hidden field and replaces the image preview
-	$('.meta_box_clear_file_button').live('click', function() {
+	$('.meta_box_clear_file_button').on('click', null, function() {
 		$(this).parent().siblings('.meta_box_upload_file').val('');
 		$(this).parent().siblings('.meta_box_filename').text('');
 		$(this).parent().siblings('.meta_box_file').removeClass('checked');
@@ -135,7 +135,7 @@ jQuery(function($) {
 		//$("span").text(a.join(" "));
     }
 	// repeatable fields
-	$('.meta_box_repeatable_add').live('click', function() {
+	$('.meta_box_repeatable_add').on('click', null, function() {
 		// clone
 		var row = $(this).closest('.meta_box_repeatable').find('tbody tr:last-child');
 		var clone = row.clone();
@@ -162,7 +162,7 @@ jQuery(function($) {
 		return false;
 	});
 	
-	$('.meta_box_repeatable_remove').live('click', function(){
+	$('.meta_box_repeatable_remove').on('click', null, function(){
 		$(this).closest('tr').remove();
 		return false;
 	});
@@ -185,7 +185,7 @@ jQuery(function($) {
         update: function(event, ui) {
 			var result = $(this).sortable('toArray');
 			var thisID = $(this).attr('id');
-			$('.store-' + thisID).val(result) 
+			$('.store-' + thisID).val(result);
 		}
     });
 
