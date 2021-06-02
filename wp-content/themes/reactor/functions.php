@@ -767,22 +767,17 @@ if (function_exists('gifm_reg_admin_scripts')) {
 }
 
 function bpfr_whats_new_tiny_editor() {
-      
-        // building the what's new textarea
-        if ( isset( $_GET['r'] ) ) :
-           $content = esc_textarea( $_GET['r'] ); 
-        endif;
+    // Adding tinymce tools
+    $editor_id = 'whats-new';
+    $settings = [
+        'textarea_name' => $editor_id,
+        'media_buttons' => true,
+        'drag_drop_upload' => true,
+        'quicktags' => false,
+    ];
 
-        // adding tinymce tools
-        $editor_id = 'whats-new';
-        $settings = array( 
-			    'textarea_name' => 'whats-new', 
-                'media_buttons' => true, 
-			    'drag_drop_upload' => true,
-				'quicktags' => false,
-			);			
-					
-	    // get the editor       
-        wp_editor( $content, $editor_id, $settings );
+    // Get the editor
+    wp_editor('', $editor_id, $settings);
 }
-add_action( 'whats_new_textarea', 'bpfr_whats_new_tiny_editor' );
+
+add_action('whats_new_textarea', 'bpfr_whats_new_tiny_editor');
