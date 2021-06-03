@@ -55,7 +55,7 @@ function reactor_login_logo_title() {
 		return reactor_option('login_logo_title'); 
 	}
 }
-add_filter('login_headertitle', 'reactor_login_logo_title');
+add_filter('login_headertext', 'reactor_login_logo_title');
 
 /**
  * 4. Changes the order of the admin menu
