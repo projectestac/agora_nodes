@@ -17,11 +17,10 @@ add_action('widgets_init', function() {
 class XTEC_Widget extends WP_Widget {
 
     public $recursos = [
-        'ensenyament' => ['nom' => "Dep.Ensenyament", 'url' => 'http://ensenyament.gencat.cat/', 'img' => 'ensenyament-icon.png', 'desc' => 'Pàgina del Departament d\'ensenyament'],
+        'ensenyament' => ['nom' => "Dep.Educació", 'url' => 'http://educacio.gencat.cat/ca/inici/', 'img' => 'educacio-icon.png', 'desc' => 'Pàgina del Departament d\'Educació'],
         'xtec' => ['nom' => "XTEC", 'url' => 'http://xtec.gencat.cat', 'img' => 'xtec-icon.png', 'desc' => 'Recursos educatius'],
         'edu365' => ['nom' => "Edu365", 'url' => 'http://edu365.cat', 'img' => 'edu365-icon.png', 'desc' => 'Recursos educatius'],
         'edu3' => ['nom' => "Edu3", 'url' => 'http://www.edu3.cat', 'img' => 'edu3-icon.png', 'desc' => 'Videos educatius'],
-        'xarxa-docent' => ['nom' => "Xarxa Docent", 'url' => 'http://educat.xtec.cat', 'img' => 'xarxa-docent-icon.png', 'desc' => 'Xarxa de support amb més de 10.000 docents inscrits'],
         'ateneu' => ['nom' => "Ateneu", 'url' => 'http://ateneu.xtec.cat', 'img' => 'ateneu-icon.png', 'desc' => 'Materials i recursos per la formació'],
         'alexandria' => ['nom' => "Alexandria", 'url' => 'http://alexandria.xtec.cat', 'img' => 'alexandria-icon.png', 'desc' => 'Cursos moodle i activitats PDI per descarregar'],
         'linkat' => ['nom' => "Linkat", 'url' => 'http://linkat.xtec.cat/', 'img' => 'linkat-icon.png', 'desc' => 'Linux pels centres educatius'],
@@ -47,7 +46,7 @@ class XTEC_Widget extends WP_Widget {
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
     ];
 
-    public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'xarxa-docent', 'ateneu', 'alexandria',
+    public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
         'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
 
