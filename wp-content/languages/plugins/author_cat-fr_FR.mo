@@ -1,0 +1,1 @@
+author-category-fr_FR.mo
