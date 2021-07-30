@@ -17,8 +17,8 @@ window.calendar_languages['ca-ES'] = {
 
 	week:        'Setmana {0}',
 	all_day:     'Tot el dia',
-	time:        'Temps',
-	events:      'Desenvolupament',
+	time:        'Hora',
+	events:      'Esdeveniments',
 	before_time: 'Temps abans de la línia de temps',
 	after_time:  'Fi després d\'una línia de temps',
 
@@ -71,7 +71,7 @@ window.calendar_languages['ca-ES'] = {
 		'easter':   "Pasqua",
 		'easter+1': "Dilluns de Pasqua",
 		'01-05':    "Dia del Treballador",
-		'15-08':    "Asunció",
+		'15-08':    "Assumpció",
 		'12-10':    "Festa Nacional d'Espanya",
 		'01-11':    "Dia de tots Sants",
 		'06-12':    "Día de la Constitución Espanyola",
