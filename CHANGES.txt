@@ -4,6 +4,19 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 21.10.08
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.7.3
+- Updated translation of WordPress core
+- buddypress: Upgraded plugin to version 9.1.1
+- disable-gutenberg: Removed plugin
+- nodes-incidencies: Added plugin
+- nodes-inventari: Added plugin
+- tabs-responsive: Removed call to wp_reset_query() because it breaks the loading of posts in main page
+- tabs-responsive: Fixed button to insert shortcodes into posts not being generated
+- Added operation to flush rewrite rules
+
+
 Changes 21.09.02
 ---------------------------------------------------------------------------------------
 - buddypress-docs: Fixed verification issues with links using special chars
