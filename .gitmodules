@@ -34,9 +34,6 @@
 [submodule "wp-content/plugins/code-snippets"]
 	path = wp-content/plugins/code-snippets
 	url = https://github.com/projectestac/wordpress-code-snippets.git
-[submodule "wp-content/plugins/disable-gutenberg"]
-	path = wp-content/plugins/disable-gutenberg
-	url = https://github.com/projectestac/wordpress-disable-gutenberg.git
 [submodule "wp-content/plugins/email-subscribers"]
 	path = wp-content/plugins/email-subscribers
 	url = https://github.com/projectestac/wordpress-email-subscribers.git
