@@ -88,3 +88,6 @@
 [submodule "wp-content/plugins/gif-master"]
 	path = wp-content/plugins/gif-master
 	url = https://github.com/projectestac/wordpress-gif-master.git
+[submodule "wp-content/plugins/nodes-inventari"]
+	path = wp-content/plugins/nodes-inventari
+	url = https://github.com/projectestac/wordpress-nodes-inventari.git
