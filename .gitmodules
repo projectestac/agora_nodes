@@ -91,3 +91,6 @@
 [submodule "wp-content/plugins/nodes-inventari"]
 	path = wp-content/plugins/nodes-inventari
 	url = https://github.com/projectestac/wordpress-nodes-inventari.git
+[submodule "wp-content/plugins/nodes-incidencies"]
+	path = wp-content/plugins/nodes-incidencies
+	url = https://github.com/projectestac/wordpress-nodes-incidencies.git
