@@ -94,3 +94,6 @@
 [submodule "wp-content/plugins/nodes-incidencies"]
 	path = wp-content/plugins/nodes-incidencies
 	url = https://github.com/projectestac/wordpress-nodes-incidencies.git
+[submodule "wp-content/plugins/advanced-nocaptcha-recaptcha"]
+	path = wp-content/plugins/advanced-nocaptcha-recaptcha
+	url = https://github.com/projectestac/wordpress-advanced-nocaptcha-recaptcha.git
