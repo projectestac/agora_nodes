@@ -14,13 +14,13 @@
  * @package WordPress
  */
 
-require_once dirname(dirname(__FILE__)) . '/config/env-config.php';
-include_once dirname(__FILE__) . '/wp-includes/xtec/lib.php';
+require_once dirname(__FILE__, 2) . '/config/env-config.php';
+include_once __DIR__ . '/wp-includes/xtec/lib.php';
 
 global $agora;
 
 // Load multisite params for Agora
-include_once('site-config.php');
+include_once 'site-config.php';
 
 // ** MySQL settings ** //
 define('DB_USER', $agora['nodes']['username']);
@@ -40,7 +40,7 @@ if (!empty($agora['proxy']['user'])) {
 
 // Force https on login
 define('FORCE_SSL_ADMIN', true);
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
     $_SERVER['HTTPS'] = 'on';
 }
 
@@ -115,7 +115,7 @@ const CONCATENATE_SCRIPTS = true;
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') ) {
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */
