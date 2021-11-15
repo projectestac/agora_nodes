@@ -1641,3 +1641,111 @@ function custom_change_feed_cache_transient_lifetime() {
     return 3600;
 }
 add_filter('wp_feed_cache_transient_lifetime', 'custom_change_feed_cache_transient_lifetime', 2);
+
+/*
+ * Ginys al tauler d'incidències i inventari
+ */
+function extensions_dashboard_widgets() {
+    wp_add_dashboard_widget('extensions_widget_dashboard', 'Extensions (plugins)', 'extensions_widget_dashboard');
+
+    // Amaga el giny de RSS de agora.xtec.cat/nodes
+    remove_meta_box('widget_rss_nodes', 'dashboard', 'normal');
+}
+
+add_action('wp_dashboard_setup', 'extensions_dashboard_widgets');
+
+function extensions_widget_dashboard() {
+
+    if (current_user_can('activate_plugins')) {
+
+        echo '
+            <h3><span class="dashicons dashicons-laptop"></span> Gestor d\'incidències</h3>
+            <p>Permet que docents, alumnat i PAS puguin notificar les incidències informàtiques en un sistema senzill i centralitzat. 
+            <a target="_blank" href="https://projectes.xtec.cat/coordinaciodigital/gestio-equips-serveis/gestio-incidencies/ri/">Més informació</a>.</p> 
+            <form action="' . admin_url('admin-post.php') . '" method="post">
+            ';
+
+        if (!is_plugin_active('nodes-incidencies/incidencies-informatiques.php')) {
+            echo '
+                <input type="hidden" name="action" value="activate_incidencies" />
+                <input type="submit" class="button button-primary" value="Activa" />
+                ';
+        } else {
+            echo '
+                <input type="hidden" name="action" value="deactivate_incidencies" />
+                <input type="submit" class="button" value="Desactiva" />
+                <a href="post-new.php?post_type=nodes_incidencies" class="button button-primary">Obre una incidència</a>
+                ';
+        }
+
+        echo '</form><hr /><br />';
+
+    } else if (is_plugin_active('nodes-incidencies/incidencies-informatiques.php')) {
+        echo '<a href="post-new.php?post_type=nodes_incidencies" class="button button-primary">Obre una incidència</a><hr>';
+    }
+
+    if (current_user_can('manage_options')) {
+        echo '
+            <h3><span class="dashicons dashicons-list-view"></span> Gestor d\'inventari digital</h3>
+            <p>Permet crear un inventari dels equips i dispositius digitals del centre (excepte equips del PEDC, que es gestionen a INDIC). 
+            <a target="_blank" href="https://projectes.xtec.cat/coordinaciodigital/gestio-equips-serveis/maquinari/inventari-digital/">Més informació</a>.</p>
+            <form action="' . admin_url('admin-post.php') . '" method="post">
+            ';
+
+        if (!is_plugin_active('nodes-inventari/inventari-digital.php')) {
+            echo '
+                <input type="hidden" name="action" value="activate_inventari" />
+                <input type="submit" class="button button-primary" value="Activa" />
+                ';
+        } else {
+            echo '
+                <input type="hidden" name="action" value="deactivate_inventari" />
+                <input type="submit" class="button" value="Desactiva" />
+                <a href="post-new.php?post_type=nodes_inventari" class="button button-primary">Afegeix un element nou</a>
+                ';
+        }
+
+        echo '</form>';
+    }
+
+}
+
+function activate_incidencies() {
+    activate_plugin('nodes-incidencies/incidencies-informatiques.php');
+    wp_redirect('index.php');
+}
+
+function deactivate_incidencies() {
+    deactivate_plugins('nodes-incidencies/incidencies-informatiques.php');
+    wp_redirect('index.php');
+}
+
+function activate_inventari() {
+    activate_plugins('nodes-inventari/inventari-digital.php');
+    wp_redirect('index.php');
+}
+
+function deactivate_inventari() {
+    deactivate_plugins('nodes-inventari/inventari-digital.php');
+    wp_redirect('index.php');
+}
+
+add_action('admin_post_activate_incidencies', 'activate_incidencies');
+add_action('admin_post_deactivate_incidencies', 'deactivate_incidencies');
+add_action('admin_post_activate_inventari', 'activate_inventari');
+add_action('admin_post_deactivate_inventari', 'deactivate_inventari');
+
+
+// Filtre demanat pel Xavi Meler
+function myfeed_request($qv) {
+    if (isset($qv['feed']) && !isset($qv['post_type'])) {
+        $qv['post_type'] = [
+            'post',
+            'nodes_reporters',
+            'nodes_edupress',
+        ];
+    }
+    return $qv;
+}
+
+add_filter('request', 'myfeed_request');
