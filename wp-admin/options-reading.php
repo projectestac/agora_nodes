@@ -86,7 +86,7 @@ else :
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!-- 2014.09.09 @aginard -->
 <!-- 2015.07.11 @nacho -->
-<?php if (!is_xtec_super_admin()) : ?>
+<?php if (is_xtec_super_admin()) : ?>
 <!-- ************ FI -->
 
 <tr>
@@ -174,7 +174,7 @@ else :
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
 <!-- 2014.09.09 @aginard -->
 <!-- 2015.07.11 @nacho -->
-<?php if (!is_xtec_super_admin()) : ?>
+<?php if (is_xtec_super_admin()) : ?>
 <!-- ************ FI -->
 
 <tr>
@@ -229,7 +229,7 @@ else :
 </fieldset></td>
 </tr>
 
-<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
+<!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
 <!-- 2014.09.09 @aginard -->
 <!-- 2015.07.11 @nacho -->
 <?php endif; ?>
