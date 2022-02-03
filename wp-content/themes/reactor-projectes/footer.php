@@ -19,6 +19,24 @@
     </div><!-- #main -->
 </div><!-- #page -->
 
+<!-- FSE image and notice -->
+<?php
+$fse_show_image = get_option('fse_show_image', '');
+$fse_text = get_option('fse_text', '');
+if ($fse_show_image === 'show' && $fse_text !== '') {
+    ?>
+    <div class="wp-block-columns" style="padding:1em">
+        <div class="wp-block-column" style="max-width:250px">
+            <img alt="logo fons europeus" src="<?php echo get_template_directory_uri(); ?>/img/FSE.png">
+        </div>
+        <div class="wp-block-column" style="max-width:450px">
+            <p style="font-size:x-small;">
+                <?php echo $fse_text; ?>
+            </p>
+        </div>
+    </div>
+<?php } ?>
+
 <?php wp_footer(); reactor_foot(); ?>
 
 <script>
