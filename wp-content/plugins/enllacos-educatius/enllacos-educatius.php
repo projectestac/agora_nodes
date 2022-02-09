@@ -44,11 +44,12 @@ class XTEC_Widget extends WP_Widget {
         'sinapsi' => ['nom' => "Sinapsi", 'url' => 'http://sinapsi.xtec.cat', 'img' => 'sinapsi-icon.png', 'desc' => "Enllaç al portal Sinapsi"],
         'serveiseducatius' => ['nom' => "Serveis educatius", 'url' => '', 'img' => 'serveis-icon.png', 'desc' => 'Enllaç al vostre servei educatiu'],
         'classroom' => ['nom' => "Google Classroom", 'url' => 'https://classroom.google.com/', 'img' => 'google_classroom-icon.png', 'desc' => 'Enllaç al vostre Google Classroom'],
+        'cesire' => ['nom' => 'CESIRE', 'url' => 'https://serveiseducatius.xtec.cat/cesire', 'img' => 'cesire-icon.png', 'desc' => 'Pàgina del CESIRE'],
     ];
 
     public $recursosXtec = ['ensenyament', 'xtec', 'edu365', 'edu3', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
-        'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi'];
+        'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa', 'ioc', 'sinapsi', 'cesire'];
 
     // Create widget
     public function __construct() {
