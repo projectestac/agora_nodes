@@ -1143,7 +1143,9 @@ function automatic_summary_image() {
                         $thumbnail = xtec_shortcode_image_summary( $shortCode );
                         break;
                     default:
-                        $thumbnail = xtec_image_summary( $match );
+                        // 2022-02-16 @aginard
+                        // Commented out to avoid the automatic thumbnail generation for images, which doesn't work well.
+                        // $thumbnail = xtec_image_summary( $match );
                         break;
                 }
 
