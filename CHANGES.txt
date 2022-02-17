@@ -3,6 +3,18 @@ Release notes for Agora-Nodes (https://agora.xtec.cat/nodes)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
+
+Changes 22.02.22
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.7.5
+- agora-functions.php: Disabled automatic thumbnail generation for images
+- tabs-responsive: Disable scrolling on tab change. Fixes error in option 'Tabs Description Animation'
+- enllacos-educatius: Added new URL for CESIRE
+- Themes XTEC: Added FSE logo and notice
+- options-reading: Fixed access to some options for xtecadmin
+- Theme reactor: Highlight current element in widget_nav_menu
+
+
 Changes 21.11.15
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.7.4
