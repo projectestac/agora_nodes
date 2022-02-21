@@ -103,6 +103,9 @@ ul.sub-menu > li:before {
     font-family: "dashicons";
 }
 
+.widget_nav_menu li.current-menu-item > a {
+    font-weight: bold;
+}
 
 table thead tr th,
 table tfoot tr th,
