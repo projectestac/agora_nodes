@@ -7,14 +7,18 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
-function xtec_stats_init() {
-    // Load javascript
-    wp_register_script( 'xtec_stats_js', plugins_url( 'js/xtec-stats.js', __FILE__ ), array( 'jquery' ), '1.1', true );
-    wp_enqueue_script( 'xtec_stats_js' );
-    // Load CSS
+// Load CSS
+function xtec_stats_init_css() {
     wp_enqueue_style( 'xtec_stats_css', plugins_url( 'css/xtec-stats.css', __FILE__ ) );
 }
-add_action( 'init', 'xtec_stats_init' );
+add_action( 'init', 'xtec_stats_init_css' );
+
+// Load javascript
+function xtec_stats_init_js() {
+    wp_register_script( 'xtec_stats_js', plugins_url( 'js/xtec-stats.js', __FILE__ ), array( 'jquery' ), '1.1', true );
+    wp_enqueue_script( 'xtec_stats_js' );
+}
+add_action( 'admin_head', 'xtec_stats_init_js' );
 
 // Load language file
 function xtec_stats_load_plugin_textdomain() {
