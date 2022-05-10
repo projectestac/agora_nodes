@@ -97,3 +97,6 @@
 [submodule "wp-content/plugins/advanced-nocaptcha-recaptcha"]
 	path = wp-content/plugins/advanced-nocaptcha-recaptcha
 	url = https://github.com/projectestac/wordpress-advanced-nocaptcha-recaptcha.git
+[submodule "wp-content/plugins/astra-sites"]
+	path = wp-content/plugins/astra-sites
+	url = https://github.com/projectestac/wordpress-astra-sites.git
