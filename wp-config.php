@@ -65,14 +65,14 @@ const DISABLE_WP_CRON = true;
  *
  * @since 2.6.0
  */
-const AUTH_KEY = 'q$ATvJpV<JO`Xa)7hv!4)u%<wSdmtE?519V>8X#ds~|Pp9|jduz1[Cc:1??K%ty:';
-const SECURE_AUTH_KEY = ']|R`MQ?~b$|e`)R^},O1FFT|H_x!ukyhEXr:bOO2Fq;a_..iRNG;b,tzYNFx|i&v';
-const LOGGED_IN_KEY = 'o[E|Hg}oL89sDHB9,cPm(+bd!klzS}R=e7o]N=6N$@^s]u?z@{ SA032!@c-2lzj';
-const NONCE_KEY = 'Y.ojKh*XW<&*bZ?0]b/g/_?klFzk}O&J-}$-#>}x7Ye<E[U`,4ih@& 5MqUo}L~:';
-const AUTH_SALT = '(Ym[t///b5JXmf9W(g..Fv2L@qF5473IQ|F4C/|},Y[F{SRhlL?ADKWa/@8ts&-s';
-const SECURE_AUTH_SALT = '#m=Q-MjIv4v}B7Ewp3IG@~N!DwE=eUoyK><[V^CoZ6A[ltJ0jrvD??L-,^J;DA~6';
-const LOGGED_IN_SALT = 'Rr& 6>;jA1?K?xW}zWsvxE@i6lS4*+f|RH0W[}.:egl|RYQ*Y2FVLqvx^~}GiO8%';
-const NONCE_SALT = 'N+=]R(*9^T2<ja;$x61F}tq6XDNO%v[iL.?3#;h9Y@lJ2-X%72>- 6!3B8R}g:uN';
+define('AUTH_KEY', $agora['nodes']['auth_key']);
+define('SECURE_AUTH_KEY', $agora['nodes']['secure_auth_key']);
+define('LOGGED_IN_KEY', $agora['nodes']['logged_in_key']);
+define('NONCE_KEY', $agora['nodes']['nonce_key']);
+define('AUTH_SALT', $agora['nodes']['auth_salt']);
+define('SECURE_AUTH_SALT', $agora['nodes']['secure_auth_salt']);
+define('LOGGED_IN_SALT', $agora['nodes']['logged_in_salt']);
+define('NONCE_SALT', $agora['nodes']['nonce_salt']);
 /**#@-*/
 
 /**
