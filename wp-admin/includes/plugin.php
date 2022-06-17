@@ -303,6 +303,17 @@ function get_plugins( $plugin_folder = '' ) {
 				continue;
 			}
 
+            // XTEC ************ AFEGIT - Load only the plugin files associated with the current
+            //                            type of school to improve the performance.
+            // 2022.06.17 @aginard
+            global $agora;
+
+            if (is_array($agora['nodes']['plugins_to_remove'])
+                    && in_array($file, $agora['nodes']['plugins_to_remove'], true)) {
+                continue;
+            }
+            // ************ FI
+
 			if ( is_dir( $plugin_root . '/' . $file ) ) {
 				$plugins_subdir = @opendir( $plugin_root . '/' . $file );
 
