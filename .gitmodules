@@ -100,3 +100,6 @@
 [submodule "wp-content/plugins/astra-sites"]
 	path = wp-content/plugins/astra-sites
 	url = https://github.com/projectestac/wordpress-astra-sites.git
+[submodule "wp-content/plugins/wpforms-lite"]
+	path = wp-content/plugins/wpforms-lite
+	url = https://github.com/projectestac/wordpress-wpforms-lite.git
