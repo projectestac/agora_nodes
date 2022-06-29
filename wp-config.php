@@ -118,7 +118,11 @@ const CONCATENATE_SCRIPTS = true;
 const COMPRESS_SCRIPTS = true;
 const COMPRESS_CSS = true;
 
+// Param for Astra templates
+const FS_METHOD = 'direct';
+
 const WP_LOCAL_DEV = false;
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
