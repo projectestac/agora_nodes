@@ -278,7 +278,7 @@ function reactor_do_title_logo()
                 if (!empty($emptyMaps)) {
                 if (strpos(reactor_option('googleMaps'), $currentDomain) !== false) {
                 ?>
-                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>"
+                <button id="icon-maps" title="Mapa" onclick="window.location.href='<?php echo reactor_option('googleMaps'); ?>'"
                         class="dashicons dashicons-location-alt">
                     <?php
                     } else if (strpos(reactor_option('googleMaps'), 'http') === false) {
