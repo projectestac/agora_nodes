@@ -4,6 +4,14 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 22.10.04
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.7.7
+- Fixed PHP warning when checking the list of plugins to exclude
+- widget-visibility-without-jetpack: Upgraded plugin
+- Theme reactor: Added missing apostrophe
+
+
 Changes 22.06.30
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.7.6
