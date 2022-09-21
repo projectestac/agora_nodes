@@ -308,7 +308,7 @@ function get_plugins( $plugin_folder = '' ) {
             // 2022.06.17 @aginard
             global $agora;
 
-            if (is_array($agora['nodes']['plugins_to_remove'])
+            if (isset($agora['nodes']['plugins_to_remove']) && is_array($agora['nodes']['plugins_to_remove'])
                     && in_array($file, $agora['nodes']['plugins_to_remove'], true)) {
                 continue;
             }
