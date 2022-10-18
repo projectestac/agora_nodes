@@ -37,7 +37,7 @@ class XTEC_Widget extends WP_Widget {
         'moodle' => ['nom' => 'MOODLE', 'url' => '', 'img' => 'moodle-icon.png', 'desc' => 'Enllaç al moodle del centre'],
         'portalcentre' => ['nom' => 'Portal de centre', 'url' => 'http://educacio.gencat.cat/portal/page/portal/EducacioIntranet/Benvinguda', 'img' => 'portalcentre-icon.png', 'desc' => 'Enllaç al portal de centre'],
         'epergam' => ['nom' => 'ePergam', 'url' => '', 'img' => 'epergam-icon.png', 'desc' => 'Aplicatiu de la biblioteca escolar'],
-        'lamevaxtec' => ['nom' => 'La meva XTEC', 'url' => 'http://xtec.gencat.cat/ca/la-meva-xtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
+        'lamevaxtec' => ['nom' => 'La meva XTEC', 'url' => 'https://xtec.gencat.cat/ca/at_usuari/lamevaxtec/', 'img' => 'lamevaxtec-icon.png', 'desc' => 'Enllaç a l\'espai d\'usuari XTEC'],
         'esfera' => ['nom' => 'Esfer@', 'url' => 'https://bfgh.aplicacions.ensenyament.gencat.cat/bfgh/', 'img' => 'esfera-icon.png', 'desc' => 'Enllaç al portal Esfer@'],
         'evalisa' => ['nom' => 'eValisa', 'url' => 'http://idpeacat.gencat.cat/group/1/valisa', 'img' => 'evalisa-icon.png', 'desc' => 'Enllaç al portal eValisa'],
         'ioc' => ['nom' => 'Institut Obert de Catalunya', 'url' => 'https://ioc.xtec.cat/', 'img' => 'ioc-icon.png', 'desc' => "Enllaç al portal de l'Institut Obert de Catalunya"],
