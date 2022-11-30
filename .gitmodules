@@ -103,3 +103,6 @@
 [submodule "wp-content/plugins/wpforms-lite"]
 	path = wp-content/plugins/wpforms-lite
 	url = https://github.com/projectestac/wordpress-wpforms-lite.git
+[submodule "wp-content/plugins/getwid"]
+	path = wp-content/plugins/getwid
+	url = https://github.com/projectestac/wordpress-getwid.git
