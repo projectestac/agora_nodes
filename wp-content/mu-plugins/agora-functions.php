@@ -366,6 +366,11 @@ add_action('widgets_init', 'unregister_AddToAny_widgets', 11);
  */
 function remove_general_bbpress_options(){
 
+    // When called from CLI, $_SERVER['SERVER_NAME'] is not defined. Furthermore, this function doesn't need to be called.
+    if (defined('CLI_SCRIPT')) {
+        return ;
+    }
+
 	$restrictedPage = 'options-general.php?page=bbpress';
 
 	// Get current URL
