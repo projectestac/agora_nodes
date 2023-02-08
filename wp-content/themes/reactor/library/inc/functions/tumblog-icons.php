@@ -41,7 +41,7 @@ if (!function_exists('reactor_tumblog_icon')) {
                 $title = "Inclou música";
                 break;
             case 'podcast' :
-                $icon .= '<i class="fa fa-microphonee"></i>';
+                $icon .= '<i class="fa fa-microphone"></i>';
                 $title = "Inclou podcast";
                 break;
             case 'document' :
