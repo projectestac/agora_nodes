@@ -1756,3 +1756,18 @@ function myfeed_request($qv) {
 }
 
 add_filter('request', 'myfeed_request');
+
+/**
+ * Enqueue the javascript code to disable Gutenberg blocks.
+ *
+ * @return void
+ */
+function disable_gutenberg_blocks(): void {
+    wp_enqueue_script(
+        'deny-list-blocks',
+        WPMU_PLUGIN_URL . '/javascript/disable_gutenberg_blocks.js',
+        ['wp-blocks', 'wp-dom-ready', 'wp-edit-post']
+    );
+}
+
+add_action('enqueue_block_editor_assets', 'disable_gutenberg_blocks');
