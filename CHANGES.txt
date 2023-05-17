@@ -4,6 +4,16 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 23.05.23
+---------------------------------------------------------------------------------------
+- Getwid module available for all sites
+- Getwid: Added catalan translation
+- agora-functions: Configured Gutenberg view options and disabled some blocks
+- alumni-fp: Updated plugin
+- nodes-editor-widget: Added submodule
+- Theme reactor: Added alt atribute in img tags
+
+
 Changes 23.03.27
 ---------------------------------------------------------------------------------------
 - alumni-fp: Added plugin
