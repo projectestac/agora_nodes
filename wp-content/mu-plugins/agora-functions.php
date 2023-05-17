@@ -1771,3 +1771,22 @@ function disable_gutenberg_blocks(): void {
 }
 
 add_action('enqueue_block_editor_assets', 'disable_gutenberg_blocks');
+
+/**
+ * Enqueue the javascript code to configure the editor views section.
+ *
+ * @return void
+ */
+function configure_block_editor() {
+    $script = "window.onload = function() {
+        const isFullscreenMode = wp.data.select('core/edit-post').isFeatureActive('fullscreenMode');
+        const isFocusModeEnabled = wp.data.select('core/edit-post').isFeatureActive('focusMode');
+        const isTopToolbarEnabled = wp.data.select('core/edit-post').isFeatureActive('topToolbar');
+        if (isFullscreenMode) { wp.data.dispatch('core/edit-post').toggleFeature('fullscreenMode'); }
+        if (!isFocusModeEnabled) { wp.data.dispatch('core/edit-post').toggleFeature('focusMode'); }
+        if (!isTopToolbarEnabled) { wp.data.dispatch('core/edit-post').toggleFeature('topToolbar'); }
+        }";
+    wp_add_inline_script('wp-blocks', $script);
+}
+
+add_action('enqueue_block_editor_assets', 'configure_block_editor');
