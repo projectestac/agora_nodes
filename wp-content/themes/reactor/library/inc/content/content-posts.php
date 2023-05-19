@@ -68,8 +68,8 @@ global $post;
         if ((get_post_meta(get_the_ID(), '_original_size', true) == "on") 
            ||($image_height<=200)) {
             // a little image or original size option selected, show original size image
-            $thumb_src    = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-            echo "<div class='entry-original-featured-image'><img src='" . $thumb_src . "'>";
+            echo '<div class="entry-original-featured-image">';
+            echo get_the_post_thumbnail($post->ID);
         } else {
             // a big image, show thumbnail
             list($thumb_src) = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),"large");
