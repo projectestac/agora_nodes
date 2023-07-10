@@ -1118,7 +1118,7 @@ function automatic_summary_image() {
 
     $post = $_POST;
 
-    if ( $post['post_type'] == 'post' ){
+    if ( isset($post['post_type']) && $post['post_type'] === 'post' ) {
 
         $already_has_thumb = has_post_thumbnail($post['post_ID']);
         if ( ! $already_has_thumb ){
