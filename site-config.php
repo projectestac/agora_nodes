@@ -3,23 +3,13 @@
 require_once (dirname(__FILE__, 2) . '/config/dblib-mysql.php');
 
 global $school_info;
-$centre = getSchoolInfo('nodes');
+$centre = getSchoolInfo('Nodes');
 
 global $agora, $isAgora, $isBlocs, $diskPercentNodes;
 
-if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] === '-5')) {
-    header('Location: ' . WWWROOT . 'error.php?s=&migrating=' . $centre);
-    exit();
-}
-
-if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] === '-6')) {
-    header('Location: ' . WWWROOT . 'error.php?s=&migrated=' . $centre);
-    exit();
-}
-
-if (isset($school_info['state_nodes']) && ($school_info['state_nodes'] === '-7')) {
-    header('Location: ' . WWWROOT . 'error.php?s=&saturated=' . $centre);
-    exit();
+if (isset($school_info['status_nodes']) && ($school_info['status_nodes'] !== 'active')) {
+    header('Location: ' . WWWROOT . 'error.php?s=moodle&' . $school_info['status_nodes'] . '=' . $centre);
+    exit;
 }
 
 $isAgora = true;
@@ -30,7 +20,7 @@ define('DB_NAME', $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 define('DB_HOST', $school_info['dbhost_nodes']);
 define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 define('ENVIRONMENT', $agora['server']['enviroment']);
-define('SCHOOL_CODE', $school_info['clientCode']);
+define('SCHOOL_CODE', $school_info['code']);
 
 // Check for subdomain
 if (!empty($school_info['url_type']) && ($school_info['url_type'] === 'subdomain') && !empty($school_info['url_host'])) {
