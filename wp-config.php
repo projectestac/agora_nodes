@@ -109,7 +109,7 @@ const WP_DEFAULT_THEME = 'NODES';
 const AUTOSAVE_INTERVAL = 300; // 5 minutes
 
 // Number of revisions of each post
-const WP_POST_REVISIONS = 3;
+const WP_POST_REVISIONS = 6;
 
 // Reduce the number of requests in admin pages
 const CONCATENATE_SCRIPTS = true;
