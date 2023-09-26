@@ -4,6 +4,13 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 23.09.27
+---------------------------------------------------------------------------------------
+- Allow six versions of each post instead of three
+- Updated translations for email-subscribers and getwid
+- email-subscribers: Customized not-localized string
+
+
 Changes 23.07.10
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.7.9
