@@ -1,0 +1,396 @@
+/*
+Theme Name: NODES
+Theme URI:
+Description: Tema desenvolupat pel Departament d'Ensenyament de Catalunya
+Author: Albert Bachiller
+Template: reactor
+Version: 1.0.0
+*/
+
+
+ul.sub-menu > li:before {
+    font-size: 11px;
+    color: #BBB;
+}
+
+/* Header */
+
+.box-title .box-content a,
+.box-description .box-content {
+    padding: 0 0.8em;
+}
+
+.box-grid {
+    width: 16.65%;
+}
+
+.box-image {
+    background: white;
+}
+
+.box-content a, .box-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white !important;
+}
+
+.box-content-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+
+.box-content-grid.icon-box .topicons {
+    height: 50%;
+    border: 0;
+}
+
+.box-content-grid.icon-box .topicons button {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    text-align: center;
+    font-size: 1vw;
+    text-transform: lowercase;
+    color: white !important;
+    margin: 0;
+    box-shadow: none;
+}
+
+.box-content-grid .topicons button:before {
+    font-size: 2.5vw;
+}
+
+.box-content-slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.text_icon {
+    display: block;
+    padding: 0.3em 0;
+    line-height: 0.8em;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+#icon-22 {
+    background-color: white;
+}
+#icon-12 {
+    background-color: #767676;
+}
+
+/* Menu principal */
+
+#menu-panel {
+    padding: 1em;
+    height: auto;
+    background-color: white;
+    display: none;
+}
+
+.menu-item-depth-0 {
+    float: left;
+    margin-left: 2em;
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.menu-item-depth-0 > a {
+    font-weight: bold;
+}
+.menu-item-depth-2,
+.menu-item-depth-3 {
+    padding-left: 1em;
+    font-size: 0.9em;
+}
+
+ul.menu-depth-1 {
+    margin-top: 0.4em;
+}
+li.menu-item-depth-2:last-child,
+li.menu-item-depth-3:last-child {
+    margin-bottom: 0.4em;
+}
+
+/* Fil d'ariadna */
+
+/* Barra lateral */
+
+#sidebar-frontpage {
+    padding-top: 1em;
+}
+
+/* Ginys */
+
+#sidebar-frontpage .widget.widget_logo_centre_widget {
+    padding-left: 0.7em;
+}
+
+/* Login Form */
+
+body.login {
+    background: #FFF;
+}
+
+/* Mobile. Ipad and similar tablets no included. */
+
+@media screen and (max-width: 767px) {
+
+    #search-panel{
+        height: 2.3em !important;
+        padding-top: 0.3em !important;
+    }
+
+    #search-panel *{
+        height: 2em !important;
+    }
+    .topicons.show-for-small:first-child{
+        display: none !important;
+    }
+
+
+    div.box-grid.small-12{
+        height: 9.6em !important;
+    }
+
+    button.dashicons{
+        padding-left: 1em;
+        padding-top: 0.3em !important;
+    }
+
+    .small-12 {
+        clear:both;
+        float: none;
+    }
+
+    #wpadminbar {
+        padding-right: 5px;
+    }
+
+    .box-grid {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: whitesmoke;
+        max-height: 6em !important;
+    }
+
+
+    .box-content-grid{
+        bottom: auto !important;
+    }
+
+    .box-titlemobile {
+        width: 100%;
+        overflow: hidden;
+        background-color: white;
+        padding: 0.4em 0.5em 1em 0.5em;
+        margin-bottom: 1em !important;
+    }
+
+    .box-titlemobile img {
+        max-height: 120px;
+        max-width: 120px;
+        text-align: center;
+    }
+
+
+    div.box-titlemobile-inner {
+        display: table;
+    }
+
+    div.box-titlemobile-logo {
+        float: left;
+        display: table-cell;
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+
+    div.box-titlemobile-schoolName {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 1em;
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    #schoolCity {
+        font-size: 0.8em;
+        color: #585858;
+    }
+
+    .site-header {
+        border-bottom: 0;
+        margin: 0;
+    }
+
+    .entry-body {
+        padding: 0.5em 0.5em;
+    }
+
+    #wpadminbar .quicklinks > ul > li > a {
+        height: 36px;
+        line-height: 36px;
+    }
+
+    .box-content-grid button:before {
+        font-size: 1.6em !important;
+    }
+
+    .box-content-grid.icon-box .topicons {
+        height: 48px;
+    }
+
+    .box-content-grid button {
+        height: 100%;
+        width: 100%;
+        border: 0;
+        text-align: center;
+        font-size: 1em !important;
+        text-transform: lowercase;
+        color: white !important;
+        margin: 0;
+    }
+
+    #wp-admin-bar-recursosXTEC,
+    #wp-admin-bar-edit {
+        display: none !important;
+    }
+
+    div.gce-widget-grid table tr th,
+    div.gce-widget-grid table tr td {
+        padding: 0.5em;
+    }
+
+    .text_icon {
+        font-size: 1em !important;
+        display: none;
+    }
+}
+
+
+/* Large > 1480px */
+@media (min-width: 1480px) {
+
+    .box-content-grid button:before {
+        font-size: 2em !important;
+    }
+
+    .box-content-grid button, .box-content-grid span {
+        font-size: 1em !important;
+    }
+}
+
+/**
+ * 2015.11.13 @nacho: Customize the customSection, noChildren and dropDown classes when Side_Menu_walker is loaded
+*/
+.section-container.accordion > .customSection div.content {
+    padding: 0 0.9375em;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+}
+
+.section-container.accordion > .customSection > .title a {
+    padding: 0.9375em;
+    color: #333;
+    font-size: 0.875em;
+    background: transparent none repeat scroll 0% 0%;
+    display: inline-block;
+}
+
+.section-container.accordion > .customSection p {
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 0em;
+    text-rendering: optimizelegibility;
+    background: #D5D5D5 none repeat scroll 0% 0%;
+    border-color: #CCC;
+    border-style: solid;
+    border-width: 0px 0px 1px;
+}
+
+.section-container.accordion > .section > .title a,
+.section-container.accordion > .customSection > .title a {
+    padding-right: 30px;
+    white-space: normal;
+}
+
+.section-container.accordion > .customSection ul {
+    padding-top: 0px;
+    display: block;
+    margin: 0px;
+    padding: 0.875em 0px;
+    list-style-type: none;
+    list-style-position: inside;
+    font-size: 1em;
+    line-height: 1.6;
+    list-style-position: outside;
+    font-family: inherit;
+}
+
+.section-container.accordion > .customSection li {
+    padding-left: 2em;
+    margin: 0px 0px 0.4375em;
+    font-size: 0.875em;
+}
+
+.section-container.accordion > .customSection {
+    position: relative;
+}
+
+.dashicons, .dashicons-before:before {
+    content: "\f347";
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+}
+
+.customSection .dashicons-arrow-down-alt2:before {
+    content: "\f343" !important;
+}
+
+.dropDown {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+#side-menu .section, #side-menu .customSection.active {
+    position: relative !important;
+}
+
+.noChildren .dashicons {
+    display: none;
+}
+
+#box-grid button:hover {
+    background-color: #fdd300;
+}
+
+.box-content-grid.icon-box .topicons button {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+.text_icon {
+  padding: 0;
+}
