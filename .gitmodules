@@ -109,3 +109,6 @@
 [submodule "wp-content/plugins/nodes-editor-widget"]
 	path = wp-content/plugins/nodes-editor-widget
 	url = https://github.com/projectestac/wordpress-dashboard-editor-widget
+[submodule "wp-content/plugins/koko-analytics"]
+	path = wp-content/plugins/koko-analytics
+	url = https://github.com/projectestac/wordpress-koko-analytics.git
