@@ -1,1 +1,0 @@
-wp-recaptcha-es_ES.mo

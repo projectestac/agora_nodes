@@ -1,1 +1,0 @@
-buddypress-group-email-subscription-es_ES.mo
