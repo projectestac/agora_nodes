@@ -1,0 +1,83 @@
+# Translation of Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release) in Galician
+# This file is distributed under the same license as the Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-06-19 12:33:52+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: gl_ES\n"
+"Project-Id-Version: Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release)\n"
+
+#: classes/PodsInit.php:2195 src/Pods/Admin/Config/Pod.php:384
+msgid "%s Archives"
+msgstr "Arquivos de %s"
+
+#: classes/PodsInit.php:2194
+msgid "Use as featured image"
+msgstr "Usar como imaxe destacada"
+
+#: classes/PodsInit.php:2192
+msgid "Set featured image"
+msgstr "Establecer imaxe destacada"
+
+#: classes/PodsInit.php:2193
+msgid "Remove featured image"
+msgstr "Eliminar a imaxe destacada"
+
+#: classes/fields/currency.php:123 components/I18n/I18n.php:826
+#: src/Pods/Admin/Config/Group.php:229 ui/fields/color.php:15
+msgid "Default"
+msgstr "Predeterminado"
+
+#: classes/fields/color.php:39 classes/fields/color.php:97
+#: ui/fields/color.php:16
+msgid "Select Color"
+msgstr "Seleccionar cor"
+
+#: ui/fields/color.php:17
+msgid "Current Color"
+msgstr "Cor actual"
+
+#: components/Roles/ui/edit.php:46 ui/forms/form.php:174
+msgid "Save"
+msgstr "Gardar"
+
+#: classes/widgets/PodsWidgetForm.php:38 classes/widgets/PodsWidgetForm.php:59
+#: classes/widgets/PodsWidgetForm.php:74
+#: components/Builder/modules/form/PodsBuilderModuleForm.php:47
+#: components/Builder/modules/form/PodsBuilderModuleForm.php:145
+msgid "Submit"
+msgstr "Enviar"
+
+#: classes/fields/date.php:89
+msgid "Date Format"
+msgstr "Formato de data"
+
+#: classes/fields/time.php:96 classes/fields/time.php:116
+msgid "Time Format"
+msgstr "Formato de tempo"
+
+#: classes/PodsAdmin.php:2372 src/Pods/Admin/Config/Field.php:145
+msgid "Description"
+msgstr "Descrición"
+
+#: classes/fields/color.php:45 classes/fields/color.php:100
+#: classes/PodsUI.php:3480 classes/PodsUI.php:3539 classes/PodsUI.php:3588
+#: classes/PodsUI.php:3627 tribe-common/src/Tribe/Main.php:347
+#: ui/fields/color.php:14
+msgid "Clear"
+msgstr "Limpar"
+
+#: classes/Pods.php:3993 classes/PodsAdmin.php:778 classes/PodsForm.php:417
+#: tribe-common/src/Tribe/Settings.php:377 ui/admin/components-admin.php:107
+msgid "Save Changes"
+msgstr "Gardar cambios"
+
+#: classes/Pods.php:3451 classes/PodsI18n.php:173 classes/PodsUI.php:747
+#: classes/PodsUI.php:2962 classes/PodsUI.php:3237
+#: src/Pods/Admin/Config/Pod.php:312
+msgid "Search"
+msgstr "Procurar"
