@@ -1,0 +1,230 @@
+# Translation of Plugins - WordPress Importer - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - WordPress Importer - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-06-04 14:55:49+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - WordPress Importer - Stable (latest release)\n"
+
+#: class-wp-import.php:1112
+msgid "The uploaded file could not be moved"
+msgstr "No s'ha pogut moure el fitxer penjat"
+
+#: class-wp-import.php:1097
+msgid "Sorry, this file type is not permitted for security reasons."
+msgstr "Aquest tipus de fitxer no està permès per raons de seguretat."
+
+#: class-wp-import.php:1059
+msgid "Downloaded file has incorrect size"
+msgstr "El fitxer baixat té una mida incorrecta"
+
+#. translators: 1: The HTTP error message. 2: The HTTP error code.
+#: class-wp-import.php:1035
+msgid "Remote server returned the following unexpected result: %1$s (%2$s)"
+msgstr "El servidor remot ha retornat un resultat inesperat: %1$s (%2$s)"
+
+#. translators: 1: The WordPress error message. 2: The WordPress error code.
+#: class-wp-import.php:1019
+msgid "Request failed due to an error: %1$s (%2$s)"
+msgstr "La petició ha fallat degut a un error: %1$s (%2$s)"
+
+#: class-wp-import.php:1000
+msgid "Could not create temporary file."
+msgstr "No s'ha pogut crear el fitxer temporal."
+
+#: class-wp-import.php:239
+msgid "To make it simpler for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site, such as your primary administrator account."
+msgstr "Per a fer-vos més senzilla l'edició i el desament de contingut importat, potser voleu reassignar l'autor dels elements importants a un usuari d'aquest lloc, com per exemple el compte de l'administrador principal."
+
+#: parsers/class-wxr-parser.php:43
+msgid "Details are shown above. The importer will now try again with a different parser..."
+msgstr "Es detalls es mostren a dalt. L'importador ho intentarà ara amb un analitzador diferent..."
+
+#: parsers/class-wxr-parser-simplexml.php:29
+#: parsers/class-wxr-parser-simplexml.php:37 parsers/class-wxr-parser.php:42
+msgid "There was an error when reading this WXR file"
+msgstr "S'ha produït un error en llegir aquest fitxer WXR"
+
+#: parsers/class-wxr-parser-regex.php:96 parsers/class-wxr-parser-xml.php:48
+#: parsers/class-wxr-parser-simplexml.php:41
+#: parsers/class-wxr-parser-simplexml.php:46
+msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr "Sembla que no és un fitxer fitxer WXR, el número de versió del fitxer WXR falta o és incorrecte"
+
+#: class-wp-import.php:106 class-wp-import.php:115 class-wp-import.php:166
+#: class-wp-import.php:170 class-wp-import.php:179
+msgid "Sorry, there has been an error."
+msgstr "S'ha produït un error."
+
+#: class-wp-import.php:107
+msgid "The file does not exist, please try again."
+msgstr "El fitxer no existeix, proveu-ho de nou."
+
+#: class-wp-import.php:150
+msgid "All done."
+msgstr "Fet."
+
+#: class-wp-import.php:151
+msgid "Remember to update the passwords and roles of imported users."
+msgstr "Recordeu actualitzar les contrasenyes i rols dels usuaris importats."
+
+#: class-wp-import.php:150
+msgid "Have fun!"
+msgstr "Gaudiu-ne!"
+
+#: class-wp-import.php:171
+msgid "The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem."
+msgstr "El fitxer d'exportació no s'ha pogut trobar a <code>%s</code>. És probable que això sigui per un problema de permisos."
+
+#: class-wp-import.php:187
+msgid "This WXR file (version %s) may not be supported by this version of the importer. Please consider updating."
+msgstr "El fitxer WXR (versió %s) pot ser que no estigui suportat per aquesta versió de l'importador. Considereu l'actualització."
+
+#: class-wp-import.php:212
+msgid "Failed to import author %s. Their posts will be attributed to the current user."
+msgstr "Ha fallat la importació de l'autor %s. Les seves entrades s'atribueixen a l'usuari actual."
+
+#: class-wp-import.php:238
+msgid "Assign Authors"
+msgstr "Assigna els autors"
+
+#: class-wp-import.php:241
+msgid "If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary."
+msgstr "Si es crea un usuari nou pel WordPress, es generarà una contrasenya aleatòria i el rol de l'usuari nou es definirà com a %s. Cal que es canviïn els detalls de l'usuari nou manualment."
+
+#: class-wp-import.php:251
+msgid "Import Attachments"
+msgstr "Importa els fitxers adjunts"
+
+#: class-wp-import.php:254
+msgid "Download and import file attachments"
+msgstr "Descarrega i importa fitxers adjunts"
+
+#: class-wp-import.php:258
+msgid "Submit"
+msgstr "Envia"
+
+#: class-wp-import.php:271
+msgid "Import author:"
+msgstr "Importa l'autor:"
+
+#: class-wp-import.php:286
+msgid "as a new user:"
+msgstr "com a usuari nou:"
+
+#: class-wp-import.php:283
+msgid "or create new user with login name:"
+msgstr "o crea un usuari nou amb el nom d'usuari:"
+
+#: class-wp-import.php:296
+msgid "assign posts to an existing user:"
+msgstr "assigna entrades a un usuari existent:"
+
+#: class-wp-import.php:306
+msgid "- Select -"
+msgstr "- Selecciona -"
+
+#: class-wp-import.php:298
+msgid "or assign posts to an existing user:"
+msgstr "o assigna les entrades a un usuari existent:"
+
+#: class-wp-import.php:360
+msgid "Failed to create new user for %s. Their posts will be attributed to the current user."
+msgstr "Ha fallat la creació d'un usuari nou per a %s. Les seves entrades s'atribueixen a l'usuari actual."
+
+#: class-wp-import.php:457
+msgid "Failed to import post tag %s"
+msgstr "Ha fallat la importació de l'etiqueta d'entrada %s"
+
+#: class-wp-import.php:412
+msgid "Failed to import category %s"
+msgstr "Ha fallat la importació de la categoria %s"
+
+#: class-wp-import.php:512 class-wp-import.php:738
+msgid "Failed to import %s %s"
+msgstr "Ha fallat la importació de %s %s"
+
+#: class-wp-import.php:605
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr "Ha fallat la importació de &#8220;%s&#8221;: tipus d'entrada %s incorrecta"
+
+#: class-wp-import.php:878
+msgid "Menu item skipped due to missing menu slug"
+msgstr "S'ha evitat l'element del menú perquè falta el resum del menú"
+
+#: class-wp-import.php:704
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr "Ha fallat la importació de %s &#8220;%s&#8221;"
+
+#: class-wp-import.php:642
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr "%s &#8220;%s&#8221; ja existeix."
+
+#: class-wp-import.php:885
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr "L'element del menú s'ha evitat a causa d'un resum del menú incorrecte: %s"
+
+#: class-wp-import.php:948
+msgid "Fetching attachments is not enabled"
+msgstr "No s'ha habilitat l'obtenció dels adjunts"
+
+#: class-wp-import.php:961
+msgid "Invalid file type"
+msgstr "Tipus de fitxer invàlid"
+
+#: class-wp-import.php:1047
+msgid "Remote server did not respond"
+msgstr "El servidor remot no respon"
+
+#: class-wp-import.php:1065
+msgid "Remote file is too large, limit is %s"
+msgstr "El fitxer remot és massa gran, el límit és %s"
+
+#: class-wp-import.php:1054
+msgid "Zero size file downloaded"
+msgstr "S'ha baixat un fitxer de mida zero"
+
+#: class-wp-import.php:1231
+msgid "A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files."
+msgstr "Una versió nova de l'importador està disponible. Actualitzeu a la versió %s per assegurar la compatibilitat dels fitxers d'exportació mes nous."
+
+#: class-wp-import.php:1224
+msgid "Import WordPress"
+msgstr "Importa el WordPress"
+
+#: class-wp-import.php:1246
+msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
+msgstr "Hola! Pengeu el fitxer WordPress eXtended RSS (WXR) i s'importaran les entrades, les pàgines, els comentaris, els camps personalitzats, les categories i les etiquetes al lloc web."
+
+#: class-wp-import.php:1247
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr "Escolliu un fitxer WXR (.xml) per penjar, després feu clic a Penja el fitxer i importa'l."
+
+#: wordpress-importer.php:58
+msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
+msgstr "Importa <strong>entrades, comentaris, camps personalitzats, pàgines i categories</strong> d'un fitxer exportat pel WordPress."
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/wordpress-importer/"
+msgstr "https://wordpress.org/plugins/wordpress-importer/"
+
+#. Plugin Name of the plugin
+msgid "WordPress Importer"
+msgstr "Importador del WordPress"
+
+#. Description of the plugin
+msgid "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file."
+msgstr "Importa les entrades, les pàgines, els comentaris, els camps personalitzats, les etiquetes i més des d'un fitxer d'exportació del WordPress."
+
+#. Author of the plugin
+msgid "wordpressdotorg"
+msgstr "wordpressdotorg"
+
+#. Author URI of the plugin
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"

@@ -1,0 +1,3750 @@
+# Translation of Plugins - Icegram Express – Email Marketing, Newsletters and Automation for WordPress &amp; WooCommerce - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Icegram Express – Email Marketing, Newsletters and Automation for WordPress &amp; WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-10-09 19:29:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.9\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Icegram Express – Email Marketing, Newsletters and Automation for WordPress &amp; WooCommerce - Stable (latest release)\n"
+
+#: lite/includes/classes/class-es-actions.php:375 lite/language.php:562
+msgid "subscribed to"
+msgstr "suscrito a"
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-subscribed.php:30
+#: lite/language.php:1396
+msgid "User Subscribed"
+msgstr "Usuario suscrito"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:54
+#: lite/language.php:1298
+msgid "Cart Abandoned"
+msgstr "Carrito abandonado"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:55
+#: lite/language.php:1299
+msgid "Cart Abandoned - Registered Users Only"
+msgstr "Carrito abandonado - Solo usuarios registrados"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:56
+#: lite/language.php:1300
+msgid "Cart Abandoned - Guests Only"
+msgstr "Carrito abandonado - Solo invitados"
+
+#: lite/admin/class-email-subscribers-admin.php:211 lite/language.php:36
+msgid "Are you sure?"
+msgstr "¿Estás seguro?"
+
+#: lite/admin/class-ig-es-campaign-rules.php:728
+#: lite/admin/class-ig-es-campaign-rules.php:747 lite/language.php:246
+msgid "is greater or equal"
+msgstr "es mayor o igual a"
+
+#: lite/includes/classes/class-es-templates-table.php:40 lite/language.php:994
+msgid "Select template type"
+msgstr "Seleccionar el tipo de plantilla"
+
+#: lite/includes/classes/class-es-campaigns-table.php:810 lite/language.php:708
+msgid "Campaign(s) deleted successfully!"
+msgstr "¡Campaña/s borrada/s correctamente!"
+
+#: lite/includes/classes/class-es-campaigns-table.php:789 lite/language.php:707
+msgid "Campaign deleted successfully!"
+msgstr "¡Campaña borrada correctamente!"
+
+#: lite/includes/classes/class-es-forms-table.php:927 lite/language.php:800
+msgid "Form(s) deleted successfully!"
+msgstr "¡Formulario/s borrado/s correctamente!"
+
+#: lite/includes/classes/class-es-forms-table.php:912 lite/language.php:799
+msgid "Form deleted successfully!"
+msgstr "¡Formulario borrado correctamente!"
+
+#: lite/includes/classes/class-es-forms-table.php:117 lite/language.php:788
+msgid "Form updated successfully!"
+msgstr "¡Formulario actualizado correctamente!"
+
+#: lite/includes/classes/class-es-forms-table.php:114 lite/language.php:787
+msgid "Form added successfully!"
+msgstr "¡Formulario añadido correctamente!"
+
+#. translators: %s: Campaign type
+#: lite/includes/classes/class-es-post-notifications.php:260
+#: lite/language.php:943
+msgid "%s updated successfully!"
+msgstr "¡%s actualizado correctamente!"
+
+#. translators: %s: Campaign Type
+#: lite/includes/classes/class-es-post-notifications.php:111
+#: lite/language.php:939
+msgid "%s added successfully!"
+msgstr "¡%s añadido correctamente!"
+
+#: lite/includes/classes/class-es-lists-table.php:770 lite/language.php:902
+msgid "List(s) deleted successfully!"
+msgstr "¡Lista/s borrada/s correctamente!"
+
+#: lite/includes/classes/class-es-lists-table.php:755 lite/language.php:901
+msgid "List deleted successfully!"
+msgstr "¡Lista borrada correctamente!"
+
+#: lite/includes/classes/class-es-lists-table.php:244
+#: lite/includes/classes/class-es-lists-table.php:737 lite/language.php:890
+msgid "List updated successfully!"
+msgstr "¡Lista actualizada correctamente!"
+
+#: lite/includes/classes/class-es-lists-table.php:193 lite/language.php:889
+msgid "List added successfully!"
+msgstr "¡Lista añadida correctamente!"
+
+#: lite/includes/classes/class-es-reports-table.php:586 lite/language.php:990
+msgid "Reports deleted successfully!"
+msgstr "¡Informes borrados correctamente!"
+
+#: lite/includes/classes/class-es-reports-table.php:572 lite/language.php:989
+msgid "Report deleted successfully!"
+msgstr "¡Informe borrado correctamente!"
+
+#: lite/includes/classes/class-es-admin-settings.php:385 lite/language.php:615
+msgid "Share Icegram"
+msgstr "Compartir Icegram"
+
+#: lite/includes/classes/class-es-admin-settings.php:127
+msgid "Settings saved successfully!"
+msgstr "¡Ajustes guardados correctamente!"
+
+#: lite/includes/classes/class-es-contacts-table.php:201
+#: lite/includes/classes/class-es-contacts-table.php:1510 lite/language.php:719
+msgid "Contact(s) added to list successfully!"
+msgstr "¡Contacto/s añadido/s a la lista correctamente!"
+
+#: lite/admin/class-es-campaign-admin.php:397
+#: lite/includes/classes/class-es-contacts-table.php:818 lite/language.php:139
+msgid "Last name"
+msgstr "Apellidos"
+
+#: lite/admin/class-es-campaign-admin.php:393
+#: lite/includes/classes/class-es-contacts-table.php:796 lite/language.php:138
+msgid "First name"
+msgstr "Nombre"
+
+#: lite/includes/classes/class-es-contacts-table.php:192
+#: lite/includes/classes/class-es-contacts-table.php:1479 lite/language.php:716
+msgid "Contact(s) moved to list successfully!"
+msgstr "¡Contacto/s movido/s a la lista correctamente!"
+
+#: lite/includes/classes/class-es-contacts-table.php:204
+#: lite/includes/classes/class-es-contacts-table.php:1340
+#: lite/includes/classes/class-es-contacts-table.php:1412 lite/language.php:720
+msgid "Contact(s) deleted successfully!"
+msgstr "¡Contacto/s borrado/s correctamente!"
+
+#: lite/admin/partials/onboarding.php:469 lite/language.php:354
+msgid "if you need any help"
+msgstr "si necesitas ayuda"
+
+#: lite/admin/partials/onboarding.php:467 lite/language.php:353
+msgid "documentation"
+msgstr "documentación"
+
+#: lite/admin/partials/onboarding.php:455 lite/language.php:349
+msgid "Recommended next steps:"
+msgstr "Siguientes pasos recomendados:"
+
+#: lite/admin/class-ig-es-onboarding.php:156
+#: lite/includes/services/class-es-service-email-sending.php:143
+#: lite/language.php:254
+msgid "An error occured. Please try again later."
+msgstr "Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde."
+
+#: lite/language.php:259
+msgid "Please accept terms & condition"
+msgstr "Por favor, acepta los términos y condiciones"
+
+#: lite/admin/partials/onboarding.php:382 lite/language.php:332
+msgid "STEP 3 of 3"
+msgstr "PASO 3 de 3"
+
+#: lite/admin/partials/onboarding.php:239 lite/language.php:312
+msgid "STEP 2 of 3"
+msgstr "PASO 2 de 3"
+
+#: lite/admin/partials/onboarding.php:40 lite/language.php:293
+msgid "STEP 1 of 3"
+msgstr "PASO 1 de 3"
+
+#: lite/admin/class-ig-es-onboarding.php:1068 lite/language.php:268
+msgid "New Post Published - {{POSTTITLE}}"
+msgstr "Nueva entrada publicada - {{POSTTITLE}}"
+
+#: lite/admin/partials/onboarding.php:243 lite/language.php:313
+msgid "Hold on, personalizing for you..."
+msgstr "Espera, personalizando para ti..."
+
+#: lite/admin/partials/onboarding.php:209 lite/language.php:311
+msgid "Ok, set it up for me →"
+msgstr "De acuerdo, configúralo para mí →"
+
+#: lite/admin/partials/onboarding.php:347 lite/language.php:331
+msgid "All good, let's finish up →"
+msgstr "Todo bien, terminemos esto →"
+
+#. translators: 1. Main list name. 2. Default list name.
+#: lite/admin/class-ig-es-onboarding.php:443 lite/language.php:256
+msgid "Unable to create %1$s and %2$s list."
+msgstr "No ha sido posible crear las listas %1$s y %2$s."
+
+#: lite/language.php:1405 lite/public/class-email-subscribers-public.php:214
+msgid "Sorry, you are not allowed to access this page."
+msgstr "Lo siento, no tienes permisos para acceder a esta página."
+
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:331
+#: lite/language.php:1255
+msgid " Edit Workflow"
+msgstr " Editar el flujo de trabajo"
+
+#: lite/admin/class-es-form-admin.php:142 lite/language.php:172
+msgid "Enter description"
+msgstr "Introducir la descripción"
+
+#: lite/includes/classes/class-es-post-notifications.php:263
+#: lite/language.php:944
+msgid "Sorry, you are not allowed to update post notification."
+msgstr "Lo siento, no tienes permisos para actualizar el aviso de la entrada."
+
+#: lite/includes/classes/class-es-post-notifications.php:114
+#: lite/language.php:940
+msgid "Sorry, you are not allowed to add post notification."
+msgstr "Lo siento, no tienes permisos para añadir un aviso de entrada."
+
+#: lite/includes/classes/class-es-lists-table.php:327 lite/language.php:895
+msgid "Enter list name"
+msgstr "Introducir el nombre de la lista"
+
+#: lite/includes/classes/class-es-newsletters.php:93 lite/language.php:914
+msgid "Sorry, you are not allowed to add/edit broadcast."
+msgstr "Lo siento, no tienes permisos para añadir/editar la difusión."
+
+#: lite/includes/class-es-common.php:2061 lite/language.php:479
+msgid "All Types"
+msgstr "Todos los tipos"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:48
+#: lite/language.php:1296
+msgid "WooCommerce Order Refunded"
+msgstr "Pedido de WooCommerce reembolsado"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:45
+#: lite/language.php:1295
+msgid "New Product Review Posted"
+msgstr "Publicada nueva reseña de producto"
+
+#: lite/includes/pro-features.php:658 lite/includes/pro-features.php:772
+#: lite/language.php:1118
+msgid " Now"
+msgstr "Ahora"
+
+#: lite/includes/pro-features.php:220 lite/language.php:1062
+msgid "Customize user roles permissions with "
+msgstr "Personaliza los permisos de los roles de usuario con"
+
+#: lite/includes/feedback/class-ig-feedback.php:1598
+msgid "Yes, I give my consent to track plugin usage and contact me back to make this plugin works!"
+msgstr "Sí, doy mi consentimiento para el seguimiento de uso del plugin y para contactar conmigo para hacer que este plugin funcione."
+
+#. translators: 1: Starting strong tag 2: Closing strong tag
+#: lite/includes/workflows/admin/views/meta-box-actions.php:67
+#: lite/language.php:1268
+msgid "No actions found. Click the %1$s+ Add action%2$s to create an action."
+msgstr "No se han encontrado acciones. Haz clic en %1$s+ Añadir una acción%2$s para crear una acción."
+
+#: lite/includes/classes/class-es-ig-redirect.php:120 lite/language.php:835
+msgid "Dramatically increase opt-ins and sales. Easily run powerful onsite marketing campaigns. Marketers, owners and visitors– everyone loves Icegram!"
+msgstr "Aumenta enormemente las opciones y las ventas. Ejecuta fácilmente potentes campañas de marketing en el sitio. Vendedores, propietarios y visitantes: ¡a todos les encanta Icegram!"
+
+#: lite/includes/classes/class-es-ig-redirect.php:132 lite/language.php:836
+msgid "Optimize Results"
+msgstr "Optimizar los resultados"
+
+#: lite/includes/classes/class-es-ig-redirect.php:134 lite/language.php:837
+msgid "Keep growing. Get everything you need to target, measure, re-target, behavior rules, personalize, split test, segment, automate and optimize."
+msgstr "Sigue creciendo. Obtén todo lo que necesitas para dirigir, medir, volver a dirigir, reglas de comportamiento, personalizar, dividir las pruebas, segmentar, automatizar y optimizar."
+
+#. translators: %s: Create list page url
+#: lite/admin/class-es-form-admin.php:249
+#: lite/admin/class-es-form-admin.php:634 lite/language.php:182
+msgid "List not found. Please %s"
+msgstr "Lista no encontrada. Por favor, %s"
+
+#: lite/includes/classes/class-es-campaigns-table.php:199 lite/language.php:690
+msgid "Notification Added Successfully!"
+msgstr "¡Aviso añadido correctamente!"
+
+#: lite/admin/class-email-subscribers-admin.php:206 lite/language.php:31
+msgid "Please select an action that this workflow should perform before saving the workflow."
+msgstr "Por favor, selecciona una acción que este flujo de trabajo debe realizar antes de guardar el flujo de trabajo."
+
+#: lite/includes/classes/class-es-ig-redirect.php:104 lite/language.php:832
+msgid "Engage Visitors"
+msgstr "Atraer a los visitantes"
+
+#: lite/includes/classes/class-es-ig-redirect.php:106 lite/language.php:833
+msgid "Show right messages to right people at the right time in the right place. Drive people to landing pages, promotions and stop them from bouncing away."
+msgstr "Muestra los mensajes correctos a las personas adecuadas en el momento y lugar correctos. Conduce a la gente a las páginas de destino y de promociones y evita que se vayan."
+
+#: lite/includes/classes/class-es-ig-redirect.php:118 lite/language.php:834
+msgid "More Subscribers & Customers"
+msgstr "Más suscriptores y clientes"
+
+#: lite/admin/class-es-campaign-admin.php:946
+#: lite/includes/classes/class-es-newsletters.php:368 lite/language.php:155
+msgid "Reply To"
+msgstr "Responder a"
+
+#: lite/includes/workflows/fields/class-es-wp-editor.php:29
+#: lite/language.php:1378
+msgid "WP Editor"
+msgstr "Editor de WP"
+
+#: lite/includes/workflows/actions/abstracts/class-ig-es-action-send-email-abstract.php:40
+#: lite/language.php:1238
+msgid "Send to"
+msgstr "Enviar a"
+
+#: lite/includes/workflows/actions/abstracts/class-ig-es-action-send-email-abstract.php:41
+#: lite/language.php:1239
+msgid "Enter emails here or use variable such as {{EMAIL}}. Multiple emails can be separated by commas."
+msgstr "Introduce aquí los correos electrónicos o usa una variable como {{EMAIL}}. Pueden separarse con comas varios correos electrónicos."
+
+#: lite/includes/workflows/actions/abstracts/class-ig-es-action-send-email-abstract.php:42
+#: lite/language.php:1240
+msgid "E.g. {{EMAIL}}, admin@example.com"
+msgstr "Por ejemplo: {{EMAIL}}, admin@example.com"
+
+#: lite/language.php:1421 lite/public/partials/subscription-successfull.php:73
+msgid " Take a look here"
+msgstr "Echa un vistazo aquí"
+
+#: lite/language.php:1420 lite/public/partials/subscription-successfull.php:71
+msgid "The most loved WordPress plugins for lead capture, call to action and email marketing."
+msgstr "Los plugins WordPress más queridos para captura de suscriptores, llamadas a la acción y marketing por correo electrónico. "
+
+#: lite/language.php:1419 lite/public/partials/subscription-successfull.php:68
+msgid "Want to Engage, Inspire and Convert Your Website Visitors ?"
+msgstr "¿Quieres implicar, inspirar y convertir a los visitantes de tu web?"
+
+#: lite/language.php:1418 lite/public/partials/subscription-successfull.php:62
+msgid "Powered by"
+msgstr "Funciona con"
+
+#: lite/language.php:1417 lite/public/partials/subscription-successfull.php:14
+msgid "Unsubscription confirmed !"
+msgstr "¡Anulación de suscripción confirmada!"
+
+#: lite/language.php:1416 lite/public/partials/subscription-successfull.php:12
+msgid "Subscription confirmed !"
+msgstr "¡Suscripción confirmada!"
+
+#: lite/includes/pro-features.php:1496 lite/includes/pro-features.php:1710
+#: lite/language.php:1167
+msgid "Mail Client"
+msgstr "Cliente de correo"
+
+#: lite/includes/pro-features.php:1525 lite/language.php:1168
+msgid "Device Info"
+msgstr "Información del dispositivo"
+
+#: lite/includes/pro-features.php:1530 lite/language.php:1169
+msgid "Browser Info"
+msgstr "Información del navegador"
+
+#: lite/includes/pro-features.php:1535 lite/language.php:1170
+msgid "OS Info"
+msgstr "Información del sistema operativo"
+
+#: lite/includes/class-es-common.php:2329 lite/language.php:484
+msgid "Upgrade"
+msgstr "Actualizar"
+
+#: lite/includes/classes/class-es-campaign-report.php:212
+#: lite/includes/pro-features.php:1365 lite/language.php:670
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: lite/admin/class-email-subscribers-admin.php:1628
+#: lite/includes/pro-features.php:1381 lite/language.php:93
+msgid "Avg Open Rate"
+msgstr "Tasa media de apertura"
+
+#: lite/includes/pro-features.php:1419 lite/language.php:1166
+msgid "Mail Client Info"
+msgstr "Información del cliente de correo"
+
+#: lite/admin/class-email-subscribers-admin.php:1857 lite/language.php:100
+msgid "Please publish it or save it as a draft."
+msgstr "Por favor, publícalo o guárdalo como borrador."
+
+#: lite/includes/classes/class-es-campaign-report.php:744 lite/language.php:679
+msgid "Campaign Analytics"
+msgstr "Análisis de la campaña"
+
+#: lite/includes/classes/class-es-campaign-report.php:182
+#: lite/includes/pro-features.php:1348 lite/language.php:667
+msgid "Type: "
+msgstr "Tipo: "
+
+#: lite/admin/class-es-campaign-admin.php:541
+#: lite/includes/classes/class-es-campaign-report.php:185
+#: lite/includes/pro-features.php:1351 lite/language.php:143
+msgid "From: "
+msgstr "De: "
+
+#: lite/includes/pro-features.php:1354 lite/language.php:1160
+msgid "List(s): "
+msgstr "Lista(s): "
+
+#: lite/includes/pro-features.php:1355 lite/language.php:1161
+msgid "Test, Main "
+msgstr "Prueba, principal"
+
+#: lite/includes/pro-features.php:1340
+msgid "Take a look into Icegram"
+msgstr "Echa un vistazo a Icegram"
+
+#: lite/includes/classes/class-es-campaign-report.php:203
+#: lite/includes/pro-features.php:1357 lite/language.php:669
+msgid "Date: "
+msgstr "Fecha: "
+
+#: lite/includes/pro-features.php:1358 lite/language.php:1162
+msgid "July 1, 2020 10:00 AM"
+msgstr "1 de julio de 2020 10:00"
+
+#: lite/includes/pro-features.php:1407 lite/language.php:1164
+msgid "Open and click activity"
+msgstr "Actividad de aperturas y clics"
+
+#: lite/admin/class-ig-es-campaign-rules.php:673
+#: lite/admin/views/dashboard/top-countries.php:6
+#: lite/includes/pro-features.php:1458 lite/includes/pro-features.php:1707
+#: lite/language.php:225
+msgid "Country"
+msgstr "País"
+
+#: lite/includes/pro-features.php:1709 lite/language.php:1176
+msgid "Device"
+msgstr "Dispositivo"
+
+#: lite/includes/pro-features.php:1756 lite/language.php:1180
+msgid "Mobile"
+msgstr "Móvil"
+
+#: lite/includes/pro-features.php:1738 lite/language.php:1178
+msgid "Desktop"
+msgstr "Sobremesa"
+
+#: lite/includes/pro-features.php:1747 lite/language.php:1179
+msgid "Tablet"
+msgstr "Tableta"
+
+#: lite/includes/pro-features.php:1554 lite/language.php:1171
+msgid "Link Activity"
+msgstr "Actividad de enlaces"
+
+#: lite/includes/pro-features.php:1561 lite/language.php:1172
+msgid "Link (URL)"
+msgstr "Enlace (URL)"
+
+#: lite/includes/pro-features.php:1563 lite/language.php:1173
+msgid "Unique Clicks"
+msgstr "Clics únicos"
+
+#: lite/includes/pro-features.php:1565 lite/language.php:1174
+msgid "Total Clicks"
+msgstr "Clics totales"
+
+#: lite/includes/pro-features.php:1699 lite/language.php:1175
+msgid "Last 10 Open Activity"
+msgstr "Actividad de las 10 últimas aperturas"
+
+#: lite/includes/pro-features.php:1416 lite/language.php:1165
+msgid "Country Opens"
+msgstr "País de apertura"
+
+#: lite/includes/pro-features.php:1711 lite/language.php:1177
+msgid "OS"
+msgstr "Sistema operativo"
+
+#. translators: %s: Next scheduled time
+#: lite/includes/classes/class-es-admin-settings.php:1143 lite/language.php:653
+msgid "In %s"
+msgstr "En %s"
+
+#: lite/includes/classes/class-es-admin-settings.php:1095 lite/language.php:649
+msgid "Event"
+msgstr "Evento"
+
+#: lite/includes/classes/class-es-admin-settings.php:1014 lite/language.php:648
+msgid "Cron Info"
+msgstr "Información cron"
+
+#: lite/includes/classes/class-es-admin-settings.php:1097 lite/language.php:651
+msgid "Next Execution"
+msgstr "Siguiente ejecución"
+
+#. translators: %s function name.
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler.php:226
+msgid "%s() was called before the Action Scheduler data store was initialized"
+msgstr "%s() ha sido llamada antes de que el almacén de datos del programador de acciones se haya inicializado."
+
+#: lite/language.php:1551
+msgid "Sequence"
+msgstr "Secuencia"
+
+#: lite/includes/classes/class-es-campaigns-table.php:736
+#: lite/includes/classes/class-es-reports-table.php:650 lite/language.php:705
+msgid "All Type"
+msgstr "Todos los tipos"
+
+#: lite/includes/classes/class-es-reports-data.php:412 lite/language.php:970
+#: lite/admin/dist/main.js:1
+msgid "Post Digest"
+msgstr "Resumen de entradas"
+
+#: lite/includes/pro-features.php:1247 lite/language.php:1155
+msgid "Local Time: "
+msgstr "Hora local:"
+
+#: lite/includes/pro-features.php:1220 lite/language.php:1153
+msgid "Schedule for later"
+msgstr "Programar para más tarde"
+
+#: lite/admin/class-email-subscribers-admin.php:199 lite/language.php:26
+msgid "Please add email body."
+msgstr "Por favor, añade contenido al correo electrónico."
+
+#: lite/admin/class-email-subscribers-admin.php:191 lite/language.php:20
+msgid "An error has occured while saving the broadcast. Please try again later."
+msgstr "Se ha producido un error mientras se guardaba la transmisión. Por favor, inténtalo de nuevo más tarde."
+
+#: lite/admin/class-email-subscribers-admin.php:192 lite/language.php:21
+msgid "Please add a broadcast subject before saving."
+msgstr "Por favor, añade un asunto a la difusión antes de guardar."
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:29
+#: lite/language.php:1291
+msgid "Forminator Form Submitted"
+msgstr "Enviado el formulario de Forminator"
+
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:206
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:243
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:301
+#: lite/includes/pro-features.php:1203 lite/language.php:1048
+msgid "Check"
+msgstr "Comprobar"
+
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:195
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:231
+#: lite/language.php:1047
+msgid "Get Spam Score"
+msgstr "Obtén la puntuación de spam"
+
+#: lite/language.php:1415 lite/public/partials/cron-message.php:43
+msgid "Send Now"
+msgstr "Enviar ahora"
+
+#: lite/includes/pro-features.php:1149 lite/language.php:1150
+msgid "Link tracking"
+msgstr "Seguimiento de enlaces"
+
+#: lite/includes/classes/class-es-contacts-table.php:850 lite/language.php:735
+msgid "Enter email"
+msgstr "Introducir correo electrónico"
+
+#: lite/includes/pro-features.php:1217 lite/language.php:1152
+msgid "Send options"
+msgstr "Opciones de envío"
+
+#: lite/includes/pro-features.php:977 lite/language.php:1138
+msgid "Show a captcha to protect from bot signups."
+msgstr "Mostrar un captcha para protegerte de robots de registros."
+
+#: lite/includes/classes/class-es-contacts-table.php:808 lite/language.php:733
+msgid "Enter first name"
+msgstr "Introduce el nombre"
+
+#: lite/includes/classes/class-es-contacts-table.php:829 lite/language.php:734
+msgid "Enter last name"
+msgstr "Introduce los apellidos"
+
+#: lite/admin/class-es-campaign-admin.php:897
+#: lite/includes/classes/class-es-newsletters.php:468 lite/language.php:151
+msgid "Email Content Preview"
+msgstr "Vista previa del contenido del correo electrónico"
+
+#: lite/includes/classes/class-es-newsletters.php:437
+#: lite/includes/classes/class-es-reports-table.php:605
+#: lite/includes/classes/class-es-templates-table.php:154
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:269
+#: lite/language.php:926
+msgid "Close"
+msgstr "Cerrar"
+
+#: lite/includes/classes/class-es-newsletters.php:422 lite/language.php:924
+msgid "Browser"
+msgstr "Navegador"
+
+#: lite/admin/class-es-admin.php:368 lite/admin/class-es-campaign-admin.php:749
+#: lite/includes/classes/class-es-newsletters.php:373 lite/language.php:111
+msgid "Message"
+msgstr "Mensaje"
+
+#: lite/admin/class-es-campaign-admin.php:929
+#: lite/includes/classes/class-es-newsletters.php:360 lite/language.php:153
+msgid "From Name"
+msgstr "Nombre del remitente"
+
+#: lite/includes/classes/class-es-newsletters.php:293 lite/language.php:920
+msgid "Save Draft"
+msgstr "Guardar borrador"
+
+#: lite/admin/class-es-campaign-admin.php:686
+#: lite/admin/class-es-form-admin.php:434
+#: lite/includes/classes/class-es-newsletters.php:283 lite/language.php:150
+msgid "Previous"
+msgstr "Anterior"
+
+#: lite/admin/class-es-campaign-admin.php:647
+#: lite/includes/classes/class-es-newsletters.php:258 lite/language.php:148
+msgid "Summary"
+msgstr "Resumen"
+
+#: lite/includes/classes/class-es-newsletters.php:433
+#: lite/includes/classes/class-es-reports-table.php:601
+#: lite/includes/classes/class-es-templates-table.php:150 lite/language.php:925
+#: lite/admin/dist/main.js:1
+msgid "There could be a slight variation on how your customer will view the email content."
+msgstr "Podría haber una ligera variación en cómo tu cliente verá el contenido del correo electrónico."
+
+#: lite/includes/classes/class-es-newsletters.php:317
+#: lite/includes/classes/class-es-newsletters.php:939 lite/language.php:921
+msgid "Schedule"
+msgstr "Programar"
+
+#: lite/includes/class-es-common.php:2089
+#: lite/includes/classes/class-es-campaigns-table.php:605 lite/language.php:480
+msgid "Draft"
+msgstr "Borrador"
+
+#: lite/includes/class-es-common.php:2090
+#: lite/includes/class-es-common.php:2535
+#: lite/includes/classes/class-es-campaign-report.php:165
+#: lite/includes/classes/class-es-campaign-report.php:497
+#: lite/includes/classes/class-es-campaigns-table.php:586
+#: lite/includes/classes/class-es-campaigns-table.php:624
+#: lite/includes/classes/class-es-reports-table.php:240
+#: lite/includes/classes/class-es-reports-table.php:639 lite/language.php:481
+msgid "Sending"
+msgstr "Enviando"
+
+#: lite/includes/feedback.php:317 lite/language.php:1014
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: lite/includes/feedback.php:314 lite/language.php:1013
+msgid "Leave Review"
+msgstr "Deja una valoración"
+
+#: lite/includes/feedback.php:308 lite/language.php:1011
+msgid "Broadcast Created Successfully!"
+msgstr "¡Transmisión creada correctamente!"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:364
+msgid "It appears one or more database tables were missing. Attempting to re-create the missing table(s)."
+msgstr "Parece que una o más tablas de la base de datos no están disponibles. Tratando de volver a crear la(s) tabla(s) no disponible(s)."
+
+#: lite/includes/classes/class-es-newsletters.php:451 lite/language.php:928
+msgid "Something went wrong. Please try again later"
+msgstr "Algo salió mal. Por favor, inténtalo de nuevo más tarde"
+
+#: lite/includes/feedback.php:310 lite/language.php:1012
+msgid "If you like new Broadcast UI, leave us a <b>5 stars review</b>. <br /><br />Do you have a feedback? Contact Us."
+msgstr "Si te gusta la nueva interfaz de usuario de Transmisión, déjanos una <b>valoración de 5 estrellas</b>. <br /><br />¿Tienes algún comentario? Contáctanos."
+
+#: lite/includes/classes/class-es-newsletters.php:199 lite/language.php:919
+msgid "Scheduling is disabled for this broadcast since it has been sent already."
+msgstr "La programación está desactivada para esta difusión, ya que la misma ha sido enviada."
+
+#: lite/includes/classes/class-es-newsletters.php:197 lite/language.php:918
+msgid "Scheduling is disabled for this broadcast since it is being sent."
+msgstr "La programación está desactivada para esta difusión, ya que se está enviando."
+
+#: lite/includes/classes/class-es-newsletters.php:115 lite/language.php:915
+msgid "Please add a broadcast subject."
+msgstr "Por favor, añade un asunto a la difusión."
+
+#: lite/includes/classes/class-es-newsletters.php:450 lite/language.php:927
+msgid "Email sent successfully "
+msgstr "El correo electrónico se ha enviado correctamente"
+
+#: lite/admin/class-es-campaign-admin.php:972
+#: lite/includes/classes/class-es-newsletters.php:496 lite/language.php:157
+msgid "Open tracking"
+msgstr "Abrir el seguimiento"
+
+#. translators: %s: Max upload size
+#: lite/includes/classes/class-es-import-subscribers.php:127
+#: lite/language.php:842
+msgid "File size should be less than %s"
+msgstr "El tamaño del archivo debe ser inferior a %s"
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-updated.php:30
+#: lite/language.php:1403
+msgid "User Updated"
+msgstr "Usuario actualizado"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:35
+#: lite/includes/workflows/db/class-es-db-workflows.php:425
+#: lite/language.php:1294
+msgid "Give Donation Added"
+msgstr "Se ha añadido la donación de Give"
+
+#: lite/includes/classes/class-es-lists-table.php:384 lite/language.php:898
+msgid "Save List"
+msgstr "Guardar la lista"
+
+#: lite/admin/class-es-form-admin.php:335 lite/language.php:191
+msgid "Save Form"
+msgstr "Guardar el formulario"
+
+#: lite/includes/classes/class-es-post-notifications.php:451
+#: lite/language.php:956
+msgid "Save Campaign"
+msgstr "Guardar la campaña"
+
+#: lite/includes/pro-features.php:469 lite/includes/pro-features.php:973
+#: lite/language.php:1090
+msgid "Enable Captcha"
+msgstr "Activar el captcha"
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-deleted.php:30
+#: lite/language.php:1392
+msgid "User Deleted"
+msgstr "Usuario eliminado"
+
+#: lite/includes/pro-features.php:454 lite/language.php:1088
+msgid "Block temporary / fake emails"
+msgstr "Bloquear correos electrónicos temporales/falsos"
+
+#: lite/includes/pro-features.php:437 lite/language.php:1083
+msgid "Block known attackers"
+msgstr "Bloquear atacantes conocidos"
+
+#: lite/includes/pro-features.php:324 lite/language.php:1068
+msgid "Track clicks"
+msgstr "Seguimiento de clics"
+
+#: lite/includes/pro-features.php:234 lite/language.php:1066
+msgid "Sequences"
+msgstr "Secuencias"
+
+#: lite/admin/class-email-subscribers-admin.php:189 lite/language.php:18
+msgid "An error has occured. Please try again later."
+msgstr "Se ha producido un error. Por favor, inténtalo de nuevo más tarde."
+
+#: lite/includes/workflows/fields/class-es-checkbox.php:34
+#: lite/language.php:1372
+msgid "Checkbox"
+msgstr "Casilla de verificación"
+
+#: lite/includes/classes/class-es-post-notifications.php:293
+#: lite/language.php:946
+msgid " Edit Post Notification"
+msgstr "Editar aviso de entradas"
+
+#: lite/admin/class-es-form-admin.php:96 lite/language.php:166
+msgid " New Form"
+msgstr "Nuevo formulario"
+
+#: lite/admin/class-es-form-admin.php:84 lite/language.php:165
+msgid "Forms "
+msgstr "Formularios"
+
+#: lite/includes/classes/class-es-lists-table.php:320 lite/language.php:894
+msgid "List name"
+msgstr "Nombre de la lista"
+
+#: lite/includes/classes/class-es-lists-table.php:291 lite/language.php:891
+msgid " Lists "
+msgstr "Listas"
+
+#: lite/includes/classes/class-es-contacts-table.php:412 lite/language.php:722
+msgid " Add New Contact"
+msgstr " Añadir un nuevo contacto"
+
+#: lite/includes/classes/class-es-post-notifications.php:315
+#: lite/language.php:947
+msgid "Campaigns "
+msgstr "Campañas "
+
+#: lite/includes/classes/class-es-post-notifications.php:290
+#: lite/language.php:945
+msgid " New Post Notification"
+msgstr " Aviso de nueva entrada"
+
+#: lite/includes/classes/class-es-contacts-table.php:592
+#: lite/includes/classes/class-es-export-subscribers.php:176
+#: lite/includes/classes/class-es-handle-sync-wp-user.php:216
+#: lite/includes/classes/class-es-import-subscribers.php:438
+#: lite/includes/classes/class-es-lists-table.php:83
+#: lite/includes/classes/class-es-lists-table.php:288 lite/language.php:731
+msgid "Audience "
+msgstr "Audiencia "
+
+#: lite/admin/class-email-subscribers-admin.php:207 lite/language.php:32
+msgid "Changing the trigger will remove existing actions. Do you want to proceed anyway?."
+msgstr "Al cambiar el disparador, eliminarás las acciones existentes, ¿quieres continuar de todos modos?"
+
+#: lite/admin/partials/help.php:256 lite/language.php:291
+msgid "Install"
+msgstr "Instalar"
+
+#: lite/admin/partials/help.php:243 lite/language.php:290
+msgid "Not Installed"
+msgstr "No instalado"
+
+#: lite/admin/partials/help.php:160 lite/language.php:284
+msgid "Get Help?"
+msgstr "¿Obtener ayuda?"
+
+#: lite/admin/partials/help.php:57 lite/language.php:276
+msgid "Create self-expiring, automatic login links for WordPress. Give them to developers when they ask for admin access to your site."
+msgstr "Crea enlaces de acceso automáticos con caducidad para WordPress. Dáselos a los desarrolladores cuando pidan acceso de administrador a tu sitio."
+
+#: lite/admin/partials/help.php:55 lite/language.php:275
+msgid "Temporary Login Without Password"
+msgstr "Acceso temporal sin contraseña"
+
+#: lite/admin/partials/help.php:48 lite/language.php:274
+msgid "The #1 and a powerful tool to manage stock, inventory from a single place. Super quick and super easy"
+msgstr "La potente herramienta número uno para gestionar las existencias, el inventario, desde un solo lugar. Muy rápido y muy fácil"
+
+#: lite/admin/partials/help.php:46 lite/language.php:273
+msgid "Smart Manager For WooCommerce"
+msgstr "Smart Manager For WooCommerce"
+
+#: lite/admin/partials/help.php:38 lite/language.php:272
+msgid "Get readymade contact forms, email subscription forms and custom forms for your website. Choose from beautiful templates and get started within seconds"
+msgstr "Obtén formularios de contacto listos para usar, formularios de suscripción por correo electrónico y formularios personalizados para tu web. Elige en las bonitas plantillas y empieza en segundos"
+
+#: lite/admin/partials/help.php:30 lite/language.php:270
+msgid "The best WP popup plugin that creates a popup. Customize popup, target popups to show offers, email signups, social buttons, etc and increase conversions on your website."
+msgstr "El mejor plugin de mensajes emergentes para WP. Personaliza el mensaje emergente, dirige los mensajes emergentes para mostrar ofertas, registros por correo electrónico, botones sociales, etc. y aumenta las conversiones en tu web."
+
+#: lite/admin/partials/help.php:210 lite/language.php:286
+msgid "Other awesome plugins from same author"
+msgstr "Otros fantásticos plugins del mismo autor"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_DataController.php:137
+msgid "Attempting to reduce used memory..."
+msgstr "Intentando reducir la memoria usada..."
+
+#. translators: %d: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_DataController.php:133
+msgid "Stopped the insanity for %d second"
+msgid_plural "Stopped the insanity for %d seconds"
+msgstr[0] "Detenida la locura durante %d segundo"
+msgstr[1] "Detenida la locura durante %d segundos"
+
+#. translators: %s: date interval
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:488
+msgid " (%s)"
+msgstr " (%s)"
+
+#. translators: %s: date interval
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:485
+msgid " (%s ago)"
+msgstr " (hace %s)"
+
+#. translators: 1: action HTML 2: action ID 3: error message
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:435
+msgid "Could not process change for action: \"%1$s\" (ID: %2$d). Error: %3$s"
+msgstr "No se ha podido procesar el cambio de la acción: «%1$s» (ID: %2$d). Error: %3$s"
+
+#. translators: %s: action HTML
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:429
+msgid "Successfully processed change for action: %s"
+msgstr "Procesado correctamente el cambio de la acción: %s"
+
+#. translators: %s: action HTML
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:425
+msgid "Successfully canceled action: %s"
+msgstr "Cancelada correctamente la acción: %s"
+
+#. translators: %s: action HTML
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:421
+msgid "Successfully executed action: %s"
+msgstr "Ejecutada correctamente la acción: %s"
+
+#. translators: %d: seconds
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:400
+msgid "The next queue will begin processing in approximately %d seconds."
+msgstr "La siguiente cola empezará a procesarse en %d segundos aproximadamente."
+
+#. translators: %s: process URL
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:397
+msgid "A new queue has begun processing. <a href=\"%s\">View actions in-progress &raquo;</a>"
+msgstr "Ha empezado a procesarse una nueva cola. <a href=\"%s\">Ver las acciones en curso »</a>"
+
+#. translators: %s: amount of claims
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:380
+msgid "Maximum simultaneous queues already in progress (%s queue). No additional queues will begin processing until the current queues are complete."
+msgid_plural "Maximum simultaneous queues already in progress (%s queues). No additional queues will begin processing until the current queues are complete."
+msgstr[0] "Ya están en progreso el máximo de colas simultáneas (%s cola). No se procesarán más colas hasta que se complete la cola actual."
+msgstr[1] "Ya están en progreso el máximo de colas simultáneas (%s colas). No se procesarán más colas hasta que se completen las colas actuales."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:266
+msgid "Non-repeating"
+msgstr "No se repite"
+
+#. translators: %s: time interval
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:260
+msgid "Every %s"
+msgstr "Cada %s"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:224
+msgid "Now!"
+msgstr "¡Ahora!"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:174
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] "%s segundo"
+msgstr[1] "%s segundos"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:169
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s minuto"
+msgstr[1] "%s minutos"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:164
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] "%s hora"
+msgstr[1] "%s horas"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:159
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s día"
+msgstr[1] "%s días"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:154
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] "%s semana"
+msgstr[1] "%s semanas"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:149
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] "%s mes"
+msgstr[1] "%s meses"
+
+#. translators: %s: amount of time
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:144
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s año"
+msgstr[1] "%s años"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:134
+msgid "Cancel the action now to avoid it being run in future"
+msgstr "Cancelar la acción ahora para evitar que vuelva a ejecutarse en el futuro"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:130
+msgid "Process the action now as if it were run as part of a queue"
+msgstr "Procesar la acción ahora como si se ejecutara como parte de una cola"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:129
+msgid "Run"
+msgstr "Ejecutar"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:101
+msgid "Scheduled Date"
+msgstr "Fecha programada"
+
+#. translators: %d refers to the total number of tasks completed
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:205
+msgid "%d scheduled task completed."
+msgid_plural "%d scheduled tasks completed."
+msgstr[0] "Completada %d tarea programada."
+msgstr[1] "Completadas %d tareas programadas."
+
+#. translators: %s refers to the exception error message
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:188
+msgid "There was an error running the action scheduler: %s"
+msgstr "Ha habido un error al ejecutar el programador de acciones: %s"
+
+#. translators: %d refers to the total number of batches executed
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:169
+msgid "%d batch executed."
+msgid_plural "%d batches executed."
+msgstr[0] "Ejecutado %d lote."
+msgstr[1] "Ejecutados %d lotes."
+
+#. translators: %d refers to how many scheduled tasks were found to run
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:152
+msgid "Found %d scheduled task"
+msgid_plural "Found %d scheduled tasks"
+msgstr[0] "Encontrada %d tarea programada"
+msgstr[1] "Encontradas %d tareas programadas"
+
+#. translators: 1: action ID 2: exception message
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:170
+msgid "Error processing action %1$s: %2$s"
+msgstr "Error al procesar la acción %1$s: %2$s"
+
+#. translators: 1: action ID 2: hook name
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:155
+msgid "Completed processing action %1$s with hook: %2$s"
+msgstr "Completado el procesado de la acción %1$s con el gancho: %2$s"
+
+#. translators: %s refers to the action ID
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:138
+msgid "Started processing action %s"
+msgstr "Comenzado el procesado de la acción %s"
+
+#. translators: %d: amount of actions
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:93
+msgid "Running %d action"
+msgid_plural "Running %d actions"
+msgstr[0] "Ejecutando %d acción"
+msgstr[1] "Ejecutando %d acciones"
+
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:61
+msgid "There are too many concurrent batches."
+msgstr "Hay demasiados lotes simultáneos."
+
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:59
+msgid "There are too many concurrent batches, but the run is forced to continue."
+msgstr "Hay demasiados lotes simultáneos, pero se fuerza la continuación de la ejecución."
+
+#. translators: %s php class name
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:33
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ProgressBar.php:47
+msgid "The %s class can only be run within WP CLI."
+msgstr "La clase %s solo puede ejecutarse dentro de WP CLI."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:42
+msgid "No actions found in trash"
+msgstr "No se han encontrado acciones en la papelera"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:41
+msgid "No actions found"
+msgstr "No se han encontrado acciones"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:40
+msgid "Search Scheduled Actions"
+msgstr "Buscar acciones programadas"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:38
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:39
+msgid "View Action"
+msgstr "Ver la acción"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:37
+msgid "New Scheduled Action"
+msgstr "Nueva acción programada"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:36
+msgid "Edit Scheduled Action"
+msgstr "Editar la acción programada"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:34
+msgid "Add New Scheduled Action"
+msgstr "Añadir una nueva acción programada"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:33
+msgid "Add"
+msgstr "Añadir"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:32
+msgctxt "Admin menu name"
+msgid "Scheduled Actions"
+msgstr "Acciones programadas"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:31
+msgid "Scheduled Action"
+msgstr "Acción programada"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:648
+msgid "Search hook, args and claim ID"
+msgstr "Buscar el gancho, los argumentos y la ID de solicitud"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:122
+msgid "Claim ID"
+msgstr "ID de solicitud"
+
+#: lite/includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:113
+msgid "The claim has been lost. Aborting current batch."
+msgstr "Se ha perdido la solicitud. Abortando el lote actual."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:20
+msgid "Scheduled actions are hooks triggered on a cetain date and time."
+msgstr "Las acciones programadas son ganchos activados en una fecha y hora determinadas."
+
+#. translators: %s: count
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:53
+msgid "In-Progress <span class=\"count\">(%s)</span>"
+msgid_plural "In-Progress <span class=\"count\">(%s)</span>"
+msgstr[0] "En progreso <span class=\"count\">(%s)</span>"
+msgstr[1] "En progreso <span class=\"count\">(%s)</span>"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:51
+msgctxt "post"
+msgid "In-Progress"
+msgstr "En progreso"
+
+#. translators: %s: count
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:38
+msgid "Failed <span class=\"count\">(%s)</span>"
+msgid_plural "Failed <span class=\"count\">(%s)</span>"
+msgstr[0] "Fallida <span class=\"count\">(%s)</span>"
+msgstr[1] "Fallidas <span class=\"count\">(%s)</span>"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:36
+msgctxt "post"
+msgid "Failed"
+msgstr "Fallida"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1165
+msgid "Unknown status found for action."
+msgstr "Se ha encontrado un estado desconocido para la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:396
+msgid "Invalid value for select or count parameter. Cannot query actions."
+msgstr "Valor no válido para el parámetro de selección o recuento. No se pueden consultar las acciones."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:118
+msgid "Database error."
+msgstr "Error de la base de datos."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_TaxonomyRegistrar.php:14
+msgid "Action Group"
+msgstr "Grupo de acciones"
+
+#. translators: %s is the error message
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:1068
+msgid "%s Support for strings longer than this will be removed in a future version."
+msgstr "La compatibilidad de %s con cadenas mayores que esta será eliminada en una versión futura."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1163
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:904
+msgid "Invalid action ID. No status found."
+msgstr "ID de la acción no válido. No se encuentra el estado."
+
+#. translators: %s: action ID
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:878
+msgid "Unable to mark failure on action %s. Database error."
+msgstr "No se ha podido marcar el fallo en la acción %s. Error de la base de datos."
+
+#. translators: %s: action ID
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:852
+msgid "Unable to unlock claim on action %s. Database error."
+msgstr "No se ha podido desbloquear la solicitud en la acción %s. Error de la base de datos."
+
+#. translators: %s: claim ID
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:824
+msgid "Unable to unlock claim %s. Database error."
+msgstr "No se ha podido desbloquear la solicitud %s. Error de la base de datos."
+
+#. translators: %s: group name(s)
+#. translators: %s is the group name
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:910
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:717
+msgid "The group \"%s\" does not exist."
+msgid_plural "The groups \"%s\" do not exist."
+msgstr[0] "No existe el grupo «%s»."
+msgstr[1] ""
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:938
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:696
+msgid "Unable to claim actions. Database error."
+msgstr "No se han podido solicitar acciones. Error de la base de datos."
+
+#. translators: %s: action ID
+#. translators: %s is the action ID
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:653
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:745
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:776
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1075
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1133
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:515
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:534
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:564
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:987
+msgid "Unidentified action %s"
+msgstr "Acción %s no identificada"
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:318
+msgid "Invalid schedule. Cannot save action."
+msgstr "Programación no válida. No se puede guardar la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:101
+msgid "Unable to save action."
+msgstr "No se puede guardar la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_QueueRunner.php:221
+msgid "Every minute"
+msgstr "Cada minuto"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:409
+msgid "Canceled"
+msgstr "Cancelada"
+
+#: lite/includes/classes/class-es-campaign-report.php:515
+#: lite/includes/classes/class-es-reports-table.php:263
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:408
+#: lite/language.php:678
+msgid "Failed"
+msgstr "Fallida"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:407
+msgid "In-progress"
+msgstr "En progreso"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:406
+msgid "Pending"
+msgstr "Pendiente"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:405
+msgid "Complete"
+msgstr "Completada"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:329
+msgid "ActionScheduler_Action::$args too long. To ensure the args column can be indexed, action args should not be more than %d characters when encoded as JSON."
+msgstr "Es demasiado largo `ActionScheduler_Action::$args`. Para asegurar que se puede indexar la columna de argumentos, los argumentos de la acción no debería ser de más de %d caracteres al cifrarse como JSON."
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:765
+msgid "Search"
+msgstr "Buscar"
+
+#. translators: %s: search query
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:650
+msgid "Search results for \"%s\""
+msgstr "Resultados de la búsqueda de «%s»"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:523
+msgid "Filter"
+msgstr "Filtrar"
+
+#. translators: %s: exception message
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:156
+msgid "There was a failure scheduling the next instance of this action: %s"
+msgstr "Ha habido un fallo al programar la siguiente instancia de esta acción: %s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:148
+msgid "There was a failure fetching this action"
+msgstr "Ha habido un fallo al recuperar esta acción"
+
+#. translators: %s: exception message
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:146
+msgid "There was a failure fetching this action: %s"
+msgstr "Ha habido un fallo al recuperar esta acción: %s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:131
+msgid "action ignored"
+msgstr "acción ignorada"
+
+#. translators: %s: context
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:129
+msgid "action ignored via %s"
+msgstr "acción ignorada por %s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:123
+msgid "action reset"
+msgstr "acción restablecida"
+
+#. translators: 1: error message 2: filename 3: line
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:118
+msgid "unexpected shutdown: PHP Fatal error %1$s in %2$s on line %3$s"
+msgstr "apagado inesperado: Error fatal de PHP %1$s en %2$s en la línea %3$s"
+
+#. translators: %s: exception message
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:105
+msgid "action failed: %s"
+msgstr "acción fallida: %s"
+
+#. translators: 1: context 2: exception message
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:102
+msgid "action failed via %1$s: %2$s"
+msgstr "acción fallida por %1$s: %2$s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:94
+msgid "action complete"
+msgstr "acción completada"
+
+#. translators: %s: context
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:92
+msgid "action complete via %s"
+msgstr "acción completada por %s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:84
+msgid "action started"
+msgstr "acción iniciada"
+
+#. translators: %s: context
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:82
+msgid "action started via %s"
+msgstr "acción iniciada por %s"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:76
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php:142
+msgid "action canceled"
+msgstr "acción cancelada"
+
+#: lite/includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:72
+msgid "action created"
+msgstr "acción creada"
+
+#. translators: 1: action ID 2: arguments
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_InvalidActionException.php:40
+msgid "Action [%1$s] has invalid arguments. It cannot be JSON decoded to an array. $args = %2$s"
+msgstr "La acción [%1$s] tiene argumentos no válidos. No se puede descifrar por JSON a un array. $args = %2$s"
+
+#. translators: 1: action ID 2: schedule
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_InvalidActionException.php:21
+msgid "Action [%1$s] has an invalid schedule: %2$s"
+msgstr "La acción [%1$s] tiene una programación no válida: %2$s"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:247
+msgid "Activity log for the action."
+msgstr "Registro de actividad de la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:247
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:102
+msgid "Log"
+msgstr "Registro"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:246
+msgid "The date/time the action is/was scheduled to run."
+msgstr "La fecha/hora de programación para la ejecución de la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:245
+msgid "The action's schedule frequency."
+msgstr "La frecuencia de programación de la acción."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:245
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:100
+msgid "Recurrence"
+msgstr "Periodicidad"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:244
+msgid "Optional action group."
+msgstr "Grupo de acción opcional."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:243
+msgid "Optional data array passed to the action hook."
+msgstr "Datos opcionales del array pasados al gancho de acción."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:243
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:98
+msgid "Arguments"
+msgstr "Argumentos"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:242
+msgid "Action statuses are Pending, Complete, Canceled, Failed"
+msgstr "Los estados de las acciones son «Pendiente», «Completada», «Cancelada» y «Fallida»"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:241
+msgid "Name of the action hook that will be triggered."
+msgstr "Nombre del gancho de acción que se activará."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:241
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:96
+msgid "Hook"
+msgstr "Gancho"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:239
+msgid "Scheduled Action Columns"
+msgstr "Columnas de acciones programadas"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:237
+msgid "Columns"
+msgstr "Columnas"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:229
+msgid "Action Scheduler is a scalable, traceable job queue for background processing large sets of actions. Action Scheduler works by triggering an action hook to run at some time in the future. Scheduled actions can also be scheduled to run on a recurring schedule."
+msgstr "El programador de acciones es una cola de tareas rastreable y escalable para el procesado de grandes conjuntos de acciones en segundo plano. El programador de acciones funciona activando un gancho de acción que se ejecuta en un momento dado en el futuro. Las acciones programadas también pueden ser programadas para que se ejecuten en una programación periódica."
+
+#: lite/admin/partials/help.php:259
+#: lite/includes/classes/class-es-post-notifications.php:502
+#: lite/includes/workflows/class-es-workflows-table.php:488
+#: lite/language.php:292
+msgid "Activate"
+msgstr "Activar"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:227
+msgid "About Action Scheduler %s"
+msgstr "Acerca del programador de acciones %s"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:225
+msgid "About"
+msgstr "Acerca de"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:60
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:75
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:76
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:89
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:19
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:30
+msgid "Scheduled Actions"
+msgstr "Acciones programadas"
+
+#. translators: %s: error message
+#. translators: %s: action error message
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:126
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:49
+#: lite/includes/libraries/action-scheduler/classes/migration/ActionScheduler_DBStoreMigrator.php:44
+msgid "Error saving action: %s"
+msgstr "Error al guardar la acción: %s"
+
+#. translators: 1: source action ID 2: source store class 3: destination action
+#. ID 4: destination store class
+#: lite/includes/libraries/action-scheduler/classes/migration/Runner.php:107
+msgid "Migrated action with ID %1$d in %2$s to ID %3$d in %4$s"
+msgstr "Acción migrada con el ID %1$d en %2$s al ID %3$d en %4$s"
+
+#. translators: %d: amount of actions
+#: lite/includes/libraries/action-scheduler/classes/migration/Runner.php:82
+msgid "Migrating %d action"
+msgid_plural "Migrating %d actions"
+msgstr[0] "Migrando %d acción"
+msgstr[1] "Migrando %d acciones"
+
+#: lite/includes/libraries/action-scheduler/classes/migration/ActionMigrator.php:95
+msgid "Unable to remove source migrated action %s"
+msgstr "No se ha podido eliminar el origen de la acción migrada %s"
+
+#: lite/includes/libraries/action-scheduler/classes/migration/Controller.php:162
+msgid "Action Scheduler migration in progress. The list of scheduled actions may be incomplete."
+msgstr "Migración del programador de acciones en progreso. La lista de acciones programadas puede ser incompleta."
+
+#: lite/includes/libraries/action-scheduler/classes/migration/Config.php:118
+msgid "Destination logger must be configured before running a migration"
+msgstr "Antes de ejecutar una migración, debe ser configurado el registrador de destinos"
+
+#: lite/includes/libraries/action-scheduler/classes/migration/Config.php:96
+msgid "Destination store must be configured before running a migration"
+msgstr "Antes de ejecutar una migración, debe ser configurado el almacenamiento de destino"
+
+#: lite/includes/libraries/action-scheduler/classes/migration/Config.php:74
+msgid "Source logger must be configured before running a migration"
+msgstr "Antes de ejecutar una migración, debe ser configurado el registrador de orígenes"
+
+#: lite/includes/libraries/action-scheduler/classes/migration/Config.php:52
+msgid "Source store must be configured before running a migration"
+msgstr "Antes de ejecutar una migración, debe ser configurado el almacenamiento de origen"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ActionFactory.php:232
+msgid "Invalid action - must be a recurring action."
+msgstr "Acción no válida - debe ser una acción periódica."
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:126
+msgid "Newest Scheduled Date"
+msgstr "Siguiente fecha de programación"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:125
+msgid "Oldest Scheduled Date"
+msgstr "Anterior fecha de programación"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:124
+msgid "Count"
+msgstr "Recuento"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:122
+msgid "Action Status"
+msgstr "Estado de la acción"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:114
+msgid "Version:"
+msgstr "Versión:"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "Action Scheduler"
+msgstr "Programador de acciones"
+
+#. translators: 1: next cleanup message 2: github issue URL
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:108
+msgid "Action Scheduler has migrated data to custom tables; however, orphaned log entries exist in the WordPress Comments table. %1$s <a href=\"%2$s\">Learn more &raquo;</a>"
+msgstr "El programador de acciones ha migrado datos a tablas personalizadas; sin embargo, existen entradas de registro huérfanas en la tabla de comentarios de WordPress. %1$s <a href=\"%2$s\">Aprende más »</a>"
+
+#. translators: %s: date interval
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:103
+msgid "This data will be deleted in %s."
+msgstr "Este dato será borrado en %s."
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-updated.php:31
+#: lite/language.php:1404
+msgid "Fires when a user is updated."
+msgstr "Se dispara cuando se actualiza un usuario."
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-deleted.php:32
+#: lite/includes/workflows/triggers/class-es-trigger-user-registered.php:32
+#: lite/includes/workflows/triggers/class-es-trigger-user-updated.php:32
+#: lite/language.php:1394
+msgid "User"
+msgstr "Usuario"
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-registered.php:31
+#: lite/language.php:1395
+msgid "Fires when someone signup."
+msgstr "Se dispara cuando alguien se registra."
+
+#: lite/includes/workflows/class-es-workflows-table.php:606
+#: lite/language.php:1362
+msgid "deactivate"
+msgstr "desactivar"
+
+#: lite/includes/workflows/class-es-workflows-table.php:606
+#: lite/language.php:1361
+msgid "activate"
+msgstr "activar"
+
+#: lite/includes/workflows/class-es-workflows-table.php:598
+#: lite/language.php:1358
+msgid "deactivated"
+msgstr "desactivado"
+
+#: lite/includes/workflows/class-es-workflows-table.php:598
+#: lite/language.php:1357
+msgid "activated"
+msgstr "activado"
+
+#: lite/includes/workflows/class-es-workflows-table.php:556
+#: lite/language.php:1353
+msgid "You are not allowed to delete workflow."
+msgstr "No tienes permiso para borrar flujos de trabajo."
+
+#: lite/includes/workflows/class-es-workflows-table.php:510
+#: lite/language.php:1352
+msgid "Search Workflows"
+msgstr "Buscar flujos de trabajo"
+
+#: lite/includes/workflows/class-es-workflows-table.php:489
+#: lite/language.php:1351
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#: lite/includes/workflows/class-es-workflows-table.php:459
+#: lite/language.php:1349
+msgid "Title"
+msgstr "Título"
+
+#: lite/includes/workflows/class-es-workflows-table.php:447
+#: lite/language.php:1348
+msgid "Toggle Status"
+msgstr "Cambiar el estado"
+
+#: lite/includes/workflows/class-es-workflows-table.php:358
+#: lite/language.php:1345
+msgid "No Workflows Found."
+msgstr "No se han encontrado flujos de trabajo."
+
+#: lite/admin/class-es-admin.php:881
+#: lite/includes/workflows/class-es-workflows-table.php:237
+#: lite/language.php:119 lite/admin/dist/main.js:1
+msgid "An error has occured. Please try again later"
+msgstr "Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde."
+
+#: lite/includes/workflows/class-es-workflows-table.php:234
+#: lite/language.php:1343
+msgid "You are not allowed to add/edit workflows."
+msgstr "No tienes permiso para añadir/editar flujos de trabajo."
+
+#: lite/includes/workflows/class-es-workflows-table.php:231
+#: lite/language.php:1342
+msgid "Unable to save workflow. Please try again later."
+msgstr "No se ha podido guardar el flujo de trabajo. Por favor, inténtalo de nuevo más tarde."
+
+#: lite/includes/workflows/class-es-workflows-table.php:182
+#: lite/language.php:1337
+msgid "Number of workflows per page"
+msgstr "Número de flujos de trabajo por página"
+
+#: lite/includes/workflows/class-es-workflows-table.php:52
+#: lite/language.php:1332
+msgid "Workflow"
+msgstr "Flujo de trabajo"
+
+#: lite/includes/workflows/class-es-workflow.php:1125 lite/language.php:1331
+msgid "Could not retrieve the action."
+msgstr "No se ha podido recuperar la acción."
+
+#: lite/includes/workflows/class-es-workflow.php:1119 lite/language.php:1330
+msgid "Missing action_name key in array."
+msgstr "Falta la clave `action_name`en el array."
+
+#: lite/includes/workflows/admin/views/action.php:32 lite/language.php:1265
+msgid "New Action"
+msgstr "Nueva acción"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:28
+#: lite/includes/workflows/db/class-es-db-workflows.php:429
+#: lite/language.php:1290
+msgid "Gravity Form Submitted"
+msgstr "Enviado el formulario de Gravity"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:27
+#: lite/includes/workflows/db/class-es-db-workflows.php:417
+#: lite/language.php:1289
+msgid "Ninja Form Submitted"
+msgstr "Enviado el formulario de Ninja"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:26
+#: lite/includes/workflows/db/class-es-db-workflows.php:421
+#: lite/language.php:1288
+msgid "WP Form Submitted"
+msgstr "Enviado el formulario de WP"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:25
+#: lite/includes/workflows/db/class-es-db-workflows.php:413
+#: lite/language.php:1287
+msgid "Contact Form 7 Submitted"
+msgstr "Enviado el formulario de Contact Form 7"
+
+#: lite/includes/workflows/admin/views/meta-box-options.php:23
+#: lite/language.php:1270
+msgid "Workflow priority"
+msgstr "Prioridad del flujo de trabajo"
+
+#: lite/includes/workflows/admin/views/meta-box-actions.php:76
+#: lite/language.php:1269
+msgid "+ Add action"
+msgstr "+ Añadir una acción"
+
+#: lite/includes/workflows/admin/views/meta-box-timing.php:34
+#: lite/language.php:1280
+msgid "Delayed"
+msgstr "Retrasada"
+
+#: lite/includes/workflows/admin/views/meta-box-timing.php:33
+#: lite/language.php:1279
+msgid "Run immediately"
+msgstr "Ejecutar inmediatamente"
+
+#: lite/language.php:1278
+msgid "Timing"
+msgstr "Horario"
+
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:399
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:98
+#: lite/language.php:1257
+msgid "Trigger"
+msgstr "Activador"
+
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:368
+#: lite/language.php:1256
+msgid "Add title"
+msgstr "Añadir el título"
+
+#: lite/includes/workflows/actions/class-es-action-delete-contact.php:30
+#: lite/language.php:1243
+msgid "Delete Contact"
+msgstr "Borrar el contacto"
+
+#: lite/includes/classes/class-es-contacts-table.php:1162
+#: lite/includes/workflows/actions/class-es-action-add-to-list.php:30
+#: lite/language.php:741
+msgid "Add to list"
+msgstr "Añadir a la lista"
+
+#: lite/includes/workflows/actions/class-es-action-update-contact.php:30
+#: lite/language.php:1251
+msgid "Update Contact"
+msgstr "Actualizar el contacto"
+
+#: lite/includes/workflows/db/class-es-db-workflows.php:457
+#: lite/language.php:1367
+msgid "User updated"
+msgstr "Usuario actualizado"
+
+#: lite/includes/workflows/db/class-es-db-workflows.php:449
+#: lite/language.php:1366
+msgid "User deleted"
+msgstr "Usuario borrado"
+
+#: lite/language.php:1859
+msgid "Give donation"
+msgstr "Donación de Give"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:33
+#: lite/includes/workflows/db/class-es-db-workflows.php:405
+#: lite/language.php:1292
+msgid "WooCommerce Order Completed"
+msgstr "Pedido de WooCommerce completado"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:34
+#: lite/includes/workflows/db/class-es-db-workflows.php:409
+#: lite/language.php:1293
+msgid "EDD Purchase Completed"
+msgstr "Compra de EDD completada"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:22
+#: lite/includes/workflows/db/class-es-db-workflows.php:401
+#: lite/language.php:1286
+msgid "Comment Added"
+msgstr "Comentario añadido"
+
+#: lite/includes/workflows/db/class-es-db-workflows.php:397
+#: lite/includes/workflows/triggers/class-es-trigger-user-registered.php:30
+#: lite/language.php:1365
+msgid "User Registered"
+msgstr "Usuario registrado"
+
+#. translators: %s: Table name
+#: lite/includes/workflows/queue/class-es-workflow-queue.php:479
+#: lite/language.php:1385
+msgid "Could not insert into '%1$s' table. '%1$s' may not be present in the database."
+msgstr "No se puede insertar «%1$s» en la tabla. Puede que no esté presente «%1$s» en la base de datos."
+
+#: lite/includes/class-es-common.php:2577
+#: lite/includes/workflows/fields/class-es-number.php:48 lite/language.php:491
+msgid "Number"
+msgstr "Número"
+
+#: lite/includes/class-es-common.php:2578 lite/includes/pro-features.php:1228
+#: lite/includes/workflows/fields/class-es-date.php:31 lite/language.php:492
+msgid "Date"
+msgstr "Fecha"
+
+#: lite/includes/workflows/admin/views/meta-box-trigger.php:102
+#: lite/includes/workflows/fields/class-es-select.php:79 lite/language.php:1312
+msgid "[Select]"
+msgstr "[Seleccionar]"
+
+#: lite/includes/workflows/fields/class-es-text.php:65 lite/language.php:1374
+msgid "Text Input"
+msgstr "Entrada de texto"
+
+#: lite/includes/workflows/fields/class-es-time.php:126 lite/language.php:1377
+msgid "(24 hour time)"
+msgstr "(horario de 24 horas)"
+
+#: lite/includes/workflows/fields/class-es-time.php:119 lite/language.php:1376
+msgctxt "time field"
+msgid "MM"
+msgstr "MM"
+
+#: lite/includes/workflows/fields/class-es-time.php:107 lite/language.php:1375
+msgctxt "time field"
+msgid "HH"
+msgstr "HH"
+
+#: lite/includes/pro-features.php:1237
+#: lite/includes/workflows/fields/class-es-time.php:64 lite/language.php:1154
+msgid "Time"
+msgstr "Hora"
+
+#. translators: %s: time difference
+#: lite/includes/workflows/class-es-format.php:134 lite/language.php:1322
+msgid "%s ago"
+msgstr "hace %s"
+
+#. translators: %s: time difference
+#: lite/includes/workflows/class-es-format.php:131 lite/language.php:1320
+msgid "%s from now"
+msgstr "%s desde ahora"
+
+#. translators: %d: time difference in second %d: time difference in seconds
+#: lite/includes/workflows/class-es-format.php:124 lite/language.php:1318
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d segundo"
+msgstr[1] "%d segundos"
+
+#: lite/includes/classes/class-es-campaigns-table.php:154
+#: lite/includes/classes/class-es-campaigns-table.php:156 lite/language.php:688
+msgid "Onsite Campaigns"
+msgstr "Campañas in situ"
+
+#: lite/includes/classes/class-es-admin-settings.php:1096 lite/language.php:650
+msgid "Interval"
+msgstr "Intervalo"
+
+#: lite/includes/workflows/triggers/class-es-trigger-user-deleted.php:31
+#: lite/language.php:1393
+msgid "Fires when user deleted from WordPress."
+msgstr "Se activa cuando se borra un usuario de WordPress."
+
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:329
+#: lite/language.php:1254
+msgid " Add New Workflow"
+msgstr " Añadir un nuevo flujo de trabajo"
+
+#. translators: %s: Workflow action
+#: lite/includes/workflows/class-es-workflows-table.php:609
+#: lite/language.php:1364
+msgid "Please select workflow(s) to %s."
+msgstr "Por favor, selecciona el/los flujo/s de trabajo para %s."
+
+#: lite/includes/workflows/class-es-workflows-table.php:584
+#: lite/language.php:1356
+msgid "Please select workflow(s) to delete."
+msgstr "Por favor, selecciona el/los flujo/s de trabajo a borrar."
+
+#: lite/includes/classes/class-es-ig-redirect.php:83 lite/language.php:831
+msgid "Install Icegram"
+msgstr "Instalar Icegram"
+
+#: lite/includes/classes/class-es-ig-redirect.php:78 lite/language.php:830
+msgid "Activate Icegram"
+msgstr "Activar Icegram"
+
+#: lite/includes/pro-features.php:294 lite/language.php:1067
+msgid "Access Control"
+msgstr "Control de acceso"
+
+#: lite/admin/class-email-subscribers-admin.php:424 lite/language.php:84
+msgid "Go To Icegram"
+msgstr "Ir a Icegram"
+
+#: lite/admin/class-email-subscribers-admin.php:402
+#: lite/includes/pro-features.php:235
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:341
+#: lite/includes/workflows/class-es-workflows-table.php:53
+#: lite/includes/workflows/class-es-workflows-table.php:276
+#: lite/includes/workflows/class-es-workflows-table.php:291
+#: lite/language.php:81
+msgid "Workflows"
+msgstr "Flujos de trabajo"
+
+#: lite/admin/class-email-subscribers-admin.php:205 lite/language.php:30
+msgid "Please add some actions before saving the workflow."
+msgstr "Por favor, añade algunas acciones antes de guardar el flujo de trabajo."
+
+#: lite/admin/class-email-subscribers-admin.php:204 lite/language.php:29
+msgid "Please select a trigger before saving the workflow."
+msgstr "Por favor, selecciona un activador antes de guardar el flujo de trabajo."
+
+#: lite/admin/views/dashboard/tip-and-tricks.php:34 lite/language.php:424
+msgid "Jump to: "
+msgstr "Saltar a: "
+
+#: lite/includes/pro-features.php:1397 lite/language.php:1163
+msgid "Avg Click Rate"
+msgstr "Tasa media de clics"
+
+#: lite/admin/class-email-subscribers-admin.php:1636 lite/language.php:94
+msgid "Messages Sent"
+msgstr "Mensajes enviados"
+
+#: lite/admin/class-email-subscribers-admin.php:1695
+#: lite/admin/views/dashboard/dashboard-ess.php:307
+#: lite/admin/views/dashboard/dashboard.php:284
+#: lite/admin/views/dashboard/recent-campaigns.php:93
+#: lite/admin/views/dashboard/sequence-stats.php:21
+#: lite/admin/views/dashboard/subscribers-stats.php:225
+#: lite/admin/views/dashboard/subscribers-stats.php:243
+#: lite/admin/views/newsletter-summary.php:179
+#: lite/admin/views/newsletter-summary.php:200
+#: lite/includes/pro-features.php:1461 lite/includes/pro-features.php:1499
+#: lite/language.php:97
+msgid "Opens"
+msgstr "Abiertos"
+
+#: lite/includes/classes/class-es-contacts-table.php:349 lite/language.php:721
+msgid "Last 60 days"
+msgstr "Últimos 60 días"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:170
+#: lite/admin/views/dashboard/dashboard.php:170 lite/language.php:398
+msgid "New Contact"
+msgstr "Nuevo contacto"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:169
+#: lite/admin/views/dashboard/dashboard.php:169 lite/language.php:397
+msgid "New List"
+msgstr "Nueva lista"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:164
+#: lite/admin/views/dashboard/dashboard.php:164 lite/language.php:395
+msgid "New Template"
+msgstr "Nueva plantilla"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:159
+#: lite/admin/views/dashboard/dashboard.php:159 lite/language.php:394
+msgid "Premium"
+msgstr "Premium"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:156
+#: lite/admin/views/dashboard/dashboard-ess.php:158
+#: lite/admin/views/dashboard/dashboard.php:156
+#: lite/admin/views/dashboard/dashboard.php:158 lite/language.php:393
+msgid "New Sequence"
+msgstr "Nueva secuencia"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:153
+#: lite/admin/views/dashboard/dashboard.php:153 lite/language.php:392
+msgid "New Post Notification"
+msgstr "Aviso de nueva entrada"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:30
+#: lite/admin/views/dashboard/dashboard-ess.php:140
+#: lite/admin/views/dashboard/dashboard.php:30
+#: lite/admin/views/dashboard/dashboard.php:140 lite/language.php:366
+msgid "Create"
+msgstr "Crear"
+
+#: lite/includes/feedback.php:254 lite/language.php:1010
+msgid "Send my feedback to <b>Icegram team</b>"
+msgstr "Enviar mis comentarios al <b>equipo de Icegram</b>"
+
+#: lite/includes/feedback.php:226 lite/language.php:1008
+msgid "Subscription forms and CTAs??"
+msgstr "¿Formularios de suscripción y CTA?"
+
+#: lite/includes/classes/class-es-mailer.php:292
+#: lite/includes/workflows/gallery-items/confirmation-email.php:26
+#: lite/language.php:904
+msgid "Thanks!"
+msgstr "¡Gracias!"
+
+#: lite/admin/class-es-form-admin.php:324 lite/language.php:190
+msgid "Consent text will show up at subscription form next to consent checkbox."
+msgstr "El texto de consentimiento aparecerá en el formulario de suscripción junto a la casilla de verificación del consentimiento."
+
+#: lite/admin/class-es-form-admin.php:297 lite/language.php:189
+msgid "Show consent checkbox to get the consent of a contact before adding them to list(s)"
+msgstr "Mostrar la casilla de verificación de consentimiento para obtener el consentimiento de un contacto antes de añadirlo a la(s) lista(s)"
+
+#: lite/admin/class-es-form-admin.php:296 lite/language.php:188
+msgid "Show GDPR consent checkbox"
+msgstr "Mostrar la casilla de verificación de consentimiento del RGPD"
+
+#: lite/includes/classes/class-es-campaigns-table.php:325 lite/language.php:695
+msgid "Finished"
+msgstr "Finalizado"
+
+#: lite/includes/classes/class-es-campaigns-table.php:324
+#: lite/includes/classes/class-es-campaigns-table.php:633
+#: lite/includes/classes/class-es-reports-table.php:248 lite/language.php:694
+msgid "Paused"
+msgstr "En pausa"
+
+#: lite/includes/classes/class-es-campaigns-table.php:323 lite/language.php:693
+msgid "Queued"
+msgstr "En espera"
+
+#: lite/includes/class-es-common.php:2091
+#: lite/includes/classes/class-es-campaigns-table.php:322
+#: lite/includes/classes/class-es-campaigns-table.php:579
+#: lite/includes/classes/class-es-campaigns-table.php:615
+#: lite/includes/classes/class-es-reports-table.php:256
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:246
+#: lite/language.php:482
+msgid "Scheduled"
+msgstr "Programada"
+
+#: lite/includes/classes/class-es-campaigns-table.php:320 lite/language.php:692
+msgid "In Active"
+msgstr "En activo"
+
+#: lite/includes/classes/class-es-admin-settings.php:491 lite/language.php:631
+msgid "Maximum emails you want to send on every cron request."
+msgstr "Númer máximo de correos electrónicos que deseas enviar en cada petición cron."
+
+#: lite/includes/classes/class-es-admin-settings.php:490 lite/language.php:630
+msgid "Maximum emails to send at once"
+msgstr "Número máximo de correos electrónicos a enviar a la vez"
+
+#: lite/includes/classes/class-es-admin-settings.php:466 lite/language.php:626
+msgid "Send emails at most every"
+msgstr "Enviar correos electrónicos como máximo cada"
+
+#: lite/includes/feedback/class-ig-feedback.php:295
+msgid "Thank You :) "
+msgstr "Gracias :)"
+
+#: lite/includes/classes/class-es-cron.php:341 lite/language.php:759
+msgid "30 minutes"
+msgstr "30 minutos"
+
+#: lite/includes/classes/class-es-cron.php:340 lite/language.php:758
+msgid "25 minutes"
+msgstr "25 minutos"
+
+#: lite/includes/classes/class-es-cron.php:339 lite/language.php:757
+msgid "20 minutes"
+msgstr "20 minutos"
+
+#: lite/includes/classes/class-es-cron.php:338 lite/language.php:756
+msgid "15 minutes"
+msgstr "15 minutos"
+
+#: lite/includes/classes/class-es-cron.php:337 lite/language.php:755
+msgid "10 minutes"
+msgstr "10 minutos"
+
+#: lite/includes/classes/class-es-admin-settings.php:469 lite/language.php:627
+msgid "Optional if a real cron service is used"
+msgstr "Opcional si se usa un servicio cron real"
+
+#: lite/includes/classes/class-es-cron.php:666 lite/language.php:768
+msgid "Cron lock enabled. Please try after sometime."
+msgstr "Activado el bloqueo del programador de tareas (cron). Por favor, inténtalo en un rato."
+
+#: lite/includes/classes/class-es-campaign-report.php:226
+#: lite/includes/classes/class-es-campaign-report.php:505
+#: lite/includes/classes/class-es-contacts-table.php:380
+#: lite/includes/pro-features.php:1373 lite/language.php:671
+msgid "Opened"
+msgstr "Abierto"
+
+#: lite/admin/class-email-subscribers-admin.php:1603 lite/language.php:90
+msgid "Last 30 days"
+msgstr "Últimos 30 días"
+
+#: lite/includes/classes/class-es-newsletters.php:121 lite/language.php:916
+msgid "Please add message body or select template"
+msgstr "Por favor, añade el cuerpo del mensaje o selecciona una plantilla"
+
+#. translators: 1: Error message 2: File name  3: Line number
+#: lite/includes/class-email-subscribers.php:1363 lite/language.php:447
+msgid "%1$s in %2$s on line %3$s"
+msgstr "%1$s en el archivo %2$s en la línea %3$s"
+
+#: lite/includes/classes/class-es-post-notifications.php:249
+#: lite/language.php:941
+msgid "Please select Categories."
+msgstr "Por favor, selecciona las categorías."
+
+#: lite/admin/class-ig-es-campaign-rules.php:185 lite/language.php:204
+msgid "Recipients"
+msgstr "Destinatarios"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:151
+#: lite/admin/views/dashboard/dashboard.php:151 lite/language.php:391
+msgid "New Broadcast"
+msgstr "Nueva transmisión"
+
+#: lite/includes/classes/class-es-newsletters.php:393 lite/language.php:923
+msgid "Design template"
+msgstr "Diseño de la plantilla"
+
+#: lite/admin/class-es-campaign-admin.php:938
+#: lite/includes/classes/class-es-newsletters.php:364 lite/language.php:154
+msgid "From Email"
+msgstr "Correo electrónico del remitente"
+
+#: lite/includes/classes/class-es-newsletters.php:127 lite/language.php:917
+msgid "Please add the subject"
+msgstr "Por favor, añade el asunto"
+
+#: lite/includes/classes/class-es-admin-settings.php:41 lite/language.php:569
+msgid "You do not have permission to update settings"
+msgstr "No tienes permiso para actualizar los ajustes"
+
+#: lite/admin/class-es-form-admin.php:161 lite/language.php:178
+msgid "Placeholder"
+msgstr "Marcador de posición"
+
+#: lite/includes/classes/class-es-campaigns-table.php:79 lite/language.php:681
+msgid "Number of campaigns per page"
+msgstr "Número de campañas por página"
+
+#: lite/includes/classes/class-es-forms-table.php:68 lite/language.php:786
+msgid "Number of forms per page"
+msgstr "Número de formularios por página"
+
+#: lite/includes/classes/class-es-lists-table.php:52 lite/language.php:885
+msgid "Number of lists per page"
+msgstr "Número de listas por página"
+
+#: lite/includes/classes/class-es-contacts-table.php:99 lite/language.php:712
+msgid "Number of contacts per page"
+msgstr "Número de contactos por página"
+
+#: lite/includes/classes/class-es-lists-table.php:145 lite/language.php:888
+msgid "List already exists. Please choose a different name"
+msgstr "La lista ya existe. Por favor, elige un nombre diferente"
+
+#: lite/includes/classes/class-es-admin-settings.php:990 lite/language.php:647
+msgid "Why to choose Pepipost"
+msgstr "Porqué elegir Pepipost"
+
+#: lite/includes/classes/class-es-admin-settings.php:988 lite/language.php:645
+msgid "Signup for Pepipost"
+msgstr "Regístrate en Pepipost"
+
+#: lite/language.php:636
+msgid "Select a mailer to send mail"
+msgstr "Selecciona un gestor de correo para enviar el correo electrónico"
+
+#: lite/includes/classes/class-es-admin-settings.php:989 lite/language.php:646
+msgid "How to find"
+msgstr "Cómo encontrar la"
+
+#: lite/includes/classes/class-es-admin-settings.php:522
+#: lite/includes/classes/class-es-admin-settings.php:989 lite/language.php:635
+msgid "Pepipost API key"
+msgstr "Clave de la API de Pepipost"
+
+#: lite/includes/classes/class-es-admin-settings.php:510 lite/language.php:634
+msgid "Select Mailer"
+msgstr "Seleccionar gestor de correo"
+
+#: lite/admin/class-es-admin.php:802
+#: lite/admin/class-es-campaign-admin.php:1499
+#: lite/includes/classes/class-es-templates-table.php:79 lite/language.php:118
+msgid "Any keywords related Post Notification"
+msgstr "Cualquier palabra clave relacionada con el aviso de entrada"
+
+#: lite/admin/class-es-admin.php:798
+#: lite/admin/class-es-campaign-admin.php:1495
+#: lite/includes/classes/class-es-templates-table.php:78 lite/language.php:117
+msgid "for Post Digest:"
+msgstr "para el resumen de la entrada:"
+
+#: lite/includes/classes/class-es-cron.php:665 lite/language.php:767
+msgid "You have hit your hourly email sending limit. Please try after sometime."
+msgstr "Has alcanzado el límite de envío de correos electrónicos por hora. Por favor, inténtalo después de un tiempo."
+
+#: lite/includes/class-es-common.php:1827 lite/includes/feedback.php:123
+#: lite/language.php:476
+msgid "Join Now"
+msgstr "Únete ahora"
+
+#: lite/includes/feedback.php:119 lite/language.php:1006
+msgid "on Facebook"
+msgstr "en Facebook"
+
+#: lite/includes/feedback.php:119 lite/language.php:1004
+msgid "Join"
+msgstr "Únete"
+
+#: lite/includes/feedback.php:117 lite/language.php:1003
+msgid "Not a member yet?"
+msgstr "¿Aún no eres miembro?"
+
+#: lite/language.php:1407 lite/public/class-email-subscribers-public.php:262
+msgid "You are already unsubscribed!"
+msgstr "¡Ya no estás suscrito!"
+
+#: lite/language.php:1406 lite/public/class-email-subscribers-public.php:260
+msgid "You are already subscribed!"
+msgstr "¡Ya estás suscrito!"
+
+#: lite/includes/classes/class-es-contacts-table.php:860 lite/language.php:736
+msgid "Send welcome email?"
+msgstr "¿Enviar el correo electrónico de bienvenida?"
+
+#: lite/includes/classes/class-es-campaigns-table.php:390
+#: lite/includes/classes/class-es-campaigns-table.php:404 lite/language.php:696
+msgid "All"
+msgstr "Todas"
+
+#: lite/includes/class-es-common.php:727 lite/language.php:455
+msgid "All Categories (Also include all categories which will create later)"
+msgstr "Todas las categorías (también incluye todas las categorías que se crearán más tarde)"
+
+#: lite/includes/class-es-common.php:712 lite/language.php:454
+msgid "Select Categories"
+msgstr "Seleccionar categorías"
+
+#: lite/admin/class-es-admin.php:789
+#: lite/admin/class-es-campaign-admin.php:1486
+#: lite/includes/classes/class-es-templates-table.php:73 lite/language.php:116
+msgid "for Broadcast:"
+msgstr "en las emisiones:"
+
+#: lite/includes/pro-features.php:761 lite/language.php:1125
+msgid "Are you using Give WordPress plugin to collect donations? Want to send Thank You email to them? You can use this integration to be in touch with them."
+msgstr "¿Estás usando el plugin Give de WordPress para recoger donaciones? ¿Quieres enviarles un correo electrónico de agradecimiento? Puedes usar esta integración para estar en contacto con ellos."
+
+#: lite/includes/pro-features.php:770 lite/includes/pro-features.php:808
+#: lite/language.php:1126
+msgid "you will have settings panel where you need to enable Give sync and select the list in which you want to add people whenever they make donation."
+msgstr "tendrás un panel de ajustes en el que tendrás que activar la sincronización de Give y seleccionar la lista a la que quieres añadir a las personas cada vez que hagan una donación."
+
+#: lite/includes/pro-features.php:798 lite/language.php:1127
+msgid "Sync Contacts"
+msgstr "Sincronizar los contactos"
+
+#: lite/includes/pro-features.php:799 lite/language.php:1128
+msgid "We found that you are using Ninja Forms. Want to add your contact to a mailing list? You can use this integration to add your contact to add into mailing list"
+msgstr "Vemos que estás usando Ninja Forms. ¿Quieres añadir tus contactos a la lista de correo? Puedes usar esta integración para añadir tus contactos en tu lista de correo"
+
+#: lite/includes/pro-features.php:836 lite/language.php:1129
+msgid "Sync Customers"
+msgstr "Sincronizar los clientes"
+
+#: lite/includes/pro-features.php:837 lite/language.php:1130
+msgid "We found that you are using EDD to sell digital goods online. You can use this integration to send Newsletters/ Post Notifications to your customers."
+msgstr "Vemos que estás usando EDD para vender online productos digitales. Puedes usar esta integración para enviar boletines de noticias/avisos a tus clientes."
+
+#: lite/includes/pro-features.php:846 lite/language.php:1131
+msgid "you will have settings panel where you need to enable EDD sync and select the list in which you want to add people whenever they purchase something from you."
+msgstr "tendrás un panel de ajustes en el que tendrás que activar la sincronización de EDD y seleccionar la lista a la que quieres añadir a las personas cada vez que te compren algo."
+
+#: lite/includes/classes/class-es-campaigns-table.php:665 lite/language.php:702
+msgid "Categories"
+msgstr "Categorías"
+
+#: lite/includes/pro-features.php:723 lite/language.php:1123
+msgid "We found that you are using Give WordPress plugin to collect donations. Now, with this integration, you can add your donors to any of your subscriber list and send them Newsletters in future."
+msgstr "Vemos que, para recoger donaciones, estás usando el plugin Give de WordPress. Ahora, con esta integración, puedes añadir a tus donantes a cualquiera de tus listas de suscripción y enviarles boletines de noticias en el futuro."
+
+#: lite/includes/pro-features.php:732 lite/language.php:1124
+msgid "you will have settings panel where you need to enable Give integration and select the list in which you want to add people whenever they make donation."
+msgstr "tendrás un panel de ajustes en el que tendrás que activar la integración de Give y seleccionar la lista a la que quieres añadir a las personas cada vez que hagan una donación."
+
+#: lite/includes/pro-features.php:554 lite/language.php:1100
+msgid "WPForms"
+msgstr "WPForms"
+
+#: lite/includes/pro-features.php:564 lite/language.php:1101
+msgid "Give"
+msgstr "Give"
+
+#: lite/includes/pro-features.php:574 lite/language.php:1102
+msgid "Ninja Forms"
+msgstr "Ninja Forms"
+
+#: lite/includes/pro-features.php:584 lite/language.php:1103
+msgid "EDD"
+msgstr "EDD"
+
+#: lite/includes/pro-features.php:722 lite/includes/pro-features.php:760
+#: lite/language.php:1122
+msgid "Sync Donors"
+msgstr "Sincronizar los donantes"
+
+#: lite/includes/classes/class-es-contacts-table.php:565 lite/language.php:730
+msgid "Please enter valid email address"
+msgstr "Por favor, introduce una dirección de correo electrónico válida"
+
+#: lite/includes/classes/class-es-export-subscribers.php:376
+#: lite/language.php:781
+msgid "Opt-In Type"
+msgstr "Tipo de aceptación"
+
+#: lite/includes/classes/class-es-export-subscribers.php:46
+#: lite/includes/classes/class-es-export-subscribers.php:371
+#: lite/includes/classes/class-es-import-subscribers.php:617
+#: lite/includes/classes/class-es-import-subscribers.php:711
+#: lite/includes/classes/class-es-import-subscribers.php:1149
+#: lite/includes/classes/class-es-import-subscribers.php:1406
+#: lite/language.php:778
+msgid "First Name"
+msgstr "Nombre"
+
+#: lite/includes/classes/class-es-export-subscribers.php:47
+#: lite/includes/classes/class-es-export-subscribers.php:372
+#: lite/includes/classes/class-es-import-subscribers.php:618
+#: lite/includes/classes/class-es-import-subscribers.php:712
+#: lite/includes/classes/class-es-import-subscribers.php:1154
+#: lite/includes/classes/class-es-import-subscribers.php:1407
+#: lite/language.php:779
+msgid "Last Name"
+msgstr "Apellidos"
+
+#: lite/includes/classes/class-es-form-widget.php:44 lite/language.php:784
+#: lite/public/partials/class-es-shortcode.php:262
+#: lite/public/partials/class-es-shortcode.php:512
+msgid "Select list(s)"
+msgstr "Seleccionar lista(s)"
+
+#: lite/includes/pro-features.php:694 lite/language.php:1121
+msgid "you will have settings panel where you need to enable Contact form 7 sync and select the list in which you want to add people whenever they fill any of the Contact Form."
+msgstr "tendrás un panel de ajustes en el que tendrás que habilitar la sincronizacióncon Contact form 7 y seleccionar la lista a la que quieres añadir a las personas cada vez que rellenen cualquiera de los formularios de contacto."
+
+#: lite/includes/pro-features.php:685 lite/language.php:1120
+msgid "Are you using Contact Form 7 for your list building? You can use this integration to add to a specific list whenever new subscribers added from Contact Form 7"
+msgstr "¿Está utilizando Contact Form 7 para la creación listas? Puedes utilizar esta integración para añadir a una lista específica cada vez que se añadan nuevos suscriptores desde Contact Form 7"
+
+#: lite/includes/pro-features.php:684 lite/language.php:1119
+msgid "Sync Contact Form 7 users"
+msgstr "Sincronizar usuarios de Contact Form 7"
+
+#: lite/includes/pro-features.php:645 lite/language.php:1114
+msgid "Are you using WooCommerce for your online business? You can use this integration to add to a specific list whenever someone make a purchase from you"
+msgstr "¿Estás usando WooCommerce para tu negocio en línea? Puedes utilizar esta integración para añadir a una lista específica cada vez que alguien te compre"
+
+#: lite/includes/pro-features.php:649 lite/language.php:1115
+msgid ""
+"you will have settings panel where you need to enable WooCommerce sync and select the list in which you want to add people whenever they\n"
+"\t\t\tpurchase something\n"
+"\t\t\tfrom you."
+msgstr ""
+"tendrás un panel de ajustes en el que tendrás que activar la sincronización con WooCommerce y seleccionar la lista en la que quieres añadir a las personas cada vez que\n"
+"\t\t\tcompren algo\n"
+"\t\t\ttuyo."
+
+#: lite/includes/pro-features.php:644 lite/language.php:1113
+msgid "Sync WooCommerce Customers"
+msgstr "Sincronizar clientes de WooCommerce"
+
+#: lite/includes/pro-features.php:621 lite/language.php:1112
+msgid "now"
+msgstr "ahora"
+
+#: lite/includes/pro-features.php:621 lite/includes/pro-features.php:658
+#: lite/includes/pro-features.php:696 lite/includes/pro-features.php:734
+#: lite/includes/pro-features.php:772 lite/includes/pro-features.php:810
+#: lite/includes/pro-features.php:848 lite/language.php:1111
+msgid "Checkout "
+msgstr "Finalizar compra "
+
+#: lite/includes/pro-features.php:614 lite/includes/pro-features.php:647
+#: lite/includes/pro-features.php:687 lite/includes/pro-features.php:725
+#: lite/includes/pro-features.php:763 lite/includes/pro-features.php:801
+#: lite/includes/pro-features.php:839 lite/language.php:1107
+msgid "Once you upgrade to "
+msgstr "Una vez que mejores a "
+
+#: lite/includes/pro-features.php:613 lite/includes/pro-features.php:646
+#: lite/includes/pro-features.php:686 lite/includes/pro-features.php:724
+#: lite/includes/pro-features.php:762 lite/includes/pro-features.php:800
+#: lite/includes/pro-features.php:838 lite/language.php:1106
+msgid "How to setup?"
+msgstr "¿Cómo se instala?"
+
+#: lite/includes/pro-features.php:612 lite/language.php:1105
+msgid "Quickly add to your mailing list when someone post a comment on your website."
+msgstr "Añade rápidamente a tu lista de correo a quien publique un comentario en tu web."
+
+#: lite/includes/pro-features.php:611 lite/language.php:1104
+msgid "Sync Comment Users"
+msgstr "Sincronizar usuarios de comentarios"
+
+#: lite/includes/pro-features.php:544 lite/language.php:1099
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: lite/includes/pro-features.php:616 lite/language.php:1109
+msgid ""
+"you will have settings panel where you need to enable Comment user sync and select the list in which you want to add people whenever someone post a\n"
+"\t\tcomment."
+msgstr ""
+"tendrás un panel de ajustes en el que tendrás que activar la sicronización de los comentarios de los usuarios y seleccionar la lista en la que quieres añadir las personas cada vez que alguien publica un\n"
+"\t\tcomentario."
+
+#: lite/includes/classes/class-es-newsletters.php:324
+#: lite/includes/classes/class-es-newsletters.php:946
+#: lite/includes/feedback.php:55 lite/includes/feedback.php:82
+#: lite/language.php:922
+msgid "Send"
+msgstr "Enviar"
+
+#: lite/includes/classes/class-es-export-subscribers.php:127
+#: lite/language.php:776
+msgid "Unconfirmed contacts"
+msgstr "Contactos no confirmados"
+
+#: lite/includes/classes/class-es-export-subscribers.php:107
+#: lite/language.php:771
+msgid "No."
+msgstr "No."
+
+#: lite/includes/feedback/class-ig-feedback.php:1608
+msgid "Skip %s Deactivate"
+msgstr "Saltar la desactivación de %s"
+
+#: lite/includes/feedback/class-ig-feedback.php:1606
+msgid "Submit %s Deactivate"
+msgstr "Saltar la activación de %s"
+
+#: lite/includes/feedback/class-ig-feedback.php:1582
+msgid "Quick Feedback"
+msgstr "Comentario rápido"
+
+#: lite/includes/feedback/class-ig-feedback.php:1575 lite/language.php:1511
+msgid "Please share the reason"
+msgstr "Por favor, comparte el motivo"
+
+#: lite/includes/feedback/class-ig-feedback.php:1573
+#: lite/includes/workflows/abstracts/class-es-workflow-action.php:164
+#: lite/includes/workflows/abstracts/class-es-workflow-action.php:179
+#: lite/includes/workflows/abstracts/class-es-workflow-rule.php:178
+#: lite/includes/workflows/abstracts/class-es-workflow-trigger.php:384
+#: lite/language.php:1217
+msgid "Other"
+msgstr "Otros"
+
+#: lite/includes/pro-features.php:534 lite/language.php:1098
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: lite/includes/pro-features.php:1118 lite/language.php:1148
+msgid "Send a test email"
+msgstr "Enviar un correo electrónico de prueba"
+
+#: lite/includes/feedback/class-ig-feedback.php:1569
+msgid "It's a temporary deactivation"
+msgstr "Es una desactivación temporal"
+
+#: lite/includes/feedback/class-ig-feedback.php:1565
+msgid "I couldn't get the plugin to work"
+msgstr "No he conseguido hacer que el plugin funcione"
+
+#: lite/includes/feedback/class-ig-feedback.php:1562
+msgid "Please share which plugin"
+msgstr "Por favor, comparte qué plugin"
+
+#: lite/includes/feedback/class-ig-feedback.php:1560
+msgid "I'm switching to a different plugin"
+msgstr "Me estoy cambiando a un plugin diferente"
+
+#: lite/includes/feedback/class-ig-feedback.php:1556
+msgid "I no longer need the plugin"
+msgstr "Ya no necesito el plugin "
+
+#: lite/includes/feedback/class-ig-feedback.php:1360
+msgid "Please select an option"
+msgstr "Por favor, selecciona una opción"
+
+#: lite/includes/classes/class-es-handle-sync-wp-user.php:257
+#: lite/language.php:823
+msgid "New"
+msgstr "Nuevo"
+
+#: lite/includes/classes/class-es-handle-sync-wp-user.php:247
+#: lite/language.php:822
+msgid "WordPress"
+msgstr "WordPress"
+
+#: lite/admin/class-es-form-admin.php:218 lite/language.php:179
+msgid "Button"
+msgstr "Botón"
+
+#: lite/admin/class-es-form-admin.php:160 lite/language.php:177
+msgid "Label"
+msgstr "Etiqueta"
+
+#: lite/includes/pro-features.php:523 lite/language.php:1097
+msgid "Comments"
+msgstr "Comentarios"
+
+#: lite/admin/class-es-gallery.php:379
+#: lite/includes/classes/class-es-templates-table.php:237
+#: lite/includes/db/class-es-db-campaigns.php:837
+#: lite/includes/db/class-es-db-campaigns.php:840 lite/language.php:198
+msgid "Copy"
+msgstr "Copiar"
+
+#. translators: 1: Page 2: Duplicate action 3: Campaign id 4: Wp nonce
+#: lite/includes/classes/class-es-templates-table.php:209 lite/language.php:997
+msgid "Duplicate"
+msgstr "Duplicar"
+
+#: lite/includes/notices/views/html-notice-updating.php:19
+#: lite/language.php:1028
+msgid "Your database is being updated in the background. Please be patient."
+msgstr "Tu base de datos esta siendo actualizada en segundo plano. Por favor, sé paciente."
+
+#. translators: 1. Starting strong tag 2. Closing strong tag
+#: lite/admin/partials/help.php:143 lite/language.php:282
+msgid "Once you click on %1$sRun the updater%2$s button, it will run the migration process from 3.5.x once again. So, if you have created new campaigns, forms or lists after migration to 4.x earlier, you will lose those data. So, make sure you have a backup with you."
+msgstr "Una vez que hagas clic en el botón %1$sEjecutar el actualizador%2$s, se ejecutará de nuevo el proceso de migración desde la versión 3.5.x. Por lo tanto, si has creado nuevas campañas, formularios o listas después de la migración a 4.x, perderás esos datos. Así que, asegúrate de tener una copia de seguridad."
+
+#: lite/admin/partials/help.php:131 lite/language.php:278
+msgid "Database Migration"
+msgstr "Migración de la base de datos"
+
+#: lite/includes/classes/class-es-admin-settings.php:502 lite/language.php:633
+msgid "Enter email address to send test email."
+msgstr "Introduce la dirección de correo electrónico para enviar el correo de prueba."
+
+#: lite/admin/class-email-subscribers-admin.php:1083
+#: lite/admin/class-email-subscribers-admin.php:1959
+#: lite/admin/class-email-subscribers-admin.php:1982 lite/language.php:87
+msgid "Something went wrong"
+msgstr "Algo ha ido mal"
+
+#: lite/includes/classes/class-es-admin-settings.php:461 lite/language.php:624
+msgid "Disable Wordpress Cron"
+msgstr "Desactivar el cron de WordPress"
+
+#: lite/includes/classes/class-es-admin-settings.php:291 lite/language.php:591
+msgid "Track opens"
+msgstr "Seguimiento de aperturas"
+
+#: lite/includes/classes/class-es-admin-settings.php:551 lite/language.php:638
+msgid "Seeing spam signups from particular domains? Enter domains names (one per line) that you want to block here."
+msgstr "¿Ves registros de spam de algunos dominios en particular? Introduce aquí los nombres de dominio (uno por línea) que quieras bloquear."
+
+#. translators: %s: Link to Icegram documentation
+#: lite/includes/classes/class-es-admin-settings.php:432 lite/language.php:621
+msgid "You need to visit this URL to send email notifications. Know <a href='%s' target='_blank'>how to run this in background</a>"
+msgstr "Tienes que acceder a esta URL para enviar notificaciones por correo. Descubre <a href='%s' target='_blank'>cómo ejecutar esto en segundo plano</a>"
+
+#: lite/includes/classes/class-es-forms-table.php:958 lite/language.php:804
+msgid "Search Forms"
+msgstr "Buscar formularios"
+
+#: lite/includes/classes/class-es-lists-table.php:693 lite/language.php:899
+msgid "Search lists"
+msgstr "Buscar listas"
+
+#: lite/includes/classes/class-es-contacts-table.php:1219 lite/language.php:745
+msgid "All Lists"
+msgstr "Todas las listas"
+
+#: lite/admin/class-es-form-admin.php:335
+#: lite/includes/classes/class-es-contacts-table.php:908
+#: lite/includes/classes/class-es-lists-table.php:384
+#: lite/includes/classes/class-es-post-notifications.php:451
+#: lite/language.php:192
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: lite/includes/classes/class-email-subscribers-logs.php:82
+#: lite/includes/classes/class-es-reports-table.php:309 lite/language.php:982
+msgid "View"
+msgstr "Ver"
+
+#: lite/includes/classes/class-es-contacts-table.php:1186 lite/language.php:743
+msgid "Search Contacts"
+msgstr "Buscar contactos"
+
+#: lite/language.php:1408 lite/public/class-email-subscribers-public.php:267
+msgid "Sorry, we couldn't find you. Please contact admin."
+msgstr "Lo sentimos, no podemos encontrarte. Contacta con el administrador, por favor."
+
+#: lite/includes/classes/class-es-admin-settings.php:549 lite/language.php:637
+msgid "Blocked domain(s)"
+msgstr "Dominio(s) bloqueado(s)"
+
+#: lite/admin/class-email-subscribers-admin.php:370
+#: lite/admin/views/dashboard/dashboard-ess.php:131
+#: lite/admin/views/dashboard/dashboard.php:131
+#: lite/includes/classes/class-es-contacts-table.php:237
+#: lite/includes/pro-features.php:230 lite/language.php:71
+msgid "Audience"
+msgstr "Audiencia"
+
+#: lite/includes/classes/class-es-admin-settings.php:452 lite/language.php:623
+msgid "Cron URL"
+msgstr "URL Cron"
+
+#: lite/admin/class-es-campaign-admin.php:644
+#: lite/includes/classes/class-es-newsletters.php:255 lite/language.php:147
+msgid "Content"
+msgstr "Contenido"
+
+#: lite/language.php:1572
+msgid "Enable?"
+msgstr "¿Habilitar?"
+
+#: lite/admin/class-email-subscribers-admin.php:365
+#: lite/admin/views/dashboard/dashboard-ess.php:124
+#: lite/admin/views/dashboard/dashboard.php:124 lite/language.php:70
+msgid "Dashboard"
+msgstr "Escritorio"
+
+#: lite/includes/classes/class-es-admin-settings.php:332 lite/language.php:601
+msgid "You have been subscribed successfully!"
+msgstr "¡Te has suscrito correctamente!"
+
+#: lite/includes/classes/class-es-admin-settings.php:363 lite/language.php:609
+msgid "Thank You, You have been successfully unsubscribed. You will no longer hear from us."
+msgstr "Gracias. Tu suscripción ha sido correctamente eliminada. Ya no recibirás más comunicados nuestros."
+
+#: lite/includes/classes/class-es-admin-settings.php:377 lite/language.php:614
+msgid "Show this message if any error occured after clicking on unsubscribe link."
+msgstr "Muestra este mensaje si ocurre algún error tras hacer clic en el enlace de anular suscripción."
+
+#: lite/includes/classes/class-es-admin-settings.php:366 lite/language.php:611
+msgid "Once contact clicks on unsubscribe link, he/she will be redirected to a page where this message will be shown."
+msgstr "Cuando el contacto hace clic en el enlace de anular suscripción se le redirigirá a una página donde se le mostrará este mensaje."
+
+#: lite/includes/classes/class-es-admin-settings.php:343 lite/language.php:604
+msgid "Oops.. Your request couldn't be completed. This email address seems to be already subscribed / blocked."
+msgstr "Vaya... Tu solicitud no pudo ser completada. Esta dirección de correo electrónico parece estar ya suscrita / bloqueada."
+
+#: lite/includes/classes/class-es-admin-settings.php:479 lite/language.php:628
+msgid "Maximum emails to send in an hour"
+msgstr "Número máximo de correos electrónicos a enviar en una hora"
+
+#: lite/includes/classes/class-es-admin-settings.php:346 lite/language.php:606
+msgid "Show this message if any error occured after clicking confirmation link from double opt-in (confirmation) email."
+msgstr "Mostrar este mensaje si ha ocurrido algún error después de hacer clic en el enlace de confirmación del correo electrónico de doble opción."
+
+#: lite/includes/classes/class-es-admin-settings.php:335 lite/language.php:603
+msgid "Show this message if contact is successfully subscribed from double opt-in (confirmation) email"
+msgstr "Mostrar este mensaje si el contacto se ha suscrito correctamente desde el correo electrónico de confirmación de doble opción"
+
+#: lite/includes/classes/class-es-admin-settings.php:227 lite/language.php:578
+msgid "Sender"
+msgstr "Remitente"
+
+#: lite/includes/classes/class-es-admin-settings.php:158 lite/language.php:572
+msgid "Security"
+msgstr "Seguridad"
+
+#: lite/includes/classes/class-es-admin-settings.php:150 lite/language.php:570
+msgid "General"
+msgstr "General"
+
+#: lite/admin/class-es-campaign-admin.php:631
+#: lite/includes/classes/class-es-post-notifications.php:391
+#: lite/language.php:950
+msgid "Select template"
+msgstr "Selecciona plantilla"
+
+#: lite/admin/class-es-form-admin.php:158 lite/language.php:175
+msgid "Show?"
+msgstr "¿Mostrar?"
+
+#: lite/admin/class-es-form-admin.php:157 lite/language.php:174
+msgid "Field"
+msgstr "Campo"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:168
+#: lite/admin/views/dashboard/dashboard.php:168 lite/language.php:396
+msgid "New Form"
+msgstr "Nuevo formulario"
+
+#: lite/includes/classes/class-es-widget.php:73
+msgid "Subscriber List"
+msgstr "Lista de suscriptores"
+
+#: lite/includes/classes/class-es-contacts-table.php:70
+#: lite/includes/classes/class-es-contacts-table.php:1125
+#: lite/includes/workflows/actions/class-es-action-delete-contact.php:31
+#: lite/includes/workflows/actions/class-es-action-update-contact.php:31
+#: lite/language.php:710
+msgid "Contact"
+msgstr "Contacto"
+
+#: lite/includes/classes/class-es-cron.php:663 lite/language.php:765
+msgid "GUID is empty."
+msgstr "El GUID está vacío."
+
+#: lite/includes/classes/class-es-cron.php:662 lite/language.php:764
+msgid "Not allowed to process request."
+msgstr "No se permite procesar la petición."
+
+#: lite/includes/classes/class-es-cron.php:659
+#: lite/includes/classes/class-es-cron.php:660
+#: lite/includes/classes/class-es-cron.php:661 lite/language.php:763
+msgid "Invalid GUID."
+msgstr "GUID no válido."
+
+#: lite/includes/classes/class-es-export-subscribers.php:377
+#: lite/language.php:782
+msgid "Created On"
+msgstr "Creado el"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:36
+#: lite/admin/views/dashboard/dashboard.php:36
+#: lite/includes/classes/class-es-contacts-table.php:132
+#: lite/includes/classes/class-es-import-subscribers.php:444
+#: lite/language.php:367
+msgid "Import Contacts"
+msgstr "Importar contactos"
+
+#: lite/includes/classes/class-es-mailer.php:350 lite/language.php:905
+msgid "Campaign Sent!"
+msgstr "¡Campaña enviada!"
+
+#: lite/admin/class-es-admin.php:357 lite/admin/class-es-campaign-admin.php:720
+#: lite/includes/classes/class-es-newsletters.php:356
+#: lite/includes/classes/class-es-reports-table.php:327 lite/language.php:110
+msgid "Subject"
+msgstr "Asunto"
+
+#: lite/includes/classes/class-es-reports-table.php:637 lite/language.php:992
+msgid "Completed"
+msgstr "Completado"
+
+#: lite/includes/classes/class-es-reports-table.php:159 lite/language.php:981
+msgid "No Reports avaliable."
+msgstr "No hay informes disponibles."
+
+#: lite/admin/class-es-form-admin.php:150 lite/language.php:173
+msgid "Form fields"
+msgstr "Campos del formulario"
+
+#: lite/admin/class-es-form-admin.php:122 lite/language.php:169
+msgid "Form name"
+msgstr "Nombre del formulario"
+
+#: lite/includes/classes/class-es-forms-table.php:286 lite/language.php:791
+msgid "Sorry, form not found"
+msgstr "Lo sentimos, no se ha encontrado el formulario"
+
+#: lite/includes/classes/class-es-forms-table.php:168 lite/language.php:790
+msgid "Please add form name."
+msgstr "Por favor, añade el nombre del formulario."
+
+#: lite/includes/classes/class-es-forms-table.php:165 lite/language.php:789
+msgid "You do not have permission to edit this form."
+msgstr "No tienes permisos para editar este formulario."
+
+#: lite/includes/classes/class-es-cron.php:664 lite/language.php:766
+msgid "Please try after sometime."
+msgstr "Por favor, vuelve a intentarlo en un rato."
+
+#: lite/includes/classes/class-es-export-subscribers.php:282
+#: lite/language.php:777
+msgid "Export the Subscribers"
+msgstr "Exportar los suscriptores"
+
+#: lite/includes/classes/class-es-cron.php:657 lite/language.php:761
+msgid "Emails not found."
+msgstr "No se han encontrado correos electrónicos."
+
+#: lite/includes/classes/class-es-campaigns-table.php:664
+#: lite/includes/classes/class-es-contacts-table.php:890
+#: lite/includes/classes/class-es-contacts-table.php:1126 lite/language.php:701
+msgid "List(s)"
+msgstr "Lista(s)"
+
+#: lite/includes/classes/class-es-contacts-table.php:787 lite/language.php:732
+msgid "No list found"
+msgstr "No se ha encontrado ninguna lista"
+
+#: lite/includes/classes/class-es-contacts-table.php:472 lite/language.php:725
+msgid "Contact already exist."
+msgstr "El contacto ya existe."
+
+#: lite/includes/classes/class-es-export-subscribers.php:125
+#: lite/language.php:774
+msgid "Subscribed contacts"
+msgstr "Contactos suscritos"
+
+#: lite/includes/classes/class-es-export-subscribers.php:65
+#: lite/language.php:770
+msgid "No data available"
+msgstr "No hay datos disponibles"
+
+#: lite/includes/classes/class-es-lists-table.php:797 lite/language.php:903
+msgid "No lists avaliable."
+msgstr "No hay listas disponibles."
+
+#: lite/includes/classes/class-es-campaigns-table.php:666
+#: lite/includes/classes/class-es-contacts-table.php:1127
+#: lite/includes/classes/class-es-forms-table.php:865 lite/language.php:703
+msgid "Created"
+msgstr "Creado"
+
+#: lite/includes/classes/class-es-export-subscribers.php:124
+#: lite/includes/classes/class-es-lists-table.php:643 lite/language.php:773
+msgid "All contacts"
+msgstr "Todos los contactos"
+
+#: lite/includes/classes/class-es-lists-table.php:301 lite/language.php:893
+msgid "Edit List"
+msgstr "Editar lista"
+
+#: lite/includes/classes/class-es-contacts-table.php:1429 lite/language.php:749
+msgid "Please select status."
+msgstr "Por favor, selecciona el estado."
+
+#: lite/includes/classes/class-es-contacts-table.php:1466
+#: lite/includes/classes/class-es-contacts-table.php:1497
+#: lite/includes/classes/class-es-post-notifications.php:72
+#: lite/language.php:750
+msgid "Please select list."
+msgstr "Por favor, selecciona la lista."
+
+#: lite/includes/classes/class-es-contacts-table.php:561
+#: lite/includes/classes/class-es-export-subscribers.php:33
+#: lite/includes/classes/class-es-lists-table.php:773 lite/language.php:729
+msgid "Please select list"
+msgstr "Por favor, selecciona la lista."
+
+#: lite/includes/classes/class-es-forms-table.php:965 lite/language.php:805
+msgid "No Forms avaliable."
+msgstr "No hay formularios disponibles."
+
+#: lite/includes/classes/class-es-post-notifications.php:102
+#: lite/includes/classes/class-es-post-notifications.php:241
+#: lite/language.php:937
+msgid "Please select template."
+msgstr "Por favor, selecciona plantilla."
+
+#: lite/includes/classes/class-es-forms-table.php:905 lite/language.php:798
+msgid "You do not have permission to delete this form."
+msgstr "No tienes permiso para eliminar este formulario."
+
+#: lite/admin/class-es-form-admin.php:159 lite/language.php:176
+msgid "Required?"
+msgstr "¿Requerido?"
+
+#: lite/includes/classes/class-es-contacts-table.php:931 lite/language.php:738
+msgid "No contacts avaliable."
+msgstr "No hay contactos disponibles."
+
+#: lite/includes/classes/class-es-contacts-table.php:71
+#: lite/includes/classes/class-es-export-subscribers.php:108
+#: lite/language.php:711
+msgid "Contacts"
+msgstr "Contactos"
+
+#: lite/admin/class-email-subscribers-admin.php:374
+#: lite/admin/class-es-form-admin.php:231
+#: lite/admin/class-es-form-admin.php:617
+#: lite/includes/classes/class-es-lists-table.php:34
+#: lite/includes/classes/class-es-lists-table.php:88 lite/language.php:72
+msgid "Lists"
+msgstr "Listas"
+
+#: lite/admin/class-es-campaign-admin.php:420
+#: lite/includes/classes/class-es-contacts-table.php:335
+#: lite/includes/classes/class-es-export-subscribers.php:109
+#: lite/includes/classes/class-es-reports-table.php:332 lite/language.php:142
+msgid "Total contacts"
+msgstr "Contactos totales"
+
+#: lite/admin/class-email-subscribers-admin.php:380
+#: lite/admin/class-es-form-admin.php:398
+#: lite/includes/classes/class-es-form-widget.php:87
+#: lite/includes/classes/class-es-forms-table.php:39
+#: lite/includes/classes/class-es-forms-table.php:40
+#: lite/includes/classes/class-es-forms-table.php:99
+#: lite/includes/pro-features.php:231 lite/language.php:73
+msgid "Forms"
+msgstr "Formularios"
+
+#: lite/includes/classes/class-es-import-subscribers.php:392
+#: lite/includes/classes/class-es-widget.php:50 lite/includes/feedback.php:233
+#: lite/language.php:1000
+msgid "Yes"
+msgstr "Sí"
+
+#: lite/includes/classes/class-es-import-subscribers.php:396
+#: lite/includes/classes/class-es-widget.php:51 lite/includes/feedback.php:240
+#: lite/language.php:1001
+msgid "No"
+msgstr "No"
+
+#: lite/includes/classes/class-es-contacts-table.php:141
+#: lite/includes/classes/class-es-export-subscribers.php:99
+#: lite/includes/classes/class-es-export-subscribers.php:181
+#: lite/language.php:714
+msgid "Export Contacts"
+msgstr "Exportar contactos"
+
+#: lite/includes/classes/class-es-contacts-table.php:123 lite/language.php:713
+msgid "Add New Contact"
+msgstr "Añadir nuevo contacto"
+
+#: lite/includes/classes/class-es-handle-subscription.php:596
+#: lite/language.php:820
+msgid "Invalid Captcha"
+msgstr "Captcha no válido"
+
+#: lite/admin/class-email-subscribers-admin.php:386
+#: lite/admin/class-es-campaign-admin.php:626
+#: lite/admin/partials/gallery.php:10
+#: lite/includes/classes/class-es-campaigns-table.php:136
+#: lite/includes/classes/class-es-newsletters.php:234
+#: lite/includes/classes/class-es-newsletters.php:240
+#: lite/includes/pro-features.php:232 lite/language.php:74
+msgid "Campaigns"
+msgstr "Campañas"
+
+#: lite/includes/classes/class-es-campaigns-table.php:45
+#: lite/includes/classes/class-es-campaigns-table.php:46 lite/language.php:680
+#: lite/admin/dist/main.js:1
+msgid "Campaign"
+msgstr "Campaña"
+
+#: lite/admin/partials/onboarding.php:44 lite/language.php:294
+msgid "Welcome!"
+msgstr "¡Bienvenido!"
+
+#: lite/includes/class-email-subscribers.php:385 lite/language.php:445
+msgid "OK, I Got it!"
+msgstr "¡Vale, lo pillo!"
+
+#: lite/includes/classes/class-es-campaign-report.php:16
+#: lite/includes/classes/class-es-campaign-report.php:133
+#: lite/includes/classes/class-es-campaigns-table.php:479
+#: lite/includes/classes/class-es-campaigns-table.php:483
+#: lite/includes/classes/class-es-campaigns-table.php:514
+#: lite/includes/classes/class-es-reports-table.php:16
+#: lite/includes/pro-features.php:1334 lite/language.php:665
+msgid "Report"
+msgstr "Informe"
+
+#: lite/admin/class-ig-es-campaign-rules.php:419
+#: lite/includes/classes/class-es-import-subscribers.php:210
+#: lite/includes/classes/class-es-import-subscribers.php:325
+#: lite/includes/classes/class-es-post-notifications.php:367
+#: lite/language.php:852
+msgid "Select list"
+msgstr "Selecciona lista"
+
+#: lite/includes/classes/class-es-import-subscribers.php:306
+#: lite/language.php:859
+msgid "Select status"
+msgstr "Selecciona estado"
+
+#: lite/includes/classes/class-es-contacts-table.php:161
+#: lite/includes/classes/class-es-contacts-table.php:413 lite/language.php:715
+msgid "Manage Lists"
+msgstr "Gestionar listas"
+
+#: lite/includes/classes/class-es-handle-subscription.php:591
+#: lite/language.php:815
+msgid "Invalid name"
+msgstr "Nombre no válido"
+
+#: lite/includes/classes/class-es-export-subscribers.php:374
+#: lite/includes/classes/class-es-lists-table.php:33
+#: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:51
+#: lite/includes/workflows/actions/class-es-action-add-to-list.php:31
+#: lite/language.php:780
+msgid "List"
+msgstr "Lista"
+
+#: lite/includes/classes/class-es-campaigns-table.php:305 lite/language.php:691
+msgid "No Campaigns Found."
+msgstr "No se han encontrado campañas."
+
+#: lite/includes/classes/class-es-post-notifications.php:427
+#: lite/language.php:954
+msgid "Select custom post type(s)"
+msgstr "Selecciona tipo(s) de contenido personalizado"
+
+#: lite/includes/classes/class-es-lists-table.php:748 lite/language.php:900
+msgid "You do not have permission to delete list"
+msgstr "No tienes permiso para eliminar la lista"
+
+#: lite/includes/classes/class-es-forms-table.php:930 lite/language.php:801
+msgid "Please select form(s) to delete."
+msgstr "Por favor, elige formulario(s) para eliminar."
+
+#: lite/includes/classes/class-es-lists-table.php:143 lite/language.php:887
+msgid "Please add list name"
+msgstr "Por favor, añade nombre de lista"
+
+#: lite/includes/classes/class-es-handle-subscription.php:595
+#: lite/language.php:819
+msgid "Please select the list"
+msgstr "Por favor, selecciona la lista"
+
+#: lite/admin/class-es-form-admin.php:260 lite/language.php:185
+msgid "Allow contact to choose list(s)"
+msgstr "Permitir a los contactos elegir lista(s)"
+
+#: lite/admin/class-es-form-admin.php:232
+#: lite/includes/classes/class-es-contacts-table.php:891 lite/language.php:180
+msgid "Contacts will be added into selected list(s)"
+msgstr "Los contactos serán añadidos a la(s) lista(s) seleccionada(s)"
+
+#: lite/includes/workflows/actions/class-es-action-add-to-list.php:45
+#: lite/language.php:1242
+msgid "Select List"
+msgstr "Selecciona Lista"
+
+#: lite/includes/classes/class-es-drag-and-drop-editor.php:108
+#: lite/includes/classes/class-es-forms-table.php:174 lite/language.php:769
+msgid "Please select list(s) in which contact will be subscribed."
+msgstr "Por favor, selecciona la(s) lista(s) en la que el contacto será suscrito."
+
+#: lite/includes/classes/class-es-cron.php:658 lite/language.php:762
+msgid "No notifications found to send."
+msgstr "No se han encontrado notificaciones a enviar."
+
+#: lite/includes/classes/class-es-reports-table.php:566 lite/language.php:988
+msgid "You do not have permission to delete notification"
+msgstr "No tienes permiso para borrar notificación"
+
+#: lite/includes/classes/class-es-reports-table.php:557 lite/language.php:987
+msgid "You do not have permission to view notification"
+msgstr "No tienes permiso para ver notificación"
+
+#: lite/includes/classes/class-es-handle-subscription.php:594
+#: lite/language.php:818
+msgid "You do not have permission to add subscriber"
+msgstr "No tienes permiso para añadir suscriptor"
+
+#: lite/includes/classes/class-es-handle-subscription.php:593
+#: lite/language.php:817
+msgid "Oops...unable to add subscriber"
+msgstr "Ups... Incapaz de añadir suscriptor"
+
+#: lite/includes/classes/class-es-tools.php:80
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:102
+#: lite/language.php:998
+msgid "Email has been sent. Please check your inbox"
+msgstr "El correo ha sido enviado. Por favor, revisa tu bandeja de entrada"
+
+#: lite/admin/class-email-subscribers-admin.php:392
+#: lite/admin/class-es-campaign-admin.php:597
+#: lite/includes/classes/class-es-campaign-report.php:56
+#: lite/includes/classes/class-es-campaigns-table.php:369
+#: lite/includes/classes/class-es-newsletters.php:249
+#: lite/includes/classes/class-es-reports-data.php:408
+#: lite/includes/classes/class-es-reports-table.php:196
+#: lite/includes/classes/class-es-templates-table.php:187
+#: lite/includes/pro-features.php:1349 lite/language.php:76
+#: lite/public/class-email-subscribers-public.php:527
+msgid "Broadcast"
+msgstr "Emisión"
+
+#: lite/includes/classes/class-es-campaigns-table.php:162
+#: lite/includes/classes/class-es-post-notifications.php:329
+#: lite/language.php:689
+msgid "Manage Templates"
+msgstr "Gestionar Plantillas"
+
+#: lite/includes/classes/class-es-campaigns-table.php:143 lite/language.php:687
+msgid "Send Broadcast"
+msgstr "Enviar Emisión"
+
+#: lite/includes/classes/class-es-campaigns-table.php:141 lite/language.php:686
+msgid "Create Post Notification"
+msgstr "Crear Notificación de Entrada"
+
+#: lite/admin/class-es-form-admin.php:261 lite/language.php:186
+msgid "Allow contacts to choose list(s) in which they want to subscribe."
+msgstr "Permitir a los contactos elegir a qué lista(s) quieren suscribirse."
+
+#: lite/includes/classes/class-es-forms-table.php:863 lite/language.php:797
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: lite/includes/classes/class-es-admin-settings.php:154 lite/language.php:571
+msgid "Email Sending"
+msgstr "Envío de correos"
+
+#: lite/includes/classes/class-es-form-widget.php:83
+#: lite/includes/classes/class-es-widget.php:57 lite/language.php:785
+msgid "Widget Title:"
+msgstr "Título de Widget:"
+
+#: lite/includes/classes/class-es-lists-table.php:141
+#: lite/includes/classes/class-es-lists-table.php:733 lite/language.php:886
+msgid "You do not have permission to edit list"
+msgstr "No tienes permiso para editar lista"
+
+#: lite/includes/classes/class-es-post-notifications.php:392
+#: lite/language.php:951
+msgid "Content of the selected template will be sent out as post notification."
+msgstr "El contenido de la plantilla seleccionada se enviará como un aviso de entrada."
+
+#: lite/includes/classes/class-es-post-notifications.php:428
+#: lite/language.php:955
+msgid "(Optional) Select custom post type for which you want to send notification."
+msgstr "(Opcional) Selecciona el tipo de contenido personalizado para el que quieres enviar la notificación."
+
+#: lite/admin/class-es-admin.php:769
+#: lite/admin/class-es-campaign-admin.php:1466
+#: lite/includes/classes/class-es-templates-table.php:67
+msgid "for Post Notification: "
+msgstr "en los avisos de publicación:"
+
+#: lite/includes/classes/class-es-campaigns-table.php:784 lite/language.php:706
+msgid "You are not allowed to delete campaign."
+msgstr "No tienes permisos para borrar campañas."
+
+#: lite/includes/classes/class-es-post-notifications.php:411
+#: lite/language.php:953
+msgid "Notification will be sent out when any post from selected categories will be published."
+msgstr "Se enviará una notificación cuando se publique cualquier entrada de las categorías seleccionadas."
+
+#: lite/includes/classes/class-es-post-notifications.php:368
+#: lite/language.php:949
+msgid "Contacts from the selected list will be notified about new post notification."
+msgstr "Se notificará a los contactos de la lista seleccionada acerca de la nueva notificación de publicación."
+
+#: lite/admin/class-es-form-admin.php:98 lite/language.php:167
+msgid " Edit Form"
+msgstr "Editar el formulario"
+
+#: lite/includes/classes/class-es-contacts-table.php:417 lite/language.php:723
+msgid " Edit Contact"
+msgstr "Editar el contacto"
+
+#: lite/includes/classes/class-es-campaigns-table.php:814 lite/language.php:709
+msgid "Please select campaign(s) to delete."
+msgstr "Por favor, selecciona la(s) campaña(s) a borrar."
+
+#: lite/includes/classes/class-es-contacts-table.php:1163 lite/language.php:742
+msgid "Change status"
+msgstr "Cambiar el estado"
+
+#: lite/includes/classes/class-es-contacts-table.php:1161 lite/language.php:740
+msgid "Move to list"
+msgstr "Mover a la lista"
+
+#: lite/includes/classes/class-es-export-subscribers.php:126
+#: lite/language.php:775
+msgid "Unsubscribed contacts"
+msgstr "Contactos no suscritos"
+
+#: lite/includes/classes/class-es-campaigns-table.php:719 lite/language.php:704
+msgid "Search Campaigns"
+msgstr "Buscar campañas"
+
+#: lite/includes/classes/class-es-handle-subscription.php:592
+#: lite/language.php:816 lite/public/class-email-subscribers-public.php:119
+msgid "Please try after some time"
+msgstr "Por favor, vuelve a intentarlo pasados unos minutos"
+
+#: lite/includes/classes/class-es-handle-subscription.php:590
+#: lite/language.php:814 lite/public/class-email-subscribers-public.php:118
+msgid "Invalid email address"
+msgstr "DIrección de correo electrónico no válida"
+
+#: lite/includes/classes/class-es-handle-subscription.php:589
+#: lite/language.php:813 lite/public/class-email-subscribers-public.php:117
+msgid "Oops.. Unexpected error occurred."
+msgstr "Ups... Ha ocurrido un error inesperado."
+
+#: lite/includes/classes/class-es-handle-subscription.php:588
+#: lite/language.php:812 lite/public/class-email-subscribers-public.php:116
+msgid "Email Address already exists!"
+msgstr "¡La dirección de correo electrónico ya existe!"
+
+#: lite/admin/partials/help.php:241 lite/includes/class-es-common.php:625
+#: lite/includes/class-es-common.php:2549
+#: lite/includes/classes/class-es-campaign-report.php:177
+#: lite/includes/workflows/admin/views/meta-box-save.php:27
+#: lite/language.php:289
+msgid "Inactive"
+msgstr "Inactivo"
+
+#: lite/admin/partials/help.php:239 lite/includes/class-es-common.php:624
+#: lite/includes/class-es-common.php:2093
+#: lite/includes/class-es-common.php:2544
+#: lite/includes/classes/class-es-campaign-report.php:172
+#: lite/includes/classes/class-es-campaigns-table.php:321
+#: lite/includes/workflows/admin/views/meta-box-save.php:28
+#: lite/language.php:288
+msgid "Active"
+msgstr "Activo"
+
+#: lite/includes/notices/class-es-admin-notices.php:99 lite/language.php:1022
+msgid "Action failed. Please refresh the page and retry."
+msgstr "Falló la acción. Por favor, recarga la página y vuelve a intentarlo."
+
+#: lite/admin/partials/help.php:152
+#: lite/includes/notices/views/html-notice-update.php:23 lite/language.php:283
+msgid "Run the updater"
+msgstr "Ejecutar el actualizador"
+
+#: lite/includes/notices/views/html-notice-update.php:29 lite/language.php:1025
+msgid "Are you sure you wish to run the updater now?"
+msgstr "¿Estás seguro de querer ejecutar el actualizador ahora?"
+
+#: lite/includes/class-es-common.php:581 lite/language.php:453
+msgid "Select Template"
+msgstr "Selecciona Plantilla"
+
+#: lite/includes/upgrade/es-update-functions.php:752 lite/language.php:811
+#: lite/public/class-email-subscribers-public.php:114
+msgid "Successfully Subscribed."
+msgstr "Suscrito con éxito."
+
+#: lite/language.php:1414 lite/public/partials/cron-message.php:37
+msgid "Total Emails In Queue"
+msgstr "Correos totales en cola"
+
+#: lite/includes/notices/views/html-notice-updating.php:22
+#: lite/language.php:1029
+msgid "Taking a while? Click here to run it now."
+msgstr "¿Está tardando mucho? Haz clic aquí para ejecutarlo ahora."
+
+#: lite/includes/notices/views/html-notice-update.php:19 lite/language.php:1024
+msgid "We need to update your data store to the latest version."
+msgstr "Necesitamos actualizar tu almacenamiento de datos a la última versión."
+
+#: lite/includes/classes/class-es-handle-subscription.php:585
+#: lite/language.php:809 lite/public/class-email-subscribers-public.php:112
+msgid "Please enter email address"
+msgstr "Por favor, introduce tu dirección de correo electrónico"
+
+#: lite/includes/notices/views/html-notice-updated.php:12
+#: lite/language.php:1026
+msgid "Dismiss"
+msgstr "Descartar"
+
+#. translators: %s: Link to Cpanel URL
+#: lite/includes/class-email-subscribers.php:371 lite/language.php:442
+msgid "Or schedule Cron in <a href=\"%s\" target=\"_blank\">cPanel</a>"
+msgstr "O programa el Cron en <a href=\"%s\" target=\"_blank\">cPanel</a>"
+
+#: lite/includes/classes/class-es-forms-table.php:941
+#: lite/includes/classes/class-es-lists-table.php:784 lite/language.php:802
+msgid "Enable"
+msgstr "Activar"
+
+#: lite/includes/classes/class-es-forms-table.php:942
+#: lite/includes/classes/class-es-lists-table.php:785 lite/language.php:803
+msgid "Disable"
+msgstr "Desactivar"
+
+#: lite/includes/classes/class-es-handle-subscription.php:586
+#: lite/language.php:810 lite/public/class-email-subscribers-public.php:113
+msgid "You need to wait for some time before subscribing again"
+msgstr "Tienes que esperar algo de tiempo antes de volver a suscribirte"
+
+#. translators: %s: Email address
+#: lite/includes/classes/class-es-mailer.php:509 lite/language.php:907
+msgid "Test email to %s"
+msgstr "Correo de prueba a %s"
+
+#: lite/includes/classes/class-es-admin-settings.php:501 lite/language.php:632
+msgid "Send test email"
+msgstr "Enviar un correo electrónico de prueba"
+
+#: lite/includes/premium-services-ui/class-ig-es-premium-services-ui.php:256
+#: lite/language.php:1052
+msgid "Spam score"
+msgstr "Puntuación de spam"
+
+#: lite/includes/class-es-install.php:997
+#: lite/includes/upgrade/es-update-functions.php:752 lite/language.php:493
+msgid "Your subscription was successful! Kindly check your mailbox and confirm your subscription. If you don't see the email within a few minutes, check the spam/junk folder."
+msgstr "¡Te has suscrito correctamente! Por favor, comprueba tu buzón de correo y confirma tu suscripción. Si no ves el correo electrónico en unos minutos, compruebe la carpeta spam/correo electrónico no deseado."
+
+#: lite/includes/class-email-subscribers-activator.php:58 lite/language.php:435
+msgid "No Templates found"
+msgstr "No se han encontrado plantillas"
+
+#: lite/admin/class-email-subscribers-admin.php:396
+#: lite/admin/views/dashboard/tip-and-tricks.php:40
+#: lite/includes/class-email-subscribers-activator.php:49
+#: lite/includes/class-email-subscribers-activator.php:50
+#: lite/includes/class-email-subscribers-activator.php:55 lite/language.php:80
+msgid "Templates"
+msgstr "Plantillas"
+
+#: lite/admin/class-email-subscribers-admin.php:393
+#: lite/includes/classes/class-es-newsletters.php:432
+#: lite/includes/classes/class-es-reports-table.php:600
+#: lite/includes/classes/class-es-templates-table.php:149 lite/language.php:77
+#: lite/admin/dist/main.js:1
+msgid "Template Preview"
+msgstr "Previsualización de Plantilla"
+
+#: lite/admin/class-es-admin.php:508
+#: lite/includes/classes/class-es-templates-table.php:167 lite/language.php:112
+msgid "Template type"
+msgstr "Tipo de plantilla"
+
+#: lite/includes/class-email-subscribers-activator.php:63 lite/language.php:438
+msgid "Set thumbnail"
+msgstr "Establecer miniatura"
+
+#: lite/includes/class-email-subscribers-activator.php:62 lite/language.php:437
+msgid "Thumbnail (For Visual Representation only)"
+msgstr "Miniatura (Solo para representación visual)"
+
+#: lite/includes/class-email-subscribers-activator.php:59 lite/language.php:436
+msgid "No Templates found in Trash"
+msgstr "No se han encontrado plantillas en la papelera"
+
+#: lite/includes/class-email-subscribers-activator.php:57 lite/language.php:434
+msgid "Search Templates"
+msgstr "Buscar Plantillas"
+
+#: lite/includes/class-email-subscribers-activator.php:56 lite/language.php:433
+msgid "View Templates"
+msgstr "Ver Plantillas"
+
+#: lite/includes/class-email-subscribers-activator.php:53 lite/language.php:431
+msgid "Edit Templates"
+msgstr "Editar Plantillas"
+
+#: lite/includes/class-email-subscribers-activator.php:54 lite/language.php:432
+msgid "New Templates"
+msgstr "Nuevas Plantillas"
+
+#: lite/includes/class-email-subscribers-activator.php:51
+#: lite/includes/class-email-subscribers-activator.php:52 lite/language.php:430
+msgid "Add New Template"
+msgstr "Añadir una nueva plantilla"
+
+#: lite/includes/classes/class-es-templates-table.php:124 lite/language.php:995
+msgid "Preview template"
+msgstr "Vista previa de la plantilla"
+
+#: lite/admin/partials/help.php:36 lite/language.php:271
+msgid "Rainmaker"
+msgstr "Rainmaker"
+
+#: lite/admin/class-es-form-admin.php:136
+#: lite/includes/classes/class-es-lists-table.php:336
+#: lite/includes/classes/class-es-lists-table.php:639 lite/language.php:171
+msgid "Description"
+msgstr "Descripción"
+
+#: lite/admin/class-es-campaign-admin.php:675
+#: lite/admin/class-es-form-admin.php:423
+#: lite/includes/classes/class-es-import-subscribers.php:185
+#: lite/includes/classes/class-es-import-subscribers.php:283
+#: lite/includes/classes/class-es-newsletters.php:269 lite/language.php:149
+msgid "Next"
+msgstr "Siguiente"
+
+#: lite/includes/class-es-common.php:882 lite/language.php:458
+msgid "Single Opt-In"
+msgstr "Validación simple"
+
+#: lite/includes/classes/class-es-admin-settings.php:260 lite/language.php:584
+msgid "Opt-in type"
+msgstr "Tipo opción"
+
+#: lite/includes/class-es-common.php:2310
+#: lite/includes/notices/class-es-admin-notices.php:154
+msgctxt "timezone date format"
+msgid "Y-m-d"
+msgstr "Y-m-d"
+
+#: lite/includes/class-es-common.php:431
+#: lite/includes/classes/class-es-import-subscribers.php:238
+#: lite/language.php:452
+msgid "Select Status"
+msgstr "Selecciona estado"
+
+#: lite/language.php:1413 lite/public/partials/cron-message.php:33
+msgid "Total Emails Sent"
+msgstr "Número total de correos enviados"
+
+#: lite/includes/classes/class-es-campaign-report.php:52
+#: lite/includes/classes/class-es-reports-data.php:410
+#: lite/includes/classes/class-es-reports-table.php:192 lite/language.php:666
+#: lite/public/class-email-subscribers-public.php:530 lite/admin/dist/main.js:1
+msgid "Post Notification"
+msgstr "Notificación de Entrada"
+
+#: lite/admin/views/dashboard/recent-campaigns.php:81
+#: lite/admin/views/dashboard/sequence-stats.php:10
+#: lite/admin/views/dashboard/subscribers-stats.php:177
+#: lite/admin/views/dashboard/subscribers-stats.php:194
+#: lite/includes/class-es-common.php:2092
+#: lite/includes/class-es-common.php:2515
+#: lite/includes/classes/class-es-campaign-report.php:149
+#: lite/includes/classes/class-es-campaign-report.php:259
+#: lite/includes/classes/class-es-campaign-report.php:481
+#: lite/includes/classes/class-es-campaigns-table.php:593
+#: lite/includes/classes/class-es-campaigns-table.php:642
+#: lite/includes/classes/class-es-reports-table.php:231
+#: lite/includes/pro-features.php:1342 lite/includes/pro-features.php:1389
+#: lite/language.php:417
+msgid "Sent"
+msgstr "Enviado"
+
+#: lite/admin/class-email-subscribers-admin.php:411
+#: lite/admin/views/dashboard/tip-and-tricks.php:36
+#: lite/includes/classes/class-es-campaign-report.php:17
+#: lite/includes/classes/class-es-reports-table.php:17
+#: lite/includes/classes/class-es-reports-table.php:55
+#: lite/includes/classes/class-es-reports-table.php:148
+#: lite/includes/pro-features.php:233 lite/language.php:82
+msgid "Reports"
+msgstr "Informes"
+
+#: lite/admin/class-email-subscribers-admin.php:390 lite/language.php:75
+msgid "Post Notifications"
+msgstr "Notificaciones de entrada"
+
+#. Author of the plugin
+#: lite/admin/partials/help.php:28
+#: lite/includes/class-email-subscribers.php:1557 lite/language.php:11
+msgid "Icegram"
+msgstr "Icegram"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: lite/language.php:7
+msgid "https://www.icegram.com/"
+msgstr "https://www.icegram.com/"
+
+#: lite/includes/classes/class-es-import-subscribers.php:132
+#: lite/language.php:844
+msgid "from here"
+msgstr "desde aquí"
+
+#: lite/includes/classes/class-es-import-subscribers.php:131
+#: lite/language.php:843
+msgid "Check CSV structure"
+msgstr "Comprueba estructura CSV"
+
+#: lite/includes/classes/class-es-export-subscribers.php:110
+#: lite/includes/classes/class-es-lists-table.php:644 lite/language.php:772
+msgid "Export"
+msgstr "Exportar"
+
+#: lite/admin/views/dashboard/dashboard-ess.php:38
+#: lite/admin/views/dashboard/dashboard.php:38
+#: lite/includes/classes/class-es-import-subscribers.php:407
+#: lite/language.php:369
+msgid "Import"
+msgstr "Importar"
+
+#: lite/admin/class-es-admin.php:769 lite/admin/class-es-admin.php:789
+#: lite/admin/class-es-admin.php:798
+#: lite/admin/class-es-campaign-admin.php:1466
+#: lite/admin/class-es-campaign-admin.php:1486
+#: lite/admin/class-es-campaign-admin.php:1495
+#: lite/includes/classes/class-es-templates-table.php:56
+#: lite/includes/classes/class-es-templates-table.php:67
+#: lite/includes/classes/class-es-templates-table.php:73
+#: lite/includes/classes/class-es-templates-table.php:78 lite/language.php:115
+msgid "Available Keywords"
+msgstr "Palabras clave disponibles"
+
+#: lite/includes/classes/class-es-admin-settings.php:1236
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:401
+#: lite/language.php:661
+msgid "Actions"
+msgstr "Acciones"
+
+#: lite/admin/class-es-admin.php:340 lite/admin/class-es-campaign-admin.php:693
+#: lite/admin/class-es-form-admin.php:442
+#: lite/includes/classes/class-es-newsletters.php:296
+#: lite/includes/classes/class-es-post-notifications.php:555
+#: lite/includes/workflows/admin/class-es-workflow-admin-edit.php:402
+#: lite/includes/workflows/admin/views/meta-box-save.php:68
+#: lite/language.php:109
+msgid "Save"
+msgstr "Guardar"
+
+#: lite/includes/class-es-common.php:818
+#: lite/includes/classes/class-es-post-notifications.php:707
+#: lite/language.php:457
+msgid "No Custom Post Types Available"
+msgstr "No hay tipos personalizados de entradas disponibles"
+
+#: lite/includes/classes/class-es-post-notifications.php:410
+#: lite/includes/classes/class-es-post-notifications.php:624
+#: lite/language.php:952
+msgid "Select post category"
+msgstr "Seleccionar la categoría de entradas"
+
+#: lite/includes/classes/class-es-old-widget.php:86 lite/language.php:934
+msgid "NO"
+msgstr "NO"
+
+#: lite/includes/classes/class-es-old-widget.php:85 lite/language.php:933
+msgid "YES"
+msgstr "SÍ"
+
+#: lite/includes/class-es-common.php:941
+#: lite/includes/classes/class-es-templates-table.php:168 lite/language.php:469
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: lite/includes/class-es-common.php:940 lite/language.php:468
+msgid "Medium Size"
+msgstr "Tamaño Medio"
+
+#: lite/includes/class-es-common.php:939 lite/language.php:467
+msgid "Full Size"
+msgstr "Tamaño Completo"
+
+#: lite/includes/class-es-common.php:883 lite/language.php:459
+msgid "Double Opt-In"
+msgstr "Doble verificación"
+
+#. Description of the plugin
+#: lite/language.php:9
+msgid "Add subscription forms on website, send HTML newsletters & automatically notify subscribers about new blog posts once it is published."
+msgstr "Añade formularios de suscripción en tu web, envía boletines HTML y notifica automáticamente a los suscriptores sobre las nuevas entradas de blog una vez que se publiquen."
+
+#: lite/includes/classes/class-es-admin-settings.php:271 lite/language.php:586
+msgid "Image size"
+msgstr "Tamaño de la imagen"
+
+#: lite/includes/classes/class-es-post-notifications.php:795
+#: lite/language.php:969
+msgid "here"
+msgstr "aquí"
+
+#: lite/admin/partials/help.php:170 lite/language.php:285
+msgid "Contact US"
+msgstr "Contacta con nosotros"
+
+#: lite/includes/classes/class-es-admin-settings.php:243 lite/language.php:580
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: lite/includes/class-es-common.php:2117
+#: lite/includes/classes/class-es-campaigns-table.php:727
+#: lite/includes/classes/class-es-contacts-table.php:1210 lite/language.php:483
+msgid "All Statuses"
+msgstr "Todos los estados"
+
+#: lite/includes/classes/class-es-import-subscribers.php:122
+#: lite/language.php:840
+msgid "Select CSV file"
+msgstr "Selecciona archivo CSV"
+
+#: lite/admin/class-email-subscribers-admin.php:1620
+#: lite/admin/views/dashboard/subscribers-stats.php:132
+#: lite/admin/views/dashboard/subscribers-stats.php:137
+#: lite/includes/class-es-common.php:407
+#: lite/includes/classes/class-es-campaign-report.php:272
+#: lite/includes/classes/class-es-contacts-table.php:364
+#: lite/includes/classes/class-es-import-subscribers.php:899
+#: lite/includes/classes/class-es-import-subscribers.php:1414
+#: lite/includes/classes/class-es-lists-table.php:641 lite/language.php:92
+msgid "Unsubscribed"
+msgstr "Desuscrito"
+
+#: lite/includes/class-es-common.php:406
+#: lite/includes/classes/class-es-contacts-table.php:372
+#: lite/includes/classes/class-es-import-subscribers.php:900
+#: lite/includes/classes/class-es-import-subscribers.php:1415
+#: lite/includes/classes/class-es-lists-table.php:642 lite/language.php:451
+msgid "Unconfirmed"
+msgstr "Sin confirmar"
+
+#: lite/includes/classes/class-es-contacts-table.php:1367 lite/language.php:747
+msgid "Confirmation email sent successfully!"
+msgstr "¡Correo electrónico de confirmación enviado correctamente!"
+
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:244
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:99
+msgid "Group"
+msgstr "Grupo"
+
+#: lite/admin/class-es-form-admin.php:128 lite/language.php:170
+msgid "Enter form name"
+msgstr "Introducir el nombre del formulario"
+
+#: lite/includes/classes/class-es-admin-settings.php:787 lite/language.php:644
+msgid "Save Settings"
+msgstr "Guardar ajustes"
+
+#: lite/language.php:1841
+msgid "Total"
+msgstr "Total"
+
+#: lite/includes/classes/class-es-reports-table.php:330 lite/language.php:983
+msgid "Start Date"
+msgstr "Fecha inicial"
+
+#: lite/includes/classes/class-es-reports-table.php:331 lite/language.php:984
+msgid "End Date"
+msgstr "Fecha final"
+
+#: lite/includes/classes/class-es-handle-post-notification.php:457
+#: lite/includes/classes/class-es-handle-post-notification.php:554
+#: lite/language.php:806
+msgid "View Reports"
+msgstr "Ver informes"
+
+#: lite/includes/classes/class-es-campaign-report.php:452 lite/language.php:677
+msgid "Viewed Date"
+msgstr "Fecha visualización"
+
+#: lite/includes/classes/class-es-campaign-report.php:451 lite/language.php:676
+msgid "Sent Date"
+msgstr "Fecha envío"
+
+#: lite/admin/class-es-campaign-admin.php:401
+#: lite/admin/class-es-form-admin.php:164
+#: lite/admin/class-ig-es-campaign-rules.php:672
+#: lite/includes/classes/class-es-admin-settings.php:240
+#: lite/includes/classes/class-es-campaign-report.php:449
+#: lite/includes/classes/class-es-contacts-table.php:838
+#: lite/includes/classes/class-es-export-subscribers.php:48
+#: lite/includes/classes/class-es-export-subscribers.php:373
+#: lite/includes/classes/class-es-import-subscribers.php:616
+#: lite/includes/classes/class-es-import-subscribers.php:710
+#: lite/includes/classes/class-es-import-subscribers.php:1157
+#: lite/includes/classes/class-es-import-subscribers.php:1405
+#: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:143
+#: lite/includes/pro-features.php:1708
+#: lite/includes/workflows/actions/abstracts/class-ig-es-action-send-email-abstract.php:29
+#: lite/includes/workflows/actions/class-es-action-send-email.php:31
+#: lite/language.php:140 lite/public/partials/class-es-shortcode.php:302
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: lite/includes/classes/class-es-cron.php:656 lite/language.php:760
+msgid "Emails sent successfully!"
+msgstr "¡Correos electrónicos enviados correctamente!"
+
+#: lite/includes/workflows/fields/class-es-select.php:76 lite/language.php:1373
+msgid "Select"
+msgstr "Selección"
+
+#: lite/includes/classes/class-es-post-notifications.php:80
+#: lite/language.php:936
+msgid "Please select categories."
+msgstr "Por favor, selecciona categorías."
+
+#: lite/includes/classes/class-es-contacts-table.php:1394 lite/language.php:748
+msgid "Please select subscribers to update."
+msgstr "Por favor, selecciona suscriptores para actualizar."
+
+#: lite/language.php:1500
+msgid "No Reports available."
+msgstr "No hay informes disponibles."
+
+#: lite/admin/class-es-admin.php:325 lite/admin/class-es-campaign-admin.php:659
+#: lite/includes/classes/class-es-newsletters.php:419
+#: lite/includes/classes/class-es-newsletters.php:447
+#: lite/includes/classes/class-es-reports-table.php:311
+#: lite/includes/workflows/admin/views/action.php:28 lite/language.php:108
+msgid "Preview"
+msgstr "Vista previa"
+
+#: lite/includes/classes/class-es-campaigns-table.php:524
+#: lite/includes/classes/class-es-contacts-table.php:1089
+#: lite/includes/classes/class-es-contacts-table.php:1160
+#: lite/includes/classes/class-es-forms-table.php:846
+#: lite/includes/classes/class-es-forms-table.php:893
+#: lite/includes/classes/class-es-lists-table.php:620
+#: lite/includes/classes/class-es-lists-table.php:672
+#: lite/includes/classes/class-es-reports-table.php:310
+#: lite/includes/classes/class-es-reports-table.php:405
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:92
+#: lite/includes/workflows/admin/views/action.php:30
+#: lite/includes/workflows/admin/views/meta-box-save.php:45
+#: lite/includes/workflows/class-es-workflows-table.php:428
+#: lite/includes/workflows/class-es-workflows-table.php:490
+#: lite/language.php:699
+msgid "Delete"
+msgstr "Borrar"
+
+#: lite/includes/workflows/admin/views/action.php:39 lite/language.php:1266
+msgid "Action"
+msgstr "Acción"
+
+#: lite/includes/classes/class-es-campaigns-table.php:663
+#: lite/includes/classes/class-es-reports-table.php:328 lite/language.php:700
+msgid "Type"
+msgstr "Tipo"
+
+#: lite/includes/workflows/actions/abstracts/class-ig-es-action-send-email-abstract.php:47
+#: lite/language.php:1241
+msgid "Email subject"
+msgstr "Asunto del correo electrónico"
+
+#: lite/includes/classes/class-es-contacts-table.php:418
+#: lite/includes/classes/class-es-forms-table.php:104
+#: lite/includes/classes/class-es-lists-table.php:91
+#: lite/includes/classes/class-es-post-notifications.php:327
+#: lite/includes/workflows/class-es-workflows-table.php:281
+#: lite/language.php:724
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: lite/includes/classes/class-es-campaigns-table.php:470
+#: lite/includes/classes/class-es-campaigns-table.php:472
+#: lite/includes/classes/class-es-campaigns-table.php:500
+#: lite/includes/classes/class-es-contacts-table.php:1087
+#: lite/includes/classes/class-es-forms-table.php:844
+#: lite/includes/classes/class-es-lists-table.php:615
+#: lite/includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:35
+#: lite/includes/workflows/admin/views/action.php:29
+#: lite/includes/workflows/class-es-workflows-table.php:424
+#: lite/language.php:698
+msgid "Edit"
+msgstr "Editar"
+
+#: lite/admin/class-es-form-admin.php:339
+#: lite/includes/classes/class-es-contacts-table.php:915
+#: lite/includes/classes/class-es-lists-table.php:388
+#: lite/includes/classes/class-es-post-notifications.php:454
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:133
+#: lite/language.php:193
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: lite/admin/partials/help.php:237
+#: lite/includes/classes/class-es-campaign-report.php:450
+#: lite/includes/classes/class-es-campaigns-table.php:667
+#: lite/includes/classes/class-es-export-subscribers.php:375
+#: lite/includes/classes/class-es-import-subscribers.php:719
+#: lite/includes/classes/class-es-import-subscribers.php:1408
+#: lite/includes/classes/class-es-reports-table.php:329
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:242
+#: lite/includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:97
+#: lite/includes/workflows/class-es-workflows-table.php:461
+#: lite/language.php:287
+msgid "Status"
+msgstr "Estado"
+
+#: lite/includes/classes/class-es-widget.php:61
+msgid "Short description"
+msgstr "Descripción corta"
+
+#: lite/includes/classes/class-es-old-widget.php:90 lite/language.php:935
+msgid "Subscriber Group"
+msgstr "Grupo Suscriptor"
+
+#: lite/includes/classes/class-es-old-widget.php:83
+#: lite/includes/classes/class-es-widget.php:65 lite/language.php:932
+msgid "Display Name Field"
+msgstr "Campo del nombre visible"
+
+#: lite/includes/classes/class-es-old-widget.php:79 lite/language.php:931
+msgid "Short description about subscription form"
+msgstr "Descripción breve del formulario de suscripción"
+
+#: lite/includes/classes/class-es-old-widget.php:75 lite/language.php:930
+msgid "Widget Title"
+msgstr "Título del widget"
+
+#: lite/admin/partials/help.php:110 lite/includes/classes/class-es-info.php:21
+#: lite/language.php:277
+msgid "Help & Info"
+msgstr "Ayuda e Información"
+
+#: lite/includes/pro-features.php:229 lite/language.php:1065
+msgid "Roles"
+msgstr "Perfiles"
+
+#: lite/includes/workflows/actions/class-es-action-send-email.php:32
+#: lite/language.php:1244
+msgid "Send Email"
+msgstr "Enviar"
+
+#: lite/admin/class-email-subscribers-admin.php:419
+#: lite/admin/class-es-form-admin.php:413
+#: lite/admin/views/dashboard/tip-and-tricks.php:44
+#: lite/includes/classes/class-es-admin-settings.php:138 lite/language.php:83
+msgid "Settings"
+msgstr "Configurar"
+
+#: lite/admin/class-email-subscribers-admin.php:1612
+#: lite/includes/class-es-common.php:405
+#: lite/includes/classes/class-es-contacts-table.php:356
+#: lite/includes/classes/class-es-import-subscribers.php:898
+#: lite/includes/classes/class-es-import-subscribers.php:1413
+#: lite/includes/classes/class-es-lists-table.php:640 lite/language.php:91
+msgid "Subscribed"
+msgstr "Subscriptores"
+
+#: lite/admin/class-es-form-admin.php:60 lite/language.php:163
+#: lite/public/partials/class-es-shortcode.php:261
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: lite/admin/class-es-campaign-admin.php:389
+#: lite/admin/class-es-campaign-admin.php:412
+#: lite/admin/class-es-form-admin.php:181
+#: lite/includes/classes/class-es-admin-settings.php:231
+#: lite/includes/classes/class-es-admin-settings.php:234
+#: lite/includes/classes/class-es-campaigns-table.php:662
+#: lite/includes/classes/class-es-forms-table.php:862
+#: lite/includes/classes/class-es-lists-table.php:638
+#: lite/includes/compatibilities/elementor/actions/class-es-ig-form-action.php:138
+#: lite/language.php:137 lite/public/partials/class-es-shortcode.php:303
+msgid "Name"
+msgstr "Nombre"
