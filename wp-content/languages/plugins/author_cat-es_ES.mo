@@ -1,1 +1,0 @@
-author-category-es_ES.mo
