@@ -1,0 +1,251 @@
+# Translation of 1.2 in Spanish (Spain)
+# This file is distributed under the same license as the 1.2 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: JetPack en español\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/widget-visibility-"
+"without-jetpack\n"
+"POT-Creation-Date: 2021-10-06T12:40:24+02:00\n"
+"PO-Revision-Date: 2019-04-04 17:52+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: Eduardo Larequi <elarequi@gmail.com >\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: widget-visibility/widget-conditions.php:377
+msgctxt ""
+"placeholder: dropdown menu to select widget visibility; hide if or show if"
+msgid "%s if:"
+msgstr "%s si:"
+
+#: widget-visibility/widget-conditions.php:396
+msgctxt "Used as the default option in a dropdown list"
+msgid "-- Select --"
+msgstr "-- Seleccioneu --"
+
+#: widget-visibility/widget-conditions.php:132
+msgid "404 error page"
+msgstr "Pàgina d'error 404 "
+
+#: widget-visibility/widget-conditions.php:139
+msgid "Activity"
+msgstr "Mur general"
+
+#: widget-visibility/widget-conditions.php:461
+msgid "Add"
+msgstr "Afegeix"
+
+#: widget-visibility/widget-conditions.php:69
+msgid "All author pages"
+msgstr "Totes les pàgines dels autors"
+
+#: widget-visibility/widget-conditions.php:40
+msgid "All category pages"
+msgstr "Totes les pàgines de categories"
+
+#: widget-visibility/widget-conditions.php:123
+msgid "All date archives"
+msgstr "Arxius de totes les dates"
+
+#: widget-visibility/widget-conditions.php:223
+msgid "All pages"
+msgstr "Totes les pàgines"
+
+#: widget-visibility/widget-conditions.php:98
+msgid "All tag pages"
+msgstr "Totes les pàgines d'etiquetes"
+
+# ## FI AFEGIT XTEC ###
+#: widget-visibility/widget-conditions.php:193
+msgid "All taxonomy pages"
+msgstr "Totes les pàgines de taxonomies"
+
+#: widget-visibility/widget-conditions.php:131
+msgid "Archive page"
+msgstr "Pàgina d'arxiu"
+
+#: widget-visibility/widget-conditions.php:398
+msgctxt "Noun, as in: \"The author of this post is...\""
+msgid "Author"
+msgstr "Autor"
+
+#: widget-visibility/widget-conditions.php:142
+msgid "BuddyPress Docs Archive"
+msgstr "Índex de Documents"
+
+#: widget-visibility/widget-conditions.php:144
+msgid "BuddyPress:"
+msgstr "Xarxa Nodes:"
+
+#: widget-visibility/widget-conditions.php:397
+msgid "Category"
+msgstr "Categoria"
+
+#. Description of the plugin
+#, fuzzy
+msgid ""
+"Control what pages your widgets appear on. Based on Widget Visibility "
+"module, from Jetpack plugin, https://wordpress.org/plugins/jetpack/"
+msgstr ""
+"Controleu en quines pàgines apareixen els ginys. Basat en el mòdul de "
+"visibilitat de ginys del connector Jetpack, http://wordpress.org/plugins/"
+"jetpack/. Creat per Eduardo Larequi i mantingut per Joan Boluda."
+
+#: widget-visibility/widget-conditions.php:124
+msgid "Daily archives"
+msgstr "Arxius del dia"
+
+#: widget-visibility/widget-conditions.php:406
+msgctxt "Noun, as in: \"This page is a date archive.\""
+msgid "Date"
+msgstr "Data"
+
+#: widget-visibility/widget-conditions.php:461
+msgid "Delete"
+msgstr "Esborra"
+
+#: widget-visibility/widget-conditions.php:129
+msgid "Front page"
+msgstr "Portada"
+
+# ## AFEGIT XTEC ###
+#: widget-visibility/widget-conditions.php:411
+msgctxt "Example: The user is looking at a page, not a post."
+msgid "Group"
+msgstr "Node"
+
+#: widget-visibility/widget-conditions.php:140
+msgid "Groups"
+msgstr "Nodes"
+
+#: widget-visibility/widget-conditions.php:377
+msgctxt "Used in the \"%s if:\" translation for the widget visibility dropdown"
+msgid "Hide"
+msgstr "Amaga"
+
+#: widget-visibility/widget-conditions.php:448
+#, fuzzy
+msgctxt ""
+"Checkbox on Widget Visibility if children of the selected page should be "
+"included in the visibility rule."
+msgid "Include children"
+msgstr "Inclou els fills"
+
+#: widget-visibility/widget-conditions.php:65
+msgid "Logged In"
+msgstr "Validat"
+
+#: widget-visibility/widget-conditions.php:66
+msgid "Logged Out"
+msgstr "No validat"
+
+#: widget-visibility/widget-conditions.php:480
+msgid "Match all conditions"
+msgstr ""
+
+#: widget-visibility/widget-conditions.php:141
+msgid "Members"
+msgstr "Membres"
+
+#: widget-visibility/widget-conditions.php:125
+msgid "Monthly archives"
+msgstr "Arxius del mes"
+
+#: widget-visibility/widget-conditions.php:407
+msgctxt "Example: The user is looking at a page, not a post."
+msgid "Page"
+msgstr "Pàgina"
+
+#: widget-visibility/widget-conditions.php:159
+#, fuzzy
+msgid "Post type Archives:"
+msgstr "Tipus de contingut:"
+
+#: widget-visibility/widget-conditions.php:157
+msgid "Post type:"
+msgstr "Tipus de contingut:"
+
+#: widget-visibility/widget-conditions.php:130
+msgid "Posts page"
+msgstr "Pàgina d'articles"
+
+#: widget-visibility/widget-conditions.php:402
+msgctxt "Noun, as in: \"The user role of that can access this widget is...\""
+msgid "Role"
+msgstr "Rol"
+
+#: widget-visibility/widget-conditions.php:133
+msgid "Search results"
+msgstr "Resultats de la cerca"
+
+#: widget-visibility/widget-conditions.php:377
+msgctxt "Used in the \"%s if:\" translation for the widget visibility dropdown"
+msgid "Show"
+msgstr "Mostra"
+
+#: widget-visibility/widget-conditions.php:184
+msgid "Static page:"
+msgstr "Pàgina:"
+
+#: widget-visibility/widget-conditions.php:405
+msgctxt "Noun, as in: \"This post has one tag.\""
+msgid "Tag"
+msgstr "Etiqueta"
+
+# ## FI AFEGIT XTEC ###
+#: widget-visibility/widget-conditions.php:418
+msgctxt "Noun, as in: \"This post has one taxonomy.\""
+msgid "Taxonomy"
+msgstr "Taxonomia"
+
+#. Author of the plugin
+msgid "Toni Ginard"
+msgstr ""
+
+#: widget-visibility/widget-conditions.php:401
+msgctxt "Noun"
+msgid "User"
+msgstr "Usuari"
+
+#: widget-visibility/widget-conditions.php:374
+msgid "Visibility"
+msgstr "Visibilitat"
+
+#. Plugin Name of the plugin
+msgid "Widget Visibility Without Jetpack"
+msgstr "Visibilitat de ginys sense Jetpack"
+
+#: widget-visibility/widget-conditions.php:126
+msgid "Yearly archives"
+msgstr "Arxius de l'any"
+
+#: widget-visibility/widget-conditions.php:458
+msgctxt "Shown between widget visibility conditions."
+msgid "and"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid ""
+"https://github.com/toniginard/wordpress-widget-visibility-without-jetpack/"
+msgstr ""
+
+#: widget-visibility/widget-conditions.php:425
+msgctxt ""
+"Widget Visibility: {Rule Major [Page]} is {Rule Minor [Search results]}"
+msgid "is"
+msgstr "és"
+
+#: widget-visibility/widget-conditions.php:455
+msgctxt "Shown between widget visibility conditions."
+msgid "or"
+msgstr "o"

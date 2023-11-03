@@ -1,0 +1,41 @@
+# Copyright (C) 2019 bbPress Enable TinyMCE Visual Tab
+# This file is distributed under the same license as the bbPress Enable TinyMCE Visual Tab package.
+msgid ""
+msgstr ""
+"Project-Id-Version: bbPress Enable TinyMCE Visual Tab 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bbpress-enable-"
+"tinymce-visual-tab\n"
+"POT-Creation-Date: 2021-10-06T12:39:54+02:00\n"
+"PO-Revision-Date: 2019-04-08 12:16+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Author of the plugin
+msgid "Jared Atchison"
+msgstr "Jared Atchison"
+
+#. Description of the plugin
+msgid ""
+"This plugin activates the visual tab for the bbPress TinyMCE editor and "
+"provides a few other options."
+msgstr ""
+"Este complemento activa la pestaña visual del editor bbPress TinyMCE y "
+"proporciona algunas otras opciones."
+
+#. Plugin Name of the plugin
+msgid "bbPress Enable TinyMCE Visual Tab"
+msgstr "bbPress Enable TinyMCE Visual Tab"
+
+#. Author URI of the plugin
+msgid "http://jaredatchison.com"
+msgstr "http://jaredatchison.com"
+
+#. Plugin URI of the plugin
+msgid "http://wordpress.org/extend/plugins/bbpress-enable-tinymce-visual-tab/"
+msgstr "http://wordpress.org/extend/plugins/bbpress-enable-tinymce-visual-tab/"
