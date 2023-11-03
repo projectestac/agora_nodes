@@ -1,0 +1,391 @@
+# Translation of Plugins - AddToAny Share Buttons - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - AddToAny Share Buttons - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-08-03 07:29:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - AddToAny Share Buttons - Stable (latest release)\n"
+
+#: add-to-any.php:565
+msgid "Thanks for following!"
+msgstr "Gràcies per seguir!"
+
+#: add-to-any.php:564
+msgid "Thanks for sharing!"
+msgstr "Gràcies per compartir!"
+
+#: addtoany.admin.php:810
+msgid "Center docked"
+msgstr "Acoblat al centre"
+
+#: addtoany.admin.php:735
+msgid "Attach to content"
+msgstr "Adjunta al contingut"
+
+#: addtoany.admin.php:788 addtoany.admin.php:856
+msgid "Background"
+msgstr "Fons"
+
+#: addtoany.admin.php:477
+msgid "Share Buttons"
+msgstr "Botons per compartir"
+
+#: addtoany.admin.php:450
+msgid "Icon Style"
+msgstr "Estil de la icona"
+
+#: addtoany.widgets.php:214
+msgid "Icon Size:"
+msgstr "Mida de la icona:"
+
+#: addtoany.admin.php:623
+msgid "Display at the %s of media pages"
+msgstr "Mostra al %s de les pàgines de mèdia"
+
+#: addtoany.admin.php:699
+msgid "Height"
+msgstr "Alt"
+
+#: addtoany.admin.php:697
+msgid "Width"
+msgstr "Ample"
+
+#. Plugin Name of the plugin
+msgid "AddToAny Share Buttons"
+msgstr "Botons de compartició de l'AddToAny"
+
+#: addtoany.admin.php:677
+msgid "Below you can add special CSS code for AddToAny."
+msgstr "A sota, podeu afegir codi CSS especial per a l'AddToAny."
+
+#: addtoany.admin.php:674
+msgid "Additional CSS"
+msgstr "CSS Addicional"
+
+#: addtoany.admin.php:662
+msgid "Additional JavaScript"
+msgstr "JavaScript Addicional"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.addtoany.com/"
+msgstr "https://www.addtoany.com/"
+
+#: addtoany.widgets.php:221
+msgid "%s ID:"
+msgstr "%s ID:"
+
+#: addtoany.widgets.php:221
+msgid "%s URL:"
+msgstr "%s URL:"
+
+#: addtoany.widgets.php:88 addtoany.widgets.php:231
+msgid "AddToAny Settings"
+msgstr "Configuració de l'AddToAny"
+
+#: addtoany.widgets.php:84 addtoany.widgets.php:210
+msgid "Title:"
+msgstr "Títol:"
+
+#: addtoany.admin.php:1158
+msgid "Add/Remove Services"
+msgstr "Afegeix/Elimina serveis"
+
+#: addtoany.admin.php:886
+msgid "Search the <a href=\"https://wordpress.org/support/plugin/add-to-any\">support forums</a>."
+msgstr "Cerca als <a href=\"https://wordpress.org/support/plugin/add-to-any\">fòrums de suport</a>."
+
+#: addtoany.admin.php:885
+msgid "See the <a href=\"https://wordpress.org/plugins/add-to-any/faq/\">FAQs</a>."
+msgstr "Vegeu les <a href=\"https://wordpress.org/plugins/add-to-any/faq/\">preguntes freqüents</a>."
+
+#: addtoany.admin.php:884
+msgid "Need support?"
+msgstr "Necessiteu suport?"
+
+#: addtoany.admin.php:882
+msgid "<a href=\"https://www.addtoany.com/share#title=WordPress%20Share%20Plugin%20by%20AddToAny.com&amp;url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fadd-to-any%2F\">Share it</a> and follow <a href=\"https://www.addtoany.com/\">AddToAny</a> on <a href=\"https://www.facebook.com/AddToAny\" target=\"_blank\">Facebook</a> &amp; <a href=\"https://twitter.com/AddToAny\" target=\"_blank\">Twitter</a>."
+msgstr "<a href=\"https://www.addtoany.com/share#title=WordPress%20Share%20Plugin%20by%20AddToAny.com&amp;url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fadd-to-any%2F\">Comparteix-lo</a> i segueix <a href=\"https://www.addtoany.com/\">AddToAny</a> al <a href=\"https://www.facebook.com/AddToAny\" target=\"_blank\">Facebook</a> i al <a href=\"https://twitter.com/AddToAny\" target=\"_blank\">Twitter</a>."
+
+#: addtoany.admin.php:881
+msgid "<a href=\"https://wordpress.org/support/plugin/add-to-any/reviews/#new-post\" target=\"_blank\">Give it a 5 star rating</a> on WordPress.org."
+msgstr "<a href=\"https://wordpress.org/support/plugin/add-to-any/reviews/#new-post\" target=\"_blank\">Dóna-li una valoració de 5 estrelles</a> a WordPress.org."
+
+#: addtoany.admin.php:880
+msgid "Like this plugin?"
+msgstr "Us agrada aquesta extensió?"
+
+#: addtoany.admin.php:875
+msgid "Reset"
+msgstr "Reinicialitza"
+
+#: addtoany.admin.php:875
+msgid "Are you sure you want to delete all AddToAny options?"
+msgstr "Esteu segurs que voleu esborrar totes les opcions de l'AddToAny?"
+
+#: addtoany.admin.php:874
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#: addtoany.admin.php:801
+msgid "Horizontal Buttons"
+msgstr "Botons horitzontals"
+
+#: addtoany.admin.php:776 addtoany.admin.php:844
+msgid "Offset"
+msgstr "Òfset"
+
+#: addtoany.admin.php:770 addtoany.admin.php:838
+msgid "Position"
+msgstr "Posició"
+
+#: addtoany.admin.php:748 addtoany.admin.php:816
+msgid "Responsiveness"
+msgstr "Sensibilitat"
+
+#: addtoany.admin.php:733 addtoany.admin.php:808
+msgid "Right docked"
+msgstr "Acoblat a la dreta"
+
+#: addtoany.admin.php:731 addtoany.admin.php:806
+msgid "Left docked"
+msgstr "Acoblat a l'esquerra"
+
+#: addtoany.admin.php:726
+msgid "Vertical Buttons"
+msgstr "Botons en vertical"
+
+#: addtoany.admin.php:724
+msgid "AddToAny &quot;floating&quot; share buttons stay in a fixed position even when the user scrolls."
+msgstr "Els botons de compartir &quot;flotants&quot; d'AddToAny romanen en una posició fixa fins i tot quan l’usuari es desplaça."
+
+#: addtoany.admin.php:712
+msgid "Most sites should not use this option. By default, AddToAny loads asynchronously and most efficiently. Since many visitors will have AddToAny cached in their browser already, serving AddToAny locally from your site will be slower for those visitors. If local caching is enabled, be sure to set far future cache/expires headers for image files in your <code>uploads/addtoany</code> directory."
+msgstr "La majoria de llocs no han d'utilitzar aquesta opció. Per defecte, AddToAny es carrega de manera asíncrona i eficient. Com que molts visitants emmagatzemaran AdToAny a la memòria cau del navegador, el servei d'AdToAny localment del lloc serà més lent per a aquests visitants. Si l'emmagatzemament local està habilitat, assegureu-vos de definir les capçaleres de memòria cau i d'expiració amb prou futur per als fitxers d'imatge al directori <code>uploads/addtoany</code>."
+
+#: addtoany.admin.php:709
+msgid "Cache AddToAny locally with daily cache updates"
+msgstr "Emmagatzema en memòria local l'AddToAny amb actualitzacions diàries de memòria cau"
+
+#: addtoany.admin.php:702
+msgid "Specify the URL of the directory containing your custom icons. For example, a URL of <code>//example.com/blog/uploads/addtoany/icons/custom/</code> containing <code>facebook.png</code> and <code>twitter.png</code>. Be sure that custom icon filenames match the icon filenames in <code>plugins/add-to-any/icons</code>. For AddToAny's Universal Button, select Image URL and specify the URL of your AddToAny universal share icon (<a href=\"#\" onclick=\"document.getElementsByName('A2A_SHARE_SAVE_button_custom')[0].focus();return false\">above</a>)."
+msgstr "Especifiqueu l’URL del directori que conté les icones personalitzades. Per exemple, un URL de <code>//example.com/blog/uploads/addtoany/icons/custom/</code> que contingui <code>facebook.png</code> i <code>twitter.png</code>. Assegureu-vos que els noms dels fitxers d'icones personalitzats coincideixin amb els noms dels fitxers de les icones a <code>plugins/add-to-any/icons</code>. Per al botó universal d’AddToAny, seleccioneu l’URL de la imatge i especifiqueu l’URL de la icona de compartició universal d'AddToAny (<a href=\"#\" onclick=\"document.getElementsByName('A2A_SHARE_SAVE_button_custom')[0].focus();return false\">més amunt</a>)."
+
+#: addtoany.admin.php:695
+msgid "Filename extension"
+msgstr "Extensió del fitxer"
+
+#: addtoany.admin.php:691
+msgid "Use custom icons. URL:"
+msgstr "Utilitza icones personalitzades. URL:"
+
+#: addtoany.admin.php:686
+msgid "Advanced Options"
+msgstr "Opcions avançades"
+
+#: addtoany.admin.php:666 addtoany.admin.php:678
+msgid "Advanced users should explore AddToAny's <a href=\"https://www.addtoany.com/buttons/customize/wordpress\" target=\"_blank\">additional options</a>."
+msgstr "Els usuaris avançats haurien d’explorar les <a href=\"https://www.addtoany.com/buttons/customize/wordpress\" target=\"_blank\">opcions addicionals</a> d’AdToAny."
+
+#: addtoany.admin.php:665
+msgid "Below you can add special JavaScript code for AddToAny."
+msgstr "A continuació, podeu afegir codi JavaScript especial per a AddToAny."
+
+#: addtoany.admin.php:656
+msgid "Only show the universal share menu when the user <em>clicks</em> the universal share button"
+msgstr "Mostra menú de compartir universal només quan l'usuari <em>faci clic</em> al botó de compartir universal"
+
+#: addtoany.admin.php:652
+msgid "Menu Options"
+msgstr "Opcions del menú"
+
+#: addtoany.admin.php:646
+msgid "See <a href=\"widgets.php\" title=\"Theme Widgets\">Widgets</a> and <a href=\"options-general.php?page=addtoany&action=floating\" title=\"AddToAny Floating Share Buttons\">Floating</a> for additional placement options. For advanced placement, see <a href=\"https://wordpress.org/plugins/add-to-any/faq/\">the FAQs</a>."
+msgstr "Mireu <a href=\"widgets.php\" title=\"Theme Widgets\">Ginys</a> i <a href=\"options-general.php?page=addtoany&action=floating\" title=\"AddToAny Floating Share Buttons\">Flotació</a> per a opcions d'ubicació addicionals. Per a una ubicació avançada, consulteu<a href=\"https://wordpress.org/plugins/add-to-any/faq/\">les preguntes més freqüents</a>."
+
+#. translators: 1: Position in content 2: Name of the custom post type
+#: addtoany.admin.php:637
+msgid "Display at the %1$s of %2$s"
+msgstr "Mostra a %1$s de %2$s"
+
+#: addtoany.admin.php:616
+msgid "Display at the %s of pages"
+msgstr "Mostra al %s de les pàgines"
+
+#: addtoany.admin.php:611
+msgid "Display at the %s of excerpts"
+msgstr "Mostra al %s d'extractes"
+
+#: addtoany.admin.php:604
+msgid "Display at the %s of posts in the feed"
+msgstr "Mostra al %s de les entrades del canal de subscripció"
+
+#: addtoany.admin.php:596
+msgid "Display at the %s of posts on archive pages"
+msgstr "Mostra %s les entrades de les pàgines d'arxiu"
+
+#: addtoany.admin.php:588
+msgid "Display at the %s of posts on the front page"
+msgstr "Mostra %s les entrades de la pàgina de portada"
+
+#: addtoany.admin.php:580
+msgid "Display at the %s of posts"
+msgstr "Mostra %s les entrades"
+
+#: addtoany.admin.php:575 addtoany.admin.php:729 addtoany.admin.php:804
+msgid "Placement"
+msgstr "Emplaçament"
+
+#: addtoany.admin.php:569
+msgid "Share this:"
+msgstr "Comparteix"
+
+#: addtoany.admin.php:566
+msgid "Sharing Header"
+msgstr "Capçalera de compartició"
+
+#: addtoany.admin.php:551 addtoany.admin.php:737 addtoany.admin.php:812
+msgid "None"
+msgstr "Cap"
+
+#: addtoany.admin.php:550
+msgid "This option will disable universal sharing. Are you sure you want to disable universal sharing?"
+msgstr "Aquesta opció desactivarà la compartició universal. Esteu segurs que ho voleu desactivar?"
+
+#: addtoany.admin.php:544
+msgid "Text only"
+msgstr "Només text"
+
+#: addtoany.admin.php:537
+msgid "Image URL"
+msgstr "URL de la imatge"
+
+#: addtoany.admin.php:525
+msgid "Universal Button"
+msgstr "Botó universal"
+
+#: addtoany.admin.php:482
+msgid "Choose the services you want below. &nbsp;Click a chosen service again to remove. &nbsp;Reorder services by dragging and dropping as they appear above."
+msgstr "Seleccioneu els serveis que voleu a continuació. &nbsp;Cliqueu a un servei de nou per eliminar-lo. &nbsp;Reordeneu els serveis arrossegant-los i deixant-los en l'ordre que desitgeu."
+
+#: addtoany.admin.php:782 addtoany.admin.php:850
+msgid "Icon Size"
+msgstr "Mida de la icona"
+
+#: addtoany.admin.php:439
+msgid "Floating"
+msgstr "Flotant"
+
+#: addtoany.admin.php:438
+msgid "Standard"
+msgstr "Estàndard"
+
+#: addtoany.admin.php:435 add-to-any.php:1225
+msgid "AddToAny Share Settings"
+msgstr "Paràmetres de compartició de l'AddToAny"
+
+#: addtoany.admin.php:159
+msgid "top &amp; bottom"
+msgstr "sobre i sota"
+
+#: addtoany.admin.php:155
+msgid "top"
+msgstr "sobre"
+
+#: addtoany.admin.php:151
+msgid "bottom"
+msgstr "sota"
+
+#: addtoany.admin.php:419
+msgid "Settings saved."
+msgstr "Preferències desades."
+
+#: addtoany.admin.php:46
+msgid "Show sharing buttons."
+msgstr "Mostra els botons de compartició"
+
+#. Author of the plugin
+#: addtoany.admin.php:10 add-to-any.php:1226
+msgid "AddToAny"
+msgstr "AddToAny"
+
+#: add-to-any.php:1255
+msgid "Settings"
+msgstr "Preferències"
+
+#: add-to-any.php:563
+msgid "More&#8230;"
+msgstr "Més&#8230;"
+
+#: add-to-any.php:562
+msgid "Email program"
+msgstr "Programa de correu electrònic"
+
+#: add-to-any.php:561
+msgid "Send from any email address or email program"
+msgstr "Envia des de qualsevol adreça o programa de correu electrònic"
+
+#: add-to-any.php:560
+msgid "Add to your favorites"
+msgstr "Afegiu als vostres favorits"
+
+#: add-to-any.php:559
+msgid "Press Ctrl+D or \\u2318+D to bookmark this page"
+msgstr "Premeu Ctrl+D o \\u2318+D per afegir als preferits aquesta pàgina"
+
+#: add-to-any.php:558
+msgid "Bookmark in your browser"
+msgstr "Afegiu l'adreça d'interès al vostre navegador"
+
+#: add-to-any.php:557
+msgid "Subscribe via email"
+msgstr "Subscriu-me per correu electrònic"
+
+#: add-to-any.php:556
+msgid "Share via email"
+msgstr "Comparteix per correu electrònic"
+
+#: add-to-any.php:555
+msgid "Powered by"
+msgstr "Potenciat per"
+
+#: add-to-any.php:554
+msgid "Instantly find any service to add to"
+msgstr "Troba instantàniament qualsevol servei per a afegir a"
+
+#: add-to-any.php:553
+msgid "Find service(s)"
+msgstr "Cerca servei(s)"
+
+#: add-to-any.php:552
+msgid "Show less"
+msgstr "Mostra menys"
+
+#: add-to-any.php:551
+msgid "Show all"
+msgstr "Mostra tots"
+
+#: add-to-any.php:550
+msgid "Bookmark"
+msgstr "Preferit"
+
+#: add-to-any.php:549
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: add-to-any.php:548
+msgid "Subscribe"
+msgstr "Subscriure's"
+
+#: add-to-any.php:547
+msgid "Save"
+msgstr "Desa"
+
+#: addtoany.admin.php:374 addtoany.admin.php:546 add-to-any.php:546
+msgid "Share"
+msgstr "Comparteix"
