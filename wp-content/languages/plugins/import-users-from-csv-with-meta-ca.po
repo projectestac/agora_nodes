@@ -1,0 +1,2479 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: import-users-from-csv-with-meta\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/import-users-from-"
+"csv-with-meta\n"
+"POT-Creation-Date: 2021-10-06T12:40:15+02:00\n"
+"PO-Revision-Date: 2019-04-12 11:12+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: Departament Ensenyament Catalunya - Àrea TAC\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# modificat xtec
+#: classes/doc.php:13
+msgid ""
+"(Documents should look like the one presented into screenshot. Remember you "
+"should fill the first two columns with the next values)"
+msgstr ""
+"(Els documents haurien de semblar-se a la presentada en captura de pantalla. "
+"Recordeu que heu d'omplir les dues primeres columnes amb els valors següents)"
+
+# modificat xtec
+#: classes/doc.php:20
+msgid ""
+"(If you want to disable the extra profile information, please deactivate "
+"this plugin after make the import)"
+msgstr ""
+"(Si voleu desactivar la informació del perfil extra, desactiveu aquest "
+"complement després de fer la importació)"
+
+#: classes/doc.php:18
+msgid ""
+"(The next columns are totally customizable and you can use whatever you "
+"want. All rows must contains same columns)"
+msgstr ""
+"(Les columnes següents són totalment personalitzables i es poden fer servir "
+"de la forma que vulgueu. Totes les files han de contenir les mateixes "
+"columnes)"
+
+# modificat xtec
+#: classes/doc.php:19
+msgid "(User profile will be adapted to the kind of data you have selected)"
+msgstr "(El perfil d'usuari s'adaptarà al tipus de dades que heu seleccionat)"
+
+# modificat xtec
+#: classes/columns.php:59
+msgid ""
+"(if you load another CSV with different columns, the new ones will replace "
+"this list)"
+msgstr ""
+"(si carregueu un altre CSV amb columnes diferents, les noves substituiran "
+"aquesta llista)"
+
+# modificat xtec
+#: classes/cron.php:86
+msgid "--Finished at"
+msgstr "--Finalitzat a"
+
+#: import-users-from-csv-with-meta.php:146
+msgid "<a href=\"%s\">Export</a>"
+msgstr ""
+
+#: import-users-from-csv-with-meta.php:147
+msgid "<a href=\"%s\">Import</a>"
+msgstr ""
+
+#: classes/homepage.php:40
+msgid "<em>or you can choose directly a file from your host,"
+msgstr "<em>El podeu triar directament del vostre servidor,"
+
+#: addons/paid-member-subscriptions.php:31
+msgid ""
+"<strong>expiration_date (optional)</strong>: if you leave it empty, no "
+"expired date will be defined"
+msgstr ""
+
+#: addons/paid-member-subscriptions.php:30
+msgid ""
+"<strong>start_date <em>(optional)</em></strong>: if you leave empty, current "
+"moment will be used, format is Y-m-d H:i:s"
+msgstr ""
+
+#: addons/paid-member-subscriptions.php:32
+msgid ""
+"<strong>status <em>(optional)</em></strong>: if you do not fill it, active "
+"will be used"
+msgstr ""
+
+#: addons/paid-member-subscriptions.php:29
+msgid ""
+"<strong>subscription_plan_id</strong>: you can find it in Paid Member "
+"Subscriptions, Subscriptions Plans "
+msgstr ""
+
+#: classes/doc.php:72 classes/homepage.php:200
+msgid "A string containing content about the user."
+msgstr "Un text amb contingut sobre l'usuari."
+
+#: classes/doc.php:67 classes/homepage.php:170
+msgid "A string containing the user's URL for the user's web site."
+msgstr "Un text que conté l'URL de l'usuari per al seu lloc web."
+
+#: classes/doc.php:66 classes/homepage.php:164
+msgid ""
+"A string that contains a URL-friendly name for the user. The default is the "
+"user's username."
+msgstr ""
+"Un text que conté un URL amigable per a l'usuari. El valor per defecte és el "
+"nom de l'usuari."
+
+# modificat xtec
+#: classes/doc.php:34
+msgid ""
+"A string that contains user passwords. We have different options for this "
+"case:"
+msgstr ""
+"Una cadena que conté contrasenyes d'usuari. Hi ha diferents opcions per a "
+"aquest cas:"
+
+#: classes/doc.php:68
+msgid ""
+"A string that will be shown on the site. Defaults to user's username. It is "
+"likely that you will want to change this, for both appearance and security "
+"through obscurity (that is if you don't use and delete the default admin "
+"user)."
+msgstr ""
+"Un text que es mostrarà al lloc. Per defecte és el vostre nom d'usuari."
+
+#: classes/homepage.php:176
+msgid ""
+"A string that will be shown on the site. Defaults to user's username. It is "
+"likely that you will want to change this, for both appearance and security "
+"through obscurity (that is if you dont use and delete the default admin "
+"user)."
+msgstr ""
+"Un text que es mostrarà al lloc. Per defecte és el vostre nom d'usuari."
+
+#: classes/actions.php:72
+msgid "Actions"
+msgstr ""
+
+#: classes/email-options.php:38
+msgid "Activate WordPress automatic email when an user is created or edited"
+msgstr ""
+
+#: classes/email-options.php:55
+msgid ""
+"Activate WordPress automatic email when an user is updated or his password "
+"is changed"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:176
+msgid "Activate periodical import?"
+msgstr "Activar importació periòdica?"
+
+# modificat xtec
+#: addons/wp-members.php:21 addons/wp-members.php:45
+msgid "Activate users when they are being imported"
+msgstr "Activeu els usuaris quan s'estiguin important"
+
+#: classes/email-templates.php:29 classes/email-templates.php:30
+msgid "Add new email template"
+msgstr "Afegeix una plantilla de correu electrònic nova"
+
+#: addons/woocommerce-membership-rightpress.php:23
+#: addons/woocommerce-membership.php:24
+msgid "Add users to membership plans"
+msgstr ""
+
+#: classes/cron.php:305 classes/homepage.php:361
+msgid ""
+"Administrators will not be deleted anyway. After delete users, we can choose "
+"if we want to assign their posts to another user. If you do not choose some "
+"user, content will be deleted."
+msgstr ""
+
+#: addons/advanced-custom-fields.php:25
+msgid "Advaced Custom Fields is activated"
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:178
+msgid ""
+"After delete users, we can choose if we want to assign their posts to "
+"another user. Please do not delete them or posts will be deleted."
+msgstr ""
+"Després de suprimir els usuaris, podeu triar si voleu assignar les seves "
+"publicacions a un altre usuari. us recomanem no suprimir ni esborrar les "
+"publicacions."
+
+#: classes/cron.php:325 classes/frontend.php:198 classes/homepage.php:382
+msgid ""
+"After import users which is not present in the CSV and can be changed to a "
+"different role."
+msgstr ""
+"Després de la importació, els usuaris que no estan presents al CSV i es "
+"poden canviar a un rol diferent."
+
+#: classes/email-templates.php:28
+msgid "All email template"
+msgstr "Tota la plantilla de correu electrònic"
+
+#: classes/export.php:34
+msgid "All roles"
+msgstr ""
+
+# modificat xtec
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+msgid "Allow Multiple Accounts"
+msgstr "Permetre múltiples comptes"
+
+#: addons/allow-multiple-accounts.php:38
+msgid "Allow Multiple Accounts compatibility"
+msgstr "Permet la compatibilitat de múltiples comptes"
+
+#: addons/allow-multiple-accounts.php:17
+msgid "Allow multiple accounts compatibility"
+msgstr "Permet la compatibilitat de múltiples comptes"
+
+# modificat xtec
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+msgid ""
+"Allow multiple user accounts to be created having the same email address."
+msgstr ""
+"Permeteu crear diversos comptes d'usuari que tinguin la mateixa adreça de "
+"correu electrònic."
+
+#: addons/allow-multiple-accounts.php:26
+msgid "Allowed"
+msgstr "Permès"
+
+#: addons/woocommerce-subscriptions.php:763
+msgid ""
+"An error occurred when trying to add the shipping item to the subscription, "
+"a subscription not been created for this row."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:651
+msgid ""
+"An unexpected error occurred when trying to add product \"%s\" to your "
+"subscription. The error was caught and no subscription for this row will be "
+"created. Please fix up the data from your CSV and try again."
+msgstr ""
+
+#: addons/buddypress.php:136
+msgid "And the role assigned in this group:"
+msgstr ""
+
+#: addons/groups.php:30
+msgid "Another option is use group_name as the column title"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:84
+msgid "Any question about it"
+msgstr "Quant a"
+
+# modificat xtec
+#: addons/new-user-approve.php:17
+msgid "Approve users at the same time is being created"
+msgstr "Aprova els usuaris al mateix temps que s'estan creant"
+
+# modificat xtec
+#: addons/new-user-approve.php:21
+msgid "Approve users when they are being imported"
+msgstr "Aprova els usuaris quan s'estan important"
+
+# modificat xtec
+#: classes/homepage.php:474
+msgid ""
+"Are you sure to delete ALL CSV files uploaded? There can be CSV files from "
+"other plugins."
+msgstr ""
+"Voleu eliminar tots els fitxers CSV carregats? Hi pot haver fitxers CSV "
+"d'altres complements."
+
+# modificat xtec
+#: classes/cron.php:406
+msgid ""
+"Are you sure to delete all users that are not present in the CSV? This "
+"action cannot be undone."
+msgstr ""
+"Voleu eliminar tots els usuaris que no estan presents al CSV? Aquesta acció "
+"no es pot desfer."
+
+# modificat xtec
+#: classes/homepage.php:454
+msgid "Are you sure to delete this file?"
+msgstr "Esteu segur que voleu suprimir aquest fitxer?"
+
+#: classes/columns.php:119
+msgid ""
+"Are you sure to reset all fields, it will delete current fields and they "
+"will restored in next import"
+msgstr ""
+
+#: classes/email-options.php:115 classes/email-templates.php:115
+#: classes/email-templates.php:127
+msgid "Attachment"
+msgstr "Adjunció"
+
+#: classes/frontend.php:66
+msgid "Attribute delete-only-specified-role"
+msgstr ""
+
+#: classes/frontend.php:240
+msgid "Attribute delimiter"
+msgstr ""
+
+#: classes/frontend.php:228
+msgid "Attribute from"
+msgstr ""
+
+#: classes/frontend.php:246
+msgid "Attribute order-alphabetically"
+msgstr ""
+
+#: classes/frontend.php:60 classes/frontend.php:222
+msgid "Attribute role"
+msgstr ""
+
+#: classes/frontend.php:234
+msgid "Attribute to"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:261
+msgid "Auto rename after move?"
+msgstr "Reanomenar després de moure?"
+
+# mdificat xtec
+#: classes/homepage.php:405
+msgid "Become a patron"
+msgstr "Fer-se patró"
+
+#: addons/buddypress.php:98
+msgid "BuddyPress & BuddyBoss compatibility"
+msgstr ""
+
+#: addons/buddypress.php:131
+msgid "BuddyPress or BuddyBoss is activated"
+msgstr ""
+
+#: addons/buddypress.php:122
+msgid "BuddyPress/BuddyBoss avatar"
+msgstr ""
+
+#: addons/buddypress.php:103
+msgid "BuddyPress/BuddyBoss users"
+msgstr ""
+
+#: addons/buddypress.php:139
+msgid "But you will have to assign a role for each group:"
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:399
+msgid "CSV file <span class=\"description\">(required)</span>"
+msgstr "Fitxer CSV <span class=\"description\">(requerit)</span></label>"
+
+#: classes/homepage.php:32
+msgid "CSV file <span class=\"description\">(required)</span></label>"
+msgstr "Fitxer CSV <span class=\"description\">(requerit)</span></label>"
+
+#: classes/import.php:256
+msgid ""
+"CSV file seems to be bad formed. Please use LibreOffice to create and manage "
+"CSV to be sure the format is correct"
+msgstr ""
+"Sembla que el fitxer CSV no està ben format. Feu servir LibreOffice per "
+"crear i gestionar els CSV i així assegurar-vos que el format és correcte"
+
+#: classes/cron.php:332
+msgid "Call cron process using REST-API"
+msgstr ""
+
+#: classes/cron.php:311 classes/frontend.php:184 classes/homepage.php:367
+msgid "Change role of users that are not present in the CSV?"
+msgstr "Voleu canviar el rol dels usuaris que no estan al CSV?"
+
+#: classes/email-options.php:258
+msgid "Choose or upload file"
+msgstr "Trieu o carregueu un fitxer"
+
+# modificat xtec
+#: classes/homepage.php:523
+msgid "Click to open/close"
+msgstr "Premeu per obrir/tancar"
+
+#: classes/export.php:53
+msgid "Colon"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:12
+msgid "Columns position"
+msgstr "Posició de les columnes"
+
+#: classes/export.php:52
+msgid "Comma"
+msgstr ""
+
+#: classes/export.php:60
+msgid "Convert timestamp data to date format"
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:55 classes/frontend.php:217
+msgid "Copy to clipboard"
+msgstr "Còpia"
+
+#: addons/woocommerce-subscriptions.php:714
+msgid ""
+"Could not add the fee to your subscription, the subscription has not been "
+"imported."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:274
+msgid "Could not create subscription: %s"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:555
+msgid "Could not find coupon with code \"%s\" in your store."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:499
+msgid ""
+"Could not set payment method as PayPal, defaulted to manual renewals. Either "
+"PayPal was not enabled or your PayPal account does not have Reference "
+"Transaction setup. Learn more about enabling Reference Transactions %1$shere"
+"%2$s."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:575
+msgid "Coupon \"%s\" could not be added to subscription."
+msgstr ""
+
+#: classes/import.php:99
+msgid "Cron import"
+msgstr ""
+
+#: classes/cron.php:388
+msgid "Cron task successfully executed"
+msgstr ""
+
+# modificat xtec
+#: classes/email-options.php:101
+msgid "Customize the email that can be sent when importing users"
+msgstr ""
+"Personalitzeu el correu electrònic que es pot enviar quan s'importen usuaris"
+
+#: addons/woocommerce-subscriptions.php:80
+msgid ""
+"Data format: use the column names <a href=\"%s\">described here</a>, except "
+"the ones that are not used because we have the own ones:"
+msgstr ""
+
+#: classes/email-options.php:37
+msgid "Deactivate WordPress automatic email when an user is created or edited"
+msgstr ""
+
+#: classes/email-options.php:54
+msgid ""
+"Deactivate WordPress automatic email when an user is updated or his password "
+"is changed"
+msgstr ""
+
+# modificat xtec
+#: classes/homepage.php:58
+msgid "Default role"
+msgstr "Rol per defecte d'usuaris nous"
+
+#: classes/homepage.php:541
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: classes/homepage.php:531
+msgid "Delete all CSV files uploaded"
+msgstr "Esborra tots els fitxers CSV pujats"
+
+#: classes/cron.php:291 classes/cron.php:293 classes/frontend.php:164
+#: classes/frontend.php:166 classes/homepage.php:352
+msgid "Delete posts of deleted users without assigning to any user"
+msgstr ""
+
+# modificat xtec
+#: classes/homepage.php:233 classes/homepage.php:267
+msgid "Delete the metadata"
+msgstr "Elimineu les metadades"
+
+# modificat xtec
+#: classes/cron.php:282 classes/frontend.php:155 classes/homepage.php:345
+msgid "Delete users that are not present in the CSV?"
+msgstr "Voleu eliminar els usuaris que no estan al CSV?"
+
+#: classes/export.php:49
+msgid "Delimiter"
+msgstr ""
+
+#: classes/helper.php:298 classes/helper.php:305
+msgid "Details"
+msgstr ""
+
+#: classes/email-options.php:78
+msgid "Disable WP Editor:"
+msgstr ""
+
+#: classes/cron.php:222 classes/cron.php:224
+msgid "Disable role assignment in cron import"
+msgstr ""
+
+#: classes/frontend.php:77 classes/frontend.php:79
+msgid "Disable role assignment in frontend import"
+msgstr ""
+
+#: addons/wp-members.php:20 addons/wp-members.php:44
+msgid "Do not activate users"
+msgstr "Usuaris No activats"
+
+#: addons/new-user-approve.php:20
+msgid "Do not approve users"
+msgstr "Usuaris no aprovats"
+
+# modificat xtec
+#: classes/donate.php:8
+msgid "Do you like it?"
+msgstr "T'ha agradat?"
+
+#: classes/email-options.php:83
+msgid "Do you want to disable WP Editor?"
+msgstr ""
+
+#: classes/email-options.php:67
+msgid "Do you want to enable mail templates?"
+msgstr "Voleu habilitar les plantilles de correu?"
+
+# modificat xtec
+#: classes/homepage.php:242 classes/homepage.php:276
+msgid "Do you wish to send a mail with credentials and other data?"
+msgstr "Voleu enviar un correu amb credencials i altres dades?"
+
+# modificat xtec
+#: classes/homepage.php:246 classes/homepage.php:280
+msgid ""
+"Do you wish to send this mail also to users that are being updated? (not "
+"only to the one which are being created)"
+msgstr ""
+"Voleu enviar aquest correu també als usuaris que s'estan actualitzant? (no "
+"només al que s'estan creant)"
+
+#: classes/doc.php:8 classes/import.php:103
+msgid "Documentation"
+msgstr "Documentació"
+
+# modificat xtec
+#: import-users-from-csv-with-meta.php:157
+msgid "Donate"
+msgstr "Feu un donatiu"
+
+#: classes/import.php:104
+msgid "Donate/Patreon"
+msgstr ""
+
+#: classes/export.php:83
+msgid "Download"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:81
+msgid "Download <a href=\"%s\">this sample file</a> to see how it works"
+msgstr ""
+
+#: classes/export.php:81
+msgid "Download CSV file with users"
+msgstr ""
+
+#: classes/doc.php:100
+msgid "Download this"
+msgstr "Baixa el fitxer"
+
+#: classes/import.php:365
+msgid "EMail not specified"
+msgstr "No s'ha especificat el correu electrònic"
+
+#: classes/email-templates.php:32
+msgid "Edit email template"
+msgstr "Edita plantilla de correu"
+
+#: classes/doc.php:16 classes/homepage.php:145
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: classes/import.php:400 classes/import.php:449
+msgid "Email has changed, new user created with username %s"
+msgstr ""
+
+#: classes/import.php:364
+msgid "Email not specified"
+msgstr ""
+
+#: classes/email-templates.php:22
+msgctxt "Post Type Singular Name"
+msgid "Email template (Import Users From CSV With Meta)"
+msgstr "Plantilla de correu (importa usuaris d'un CSV amb metadades)"
+
+#: classes/email-templates.php:46
+msgid "Email template list navigation"
+msgstr "Navegació de plantilles de correu en forma de llista"
+
+#: classes/email-templates.php:24
+msgid "Email templates (Import Users From CSV With Meta)"
+msgstr "Plantilles de correu (importa usuaris d'un CSV amb metadades)"
+
+#: classes/email-templates.php:21
+msgctxt "Post Type General Name"
+msgid "Email templates (Import Users From CSV With Meta)"
+msgstr "Plantilles de correu (importa usuaris d'un CSV amb metadades)"
+
+#: classes/email-templates.php:23
+msgid "Email templates (Import Users)"
+msgstr "Plantilles de correu (importa usuaris)"
+
+#: classes/email-options.php:63
+msgid "Enable mail templates:"
+msgstr "Habilita les plantilles de correu:"
+
+#: classes/import.php:151
+msgid "Error, path to file is not well written"
+msgstr ""
+
+# modificat xtec
+#: classes/import.php:155
+msgid "Error, we cannot find the file"
+msgstr "No podem trobar el fitxer"
+
+#: classes/helper.php:293
+msgid "Errors, warnings and notices"
+msgstr ""
+
+#: classes/helper.php:340
+msgid "Errors, warnings and notices found"
+msgstr ""
+
+#: classes/doc.php:99
+msgid "Example"
+msgstr "Exemple"
+
+#: classes/frontend.php:209
+msgid "Execute an export of users in the frontend"
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:45
+msgid "Execute an import of users in the frontend"
+msgstr "Importa usuaris a la interfície"
+
+# modificat xtec
+#: classes/cron.php:169
+msgid "Execute an import of users periodically"
+msgstr "Importa usuaris periòdicament"
+
+#: classes/cron.php:363
+msgid "Execute cron task now"
+msgstr ""
+
+#: classes/frontend.php:439 classes/import.php:97
+msgid "Export"
+msgstr ""
+
+#: classes/export.php:26
+msgid "Export users"
+msgstr ""
+
+# modificat xtec
+#: classes/columns.php:33 classes/import.php:100
+msgid "Extra profile fields"
+msgstr "Informació extra del perfil"
+
+# modificat xtec
+#: classes/columns.php:58
+msgid "Extra profile fields loadad in previous files"
+msgstr "Els camps de perfil addicional es carreguen en fitxers anteriors"
+
+#: classes/email-templates.php:39
+msgid "Featured Image"
+msgstr "Imatge Destacada"
+
+#: addons/woocommerce-subscriptions.php:674
+msgid ""
+"Fee name is missing from your CSV. This subscription has not been imported."
+msgstr ""
+
+#: classes/export.php:75
+msgid "Fields"
+msgstr ""
+
+#: classes/homepage.php:27
+msgid "File"
+msgstr ""
+
+#: classes/import.php:278
+msgid "File must contain at least 2 columns: username and email"
+msgstr ""
+"El fitxer ha de contenir almenys 2 columnes: nom d'usuari i adreça "
+"electrònica"
+
+# modificat xtec
+#: classes/homepage.php:16
+msgid ""
+"File must contain at least <strong>2 columns: username and email</strong>. "
+"These should be the first two columns and it should be placed <strong>in "
+"this order: username and email</strong>. If there are more columns, this "
+"plugin will manage it automatically."
+msgstr ""
+"El fitxer ha de contenir com a mínim <strong> 2 columnes: nom d'usuari "
+"(username) i correu electrònic (email) </strong>. Aquestes han de ser les "
+"dues primeres columnes i s'haurien de col·locar <strong> en aquest ordre: "
+"nom d'usuari (username) i correu electrònic (email) </strong>. Si hi ha més "
+"columnes, aquest connector ho gestionarà automàticament."
+
+# modificat xtec
+#: classes/homepage.php:466
+msgid "File successfully deleted"
+msgstr "El fitxer s'ha esborrat correctament"
+
+# modificat xtec
+#: classes/homepage.php:485
+msgid "Files successfully deleted"
+msgstr "Els fitxers s'han esborrat correctament"
+
+#: classes/email-templates.php:47
+msgid "Filter email template list"
+msgstr "Filtra la llista de plantilles de correu"
+
+#: classes/import.php:227
+msgid "First row represents the form of sheet"
+msgstr ""
+
+#: classes/homepage.php:530
+msgid ""
+"For security reasons you should delete this files, probably they would be "
+"visible in the Internet if a bot or someone discover the URL. You can delete "
+"each file or maybe you want delete all CSV files you have uploaded:"
+msgstr ""
+"Per raons de seguretat heu d'esborrar aquests fitxers, és possible que "
+"siguin visibles a internet si un robot o algú descobreix l'URL. Podeu "
+"esborrar cadascun dels fitxers o potser voleu esborrar tots els fitxers CSV "
+"que heu pujat:"
+
+# modificat xtec
+#: classes/doc.php:87
+msgid "Free support (in WordPress forums):"
+msgstr "Fòrums de suport:"
+
+#: classes/import.php:98
+msgid "Frontend"
+msgstr ""
+
+#: classes/cron.php:337
+msgid "GET endpoint to execute cron"
+msgstr ""
+
+#: addons/advanced-custom-fields.php:30
+msgid "Group name"
+msgstr ""
+
+#: addons/groups.php:24
+msgid "Groups is activated"
+msgstr ""
+
+#: classes/homepage.php:130
+msgid "Help"
+msgstr "Ajuda"
+
+# modificat xtec
+#: classes/donate.php:12 classes/help.php:12
+msgid "Hi! we are"
+msgstr "Hola"
+
+#: classes/import.php:106
+msgid "Hire an expert"
+msgstr ""
+
+#: classes/doc.php:94
+msgid "Hooks"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:198
+msgid "How often the event should reoccur?"
+msgstr "Amb quina freqüència hauria de tornar a ocórrer l'esdeveniment?"
+
+# modificat xtec
+#: classes/doc.php:27
+msgid ""
+"If id <strong>doesn't exist in your users table</strong>: WordPress core "
+"does not allow us insert it, so it will throw an error of kind: "
+"invalid_user_id"
+msgstr ""
+"Si l'identificador <strong> no existeix a la taula dels usuaris </strong>: "
+"el nucli de WordPress no ens permet inserir-lo, de manera que llançarà un "
+"error de tipus: invalid_user_id"
+
+# modificat xtec
+#: classes/doc.php:28
+msgid ""
+"If id <strong>exists</strong>: plugin check if username is the same, if yes, "
+"it will update the data, if not, it ignores the cell to avoid problems"
+msgstr ""
+"Si l'identificador <strong> existeix </strong>: el connector comprova si el "
+"nom d'usuari és el mateix, si és així, actualitzarà les dades, si no, ignora "
+"la cel·la per evitar problemes"
+
+#: classes/frontend.php:116
+msgid "If list is empty, the admin email will be used"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:46
+msgid ""
+"If you <strong>create a column called 'role'</strong>: if cell is empty, "
+"roles would be chosen from 'Default role' field in import screen; if cell "
+"has a value, it will be used as role, if this role doesn't exist the default "
+"one would be used"
+msgstr ""
+"Si <strong> creeu una columna anomenada \"rol\" </strong>: si la cel·la està "
+"buida, els rols es triarien del camp \"Rol per defecte\" a la pantalla "
+"d'importació; si la cel·la té un valor, s'utilitzarà com a rol, si aquest "
+"rol no existeix, s'utilitzarà el predeterminat"
+
+# modificat xtec
+#: classes/doc.php:37
+msgid ""
+"If you <strong>create a column for passwords</strong>: if cell is empty, "
+"password won't be updated; if cell has a value, it will be used"
+msgstr ""
+"Si <strong> creeu una columna per a contrasenyes </strong>: si la cel·la "
+"està buida, la contrasenya no s'actualitzarà; si la cel·la té un valor, "
+"s'utilitzarà"
+
+# modificat xtec
+#: classes/doc.php:36
+msgid ""
+"If you <strong>don't create a column for passwords</strong>: passwords will "
+"be generated automatically"
+msgstr ""
+"Si <strong> no creeu una columna per a contrasenyes </strong>: les "
+"contrasenyes es generaran automàticament"
+
+# modificat xtec
+#: classes/doc.php:45
+msgid ""
+"If you <strong>don't create a column for roles</strong>: roles would be "
+"chosen from the 'Default role' field in import screen."
+msgstr ""
+"Si <strong> no creeu una columna per als rols </strong>: els rols es "
+"triarien del camp \"Rol per defecte\" a la pantalla d'importació."
+
+#: classes/doc.php:95
+msgid ""
+"If you are a developer you can extend or use this plugin with all the hooks "
+"we provide, you have <a href=\"https://codection.com/import-users-csv-meta/"
+"listado-de-hooks-de-import-and-exports-users-and-customers/\">a list of them "
+"here</a>"
+msgstr ""
+
+#: addons/buddypress.php:140
+msgid ""
+"If you choose to update roles and group role is empty, user will be removed "
+"from the group"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:141
+msgid "If you get some error of this kind:"
+msgstr "Si obteniu algun error d'aquest tipus:"
+
+#: classes/export.php:64
+msgid ""
+"If you have problems and you get some value exported as a date that should "
+"not be converted to date, please deactivate this option. If this option is "
+"not activated, datetime format will be ignored."
+msgstr ""
+
+#: classes/homepage.php:412
+msgid "If you like it"
+msgstr ""
+
+#: addons/buddypress.php:76
+msgid "If you use more than one value, please use commas to separate each item"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:134
+msgid ""
+"If you want to assign an user to a group you have to create a column "
+"'bp_group' and a column 'bp_group_role'"
+msgstr ""
+"Si voleu assignar un usuari a un grup, haureu de crear una columna "
+"'bp_group' i una columna 'bp_group_role'"
+
+#: addons/wp-lms-course.php:28
+msgid ""
+"If you want to import multiple values, you can use a list using / to "
+"separate items"
+msgstr ""
+"Per importar diversos valors, podeu separar els elements de la llista amb el "
+"caràcter /"
+
+# modificat xtec
+#: addons/customer-area.php:29 addons/groups.php:32 addons/users-group.php:26
+#: addons/wp-users-group.php:26
+msgid ""
+"If you want to import multiple values, you can use a list using commas to "
+"separate items"
+msgstr ""
+"Si voleu importar múltiples valors, podeu utilitzar una llista amb comes per "
+"separar elements"
+
+#: classes/email-options.php:87
+msgid ""
+"If you want to use email with custom HTML and CSS tags, disable WP Editor"
+msgstr ""
+
+#: classes/import.php:96 classes/import.php:115
+msgid "Import"
+msgstr ""
+
+#: classes/wp-importer.php:12
+msgid "Import <strong>users or customers</strong> to your site via a csv file."
+msgstr ""
+
+#: addons/woocommerce-membership.php:23
+msgid "Import all membership information"
+msgstr ""
+
+#. Plugin Name of the plugin
+#: import-users-from-csv-with-meta.php:131
+msgid "Import and export users and customers"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:60
+msgid "Import cron task starts at"
+msgstr "Importa la tasca cron a partir de"
+
+#: addons/woocommerce-subscriptions.php:324
+msgid "Import forced manual renewal."
+msgstr ""
+
+#: classes/homepage.php:20
+msgid "Import users and customers from CSV"
+msgstr ""
+
+#: classes/wp-importer.php:12
+msgid "Import users or customers (CSV)"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:250
+msgid ""
+"Importing a pending cancelled subscription requires an end date in the "
+"future."
+msgstr ""
+
+#: classes/import.php:176
+msgid "Importing users"
+msgstr "Important usuaris"
+
+#: addons/mailpoet.php:23
+msgid ""
+"In this case you will only have to use <strong>mailpoet_list_ids</strong> "
+"column in order to associate a user to their users list, you can use a ID or "
+"a list of IDs separated by commas"
+msgstr ""
+
+#: addons/woocommerce-membership.php:24
+msgid ""
+"In this case you will only have to use <strong>membership_plan_id</strong> "
+"column in order to associate a user to their membership plan"
+msgstr ""
+
+#: addons/woocommerce-membership-rightpress.php:23
+msgid ""
+"In this case you will only have to use <strong>plan_id</strong> column in "
+"order to associate a user to their membership plan"
+msgstr ""
+
+#: classes/frontend.php:115
+msgid ""
+"Include a list of emails where notification will be sent, use commas to "
+"separate addresses"
+msgstr ""
+
+# modificat xtec
+#: addons/indeed-ultimate-membership-pro.php:27
+msgid "Indeed Ultimate Membership Pro is activated"
+msgstr "L'últim Membre Pro s'ha activat"
+
+# modificat xtec
+#: classes/cron.php:185 classes/cron.php:254
+msgid "Insert complete path to the file"
+msgstr "Inseriu la ruta completa a l'arxiu"
+
+#: classes/email-templates.php:43
+msgid "Insert into email template"
+msgstr "Insereix a una plantilla de correu"
+
+#: classes/helper.php:224
+msgid "Inserting and updating data"
+msgstr "Introducció i actualització de dades"
+
+#: classes/import.php:361
+msgid "Invalid EMail"
+msgstr "El correu electrònic no és vàlid"
+
+#: classes/import.php:360
+msgid "Invalid email \"%s\""
+msgstr ""
+
+#: classes/import.php:540
+msgid "Invalid role"
+msgstr "El rol no és vàlid"
+
+#: classes/import.php:542
+msgid "Invalid roles"
+msgstr "El rols no són vàlids"
+
+#: classes/email-templates.php:25
+msgid "Item Archives"
+msgstr "Arxius de l'element"
+
+#: classes/email-templates.php:26
+msgid "Item Attributes"
+msgstr "Atributs de l'element"
+
+#: classes/email-templates.php:45
+msgid "Items list"
+msgstr "Llista d'elements"
+
+# modificat xtec
+#: classes/cron.php:353
+msgid "Last actions of schedule task"
+msgstr "Últimes accions de tasca de programació"
+
+# modificat xtec
+#: classes/homepage.php:232 classes/homepage.php:266
+msgid "Leave the old value for this metadata"
+msgstr "Deixeu el valor anterior per a aquestes metadades"
+
+#: addons/wp-lms-course.php:22
+msgid "LifterLMS is activated"
+msgstr "LifterLMS està activat"
+
+# modificat xtec
+#: classes/doc.php:58
+msgid "Lists"
+msgstr "Llistes"
+
+#: classes/email-options.php:96
+msgid "Load custom email from email templates"
+msgstr "Carrega un correu personalitzat de les plantilles"
+
+#: classes/email-options.php:98
+msgid "Load subject, content and attachment from this email template"
+msgstr ""
+"Carrega el tema, el contingut i el fitxer adjunt d'aquesta plantilla de "
+"correu"
+
+#: classes/cron.php:348
+msgid "Log"
+msgstr "Registre"
+
+# modificat xtec
+#: classes/import.php:102
+msgid "Mail options"
+msgstr "Opcions de correu"
+
+#: classes/email-options.php:103
+msgid "Mail subject:"
+msgstr ""
+
+#: classes/email-templates.php:50
+msgid "Mail template (Import Users From CSV With Meta)"
+msgstr "Plantilla de correu (importa usuaris d'un CSV amb metadades)"
+
+#: classes/email-options.php:181
+msgid "Mail template and options updated correctly"
+msgstr ""
+
+#: classes/email-templates.php:51
+msgid "Mail templates for Import Users From CSV With Meta"
+msgstr "Plantilles de correu per a importar usuaris d'un CSV amb metadades"
+
+#: addons/mailpoet.php:20
+msgid "MailPoet is activated"
+msgstr ""
+
+#: classes/import.php:101
+msgid "Meta keys"
+msgstr ""
+
+#: classes/meta-keys.php:18
+msgid "Meta keys used in your database for users"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:802
+msgid "Missing tax code or ID from column: %s"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:247
+msgid "Move file after import?"
+msgstr "Voleu moure l'arxiu després d'importar?"
+
+#: classes/multisite.php:25
+msgid ""
+"Multiple blogs can be assigned creating <strong>a list of blog ids</strong> "
+"using commas to separate values."
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:47
+msgid ""
+"Multiple roles can be imported creating <strong>a list of roles</strong> "
+"using commas to separate values."
+msgstr ""
+"Es poden importar diversos rols creant <strong> una llista de rols </strong> "
+"utilitzant comes per separar els valors."
+
+#: classes/multisite.php:21
+msgid "Multisite is activated"
+msgstr ""
+
+# modificat xtec
+#: classes/help.php:9
+msgid "Need help with WordPress or WooCommerce?"
+msgstr "Necessiteu ajuda amb WordPress?"
+
+#: classes/homepage.php:332
+msgid "Never update passwords when updating a user"
+msgstr ""
+
+#: classes/homepage.php:328
+msgid "Never update passwords?"
+msgstr ""
+
+# modificat xtec
+#: addons/new-user-approve.php:24
+msgid "New User Approve"
+msgstr "Nou usuari aprovat"
+
+#: addons/new-user-approve.php:12
+msgid "New User Approve compatibility"
+msgstr "Compatibilitat amb «New User Approve»"
+
+#: classes/email-templates.php:31
+msgid "New email template"
+msgstr "Plantilla de correu electrònic nova"
+
+#: classes/new_features.php:9
+msgid "New features"
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:132 classes/frontend.php:141 classes/homepage.php:299
+#: classes/homepage.php:320
+msgid "No"
+msgstr "No"
+
+#: addons/woocommerce-subscriptions.php:495
+msgid ""
+"No payment meta was set for your %1$s subscription (%2$s). The next renewal "
+"is going to fail if you leave this."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:322
+msgid ""
+"No payment method was given in CSV and so the subscription has been set to "
+"manual renewal."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:592
+msgid "No product or variation in your store matches the product ID #%s."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:211
+msgid ""
+"No subscription status was specified. The subscription will be created with "
+"the status \"pending\". "
+msgstr ""
+
+#: classes/homepage.php:309
+msgid "No, but create a new user with a prefix in the username"
+msgstr ""
+
+#: classes/homepage.php:310
+msgid "No, skip this user"
+msgstr ""
+
+#: classes/columns.php:211 classes/cron.php:14 classes/email-options.php:145
+#: classes/frontend.php:307 classes/frontend.php:357 classes/import.php:13
+#: classes/import.php:144
+msgid "Nonce check failed"
+msgstr "Ha fallat la verificació del Nonce"
+
+#: addons/allow-multiple-accounts.php:25
+msgid "Not allowed"
+msgstr "No està permès"
+
+#: classes/email-templates.php:37
+msgid "Not found"
+msgstr "No s'ha trobat"
+
+#: classes/email-templates.php:38
+msgid "Not found in Trash"
+msgstr "No s'ha trobat a la paperera"
+
+#: classes/doc.php:49
+msgid ""
+"Notice: If the default new role is administrator in WordPress settings, role "
+"will not be set during a CSV file import with this plugin. Check it if all "
+"users are being imported as administrators and you have set another role in "
+"this plugin."
+msgstr ""
+"Avís: si el nou rol predeterminat és administrador a la configuració de "
+"WordPress, el rol no es definirà durant la importació de fitxers CSV. "
+"Comproveu-ho quan s’importin tots els usuaris com a administradors i hagueu "
+"establert un altre rol en aquesta extensió."
+
+#: classes/homepage.php:527
+msgid "Old CSV files uploaded"
+msgstr "Fitxers CSV antics"
+
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+#: addons/new-user-approve.php:24 addons/wp-members.php:24
+#: addons/wp-members.php:48
+msgid "Only for"
+msgstr "Només per"
+
+#: classes/export.php:186 classes/frontend.php:428
+msgid "Only users who are able to create users can export them."
+msgstr ""
+
+# modificat xtec
+#: classes/frontend.php:353
+msgid "Only users who are able to create users can manage this form."
+msgstr ""
+"Només els usuaris que poden crear usuaris poden gestionar aquest formulari."
+
+#: classes/homepage.php:225 classes/homepage.php:259
+msgid "Options"
+msgstr ""
+
+#: classes/donate.php:23
+msgid "Or if you prefer, you can also help us becoming a Patreon:"
+msgstr ""
+"O, si ho preferiu, també podeu ajudar-nos a convertir-nos en un Patreon:"
+
+#: classes/export.php:71
+msgid ""
+"Order all columns alphabetically to check easier your data. First two "
+"columns won't be affected"
+msgstr ""
+
+#: classes/export.php:68
+msgid "Order fields alphabetically"
+msgstr ""
+
+#: addons/pmpro.php:45
+msgid "Paid Mebership Pro is activated"
+msgstr "S'ha activat Pro Membership Pro"
+
+#: addons/paid-member-subscriptions.php:26
+msgid "Paid Member Subscriptions is activated"
+msgstr ""
+
+#: classes/email-templates.php:27
+msgid "Parent Item:"
+msgstr "Element pare:"
+
+#: classes/email-options.php:137 classes/homepage.php:151
+msgid "Password"
+msgstr "Contrasenya"
+
+#: classes/email-options.php:46
+msgid "Password changed"
+msgstr ""
+
+# modificat xtec
+#: classes/email-options.php:213
+msgid "Password has not been changed"
+msgstr "La contrasenya no ha canviat"
+
+#: addons/woocommerce.php:108 classes/email-options.php:208
+msgid "Password reset link"
+msgstr ""
+
+#: classes/doc.php:33
+msgid "Passwords (column password)"
+msgstr "Contrasenyes (contrasenya de columna)"
+
+# modificat xtec
+#: classes/cron.php:183
+msgid "Path of file that are going to be imported"
+msgstr "La ruta de l'arxiu que serà importat"
+
+#: classes/donate.php:17
+msgid "PayPal – The safer, easier way to pay online."
+msgstr "PayPal – la manera més segura i fàcil per pagar en línia."
+
+# modificat xtec
+#: classes/cron.php:191
+msgid "Period"
+msgstr "Període"
+
+#: classes/homepage.php:436
+msgid "Please choose a file"
+msgstr "Seleccioneu un fitxer"
+
+#: classes/homepage.php:441
+msgid "Please enter a path to the file"
+msgstr ""
+
+#: classes/homepage.php:412
+msgid "Please vote and support us"
+msgstr ""
+
+# modificat xtec
+#: classes/homepage.php:17
+msgid ""
+"Please, read carefully how <strong>passwords are managed</strong> and also "
+"take note about capitalization, this plugin is <strong>case sensitive</"
+"strong>."
+msgstr ""
+"Llegiu atentament com es <strong>gestionen les contrasenyes </strong> i "
+"també preneu nota de la majúscula, aquest connector és <strong> sensible a "
+"les majúscules i minúscules </strong>."
+
+#: classes/multisite.php:22
+msgid ""
+"Plugin can assing users to blogs after importing them roles. This is how it "
+"works:"
+msgstr ""
+
+#: addons/paid-member-subscriptions.php:27
+msgid ""
+"Plugin can create member subscriptions while this is importing. You will "
+"need to use those columns:"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:43
+msgid "Plugin can import roles from the CSV. This is how it works:"
+msgstr "Aquest complement pot importar funcions des del CSV. Funciona així:"
+
+# modificat xtec
+#: classes/doc.php:59
+msgid "Plugin can now import lists an array. Use this separator:"
+msgstr ""
+"El complement pot importar llistes d'una matriu. Utilitzeu aquest separador:"
+
+# modificat xtec
+#: classes/doc.php:54
+msgid ""
+"Plugin can now import serialized data. You have to use the serialized string "
+"directly in the CSV cell in order the plugin will be able to understand it "
+"as an serialized data instead as any other string."
+msgstr ""
+"El complement pot importar dades serialitzades. Heu d'utilitzar la cadena "
+"serialitzada directament a la cel·la CSV perquè el connector pugui entendre-"
+"la com a dades serialitzades en lloc de qualsevol altra cadena."
+
+# modificat xtec
+#: import-users-from-csv-with-meta.php:159
+msgid "Premium plugins"
+msgstr "Complements premium"
+
+# modificat xtec
+#: import-users-from-csv-with-meta.php:158
+msgid "Premium support"
+msgstr "Suport premium"
+
+# modificat xtec
+#: classes/doc.php:88
+msgid "Premium support (with a quote):"
+msgstr "Suport premium (amb quota):"
+
+#: classes/import.php:163
+msgid "Problem uploading file to import. Error details: "
+msgstr ""
+
+#: classes/cron.php:386
+msgid "Problems executing cron task: "
+msgstr ""
+
+#: classes/import.php:406
+msgid ""
+"Problems with ID \"%s\" username is not the same in the CSV and in database"
+msgstr ""
+
+#: classes/import.php:490
+msgid "Problems with user: \"%s\" does not exists, error: %s"
+msgstr ""
+
+#: classes/import.php:744
+msgid ""
+"Process finished you can go <a href=\"%s\">here to see results</a> or you "
+"can do <a href=\"%s\">a new import</a>."
+msgstr ""
+
+#: classes/homepage.php:410
+msgid "Rate Us"
+msgstr ""
+
+# modificat xtec
+#: addons/woocommerce-membership.php:23
+msgid "Read more about columns and formats"
+msgstr "Llegiu més sobre columnes i formats"
+
+#: classes/import.php:226
+msgid "Ready to registers"
+msgstr ""
+
+#: classes/email-templates.php:41
+msgid "Remove featured image"
+msgstr "Elimina la imatge destacada"
+
+#: classes/email-options.php:119 classes/email-templates.php:131
+msgid "Remove file"
+msgstr "Suprimeix el fitxer"
+
+# modificat xtec
+#: addons/allow-multiple-accounts.php:22 addons/allow-multiple-accounts.php:44
+msgid "Repeated email in different users?"
+msgstr "Correus repetits en diferents usuaris?"
+
+#: classes/columns.php:53
+msgid "Reset fields"
+msgstr ""
+
+#: classes/columns.php:48
+msgid "Reset fields in profile?"
+msgstr ""
+
+#: classes/helper.php:324
+msgid "Results"
+msgstr ""
+
+#: classes/cron.php:217 classes/export.php:31 classes/frontend.php:72
+msgid "Role"
+msgstr "Rol"
+
+#: classes/homepage.php:54
+msgid "Roles"
+msgstr ""
+
+#: classes/doc.php:42
+msgid "Roles (column role)"
+msgstr "Rols (rol de columna)"
+
+#: classes/helper.php:228 classes/helper.php:237 classes/helper.php:297
+#: classes/helper.php:304
+msgid "Row"
+msgstr "Fila"
+
+#: classes/import.php:313
+msgid ""
+"Row does not have the same columns than the header, we are going to ignore "
+"this row"
+msgstr ""
+
+#: classes/email-options.php:124
+msgid "Save email template and options"
+msgstr "Desa la plantilla de correu electrònic i les opcions"
+
+# modificat xtec
+#: classes/frontend.php:206
+msgid "Save frontend import options"
+msgstr "Desa les opcions d'importació de la interfície"
+
+# modificat xtec
+#: classes/columns.php:43
+msgid "Save option"
+msgstr "Desa"
+
+# modificat xtec
+#: classes/cron.php:362
+msgid "Save schedule options"
+msgstr "Desa les opcions de planificació"
+
+#: classes/email-templates.php:36
+msgid "Search email template"
+msgstr "Cerca la plantilla de correu electrònic"
+
+#: classes/export.php:54
+msgid "Semicolon"
+msgstr ""
+
+#: classes/email-options.php:50
+msgid "Send automatic change password WordPress emails?"
+msgstr ""
+
+#: classes/homepage.php:239 classes/homepage.php:273
+msgid "Send mail"
+msgstr "Envia missatge de correu electrònic"
+
+# modificat xtec
+#: classes/cron.php:210 classes/frontend.php:102
+msgid "Send mail also to users that are being updated?"
+msgstr "Envia correu també als usuaris que s'estan actualitzant?"
+
+# modificat xtec
+#: classes/frontend.php:95
+msgid "Send mail when using frontend import?"
+msgstr ""
+"Voleu enviar un correu electrònic quan s'utilitza la importació de la "
+"interfície?"
+
+# modificat xtec
+#: classes/cron.php:203
+msgid "Send mail when using periodical import?"
+msgstr ""
+"Voleu enviar un correu electrònic quan s'utilitza la importació periòdica?"
+
+#: classes/frontend.php:109
+msgid "Send notification to admin when the frontend importer is used?"
+msgstr ""
+
+#: classes/email-options.php:125
+msgid "Send test email"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:53
+msgid "Serialized data"
+msgstr "Dades serialitzades"
+
+#: classes/email-templates.php:40
+msgid "Set featured image"
+msgstr "Defineix la imatge destacada"
+
+#: classes/homepage.php:141
+msgid "Sets the username."
+msgstr "Estableix el nom d'usuari."
+
+#: classes/homepage.php:147
+msgid "Sets user email."
+msgstr "Estableix l'adreça electrònica de l'usuari."
+
+#: classes/homepage.php:153
+msgid "Sets user password."
+msgstr "Estableix la contrasenya de l'usuari."
+
+# modificat xtec
+#: classes/cron.php:54 classes/frontend.php:325
+msgid "Settings updated correctly"
+msgstr "La configuració s'ha actualitzat correctament"
+
+#: addons/woocommerce-subscriptions.php:379
+msgid ""
+"Shipping method and title for the subscription have been left as empty. "
+msgstr ""
+
+#: classes/import.php:105
+msgid "Shop"
+msgstr ""
+
+# modificat xtec
+#: classes/columns.php:37
+msgid "Show fields in profile?"
+msgstr "Voleu mostrar els camps del perfil?"
+
+#: classes/import.php:349
+msgid "Some of the next roles \"%s\" does not exists"
+msgstr ""
+
+#: classes/homepage.php:394
+msgid "Start importing"
+msgstr "Inicia la importació"
+
+#: addons/mailpoet.php:23
+msgid "Subscribe users to MailPoet lists"
+msgstr ""
+
+#: classes/export.php:55
+msgid "Tab"
+msgstr ""
+
+#: classes/email-options.php:271
+msgid "Test email sent"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:231
+msgid "The %s date must occur after the next payment date."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:235
+msgid "The %s date must occur after the trial end date."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:239
+msgid "The %s must occur after the start date."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:375
+msgid "The following billing address fields have been left empty: %s. "
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:371
+msgid "The following shipping address fields have been left empty: %s. "
+msgstr ""
+
+#: classes/homepage.php:157
+msgid ""
+"The next columns are totally customizable and you can use whatever you want. "
+"All rows must contains same columns"
+msgstr ""
+"Les columnes següents són totalment personalitzables i es poden fer servir "
+"de la forma que vulgueu. Totes les files han de contenir les mateixes "
+"columnes"
+
+#: addons/woocommerce-subscriptions.php:501
+msgid ""
+"The payment method \"%s\" is either not enabled or does not support the new "
+"features of Subscriptions 2.0 and can not be properly attached to your "
+"subscription. This subscription has been set to manual renewals."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:586
+msgid "The product_id is missing from CSV."
+msgstr ""
+
+#: classes/doc.php:70 classes/homepage.php:188
+msgid "The user's first name."
+msgstr "Nom de l'usuari."
+
+#: classes/doc.php:71 classes/homepage.php:194
+msgid "The user's last name."
+msgstr "Cognom de l'usuari."
+
+#: classes/doc.php:69 classes/homepage.php:182
+msgid "The user's nickname, defaults to the user's username."
+msgstr "L'àlies de l'usuari, per defecte, el nom d'usuari."
+
+#: addons/groups.php:29
+msgid ""
+"The value of each cell will be the ID of the group that you want to assign "
+"to this user"
+msgstr ""
+
+#: addons/wp-lms-course.php:27
+msgid ""
+"The value of each cell will be the NUMBER of the course to enroll (do not "
+"use slugs)"
+msgstr ""
+"El valor de cada cel·la serà el nombre del curs a matricular-se (no facis "
+"servir noms curts)"
+
+#: addons/groups.php:31
+msgid ""
+"The value of each cell will be the name of the group that you want to assign "
+"to this user"
+msgstr ""
+
+# modificat xtec
+#: addons/users-group.php:25 addons/wp-users-group.php:25
+msgid ""
+"The value of each cell will be the name of the user group (do not use slugs)"
+msgstr ""
+"El valor de cada cel·la serà el nom del grup d'usuaris (no utilitzeu slugs)"
+
+#: addons/customer-area.php:28
+msgid "The value of each cell will be the slug of the group"
+msgstr ""
+
+#: addons/wp-user-avatar.php:37
+msgid "The value of each cell will be the url to the image in your system"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:135
+msgid ""
+"Then in each cell you have to fill with the BuddyPress <strong>group slug</"
+"strong>"
+msgstr ""
+"Heu d'omplir cada cel·la amb <strong> l'slug de grups</strong> de BuddyPress"
+
+# modificat xtec
+#: classes/columns.php:68
+msgid "There is no columns loaded yet"
+msgstr "Encara no s'han carregat les columnes"
+
+# modiifcat xtec
+#: import-users-from-csv-with-meta.php:183
+msgid "There were problems deleting the file, please check file permissions"
+msgstr "No s'ha pogut esborrar el fitxer, comproveu els permisos dels fitxers"
+
+# modificat xtec
+#: classes/homepage.php:483
+msgid "There were problems deleting the files, please check files permissions"
+msgstr "No s'ha pogut esborrar el fitxers, comproveu els permisos dels fitxers"
+
+#: classes/cron.php:340
+msgid ""
+"This endpoint does an administrative task, so in order to run it you must be "
+"authenticated with a user with privileges."
+msgstr ""
+
+#: classes/new_features.php:12
+msgid ""
+"This is a list of new features that we want to include, but we have not been "
+"able to do yet. We have a bussiness and have not so much time for this "
+"plugin as we would like to have. If you need some new feature not included "
+"in this list, please write us to:"
+msgstr ""
+
+#: import-users-from-csv-with-meta.php:178
+#: import-users-from-csv-with-meta.php:205
+msgid "This plugin only can delete the type of file it manages, CSV files."
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:82
+msgid ""
+"This subscription importer is based in the official <a href=\"%S"
+"\">WooCommerce Subscription Importer Exporter</a>."
+msgstr ""
+
+#: classes/email-options.php:125
+msgid "This test email will be sent to the current user"
+msgstr ""
+
+#: classes/helper.php:299 classes/helper.php:306
+msgid "Type"
+msgstr ""
+
+# modificat xtec
+#: classes/email-options.php:137 import-users-from-csv-with-meta.php:29
+msgid "URL to login"
+msgstr "Adreça d'inici de sessió (URL)"
+
+#: classes/email-templates.php:33
+msgid "Update email template"
+msgstr "Actualitza la plantilla de correu electrònic"
+
+#: classes/homepage.php:305
+msgid "Update emails?"
+msgstr ""
+
+#: classes/frontend.php:128 classes/homepage.php:295
+msgid "Update existing users?"
+msgstr "Voleu actualitzar els usuaris existents?"
+
+#: classes/homepage.php:331
+msgid "Update passwords as it is described in documentation"
+msgstr ""
+
+#: classes/cron.php:240 classes/frontend.php:138 classes/homepage.php:317
+msgid "Update roles for existing users?"
+msgstr "Voleu actualitzar el rol dels usuaris existents?"
+
+#: classes/frontend.php:123 classes/homepage.php:290
+msgid "Update users"
+msgstr "Actualitza els usuaris"
+
+# modificat xtec
+#: classes/frontend.php:401
+msgid "Upload and process"
+msgstr "Carrega i processa"
+
+#: classes/email-options.php:118 classes/email-templates.php:130
+msgid "Upload file"
+msgstr "Penja un document"
+
+#: classes/email-templates.php:44
+msgid "Uploaded to this email template"
+msgstr "S'ha carregat en aquesta plantilla de correu electrònic"
+
+#: classes/email-templates.php:42
+msgid "Use as featured image"
+msgstr "Useu com a imatge resum"
+
+#: classes/email-options.php:259
+msgid "Use this file"
+msgstr "Usa aquest fitxer"
+
+# modificat xtec
+#: classes/frontend.php:52 classes/frontend.php:214
+msgid "Use this shortcode in any page or post"
+msgstr "Utilitzeu aquest codi a qualsevol pàgina o article"
+
+#: classes/import.php:462
+msgid "User already exists as: %s (in this CSV file is called: %s)"
+msgstr ""
+
+#: classes/export.php:42
+msgid "User created"
+msgstr ""
+
+#: classes/email-options.php:29 classes/email-options.php:33
+msgid "User created or edited"
+msgstr ""
+
+#: classes/import.php:371
+msgid "User with ID \"%s\" exists, we ignore it"
+msgstr ""
+
+#: classes/import.php:386 classes/import.php:435
+msgid "User with email \"%s\" exists, we ignore it"
+msgstr ""
+
+#: classes/import.php:423
+msgid "User with username \"%s\" exists, we ignore it"
+msgstr ""
+
+#: classes/frontend.php:342
+msgid ""
+"User with username: %s has executed an import using the shortcode in the "
+"frontend."
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:74
+msgid "User's AOL IM account."
+msgstr "Compte AOL IM de l'usuari"
+
+# modificat xtec
+#: classes/doc.php:73
+msgid "User's Jabber account."
+msgstr "Compte Jabber de l'usuari."
+
+# modificat xtec
+#: classes/doc.php:75
+msgid "User's Yahoo IM account."
+msgstr "Compte Yahoo IM de l'usuari."
+
+#: classes/email-options.php:137 classes/homepage.php:139
+#: import-users-from-csv-with-meta.php:29
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: classes/doc.php:15
+msgid ""
+"Username: you can leave it empty and the username will be generated randomly"
+msgstr ""
+
+#: classes/helper.php:332
+msgid "Users created"
+msgstr ""
+
+#: classes/cron.php:276 classes/frontend.php:150 classes/homepage.php:339
+msgid "Users not present in CSV file"
+msgstr "Els usuaris no són al fitxer CSV"
+
+#: classes/helper.php:328
+msgid "Users processed"
+msgstr ""
+
+#: classes/helper.php:336
+msgid "Users updated"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Using this plugin you will be able to import and export users or customers "
+"choosing many options and interacting with lots of other plugins"
+msgstr ""
+
+#: classes/email-templates.php:34
+msgid "View email template"
+msgstr "Mostra la plantilla de correu electrònic"
+
+#: classes/email-templates.php:35
+msgid "View email templates"
+msgstr "Mostra les plantilles de correu electrònic"
+
+#: addons/customer-area.php:23
+msgid "WP Customer Area Managed Groups is activated"
+msgstr ""
+
+# modificat xtec
+#: addons/wp-members.php:24 addons/wp-members.php:48
+msgid "WP Members"
+msgstr "Membres WP"
+
+#: addons/wp-members.php:12 addons/wp-members.php:36
+msgid "WP Members compatibility"
+msgstr "Compatibilitat amb WP Members"
+
+#: addons/wp-user-avatar.php:32
+msgid "WP Users Avatar is activated"
+msgstr ""
+
+# modificat xtec
+#: addons/users-group.php:20 addons/wp-users-group.php:20
+msgid "WP Users Group is activated"
+msgstr "Grup d'usuaris WP activat"
+
+#: classes/donate.php:13
+msgid ""
+"We have been spending many hours to develop this plugin and answering "
+"questions in the forum to give you the best support. <br>If you like and use "
+"this plugin, you can <strong>buy us a cup of coffee</strong>."
+msgstr ""
+"Hem dedicat moltes hores a desenvolupar aquesta extensió i respondre "
+"preguntes al fòrum per donar-vos el millor suport. <br>Si useu aquesta "
+"extensió i us agrada, podeu <strong>comprar-nos un cafè</strong>."
+
+#: classes/help.php:13
+msgid ""
+"We work everyday with WordPress and WooCommerce, if you need help hire us, "
+"send us a message to"
+msgstr ""
+"Treballem cada dia amb WordPress i WooCommerce, si necessiteu ajuda podeu "
+"contractar-nos, envieu-nos un missatge a"
+
+#: classes/email-options.php:140 import-users-from-csv-with-meta.php:28
+msgid "Welcome to"
+msgstr "Benvinguts a"
+
+#: classes/email-options.php:137 import-users-from-csv-with-meta.php:29
+msgid "Welcome,"
+msgstr "Benvinguts,"
+
+# modificat xtec
+#: classes/homepage.php:229 classes/homepage.php:263
+msgid "What should the plugin do with empty cells?"
+msgstr "Què faria el complement amb les cel·les buides?"
+
+#: classes/homepage.php:312
+msgid ""
+"What the plugin should do if the plugin find an user, identified by their "
+"username, with a different email"
+msgstr ""
+
+#: classes/homepage.php:88
+msgid "Where do I get this info?"
+msgstr "On trobo aquesta informació?"
+
+# modificat xtec
+#: classes/cron.php:235 classes/frontend.php:90
+msgid "Which role would be used to import users?"
+msgstr "Quin rol s'hauria d'utilitzar per importar usuaris?"
+
+#: classes/actions.php:75
+msgid ""
+"Within each cell, you must indicate the post_id that will be assigned to "
+"this user. You can use a list separating each ID by commas. The post can be "
+"of any post type."
+msgstr ""
+
+#: addons/woocommerce-custom-fields.php:35
+msgid "WooCommerce Custom Fields is activated"
+msgstr ""
+
+#: addons/woocommerce-membership-rightpress.php:20
+msgid "WooCommerce Membership by RightPress is activated"
+msgstr ""
+
+#: addons/woocommerce-membership.php:20
+msgid "WooCommerce Memberships is activated"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:24
+msgid "WooCommerce Subscriptions import errors"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:23
+msgid "WooCommerce Subscriptions import warnings"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:76
+msgid "WooCommerce Subscriptions is activated"
+msgstr ""
+
+# modificat xtec
+#: addons/woocommerce.php:53
+msgid "WooCommerce is activated"
+msgstr "WooCommerce activat"
+
+#: addons/woocommerce.php:116
+msgid "WooCommerce lost password url"
+msgstr ""
+
+#: addons/woocommerce.php:117
+msgid "WooCommerce password reset url"
+msgstr ""
+
+#: addons/woocommerce.php:118
+msgid "WooCommerce password reset url with HTML link"
+msgstr ""
+
+#: classes/email-options.php:24
+msgid "WordPress automatic emails"
+msgstr ""
+
+# modificat xtec
+#: classes/doc.php:63
+msgid "WordPress default profile data"
+msgstr "Mostra els avatars predefinits del WordPress"
+
+#: classes/frontend.php:131 classes/homepage.php:298 classes/homepage.php:308
+msgid "Yes"
+msgstr "Sí"
+
+# modificat xtec
+#: classes/frontend.php:143 classes/homepage.php:322
+msgid "Yes, add new roles and not override existing ones"
+msgstr "Afegiu nous rols i no anul·leu els existents"
+
+# modificat xtec
+#: classes/frontend.php:142 classes/homepage.php:321
+msgid "Yes, update and override existing roles"
+msgstr "Actualitzeu el rol dels usuaris existents"
+
+#: classes/import.php:6
+msgid "You are not allowed to see this content."
+msgstr "No esteu autoritzat a veure aquest contingut."
+
+# modificat xtec
+#: import-users-from-csv-with-meta.php:172
+#: import-users-from-csv-with-meta.php:194
+msgid "You are not an adminstrator"
+msgstr "No sou administrador"
+
+#: classes/new_features.php:12
+msgid ""
+"You can also donate us or talk with us to have some of the next new features "
+"done soon."
+msgstr ""
+
+#: classes/wp-importer.php:21
+msgid ""
+"You can also export users and customers in CSV format, filtering by user "
+"created date, role, choosing the delimiter and some other options using <a "
+"href=\"%s\">this exporter</a>."
+msgstr ""
+
+#: classes/homepage.php:74
+msgid ""
+"You can also import roles from a CSV column. Please read documentation tab "
+"to see how it can be done. If you choose more than one role, the roles would "
+"be assigned correctly but you should use some plugin like <a href=\"https://"
+"wordpress.org/plugins/user-role-editor/\">User Role Editor</a> to manage "
+"them."
+msgstr ""
+"També podeu importar rols des d'una columna CSV. Llegiu la pestanya de "
+"documentació per veure com es pot fer. Si trieu més d’un rol, aquests "
+"s’assignaran correctament però haureu d’utilitzar algun complement com ara "
+"l'<a href=\"https://wordpress.org/plugins/user-role-editor/\">User Role "
+"Editor</a> per gestionar-los."
+
+# modificta xtec
+#: classes/email-templates.php:85
+msgid ""
+"You can also use any WordPress user standard field or an own metadata, if "
+"you have used it in your CSV. For example, if you have a first_name column, "
+"you could use **first_name** or any other meta_data like **my_custom_meta**"
+msgstr ""
+"Podeu utilitzar qualsevol camp estàndard de l'usuari de WordPress o una "
+"metadada pròpia, si l'heu utilitzat al vostre CSV. Per exemple, si teniu una "
+"columna de cognoms, podríeu utilitzar ** first_name** o qualsevol altra "
+"meta_data com ** my_custom_meta **"
+
+#: addons/buddypress.php:137
+msgid ""
+"You can also use group ids if you know it using a column 'bp_group_id' "
+"instead of 'bp_group'"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:138
+msgid ""
+"You can do it with multiple groups at the same time using commas to separate "
+"different groups, in bp_group column, i.e.: <em>group_1, group_2, group_3</"
+"em>"
+msgstr ""
+"Podeu fer-ho amb diversos grups al mateix temps, utilitzant comes per "
+"separar diferents grups, a la columna bp_group, és a dir: <em> group_1, "
+"group_2, group_3 </em>"
+
+#: classes/actions.php:73
+msgid ""
+"You can do some actions while you are importing. You have to name the column "
+"as indicated below and follow the instructions:"
+msgstr ""
+
+#: classes/cron.php:339
+msgid ""
+"You can execute the cron process out of your site using the next REST-API "
+"endpoint:"
+msgstr ""
+
+#: addons/woocommerce-subscriptions.php:79
+msgid "You can import subscriptions with their info"
+msgstr ""
+
+#: addons/advanced-custom-fields.php:27
+msgid ""
+"You can import those fields, look at every group which fields you can import "
+"using the column names shown below."
+msgstr ""
+
+#: addons/woocommerce-custom-fields.php:37
+msgid ""
+"You can import those fields, look at fields you can import using the column "
+"names shown below."
+msgstr ""
+
+#: addons/groups.php:26
+msgid ""
+"You can import user and assign them to the users groups using the next format"
+msgstr ""
+
+#: addons/wp-user-avatar.php:34
+msgid ""
+"You can import user avatar and assign them to the users using the next format"
+msgstr ""
+
+# modificat xtec
+#: addons/customer-area.php:25 addons/users-group.php:22
+#: addons/wp-users-group.php:22
+msgid ""
+"You can import user groups and assign them to the users using the next format"
+msgstr ""
+"Podeu importar grups d'usuaris i assignar-los als usuaris utilitzant el "
+"següent format"
+
+#: addons/wp-lms-course.php:24
+msgid "You can import users and assign them to LMS Course using next format"
+msgstr ""
+"Podeu importar usuaris i assignar-los al curs LMS mitjançant el següent "
+"format"
+
+#: addons/buddypress.php:123
+msgid ""
+"You can import users avatars using a column called <strong>bp_avatar</"
+"strong>, in this field you can place:"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:104
+msgid ""
+"You can insert any profile from BuddyPress using his name as header. Plugin "
+"will check, before import, which fields are defined in BuddyPress and will "
+"assign it in the update. You can use this fields:"
+msgstr ""
+"Podeu inserir qualsevol perfil de BuddyPress utilitzant el seu nom com a "
+"capçalera. El complement verificarà, abans d'importar, els camps definits a "
+"BuddyPress i l'assignarà a l'actualització. Podeu utilitzar aquests camps:"
+
+#: classes/email-templates.php:76
+msgid "You can use"
+msgstr "Pots utilitzar"
+
+# modificat xtec
+#: classes/doc.php:25
+msgid ""
+"You can use a column called id in order to make inserts or updates of an "
+"user using the ID used by WordPress in the wp_users table. We have two "
+"different cases:"
+msgstr ""
+"Podeu utilitzar una columna anomenada id per fer insercions o "
+"actualitzacions d'un usuari utilitzant l'identificador que utilitza "
+"WordPress a la taula wp_users. Trobareu dos casos diferents:"
+
+#: classes/frontend.php:241
+msgid ""
+"You can use delimiter attribute to set which delimiter is going to be used, "
+"allowed values are:"
+msgstr ""
+
+#: classes/frontend.php:235
+msgid ""
+"You can use from attribute to filter users created before a specified date. "
+"Date format has to be: Y-m-d, for example:"
+msgstr ""
+
+#: classes/frontend.php:229
+msgid ""
+"You can use from attribute to filter users created from a specified date. "
+"Date format has to be: Y-m-d, for example:"
+msgstr ""
+
+#: classes/frontend.php:247
+msgid ""
+"You can use order-alphabetically attribute to order alphabetically the "
+"fields, for example"
+msgstr ""
+
+#: classes/frontend.php:223
+msgid ""
+"You can use role as attribute to choose directly in the shortcode the role "
+"to use during the export. Remind that you must use the role slug, for "
+"example:"
+msgstr ""
+
+#: classes/frontend.php:61
+msgid ""
+"You can use role as attribute to choose directly in the shortcode the role "
+"to use during the import. Remind that you must use the role slug, for "
+"example:"
+msgstr ""
+
+# modificat xtec
+#: addons/woocommerce-membership.php:23
+msgid ""
+"You can use the <strong>columns in the CSV format created by WooCommercer "
+"Membership</strong> in order to import data from this plugin."
+msgstr ""
+"Podeu utilitzar les columnes <strong> en el format CSV creat per "
+"WooCommercer Membership </strong> per importar dades d'aquest connector."
+
+# modificat xtec
+#: addons/buddypress.php:132
+msgid ""
+"You can use the <strong>profile fields</strong> you have created and also "
+"you can set one or more groups for each user. For example:"
+msgstr ""
+"Podeu utilitzar els <strong> camps de perfil </strong> que heu creat i també "
+"podeu establir un o més grups per a cada usuari. Per exemple:"
+
+# modificat xtec
+#: addons/indeed-ultimate-membership-pro.php:29
+msgid ""
+"You can use the columns in the CSV in order to import data from Indeed "
+"Ultimate Membership Pro."
+msgstr ""
+"Podeu utilitzar les columnes del CSV per importar les dades de Indeed "
+"Ultimate Membership Pro."
+
+# modificat xtec
+#: addons/pmpro.php:47
+msgid ""
+"You can use the columns in the CSV in order to import data from Paid "
+"Membership Pro plugin."
+msgstr ""
+"Podeu utilitzar les columnes del CSV per importar dades del connector Paid "
+"Membership Pro."
+
+#: classes/frontend.php:67
+msgid ""
+"You can use this attribute to make delete only users of the specified role "
+"that are not present in the CSV, for example:"
+msgstr ""
+
+# modificat xtec
+#: addons/woocommerce.php:54
+msgid ""
+"You can use those labels if you want to set data adapted to the WooCommerce "
+"default user columns"
+msgstr ""
+"Podeu utilitzar aquestes etiquetes si voleu establir dades adaptades a les "
+"columnes d'usuaris predeterminats de WooCommerce"
+
+# modificat xtec
+#: classes/doc.php:64
+msgid ""
+"You can use those labels if you want to set data adapted to the WordPress "
+"default user columns (the ones who use the function"
+msgstr ""
+"Podeu utilitzar aquestes etiquetes si voleu establir dades adaptades a les "
+"columnes d'usuaris predeterminades de WordPress (els que utilitzen la funció"
+
+#: classes/import.php:354
+msgid "You do not have permission to assign some of the next roles \"%s\""
+msgstr ""
+
+#: classes/multisite.php:24
+msgid ""
+"You have to <strong>create a column called 'blogs'</strong>: if cell is "
+"empty, it won't assign users to any blog; if cell has a value, it will be "
+"used. You have to fill it with blog_id"
+msgstr ""
+
+# modificat xtec
+#: classes/cron.php:186 classes/cron.php:255 classes/homepage.php:46
+msgid "You have to introduce the path to file, i.e.:"
+msgstr "Introduïu la ruta d'accés al fitxer, és a dir:"
+
+#: classes/homepage.php:135
+msgid "You should fill the first three rows with the next values"
+msgstr "Heu d'omplir les tres primeres columnes amb els valors següents"
+
+# modificat xtec
+#: classes/email-options.php:137 import-users-from-csv-with-meta.php:29
+msgid "Your data to login in this site is:"
+msgstr "Les vostres dades per iniciar sessió en aquest lloc són:"
+
+# modificat xtec
+#: classes/cron.php:268
+msgid ""
+"Your file will be renamed after moved, so you will not lost any version of "
+"it. The way to rename will be append the time stamp using this date format: "
+"YmdHis."
+msgstr ""
+"El vostre fitxer serà reanomenat després d'haver-se mogut, de manera que no "
+"perdreu cap versió d'aquest. La manera de canviar el nom s'afegirà al time "
+"stamp mitjançant aquest format de data: YmdHis."
+
+#: classes/export.php:64
+msgid "accepted formats"
+msgstr ""
+
+# modificat xtec
+#: classes/donate.php:12
+msgid "and all the team of"
+msgstr "i tot l'equip de"
+
+#: classes/help.php:12
+msgid "and the team of"
+msgstr "i l'equip de"
+
+#: addons/wp-user-avatar.php:36
+msgid "avatar_url as the column title"
+msgstr ""
+
+#: classes/donate.php:11
+msgid "buy me a coffee"
+msgstr "comprar-me un cafè"
+
+#: classes/homepage.php:40 classes/homepage.php:47
+msgid "click here"
+msgstr "feu clic aquí"
+
+# modificat xtec
+#. Author of the plugin
+msgid "codection"
+msgstr "codificació"
+
+# modificat xtec
+#: classes/email-templates.php:80
+msgid "current site login url"
+msgstr "URL d'entrada del lloc actual"
+
+#: addons/customer-area.php:27
+msgid "customer_area_groups as the column title"
+msgstr ""
+
+#: classes/homepage.php:198
+msgid "description"
+msgstr "descripció"
+
+# modificat xtec
+#: classes/donate.php:12 classes/help.php:12
+msgid "developers of this plugin."
+msgstr "desenvolupadors d'aquest complement."
+
+#: classes/homepage.php:174
+msgid "display_name"
+msgstr "display_name"
+
+#: classes/doc.php:100
+msgid "file"
+msgstr "fitxer"
+
+#: classes/homepage.php:186
+msgid "first_name"
+msgstr "first_name"
+
+#: addons/groups.php:28
+msgid "group_id as the column title"
+msgstr ""
+
+# modificat xtec
+#. Author URI of the plugin
+msgid "https://codection.com"
+msgstr "https://codection.com"
+
+# modificat xtec
+#. Plugin URI of the plugin
+msgid "https://www.codection.com"
+msgstr "https://www.codection.com"
+
+#: classes/doc.php:24
+msgid "id (column id)"
+msgstr "id (id de columna)"
+
+#: classes/homepage.php:192
+msgid "last_name"
+msgstr "last_name"
+
+#: addons/wp-lms-course.php:26
+msgid "lms_courses as the column title"
+msgstr "lms_courses com a títol de columna"
+
+# modificat xtec
+#: classes/email-templates.php:81
+msgid "lost password url"
+msgstr "URL de contrasenya perduda"
+
+#: classes/homepage.php:180
+msgid "nickname"
+msgstr "sobrenom"
+
+#: classes/homepage.php:47
+msgid "or you can upload it directly from your PC"
+msgstr "o el podeu pujar directament des del vostre ordinador"
+
+# modificat xtec
+#: classes/email-templates.php:82
+msgid "password reset url"
+msgstr "URL de restabliment de la contrasenya"
+
+#: classes/email-templates.php:83
+msgid "password reset url with HTML link"
+msgstr ""
+
+# modificat xtec
+#: addons/buddypress.php:141
+msgid ""
+"please enable Buddypress Extended Profile then import the csv file. You can "
+"then disable this afterwards"
+msgstr ""
+"activeu Buddypress Extended Profile i després importeu el fitxer CSV. "
+"Després ho podeu desactivar"
+
+#: classes/doc.php:100
+msgid "to test"
+msgstr "per provar"
+
+# modificat xtec
+#: classes/doc.php:59
+msgid ""
+"two colons, inside the cell in order to split the string in a list of items."
+msgstr ""
+"dos colons, dins de la cel·la per dividir la cadena en una llista d'elements."
+
+#: classes/homepage.php:541
+msgid "uploaded on"
+msgstr "pujat el"
+
+#: classes/email-templates.php:84
+msgid "user email"
+msgstr "correu electrònic de l'usuari"
+
+#: classes/email-templates.php:79
+msgid "user password"
+msgstr "contrasenya de l'usuari"
+
+# modificat xtec
+#: addons/users-group.php:24 addons/wp-users-group.php:24
+msgid "user_group as the column title"
+msgstr "user_group com a títol de la columna"
+
+#: classes/homepage.php:162
+msgid "user_nicename"
+msgstr "user_nicename"
+
+#: classes/homepage.php:168
+msgid "user_url"
+msgstr "user_url"
+
+# modificat xtec
+#: classes/email-templates.php:78
+msgid "username to login"
+msgstr "nom d'usuari per iniciar sessió"
+
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+#: addons/new-user-approve.php:24 addons/wp-members.php:24
+#: addons/wp-members.php:48
+msgid "users"
+msgstr "usuaris"
+
+#: classes/frontend.php:67
+msgid ""
+"will only delete (if the deletion is active) the users not present in the "
+"CSV with are editors"
+msgstr ""
+
+#: classes/frontend.php:45
+msgid "you can also do an export in the frontend"
+msgstr ""

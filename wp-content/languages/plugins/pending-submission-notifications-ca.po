@@ -1,0 +1,37 @@
+# Copyright (C) 2018 Pending Submission Notification
+# This file is distributed under the same license as the Pending Submission Notification package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pending Submission Notification 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pending-"
+"submission-notifications\n"
+"POT-Creation-Date: 2021-10-06T12:40:15+02:00\n"
+"PO-Revision-Date: 2018-10-10 12:05+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. Plugin Name of the plugin
+msgid "Pending Submission Notification"
+msgstr "Notificació de pendents d'enviament"
+
+#. Author of the plugin
+msgid "Razvan Horeanga"
+msgstr "Razvan Horeanga"
+
+#. Description of the plugin
+msgid ""
+"Send email notifications to the admin whenever a new article is submitted "
+"for review by a contributor"
+msgstr ""
+"Envieu notificacions per correu electrònic a l'administrador cada cop que "
+"s'enviï un article nou per a revisió d'un col·laborador"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "http://lifeofadesigner.com"
+msgstr "http://lifeofadesigner.com"
