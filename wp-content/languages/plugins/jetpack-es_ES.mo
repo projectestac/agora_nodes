@@ -1,1 +1,0 @@
-widget-visibility-without-jetpack-es_ES.mo

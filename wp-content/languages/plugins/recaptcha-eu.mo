@@ -1,1 +1,0 @@
-wp-recaptcha-eu.mo
