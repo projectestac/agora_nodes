@@ -1,1 +1,0 @@
-tabs-responsive-ca.mo

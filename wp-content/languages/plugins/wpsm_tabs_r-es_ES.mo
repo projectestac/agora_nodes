@@ -1,1 +1,0 @@
-tabs-responsive-es_ES.mo
