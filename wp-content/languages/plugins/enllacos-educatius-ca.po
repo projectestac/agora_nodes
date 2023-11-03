@@ -1,0 +1,38 @@
+# Copyright (C) 2018 Enllaços educatius
+# This file is distributed under the same license as the Enllaços educatius package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Enllaços educatius 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/enllacos-"
+"educatius\n"
+"POT-Creation-Date: 2021-10-06T12:40:02+02:00\n"
+"PO-Revision-Date: 2018-07-18 16:29+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#. Plugin Name of the plugin
+msgid "Enllaços educatius"
+msgstr "Enllaços educatius"
+
+#. Description of the plugin
+msgid ""
+"Giny d'enllaços educatius del Departament d'Ensenyament i la xarxa XTEC."
+msgstr ""
+"Giny d'enllaços educatius del Departament d'Ensenyament i la xarxa XTEC."
+
+#. Author of the plugin
+msgid "Xavier Meler"
+msgstr "Xavier Meler"
+
+#. Plugin URI of the plugin
+msgid "http://agora.xtec.cat/nodes/plugins/enllaços-educatius"
+msgstr "http://agora.xtec.cat/nodes/plugins/enllaços-educatius"
+
+#. Author URI of the plugin
+msgid "https://github.com/jmeler"
+msgstr "https://github.com/jmeler"
