@@ -1,0 +1,33 @@
+# Copyright (C) 2019 Author Category
+# This file is distributed under the same license as the Author Category package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Author Category 0.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/author-category\n"
+"POT-Creation-Date: 2021-10-06T12:39:54+02:00\n"
+"PO-Revision-Date: 2019-04-08 11:44+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+msgid "Author Category"
+msgstr "Categoría de autor"
+
+#. Author of the plugin
+msgid "Bainternet"
+msgstr "Bainternet"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "http://en.bainternet.info"
+msgstr "http://en.bainternet.info"
+
+#. Description of the plugin
+msgid "simple plugin limit authors to post just in one category."
+msgstr "restringe a los autores la publicación en una única categoría."
