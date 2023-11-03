@@ -1,0 +1,117 @@
+# Copyright (C) 2019 Grup-classe
+# This file is distributed under the same license as the Grup-classe package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Grup-classe 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/grup-classe\n"
+"POT-Creation-Date: 2021-10-06T12:40:03+02:00\n"
+"PO-Revision-Date: 2019-04-08 12:00+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Description of the plugin
+#, fuzzy
+msgid ""
+"Afegeix un nou giny que inclou elements útils per un blog d'un grup-classe"
+msgstr ""
+"Añadir nuevo widget que incluye elementos útiles para un blog de un grupo "
+"clase (calendario, información sobre tutoría, enlaces asociados) y dos "
+"bloques de texto/HTML"
+
+#: grup_classe.php:100
+msgid "Calendar"
+msgstr "Calendario"
+
+#: grup_classe.php:101
+msgid "Calendar's title:"
+msgstr "Título de la agenda:"
+
+#: grup_classe.php:104
+msgid "Calendar:"
+msgstr "Calendario:"
+
+#: grup_classe.php:54 grup_classe.php:57
+msgid "Group-class"
+msgstr "Grupo-clase"
+
+#. Plugin Name of the plugin
+msgid "Grup-classe"
+msgstr "Grupo-clase"
+
+#: grup_classe.php:53
+msgid ""
+"Includes a calendar, information about the tutor and two blocks of type text/"
+"html. Useful for the class blog."
+msgstr ""
+"Incluye un calendario, información sobre el tutor/a y dos bloques de tipo "
+"text/html. Útil para el blog de clase."
+
+#: grup_classe.php:257
+msgid "Links"
+msgstr "Enlaces"
+
+#: grup_classe.php:153
+msgid "Links (associated menu)"
+msgstr "Enlaces (menú asociado)"
+
+#: grup_classe.php:64
+msgid "Mon. 00:00-00:00"
+msgstr "Lun. 00:00-00:00"
+
+#: grup_classe.php:249
+msgid "Subscription"
+msgstr "Suscripción de correo"
+
+#: grup_classe.php:137
+msgid "Subscription Group:"
+msgstr "Suscripción de correo:"
+
+#: grup_classe.php:88 grup_classe.php:169
+msgid "Text/HTML"
+msgstr "Texto/HTML"
+
+#: grup_classe.php:126
+msgid "Timetable for attending to families:"
+msgstr "Horario de atención a las familias:"
+
+#: grup_classe.php:82
+msgid "Title:"
+msgstr "Título:"
+
+#: grup_classe.php:124
+msgid "Tutor's email:"
+msgstr "El correo electrónico del tutor/a:"
+
+#: grup_classe.php:236
+msgid "Tutor's info"
+msgstr "Tutoria"
+
+#: grup_classe.php:121
+msgid "Tutor's information"
+msgstr "Tutoria"
+
+#: grup_classe.php:122
+msgid "Tutor's name:"
+msgstr "Nombre del tutor/a:"
+
+#: grup_classe.php:250
+msgid "We will notice you"
+msgstr "Te avisaremos cuando haya noticias nuevas"
+
+#. Author of the plugin
+msgid "Xavier Meler"
+msgstr "Xavier Meler"
+
+#. Plugin URI of the plugin
+msgid "http://agora.xtec.cat/nodes/plugins/grup-classe"
+msgstr "http://agora.xtec.cat/nodes/plugins/grup-classe"
+
+#. Author URI of the plugin
+msgid "https://github.com/jmeler"
+msgstr "https://github.com/jmeler"

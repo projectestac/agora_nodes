@@ -1,0 +1,1 @@
+tabs-responsive-gl_ES.mo

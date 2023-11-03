@@ -1,0 +1,29 @@
+# Copyright (C) 2019 Albert Bachiller
+# This file is distributed under the same license as the NODES package.
+msgid ""
+msgstr ""
+"Project-Id-Version: NODES 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/reactor-"
+"primaria-1\n"
+"POT-Creation-Date: 2021-10-06T12:40:36+02:00\n"
+"PO-Revision-Date: 2019-04-05 11:44+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Author of the theme
+msgid "Albert Bachiller"
+msgstr "Albert Bachiller"
+
+#. Theme Name of the theme
+msgid "NODES"
+msgstr "NODES"
+
+#. Description of the theme
+msgid "Tema desenvolupat pel Departament d'Ensenyament de Catalunya"
+msgstr "Tema desarrollado por el Departamento de Educación de Cataluña"

@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Social Login\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-social-"
+"login\n"
+"POT-Creation-Date: 2021-10-06T12:40:25+02:00\n"
+"PO-Revision-Date: 2016-04-25 12:27+0200\n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: WordPress Social Login <agora@xtec.cat>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-KeywordsList: _wsl__;_wsl_e\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Description of the plugin
+msgid ""
+"Allow your visitors to comment and login with social networks such as "
+"Twitter, Facebook, Google, Yahoo and more."
+msgstr ""
+
+#: includes/admin/wsl.admin.ui.php:330
+msgid ""
+"Despite the efforts, put into <b>WordPress Social Login</b> in terms of "
+"reliability, portability, and maintenance by the plugin <a href=\"http://"
+"profiles.wordpress.org/miled/\" target=\"_blank\">author</a> and <a href="
+"\"https://github.com/hybridauth/WordPress-Social-Login/graphs/contributors\" "
+"target=\"_blank\">contributors</a>"
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:42
+msgid "Email: %s"
+msgstr "Correu electrònic: %s"
+
+#: includes/services/wsl.session.php:30
+msgid ""
+"HTTP headers already sent to browser and WSL won't be able to start/resume "
+"PHP session."
+msgstr ""
+
+#. Author of the plugin
+msgid "Miled"
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:38
+msgid "New user registration on your site: %s"
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:41
+msgid "Profile: %s"
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:40
+msgid "Provider: %s"
+msgstr ""
+
+#: includes/admin/components/tools/wsl.components.tools.actions.job.php:675
+msgid "There was an error querying Twitter's servers"
+msgstr ""
+
+#: includes/admin/wsl.admin.ui.php:335
+msgid ""
+"These requirements are usually met by default by most \"modern\" web hosting "
+"providers, however some complications may occur with <b>shared hosting</b> "
+"and, or <b>custom wordpress installations</b>"
+msgstr ""
+
+#: wp-social-login.php:117
+msgid ""
+"This plugin requires WordPress 3.0 or newer. Please update your WordPress "
+"installation to activate this plugin."
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:39
+msgid "Username: %s"
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "WordPress Social Login"
+msgstr "WordPress Social Login"
+
+#: includes/admin/wsl.admin.ui.php:325
+msgid "WordPress Social Login - FAIL!"
+msgstr ""
+
+#: includes/admin/wsl.admin.ui.php:331
+msgid "Your server failed the requirements check for this plugin"
+msgstr ""
+
+#: includes/services/wsl.mail.notification.php:47
+msgid "[%s] New User Registration"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "http://miled.github.io/wordpress-social-login/"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/miled"
+msgstr ""

@@ -1,0 +1,77 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tabs Responsive 1.7.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tabs-responsive\n"
+"POT-Creation-Date: 2021-10-06T12:40:22+02:00\n"
+"PO-Revision-Date: 2019-04-09 14:35+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:114
+msgid "Code"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:27
+msgid "Content"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:5
+msgid "Design"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:206
+msgid "Left"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:72
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:195
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:219
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:231
+msgid "No"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:207
+msgid "Right"
+msgstr ""
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:135
+msgid "Style"
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "Tabs Responsive"
+msgstr "Pestañas"
+
+#. Description of the plugin
+msgid ""
+"Tabs Responsive is the most easiest drag & drop Tabs builder for WordPress. "
+"You can add unlimited Tabs with unlimited color Scheme."
+msgstr ""
+"Tabs Responsive is the most easiest drag & drop Tabs builder for WordPress. "
+"You can add unlimited Tabs with unlimited color Scheme."
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:71
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:194
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:218
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:230
+msgid "Yes"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.wpshopmart.com"
+msgstr "https://www.wpshopmart.com"
+
+#. Plugin URI of the plugin
+msgid "https://www.wpshopmart.com/plugins/"
+msgstr ""
+
+#. Author of the plugin
+msgid "wpshopmart"
+msgstr "wpshopmart"
