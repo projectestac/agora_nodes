@@ -1,1 +1,0 @@
-wordpress-telegram-ca.mo

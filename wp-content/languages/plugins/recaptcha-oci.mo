@@ -1,1 +1,0 @@
-wp-recaptcha-oci.mo
