@@ -1,0 +1,3908 @@
+# Translation of Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2023-09-15 13:20+0200\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: includes/rest-api.php:214
+msgid "Please provide a valid URL."
+msgstr "Proporcioneu un URL vàlid."
+
+#: assets/js/editor.blocks.js:23
+msgid "Draggable"
+msgstr "Arrossegable"
+
+#: assets/js/editor.blocks.js:23
+msgid "Adaptive Height"
+msgstr "Alçada adaptativa"
+
+#: includes/settings-page.php:239
+msgid "Default width of the content area in the Section block. Leave empty to use $content_width set in your theme. Set 0 to disable this option and control it via CSS."
+msgstr "Amplada per defecte de l'àrea de contingut al bloc Secció. Deixeu-ho buit per utilitzar $content_width establert al tema. Establiu 0 per a desactivar aquesta opció i controlar-la mitjançant CSS."
+
+#: assets/js/editor.blocks.js:23
+msgid "Add any block to slide"
+msgstr "Afegeix qualsevol bloc a la diapositiva"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Slide After"
+msgstr "Afegeix una diapositiva després"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Slide Before"
+msgstr "Afegeix una diapositiva abans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slide %1$d of %2$d"
+msgstr "Diapositiva %1$d de %2$d"
+
+#: assets/js/editor.blocks.js:23
+msgid "Next"
+msgstr "Següent"
+
+#: assets/js/editor.blocks.js:23
+msgid "Previous"
+msgstr "Anterior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Slide"
+msgstr "Edita la diapositiva"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides to Show"
+msgstr "Diapositives a mostrar"
+
+#: assets/js/editor.blocks.js:23
+msgid "Laptop"
+msgstr "Portàtil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Slide"
+msgstr "Afegeix una diapositiva"
+
+#: includes/blocks/content-slider.php:52 assets/js/editor.blocks.js:23
+msgid "Content Slider"
+msgstr "Carrusel de contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Ordered"
+msgstr "Ordenat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Unordered"
+msgstr "Sense ordenar"
+
+#: assets/js/editor.blocks.js:23
+msgid "List Style"
+msgstr "Estil de llista"
+
+#: assets/js/editor.blocks.js:23
+msgid "Headings"
+msgstr "Capçaleres"
+
+#: assets/js/editor.blocks.js:23
+msgid "Headings not found on this page."
+msgstr "Capçaleres no trobades en aquesta pàgina."
+
+#: assets/js/editor.blocks.js:23
+msgid "summary"
+msgstr "resum"
+
+#: assets/js/editor.blocks.js:23
+msgid "Learn more about anchors"
+msgstr "Més informació sobre les àncores"
+
+#: assets/js/editor.blocks.js:23
+msgid "HTML Anchor"
+msgstr "Àncora HTML"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Color"
+msgstr "Color de la vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dotted"
+msgstr "Puntejat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dashed"
+msgstr "Ratllat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Solid"
+msgstr "Sòlid"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Style"
+msgstr "Estil de vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Cell Settings"
+msgstr "Configuració de les cel·les"
+
+#: assets/js/editor.blocks.js:23
+msgid "Table Footer"
+msgstr "Peu de la taula"
+
+#: assets/js/editor.blocks.js:23
+msgid "Table Header"
+msgstr "Capçalera de la taula"
+
+#: assets/js/editor.blocks.js:23
+msgid "Separate"
+msgstr "Separa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Collapse"
+msgstr "Contrau"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Collapse"
+msgstr "Redueix la vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Table Layout"
+msgstr "Disposició de la taula"
+
+#: assets/js/editor.blocks.js:23
+msgid "Table Settings"
+msgstr "Configuració de la taula"
+
+#: assets/js/editor.blocks.js:23
+msgid "Write caption…"
+msgstr "Escriu la llegenda..."
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Table"
+msgstr "Edita la taula"
+
+#: assets/js/editor.blocks.js:23
+msgid "Such type of selection is not available"
+msgstr "Aquest tipus de selecció no està disponible"
+
+#: assets/js/editor.blocks.js:23
+msgid "Split Cells"
+msgstr "Divideix les cel·les"
+
+#: assets/js/editor.blocks.js:23
+msgid "Merge Cells"
+msgstr "Combina les cel·les"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Column After"
+msgstr "Afegeix una columna després"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Column Before"
+msgstr "Afegeix una columna abans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delete Column"
+msgstr "Suprimeix la columna"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Row After"
+msgstr "Afegeix una fila després"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Row Before"
+msgstr "Afegeix una fila abans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delete Row"
+msgstr "Suprimeix la fila"
+
+#: assets/js/editor.blocks.js:23
+msgid "Rows"
+msgstr "Files"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hint: Hold Ctrl key to select multiple cells. Hold Shift key to select range."
+msgstr "Consell: manteniu premuda la tecla Ctrl per a seleccionar múltiples cel·les. Manteniu premuda la tecla Maj per a seleccionar l'interval."
+
+#: assets/js/editor.blocks.js:23
+msgid "Choose a template from the library."
+msgstr "Trieu una plantilla de la biblioteca."
+
+#: assets/js/editor.blocks.js:23
+msgid "Search"
+msgstr "Cerca"
+
+#: assets/js/editor.blocks.js:23
+msgid "All Categories"
+msgstr "Totes les categories"
+
+#: assets/js/editor.blocks.js:23
+msgid "No templates found."
+msgstr "No s'ha trobat cap plantilla."
+
+#: assets/js/editor.blocks.js:23
+msgid "Insert Template"
+msgstr "Insereix una plantilla"
+
+#: assets/js/editor.blocks.js:23
+msgid "Timeline Block"
+msgstr "Bloc de la línia de temps"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical Space"
+msgstr "Espai vertical"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal Space"
+msgstr "Espai horitzontal"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display scroll progress"
+msgstr "Mostra el progrés del desplaçament"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slide In"
+msgstr "Entrada de la diapositiva"
+
+#: assets/js/editor.blocks.js:23
+msgid "workflow"
+msgstr "flux de treball"
+
+#: assets/js/editor.blocks.js:23
+msgid "vertical"
+msgstr "vertical"
+
+#: assets/js/editor.blocks.js:23
+msgid "Space between numbers"
+msgstr "Espai entre números"
+
+#: assets/js/editor.blocks.js:23
+msgid "Space around numbers"
+msgstr "Espai al voltant dels números"
+
+#: assets/js/editor.blocks.js:23
+msgid "Font Settings"
+msgstr "Configuració del tipus de lletra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Seconds"
+msgstr "Segons"
+
+#: assets/js/editor.blocks.js:23
+msgid "Minutes"
+msgstr "Minuts"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hours"
+msgstr "Hores"
+
+#: assets/js/editor.blocks.js:23
+msgid "Days"
+msgstr "Dies"
+
+#: assets/js/editor.blocks.js:23
+msgid "Weeks"
+msgstr "Setmanes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Months"
+msgstr "Mesos"
+
+#: assets/js/editor.blocks.js:23
+msgid "Years"
+msgstr "Anys"
+
+#: assets/js/editor.blocks.js:23
+msgid "Justify"
+msgstr "Justifica"
+
+#: assets/js/editor.blocks.js:23
+msgid "timer"
+msgstr "temporitzador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Settings"
+msgstr "Configuració del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Point"
+msgstr "Edita el punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Animation On Hover"
+msgstr "Animació de punt en passar-hi per sobre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slide Down"
+msgstr "Desplaça a vall"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Appearance Animation"
+msgstr "Aparença de l'animació del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Animation"
+msgstr "Animació del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Perspective"
+msgstr "Perspectiva"
+
+#: assets/js/editor.blocks.js:23
+msgid "Scale"
+msgstr "Escala"
+
+#: assets/js/editor.blocks.js:23
+msgid "Shift Toward"
+msgstr "Desplaça cap a endavant"
+
+#: assets/js/editor.blocks.js:23
+msgid "Shift Away"
+msgstr "Desplaçament cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tooltip Animation"
+msgstr "Animació del consell d'eina"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display tooltip arrow"
+msgstr "Mostra l'ajuda de la fletxa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dark with transparency"
+msgstr "Fosc amb transparència"
+
+#: assets/js/editor.blocks.js:23
+msgid "Google"
+msgstr "Google"
+
+#: assets/js/editor.blocks.js:23
+msgid "Light with border"
+msgstr "Clar amb vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tooltip Theme"
+msgstr "Tema de l'ajuda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Opacity"
+msgstr "Opacitat del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Spacing"
+msgstr "Espaiat del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Point Size"
+msgstr "Mida del punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Click (Multiple)"
+msgstr "Clic (múltiple)"
+
+#: assets/js/editor.blocks.js:23
+msgid "Click"
+msgstr "Clic"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hover"
+msgstr "En passar per sobre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tooltip Interactivity"
+msgstr "Inteacció de l'ajuda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Duplicate"
+msgstr "Duplica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drop Point"
+msgstr "Afegeix un punt"
+
+#: assets/js/editor.blocks.js:23
+msgid "tooltip"
+msgstr "ajuda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Title Color"
+msgstr "Color del títol"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Color"
+msgstr "Color del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Size"
+msgstr "Mida del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border"
+msgstr "Vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Style"
+msgstr "Estil del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Animation"
+msgstr "Animació de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Animation"
+msgstr "Animació del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Link to Youtube, Vimeo or self-hosted video"
+msgstr "Enllaç a Youtube, Vimeo o vídeo auto-allotjat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Video URL"
+msgstr "URL del vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "button"
+msgstr "botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "popup"
+msgstr "emergent"
+
+#: assets/js/editor.blocks.js:23
+msgid "video"
+msgstr "vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "Select the lists you wish your visitors to be subscribed to."
+msgstr "Seleccioneu les llistes a les quals voleu subscriure els vostres visitants."
+
+#: assets/js/editor.blocks.js:23
+msgid "Sync"
+msgstr "Sincronitza"
+
+#: assets/js/editor.blocks.js:23
+msgid "Mailchimp API key."
+msgstr "Clau de l'API de Mailchimp."
+
+#: assets/js/editor.blocks.js:23
+msgid "subscribe"
+msgstr "subscripció"
+
+#: assets/js/editor.blocks.js:23
+msgid "Choose Layout"
+msgstr "Trieu una disposició"
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom background"
+msgstr "Fons personalitzat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Two columns"
+msgstr "Dues columnes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image in background"
+msgstr "Imatge en segon pla"
+
+#: assets/js/editor.blocks.js:23
+msgid "Classic"
+msgstr "Clàssic"
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom Field"
+msgstr "Camp personalitzat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Meta"
+msgstr "Meta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Background Featured Image"
+msgstr "Imatge destacada en segon pla"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Comments"
+msgstr "Comentaris"
+
+#: assets/js/editor.blocks.js:23
+msgid "Categories"
+msgstr "Categories"
+
+#: assets/js/editor.blocks.js:23
+msgid "Full Content"
+msgstr "Contingut complet"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post Content"
+msgstr "Contingut de l'entrada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Excerpt"
+msgstr "Extracte"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Content"
+msgstr "Mostra el contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post Content (full content)"
+msgstr "Contingut de l'entrada (contingut complet)"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post Content (content)"
+msgstr "Contingut de l'entrada (contingut)"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post Content (excerpt)"
+msgstr "Contingut de l'entrada (extracte)"
+
+#: assets/js/editor.blocks.js:23
+msgid "Content"
+msgstr "Contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Featured Image"
+msgstr "Imatge destacada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post Title"
+msgstr "Títol de l'entrada"
+
+#: assets/js/editor.blocks.js:23
+msgid "ACF Wysiwyg"
+msgstr "ACF Wysiwyg"
+
+#: assets/js/editor.blocks.js:23
+msgid "For multiple values."
+msgstr "Per a múltiples valors."
+
+#: assets/js/editor.blocks.js:23
+msgid "Separator"
+msgstr "Separador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Label"
+msgstr "Etiqueta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bold"
+msgstr "Negreta"
+
+#: assets/js/editor.blocks.js:23
+msgid "ACF Select"
+msgstr "Selecció ACF"
+
+#: assets/js/editor.blocks.js:23
+msgid "Post"
+msgstr "Publica"
+
+#: assets/js/editor.blocks.js:23
+msgid "ACF Image"
+msgstr "Imatge ACF"
+
+#: assets/js/editor.blocks.js:23
+msgid "Content Width"
+msgstr "Amplada del contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Height"
+msgstr "Alçada de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Field Name"
+msgstr "Nom del camp"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical Alignment"
+msgstr "Alineació vertical"
+
+#: assets/js/editor.blocks.js:23
+msgid "Alignment"
+msgstr "Alineació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Gradient Colors"
+msgstr "Colors del degradat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Gradient"
+msgstr "Degradat superposat"
+
+#: assets/js/editor.blocks.js:23
+msgid "ACF Background Image"
+msgstr "Imatge de fons ACF"
+
+#: assets/js/editor.blocks.js:23
+msgid "Divider"
+msgstr "Divisor"
+
+#: assets/js/editor.blocks.js:23
+msgid "After with space"
+msgstr "Després amb l'espai"
+
+#: assets/js/editor.blocks.js:23
+msgid "After"
+msgstr "Després"
+
+#: assets/js/editor.blocks.js:23
+msgid "Before with space"
+msgstr "Abans amb un espai"
+
+#: assets/js/editor.blocks.js:23
+msgid "Before"
+msgstr "Abans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Currency Position"
+msgstr "Posició de la moneda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delete Image"
+msgstr "Suprimeix la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "list"
+msgstr "llista"
+
+#: assets/js/editor.blocks.js:23
+msgid "price"
+msgstr "preu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Compare"
+msgstr "Compara"
+
+#: assets/js/editor.blocks.js:23
+msgid "Key"
+msgstr "Clau"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Group"
+msgstr "Afegeix un grup"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Condition"
+msgstr "Afegeix una condició"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Settings"
+msgstr "Configuració de la pantalla"
+
+#: assets/js/editor.blocks.js:23
+msgid "Content Settings"
+msgstr "Configuració del contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Background Color"
+msgstr "Color de fons del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Text Color"
+msgstr "Color del text del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Subject"
+msgstr "Assumpte"
+
+#: assets/js/editor.blocks.js:23
+msgid "Color Theme"
+msgstr "Tema de color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Field Settings"
+msgstr "Paràmetres del camp"
+
+#: assets/js/editor.blocks.js:23
+msgid "Captcha"
+msgstr "Captcha"
+
+#: assets/js/editor.blocks.js:23
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: assets/js/editor.blocks.js:23
+msgid "message"
+msgstr "missatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "email"
+msgstr "correu electrònic"
+
+#: assets/js/editor.blocks.js:23
+msgctxt "Period, placeholder"
+msgid "/month"
+msgstr "/mes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Farsi"
+msgstr "Farsi"
+
+#: assets/js/editor.blocks.js:23
+msgid "Eastern Arabic"
+msgstr "Àrab oriental"
+
+#: assets/js/editor.blocks.js:23
+msgid "Numerals"
+msgstr "Numerals"
+
+#: assets/js/editor.blocks.js:23
+msgctxt "Decimal separator"
+msgid "."
+msgstr ","
+
+#: assets/js/editor.blocks.js:23
+msgid "Decimal Separator"
+msgstr "Separador decimal"
+
+#: assets/js/editor.blocks.js:23
+msgid "Decimal Places"
+msgstr "Llocs decimals"
+
+#: assets/js/editor.blocks.js:23
+msgctxt "Thousands separator"
+msgid ","
+msgstr "."
+
+#: assets/js/editor.blocks.js:23
+msgid "Thousands Separator"
+msgstr "Separador de milers"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Thousands Separator"
+msgstr "Mostra el separador de milers"
+
+#: assets/js/editor.blocks.js:23
+msgid "Smooth Animation"
+msgstr "Animació suau"
+
+#: assets/js/editor.blocks.js:23
+msgid "End"
+msgstr "Final"
+
+#: assets/js/editor.blocks.js:23
+msgid "Start"
+msgstr "Inicia"
+
+#: assets/js/editor.blocks.js:23
+msgid "Suffix"
+msgstr "Sufix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Prefix"
+msgstr "Prefix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bar Color"
+msgstr "Color de la barra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Animate"
+msgstr "Anima"
+
+#: assets/js/editor.blocks.js:23
+msgid "Thickness"
+msgstr "Gruix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Progress"
+msgstr "Progrés"
+
+#: assets/js/editor.blocks.js:23
+msgid "Progress Color"
+msgstr "Color del progrés"
+
+#: assets/js/editor.blocks.js:23
+msgid "Value"
+msgstr "Valor"
+
+#: assets/js/editor.blocks.js:23
+msgid "Click Connect Instagram Account and authorize the app in a new tab to receive access token. Then return to this tab and click Update. You can revoke the granted access any time in your Instagram profile settings."
+msgstr "Feu clic a Connecta el compte d'Instagram i autoritzeu l'aplicació en una pestanya nova per rebre el testimoni d'accés. Després torneu a aquesta pestanya i feu clic a Actualitza. Podeu revocar l'accés concedit en qualsevol moment a la configuració del perfil d'Instagram."
+
+#: assets/js/editor.blocks.js:23
+msgid "Crop Image"
+msgstr "Escapça la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "member"
+msgstr "membre"
+
+#: assets/js/editor.blocks.js:23
+msgid "team"
+msgstr "equip"
+
+#: assets/js/editor.blocks.js:23
+msgid "Write subtitle…"
+msgstr "Escriu el subtítol..."
+
+#: assets/js/editor.blocks.js:23
+msgid "feedback"
+msgstr "retroalimentació"
+
+#: assets/js/editor.blocks.js:23
+msgid "review"
+msgstr "ressenya"
+
+#: assets/js/editor.blocks.js:23
+msgid "20%"
+msgstr "20%"
+
+#: assets/js/editor.blocks.js:23
+msgid "25%"
+msgstr "25%"
+
+#: assets/js/editor.blocks.js:23
+msgid "33%"
+msgstr "33%"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button Width"
+msgstr "Amplada del botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical"
+msgstr "Vertical"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal"
+msgstr "Horitzontal"
+
+#: assets/js/editor.blocks.js:23
+msgid "Direction"
+msgstr "Direcció"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal space between buttons"
+msgstr "Espai horitzontal entre botons"
+
+#: assets/js/editor.blocks.js:23
+msgid "Button"
+msgstr "Botó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Space between icons"
+msgstr "Espai entre icones"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal Alignment"
+msgstr "Alineació horitzontal"
+
+#: assets/js/editor.blocks.js:23
+msgid "Add Icon"
+msgstr "Afegeix una icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "share"
+msgstr "comparteix"
+
+#: assets/js/editor.blocks.js:23
+msgid "twitter"
+msgstr "twitter"
+
+#: assets/js/editor.blocks.js:23
+msgid "facebook"
+msgstr "facebook"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hide on Mobile"
+msgstr "Amaga al mòbil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hide on Tablet"
+msgstr "Amaga a la tauleta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hide on Desktop"
+msgstr "Amaga a l'escriptori"
+
+#: assets/js/editor.blocks.js:23
+msgid "Height"
+msgstr "Alçada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Link"
+msgstr "Enllaç a la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Hover Animation"
+msgstr "Animació en passar per sobre de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Mobile Alignment"
+msgstr "Alineació al mòbil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Column Reverse Order"
+msgstr "Ordre invers de la columna"
+
+#: assets/js/editor.blocks.js:23
+msgid "Column"
+msgstr "Columna"
+
+#: assets/js/editor.blocks.js:23
+msgid "Mobile Layout"
+msgstr "Disposició al mòbil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Vertical Alignment"
+msgstr "Alineació vertical de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Align Image Right"
+msgstr "Alinea la imatge a la dreta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Align Image Left"
+msgstr "Alinea la imatge a l'esquerra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 1"
+msgstr "Encapçalament 1"
+
+#: assets/js/editor.blocks.js:23
+msgid "Span"
+msgstr "Span"
+
+#: assets/js/editor.blocks.js:23
+msgid "Html Attributes"
+msgstr "Atributs HTML"
+
+#: assets/js/editor.blocks.js:23
+msgid "Letter Spacing"
+msgstr "Espaiat entre lletres"
+
+#: assets/js/editor.blocks.js:23
+msgid "Line Height"
+msgstr "Alçada de la línia"
+
+#: assets/js/editor.blocks.js:23
+msgid "Uppercase"
+msgstr "Majúscules"
+
+#: assets/js/editor.blocks.js:23
+msgid "Lowercase"
+msgstr "Minúscules"
+
+#: assets/js/editor.blocks.js:23
+msgid "Capitalize"
+msgstr "Majúscules"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Transform"
+msgstr "Transformació del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Inherit"
+msgstr "Hereta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Italic"
+msgstr "Cursiva"
+
+#: assets/js/editor.blocks.js:23
+msgid "Font Style"
+msgstr "Estil del tipus de lletra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Font Family"
+msgstr "Família de la lletra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Comments"
+msgstr "Mostra els comentaris"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Categories"
+msgstr "Mostra les categories"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Date"
+msgstr "Data de visualització"
+
+#: assets/js/editor.blocks.js:23
+msgid "Number of words"
+msgstr "Nombre de paraules"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Excerpt"
+msgstr "Mostra l'extracte"
+
+#: assets/js/editor.blocks.js:23
+msgid "Crop Images"
+msgstr "Escapça les imatges"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Featured Image"
+msgstr "Mostra la imatge destacada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Display Title"
+msgstr "Mostra el títol"
+
+#: assets/js/editor.blocks.js:23
+msgid "Columns"
+msgstr "Columnes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Grid"
+msgstr "Quadrícula"
+
+#: assets/js/editor.blocks.js:23
+msgid "List"
+msgstr "Llista"
+
+#: assets/js/editor.blocks.js:23
+msgid "No posts found."
+msgstr "No s'ha trobat cap entrada."
+
+#: assets/js/editor.blocks.js:23
+msgid "Grid View"
+msgstr "Visualització de quadrícula"
+
+#: assets/js/editor.blocks.js:23
+msgid "List View"
+msgstr "Vista de llista"
+
+#: assets/js/editor.blocks.js:23
+msgid "latest"
+msgstr "més recent"
+
+#: assets/js/editor.blocks.js:23
+msgid "Markers"
+msgstr "Marcadors"
+
+#: assets/js/editor.blocks.js:23
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: assets/js/editor.blocks.js:23
+msgid "Save"
+msgstr "Desa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Snazzy Maps"
+msgstr "Mapes de Snazzy"
+
+#: assets/js/editor.blocks.js:23
+msgid "Google Maps Styling Wizard"
+msgstr "Assistent d'estils de Google Maps"
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom Style (JSON)"
+msgstr "Estil personalitzat (JSON)"
+
+#: assets/js/editor.blocks.js:23
+msgid "Light Dream"
+msgstr "Somni clar"
+
+#: assets/js/editor.blocks.js:23
+msgid "Wireframe"
+msgstr "Wireframe"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vintage"
+msgstr "Vintage"
+
+#: assets/js/editor.blocks.js:23
+msgid "Wild West"
+msgstr "Wild West"
+
+#: assets/js/editor.blocks.js:23
+msgid "No Labels"
+msgstr "Sense etiquetes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Shades of Grey"
+msgstr "Ombres de gris"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dark Silver"
+msgstr "Plata fosca"
+
+#: assets/js/editor.blocks.js:23
+msgid "Ultra Light"
+msgstr "Ultrallum"
+
+#: assets/js/editor.blocks.js:23
+msgid "Blue Water"
+msgstr "Aigua Blava"
+
+#: assets/js/editor.blocks.js:23
+msgid "Aubergine"
+msgstr "Albergínia"
+
+#: assets/js/editor.blocks.js:23
+msgid "Night"
+msgstr "Nit"
+
+#: assets/js/editor.blocks.js:23
+msgid "Retro"
+msgstr "Retro"
+
+#: assets/js/editor.blocks.js:23
+msgid "Silver"
+msgstr "Plata"
+
+#: assets/js/editor.blocks.js:23
+msgid "Map Style"
+msgstr "Estil del mapa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Full Screen"
+msgstr "Mostra la pantalla completa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Street View"
+msgstr "Mostra la vista del carrer"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Map Type"
+msgstr "Mostra el tipus de mapa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Zoom"
+msgstr "Mostra el zoom"
+
+#: assets/js/editor.blocks.js:23
+msgid "Map Height"
+msgstr "Alçada del mapa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Center Longitude"
+msgstr "Longitud central"
+
+#: assets/js/editor.blocks.js:23
+msgid "Center Latitude"
+msgstr "Latitud central"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drag and zoom map in preview area to apply."
+msgstr "Arrossegueu i amplieu el mapa a l'àrea de previsualització per aplicar-lo."
+
+#: assets/js/editor.blocks.js:23
+msgid "Zoom"
+msgstr "Zoom"
+
+#: assets/js/editor.blocks.js:23
+msgid "Map Center & Zoom"
+msgstr "Centra el mapa i fes zoom"
+
+#: assets/js/editor.blocks.js:23
+msgid "Enable zoom and pan"
+msgstr "Activa el zoom i la panoràmica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Disable zoom and pan"
+msgstr "Desactiva el zoom i la panoràmica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Prevent zoom on page scroll"
+msgstr "Evita el zoom en el desplaçament de la pàgina"
+
+#: assets/js/editor.blocks.js:23
+msgid "These options are applied on frontend only."
+msgstr "Aquestes opcions només s'apliquen al frontal."
+
+#: assets/js/editor.blocks.js:23
+msgid "Zoom & Pan Interaction"
+msgstr "Interacció del zoom i la panoràmica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Longitude"
+msgstr "Longitud"
+
+#: assets/js/editor.blocks.js:23
+msgid "Latitude"
+msgstr "Latitud"
+
+#: assets/js/editor.blocks.js:23
+msgid "Popup Width"
+msgstr "Amplada de la finestra emergent"
+
+#: assets/js/editor.blocks.js:23
+msgid "Marker"
+msgstr "Marcador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Marker"
+msgstr "Edita el marcador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drop Marker"
+msgstr "Arrossega el marcador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delete Marker"
+msgstr "Suprimeix el marcador"
+
+#: assets/js/editor.blocks.js:23
+msgid "Save API Key"
+msgstr "Desa la clau de l'API"
+
+#: assets/js/editor.blocks.js:23
+msgid "Get your key."
+msgstr "Agafa la teva clau."
+
+#: assets/js/editor.blocks.js:23
+msgid "Google Maps API key."
+msgstr "Clau de l'API de Google Maps."
+
+#: assets/js/editor.blocks.js:23
+msgid "Zeta"
+msgstr "Zeta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Epsilon"
+msgstr "Epsilon"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delta"
+msgstr "Delta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Gamma"
+msgstr "Gamma"
+
+#: assets/js/editor.blocks.js:23
+msgid "Beta"
+msgstr "Beta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Alpha"
+msgstr "Alfa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Gallery"
+msgstr "Edita la galeria"
+
+#: assets/js/editor.blocks.js:23
+msgid "Toggle Item"
+msgstr "Commuta l'element"
+
+#: assets/js/editor.blocks.js:23
+msgid "Accordion Item"
+msgstr "Element d'acordió"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Position"
+msgstr "Posició de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Active Icon"
+msgstr "Icona activa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Select Parent"
+msgstr "Selecciona el pare"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tabs Item"
+msgstr "Element de pestanyes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Active by default"
+msgstr "Actiu per defecte"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical Right"
+msgstr "Vertical dreta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical Left"
+msgstr "Vertical esquerra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal Right"
+msgstr "Horitzontal dreta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal Center"
+msgstr "Horitzontal centre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Horizontal Left"
+msgstr "Horitzontal esquerra"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 6"
+msgstr "Encapçalament 6"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 5"
+msgstr "Encapçalament 5"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 4"
+msgstr "Encapçalament 4"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 3"
+msgstr "Encapçalament 3"
+
+#: assets/js/editor.blocks.js:23
+msgid "Heading 2"
+msgstr "Encapçalament 2"
+
+#: assets/js/editor.blocks.js:23
+msgid "Paragraph"
+msgstr "Paràgraf"
+
+#: assets/js/editor.blocks.js:23
+msgid "Title Tag"
+msgstr "Etiqueta de títol"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Width"
+msgstr "Amplada del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Block Height"
+msgstr "Alçada del bloc"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Vertical Alignment"
+msgstr "Alineació vertical del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Horizontal Alignment"
+msgstr "Alineació horitzontal del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Replace Video"
+msgstr "Substitueix el vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "Virgo"
+msgstr "Verge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Leo"
+msgstr "Lleó"
+
+#: assets/js/editor.blocks.js:23
+msgid "Cancer"
+msgstr "Càncer"
+
+#: assets/js/editor.blocks.js:23
+msgid "Gemini"
+msgstr "Bessons"
+
+#: assets/js/editor.blocks.js:23
+msgid "Taurus"
+msgstr "Taure"
+
+#: assets/js/editor.blocks.js:23
+msgid "Aries"
+msgstr "Àries"
+
+#: assets/js/editor.blocks.js:23
+msgid "Block Animation"
+msgstr "Animació de bloc"
+
+#: assets/js/editor.blocks.js:23
+msgid "cover"
+msgstr "portada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Link an image or video with a text overlay."
+msgstr "Enllaça una imatge o un vídeo amb una superposició de text."
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Size"
+msgstr "Mida de la vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Background Color"
+msgstr "Color de fons de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Style"
+msgstr "Estil de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Link"
+msgstr "Enllaç de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Content Alignment"
+msgstr "Alineació del contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Vertical Alignment"
+msgstr "Alineació vertical de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Align Icon Right"
+msgstr "Alinea la icona a la dreta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Align Icon Left"
+msgstr "Alinea la icona a l'esquerra"
+
+#: assets/js/editor.blocks.js:23
+msgid "service"
+msgstr "servei"
+
+#: assets/js/editor.blocks.js:23
+msgid "feature"
+msgstr "característica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Hover Animation"
+msgstr "Animació de la icona en passar per sobre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Link"
+msgstr "Enllaç"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Radius"
+msgstr "Radi de la vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Border Width"
+msgstr "Amplada de la vora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Space Around Icon"
+msgstr "Espai al voltant de la icona"
+
+#: assets/js/editor.blocks.js:23
+msgid "Icon Size"
+msgstr "Mida de les icones"
+
+#: assets/js/editor.blocks.js:23
+msgid "Outline"
+msgstr "Contorn"
+
+#: assets/js/editor.blocks.js:23
+msgid "Controls Settings"
+msgstr "Configuració dels controls"
+
+#: assets/js/editor.blocks.js:23
+msgid "Spacing"
+msgstr "Espaiat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Variable Width"
+msgstr "Amplada variable"
+
+#: assets/js/editor.blocks.js:23
+msgid "Center Mode"
+msgstr "Mode centrat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Alignment"
+msgstr "Alineació de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides to Scroll"
+msgstr "Diapositives a desplaçar"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides on Mobile"
+msgstr "Diapositives al mòbil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides on Tablet"
+msgstr "Diapositives a la tauleta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides on Laptop"
+msgstr "Diapositives al portàtil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Works with Slide effect only."
+msgstr "Funciona només amb efecte de diapositiva."
+
+#: assets/js/editor.blocks.js:23
+msgid "Slides on Desktop"
+msgstr "Diapositives a l'escriptori"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Settings"
+msgstr "Configuració de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Infinite"
+msgstr "Infinit"
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom link per slide"
+msgstr "Enllaç personalitzat per diapositiva"
+
+# modificat xtec
+#: assets/js/editor.blocks.js:23
+msgid "Media File"
+msgstr "Fitxer de mèdia"
+
+#: assets/js/editor.blocks.js:23
+msgid "Attachment Page"
+msgstr "Pàgina adjunta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Link to"
+msgstr "Enllaç a"
+
+#: assets/js/editor.blocks.js:23
+msgid "Underneath"
+msgstr "Sota"
+
+#: assets/js/editor.blocks.js:23
+msgid "Caption Position"
+msgstr "Posició de la llegenda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dark"
+msgstr "Fosc"
+
+#: assets/js/editor.blocks.js:23
+msgid "Light"
+msgstr "Clar"
+
+#: assets/js/editor.blocks.js:23
+msgid "Caption Style"
+msgstr "Estil de la llegenda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Caption"
+msgstr "Mostra la llegenda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Fit"
+msgstr "Ajusta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Fill"
+msgstr "Omple"
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Fit"
+msgstr "Ajusta a la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Gallery"
+msgstr "Galeria"
+
+#: assets/js/editor.blocks.js:23
+msgid "Link Rel"
+msgstr "Enllaç rel"
+
+#: assets/js/editor.blocks.js:23
+msgid "New Tab"
+msgstr "Pestanya nova"
+
+#: assets/js/editor.blocks.js:23
+msgid "Edit Slider"
+msgstr "Edita el carrusel"
+
+#: assets/js/editor.blocks.js:23
+msgid "photo"
+msgstr "fotografia"
+
+# modificat xtec
+#: assets/js/editor.blocks.js:23
+msgid "Edit Media"
+msgstr "Edita el mèdia"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dots"
+msgstr "Punts"
+
+#: assets/js/editor.blocks.js:23
+msgid "Inside"
+msgstr "Dins"
+
+#: assets/js/editor.blocks.js:23
+msgid "Outside"
+msgstr "Fora"
+
+#: assets/js/editor.blocks.js:23
+msgid "Arrows"
+msgstr "Fletxes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slideshow Speed"
+msgstr "Velocitat del passi de diapositives"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pause On Hover"
+msgstr "Pausa en passar per sobre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Enable Slideshow"
+msgstr "Activa el passi de diapositives"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slider Settings"
+msgstr "Configuració del carrusel"
+
+#: assets/js/editor.blocks.js:23
+msgid "Very Slow"
+msgstr "Molt lent"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Animation"
+msgstr "Animació del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Text Color"
+msgstr "Color del text"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Opacity"
+msgstr "Opacitat superposada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slider Minimum Height"
+msgstr "Alçada mínima del carrusel"
+
+# modificat xtec
+#: assets/js/editor.blocks.js:23
+msgid "For images from Media Library only."
+msgstr "Només per a imatges de la Biblioteca de mèdia."
+
+#: assets/js/editor.blocks.js:23
+msgid "Image Size"
+msgstr "Mida de la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Number of slides"
+msgstr "Nombre de diapositives"
+
+#: assets/js/editor.blocks.js:23
+msgid "image"
+msgstr "imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "carousel"
+msgstr "carrusel"
+
+#: assets/js/editor.blocks.js:23
+msgid "gallery"
+msgstr "galeria"
+
+#: assets/js/editor.blocks.js:23
+msgid "Midnight"
+msgstr "Mitjanit"
+
+#: assets/js/editor.blocks.js:23
+msgid "Electric grass"
+msgstr "Herba elèctrica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Blush light purple"
+msgstr "Difumina el porpra clar"
+
+#: assets/js/editor.blocks.js:23
+msgid "Very light gray to cyan bluish gray"
+msgstr "Gris molt clar a gris blavós"
+
+#: assets/js/editor.blocks.js:23
+msgid "Luminous vivid orange to vivid red"
+msgstr "Taronja viu i lluminós a vermell viu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr "Ambre viu lluminós a taronja viu lluminós"
+
+#: assets/js/editor.blocks.js:23
+msgid "Light green cyan to vivid green cyan"
+msgstr "Verd clar cian a verd cian viu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vivid cyan blue to vivid purple"
+msgstr "Blau cian viu a morat viu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Angle"
+msgstr "Angle"
+
+#: assets/js/editor.blocks.js:23
+msgid "Second Color Location"
+msgstr "Segona ubicació del color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Second Color"
+msgstr "Segon color"
+
+#: assets/js/editor.blocks.js:23
+msgid "First Color Location"
+msgstr "Primera ubicació del color"
+
+#: assets/js/editor.blocks.js:23
+msgid "First Color"
+msgstr "Primer color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Radial"
+msgstr "Radial"
+
+#: assets/js/editor.blocks.js:23
+msgid "Linear"
+msgstr "Lineal"
+
+#: assets/js/editor.blocks.js:23
+msgid "Type"
+msgstr "Tipus"
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom Gradient"
+msgstr "Degradat personalitzat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Video"
+msgstr "Vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "Gradient"
+msgstr "Degradat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Delay, ms"
+msgstr "Retard, ms"
+
+#: assets/js/editor.blocks.js:23
+msgid "Very Fast"
+msgstr "Molt ràpid"
+
+#: assets/js/editor.blocks.js:23
+msgid "Fast"
+msgstr "Ràpid"
+
+#: assets/js/editor.blocks.js:23
+msgid "Slow"
+msgstr "Lent"
+
+#: assets/js/editor.blocks.js:23
+msgid "Duration"
+msgstr "Durada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Entrance Animation"
+msgstr "Animació d'entrada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Image"
+msgstr "Sobreposa la imatge"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Color"
+msgstr "Sobreposa el color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Luminosity"
+msgstr "Lluminositat"
+
+#: assets/js/editor.blocks.js:23
+msgid "Color"
+msgstr "Color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Saturation"
+msgstr "Saturació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hue"
+msgstr "To"
+
+#: assets/js/editor.blocks.js:23
+msgid "Exclusion"
+msgstr "Exclusió"
+
+#: assets/js/editor.blocks.js:23
+msgid "Difference"
+msgstr "Diferència"
+
+#: assets/js/editor.blocks.js:23
+msgid "Soft Light"
+msgstr "Llum suau"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hard Light"
+msgstr "Llum forta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Color Burn"
+msgstr "Crema de color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Color Dodge"
+msgstr "Esvaïment del color"
+
+#: assets/js/editor.blocks.js:23
+msgid "Lighten"
+msgstr "Aclareix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Darken"
+msgstr "Enfosqueix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Screen"
+msgstr "Pantalla"
+
+#: assets/js/editor.blocks.js:23
+msgid "Multiply"
+msgstr "Multiplica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Blend Mode"
+msgstr "Mode de barreja"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Layer Opacity"
+msgstr "Opacitat de la capa superposada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Remove Poster"
+msgstr "Elimina el pòster"
+
+#: assets/js/editor.blocks.js:23
+msgid "Replace Poster"
+msgstr "Substitueix el pòster"
+
+#: assets/js/editor.blocks.js:23
+msgid "Select Poster"
+msgstr "Selecciona un pòster"
+
+#: assets/js/editor.blocks.js:23
+msgid "Poster Image"
+msgstr "Imatge del pòster"
+
+#: assets/js/editor.blocks.js:23
+msgid "Controls Position"
+msgstr "Controla la posició"
+
+#: assets/js/editor.blocks.js:23
+msgid "Autoplay"
+msgstr "Reproducció automàtica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Enable this option to increase the chances for autoplay to succeed."
+msgstr "Activeu aquesta opció per a augmentar les possibilitats que la reproducció automàtica tingui èxit."
+
+#: assets/js/editor.blocks.js:23
+msgid "Mute"
+msgstr "Silencia"
+
+#: assets/js/editor.blocks.js:23
+msgid "High"
+msgstr "Alta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Low"
+msgstr "Baix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Video Scale"
+msgstr "Escala de vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "Select Video"
+msgstr "Selecciona el vídeo"
+
+#: assets/js/editor.blocks.js:23
+msgid "Your browser does not support the video tag."
+msgstr "El vostre navegador no admet l'etiqueta de vídeo."
+
+#: assets/js/editor.blocks.js:23
+msgid "YouTube URL"
+msgstr "URL de YouTube"
+
+# modificat xtec
+#: assets/js/editor.blocks.js:23
+msgid "Media Library"
+msgstr "Biblioteca de mèdia"
+
+#: assets/js/editor.blocks.js:23
+msgid "YouTube"
+msgstr "YouTube"
+
+#: assets/js/editor.blocks.js:23
+msgid "Source"
+msgstr "Origen"
+
+#: assets/js/editor.blocks.js:23
+msgid "Animation Speed"
+msgstr "Velocitat de l'animació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Animation Duration"
+msgstr "Durada de l'animació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Fade"
+msgstr "Esvaïment"
+
+#: assets/js/editor.blocks.js:23
+msgid "Animation Effect"
+msgstr "Efecte d'animació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Remove"
+msgstr "Elimina"
+
+#: assets/js/editor.blocks.js:23
+msgid "Select Images"
+msgstr "Selecciona les imatges"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drag images, upload new ones or select files from your library."
+msgstr "Arrossega les imatges, puja les noves o selecciona fitxers de la biblioteca."
+
+#: assets/js/editor.blocks.js:23
+msgid "Slider"
+msgstr "Carrusel"
+
+#: assets/js/editor.blocks.js:23
+msgid "Huge"
+msgstr "Enorme"
+
+#: assets/js/editor.blocks.js:23
+msgid "Vertical space between blocks"
+msgstr "Espai vertical entre blocs"
+
+#: assets/js/editor.blocks.js:23
+msgid "Reset height on mobile"
+msgstr "Reinicia l'alçada al mòbil"
+
+#: assets/js/editor.blocks.js:23
+msgid "Reset height on tablet"
+msgstr "Reinicia l'alçada a la tauleta"
+
+#: assets/js/editor.blocks.js:23
+msgid "Section Height"
+msgstr "Alçada de la secció"
+
+#: assets/js/editor.blocks.js:23
+msgid "Show Help"
+msgstr "Mostra l'ajuda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Hide Help"
+msgstr "Amaga l'ajuda"
+
+#: assets/js/editor.blocks.js:23
+msgid "Getwid Settings"
+msgstr "Configuració de Getwid"
+
+#: assets/js/editor.blocks.js:23
+msgid "Set the default width of the content area in Getwid Settings."
+msgstr "Estableix l'amplada predeterminada de l'àrea de contingut a la configuració de Getwid."
+
+#: assets/js/editor.blocks.js:23
+msgid "Custom Width"
+msgstr "Amplada personalitzada"
+
+#: assets/js/editor.blocks.js:23
+msgid "Full Width"
+msgstr "Amplada completa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Content Area Width"
+msgstr "Amplada de l'àrea de contingut"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bottom Divider Color"
+msgstr "Color del divisor inferior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Top Divider Color"
+msgstr "Color del divisor superior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bring dividers to top"
+msgstr "Porta els divisors a dalt"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bottom Divider Height"
+msgstr "Alçada del divisor inferior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Bottom Divider"
+msgstr "Divisor inferior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Top Divider Height"
+msgstr "Alçada superior del divisor"
+
+#: assets/js/editor.blocks.js:23
+msgid "Top Divider"
+msgstr "Divisor superior"
+
+#: assets/js/editor.blocks.js:23
+msgid "Dividers"
+msgstr "Divisors"
+
+#: assets/js/editor.blocks.js:23
+msgid "Zigzag Pattern"
+msgstr "Patró de Zigzag"
+
+#: assets/js/editor.blocks.js:23
+msgid "Zigzag Negative"
+msgstr "Zigzag negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Zigzag"
+msgstr "Zigzag"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve Layered 4"
+msgstr "Corba amb capes 4"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve Layered 3"
+msgstr "Corba amb capes 3"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve Layered 2"
+msgstr "Corba amb capes 2"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve Layered 1"
+msgstr "Corba amb capes 1"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 8"
+msgstr "Corba 8"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 7"
+msgstr "Corba 7"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 6"
+msgstr "Corba 6"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 5"
+msgstr "Corba 5"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 4"
+msgstr "Corba 4"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 3"
+msgstr "Corba 3"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 2"
+msgstr "Corba 2"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve 1"
+msgstr "Corba 1"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve Negative"
+msgstr "Corba negativa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Curve"
+msgstr "Corba"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pyramids Layered"
+msgstr "Piràmides amb capes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pyramids Rounded Negative"
+msgstr "Piràmides arrodonides negatives"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pyramids Rounded"
+msgstr "Piràmides arrodonides"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pyramids Negative"
+msgstr "Piràmides negatives"
+
+#: assets/js/editor.blocks.js:23
+msgid "Pyramids"
+msgstr "Piràmides"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilted Drips Negative"
+msgstr "Degoteig inclinat negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilted Drips"
+msgstr "Degoteigs inclinats"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drops Negative"
+msgstr "Gotes negatives"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drops"
+msgstr "Gotes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drips Negative"
+msgstr "Drips Negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Drips"
+msgstr "Drips"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Pattern"
+msgstr "Patró d'ones"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Multi-Layered"
+msgstr "Ones multicapa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Layered"
+msgstr "Ones amb capes"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Large Negative"
+msgstr "Ones negatives grans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Large"
+msgstr "Ones grans"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves Light"
+msgstr "Ones clares"
+
+#: assets/js/editor.blocks.js:23
+msgid "Waves"
+msgstr "Ones"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Layered Asymmetrical"
+msgstr "Triangle amb capes asimètrica"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Asymmetrical Negative"
+msgstr "Triangle negatiu asimètric"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Asymmetrical"
+msgstr "Triangle asimètric"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Negative"
+msgstr "Triangle negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle"
+msgstr "Triangle"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Rounded Asymmetrical Negative"
+msgstr "Triangle asimètric arrodonit negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Rounded Asymmetrical"
+msgstr "Triangle asimètric arrodonit"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Rounded Negative"
+msgstr "Triangle arrodonit negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Triangle Rounded"
+msgstr "Triangle arrodonit"
+
+#: assets/js/editor.blocks.js:23
+msgid "Arrow Negative"
+msgstr "Fletxa negativa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Arrow"
+msgstr "Fletxa"
+
+#: assets/js/editor.blocks.js:23
+msgid "Book Negative"
+msgstr "Negatiu del llibre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Book"
+msgstr "Llibre"
+
+#: assets/js/editor.blocks.js:23
+msgid "Clouds Negative"
+msgstr "Núvols negatius"
+
+#: assets/js/editor.blocks.js:23
+msgid "Clouds"
+msgstr "Núvols"
+
+#: assets/js/editor.blocks.js:23
+msgid "Split Negative"
+msgstr "Divideix negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Split"
+msgstr "Divideix"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilt Layered 3"
+msgstr "Capa inclinada 3"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilt Layered 2 "
+msgstr "Capa inclinada 2"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilt Layered 1"
+msgstr "Capa inclinada 1"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilt Negative"
+msgstr "Inclina el negatiu"
+
+#: assets/js/editor.blocks.js:23
+msgid "Tilt"
+msgstr "Inclinació"
+
+#: assets/js/editor.blocks.js:23
+msgid "Background Settings"
+msgstr "Configuració del fons"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay Type"
+msgstr "Tipus de superposició"
+
+#: assets/js/editor.blocks.js:23
+msgid "Overlay"
+msgstr "Superposició"
+
+#: assets/js/editor.blocks.js:23
+msgid "Background"
+msgstr "Fons"
+
+#: assets/js/editor.blocks.js:6
+msgid "Padding Left: "
+msgstr "Separació esquerra:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Padding Bottom: "
+msgstr "Separació inferior:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Padding Right: "
+msgstr "Separació dreta:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Padding Top: "
+msgstr "Separació superior:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Margin Left: "
+msgstr "Marge esquerre:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Margin Bottom: "
+msgstr "Marge inferior:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Margin Right: "
+msgstr "Marge dret:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Margin Top: "
+msgstr "Marge superior:"
+
+#: assets/js/editor.blocks.js:6
+msgid "Skip"
+msgstr "Omet"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Select a layout to start with, or make one yourself."
+msgstr "Seleccioneu una disposició per a començar o feu-ne una de pròpia."
+
+#: assets/js/editor.blocks.js:6
+msgid "Choose Section Layout"
+msgstr "Trieu la disposició de la secció"
+
+#: assets/js/editor.blocks.js:6
+msgid "Show Guides"
+msgstr "Mostra les guies"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Contain"
+msgstr "Conté"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Cover"
+msgstr "Portada"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Size"
+msgstr "Mida"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Round"
+msgstr "Arrodoneix"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Space"
+msgstr "Espai"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Repeat Y"
+msgstr "Repeteix Y"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Repeat X"
+msgstr "Repeteix X"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "No Repeat"
+msgstr "Sense repetició"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Repeat"
+msgstr "Repeteix"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fixed"
+msgstr "Fixat"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Scroll"
+msgstr "Desplaçament"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Attachment"
+msgstr "Adjunt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Bottom Right"
+msgstr "Inferior dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Bottom Center"
+msgstr "A baix al centre"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Bottom Left"
+msgstr "Inferior esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Center Right"
+msgstr "Centre dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Center Center"
+msgstr "Centre central"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Center Left "
+msgstr "Centre a l'esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Top Right"
+msgstr "Superior dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Top Center"
+msgstr "Centre superior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Top Left"
+msgstr "Superior esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Position"
+msgstr "Posició"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Background Color"
+msgstr "Color de fons"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Colors"
+msgstr "Colors"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Content Area Horizontal Alignment"
+msgstr "Alineació horitzontal de l'àrea de contingut"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Content Area Vertical Alignment"
+msgstr "Alineació vertical de l'àrea de contingut"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Center"
+msgstr "Centre"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Middle"
+msgstr "Mig"
+
+#: assets/js/editor.blocks.js:6
+msgid "Full Screen. Section full screen, content fixed."
+msgstr "Pantalla completa. Secció a pantalla completa, contingut corregit."
+
+#: assets/js/editor.blocks.js:6
+msgid "Full Width. Section and content full width."
+msgstr "Amplada completa. Secció i contingut d'amplada completa."
+
+#: assets/js/editor.blocks.js:6
+msgid "Wide Screen. Section full width, content fixed."
+msgstr "Pantalla ampla. Amplada completa de la secció, s'ha corregit el contingut."
+
+#: assets/js/editor.blocks.js:6
+msgid "row"
+msgstr "fila"
+
+#: assets/js/editor.blocks.js:6
+msgid "wrapper"
+msgstr "embolcall"
+
+#: assets/js/editor.blocks.js:6
+msgid "container"
+msgstr "contenidor"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "ID"
+msgstr "ID"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Set the placeholder text"
+msgstr "Estableix el text del marcador de posició"
+
+#: assets/js/editor.blocks.js:6
+msgid "Required"
+msgstr "Requerit"
+
+#: assets/js/editor.blocks.js:6
+msgid "Write label…"
+msgstr "Escriu l'etiqueta..."
+
+#: assets/js/editor.blocks.js:6
+msgid "Font Weight"
+msgstr "Pes del tipus de lletra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Loading…"
+msgstr "Carregant..."
+
+#: assets/js/editor.blocks.js:6
+msgid "Select Font Family"
+msgstr "Selecciona la família del tipus de lletra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Google Fonts"
+msgstr "Fonts de Google"
+
+#: assets/js/editor.blocks.js:6
+msgid "Add Toggle"
+msgstr "Afegeix un commutador"
+
+#: assets/js/editor.blocks.js:6
+msgid "Add Accordion"
+msgstr "Afegeix acordió"
+
+#: assets/js/editor.blocks.js:6
+msgid "Copy"
+msgstr "Copia"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Delete Item"
+msgstr "Suprimeix l'element"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Duplicate Item"
+msgstr "Duplica l'element"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Move Item Right"
+msgstr "Mou l'element a la dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Move Item Left"
+msgstr "Mou l'element a l'esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Add Item After"
+msgstr "Afegeix un element després"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Add Item Before"
+msgstr "Afegeix un element abans"
+
+#: assets/js/editor.blocks.js:6
+msgid "Element #%d"
+msgstr "Element #%d"
+
+#: assets/js/editor.blocks.js:6
+msgid "Add Tab"
+msgstr "Afegeix una pestanya"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Create"
+msgstr "Crea"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Write text…"
+msgstr "Escriu el text..."
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Write heading…"
+msgstr "Escriu l'encapçalament..."
+
+#: assets/js/editor.blocks.js:6
+msgid "Add Item"
+msgstr "Afegeix un element"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide"
+msgstr "Diapositiva"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide %d"
+msgstr "Diapositiva %d"
+
+#: assets/js/editor.blocks.js:6
+msgid "Reset to default"
+msgstr "Restableix als valors predeterminats"
+
+#: assets/js/editor.blocks.js:6
+msgid "View All"
+msgstr "Mostra-ho tot"
+
+#: assets/js/editor.blocks.js:6
+msgid "New"
+msgstr "Nou"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Edit"
+msgstr "Edita"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Update"
+msgstr "Actualitza"
+
+#: assets/js/editor.blocks.js:6
+msgid "Close"
+msgstr "Tanca"
+
+#: assets/js/editor.blocks.js:6
+msgid "Meta Query Builder"
+msgstr "Constructor de consultes Meta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Custom Field Filter"
+msgstr "Filtre de camp personalitzat"
+
+#: assets/js/editor.blocks.js:6
+msgid "Item should have at least one of selected terms."
+msgstr "L'element hauria de tenir almenys un dels termes seleccionats."
+
+#: assets/js/editor.blocks.js:6
+msgid "Item should have all of selected terms."
+msgstr "L'element hauria de tenir tots els termes seleccionats."
+
+#: assets/js/editor.blocks.js:6
+msgid "Terms Relation"
+msgstr "Relació de termes"
+
+#: assets/js/editor.blocks.js:6
+msgid "Terms"
+msgstr "Termes"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Hold ctrl/cmd to select multiple or deselect"
+msgstr "Manteniu premuda la tecla ctrl/cmd per seleccionar-ne múltiples o desseleccionar"
+
+#: assets/js/editor.blocks.js:6
+msgid "Taxonomies"
+msgstr "Taxonomies"
+
+#: assets/js/editor.blocks.js:6
+msgid "Parent page ID"
+msgstr "ID de la pàgina mare"
+
+#: assets/js/editor.blocks.js:6
+msgid "Enter page ID to display its child pages"
+msgstr "Introduïu l'ID de la pàgina per a mostrar les seves pàgines filles"
+
+#: assets/js/editor.blocks.js:6
+msgid "Display child pages of current page"
+msgstr "Mostra les pàgines filles de la pàgina actual"
+
+#: assets/js/editor.blocks.js:6
+msgid "Exclude Current Post"
+msgstr "Exclou l'entrada actual"
+
+#: assets/js/editor.blocks.js:6
+msgid "Display all posts but NOT the specified ones"
+msgstr "Mostra totes les entrades però NO les especificades"
+
+#: assets/js/editor.blocks.js:6
+msgid "Comma-separated IDs"
+msgstr "IDs separats per comes"
+
+#: assets/js/editor.blocks.js:6
+msgid "Display only the specific posts"
+msgstr "Mostra només els missatges específics"
+
+#: assets/js/editor.blocks.js:6
+msgid "Ignore Sticky posts"
+msgstr "Ignora les entrades fixades"
+
+#: assets/js/editor.blocks.js:6
+msgid "Menu order"
+msgstr "Ordre del menú"
+
+#: assets/js/editor.blocks.js:6
+msgid "Last modified date"
+msgstr "Data de l'última modificació"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Author"
+msgstr "Autor"
+
+#: assets/js/editor.blocks.js:6
+msgid "Random"
+msgstr "Aleatori"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Date"
+msgstr "Data"
+
+#: assets/js/editor.blocks.js:6
+msgid "Order by"
+msgstr "Ordena per"
+
+#: assets/js/editor.blocks.js:6
+msgid "A → Z, 1 → 9"
+msgstr "A → Z, 1 → 9"
+
+#: assets/js/editor.blocks.js:6
+msgid "Z → A, 9 → 1"
+msgstr "Z → A, 9 → 1"
+
+#: assets/js/editor.blocks.js:6
+msgid "Order"
+msgstr "Ordre"
+
+#: assets/js/editor.blocks.js:6
+msgid "Sorting and Filtering"
+msgstr "Ordenació i filtratge"
+
+#: assets/js/editor.blocks.js:6
+msgid "Use pagination"
+msgstr "Utilitza paginació"
+
+#: assets/js/editor.blocks.js:6
+msgid "Number of posts to pass over"
+msgstr "Nombre d'entrades a passar"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Number of items"
+msgstr "Nombre d'elements"
+
+#: assets/js/editor.blocks.js:6
+msgid "Number of items per page"
+msgstr "Nombre d'elements per pàgina"
+
+#: assets/js/editor.blocks.js:6
+msgid "Choose what to display"
+msgstr "Trieu què mostrar"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Big"
+msgstr "Zoom gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Small"
+msgstr "Zoom petit"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide Right"
+msgstr "Diapositiva dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide Left"
+msgstr "Diapositiva a l'esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide Bottom"
+msgstr "Diapositiva inferior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide Top"
+msgstr "Diapositiva superior"
+
+#: assets/js/editor.blocks.js:6
+msgid "Jack In The Box"
+msgstr "Jack a la caixa"
+
+#: assets/js/editor.blocks.js:6
+msgid "Jello"
+msgstr "Jello"
+
+#: assets/js/editor.blocks.js:6
+msgid "Wobble"
+msgstr "Wobble"
+
+#: assets/js/editor.blocks.js:6
+msgid "Tada"
+msgstr "Tada"
+
+#: assets/js/editor.blocks.js:6
+msgid "Swing"
+msgstr "Swing"
+
+#: assets/js/editor.blocks.js:6
+msgid "Head Shake"
+msgstr "Capgira"
+
+#: assets/js/editor.blocks.js:6
+msgid "Shake"
+msgstr "Shake"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rubber Band"
+msgstr "Banda de Rubber"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Pulse"
+msgstr "Pols"
+
+#: assets/js/editor.blocks.js:6
+msgid "Flash"
+msgstr "Flaix"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce"
+msgstr "Rebot"
+
+#: assets/js/editor.blocks.js:6
+msgid "Roll Out"
+msgstr "Surt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Hinge"
+msgstr "Articulació"
+
+#: assets/js/editor.blocks.js:6
+msgid "Heart Beat"
+msgstr "Batec"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide Out Up"
+msgstr "Llisca cap a dalt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide Out Right"
+msgstr "Llisca cap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide Out Left"
+msgstr "Llisca cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide Out Down"
+msgstr "Llisca cap avall"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Out Up"
+msgstr "Allunya"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Out Right"
+msgstr "Allunya a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Out Left"
+msgstr "Allunya a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom Out Down"
+msgstr "Redueix el zoom cap avall"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Zoom Out"
+msgstr "Allunya"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate Out Up Right"
+msgstr "Gira cap amunt a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate Out Up Left"
+msgstr "Gira cap amunt a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate Out Down Right"
+msgstr "Gira cap avall a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate Out Down Left"
+msgstr "Gira cap avall a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate Out"
+msgstr "Gira cap a fora"
+
+#: assets/js/editor.blocks.js:6
+msgid "Light Speed Out"
+msgstr "Apaga la velocitat de la llum"
+
+#: assets/js/editor.blocks.js:6
+msgid "Flip Out Y"
+msgstr "Capgira Y"
+
+#: assets/js/editor.blocks.js:6
+msgid "Flip Out X"
+msgstr "Capgira X"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Up Big"
+msgstr "Esvaeix cap amunt gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Up"
+msgstr "Esvaeix cap amunt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Right Big"
+msgstr "Esvaeix cap a la dreta gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Right"
+msgstr "Esvaeix cap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Left Big"
+msgstr "Esvaeix cap a l'esquerra gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Left"
+msgstr "Esvaeix cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Down Big"
+msgstr "Esvaeix cap avall gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out Down"
+msgstr "Esvaeix cap avall"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade Out"
+msgstr "Esvaeix"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce Out Up"
+msgstr "Rebota cap amunt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce Out Right"
+msgstr "Rebot cap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce Out Left"
+msgstr "Rebot cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce Out Down"
+msgstr "Rebota cap avall"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce Out"
+msgstr "Rebota"
+
+#: assets/js/editor.blocks.js:6
+msgid "Roll In"
+msgstr "Enrotlla"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Up Short"
+msgstr "Llisca cap amunt curt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Slide In Up"
+msgstr "Llisca cap amunt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Right Short"
+msgstr "Llisca cap a la dreta curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Right"
+msgstr "Llisca cap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Left Short"
+msgstr "Llisca cap a l'esquerra curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Left"
+msgstr "Llisca cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Down Short"
+msgstr "Llisca cap avall i curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slide In Down"
+msgstr "Llisca cap avall"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom In Up"
+msgstr "Apropa"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom In Right"
+msgstr "Amplia a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom In Left"
+msgstr "Amplia a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Zoom In Down"
+msgstr "Apropa avall"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Zoom In"
+msgstr "Amplia"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate In Up Right"
+msgstr "Gira cap amunt a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate In Up Left"
+msgstr "Gira cap amunt a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate In Down Right"
+msgstr "Gira cap avall a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate In Down Left"
+msgstr "Gira cap avall a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Rotate In"
+msgstr "Gira"
+
+#: assets/js/editor.blocks.js:6
+msgid "Light Speed In Short"
+msgstr "Acceleració de la llum en curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Light Speed In"
+msgstr "Acceleració de la llum"
+
+#: assets/js/editor.blocks.js:6
+msgid "Flip In Y"
+msgstr "Inverteix en Y"
+
+#: assets/js/editor.blocks.js:6
+msgid "Flip In X"
+msgstr "Inverteix en X"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Up Big"
+msgstr "Apareix cap amunt gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Up Short"
+msgstr "Apareix cap amunt curt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fade In Up"
+msgstr "Apareix cap amunt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Right Big"
+msgstr "Apareix cap a la dreta gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Right Short"
+msgstr "Apareix cap a la dreta curt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fade In Right"
+msgstr "Apareix cap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Left Big"
+msgstr "Apareix cap a l'esquerra gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Left Short"
+msgstr "Apareix cap a l'esquerra curt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fade In Left"
+msgstr "Apareix cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Down Big"
+msgstr "Apareix cap avall gran"
+
+#: assets/js/editor.blocks.js:6
+msgid "Fade In Down Short"
+msgstr "Apareix cap avall curt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fade In Down"
+msgstr "Apareix cap avall"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Fade In"
+msgstr "Apareix"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Up Short"
+msgstr "Rebota cap amunt curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Up"
+msgstr "Rebota cap amunt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Right Short"
+msgstr "Rebota cap a la dreta curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Right"
+msgstr "Rebotacap a la dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Left Short"
+msgstr "Rebot cap a l'esquerra curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Left"
+msgstr "Rebota cap a l'esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Down Short"
+msgstr "Rebota cap avall i curt"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In Down"
+msgstr "Rebota cap avall"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bounce In"
+msgstr "Rebota"
+
+#: assets/js/editor.blocks.js:6
+msgid "Advanced"
+msgstr "Avançat"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Layout"
+msgstr "Disposició"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Style"
+msgstr "Estil"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Auto"
+msgstr "Automàtic"
+
+#: assets/js/editor.blocks.js:6
+msgid "All"
+msgstr "Tots"
+
+#: assets/js/editor.blocks.js:6
+msgid "Left Border"
+msgstr "Vora esquerra"
+
+#: assets/js/editor.blocks.js:6
+msgid "Bottom Border"
+msgstr "Vora inferior"
+
+#: assets/js/editor.blocks.js:6
+msgid "Right Border"
+msgstr "Vora dreta"
+
+#: assets/js/editor.blocks.js:6
+msgid "Top Border"
+msgstr "Vora superior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Point Icon"
+msgstr "Icona de punt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Popup Maximum Width, px."
+msgstr "Amplada màxima de la finestra emergent, px."
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Left"
+msgstr "Esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Bottom"
+msgstr "Inferior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Right"
+msgstr "Dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Top"
+msgstr "A dalt"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Tooltip Position"
+msgstr "Posició del consell d'eina"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Icon Color"
+msgstr "Color de la icona"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Point Background"
+msgstr "Punt de fons"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Y Coord (%)"
+msgstr "Coord Y (%)"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "X Coord (%)"
+msgstr "Coord X (%)"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Opened by default"
+msgstr "Obert per defecte"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Popup Content. Plain Text or HTML."
+msgstr "Contingut emergent. Text net o HTML."
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Open in New Tab"
+msgstr "Obre en una pestanya nova"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Enter URL"
+msgstr "Introduïu l'URL"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Title"
+msgstr "Títol"
+
+#: assets/js/editor.blocks.js:6
+msgid "Remove Image"
+msgstr "Elimina la imatge"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Replace Image"
+msgstr "Substitueix la imatge"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Select Image"
+msgstr "Selecciona una imatge"
+
+# modificat xtec
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Upload an image file, pick one from your media library, or add one with a URL."
+msgstr "Pengeu un fitxer d'imatge, trieu-ne un de la biblioteca mèdia o afegiu-ne un amb un URL."
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Image"
+msgstr "Imatge"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Background Image"
+msgstr "Imatge de fons"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Reset"
+msgstr "Reinicialitza"
+
+#: assets/js/editor.blocks.js:6
+msgid "Slider Height"
+msgstr "Alçada del carrusel"
+
+#: assets/js/editor.blocks.js:6
+msgid "120%"
+msgstr "120%"
+
+#: assets/js/editor.blocks.js:6
+msgid "110%"
+msgstr "110%"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "100%"
+msgstr "100%"
+
+#: assets/js/editor.blocks.js:6
+msgid "90%"
+msgstr "90%"
+
+#: assets/js/editor.blocks.js:6
+msgid "80%"
+msgstr "80%"
+
+#: assets/js/editor.blocks.js:6
+msgid "70%"
+msgstr "70%"
+
+#: assets/js/editor.blocks.js:6
+msgid "60%"
+msgstr "60%"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "50%"
+msgstr "50%"
+
+#: assets/js/editor.blocks.js:6
+msgid "Font Size"
+msgstr "Mida de la lletra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Margin Right"
+msgstr "Marge dret"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Margin Left"
+msgstr "Marge esquerre"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Margin Bottom"
+msgstr "Marge inferior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Margin Top"
+msgstr "Marge superior"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Margin"
+msgstr "Marge"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Padding Right"
+msgstr "Separació dreta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Padding Left"
+msgstr "Separació esquerra"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Padding Bottom"
+msgstr "Separació inferior"
+
+#: assets/js/editor.blocks.js:6
+msgid "Lock"
+msgstr "Bloqueja"
+
+#: assets/js/editor.blocks.js:6
+msgid "Unlock"
+msgstr "Desbloqueja"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "None"
+msgstr "Cap"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Large"
+msgstr "Gran"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Normal"
+msgstr "Normal"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Medium"
+msgstr "Mitjà"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Small"
+msgstr "Petit"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Default"
+msgstr "Per defecte"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Padding Top"
+msgstr "Separació superior"
+
+#: assets/js/editor.blocks.js:6
+msgid "Reset All"
+msgstr "Reinicia-ho tot"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Mobile"
+msgstr "Mòbil"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Tablet"
+msgstr "Tauleta"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: assets/js/editor.blocks.js:6 assets/js/editor.blocks.js:23
+msgid "Padding"
+msgstr "Separació"
+
+#: includes/templates/recent-posts/post.php:92
+#: includes/templates/template-parts/post-comments.php:27
+msgid "No comments"
+msgstr "Sense comentaris"
+
+#. translators: %d is a comments count
+#: includes/templates/recent-posts/post.php:90
+#: includes/templates/template-parts/post-comments.php:25
+msgid "%d Comment"
+msgid_plural "%d Comments"
+msgstr[0] "%d comentari"
+msgstr[1] "%d comentaris"
+
+#: includes/templates/mailchimp/mailchimp.php:27
+msgid "Subscribe"
+msgstr "Subscriu-te"
+
+#: includes/templates/contact-form/field-textarea.php:8
+#: assets/js/editor.blocks.js:23
+msgid "Message"
+msgstr "Missatge"
+
+#: includes/templates/contact-form/field-name.php:8
+#: assets/js/editor.blocks.js:23
+msgid "Name"
+msgstr "Nom"
+
+#: includes/templates/contact-form/field-email.php:8
+#: includes/templates/mailchimp/field-email.php:8 assets/js/editor.blocks.js:23
+msgid "Email address"
+msgstr "Adreça electrònica"
+
+#: includes/templates/contact-form/contact-form.php:25
+msgid "Submit"
+msgstr "Envia"
+
+#: includes/settings-page.php:410
+msgid "These settings may break some blocks in posts loaded via Ajax. These settings may not work together with optimization plugins."
+msgstr "Aquesta configuració pot trencar alguns blocs en entrades carregades mitjançant l'Ajax. És possible que aquests paràmetres no funcionin conjuntament amb els connectors d'optimització."
+
+#: includes/settings-page.php:406
+msgid "If this option is on, all CSS files of blocks will be moved to header for better theme compatibility. If your theme has custom styling for Getwid blocks, its styles will be applied first."
+msgstr "Si aquesta opció està activada, tots els fitxers CSS dels blocs es mouran a la capçalera per a una millor compatibilitat amb el tema. Si el tema té estil personalitzat per als blocs Getwid, els seus estils s'aplicaran primer."
+
+#: includes/settings-page.php:403
+msgid "Aggregate all CSS files of blocks in header"
+msgstr "Agregació de tots els fitxers CSS de blocs a la capçalera"
+
+#: includes/settings-page.php:397
+msgid "If this option is on, all CSS and JS files of blocks will be loaded on demand in footer. This will reduce the amount of heavy assets on the page."
+msgstr "Si aquesta opció està activada, tots els fitxers CSS i JS de blocs es carregaran sota demanda al peu de pàgina. Això reduirà la quantitat d'actius pesats de la pàgina."
+
+#: includes/settings-page.php:394
+msgid "Load CSS and JS of blocks on demand"
+msgstr "Carrega CSS i JS de blocs sota demanda"
+
+#: includes/settings-page.php:380
+msgid "Hides block until the entrance animation starts. Prevents possible occurrence of horizontal scroll during the animation."
+msgstr "Amaga el bloc fins que comenci l'animació d'entrada. Evita la possible aparició del desplaçament horitzontal durant l'animació."
+
+#: includes/settings-page.php:377
+msgid "Enable smooth animation of blocks"
+msgstr "Activa l'animació suau dels blocs"
+
+#: includes/settings-page.php:366
+msgid "Manage Post Templates"
+msgstr "Gestiona les plantilles de correu"
+
+#: includes/settings-page.php:365
+msgid "Post Templates are used for presenting posts in a certain format and style. You can change how a post looks by choosing a post template in the Custom Post Type and related blocks."
+msgstr "Les plantilles d'entrada s'utilitzen per presentar entrades en un determinat format i estil. Podeu canviar l'aparença d'una entrada escollint una plantilla d'entrada al Tipus d'entrada personalitzat i blocs relacionats."
+
+#: includes/settings-page.php:334
+msgid "Deselect All"
+msgstr "Desselecciona-ho tot"
+
+#: includes/settings-page.php:332
+msgid "Select All"
+msgstr "Selecciona-ho tot"
+
+#. translators: %1$s, %2$s is a number of total and disabled blocks
+#: includes/settings-page.php:327
+msgid "Total: %1$s, Disabled: %2$s"
+msgstr "Total: %1$s, Desactivat: %2$s"
+
+# modificat xtec
+#: includes/settings-page.php:281
+msgid "Time until expiration of media data in minutes. Setting to 0 means no expiration."
+msgstr "Temps fins a l'expiració de les dades de mèdia en minuts. Establir a 0 vol dir que no expira."
+
+#: includes/settings-page.php:268
+msgid "Refresh Access Token"
+msgstr "Refresca el testimoni d'autenticació"
+
+#: includes/settings-page.php:262 assets/js/editor.blocks.js:23
+msgid "Connect Instagram Account"
+msgstr "Connecta el compte d'Instagram"
+
+#: includes/settings-page.php:238
+msgctxt "pixels"
+msgid "px"
+msgstr "px"
+
+#: includes/settings-page.php:220
+msgid "Disable Getwid Blocks"
+msgstr "Desactiva els blocs Getwid"
+
+#: includes/settings-page.php:214 assets/js/editor.blocks.js:23
+msgid "Mailchimp API Key"
+msgstr "Clau de l'API de Mailchimp"
+
+#: includes/settings-page.php:208 assets/js/editor.blocks.js:23
+msgid "Recaptcha Secret Key"
+msgstr "Clau secreta de Recaptcha"
+
+#: includes/settings-page.php:202 assets/js/editor.blocks.js:23
+msgid "Recaptcha Site Key"
+msgstr "Clau del lloc de Recaptcha"
+
+#: includes/settings-page.php:196 assets/js/editor.blocks.js:23
+msgid "Google Maps API Key"
+msgstr "Clau de l'API de Google Maps"
+
+#: includes/settings-page.php:190
+msgid "Instagram Cache Timeout"
+msgstr "Temps d'espera de la memòria cau d'Instagram"
+
+#: includes/settings-page.php:184
+msgid "Instagram Access Token"
+msgstr "Testimoni d'accés d'Instagram"
+
+#: includes/settings-page.php:176
+msgid "Performance Optimization"
+msgstr "Optimització del rendiment"
+
+#: includes/settings-page.php:170 assets/js/editor.blocks.js:23
+msgid "Animation"
+msgstr "Animació"
+
+#: includes/settings-page.php:164
+msgid "Section Content Width"
+msgstr "Amplada del contingut de la secció"
+
+#: includes/settings-page.php:114
+msgid "Instagram: access denied."
+msgstr "Instagram: accés denegat."
+
+#: includes/settings-page.php:106
+msgid "Instagram: access token updated."
+msgstr "Instagram: s'ha actualitzat el testimoni d'accés."
+
+#: includes/settings-page.php:93
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#: includes/settings-page.php:34
+msgctxt "Settings page title(in menu)"
+msgid "Getwid"
+msgstr "Getwid"
+
+#: includes/settings-page.php:33
+msgctxt "Settings page title"
+msgid "Getwid Settings"
+msgstr "Configuració de Getwid"
+
+#: includes/settings-page.php:25
+msgid "Blocks"
+msgstr "Blocs"
+
+#: includes/settings-page.php:24
+msgid "Appearance"
+msgstr "Aparença"
+
+#: includes/settings-page.php:23 assets/js/editor.blocks.js:6
+msgid "General"
+msgstr "General"
+
+#: includes/scripts-manager.php:70
+msgid "Full Size"
+msgstr "Mida completa"
+
+#: includes/rest-api.php:155
+msgid "Templates"
+msgstr "Plantilles"
+
+#: includes/rest-api.php:132
+msgid "Taxonomy"
+msgstr "Taxonomia"
+
+#: includes/rest-api.php:109
+msgid "Post Type"
+msgstr "Tipus d'entrada"
+
+#: includes/rest-api.php:77
+msgid "Forbidden."
+msgstr "Prohibit."
+
+#: includes/post-template-part.php:33
+msgid "No templates found in Trash"
+msgstr "No s'ha trobat cap plantilla a la paperera"
+
+#: includes/post-template-part.php:32
+msgid "No templates found"
+msgstr "No s'ha trobat cap plantilla"
+
+#: includes/post-template-part.php:31
+msgid "Search Templates"
+msgstr "Cerca plantilles"
+
+#: includes/post-template-part.php:30
+msgid "View Template"
+msgstr "Visualitza la plantilla"
+
+#: includes/post-template-part.php:28
+msgid "Edit Template"
+msgstr "Edita la plantilla"
+
+#: includes/post-template-part.php:27
+msgid "Add New Template"
+msgstr "Afegeix una plantilla nova"
+
+#: includes/post-template-part.php:26 includes/post-template-part.php:29
+msgid "New Template"
+msgstr "Plantilla nova"
+
+#: includes/post-template-part.php:25 assets/js/editor.blocks.js:23
+msgid "Getwid Post Templates"
+msgstr "Plantilles d'entrades de Getwid"
+
+#: includes/post-template-part.php:24 assets/js/editor.blocks.js:6
+msgid "Post Template"
+msgstr "Plantilla de l'entrada"
+
+#: includes/post-template-part.php:23 includes/settings-page.php:26
+msgid "Post Templates"
+msgstr "Plantilles d'entrades"
+
+#. translators: %s is an error message
+#: includes/instagram-token-manager.php:100
+msgid "An error occurred while updating Instagram access token: %s"
+msgstr "S'ha produït un error en actualitzar el testimoni d'accés d'Instagram: %s"
+
+#: includes/getwid.php:241 assets/js/editor.blocks.js:6
+#: assets/js/editor.blocks.js:23
+msgid "Settings"
+msgstr "Paràmetres"
+
+#: includes/getwid.php:224
+msgid "Write a Review"
+msgstr "Escriviu una ressenya"
+
+#: includes/getwid.php:222
+msgid "Support"
+msgstr "Suport"
+
+#: includes/blocks/video-popup.php:43 assets/js/editor.blocks.js:23
+msgid "Video Popup"
+msgstr "Video emergent"
+
+# modificat xtec
+#: includes/blocks/toggle.php:28 assets/js/editor.blocks.js:23
+msgid "Toggle"
+msgstr "Acordió múltiple"
+
+#: includes/blocks/testimonial.php:23 assets/js/editor.blocks.js:23
+msgid "Testimonial"
+msgstr "Testimonial"
+
+#: includes/blocks/template-parts/post-button.php:35
+#: includes/blocks/template-parts/post-link.php:29
+#: assets/js/editor.blocks.js:23
+msgid "Read More"
+msgstr "Llegeix més"
+
+#: includes/blocks/template-library.php:19 assets/js/editor.blocks.js:23
+msgid "Template Library"
+msgstr "Biblioteca de plantilles"
+
+#: includes/blocks/tabs.php:27 assets/js/editor.blocks.js:23
+msgid "Tabs"
+msgstr "Pestanyes"
+
+#: includes/blocks/table.php:22 assets/js/editor.blocks.js:23
+msgid "Table"
+msgstr "Taula"
+
+#: includes/blocks/table-of-contents.php:31 assets/js/editor.blocks.js:23
+msgid "Table of Contents"
+msgstr "Taula de continguts"
+
+#: includes/blocks/social-links.php:27 assets/js/editor.blocks.js:23
+msgid "Social Links"
+msgstr "Enllaços socials"
+
+#: includes/blocks/section.php:75 assets/js/editor.blocks.js:6
+#: assets/js/editor.blocks.js:23
+msgid "Section"
+msgstr "Secció"
+
+# modificat xtec
+#: includes/blocks/recent-posts.php:94 assets/js/editor.blocks.js:23
+msgid "Recent Posts"
+msgstr "Articles recents"
+
+#: includes/blocks/progress-bar.php:31 assets/js/editor.blocks.js:23
+msgid "Progress Bar"
+msgstr "Barra de progrés"
+
+#: includes/blocks/price-list.php:23 assets/js/editor.blocks.js:23
+msgid "Price List"
+msgstr "Llista de preus"
+
+#: includes/blocks/price-box.php:23 assets/js/editor.blocks.js:23
+msgid "Price Box"
+msgstr "Caixa de preus"
+
+# modificat xtec
+#: includes/blocks/post-slider.php:173 assets/js/editor.blocks.js:23
+msgid "Post Slider"
+msgstr "Carrusel d'articles"
+
+# modificat xtec
+#: includes/blocks/post-carousel.php:185 assets/js/editor.blocks.js:23
+msgid "Post Carousel"
+msgstr "Carrusel de pàgines i articles"
+
+#: includes/blocks/person.php:23 assets/js/editor.blocks.js:23
+msgid "Person"
+msgstr "Persona"
+
+# modificat xtec
+#: includes/blocks/media-text-slider.php:59 assets/js/editor.blocks.js:23
+msgid "Media & Text Slider"
+msgstr "Carrusel de text i mèdia"
+
+#: includes/blocks/mailchimp.php:378
+msgid "Thank you for joining our mailing list."
+msgstr "Gràcies per unir-vos a la nostra llista de correu."
+
+#: includes/blocks/mailchimp.php:322
+msgid "An invalid Mailchimp list was provided."
+msgstr "S'ha proporcionat una llista de Mailchimp no vàlida."
+
+#: includes/blocks/mailchimp.php:318
+msgid "Email is required."
+msgstr "El correu electrònic és obligatori."
+
+#: includes/blocks/mailchimp.php:179
+#: includes/templates/mailchimp/field-last-name.php:8
+#: assets/js/editor.blocks.js:23
+msgid "Last name"
+msgstr "Cognoms"
+
+#: includes/blocks/mailchimp.php:165
+#: includes/templates/mailchimp/field-first-name.php:8
+#: assets/js/editor.blocks.js:23
+msgid "First name"
+msgstr "Nom"
+
+#: includes/blocks/mailchimp.php:142
+msgid "Select at least one MailChimp list."
+msgstr "Seleccioneu almenys una llista de MailChimp."
+
+#: includes/blocks/mailchimp.php:26 assets/js/editor.blocks.js:23
+msgid "Mailchimp"
+msgstr "MailChimp"
+
+#: includes/blocks/instagram.php:152 includes/instagram-token-manager.php:84
+#: includes/rest-api.php:201 includes/rest-api.php:231
+msgid "Error in json_decode."
+msgstr "S'ha produït un error en el json_decode."
+
+#. translators: %s is a link
+#: includes/blocks/instagram.php:107
+msgid "Instagram Access Token is not set. <a href=\"%s\">Connect Instagram Account</a>."
+msgstr "El testimoni d'accés d'Instagram no està definit. <a href=\"%s\">Connecta el compte d'Instagram</a>."
+
+#: includes/blocks/instagram.php:52 assets/js/editor.blocks.js:23
+msgid "Instagram"
+msgstr "Instagram"
+
+# modificat xtec
+#: includes/blocks/images-stack.php:23 assets/js/editor.blocks.js:23
+msgid "Image Stack Gallery"
+msgstr "Pila d'imatges"
+
+#: includes/blocks/images-slider.php:52 assets/js/editor.blocks.js:23
+msgid "Image Slider"
+msgstr "Carrusel d'imatges"
+
+#: includes/blocks/image-hotspot.php:83 assets/js/editor.blocks.js:23
+msgid "Image Hotspot"
+msgstr "imatge amb punts calents"
+
+# modificat xtec
+#: includes/blocks/image-box.php:35 assets/js/editor.blocks.js:23
+msgid "Image Box"
+msgstr "Caixa d'imatge"
+
+#: includes/blocks/icon.php:35 assets/js/editor.blocks.js:23
+msgid "Icon"
+msgstr "Icona"
+
+#: includes/blocks/icon-box.php:34 assets/js/editor.blocks.js:23
+msgid "Icon Box"
+msgstr "Caixa d'icones"
+
+#: includes/blocks/google-map.php:47 assets/js/editor.blocks.js:23
+msgid "Google Maps"
+msgstr "Google Maps"
+
+#: includes/blocks/custom-post-type.php:285
+msgctxt "Next post"
+msgid ">"
+msgstr ">"
+
+#: includes/blocks/custom-post-type.php:284
+msgctxt "Previous post"
+msgid "<"
+msgstr "<"
+
+#: includes/blocks/custom-post-type.php:264
+msgid "Posts navigation"
+msgstr "Navegació d'entrades"
+
+# modificat xtec
+#: includes/blocks/custom-post-type.php:121 assets/js/editor.blocks.js:23
+msgid "Custom Post Type"
+msgstr "Tipus d'article personalitzat"
+
+#: includes/blocks/counter.php:44 assets/js/editor.blocks.js:23
+msgid "Counter"
+msgstr "Comptador"
+
+#: includes/blocks/countdown.php:342
+msgid "Invalid date."
+msgstr "Data no vàlida."
+
+#: includes/blocks/countdown.php:163 assets/js/editor.blocks.js:23
+msgid "Countdown"
+msgstr "Compte enrere"
+
+# modificat xtec
+#: includes/blocks/content-timeline.php:23 assets/js/editor.blocks.js:23
+msgid "Content Timeline"
+msgstr "Línia de temps"
+
+#: includes/blocks/contact-form.php:331
+msgid "The response is no longer valid: either is too old or has been used previously."
+msgstr "La resposta ja no és vàlida: o és massa antiga o s'ha utilitzat prèviament."
+
+#: includes/blocks/contact-form.php:325
+msgid "The response parameter is invalid or malformed."
+msgstr "El paràmetre de resposta no és vàlid o està malformat."
+
+#: includes/blocks/contact-form.php:319
+msgid "The secret parameter is invalid or malformed."
+msgstr "El paràmetre secret no és vàlid o està malformat."
+
+#: includes/blocks/contact-form.php:313
+msgid "Please check the captcha."
+msgstr "Si us plau, comproveu el captcha."
+
+#: includes/blocks/contact-form.php:307
+msgid "The secret parameter is missing."
+msgstr "Falta el paràmetre secret."
+
+#: includes/blocks/contact-form.php:301
+msgid "The request is invalid or malformed."
+msgstr "La sol·licitud no és vàlida o està malformada."
+
+#: includes/blocks/contact-form.php:266
+msgid "There was an error trying to send your message. Please try again later."
+msgstr "S'ha produït un error en intentar enviar el missatge. Torneu-ho a provar més tard."
+
+#: includes/blocks/contact-form.php:259
+msgid "Thank you for your message. It has been sent."
+msgstr "Gràcies pel seu missatge. S'ha enviat."
+
+#. translators: %s is a blogname
+#: includes/blocks/contact-form.php:238
+msgid "This e-mail was sent from a contact form on %s"
+msgstr "Aquest correu electrònic s'ha enviat des d'un formulari de contacte a %s"
+
+#: includes/blocks/contact-form.php:22 assets/js/editor.blocks.js:23
+msgid "Contact Form"
+msgstr "Formulari de contacte"
+
+#: includes/blocks/circle-progress-bar.php:31 assets/js/editor.blocks.js:23
+msgid "Circular Progress Bar"
+msgstr "Barra de progrés circular"
+
+#: includes/blocks/button-group.php:23 assets/js/editor.blocks.js:23
+msgid "Button Group"
+msgstr "Grup de botons"
+
+#: includes/blocks/banner.php:22 assets/js/editor.blocks.js:23
+msgid "Banner"
+msgstr "Bàner"
+
+#: includes/blocks/anchor.php:20 assets/js/editor.blocks.js:23
+msgid "Anchor"
+msgstr "Àncora"
+
+#: includes/blocks/advanced-spacer.php:23 assets/js/editor.blocks.js:23
+msgid "Advanced Spacer"
+msgstr "Espaiador avançat"
+
+#: includes/blocks/advanced-heading.php:22 assets/js/editor.blocks.js:23
+msgid "Advanced Heading"
+msgstr "Encapçalament avançat"
+
+#: includes/blocks/accordion.php:28 assets/js/editor.blocks.js:23
+msgid "Accordion"
+msgstr "Acordió"
+
+#. translators: %1$s is a block name, %2$s is a link
+#: includes/blocks/abstract-block.php:75 assets/js/editor.blocks.js:6
+msgid "%1$s block is disabled in plugin settings. <a href=\"%2$s\">Manage Blocks</a>"
+msgstr "El bloc %1$s està desactivat a la configuració del connector. <a href=\"%2$s\">Gestiona els blocs</a>"
+
+#: includes/blocks-manager.php:62 includes/blocks-manager.php:105
+msgid "Getwid ACF Blocks"
+msgstr "Blocs Getwid ACF"
+
+#: includes/blocks-manager.php:49 includes/blocks-manager.php:92
+msgid "Getwid Post Blocks"
+msgstr "Blocs d'entrada de Getwid"
+
+#: includes/blocks-manager.php:37 includes/blocks-manager.php:80
+msgid "Getwid Blocks"
+msgstr "Blocs Getwid"
+
+#: includes/block-actions.php:8
+msgid "Nothing found."
+msgstr "No s'ha trobat res."
+
+#. Author URI of the plugin
+msgid "https://motopress.com/"
+msgstr "https://motopress.com/"
+
+#. Author of the plugin
+msgid "MotoPress"
+msgstr "MotoPress"
+
+#. Description of the plugin
+msgid "Extra Gutenberg blocks for building seamless and aesthetic websites in the WordPress block editor."
+msgstr "Blocs addicionals de Gutenberg per a la construcció de llocs web estètics i sense problemes a l'editor de blocs del WordPress."
+
+#. Plugin URI of the plugin
+msgid "https://motopress.com/products/getwid/"
+msgstr "https://motopress.com/products/getwid/"
+
+#. Plugin Name of the plugin
+msgid "Getwid"
+msgstr "Getwid"
