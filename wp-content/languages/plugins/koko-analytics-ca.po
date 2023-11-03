@@ -1,0 +1,412 @@
+# Translation of Plugins - Koko Analytics - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Koko Analytics - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-11-03 11:00:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Koko Analytics - Stable (latest release)\n"
+
+#: src/views/dashboard-widget.php:65
+msgid "Today's top referrers"
+msgstr "Principals referents d'avui"
+
+#: src/views/dashboard-widget.php:51
+msgid "Today's top pages"
+msgstr "Pàgines més vistes avui"
+
+#: src/views/dashboard-widget.php:20
+msgid "Your site had a total of %s pageviews today, %s of which  were in the last hour."
+msgstr "El vostre lloc web ha tingut un total de %s pàgines vistes avui, de les quals %s han estat durant la darrera hora."
+
+#: src/class-shortcode-most-viewed-posts.php:37
+msgid "Heads up! Your shortcode is working, but did not return any results. Please check your shortcode arguments."
+msgstr "Atenció! El vostre codi curt està funcionant, però no retorna cap resultat. Comproveu els paràmetres del codi curt."
+
+#: src/views/settings-page.php:29
+msgid "Unable to install optimized endpoint. Please create the file manually and then try again."
+msgstr "No s'ha pogut instal·lar l'extrem optimitzat. Creeu el fitxer manualment i torneu-ho a provar."
+
+#: src/views/settings-page.php:29
+msgid "Successfully installed optimized endpoint."
+msgstr "S'ha instal·lat correctament l'extrem optimitzat."
+
+#: src/views/settings-page.php:104
+msgid "To use one, create the file %1s with the following file contents: "
+msgstr "Per a utilitzar-ne un, creeu el fitxer %1s amb el contingut següent:"
+
+#: src/views/settings-page.php:66
+msgid "Set to \"yes\" if you want your dashboard to be publicly accessible. With this setting enabled, you can <a href=\"%s\">find your public dashboard here</a>."
+msgstr "Establiu-ho a \"sí\" si voleu que el tauler sigui accessible públicament. Amb aquest paràmetre habilitat, podeu <a href=\"%s\">trobar el vostre tauler públic aquí</a>."
+
+#: src/views/settings-page.php:61
+msgid "Should your dashboard be publicly accessible?"
+msgstr "El vostre tauler hauria de ser accessible públicament?"
+
+#: src/views/nav.php:15
+msgid "Switch to standalone view"
+msgstr "Canvia a la vista independent"
+
+#: src/views/nav.php:11
+msgid "Switch to admin view"
+msgstr "Canvia a la vista d'administració"
+
+#: src/views/dashboard-widget.php:18
+msgid "Realtime"
+msgstr "Temps real"
+
+#: src/views/dashboard-page.php:113 src/views/dashboard-page.php:128
+msgid "There is nothing here. Yet!"
+msgstr "Aquí no hi ha res. De moment!"
+
+#: src/class-dashboard.php:83
+msgid "Last 14 days"
+msgstr "Últims 14 dies"
+
+#: src/class-dashboard.php:98
+msgid "Tip: Use <a href=\"%1s\">Koko Analytics Pro</a> to set up custom event tracking."
+msgstr "Consell: Utilitzeu <a href=\"%1s\">Koko Analytics Pro</a> per configurar el seguiment d'esdeveniments personalitzats."
+
+#: src/class-dashboard.php:97
+msgid "Tip: did you know there is a widget, shortcode and template function to <a href=\"%1s\">show a list of the most viewed posts</a> on your site?"
+msgstr "Consell: sabíeu que hi ha una funció de giny, codi de substitució i plantilla a <a href=\"%1s\">per mostrar una llista de les entrades més vistes</a> al vostre lloc?"
+
+#: src/class-dashboard.php:96
+msgid "Tip: you can set a default date range in the plugin settings."
+msgstr "Consell: podeu establir un interval de dates predeterminat a la configuració de l'extensió."
+
+#: src/class-dashboard.php:95
+msgid "Tip: use the arrow keys on your keyboard to cycle through date ranges."
+msgstr "Consell: utilitzeu les tecles de fletxa del teclat per a recórrer intervals de dates."
+
+#: src/views/settings-section-events.php:3
+msgid "Events"
+msgstr "Esdeveniments"
+
+#: src/views/settings-page.php:126
+msgid "Have a look at our <a href=\"%1s\">knowledge base</a> for help with configuring and using Koko Analytics."
+msgstr "Doneu un cop d'ull a la nostra base de coneixement <a href=\"%1s\"></a> per obtenir ajuda amb la configuració i l'ús de Koko Analytics."
+
+#: src/views/settings-page.php:125
+msgid "Help"
+msgstr "Ajuda"
+
+#: src/views/settings-page.php:102
+msgid "Create optimized endpoint file"
+msgstr "Crea un fitxer d'extrem optimitzat"
+
+#: src/views/settings-page.php:98
+msgid "The plugin is currently not using an optimized tracking endpoint."
+msgstr "Actualment, el connector no utilitza un extrem de seguiment optimitzat."
+
+#: src/views/settings-page.php:19
+msgid "Koko Analytics Settings"
+msgstr "Paràmetres del Koko Analytics"
+
+#: src/class-admin.php:186
+msgid "Koko Analytics Pro"
+msgstr "Koko Analytics Pro"
+
+#: src/class-admin.php:183
+msgid "Documentation"
+msgstr "Documentació"
+
+#: src/views/dashboard-page.php:55
+msgid "End date"
+msgstr "Data de finalització"
+
+#: src/views/dashboard-page.php:49
+msgid "Start date"
+msgstr "Data d'inici"
+
+#: src/views/settings-page.php:23
+msgid "Settings saved."
+msgstr "S'han desat els paràmetres."
+
+#: src/class-dashboard.php:108
+msgid "You appear to be using an ad-blocker that has Koko Analytics on its blocklist. Please whitelist this domain in your ad-blocker setting if your dashboard does not seem to be working correctly."
+msgstr "Sembla que esteu utilitzant un bloquejador que té Koko Analytics a la seva llista de bloqueigs. Poseu aquest domini a la llista blanca del blocador d'anuncis si el tauler no sembla funcionar correctament."
+
+#: src/views/settings-page.php:115
+msgid "Use the button below to erase all of your current analytics data. You may have to clear your browser's cache afterwards for the effect to be evident."
+msgstr "Utilitzeu el botó de sota per a esborrar totes les vostres dades d'anàlisi actuals. És possible que després hàgiu de netejar la memòria cau del navegador perquè l'efecte sigui evident."
+
+#: src/views/settings-page.php:112
+msgid "Data"
+msgstr "Dades"
+
+#: src/views/settings-page.php:116
+msgid "Are you sure you want to reset all of your statistics? This can not be undone."
+msgstr "Esteu segur/a que voleu restablir totes les vostres estadístiques? Això no es pot desfer."
+
+#: src/views/settings-page.php:119
+msgid "Reset Statistics"
+msgstr "Reinicialitza les estadístiques"
+
+#: src/views/dashboard-page.php:38
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: src/views/settings-page.php:106
+msgid "Please note that this is entirely optional and only recommended for high-traffic websites."
+msgstr "Tingueu en compte que això és totalment opcional i només es recomana per a llocs web d'alt trànsit."
+
+#: src/views/settings-page.php:96
+msgid "The plugin is currently using an optimized tracking endpoint. Great!"
+msgstr "El connector està utilitzant actualment un extrem de seguiment optimitzat. Genial!"
+
+#: src/views/settings-page.php:94
+msgid "Performance"
+msgstr "Rendiment"
+
+#: src/views/dashboard-page.php:110
+msgid "A pageview is defined as a view of a page on your site. If a user clicks reload after reaching the page, this is counted as an additional pageview. If a visitor navigates to a different page and then returns to the original page, a second pageview is recorded as well."
+msgstr "Una vista de pàgina es defineix com la vista d'una pàgina al vostre lloc. Si un usuari fa clic a recarrega després d'arribar a la pàgina, això es compta com una vista addicional. Si un visitant navega a una pàgina diferent i després torna a la pàgina original, també es registra una segona vista."
+
+#: src/views/dashboard-page.php:109
+msgid "A visitor represents the number of sessions during which a page was viewed one or more times."
+msgstr "Un visitant representa el nombre de sessions durant les quals s'ha vist una pàgina una o més vegades."
+
+#: src/views/settings-page.php:78
+msgid "The default date period to show when opening the analytics dashboard."
+msgstr "El període de data per defecte a mostrar en obrir el tauler d'anàlisi."
+
+#: src/views/settings-page.php:70
+msgid "Default date period"
+msgstr "Període de dates predeterminat"
+
+#: src/class-admin.php:109
+msgid "Koko Analytics is unable to write to the <code>%s</code> directory. Please update the file permissions so that your web server can write to it."
+msgstr "El Koko Analytics no pot escriure al directori <code>%s</code>. Si us plau, actualitzeu els permisos del fitxer perquè el vostre servidor web hi pugui escriure."
+
+#: src/views/settings-page.php:46
+msgid "Use CTRL to select multiple options."
+msgstr "Utilitzeu CTRL per a seleccionar diverses opcions."
+
+#: src/views/dashboard-page.php:75 src/views/dashboard-page.php:89
+msgid "more than previous period"
+msgstr "més que el període anterior"
+
+#: src/views/dashboard-page.php:76 src/views/dashboard-page.php:90
+msgid "less than previous period"
+msgstr "menys que el període anterior"
+
+#: src/class-dashboard.php:80
+msgid "Yesterday"
+msgstr "Ahir"
+
+#: src/class-dashboard.php:84
+msgid "Last 28 days"
+msgstr "Últims 28 dies"
+
+#: src/class-admin.php:98
+msgid "If you're not sure what this is about, please ask your webhost to look into this."
+msgstr "Si no esteu segurs de què va tot això, demaneu a l'administrador del web que ho investigui."
+
+#: src/class-admin.php:96
+msgid "There seems to be an issue with your site's WP Cron configuration that prevents Koko Analytics from automatically processing your statistics."
+msgstr "Sembla que hi ha un problema amb la configuració del cron del WordPress del vostre lloc web que impedeix que Koko Analytics processi automàticament les vostres estadístiques."
+
+#: src/class-widget-most-viewed-posts.php:109
+msgid "Number of days to use statistics for:"
+msgstr "Nombre de dies per a utilitzar les estadístiques:"
+
+#. translators: %1$s links to the WordPress.org plugin review page, %2$s links
+#. to the admin page for creating a new post
+#: src/class-admin.php:150
+msgid "If you enjoy using Koko Analytics, please <a href=\"%1$s\">review the plugin on WordPress.org</a> or <a href=\"%2$s\">write about it on your blog</a> to help out."
+msgstr "Si gaudiu utilitzant el Koko Analytics, si us plau, <a href=\"%1$s\">reviseu l'extensió a WordPress.org</a> o <a href=\"%2$s\">escriviu-ne al vostre blog</a> per ajudar."
+
+#: src/views/dashboard-page.php:94
+msgid "Realtime pageviews"
+msgstr "Visualitzacions de pàgina en temps real"
+
+#: src/views/dashboard-page.php:97
+msgid "pageviews in the last hour"
+msgstr "vistes de pàgina en l'última hora"
+
+#: src/class-dashboard.php:79
+msgid "Today"
+msgstr "Avui"
+
+#: src/views/settings-page.php:56
+msgid "Set to \"no\" if you do not want to use a cookie. Without the use of a cookie, Koko Analytics can not reliably detect returning visitors."
+msgstr "Establiu-ho a \"no\" si no voleu utilitzar una galeta. Sense l'ús d'una galeta, Koko Analytics no pot detectar de manera fiable els visitants que retornen."
+
+#: src/views/settings-page.php:52 src/views/settings-page.php:62
+msgid "Yes"
+msgstr "Sí"
+
+#: src/views/settings-page.php:51
+msgid "Use cookie to determine unique visitors and pageviews?"
+msgstr "Voleu utilitzar la galeta per a determinar els visitants i les vistes de pàgina únics?"
+
+#: src/views/settings-page.php:53 src/views/settings-page.php:63
+msgid "No"
+msgstr "No"
+
+#: src/views/settings-page.php:45
+msgid "Visits and pageviews from users with any of the selected roles will be ignored."
+msgstr "S'ignoraran les visites i les vistes de pàgina dels usuaris amb qualsevol dels rols seleccionats."
+
+#: src/views/settings-page.php:83
+msgid "Statistics older than the number of months configured here will automatically be deleted. Set to 0 to disable."
+msgstr "Les estadístiques anteriors al nombre de mesos configurats aquí se suprimiran automàticament. Establiu-ho a 0 per a desactivar."
+
+#: src/views/settings-page.php:82
+msgid "months"
+msgstr "mesos"
+
+#: src/views/settings-page.php:113
+msgid "Database size:"
+msgstr "Mida de la base de dades:"
+
+#: src/views/settings-page.php:81
+msgid "Automatically delete data older than how many months?"
+msgstr "Suprimeix automàticament les dades anteriors a quants mesos?"
+
+#: src/class-shortcode-most-viewed-posts.php:43
+msgid "(no title)"
+msgstr "(sense títol)"
+
+#: src/class-widget-most-viewed-posts.php:120
+msgid "Display post date?"
+msgstr "Voleu mostrar la data de l'entrada?"
+
+#: src/class-widget-most-viewed-posts.php:114
+msgid "Number of posts to show:"
+msgstr "Nombre d'entrades a mostrar:"
+
+#: src/class-widget-most-viewed-posts.php:98
+msgid "Post type:"
+msgstr "Tipus d'entrada:"
+
+#: src/class-widget-most-viewed-posts.php:93
+msgid "Title:"
+msgstr "Títol:"
+
+#: src/class-widget-most-viewed-posts.php:22
+#: src/class-widget-most-viewed-posts.php:29
+msgid "Most viewed posts"
+msgstr "Entrades més vistes"
+
+#: src/class-widget-most-viewed-posts.php:19
+msgid "Your site&#8217;s most viewed posts, as counted by Koko Analytics."
+msgstr "Les entrades més vistes del lloc, com les compta el Koko Analytics."
+
+#: src/views/dashboard-widget.php:82
+msgid "View all statistics"
+msgstr "Mostra totes les estadístiques"
+
+#: src/views/dashboard-widget.php:26
+msgid "Showing site visits over last 14 days"
+msgstr "S'estan mostrant les visites del lloc durant els últims 14 dies"
+
+#: src/views/nav.php:20
+msgid "Stats"
+msgstr "Estadístiques"
+
+#: src/class-admin.php:164 src/views/nav.php:25
+msgid "Settings"
+msgstr "Paràmetres"
+
+#: src/views/dashboard-page.php:31 src/views/dashboard-page.php:115
+#: src/views/dashboard-page.php:130
+msgid "Previous"
+msgstr "Anterior"
+
+#: src/views/dashboard-page.php:33 src/views/dashboard-page.php:116
+#: src/views/dashboard-page.php:131
+msgid "Next"
+msgstr "Següent"
+
+#: src/class-aggregator.php:26
+msgid "Every minute"
+msgstr "Cada minut"
+
+#: src/class-admin.php:33 src/functions.php:202
+msgid "Analytics"
+msgstr "Analítiques"
+
+#: src/class-dashboard-widget.php:31 src/class-dashboard.php:65
+#: src/views/dashboard-page.php:109 src/views/dashboard-page.php:124
+msgid "Visitors"
+msgstr "Visitants"
+
+#: src/views/dashboard-page.php:80
+msgid "Total pageviews"
+msgstr "Total de vistes de pàgina"
+
+#: src/views/dashboard-page.php:66
+msgid "Total visitors"
+msgstr "Total de visitants"
+
+#: src/class-dashboard.php:87
+msgid "This year"
+msgstr "Enguany"
+
+#: src/class-dashboard.php:85
+msgid "This month"
+msgstr "Aquest mes"
+
+#: src/class-dashboard.php:81
+msgid "This week"
+msgstr "Aquesta setmana"
+
+#: src/views/dashboard-page.php:123
+msgid "Referrers"
+msgstr "Referents"
+
+#: src/class-dashboard-widget.php:32 src/class-dashboard.php:66
+#: src/views/dashboard-page.php:110 src/views/dashboard-page.php:125
+msgid "Pageviews"
+msgstr "Pàgines vistes"
+
+#: src/views/dashboard-page.php:108
+msgid "Pages"
+msgstr "Pàgines"
+
+#: src/class-dashboard.php:88
+msgid "Last year"
+msgstr "L'any passat"
+
+#: src/class-dashboard.php:86
+msgid "Last month"
+msgstr "Últim mes"
+
+#: src/class-dashboard.php:82
+msgid "Last week"
+msgstr "La setmana passada"
+
+#: src/views/settings-page.php:36
+msgid "Exclude pageviews from these user roles"
+msgstr "Exclou les vistes de pàgina d'aquests rols d'usuari"
+
+#: src/views/dashboard-page.php:36
+msgid "Date range"
+msgstr "Interval de dates"
+
+#. Author URI of the plugin
+msgid "https://ibericode.com/#utm_source=wp-plugin&utm_medium=koko-analytics&utm_campaign=plugins-page"
+msgstr "https://ibericode.com/#utm_source=wp-plugin&utm_medium=koko-analytics&utm_campaign=plugins-page"
+
+#. Author of the plugin
+msgid "ibericode"
+msgstr "ibericode"
+
+#. Description of the plugin
+msgid "Privacy-friendly analytics for your WordPress site."
+msgstr "Analítiques que respecten la privacitat per al WordPress."
+
+#. Plugin URI of the plugin
+msgid "https://www.kokoanalytics.com/#utm_source=wp-plugin&utm_medium=koko-analytics&utm_campaign=plugins-page"
+msgstr "https://www.kokoanalytics.com/#utm_source=wp-plugin&utm_medium=koko-analytics&utm_campaign=plugins-page"
+
+#. Plugin Name of the plugin
+#: src/class-admin.php:33
+msgid "Koko Analytics"
+msgstr "Koko Analytics"
