@@ -1,0 +1,740 @@
+# Translation of Plugins - Tabs - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Tabs - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-04 07:09:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Tabs - Stable (latest release)\n"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:343
+msgid " Display only Icon"
+msgstr " Mostra només la icona"
+
+#: ink/admin/settings.php:182
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:279
+msgid "After Tab Title"
+msgstr "Després del títol de la pestanya"
+
+#: ink/admin/settings.php:181
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:275
+msgid "Before Tab Title"
+msgstr "Abans del títol de la pestanya"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:114
+msgid "Code"
+msgstr "Codi"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:27
+msgid "Content"
+msgstr "Contingut"
+
+#: ink/admin/menu.php:154
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:122
+msgid "Custom Css"
+msgstr "CSS personalitzat"
+
+#: ink/admin/settings.php:216
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:295
+msgid "Default"
+msgstr "Per defecte"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:5
+msgid "Design"
+msgstr "Disseny"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:17
+msgid "Design-1"
+msgstr "Disseny-1"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:367
+msgid "Display As A vertical Button"
+msgstr "Mostra com a botó vertical"
+
+#: ink/admin/settings.php:557
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:363
+msgid "Display As a tabs"
+msgstr "Mostra com a pestanyes"
+
+#: ink/admin/settings.php:540
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:339
+msgid "Display Both Title + Icon"
+msgstr "Mostra el títol i la icona"
+
+#: ink/admin/settings.php:542
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:347
+msgid "Display Only Title"
+msgstr "Mostra només el títol"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:247
+msgid "Display Option For Title and icon"
+msgstr "Opció de visualització per al títol i la icona"
+
+#: ink/admin/settings.php:399
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:160
+msgid "Fade Animation"
+msgstr "Animació d'esvaïment"
+
+#: ink/admin/settings.php:401
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:162
+msgid "Fade In Down Animation"
+msgstr "Animació d'esvaïment (a baix)"
+
+#: ink/admin/settings.php:402
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:163
+msgid "Fade In Left Animation"
+msgstr "Animació d'esvaïment (esquerra)"
+
+#: ink/admin/settings.php:403
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:164
+msgid "Fade In Right Animation"
+msgstr "Animació d'esvaïment (dreta)"
+
+#: ink/admin/settings.php:400
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:161
+msgid "Fade In Up Animation"
+msgstr "Animació d'esvaïment (a munt)"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:143
+msgid "Font Family"
+msgstr "Tipus de lletra"
+
+#: ink/admin/settings.php:455
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:319
+msgid "Horizontal"
+msgstr "Horitzontal"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:206
+msgid "Left"
+msgstr "Esquerra"
+
+#: ink/admin/settings.php:404
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:165
+msgid "No Animation"
+msgstr "Sense animació"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:207
+msgid "Right"
+msgstr "Dreta"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:49
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:87
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:93
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:99
+msgid "Sample Description"
+msgstr "Descripció de mostra"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:39
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:86
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:92
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:98
+msgid "Sample Title"
+msgstr "Títol de mostra"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:13
+msgid "Select Design"
+msgstr "Selecciona el disseny"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:430
+msgid "Selected Tabs Title Background Color"
+msgstr "Color de fons del títol de les pestanyes seleccionades"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:449
+msgid "Selected Tabs Title/Icon Font Color"
+msgstr "Color de fons del títol/icona de les pestanyes seleccionades"
+
+#: ink/admin/settings.php:161
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:259
+msgid "Show Only Icon"
+msgstr "Mostra només la icona"
+
+#: ink/admin/settings.php:160
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:255
+msgid "Show Only Tabs Title"
+msgstr "Mostra només el títol de lapestanya"
+
+#: ink/admin/settings.php:159
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:251
+msgid "Show Tabs Title + Icon (both)"
+msgstr "Mostra el títol de la pestanya i la icona (ambdós)"
+
+#: ink/admin/settings.php:217
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:299
+msgid "Soft"
+msgstr "Suau"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:135
+msgid "Style"
+msgstr "Estil"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:315
+msgid "Tabs Alignment"
+msgstr "Alineació de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:467
+msgid "Tabs Description Background Color"
+msgstr "Color de fons de la descripció de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:484
+msgid "Tabs Description Font Color"
+msgstr "Color de lletra de la descripció de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:204
+msgid "Tabs Position"
+msgstr "Posició de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:386
+msgid "Tabs Title Background Color"
+msgstr "Color de fons del Tiol de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:412
+msgid "Tabs Title/Icon Font Color"
+msgstr "Color de lletra del Tiol/icona de les pestanyes"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:50
+msgid "Type your description here"
+msgstr "Escriviu la descripció aquí"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:40
+msgid "Type your title here"
+msgstr "Escriviu el títol aquí"
+
+#: ink/admin/settings.php:456
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:323
+msgid "Vertical"
+msgstr "Vertical"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:88
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:94
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:100
+msgid "fa fa-laptop"
+msgstr "fa fa-laptop"
+
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:89
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:95
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:101
+msgid "yes"
+msgstr "sí"
+
+#: tabs-responsive-addon.php:77
+msgid "WPShopmart"
+msgstr "WPShopmart"
+
+#: ink/admin/settings.php:218
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:303
+msgid "Noise"
+msgstr "Soroll"
+
+#: ink/admin/add-tabs.php:153 ink/admin/cpt-reg.php:9 ink/admin/cpt-reg.php:10
+msgid "Add New Tabs"
+msgstr "Afegeix una pestanya"
+
+#: ink/admin/add-tabs.php:48
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:81
+msgid "Add Tabs"
+msgstr "Afegeix pestanyes"
+
+#: ink/admin/menu.php:94
+msgid "Add Tabs Panel"
+msgstr "Afegeix tauler de pestanyes"
+
+#: ink/admin/fvp.php:61
+msgid "Advanced Bsckend Editor"
+msgstr "Editor avançat de Bsckend"
+
+#: ink/admin/settings.php:462
+msgid "Align Your Tabs from here"
+msgstr "Alinea les pestanyes des d'aquí"
+
+#: ink/admin/settings.php:487
+msgid "Align Your Tabs position here "
+msgstr "Alinea la posició de les pestanyes aquí "
+
+#: ink/admin/settings.php:187
+msgid "Align your Tab Icon Position before title or after title"
+msgstr "Alinea la posició de la icona de tabulació abans del títol o després del títol"
+
+#: ink/admin/cpt-reg.php:7
+msgid "All Tabs"
+msgstr "Totes les pestanyes"
+
+#: ink/admin/fvp.php:56
+msgid "Animation"
+msgstr "Animació"
+
+#: ink/admin/fvp.php:111
+msgid "Border Customization"
+msgstr "Personalització de les vores"
+
+#: ink/admin/fvp.php:106
+msgid "Button Navigation"
+msgstr "Botó de navegació"
+
+#: ink/admin/fvp.php:31
+msgid "Coulmn Layout"
+msgstr "Disseny de la columna"
+
+#: ink/admin/fvp.php:73
+msgid "Custom Image Icons"
+msgstr "Icones d'imatges personalitzades"
+
+#: ink/admin/menu.php:76
+msgid "Date"
+msgstr "Data"
+
+#: ink/admin/add-tabs.php:157
+msgid "Delete All"
+msgstr "Esborra-ho tot"
+
+#: ink/admin/add-tabs-js-footer.php:15 ink/admin/add-tabs.php:82
+#: ink/admin/add-tabs.php:116
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:69
+msgid "Display Above Icon"
+msgstr "Mostra la icona"
+
+#: ink/admin/settings.php:157
+msgid "Display Option For Title and icon "
+msgstr "Opció de visualització per al títol i la icona "
+
+#: ink/admin/settings.php:207
+msgid "Display Or Hide Tabs Border Here"
+msgstr "Mostra o amaga la vora de les pestanyes aquí"
+
+#: ink/admin/settings.php:194
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:192
+msgid "Display Tabs Border"
+msgstr "Mostra la vora de les pestanyes"
+
+#: ink/admin/settings.php:136 ink/admin/settings.php:149
+msgid "Display Tabs Section Title "
+msgstr "Mostra el títol de la secció de pestanyes "
+
+#: ink/admin/settings.php:167
+msgid "Display Tabs Title And Icon "
+msgstr "Mostra el títol i la icona de les pestanyes "
+
+#: ink/widget/widget.php:14
+msgid "Display Your Tabs in widget area."
+msgstr "Mostra les pestanyes a l'àrea de ginys."
+
+#: ink/admin/settings.php:563
+msgid "Display Your Title as Vrtical Button or as tabs in Mobile"
+msgstr "Mostra el títol com a botó vertical o com a pestanyes al mòbil"
+
+#: ink/admin/fvp.php:101
+msgid "Dot Navigation"
+msgstr "Navegació per punts"
+
+#: ink/admin/cpt-reg.php:11
+msgid "Edit Tabs"
+msgstr "Edita les pestanyes"
+
+#: ink/admin/settings.php:357
+msgid "Font Style/Family"
+msgstr "Estil de lletra/família"
+
+#: ink/admin/fvp.php:68
+msgid "Google Fonts"
+msgstr "Tipus de lletra de Google"
+
+#: ink/admin/menu.php:97
+msgid "Help From Wpshopmart"
+msgstr "Ajuda de Wpshopmart"
+
+#: ink/admin/settings.php:547
+msgid "Hide/display your icon and title on mobile and tablets"
+msgstr "Amaga/mostra la icona i el títol al mòbil i a les tauletes"
+
+#: ink/install/installation.php:79
+msgid "Insert Tabs Shortcode"
+msgstr "Insereix el codi curt de la pestanya"
+
+#. translators: 1: Plugin name and version.
+#: ink/admin/free.php:177 ink/admin/more-free-plugins.php:273
+msgid "Install Now"
+msgstr "Instal·la ara"
+
+#: ink/admin/free.php:189 ink/admin/more-free-plugins.php:285
+msgctxt "plugin"
+msgid "Installed"
+msgstr "Instal·lat"
+
+#: ink/admin/free.php:301 ink/admin/more-free-plugins.php:397
+msgid "Last Updated:"
+msgstr "Darrera actualització:"
+
+#: ink/admin/settings.php:518 ink/admin/settings.php:531
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:228
+msgid "Margin Between Tabs And Content"
+msgstr "Marge entre les pestanyes i el contingut"
+
+#: ink/admin/settings.php:497
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:216
+msgid "Margin Between Two Tabs"
+msgstr "Marge entre dues pestanyes"
+
+#: ink/admin/settings.php:510
+msgid "Margin Between Two Tabs "
+msgstr "Marge entre dues pestanyes "
+
+#. translators: 1: Plugin name and version.
+#: ink/admin/free.php:166 ink/admin/more-free-plugins.php:262
+msgid "More Details"
+msgstr "Més detalls"
+
+#: ink/admin/settings.php:142 ink/admin/settings.php:200
+#: ink/admin/settings.php:503 ink/admin/settings.php:524
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:72
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:195
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:219
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:231
+msgid "No"
+msgstr "No"
+
+#: ink/install/installation.php:82
+msgid "No Tabs Created"
+msgstr "No s'ha creat cap pestanya"
+
+#: ink/admin/cpt-reg.php:14
+msgid "No Tabs Found"
+msgstr "No s'ha trobat cap pestanya"
+
+#: ink/admin/cpt-reg.php:15
+msgid "No Tabs found in Trash"
+msgstr "No s'ha trobat cap pestanya a la paperera"
+
+#: ink/widget/widget.php:83
+msgid "No Title"
+msgstr "Sense títol"
+
+#: ink/install/installation.php:123
+msgid "Nope, maybe later"
+msgstr "No, potser després"
+
+#: ink/admin/fvp.php:80
+msgid "On Hover Tab"
+msgstr "En passar el cursor per la pestanya"
+
+#: ink/admin/fvp.php:23
+msgid "Responsive Layout"
+msgstr "Disseny responsiu"
+
+#: ink/admin/cpt-reg.php:13
+msgid "Search Tabs"
+msgstr "Cerca pestanyes"
+
+#: ink/admin/fvp.php:116
+msgid "Section Background"
+msgstr "Fons de la secció"
+
+#: ink/widget/widget.php:65
+msgid "Select Tabs"
+msgstr "Selecciona pestanyes"
+
+#: ink/admin/settings.php:267
+msgid "Selected Tabs Title Background Colour"
+msgstr "Color de fons del títol de les pestanyes seleccionades"
+
+#: ink/admin/settings.php:282
+msgid "Selected Tabs Title/Icon Font Colour"
+msgstr "Color de fons del títol/icona de les pestanyes seleccionades"
+
+#: ink/admin/settings.php:274
+msgid "Selected/Open Tabs Title Background Colour"
+msgstr "Color de fons Pestanyes seleccionades/obertes"
+
+#: ink/admin/settings.php:289
+msgid "Selected/Open Tabs Title/Icon Font Colour"
+msgstr "Color de fons Pestanyes seleccionades/obertes"
+
+#: ink/admin/add-tabs-js-footer.php:7 ink/admin/add-tabs.php:73
+#: ink/admin/add-tabs.php:107
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:47
+msgid "Tab Description"
+msgstr "Descripció de la pestanya"
+
+#: ink/admin/add-tabs-js-footer.php:10 ink/admin/add-tabs.php:77
+#: ink/admin/add-tabs.php:111
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:57
+msgid "Tab Icon"
+msgstr "Icona de la pestanya"
+
+#: ink/admin/settings.php:223
+msgid "Tab Styles"
+msgstr "Estils de la pestanya"
+
+#: ink/admin/add-tabs-js-footer.php:5 ink/admin/add-tabs.php:71
+#: ink/admin/add-tabs.php:105
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:37
+msgid "Tab Title"
+msgstr "Títol de la pestanya"
+
+#: ink/admin/menu.php:74
+msgid "Tabs"
+msgstr "Pestanyes"
+
+#: ink/admin/settings.php:453
+msgid "Tabs Alignment "
+msgstr "Alineació de les pestanyes "
+
+#: ink/admin/fvp.php:95 ink/install/installation.php:338
+msgid "Tabs Custom Height"
+msgstr "Alçada personalitzada"
+
+#: ink/admin/fvp.php:90 ink/install/installation.php:329
+msgid "Tabs Custom Width"
+msgstr "Amplada personalitzada"
+
+#: ink/admin/settings.php:396
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:156
+msgid "Tabs Description Animation"
+msgstr "Animació de la descripció de les pestanyes"
+
+#: ink/admin/settings.php:297 ink/admin/settings.php:304
+msgid "Tabs Description Background Colour"
+msgstr "Color de fons de la descripció de les pestanyes"
+
+#: ink/admin/settings.php:312 ink/admin/settings.php:319
+msgid "Tabs Description Font Colour"
+msgstr "Color de lletra de la descripció de les pestanyes"
+
+#: ink/admin/settings.php:342
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:532
+msgid "Tabs Description Font Size"
+msgstr "Mida de lletra de la descripció de les pestanyes"
+
+#: ink/admin/settings.php:179
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:271
+msgid "Tabs Icon Position Alignment"
+msgstr "Posició de la icona de les pestanyes"
+
+#: ink/admin/settings.php:538
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:335
+msgid "Tabs Mobile display Settings"
+msgstr "Configuració de les pestanyes de la pantalla mòbil"
+
+#: ink/admin/settings.php:572
+msgid "Tabs On Hover"
+msgstr "Pestanyes en passar per sobre"
+
+#: ink/admin/settings.php:474
+msgid "Tabs Position "
+msgstr "Tabs Position "
+
+#. Plugin Name of the plugin
+#: ink/admin/cpt-reg.php:5 ink/admin/cpt-reg.php:18 ink/admin/cpt-reg.php:19
+#: tabs-responsive-elementor-addon/widgets/tabs-responsive-addon-widget.php:28
+msgid "Tabs Responsive"
+msgstr "Pestanyes"
+
+#: ink/admin/cpt-reg.php:3 ink/admin/cpt-reg.php:4
+msgctxt "Tabs Responsive"
+msgid "Tabs Responsive"
+msgstr "Pestanyes"
+
+#. Description of the plugin
+msgid "Tabs Responsive is the most easiest drag & drop Tabs builder for WordPress. You can add unlimited Tabs with unlimited color Scheme."
+msgstr "Tabs Responsive is the most easiest drag & drop Tabs builder for WordPress. You can add unlimited Tabs with unlimited color Scheme."
+
+#: ink/admin/fvp.php:85
+msgid "Tabs Scroll Effect"
+msgstr "Efecte de desplaçament de les pestanyes"
+
+#: ink/admin/menu.php:103
+msgid "Tabs Settings"
+msgstr "Paràmetres de les pestanyes"
+
+#: ink/admin/menu.php:75 ink/admin/menu.php:95 ink/admin/menu.php:134
+msgid "Tabs Shortcode"
+msgstr "Codi curt de les pestanyes"
+
+#: ink/admin/settings.php:214
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:291
+msgid "Tabs Styles"
+msgstr "Estil de les pestanyes"
+
+#: ink/admin/settings.php:236 ink/admin/settings.php:243
+msgid "Tabs Title Background Colour"
+msgstr "Color de fons del Tiol de les pestanyes"
+
+#: ink/admin/settings.php:251 ink/admin/settings.php:258
+msgid "Tabs Title/Icon Font Colour"
+msgstr "Color de lletra del Tiol/icona de les pestanyes"
+
+#: ink/admin/settings.php:327
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:507
+msgid "Tabs Title/Icon Font Size"
+msgstr "Mida de lletra del Tiol/icona de les pestanyes"
+
+#. translators: 1: Plugin name and version
+#: ink/admin/free.php:184 ink/admin/more-free-plugins.php:280
+msgid "Update Now"
+msgstr "Actualitza ara"
+
+#: ink/admin/cpt-reg.php:12
+msgid "Update Tabs"
+msgstr "Actualitza pestanyes"
+
+#: ink/admin/menu.php:135
+msgid "Use below shortcode in any Page/Post to publish your Tabs"
+msgstr "Feu servir el codi curt de sota a qualsevol Pàgina/Entrada per publicar les vostres pestanyes"
+
+#: ink/admin/cpt-reg.php:8
+msgid "View Tabs"
+msgstr "Visualitza pestanyes"
+
+#: ink/admin/free.php:233 ink/admin/free.php:243 ink/admin/free.php:253
+#: ink/admin/free.php:263 ink/admin/free.php:273 ink/admin/free.php:283
+#: ink/admin/more-free-plugins.php:329 ink/admin/more-free-plugins.php:339
+#: ink/admin/more-free-plugins.php:349 ink/admin/more-free-plugins.php:359
+#: ink/admin/more-free-plugins.php:369 ink/admin/more-free-plugins.php:379
+msgid "Visit Website"
+msgstr "Visiteu el lloc web"
+
+#: ink/admin/fvp.php:46 ink/install/installation.php:321
+msgid "Widget Option"
+msgstr "Opcions del giny"
+
+#: ink/widget/widget.php:60
+msgid "Widget Title"
+msgstr "Títol del giny"
+
+#: ink/admin/settings.php:140 ink/admin/settings.php:198
+#: ink/admin/settings.php:501 ink/admin/settings.php:522
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:71
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:194
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:218
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:230
+msgid "Yes"
+msgstr "Sí"
+
+#. Author URI of the plugin
+msgid "https://www.wpshopmart.com"
+msgstr "https://www.wpshopmart.com"
+
+#. Plugin URI of the plugin
+msgid "https://www.wpshopmart.com/plugins/"
+msgstr "https://www.wpshopmart.com/plugins/"
+
+#: ink/admin/settings.php:478
+msgid "left"
+msgstr "esquerra"
+
+#: ink/admin/settings.php:480
+msgid "right"
+msgstr "dreta"
+
+#. Author of the plugin
+msgid "wpshopmart"
+msgstr "wpshopmart"
+
+#: ink/install/installation.php:120
+msgid "~ wpshopmart"
+msgstr "~ wpshopmart"
+
+#: tabs-responsive.php:95
+msgid "Free Vs Pro"
+msgstr "Gratuït vs Pro"
+
+#: tabs-responsive.php:94
+msgid "More Free Plugins"
+msgstr "Més extensions gratuïtes"
+
+#: tabs-responsive.php:94
+msgid "More_Free_Plugins"
+msgstr "Més_extensions_gratuïtes"
+
+#: ink/install/installation.php:130
+msgid "Upgarde To Tabs Pro Plugin"
+msgstr "Actualitza a l'extensió Tabs Pro"
+
+#: ink/install/installation.php:124
+msgid "I already did"
+msgstr "Ja ho he fet"
+
+#: ink/admin/menu.php:102
+msgid "Rate Us If You Like This Plugin"
+msgstr "Valoreu-nos si us agrada aquesta extensió"
+
+#: ink/admin/menu.php:99
+msgid "More Pro Plugin From Wpshopmart"
+msgstr "Més extensions Pro de Wpshopmart"
+
+#: ink/admin/cpt-reg.php:6
+msgid "Parent Item:"
+msgstr "Element pare:"
+
+#: ink/admin/fvp.php:122
+msgid "Premium Priority Support"
+msgstr "Suport de prioritat prèmium"
+
+#: ink/admin/fvp.php:51 ink/install/installation.php:310
+msgid "Individual Color Scheme"
+msgstr "Esquema de color individual"
+
+#: ink/admin/fvp.php:42
+msgid "Drag n Drop Builder"
+msgstr "Constructor amb la funcionalitat d'arrossegar i deixar anar"
+
+#: ink/admin/fvp.php:37 ink/install/installation.php:330
+msgid "Unlimited Shortcode"
+msgstr "Il·limitats codis de substitució"
+
+#: ink/admin/fvp.php:27
+msgid "No. Of Design Templates"
+msgstr "Núm. de plantilles de diseny"
+
+#: ink/admin/fvp.php:18
+msgid "Pricing"
+msgstr "Preu"
+
+#: ink/admin/free.php:320 ink/admin/more-free-plugins.php:416
+msgid "Compatible with your version of WordPress"
+msgstr "Compatible amb la versió del WordPress"
+
+#: ink/admin/free.php:316 ink/admin/more-free-plugins.php:412
+msgid "Incompatible with your version of WordPress"
+msgstr "Incompatible amb la versió del WordPress"
+
+#: ink/admin/free.php:312 ink/admin/more-free-plugins.php:408
+msgid "<strong>Untested</strong> with your version of WordPress"
+msgstr "<strong>Sense provar</strong> amb la versió del WordPress"
+
+#: ink/admin/free.php:306 ink/admin/more-free-plugins.php:402
+msgid "%s download"
+msgid_plural "%s downloads"
+msgstr[0] "%s baixada"
+msgstr[1] "%s baixades"
+
+#: ink/admin/free.php:230 ink/admin/free.php:240 ink/admin/free.php:250
+#: ink/admin/free.php:260 ink/admin/free.php:270 ink/admin/free.php:280
+#: ink/admin/more-free-plugins.php:326 ink/admin/more-free-plugins.php:336
+#: ink/admin/more-free-plugins.php:346 ink/admin/more-free-plugins.php:356
+#: ink/admin/more-free-plugins.php:366 ink/admin/more-free-plugins.php:376
+msgid "Premium Editions"
+msgstr "Edicions prèmium"
+
+#: ink/admin/free.php:189 ink/admin/more-free-plugins.php:285
+msgid "This plugin is already installed and is up to date"
+msgstr "Aquesta extensió ja s'ha instal·lat i està actualitzada"
+
+#. translators: 1: The rating
+#: ink/admin/free.php:98 ink/admin/more-free-plugins.php:195
+msgid "%s rating"
+msgstr "%s valoració"
+
+#. translators: 1: The rating, 2: The number of ratings
+#: ink/admin/free.php:94 ink/admin/more-free-plugins.php:191
+msgid "%1$s rating based on %2$s rating"
+msgid_plural "%1$s rating based on %2$s ratings"
+msgstr[0] "%1$s de valoració basada en %2$s valoració"
+msgstr[1] "%1$s de valoració basada en %2$s valoracions"
+
+#: ink/admin/settings.php:555
+#: tabs-responsive-elementor-addon/includes/tabs-responsive-addon-controls.php:359
+msgid "Title Display Mode In Mobile"
+msgstr "Mode de visualització del títol al mòbil"
