@@ -1,0 +1,87 @@
+# Translation of Plugins - SlideShare for WordPress by Yoast - Development (trunk) in Catalan
+# This file is distributed under the same license as the Plugins - SlideShare for WordPress by Yoast - Development (trunk) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - SlideShare for WordPress by Yoast - "
+"Development (trunk)\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/slideshare\n"
+"POT-Creation-Date: 2021-10-06T12:40:21+02:00\n"
+"PO-Revision-Date: 2018-07-16 13:01+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.7\n"
+
+#. Description of the plugin
+msgid "A plugin for WordPress to easily display slideshare.net presentations."
+msgstr ""
+"Una extensió de WordPress per a visualitzar fàcilment les presentacions "
+"slideshare.net."
+
+#: slideshare.php:81
+msgid "Explanation of default width"
+msgstr "Explicació de l'ample per defecte"
+
+#: slideshare.php:80
+msgid "Explanation of usage"
+msgstr "Explicació d'ús"
+
+#: slideshare.php:81
+msgid ""
+"If you <em>do</em> enter a value, it will always replace the width with that "
+"value."
+msgstr ""
+"Si introduïu un valor, sempre es reemplaçarà l'ample amb aquest mateix valor."
+
+#: slideshare.php:81
+msgid ""
+"If you enter nothing in the setting above, you can change the width by hand "
+"by changing (or inserting) the w= value, that is bolded and red here:"
+msgstr ""
+"Si no introduïu res, es pot canviar l'ample a mà modificant el valor de w "
+"(w=valor), que està en vermell i negreta:"
+
+#: slideshare.php:80
+msgid ""
+"Just copy and paste the WordPress Embed code from %s and you're done. Or you "
+"can just put the presentation URL on a line of its own."
+msgstr ""
+"Només s'ha de copiar i enganxar el codi embed de Wordpress de %s i ja ho "
+"tindreu. O simplement enganxar l'URL de la presentació."
+
+#: slideshare.php:75
+msgid "Presentation width"
+msgstr "Ample de la presentació"
+
+#: slideshare.php:79 yst_plugin_tools.php:55
+msgid "Settings"
+msgstr "Configuració"
+
+#. Plugin Name of the plugin
+msgid "SlideShare"
+msgstr "SlideShare"
+
+#: slideshare.php:35 slideshare.php:64
+msgid "SlideShare Configuration"
+msgstr "Configuració del SlideShare"
+
+#. Author of the plugin
+msgid "Team Yoast"
+msgstr "L'equip Yoast"
+
+#: slideshare.php:78
+msgid "Update SlideShare Settings"
+msgstr "Actualitza la configuració del SlideShare"
+
+#. Plugin URI of the plugin
+msgid "http://yoast.com/wordpress/slideshare/"
+msgstr "http://yoast.com/wordpress/slideshare/"
+
+# modificat xtec
+#. Author URI of the plugin
+msgid "https://yoast.com/"
+msgstr "https://yoast.com/"

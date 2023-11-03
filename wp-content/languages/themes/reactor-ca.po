@@ -1,0 +1,920 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Reactor\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/reactor\n"
+"POT-Creation-Date: 2021-10-06T12:40:35+02:00\n"
+"PO-Revision-Date: 2019-04-09 08:40+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: awtheme\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: library/inc/customizer/customize.php:766 page-templates/contact.php:14
+msgid " - Contact Form Message"
+msgstr "Formulari de contacte"
+
+#: comments.php:32
+msgid "% Comments"
+msgstr "% comentaris"
+
+#. translators: 1: date, 2: time
+#: library/inc/extensions/comments.php:44
+msgid "%1$s at %2$s"
+msgstr "%1$s a les %2$s"
+
+#: library/inc/content/content-posts.php:30
+#: post-formats/format-portfolio.php:28
+msgid "%s"
+msgstr "%s"
+
+#: library/inc/functions/page-links.php:121
+msgid "&hellip;"
+msgstr "&hellip;"
+
+#: library/inc/functions/page-links.php:72
+msgid "&laquo; Previous"
+msgstr "&laquo; Anterior"
+
+#: library/inc/extensions/menus.php:160
+msgid "&larr; Home"
+msgstr "&larr; Inici"
+
+#: comments.php:43
+msgid "&larr; Older Comments"
+msgstr "Comentaris anteriors"
+
+#: image.php:47
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: comments.php:69 comments.php:71
+msgid "( required )"
+msgstr "( obligatori )"
+
+#: library/inc/customizer/customize.php:577
+#: library/inc/customizer/customize.php:697
+#: library/inc/customizer/customize.php:811
+msgid "1 Column"
+msgstr "1 columna"
+
+#: comments.php:32
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: library/inc/customizer/customize.php:578
+#: library/inc/customizer/customize.php:698
+#: library/inc/customizer/customize.php:812
+msgid "2 Columns"
+msgstr "2 columnes"
+
+#: library/inc/customizer/customize.php:579
+#: library/inc/customizer/customize.php:699
+#: library/inc/customizer/customize.php:813
+msgid "3 Columns"
+msgstr "3 columnes"
+
+#: library/inc/customizer/customize.php:580
+#: library/inc/customizer/customize.php:814
+msgid "4 Columns"
+msgstr "4 columnes"
+
+#: library/inc/functions/breadcrumbs.php:175
+msgid "404 Not Found"
+msgstr "No s'ha trobat"
+
+#: image.php:32
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</"
+"time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
+"&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
+"\">%8$s</a>."
+msgstr ""
+"<span class=\"meta-prep meta-prep-entry-date\">Publicat </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</"
+"time></span> a <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
+"&vegades; %5$s</a> en <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
+"\">%8$s</a>."
+
+#: library/inc/metaboxes/meta-fields.php:171
+msgid "A URL for the slide title to direct to (ex. http://awtheme.com)"
+msgstr ""
+"Un URL pel títol de la diapositiva a què es dirigeix (ex. http://awtheme.com)"
+
+#: library/inc/customizer/customize.php:331
+msgid "Accordion"
+msgstr "Acordió"
+
+#: custom-tac/welcome-panel.php:26
+msgid "Actions"
+msgstr "Accions"
+
+#: custom-tac/welcome-panel.php:35
+msgid "Add a blog post"
+msgstr "Afegeix un article"
+
+#: custom-tac/welcome-panel.php:34
+msgid "Add additional pages"
+msgstr "Afegeix pàgines addicionals"
+
+#: custom-tac/welcome-panel.php:38
+msgid "Add an About page"
+msgstr "Afegeix una pàgina Quant a"
+
+#. Author of the theme
+msgid "Albert Bachiller"
+msgstr "Albert Bachiller"
+
+#: custom-tac/metabox-post-parametres.php:58
+msgid "Alert"
+msgstr "Alerta"
+
+#: library/inc/functions/taxonomy-subnav.php:18
+msgid "All"
+msgstr "Tot"
+
+#: post-formats/format-none.php:17
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
+msgstr "Podeu provar a fer una cerca nova."
+
+#: library/inc/functions/breadcrumbs.php:177
+msgid "Archives"
+msgstr "Arxius"
+
+#: library/inc/metaboxes/custom-meta.php:169
+msgid "Available "
+msgstr "Disponible "
+
+#: library/inc/metaboxes/meta-fields.php:23
+msgid "Barra esquerra (Ginys)"
+msgstr "Barra esquerra (Ginys)"
+
+#. Template Name of the theme
+msgid "Barra esquerra (Subpàgines)"
+msgstr "Barra esquerra (Subpàgines)"
+
+#: custom-tac/welcome-panel.php:47
+msgid "Bookings"
+msgstr "Sistema de reserves"
+
+#: custom-tac/welcome-panel.php:48
+msgid "BuddyPress"
+msgstr "Xarxa Nodes (BuddyPress)"
+
+#: functions.php:157
+msgid "Categories (Barra esquerra)"
+msgstr "Categories (Barra esquerra)"
+
+#: library/inc/functions/taxonomy-subnav.php:30
+msgid "Categories: "
+msgstr "Categories: "
+
+#: library/inc/widgets/recent-posts.php:95
+msgid "Category IDs, separated by commas."
+msgstr "Identificadors de les categories, separats per comes."
+
+#: library/inc/customizer/customize.php:844
+msgid "Category Pages"
+msgstr "Totes les pàgines de categories"
+
+#: taxonomy-portfolio-category.php:24
+msgid "Category: %s"
+msgstr "Categoria: %s"
+
+#: library/inc/metaboxes/custom-meta.php:231
+msgid "Choose File"
+msgstr "Tria un fitxer"
+
+#: functions.php:254
+msgid "Components"
+msgstr "Components"
+
+#: functions.php:333
+msgid "Configuració"
+msgstr "Configuració"
+
+#. Template Name of the theme
+#: library/inc/customizer/customize.php:747
+msgid "Contact Page"
+msgstr "Contacte"
+
+#: library/inc/customizer/customize.php:312
+msgid "Contain Top Bar Width"
+msgstr "Conté l'amplada de la barra superior"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:61
+msgid "Copia el nom de la icona i enganxa'l a la posició desitjada."
+msgstr "Copia el nom de la icona i enganxa'l a la posició desitjada."
+
+#: custom-tac/welcome-panel.php:28
+msgid "Customize"
+msgstr "Personalitza"
+
+#: archive-portfolio.php:26
+msgid "Daily Archives: %s"
+msgstr "Arxius diaris: %s"
+
+#: library/inc/customizer/customize.php:379
+msgid "Default Layout"
+msgstr "Format per defecte"
+
+#: custom-tac/welcome-panel.php:53
+msgid "Do you need help?"
+msgstr "Necessiteu ajuda?"
+
+#: custom-tac/metabox-post-parametres.php:56
+msgid "Document"
+msgstr "Document"
+
+#: image.php:43 library/inc/content/content-pages.php:48
+#: library/inc/extensions/comments.php:23
+#: library/inc/extensions/comments.php:55
+msgid "Edit"
+msgstr "Edita"
+
+#: custom-tac/welcome-panel.php:30 custom-tac/welcome-panel.php:33
+msgid "Edit Home Page"
+msgstr "Edita la pàgina principal"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:116
+#: custom-tac/capcalera/icones-capcalera-settings.php:190
+msgid "Element 1:"
+msgstr "Element 1:"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:149
+#: custom-tac/capcalera/icones-capcalera-settings.php:223
+msgid "Element 2:"
+msgstr "Element 2:"
+
+#: comments.php:71
+msgid "Email "
+msgstr "Correu electrònic "
+
+#: library/inc/customizer/customize.php:759
+msgid "Email Address"
+msgstr "Adreça electrònica"
+
+#: library/inc/customizer/customize.php:772
+msgid "Email Subject"
+msgstr "Assumpte del missatge"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:132
+#: custom-tac/capcalera/icones-capcalera-settings.php:165
+#: custom-tac/capcalera/icones-capcalera-settings.php:206
+#: custom-tac/capcalera/icones-capcalera-settings.php:239
+msgid "Enllaç:"
+msgstr "Enllaç:"
+
+#: library/inc/metaboxes/meta-fields.php:208
+msgid "Esquema"
+msgstr "Esquema"
+
+#: library/inc/widgets/recent-posts.php:93
+msgid "Exclude Category(s):"
+msgstr "Exclou la categoria/es:"
+
+#: library/inc/customizer/customize.php:546
+msgid "Exclude From Blog"
+msgstr "Excloure"
+
+#: library/inc/functions/breadcrumbs.php:183
+msgid "F"
+msgstr "F"
+
+#: archive-portfolio.php:28
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F \\d\\e Y"
+
+#: custom-tac/welcome-panel.php:55
+msgid "FAQ"
+msgstr "Preguntes més freqüents"
+
+#: library/inc/customizer/customize.php:230
+msgid "Favicon"
+msgstr "Favicon"
+
+#: library/inc/metaboxes/custom-meta.php:241
+#: library/inc/metaboxes/custom-meta.php:271
+msgid "Fields"
+msgstr "Camps"
+
+#: library/inc/customizer/customize.php:839
+msgid "Filter Type"
+msgstr "Filtra per tipus"
+
+#: library/inc/customizer/customize.php:298
+msgid "Fixed Top Bar"
+msgstr "Fixat a la barra superior"
+
+#: library/inc/extensions/menus.php:43
+msgid "Footer Links"
+msgstr "Enllaços del peu de pàgina"
+
+#: library/inc/customizer/customize.php:243
+msgid "Footer Site Info"
+msgstr "Informació del lloc al peu de pàgina"
+
+#: library/inc/customizer/customize.php:520
+msgid "Front Page"
+msgstr "Portada"
+
+#: library/inc/extensions/sidebars.php:50
+msgid "Front Page Primary"
+msgstr "Portada (Barra esquerra)"
+
+#: library/inc/extensions/sidebars.php:63
+msgid "Front Page Secondary"
+msgstr "Portada (Barra dreta)"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:255
+#: library/inc/customizer/customize.php:171
+msgid "General"
+msgstr "General"
+
+#: custom-tac/welcome-panel.php:31
+msgid "Header icons"
+msgstr "Icones de la capçalera"
+
+#: custom-tac/metabox-post-parametres.php:44
+msgid "Hide metadata"
+msgstr "Amaga les metadades"
+
+#: custom-tac/metabox-post-parametres.php:43
+msgid "Hide title"
+msgstr "Amaga el títol"
+
+#: library/inc/functions/breadcrumbs.php:173
+msgid "Home"
+msgstr "Inici"
+
+#: custom-tac/metabox-post-parametres.php:50
+msgid "Icon"
+msgstr "Icona"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:124
+#: custom-tac/capcalera/icones-capcalera-settings.php:157
+#: custom-tac/capcalera/icones-capcalera-settings.php:198
+#: custom-tac/capcalera/icones-capcalera-settings.php:231
+msgid "Icona:"
+msgstr "Icona:"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:108
+msgid "Icones a la fila 1"
+msgstr "Icones a la fila 1"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:182
+msgid "Icones a la fila 2"
+msgstr "Icones a la fila 2"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:29
+#: custom-tac/capcalera/icones-capcalera-settings.php:47
+msgid "Icones de capçalera"
+msgstr "Icones de capçalera"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:60
+msgid "Icones disponibles"
+msgstr "Icones disponibles"
+
+#: library/inc/extensions/sidebars.php:108
+msgid "Invalid sidebar ID"
+msgstr "Identificador de la barra lateral no vàlid"
+
+#: 404.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching will help."
+msgstr ""
+"No s'ha trobat el contingut que buscàveu. Podeu provar a fer una cerca."
+
+#: library/inc/customizer/customize.php:618
+msgid "Link Post Titles"
+msgstr "Enllaça els títols dels articles"
+
+#: library/inc/customizer/customize.php:869
+msgid "Link Titles"
+msgstr "Enllaça els títols"
+
+#: library/inc/customizer/customize.php:469
+msgid "Login"
+msgstr "Inici de sessió"
+
+#: library/inc/customizer/customize.php:481
+msgid "Login Logo"
+msgstr "Logotip d'inici de sessió"
+
+#: library/inc/customizer/customize.php:493
+msgid "Logo Link URL"
+msgstr "URL d'enllaç del logotip"
+
+#: library/inc/customizer/customize.php:505
+msgid "Logo Title Attribute"
+msgstr "Atribut del títol del logotip"
+
+#: library/inc/extensions/menus.php:39
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: library/inc/metaboxes/custom-meta.php:128
+#: library/inc/metaboxes/custom-meta.php:196
+msgid "Manage "
+msgstr "Gestiona "
+
+#: custom-tac/welcome-panel.php:46
+msgid "Manage <a href=\"%1$s\">widgets</a> or <a href=\"%2$s\">menus</a>"
+msgstr ""
+"Gestiona els <a href=\"%1$s\">ginys</a> o els <a href=\"%2$s\">menús</a>"
+
+#: library/inc/functions/breadcrumbs.php:179
+msgid "Minute %d"
+msgstr "Minut %d"
+
+#: archive-portfolio.php:28
+msgid "Monthly Archives: %s"
+msgstr "Arxius del mes: %s"
+
+#: custom-tac/welcome-panel.php:44
+msgid "More Actions"
+msgstr "Més accions"
+
+#: custom-tac/capcalera/icones-capcalera-settings.php:263
+msgid "Mostra text sota la icona:"
+msgstr "Mostra text sota la icona:"
+
+#: custom-tac/metabox-post-parametres.php:57
+msgid "Music"
+msgstr "Música"
+
+#: comments.php:32
+msgid "NO Comments"
+msgstr "No hi ha comentaris"
+
+#. Theme Name of the theme
+msgid "NODES GENERAL"
+msgstr "NODES GENERAL"
+
+#: comments.php:69
+msgid "Name "
+msgstr "Nom "
+
+#: library/inc/customizer/customize.php:256
+msgid "Navigation"
+msgstr "Menú"
+
+#: comments.php:44
+msgid "Newer Comments &rarr;"
+msgstr "Comentaris recents"
+
+#: library/inc/functions/page-links.php:45
+msgid "Newer posts"
+msgstr "Recents"
+
+#. Template Name of the theme
+#: library/inc/customizer/customize.php:667
+msgid "News Page"
+msgstr "Pàgina de notícies"
+
+#: library/inc/functions/page-links.php:73
+msgid "Next &raquo;"
+msgstr "Següent &raquo;"
+
+#: image.php:48
+msgid "Next &rarr;"
+msgstr "Següent &rarr;"
+
+#: library/inc/metaboxes/meta-fields.php:181
+msgid "Només aplica si la Plantilla és del tipus \"Plantilla predeterminada\""
+msgstr "Només aplica si la Plantilla és del tipus \"Plantilla predeterminada\""
+
+#: post-formats/format-none.php:13
+msgid "Nothing Found"
+msgstr "No s'ha trobat contingut"
+
+#: library/inc/customizer/customize.php:592
+#: library/inc/customizer/customize.php:711
+#: library/inc/customizer/customize.php:826
+msgid "Number of Posts"
+msgstr "Nombre d'articles"
+
+#: library/inc/widgets/recent-posts.php:89
+msgid "Number of posts to show:"
+msgstr "Nombre d'articles a mostrar:"
+
+#: library/inc/customizer/customize.php:397
+msgid "Numbered"
+msgstr "Numerat"
+
+#: library/inc/customizer/customize.php:346
+msgid "Off Canvas Main Menu"
+msgstr "Col·lapsa el menú principal"
+
+#: library/inc/functions/page-links.php:42
+msgid "Older posts"
+msgstr "Anteriors"
+
+#: library/inc/customizer/customize.php:361
+msgid "One Column"
+msgstr "Pàgina sencera"
+
+#: library/inc/functions/breadcrumbs.php:176
+msgid "Page %d"
+msgstr "Pàgina %d"
+
+#: library/inc/functions/helpers.php:291
+msgid "Page %s"
+msgstr "Pàgina %s"
+
+#: library/inc/customizer/customize.php:393
+msgid "Page Link Type"
+msgstr "Tipus d'enllaç de pàgina"
+
+#: image.php:98 library/inc/content/content-pages.php:36
+#: post-formats/format-standard.php:25
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: custom-tac/metabox-post-parametres.php:15
+msgid "Parameters"
+msgstr "Paràmetres"
+
+#: functions.php:255
+msgid "Paràmetres"
+msgstr ""
+
+#: library/inc/extensions/sidebars.php:79
+msgid "Peu"
+msgstr "Peu"
+
+#: custom-tac/metabox-post-parametres.php:54
+msgid "Photo/Slideshow"
+msgstr "Foto/Carrusel"
+
+#: library/inc/extensions/comments.php:23
+msgid "Pingback:"
+msgstr "Retroenllaç:"
+
+#: custom-tac/metabox-post-parametres.php:55
+msgid "Podcast"
+msgstr "Podcast"
+
+#. Template Name of the theme
+msgid "Portada"
+msgstr "Portada"
+
+#. Template Name of the theme
+msgid "Portfolio"
+msgstr "Portafolis"
+
+#: library/inc/customizer/customize.php:795
+msgid "Portfolio Page"
+msgstr "Portafoli"
+
+#: library/inc/customizer/customize.php:532
+msgid "Post Category"
+msgstr "Categoria de l'article"
+
+#: library/inc/customizer/customize.php:573
+#: library/inc/customizer/customize.php:693
+#: library/inc/customizer/customize.php:807
+msgid "Post Columns"
+msgstr "Columnes de l'article"
+
+#: library/inc/extensions/comments.php:38
+msgid "Post author"
+msgstr "Autor de l'article"
+
+#: library/inc/functions/post-meta.php:89
+msgid "Posted: "
+msgstr "Publicat: "
+
+#: library/inc/customizer/customize.php:369
+msgid "Posts & Pages"
+msgstr "Articles i pàgines"
+
+#: library/inc/customizer/customize.php:398
+msgid "Prev / Next"
+msgstr "Anterior / Posterior"
+
+#: library/inc/extensions/sidebars.php:24
+msgid "Primary Sidebar"
+msgstr "Barra esquerra"
+
+#: custom-tac/welcome-panel.php:22
+msgid "Project for the new website from Departament d'Ensenyament"
+msgstr "Projecte de la nova web de centre del Departament d'Ensenyament"
+
+#: library/inc/customizer/customize.php:404
+msgid "Read More"
+msgstr "Llegiu més"
+
+#: library/inc/customizer/customize.php:410
+msgid "Read More Text"
+msgstr "Llegeix més"
+
+#: library/inc/widgets/recent-posts.php:12
+#: library/inc/widgets/recent-posts.php:37
+msgid "Recent Posts"
+msgstr "Articles recents"
+
+#: library/inc/metaboxes/custom-meta.php:232
+msgid "Remove File"
+msgstr "Suprimeix l'arxiu"
+
+#: library/inc/extensions/comments.php:58
+msgid "Reply"
+msgstr "Contesta"
+
+#: library/inc/functions/top-bar.php:81 library/inc/functions/top-bar.php:84
+#: searchform.php:15 searchform.php:18
+msgid "Search"
+msgstr "Cerca"
+
+#: searchform.php:13
+msgid "Search for:"
+msgstr "Cerca:"
+
+#: library/inc/functions/breadcrumbs.php:174
+msgid "Search results for &quot;%1$s&quot;"
+msgstr "Resultats de la cerca de &quot;%1$s&quot;"
+
+#: library/inc/extensions/sidebars.php:37
+msgid "Secondary Sidebar"
+msgstr "Barra dreta"
+
+#: library/inc/customizer/customize.php:102
+#: library/inc/customizer/customize.php:133
+#: library/inc/metaboxes/custom-meta.php:90
+#: library/inc/metaboxes/custom-meta.php:123
+#: library/inc/metaboxes/custom-meta.php:179
+msgid "Select"
+msgstr "Selecciona"
+
+#: library/inc/customizer/customize.php:785
+msgid "Send Successful Message"
+msgstr "Envia el missatge"
+
+#: library/inc/metaboxes/meta-fields.php:21
+msgid "Sense barres laterals"
+msgstr "Sense barres laterals"
+
+#: library/inc/customizer/customize.php:461
+msgid "Show Breadcrumbs"
+msgstr "Mostra la guia de navegació"
+
+#: library/inc/customizer/customize.php:435
+#: library/inc/customizer/customize.php:631
+#: library/inc/customizer/customize.php:737
+msgid "Show Comment Link"
+msgstr "Mostra l'enllaç dels comentaris"
+
+#: library/inc/customizer/customize.php:882
+msgid "Show Meta"
+msgstr "Mosta les opcions"
+
+#: library/inc/customizer/customize.php:657
+msgid "Show Page Links"
+msgstr "Mostra l'enllaç de la pàgina"
+
+#: library/inc/customizer/customize.php:423
+#: library/inc/customizer/customize.php:644
+#: library/inc/customizer/customize.php:724
+msgid "Show Post Meta"
+msgstr "Mostra les opcions de l'article"
+
+#: library/inc/customizer/customize.php:605
+msgid "Show Post Titles"
+msgstr "Mostra els títols dels articles"
+
+#: library/inc/customizer/customize.php:206
+msgid "Show Title & Tagline"
+msgstr "Mostra el títol del lloc i el seu lema"
+
+#: library/inc/customizer/customize.php:856
+msgid "Show Titles"
+msgstr "Mostra els títols"
+
+#: library/inc/customizer/customize.php:448
+msgid "Show Tumblog Icons"
+msgstr "Mostra les icones de la capçalera"
+
+#: library/inc/customizer/customize.php:327
+msgid "Side Menu Type"
+msgstr "Tipus de menú lateral"
+
+#: library/inc/customizer/customize.php:332
+msgid "Side Nav"
+msgstr "Menú lateral"
+
+#: library/inc/customizer/customize.php:218
+msgid "Site Logo"
+msgstr "Logotip del lloc"
+
+#: library/inc/customizer/customize.php:182
+msgid "Site Title"
+msgstr "Títol del lloc"
+
+#: library/inc/metaboxes/meta-fields.php:204
+msgid "Slide Link"
+msgstr "Enllaç de la diapositiva"
+
+#: library/inc/customizer/customize.php:559
+#: library/inc/customizer/customize.php:679
+msgid "Slider Category"
+msgstr "Categoria lliscant"
+
+#: custom-tac/metabox-post-parametres.php:41
+msgid "Summary image in original size"
+msgstr "Imatge resum amb mida original"
+
+#: custom-tac/welcome-panel.php:56
+msgid "Support"
+msgstr "Espai de suport a Àgora"
+
+#: taxonomy-portfolio-tag.php:24
+msgid "Tag: %s"
+msgstr "Etiqueta: %s"
+
+#: library/inc/customizer/customize.php:194
+msgid "Tagline"
+msgstr "Descripció curta"
+
+#: library/inc/functions/post-meta.php:86
+msgid "Tags:"
+msgstr "Etiquetes:"
+
+#. Description of the theme
+msgid "Tema desenvolupat pel Departament d'Ensenyament de Catalunya"
+msgstr "Tema desenvolupat pel Departament d'Ensenyament de Catalunya"
+
+#: library/inc/customizer/customize.php:779 page-templates/contact.php:15
+msgid "Thank you! Your email was sent successfully."
+msgstr "El correu s'ha enviat correctament."
+
+#: library/inc/widgets/recent-posts.php:11
+msgid "The most recent posts on your site"
+msgstr "Els articles més recents del vostre lloc"
+
+#: 404.php:25
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "No s'ha trobat contingut"
+
+#: comments.php:19
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Aquest article està protegit amb contrasenya. Introduïu-la per veure'n els "
+"comentaris."
+
+#: library/inc/customizer/customize.php:366
+msgid "Three Columns, Center"
+msgstr "Tres columnes, centre"
+
+#: library/inc/customizer/customize.php:364
+msgid "Three Columns, Left"
+msgstr "Tres columnes, esquerra"
+
+#: library/inc/customizer/customize.php:365
+msgid "Three Columns, Right"
+msgstr "Tres columnes, dreta"
+
+#: library/inc/widgets/recent-posts.php:86
+msgid "Title:"
+msgstr "Títol:"
+
+#: library/inc/extensions/menus.php:31
+msgid "Top Bar Left"
+msgstr "A dalt a l'esquerra"
+
+#: library/inc/extensions/menus.php:35
+msgid "Top Bar Right"
+msgstr "A dat a la dreta"
+
+#: library/inc/customizer/customize.php:271
+msgid "Top Bar Title"
+msgstr "Mostra el títol a dalt de tot"
+
+#: library/inc/customizer/customize.php:284
+msgid "Top Bar Title Link"
+msgstr "Títol de l'enllaç a dalt de tot"
+
+#: library/inc/customizer/customize.php:362
+msgid "Two Columns, Left"
+msgstr "Barra esquerra amb subpàgines"
+
+#: library/inc/customizer/customize.php:363
+msgid "Two Columns, Right"
+msgstr "Barra dreta amb subpàgines"
+
+#: library/inc/metaboxes/meta-fields.php:170
+msgid "URL"
+msgstr "Adreça web"
+
+#: comments.php:73
+msgid "URL "
+msgstr "URL "
+
+#: custom-tac/metabox-post-parametres.php:53
+msgid "Video"
+msgstr "Vídeo"
+
+#: library/inc/functions/post-meta.php:75
+msgid "View all posts by %s"
+msgstr "Visualitza tots els articles de %s"
+
+#: library/inc/functions/post-meta.php:68
+msgid "View all posts from %s %s"
+msgstr "Visualitza tots els articles de %s%s"
+
+#: library/inc/functions/post-meta.php:44
+#: library/inc/functions/post-meta.php:50
+msgid "View all posts in %s"
+msgstr "Visualitza tots els articles a %s"
+
+#: custom-tac/metabox-post-parametres.php:42
+msgid "View full content"
+msgstr "Mostra el contingut sencer"
+
+#: comments.php:73
+msgid "Website "
+msgstr "La vostra pàgina web "
+
+#: library/inc/functions/breadcrumbs.php:182
+msgid "Week %d"
+msgstr "Setmana %d"
+
+#: custom-tac/welcome-panel.php:21
+msgid "Welcome to NODES"
+msgstr "Benvinguts a Nodes"
+
+#: custom-tac/welcome-panel.php:37
+msgid "Write your first blog post"
+msgstr "Escriu el primer article al bloc"
+
+#: library/inc/functions/breadcrumbs.php:184
+msgid "Y"
+msgstr "A"
+
+#: archive-portfolio.php:30
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "A"
+
+#: archive-portfolio.php:30
+msgid "Yearly Archives: %s"
+msgstr "Arxius de l'any: %s"
+
+#: comments.php:78
+msgid "You can use these tags"
+msgstr "Trieu una d'aquestes etiquetes"
+
+#: comments.php:76
+msgid "Your Comment here..."
+msgstr "El vostre comentari aquí..."
+
+#: comments.php:71
+msgid "Your E-Mail*"
+msgstr "El vostre correu electrònic*"
+
+#: comments.php:69
+msgid "Your Name*"
+msgstr "El vostre nom*"
+
+#: library/inc/extensions/comments.php:50
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està a l'espera de validació."
+
+#: library/inc/functions/post-meta.php:84
+msgid "by"
+msgstr "per"
+
+#: library/inc/functions/breadcrumbs.php:181
+msgid "d"
+msgstr "d"
+
+#: library/inc/functions/breadcrumbs.php:180
+msgid "g a"
+msgstr "G:i:s"
+
+#: library/inc/functions/breadcrumbs.php:178
+msgid "g:i a"
+msgstr "G:i"
+
+#: library/inc/functions/post-meta.php:85
+msgid "in"
+msgstr "a"
+
+#: library/inc/customizer/customize.php:843
+msgid "jQuery Filtering"
+msgstr "Filtre de jQuery"

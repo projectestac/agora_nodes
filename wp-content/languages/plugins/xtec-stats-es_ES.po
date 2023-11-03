@@ -1,0 +1,141 @@
+# Copyright (C) 2019 XTEC Stats
+# This file is distributed under the same license as the XTEC Stats package.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Stats 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/xtec-stats\n"
+"POT-Creation-Date: 2021-10-06T12:40:28+02:00\n"
+"PO-Revision-Date: 2019-04-08 11:55+0200\n"
+"Last-Translator: Joan Sala Soler <jsala236@xtec.cat>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: xtec-stats.php:259
+msgid "Configuration options"
+msgstr "Opciones de configuración"
+
+#: xtec-stats.php:183 xtec-stats.php:268 xtec-stats.php:305
+msgid "Content"
+msgstr "Contenido"
+
+#: xtec-stats.php:418
+msgid "Count administrators stats"
+msgstr "Contar las visitas de los administradores"
+
+#: xtec-stats.php:173 xtec-stats.php:289
+msgid "Datetime"
+msgstr "Fecha"
+
+#: xtec-stats.php:182
+msgid "Email"
+msgstr "Email"
+
+#: xtec-stats.php:405
+msgid "Export to CSV"
+msgstr "Exportar a un archivo CSV"
+
+#: xtec-stats.php:174 xtec-stats.php:313
+msgid "IP"
+msgstr "IP"
+
+#: xtec-stats.php:176
+msgid "IP Client"
+msgstr "IP del cliente"
+
+#: xtec-stats.php:175
+msgid "IP Forward"
+msgstr "IP directa"
+
+#: xtec-stats.php:172
+msgid "Id"
+msgstr "Identificador"
+
+#: xtec-stats.php:180
+msgid "Is admin"
+msgstr "Es administrador"
+
+#: xtec-stats.php:428
+msgid "Logs"
+msgstr "Registros"
+
+#: xtec-stats.php:439
+msgid "Message content"
+msgstr "Contenido del mensaje"
+
+#: xtec-stats.php:341
+msgid "Not data found"
+msgstr "No hay resultados"
+
+#: xtec-stats.php:275
+msgid "Number elements to show"
+msgstr "Número de elementos a mostrar"
+
+#: xtec-stats.php:420
+msgid "Save"
+msgstr "Guardar"
+
+#: xtec-stats.php:258
+msgid "Search options"
+msgstr "Opciones de búsqueda"
+
+#: xtec-stats.php:428
+msgid "Show logs WP_Stats"
+msgstr "Consulta los mensajes borrados"
+
+#. Description of the plugin
+msgid "Shows information from the stats table of Nodes in several ways"
+msgstr ""
+"Muestra información de la tabla de estadísticas de Nodos de diversas maneras"
+
+#: xtec-stats.php:37
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: xtec-stats.php:473
+msgid "Successfully updated."
+msgstr "Se han actualizado correctamente."
+
+#: xtec-stats.php:52
+msgid "Title:"
+msgstr "Título:"
+
+#: xtec-stats.php:179
+msgid "Uid"
+msgstr "UID"
+
+#: xtec-stats.php:178 xtec-stats.php:324
+msgid "Uri"
+msgstr "URI"
+
+#: xtec-stats.php:177
+msgid "User agent"
+msgstr "Información de usuario"
+
+#: xtec-stats.php:438
+msgid "User name"
+msgstr "Nombre de usuario"
+
+#: xtec-stats.php:181 xtec-stats.php:267 xtec-stats.php:297
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: xtec-stats.php:36
+msgid "Visits counter"
+msgstr "Contador de visitas"
+
+#. Plugin Name of the plugin
+msgid "XTEC Stats"
+msgstr "Estadísticas XTEC"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/projectestac/agora_nodes"
+msgstr "https://github.com/projectestac/agora_nodes"
+
+#. Author of the plugin
+msgid "Àrea TAC - Departament d'Ensenyament de Catalunya"
+msgstr "Àrea TAC - Departament d'Ensenyament de Catalunya"
