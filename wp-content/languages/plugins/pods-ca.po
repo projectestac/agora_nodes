@@ -1,0 +1,1650 @@
+# Translation of Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-09-03 09:46:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release)\n"
+
+#: classes/PodsInit.php:2198 src/Pods/Admin/Config/Pod.php:411
+msgid "Uploaded to this %s"
+msgstr "S'ha actualitzat a %s"
+
+#: classes/PodsInit.php:2224 src/Pods/Admin/Config/Pod.php:547
+msgid "No %s"
+msgstr "No %s"
+
+#: classes/PodsInit.php:2195 src/Pods/Admin/Config/Pod.php:384
+msgid "%s Archives"
+msgstr "Arxius de %s"
+
+#: classes/PodsInit.php:2194
+msgid "Use as featured image"
+msgstr "Useu com a imatge destacada"
+
+#: classes/PodsInit.php:2193
+msgid "Remove featured image"
+msgstr "Suprimeix la imatge destacada"
+
+#: classes/PodsInit.php:2192
+msgid "Set featured image"
+msgstr "Defineix la imatge destacada"
+
+#: classes/PodsAdmin.php:3086
+msgid "Read/ Write"
+msgstr "Lectura / escriptura"
+
+#: src/Pods/Admin/Config/Pod.php:928 ui/admin/widgets/field.php:15
+#: ui/admin/widgets/form.php:15 ui/admin/widgets/list.php:17
+#: ui/admin/widgets/single.php:17 ui/admin/widgets/view.php:15
+msgid "Title"
+msgstr "Títol"
+
+#: ui/admin/shortcode.php:522
+msgid "Insert"
+msgstr "Insereix"
+
+#: ui/admin/upgrade/upgrade_2_0_0.php:134
+#: ui/admin/upgrade/upgrade_2_0_0.php:242
+msgid "Content"
+msgstr "Contingut"
+
+#: ui/admin/setup-add.php:232
+msgid "Menu Label"
+msgstr "Etiqueta del menú"
+
+#: src/Pods/Admin/Config/Pod.php:969
+msgid "Revisions"
+msgstr "Revisions"
+
+#: src/Pods/Admin/Config/Pod.php:938
+msgid "Author"
+msgstr "Autor"
+
+#: classes/fields/color.php:39 classes/fields/color.php:97
+#: ui/fields/color.php:16
+msgid "Select Color"
+msgstr "Selecciona un color"
+
+#: ui/fields/color.php:17
+msgid "Current Color"
+msgstr "Color actual"
+
+#: src/Pods/Whatsit/Block.php:41
+msgid "Options"
+msgstr "Opcions"
+
+#: src/Pods/Admin/Config/Field.php:213
+msgid "Required"
+msgstr "Obligatori"
+
+#: src/Pods/Admin/Config/Field.php:577
+msgid "Unique"
+msgstr "Únic"
+
+#: src/Pods/Admin/Config/Field.php:476 src/Pods/Admin/Config/Field.php:477
+#: src/Pods/Admin/Config/Field.php:480
+msgid "Other"
+msgstr "Altres"
+
+#: src/Pods/Admin/Config/Field.php:416
+msgid "-- Select Table --"
+msgstr "-- Seleccioneu una taula --"
+
+#: src/Pods/Admin/Config/Pod.php:362
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: src/Pods/Admin/Config/Pod.php:377
+msgid "Not Found in Trash"
+msgstr "No s'ha trobat a la paperera"
+
+#: classes/PodsInit.php:2191 src/Pods/Admin/Config/Pod.php:420
+#: src/Pods/Admin/Config/Pod.php:943
+msgid "Featured Image"
+msgstr "Imatge destacada"
+
+#: ui/admin/upgrade/upgrade_2_0_0.php:104
+#: ui/admin/upgrade/upgrade_2_0_0.php:212
+msgid "Templates"
+msgstr "Temes"
+
+#: src/Pods/Admin/Config/Pod.php:974
+msgid "Page Attributes"
+msgstr "Atributs de la pàgina"
+
+#: classes/fields/file.php:527 classes/PodsI18n.php:186
+msgid "Allowed Files"
+msgstr "Fitxers permesos"
+
+#: classes/fields/currency.php:123 components/I18n/I18n.php:826
+#: src/Pods/Admin/Config/Group.php:229 ui/fields/color.php:15
+msgid "Default"
+msgstr "Predeterminada"
+
+#: src/Pods/Admin/Config/Pod.php:949
+msgid "Excerpt"
+msgstr "Extracte"
+
+#: components/Migrate-Packages/ui/wizard.php:52
+msgid "Import"
+msgstr "Importa"
+
+#: components/Roles/ui/edit.php:46 ui/forms/form.php:174
+msgid "Save"
+msgstr "Desa"
+
+#: ui/admin/view.php:55 ui/forms/type/post.php:84
+msgid "Last Modified"
+msgstr "Última modificació"
+
+#: components/Pages.php:360
+msgid "Page"
+msgstr "Pàgina"
+
+#: includes/data.php:2006 tribe-common/src/views/promoter/auth.php:80
+msgid "and"
+msgstr "i"
+
+#: components/Templates/includes/auto-template/Pods_Templates_Auto_Template_Settings.php:332
+msgid "Replace"
+msgstr "Reemplaça"
+
+#: classes/widgets/PodsWidgetForm.php:38 classes/widgets/PodsWidgetForm.php:59
+#: classes/widgets/PodsWidgetForm.php:74
+#: components/Builder/modules/form/PodsBuilderModuleForm.php:47
+#: components/Builder/modules/form/PodsBuilderModuleForm.php:145
+msgid "Submit"
+msgstr "Tramet"
+
+#: components/Builder/modules/field/PodsBuilderModuleField.php:107
+#: ui/admin/shortcode.php:464 ui/admin/widgets/field.php:59
+msgid "Field"
+msgstr "Camp"
+
+#: classes/fields/pick.php:3619
+#: tribe-common/src/Tribe/Languages/Locations.php:79
+msgid "United States"
+msgstr "Estats Units"
+
+#: classes/fields/pick.php:3616
+msgid "Union of Soviet Socialist Republics"
+msgstr "Unió de Repúbliques Socialistes Soviètiques"
+
+#: classes/fields/pick.php:3633
+msgid "Åland Islands"
+msgstr "Illes Aland"
+
+#: classes/fields/pick.php:3567
+#: tribe-common/src/Tribe/Languages/Locations.php:264
+msgid "Saint Lucia"
+msgstr "Saint Lucia"
+
+#: classes/fields/pick.php:3570
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint Vincent i les Grenadines"
+
+#: classes/fields/pick.php:3571
+#: tribe-common/src/Tribe/Languages/Locations.php:267
+msgid "Samoa"
+msgstr "Samoa"
+
+#: classes/fields/pick.php:3572
+#: tribe-common/src/Tribe/Languages/Locations.php:268
+msgid "San Marino"
+msgstr "San Marino"
+
+#: classes/fields/pick.php:3573
+#: tribe-common/src/Tribe/Languages/Locations.php:270
+msgid "Saudi Arabia"
+msgstr "Aràbia Saudita"
+
+#: classes/fields/pick.php:3574
+#: tribe-common/src/Tribe/Languages/Locations.php:271
+msgid "Senegal"
+msgstr "Senegal"
+
+#: classes/fields/pick.php:3575
+#: tribe-common/src/Tribe/Languages/Locations.php:272
+msgid "Serbia"
+msgstr "Sèrbia"
+
+#: classes/fields/pick.php:3577
+#: tribe-common/src/Tribe/Languages/Locations.php:273
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: classes/fields/pick.php:3578
+#: tribe-common/src/Tribe/Languages/Locations.php:274
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: classes/fields/pick.php:3579
+#: tribe-common/src/Tribe/Languages/Locations.php:275
+msgid "Singapore"
+msgstr "Singapur"
+
+#: classes/fields/pick.php:3580
+msgid "Slovakia"
+msgstr "Eslovàquia"
+
+#: classes/fields/pick.php:3581
+#: tribe-common/src/Tribe/Languages/Locations.php:278
+msgid "Slovenia"
+msgstr "Eslovènia"
+
+#: classes/fields/pick.php:3582
+#: tribe-common/src/Tribe/Languages/Locations.php:279
+msgid "Solomon Islands"
+msgstr "Illes Salomó"
+
+#: classes/fields/pick.php:3583
+#: tribe-common/src/Tribe/Languages/Locations.php:280
+msgid "Somalia"
+msgstr "Somàlia"
+
+#: classes/fields/pick.php:3585
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Illes Geòrgia del Sud i Sandwich del Sud"
+
+#: classes/fields/pick.php:3587
+#: tribe-common/src/Tribe/Languages/Locations.php:283
+msgid "Spain"
+msgstr "Espanya"
+
+#: classes/fields/pick.php:3588
+#: tribe-common/src/Tribe/Languages/Locations.php:284
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: classes/fields/pick.php:3589
+#: tribe-common/src/Tribe/Languages/Locations.php:285
+msgid "Sudan"
+msgstr "Sudan"
+
+#: classes/fields/pick.php:3590
+#: tribe-common/src/Tribe/Languages/Locations.php:286
+msgid "Suriname"
+msgstr "Surinam"
+
+#: classes/fields/pick.php:3591
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard i Jan Mayen"
+
+#: classes/fields/pick.php:3592
+#: tribe-common/src/Tribe/Languages/Locations.php:288
+msgid "Swaziland"
+msgstr "Swazilàndia"
+
+#: classes/fields/pick.php:3593
+#: tribe-common/src/Tribe/Languages/Locations.php:289
+msgid "Sweden"
+msgstr "Suècia"
+
+#: classes/fields/pick.php:3594
+#: tribe-common/src/Tribe/Languages/Locations.php:290
+msgid "Switzerland"
+msgstr "Suïssa"
+
+#: classes/fields/pick.php:3597
+#: tribe-common/src/Tribe/Languages/Locations.php:292
+msgid "Taiwan"
+msgstr "Taiwan"
+
+#: classes/fields/pick.php:3598
+#: tribe-common/src/Tribe/Languages/Locations.php:293
+msgid "Tajikistan"
+msgstr "Tadjikistan"
+
+#: classes/fields/pick.php:3600
+#: tribe-common/src/Tribe/Languages/Locations.php:295
+msgid "Thailand"
+msgstr "Tailàndia"
+
+#: classes/fields/pick.php:3601
+msgid "Timor-Leste"
+msgstr "Timor Oriental"
+
+#: classes/fields/pick.php:3602
+#: tribe-common/src/Tribe/Languages/Locations.php:296
+msgid "Togo"
+msgstr "Togo"
+
+#: classes/fields/pick.php:3603
+#: tribe-common/src/Tribe/Languages/Locations.php:297
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: classes/fields/pick.php:3604
+#: tribe-common/src/Tribe/Languages/Locations.php:298
+msgid "Tonga"
+msgstr "Tonga"
+
+#: classes/fields/pick.php:3605
+#: tribe-common/src/Tribe/Languages/Locations.php:299
+msgid "Trinidad and Tobago"
+msgstr "Trinitat i Tobago"
+
+#: classes/fields/pick.php:3606
+#: tribe-common/src/Tribe/Languages/Locations.php:300
+msgid "Tunisia"
+msgstr "Tunísia"
+
+#: classes/fields/pick.php:3607
+#: tribe-common/src/Tribe/Languages/Locations.php:301
+msgid "Turkey"
+msgstr "Turquia"
+
+#: classes/fields/pick.php:3608
+#: tribe-common/src/Tribe/Languages/Locations.php:302
+msgid "Turkmenistan"
+msgstr "Turkmenistan"
+
+#: classes/fields/pick.php:3609
+#: tribe-common/src/Tribe/Languages/Locations.php:303
+msgid "Turks and Caicos Islands"
+msgstr "Illes Turks i Caicos"
+
+#: classes/fields/pick.php:3610
+#: tribe-common/src/Tribe/Languages/Locations.php:304
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: classes/fields/pick.php:3614
+#: tribe-common/src/Tribe/Languages/Locations.php:305
+msgid "Uganda"
+msgstr "Uganda"
+
+#: classes/fields/pick.php:3615
+#: tribe-common/src/Tribe/Languages/Locations.php:306
+msgid "Ukraine"
+msgstr "Ucraïna"
+
+#: classes/fields/pick.php:3618
+#: tribe-common/src/Tribe/Languages/Locations.php:308
+msgid "United Kingdom"
+msgstr "Regne Unit"
+
+#: classes/fields/pick.php:3621
+#: tribe-common/src/Tribe/Languages/Locations.php:310
+msgid "Uruguay"
+msgstr "Uruguai"
+
+#: classes/fields/pick.php:3622
+#: tribe-common/src/Tribe/Languages/Locations.php:311
+msgid "Uzbekistan"
+msgstr "Uzbekistan"
+
+#: classes/fields/pick.php:3623
+#: tribe-common/src/Tribe/Languages/Locations.php:312
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: classes/fields/pick.php:3625
+#: tribe-common/src/Tribe/Languages/Locations.php:313
+msgid "Venezuela"
+msgstr "Veneçuela"
+
+#: classes/fields/pick.php:3628
+msgid "Wallis and Futuna"
+msgstr "Wallis i Futuna"
+
+#: classes/fields/pick.php:3629
+#: tribe-common/src/Tribe/Languages/Locations.php:318
+msgid "Western Sahara"
+msgstr "Sàhara Occidental"
+
+#: classes/fields/pick.php:3630
+#: tribe-common/src/Tribe/Languages/Locations.php:319
+msgid "Yemen"
+msgstr "Iemen"
+
+#: classes/fields/pick.php:3631
+#: tribe-common/src/Tribe/Languages/Locations.php:320
+msgid "Zambia"
+msgstr "Zàmbia"
+
+#: classes/fields/pick.php:3576
+msgid "Serbia and Montenegro"
+msgstr "Sèrbia i Montenegro"
+
+#: classes/fields/pick.php:3627
+msgid "Wake Island"
+msgstr "Illes Wake"
+
+#: components/Builder/modules/list/PodsBuilderModuleList.php:117
+#: components/Builder/modules/list/PodsBuilderModuleList.php:134
+#: components/Builder/modules/single/PodsBuilderModuleSingle.php:121
+#: components/Builder/modules/single/PodsBuilderModuleSingle.php:138
+#: components/Templates/class-pods_templates.php:210
+#: src/Pods/Blocks/Types/Item_List.php:231
+#: src/Pods/Blocks/Types/Item_Single.php:193 ui/admin/shortcode.php:391
+#: ui/admin/shortcode.php:407 ui/admin/widgets/list.php:51
+#: ui/admin/widgets/list.php:67 ui/admin/widgets/single.php:67
+#: ui/admin/widgets/single.php:83
+msgid "Template"
+msgstr "Plantilla"
+
+#: src/Pods/Whatsit/Storage/Collection.php:38
+msgid "Code"
+msgstr "Codi"
+
+#: components/Advanced-Relationships.php:63
+msgid "Themes"
+msgstr "Temes"
+
+#: classes/fields/pick.php:3569
+#: tribe-common/src/Tribe/Languages/Locations.php:265
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre i Miquelon"
+
+#: classes/fields/pick.php:3632
+#: tribe-common/src/Tribe/Languages/Locations.php:321
+msgid "Zimbabwe"
+msgstr "Zimbàbue"
+
+#: classes/fields/pick.php:3584
+#: tribe-common/src/Tribe/Languages/Locations.php:281
+msgid "South Africa"
+msgstr "Sud-àfrica"
+
+#: classes/fields/pick.php:3617
+#: tribe-common/src/Tribe/Languages/Locations.php:307
+msgid "United Arab Emirates"
+msgstr "Emirats Àrabs Units"
+
+#: classes/fields/pick.php:3566
+#: tribe-common/src/Tribe/Languages/Locations.php:263
+msgid "Saint Kitts and Nevis"
+msgstr "Saint Kitts i Nevis"
+
+#: classes/fields/pick.php:647
+msgid "User Capabilities"
+msgstr "Permisos d'usuari"
+
+#: classes/fields/datetime.php:127 classes/fields/pick.php:513
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: classes/fields/pick.php:579 src/Pods/Admin/Config/Pod.php:1317
+#: src/Pods/Admin/Config/Pod.php:1318
+msgid "Post Types"
+msgstr "Tipus d'Entrades"
+
+#: classes/fields/pick.php:627 src/Pods/Admin/Config/Pod.php:1024
+#: src/Pods/Admin/Config/Pod.php:1025
+msgid "Taxonomies"
+msgstr "Taxonomies"
+
+#: classes/fields/pick.php:634 components/Roles/Roles.php:94
+#: ui/admin/setup-add.php:373
+msgid "Users"
+msgstr "Usuaris"
+
+#: classes/fields/pick.php:706
+msgid "Countries"
+msgstr "Països"
+
+#: classes/fields/pick.php:3370
+#: tribe-common/src/Tribe/Languages/Locations.php:80
+msgid "Afghanistan"
+msgstr "Afganistan"
+
+#: classes/fields/pick.php:3371
+#: tribe-common/src/Tribe/Languages/Locations.php:82
+msgid "Albania"
+msgstr "Albània"
+
+#: classes/fields/pick.php:3372
+#: tribe-common/src/Tribe/Languages/Locations.php:83
+msgid "Algeria"
+msgstr "Algèria"
+
+#: classes/fields/pick.php:3374
+#: tribe-common/src/Tribe/Languages/Locations.php:85
+msgid "Andorra"
+msgstr "Andorra"
+
+#: classes/fields/pick.php:3375
+#: tribe-common/src/Tribe/Languages/Locations.php:86
+msgid "Angola"
+msgstr "Angola"
+
+#: classes/fields/pick.php:3376
+#: tribe-common/src/Tribe/Languages/Locations.php:87
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: classes/fields/pick.php:3377
+#: tribe-common/src/Tribe/Languages/Locations.php:88
+msgid "Antarctica"
+msgstr "Antàrtida"
+
+#: classes/fields/pick.php:3378
+#: tribe-common/src/Tribe/Languages/Locations.php:89
+msgid "Antigua and Barbuda"
+msgstr "Antigua i Barbuda"
+
+#: classes/fields/pick.php:3379
+#: tribe-common/src/Tribe/Languages/Locations.php:90
+msgid "Argentina"
+msgstr "Argentina"
+
+#: classes/fields/pick.php:3380
+#: tribe-common/src/Tribe/Languages/Locations.php:91
+msgid "Armenia"
+msgstr "Armènia"
+
+#: classes/fields/pick.php:3381
+#: tribe-common/src/Tribe/Languages/Locations.php:92
+msgid "Aruba"
+msgstr "Aruba"
+
+#: classes/fields/pick.php:3382
+#: tribe-common/src/Tribe/Languages/Locations.php:93
+msgid "Australia"
+msgstr "Austràlia"
+
+#: classes/fields/pick.php:3383
+#: tribe-common/src/Tribe/Languages/Locations.php:94
+msgid "Austria"
+msgstr "Àustria"
+
+#: classes/fields/pick.php:3385
+#: tribe-common/src/Tribe/Languages/Locations.php:96
+msgid "Bahamas"
+msgstr "Bahames"
+
+#: classes/fields/pick.php:3386
+#: tribe-common/src/Tribe/Languages/Locations.php:97
+msgid "Bahrain"
+msgstr "Bahrain"
+
+#: classes/fields/pick.php:3388
+#: tribe-common/src/Tribe/Languages/Locations.php:99
+msgid "Barbados"
+msgstr "Barbados"
+
+#: classes/fields/pick.php:3389
+#: tribe-common/src/Tribe/Languages/Locations.php:100
+msgid "Belarus"
+msgstr "Bielorússia"
+
+#: classes/fields/pick.php:3390
+#: tribe-common/src/Tribe/Languages/Locations.php:101
+msgid "Belgium"
+msgstr "Bèlgica"
+
+#: classes/fields/pick.php:3391
+#: tribe-common/src/Tribe/Languages/Locations.php:102
+msgid "Belize"
+msgstr "Belize"
+
+#: classes/fields/pick.php:3392
+#: tribe-common/src/Tribe/Languages/Locations.php:103
+msgid "Benin"
+msgstr "Benín"
+
+#: classes/fields/pick.php:3393
+#: tribe-common/src/Tribe/Languages/Locations.php:104
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: classes/fields/pick.php:3394
+#: tribe-common/src/Tribe/Languages/Locations.php:105
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: classes/fields/pick.php:3395
+#: tribe-common/src/Tribe/Languages/Locations.php:106
+msgid "Bolivia"
+msgstr "Bolívia"
+
+#: classes/fields/pick.php:3396
+#: tribe-common/src/Tribe/Languages/Locations.php:107
+msgid "Bosnia and Herzegovina"
+msgstr "Bòsnia i Hercegovina"
+
+#: classes/fields/pick.php:3397
+#: tribe-common/src/Tribe/Languages/Locations.php:108
+msgid "Botswana"
+msgstr "Botswana"
+
+#: classes/fields/pick.php:3398
+#: tribe-common/src/Tribe/Languages/Locations.php:109
+msgid "Bouvet Island"
+msgstr "Illa Bouvet"
+
+#: classes/fields/pick.php:3399
+#: tribe-common/src/Tribe/Languages/Locations.php:110
+msgid "Brazil"
+msgstr "Brasil"
+
+#: classes/fields/pick.php:3401
+#: tribe-common/src/Tribe/Languages/Locations.php:111
+msgid "British Indian Ocean Territory"
+msgstr "Territori Britànic de l'Oceà Índic"
+
+#: classes/fields/pick.php:3404
+#: tribe-common/src/Tribe/Languages/Locations.php:113
+msgid "Bulgaria"
+msgstr "Bulgària"
+
+#: classes/fields/pick.php:3405
+#: tribe-common/src/Tribe/Languages/Locations.php:114
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: classes/fields/pick.php:3406
+#: tribe-common/src/Tribe/Languages/Locations.php:115
+msgid "Burundi"
+msgstr "Burundi"
+
+#: classes/fields/pick.php:3407
+#: tribe-common/src/Tribe/Languages/Locations.php:116
+msgid "Cambodia"
+msgstr "Cambodja"
+
+#: classes/fields/pick.php:3408
+#: tribe-common/src/Tribe/Languages/Locations.php:117
+msgid "Cameroon"
+msgstr "Camerun"
+
+#: classes/fields/pick.php:3409
+#: tribe-common/src/Tribe/Languages/Locations.php:118
+msgid "Canada"
+msgstr "Canadà"
+
+#: classes/fields/pick.php:3411
+#: tribe-common/src/Tribe/Languages/Locations.php:119
+msgid "Cape Verde"
+msgstr "Cap Verd"
+
+#: classes/fields/pick.php:3412
+#: tribe-common/src/Tribe/Languages/Locations.php:120
+msgid "Cayman Islands"
+msgstr "Illes Caiman"
+
+#: classes/fields/pick.php:3413
+#: tribe-common/src/Tribe/Languages/Locations.php:121
+msgid "Central African Republic"
+msgstr "República Centreafricana"
+
+#: classes/fields/pick.php:3414
+#: tribe-common/src/Tribe/Languages/Locations.php:122
+msgid "Chad"
+msgstr "Txad"
+
+#: classes/fields/pick.php:3415
+#: tribe-common/src/Tribe/Languages/Locations.php:123
+msgid "Chile"
+msgstr "Xile"
+
+#: classes/fields/pick.php:3416
+#: tribe-common/src/Tribe/Languages/Locations.php:124
+msgid "China"
+msgstr "Xina"
+
+#: classes/fields/pick.php:3417
+#: tribe-common/src/Tribe/Languages/Locations.php:125
+msgid "Christmas Island"
+msgstr "Illa Christmas"
+
+#: classes/fields/pick.php:3419
+#: tribe-common/src/Tribe/Languages/Locations.php:128
+msgid "Colombia"
+msgstr "Colòmbia"
+
+#: classes/fields/pick.php:3420
+#: tribe-common/src/Tribe/Languages/Locations.php:129
+msgid "Comoros"
+msgstr "Comores"
+
+#: classes/fields/pick.php:3423
+#: tribe-common/src/Tribe/Languages/Locations.php:132
+msgid "Cook Islands"
+msgstr "Illes Cook"
+
+#: classes/fields/pick.php:3424
+#: tribe-common/src/Tribe/Languages/Locations.php:133
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: classes/fields/pick.php:3425
+msgid "Croatia"
+msgstr "Croàcia"
+
+#: classes/fields/pick.php:3426
+#: tribe-common/src/Tribe/Languages/Locations.php:136
+msgid "Cuba"
+msgstr "Cuba"
+
+#: classes/fields/pick.php:3427
+#: tribe-common/src/Tribe/Languages/Locations.php:138
+msgid "Cyprus"
+msgstr "Xipre"
+
+#: classes/fields/pick.php:3428
+#: tribe-common/src/Tribe/Languages/Locations.php:139
+msgid "Czech Republic"
+msgstr "República Txeca"
+
+#: classes/fields/pick.php:3430
+#: tribe-common/src/Tribe/Languages/Locations.php:140
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: classes/fields/pick.php:3431
+#: tribe-common/src/Tribe/Languages/Locations.php:141
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: classes/fields/pick.php:3432
+#: tribe-common/src/Tribe/Languages/Locations.php:142
+msgid "Dominica"
+msgstr "Dominica"
+
+#: classes/fields/pick.php:3433
+#: tribe-common/src/Tribe/Languages/Locations.php:143
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: classes/fields/pick.php:3436
+#: tribe-common/src/Tribe/Languages/Locations.php:145
+msgid "Ecuador"
+msgstr "Equador"
+
+#: classes/fields/pick.php:3437
+#: tribe-common/src/Tribe/Languages/Locations.php:146
+msgid "Egypt"
+msgstr "Egipte"
+
+#: classes/fields/pick.php:3438
+#: tribe-common/src/Tribe/Languages/Locations.php:147
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: classes/fields/pick.php:3439
+#: tribe-common/src/Tribe/Languages/Locations.php:148
+msgid "Equatorial Guinea"
+msgstr "Guinea Equatorial"
+
+#: classes/fields/pick.php:3440
+#: tribe-common/src/Tribe/Languages/Locations.php:149
+msgid "Eritrea"
+msgstr "Eritrea"
+
+#: classes/fields/pick.php:3441
+#: tribe-common/src/Tribe/Languages/Locations.php:150
+msgid "Estonia"
+msgstr "Estònia"
+
+#: classes/fields/pick.php:3442
+#: tribe-common/src/Tribe/Languages/Locations.php:151
+msgid "Ethiopia"
+msgstr "Etiòpia"
+
+#: classes/fields/pick.php:3444
+#: tribe-common/src/Tribe/Languages/Locations.php:153
+msgid "Faroe Islands"
+msgstr "Illes Fèroe"
+
+#: classes/fields/pick.php:3445
+#: tribe-common/src/Tribe/Languages/Locations.php:154
+msgid "Fiji"
+msgstr "Fiji"
+
+#: classes/fields/pick.php:3446
+#: tribe-common/src/Tribe/Languages/Locations.php:155
+msgid "Finland"
+msgstr "Finlàndia"
+
+#: classes/fields/pick.php:3447
+#: tribe-common/src/Tribe/Languages/Locations.php:156
+msgid "France"
+msgstr "França"
+
+#: classes/fields/pick.php:3448
+#: tribe-common/src/Tribe/Languages/Locations.php:157
+msgid "French Guiana"
+msgstr "Guaiana Francesa"
+
+#: classes/fields/pick.php:3452
+#: tribe-common/src/Tribe/Languages/Locations.php:160
+msgid "Gabon"
+msgstr "Gabon"
+
+#: classes/fields/pick.php:3453
+#: tribe-common/src/Tribe/Languages/Locations.php:161
+msgid "Gambia"
+msgstr "Gàmbia"
+
+#: classes/fields/pick.php:3454 classes/fields/pick.php:3666
+msgid "Georgia"
+msgstr "Geòrgia"
+
+#: classes/fields/pick.php:3455
+#: tribe-common/src/Tribe/Languages/Locations.php:163
+msgid "Germany"
+msgstr "Alemanya"
+
+#: classes/fields/pick.php:3456
+#: tribe-common/src/Tribe/Languages/Locations.php:164
+msgid "Ghana"
+msgstr "Ghana"
+
+#: classes/fields/pick.php:3457
+#: tribe-common/src/Tribe/Languages/Locations.php:165
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: classes/fields/pick.php:3458
+#: tribe-common/src/Tribe/Languages/Locations.php:166
+msgid "Greece"
+msgstr "Grècia"
+
+#: classes/fields/pick.php:3459
+#: tribe-common/src/Tribe/Languages/Locations.php:167
+msgid "Greenland"
+msgstr "Groenlàndia"
+
+#: classes/fields/pick.php:3460
+#: tribe-common/src/Tribe/Languages/Locations.php:168
+msgid "Grenada"
+msgstr "Grenada"
+
+#: classes/fields/pick.php:3461
+#: tribe-common/src/Tribe/Languages/Locations.php:169
+msgid "Guadeloupe"
+msgstr "Guadalupe"
+
+#: classes/fields/pick.php:3462
+#: tribe-common/src/Tribe/Languages/Locations.php:170
+msgid "Guam"
+msgstr "Guam"
+
+#: classes/fields/pick.php:3463
+#: tribe-common/src/Tribe/Languages/Locations.php:171
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: classes/fields/pick.php:3464
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: classes/fields/pick.php:3465
+#: tribe-common/src/Tribe/Languages/Locations.php:172
+msgid "Guinea"
+msgstr "Guinea"
+
+#: classes/fields/pick.php:3466
+#: tribe-common/src/Tribe/Languages/Locations.php:173
+msgid "Guinea-Bissau"
+msgstr "Guinea Bissau"
+
+#: classes/fields/pick.php:3467
+#: tribe-common/src/Tribe/Languages/Locations.php:174
+msgid "Guyana"
+msgstr "Guyana"
+
+#: classes/fields/pick.php:3468
+#: tribe-common/src/Tribe/Languages/Locations.php:175
+msgid "Haiti"
+msgstr "Haití"
+
+#: classes/fields/pick.php:3470
+#: tribe-common/src/Tribe/Languages/Locations.php:178
+msgid "Honduras"
+msgstr "Hondures"
+
+#: classes/fields/pick.php:3472
+#: tribe-common/src/Tribe/Languages/Locations.php:180
+msgid "Hungary"
+msgstr "Hongria"
+
+#: classes/fields/pick.php:3473
+#: tribe-common/src/Tribe/Languages/Locations.php:181
+msgid "Iceland"
+msgstr "Islàndia"
+
+#: classes/fields/pick.php:3474
+#: tribe-common/src/Tribe/Languages/Locations.php:182
+msgid "India"
+msgstr "Índia"
+
+#: classes/fields/pick.php:3475
+#: tribe-common/src/Tribe/Languages/Locations.php:183
+msgid "Indonesia"
+msgstr "Indonèsia"
+
+#: classes/fields/pick.php:3477
+#: tribe-common/src/Tribe/Languages/Locations.php:185
+msgid "Iraq"
+msgstr "Iraq"
+
+#: classes/fields/pick.php:3478
+#: tribe-common/src/Tribe/Languages/Locations.php:186
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: classes/fields/pick.php:3479
+msgid "Isle of Man"
+msgstr "Illa de Man"
+
+#: classes/fields/pick.php:3480
+#: tribe-common/src/Tribe/Languages/Locations.php:187
+msgid "Israel"
+msgstr "Israel"
+
+#: classes/fields/pick.php:3481
+#: tribe-common/src/Tribe/Languages/Locations.php:188
+msgid "Italy"
+msgstr "Itàlia"
+
+#: classes/fields/pick.php:3482
+#: tribe-common/src/Tribe/Languages/Locations.php:189
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: classes/fields/pick.php:3483
+#: tribe-common/src/Tribe/Languages/Locations.php:190
+msgid "Japan"
+msgstr "Japó"
+
+#: classes/fields/pick.php:3484
+msgid "Jersey"
+msgstr "Jersey"
+
+#: classes/fields/pick.php:3486
+#: tribe-common/src/Tribe/Languages/Locations.php:191
+msgid "Jordan"
+msgstr "Jordània"
+
+#: classes/fields/pick.php:3487
+#: tribe-common/src/Tribe/Languages/Locations.php:192
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: classes/fields/pick.php:3488
+#: tribe-common/src/Tribe/Languages/Locations.php:193
+msgid "Kenya"
+msgstr "Kenya"
+
+#: classes/fields/pick.php:3489
+#: tribe-common/src/Tribe/Languages/Locations.php:194
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: classes/fields/pick.php:3490
+#: tribe-common/src/Tribe/Languages/Locations.php:197
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: classes/fields/pick.php:3491
+#: tribe-common/src/Tribe/Languages/Locations.php:198
+msgid "Kyrgyzstan"
+msgstr "Kirguizistan"
+
+#: classes/fields/pick.php:3493
+#: tribe-common/src/Tribe/Languages/Locations.php:200
+msgid "Latvia"
+msgstr "Letònia"
+
+#: classes/fields/pick.php:3494
+#: tribe-common/src/Tribe/Languages/Locations.php:201
+msgid "Lebanon"
+msgstr "Líban"
+
+#: classes/fields/pick.php:3495
+#: tribe-common/src/Tribe/Languages/Locations.php:202
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: classes/fields/pick.php:3496
+#: tribe-common/src/Tribe/Languages/Locations.php:203
+msgid "Liberia"
+msgstr "Libèria"
+
+#: classes/fields/pick.php:3497
+#: tribe-common/src/Tribe/Languages/Locations.php:204
+msgid "Libya"
+msgstr "Líbia"
+
+#: classes/fields/pick.php:3498
+#: tribe-common/src/Tribe/Languages/Locations.php:205
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: classes/fields/pick.php:3499
+#: tribe-common/src/Tribe/Languages/Locations.php:206
+msgid "Lithuania"
+msgstr "Lituània"
+
+#: classes/fields/pick.php:3500
+#: tribe-common/src/Tribe/Languages/Locations.php:207
+msgid "Luxembourg"
+msgstr "Luxemburg"
+
+#: classes/fields/pick.php:3503
+#: tribe-common/src/Tribe/Languages/Locations.php:209
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: classes/fields/pick.php:3504
+#: tribe-common/src/Tribe/Languages/Locations.php:210
+msgid "Malawi"
+msgstr "Malawi"
+
+#: classes/fields/pick.php:3505
+#: tribe-common/src/Tribe/Languages/Locations.php:211
+msgid "Malaysia"
+msgstr "Malàisia"
+
+#: classes/fields/pick.php:3506
+#: tribe-common/src/Tribe/Languages/Locations.php:212
+msgid "Maldives"
+msgstr "Maldives"
+
+#: classes/fields/pick.php:3507
+#: tribe-common/src/Tribe/Languages/Locations.php:213
+msgid "Mali"
+msgstr "Mali"
+
+#: classes/fields/pick.php:3508
+#: tribe-common/src/Tribe/Languages/Locations.php:214
+msgid "Malta"
+msgstr "Malta"
+
+#: classes/fields/pick.php:3509
+#: tribe-common/src/Tribe/Languages/Locations.php:215
+msgid "Marshall Islands"
+msgstr "Illes Marshall"
+
+#: classes/fields/pick.php:3510
+#: tribe-common/src/Tribe/Languages/Locations.php:216
+msgid "Martinique"
+msgstr "Martinica"
+
+#: classes/fields/pick.php:3511
+#: tribe-common/src/Tribe/Languages/Locations.php:217
+msgid "Mauritania"
+msgstr "Mauritània"
+
+#: classes/fields/pick.php:3512
+#: tribe-common/src/Tribe/Languages/Locations.php:218
+msgid "Mauritius"
+msgstr "Maurici"
+
+#: classes/fields/pick.php:3513
+#: tribe-common/src/Tribe/Languages/Locations.php:219
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: classes/fields/pick.php:3515
+#: tribe-common/src/Tribe/Languages/Locations.php:220
+msgid "Mexico"
+msgstr "Mèxic"
+
+#: classes/fields/pick.php:3518
+msgid "Moldova"
+msgstr "Moldàvia"
+
+#: classes/fields/pick.php:3519
+#: tribe-common/src/Tribe/Languages/Locations.php:223
+msgid "Monaco"
+msgstr "Mònaco"
+
+#: classes/fields/pick.php:3520
+#: tribe-common/src/Tribe/Languages/Locations.php:224
+msgid "Mongolia"
+msgstr "Mongòlia"
+
+#: classes/fields/pick.php:3521
+#: tribe-common/src/Tribe/Languages/Locations.php:225
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: classes/fields/pick.php:3522
+#: tribe-common/src/Tribe/Languages/Locations.php:226
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: classes/fields/pick.php:3523
+#: tribe-common/src/Tribe/Languages/Locations.php:227
+msgid "Morocco"
+msgstr "Marroc"
+
+#: classes/fields/pick.php:3524
+#: tribe-common/src/Tribe/Languages/Locations.php:228
+msgid "Mozambique"
+msgstr "Moçambic"
+
+#: classes/fields/pick.php:3526
+#: tribe-common/src/Tribe/Languages/Locations.php:230
+msgid "Namibia"
+msgstr "Namíbia"
+
+#: classes/fields/pick.php:3527
+#: tribe-common/src/Tribe/Languages/Locations.php:231
+msgid "Nauru"
+msgstr "Nauru"
+
+#: classes/fields/pick.php:3528
+#: tribe-common/src/Tribe/Languages/Locations.php:232
+msgid "Nepal"
+msgstr "Nepal"
+
+#: classes/fields/pick.php:3529
+#: tribe-common/src/Tribe/Languages/Locations.php:233
+msgid "Netherlands"
+msgstr "Països Baixos"
+
+#: classes/fields/pick.php:3532
+#: tribe-common/src/Tribe/Languages/Locations.php:234
+msgid "New Caledonia"
+msgstr "Nova Caledònia"
+
+#: classes/fields/pick.php:3533
+#: tribe-common/src/Tribe/Languages/Locations.php:235
+msgid "New Zealand"
+msgstr "Nova Zelanda"
+
+#: classes/fields/pick.php:3534
+#: tribe-common/src/Tribe/Languages/Locations.php:236
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: classes/fields/pick.php:3535
+#: tribe-common/src/Tribe/Languages/Locations.php:237
+msgid "Niger"
+msgstr "Níger"
+
+#: classes/fields/pick.php:3536
+#: tribe-common/src/Tribe/Languages/Locations.php:238
+msgid "Nigeria"
+msgstr "Nigèria"
+
+#: classes/fields/pick.php:3537
+#: tribe-common/src/Tribe/Languages/Locations.php:239
+msgid "Niue"
+msgstr "Niue"
+
+#: classes/fields/pick.php:3538
+#: tribe-common/src/Tribe/Languages/Locations.php:240
+msgid "Norfolk Island"
+msgstr "Illa Norfolk"
+
+#: classes/fields/pick.php:3542
+#: tribe-common/src/Tribe/Languages/Locations.php:243
+msgid "Norway"
+msgstr "Noruega"
+
+#: classes/fields/pick.php:3543
+#: tribe-common/src/Tribe/Languages/Locations.php:244
+msgid "Oman"
+msgstr "Oman"
+
+#: classes/fields/pick.php:3545
+#: tribe-common/src/Tribe/Languages/Locations.php:245
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: classes/fields/pick.php:3546
+#: tribe-common/src/Tribe/Languages/Locations.php:246
+msgid "Palau"
+msgstr "Palau"
+
+#: classes/fields/pick.php:3548
+#: tribe-common/src/Tribe/Languages/Locations.php:247
+msgid "Panama"
+msgstr "Panamà"
+
+#: classes/fields/pick.php:3550
+#: tribe-common/src/Tribe/Languages/Locations.php:248
+msgid "Papua New Guinea"
+msgstr "Papua Nova Guinea"
+
+#: classes/fields/pick.php:3551
+#: tribe-common/src/Tribe/Languages/Locations.php:249
+msgid "Paraguay"
+msgstr "Paraguai"
+
+#: classes/fields/pick.php:3553
+#: tribe-common/src/Tribe/Languages/Locations.php:250
+msgid "Peru"
+msgstr "Perú"
+
+#: classes/fields/pick.php:3554
+#: tribe-common/src/Tribe/Languages/Locations.php:251
+msgid "Philippines"
+msgstr "Filipines"
+
+#: classes/fields/pick.php:3556
+#: tribe-common/src/Tribe/Languages/Locations.php:253
+msgid "Poland"
+msgstr "Polònia"
+
+#: classes/fields/pick.php:3557
+#: tribe-common/src/Tribe/Languages/Locations.php:254
+msgid "Portugal"
+msgstr "Portugal"
+
+#: classes/fields/pick.php:3558
+#: tribe-common/src/Tribe/Languages/Locations.php:255
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: classes/fields/pick.php:3559
+#: tribe-common/src/Tribe/Languages/Locations.php:256
+msgid "Qatar"
+msgstr "Qatar"
+
+#: classes/fields/pick.php:3563
+msgid "Réunion"
+msgstr "Reunió"
+
+#: classes/fields/pick.php:3560
+#: tribe-common/src/Tribe/Languages/Locations.php:258
+msgid "Romania"
+msgstr "Romania"
+
+#: classes/fields/pick.php:3564
+msgid "Saint Barthélemy"
+msgstr "Saint Barthélemy"
+
+#: classes/fields/pick.php:3402
+msgid "British Virgin Islands"
+msgstr "Illes Verges Britàniques"
+
+#: classes/fields/pick.php:3400
+msgid "British Antarctic Territory"
+msgstr "Territori Britànic Antàrtic"
+
+#: classes/fields/pick.php:3410
+msgid "Canton and Enderbury Islands"
+msgstr "Illes Canton i Enderbury"
+
+#: classes/fields/pick.php:3434
+msgid "Dronning Maud Land"
+msgstr "Terra de la Reina Maud"
+
+#: classes/fields/pick.php:3451
+msgid "French Southern and Antarctic Territories"
+msgstr "Territoris Francesos del Sud i Antàrtics"
+
+#: classes/fields/pick.php:3485
+msgid "Johnston Island"
+msgstr "Illa Johnston"
+
+#: classes/fields/pick.php:3517
+msgid "Midway Islands"
+msgstr "Illes Midway"
+
+#: classes/fields/pick.php:3530
+msgid "Netherlands Antilles"
+msgstr "Antilles Neerlandeses"
+
+#: classes/fields/pick.php:3531
+msgid "Neutral Zone"
+msgstr "Zona neutral"
+
+#: classes/fields/pick.php:3549
+msgid "Panama Canal Zone"
+msgstr "Zona del Canal de Panamà"
+
+#: classes/fields/pick.php:673
+msgid "Navigation Menus"
+msgstr "Menús de navegació"
+
+#: classes/fields/pick.php:660 src/Pods/Admin/Config/Pod.php:964
+#: ui/admin/setup-add.php:374
+msgid "Comments"
+msgstr "Comentaris"
+
+#: classes/fields/pick.php:3516
+msgid "Micronesia"
+msgstr "Micronèsia"
+
+#: classes/fields/pick.php:3384
+#: tribe-common/src/Tribe/Languages/Locations.php:95
+msgid "Azerbaijan"
+msgstr "Azerbaidjan"
+
+#: classes/fields/pick.php:3429
+msgid "Côte d’Ivoire"
+msgstr "Costa d'Ivori"
+
+#: classes/fields/pick.php:3387
+#: tribe-common/src/Tribe/Languages/Locations.php:98
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: classes/fields/pick.php:3541
+#: tribe-common/src/Tribe/Languages/Locations.php:242
+msgid "Northern Mariana Islands"
+msgstr "Illes Mariannes Septentrionals"
+
+#: classes/fields/pick.php:3562
+#: tribe-common/src/Tribe/Languages/Locations.php:260
+msgid "Rwanda"
+msgstr "Ruanda"
+
+#: classes/fields/pick.php:3373
+#: tribe-common/src/Tribe/Languages/Locations.php:84
+msgid "American Samoa"
+msgstr "Samoa Nord-americana"
+
+#: classes/fields/pick.php:3469
+msgid "Heard Island and McDonald Islands"
+msgstr "Illes Heard i McDonald"
+
+#: classes/fields/pick.php:3449
+#: tribe-common/src/Tribe/Languages/Locations.php:158
+msgid "French Polynesia"
+msgstr "Polinèsia Francesa"
+
+#: classes/fields/pick.php:3450
+#: tribe-common/src/Tribe/Languages/Locations.php:159
+msgid "French Southern Territories"
+msgstr "Terres Australs Franceses"
+
+#: classes/PodsAdmin.php:2372 src/Pods/Admin/Config/Field.php:145
+msgid "Description"
+msgstr "Descripció"
+
+#: classes/fields/boolean.php:53 classes/fields/boolean.php:222
+#: classes/fields/boolean.php:245 classes/PodsAdmin.php:3216
+#: classes/PodsAdmin.php:3220 classes/PodsAdmin.php:3228
+#: classes/PodsAdmin.php:3232 classes/PodsAdmin.php:3236
+#: classes/PodsAdmin.php:3240 classes/PodsAdmin.php:3244
+#: classes/PodsAdmin.php:3248 classes/PodsAdmin.php:3252
+#: classes/PodsAdmin.php:3256 classes/PodsAdmin.php:3260
+#: classes/PodsAdmin.php:3272 classes/PodsAdmin.php:3280
+#: classes/PodsAdmin.php:3284 classes/PodsAdmin.php:3288
+#: classes/PodsAdmin.php:3292 classes/PodsAdmin.php:3296
+#: classes/PodsAdmin.php:3300 classes/PodsAdmin.php:3304
+#: classes/PodsAdmin.php:3308 classes/PodsAdmin.php:3316
+#: classes/PodsUI.php:2898 classes/PodsUI.php:3327 classes/PodsUI.php:3578
+#: src/Pods/Whatsit/Block_Field.php:259
+msgid "Yes"
+msgstr "Sí"
+
+#: classes/fields/boolean.php:58 classes/fields/boolean.php:223
+#: classes/fields/boolean.php:246 classes/PodsAdmin.php:3216
+#: classes/PodsAdmin.php:3220 classes/PodsAdmin.php:3228
+#: classes/PodsAdmin.php:3232 classes/PodsAdmin.php:3236
+#: classes/PodsAdmin.php:3240 classes/PodsAdmin.php:3244
+#: classes/PodsAdmin.php:3248 classes/PodsAdmin.php:3252
+#: classes/PodsAdmin.php:3256 classes/PodsAdmin.php:3260
+#: classes/PodsAdmin.php:3272 classes/PodsAdmin.php:3280
+#: classes/PodsAdmin.php:3284 classes/PodsAdmin.php:3288
+#: classes/PodsAdmin.php:3292 classes/PodsAdmin.php:3296
+#: classes/PodsAdmin.php:3300 classes/PodsAdmin.php:3304
+#: classes/PodsAdmin.php:3308 classes/PodsAdmin.php:3316
+#: classes/PodsUI.php:2899 classes/PodsUI.php:3328 classes/PodsUI.php:3579
+#: src/Pods/Whatsit/Block_Field.php:263
+msgid "No"
+msgstr "No"
+
+#: classes/PodsUI.php:3050 tribe-common/src/Tribe/Dialog/View.php:228
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: classes/PodsUI.php:3230
+msgid "Reset"
+msgstr "Reinicialitza"
+
+#: classes/PodsUI.php:3024 classes/PodsUI.php:4610
+msgid "Apply"
+msgstr "Aplica"
+
+#: classes/PodsUI.php:4459
+msgid "Disable"
+msgstr "Desactiva"
+
+#: classes/fields/color.php:45 classes/fields/color.php:100
+#: classes/PodsUI.php:3480 classes/PodsUI.php:3539 classes/PodsUI.php:3588
+#: classes/PodsUI.php:3627 tribe-common/src/Tribe/Main.php:347
+#: ui/fields/color.php:14
+msgid "Clear"
+msgstr "Neteja"
+
+#: classes/PodsAdmin.php:2394 ui/admin/settings.php:12
+msgid "Tools"
+msgstr "Eines"
+
+#: classes/PodsAdmin.php:2364 classes/PodsAdmin.php:2401
+msgid "Category"
+msgstr "Categoria"
+
+#: classes/PodsUI.php:4778
+msgid "Go to the first page"
+msgstr "Vés a la primera pàgina"
+
+#: classes/PodsUI.php:4779
+msgid "Go to the previous page"
+msgstr "Vés a la pàgina anterior"
+
+#: classes/PodsUI.php:4783
+msgid "Current page"
+msgstr "Pàgina actual"
+
+#: classes/PodsUI.php:3261 classes/PodsUI.php:3262 classes/PodsUI.php:3269
+#: classes/PodsUI.php:3341 classes/PodsUI.php:3396
+msgid "Advanced Filters"
+msgstr "Filtres avançats"
+
+#: classes/PodsUI.php:3269
+msgid "Add Filter"
+msgstr "Afegeix un filtre"
+
+#: classes/PodsUI.php:3346
+msgid "Remove Filter"
+msgstr "Elimina un filtre"
+
+#: classes/PodsUI.php:4783 classes/PodsUI.php:4799
+msgid "of"
+msgstr "de"
+
+#: classes/PodsUI.php:1871 components/Roles/ui/edit.php:19
+msgid "created"
+msgstr "creat"
+
+#: classes/PodsUI.php:4811
+msgid "Go to the next page"
+msgstr "Vés a la pàgina següent"
+
+#: classes/PodsUI.php:4812
+msgid "Go to the last page"
+msgstr "Vés a l'última pàgina"
+
+#: classes/fields/file.php:149
+msgid "Media Library"
+msgstr "Mediateca"
+
+#: classes/fields/time.php:96 classes/fields/time.php:116
+msgid "Time Format"
+msgstr "Format de l'hora"
+
+#: classes/fields/date.php:89
+msgid "Date Format"
+msgstr "Format de data"
+
+#: classes/PodsUI.php:4419
+msgid "Duplicate this item"
+msgstr "Duplica aquest element"
+
+#: classes/fields/currency.php:145 classes/fields/number.php:99
+msgid "Maximum Number"
+msgstr "Nombre màxim"
+
+#: classes/PodsUI.php:3008
+msgid "Bulk Actions"
+msgstr "Accions en massa"
+
+#: classes/PodsUI.php:1869 components/Roles/ui/edit.php:16
+#: ui/admin/settings-settings.php:28
+msgid "saved"
+msgstr "s'ha desat"
+
+#: classes/Pods.php:3451 classes/PodsI18n.php:173 classes/PodsUI.php:747
+#: classes/PodsUI.php:2962 classes/PodsUI.php:3237
+#: src/Pods/Admin/Config/Pod.php:312
+msgid "Search"
+msgstr "Cerca"
+
+#: classes/PodsAdmin.php:280 classes/PodsAdmin.php:354 classes/PodsI18n.php:171
+#: classes/PodsInit.php:2180 classes/PodsUI.php:743 classes/PodsUI.php:4404
+#: src/Pods/Admin/Config/Pod.php:192 src/Pods/Admin/Config/Pod.php:1471
+msgid "Edit"
+msgstr "Edita"
+
+#: classes/Pods.php:4462 classes/PodsAdmin.php:1318 classes/PodsUI.php:4435
+#: src/Pods/Admin/Config/Pod.php:1473 ui/admin/view.php:80
+#: ui/forms/type/post.php:129
+msgid "Delete"
+msgstr "Esborra"
+
+#: classes/PodsAdmin.php:1312 classes/PodsUI.php:744 classes/PodsUI.php:4419
+#: src/Pods/Admin/Config/Pod.php:216 src/Pods/Admin/Config/Pod.php:1472
+msgid "Duplicate"
+msgstr "Duplica"
+
+#: classes/Pods.php:3993 classes/PodsAdmin.php:778 classes/PodsForm.php:417
+#: tribe-common/src/Tribe/Settings.php:377 ui/admin/components-admin.php:107
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#: src/Pods/Admin/Config/Pod.php:66
+msgid "Advanced Options"
+msgstr "Opcions avançades"
+
+#: classes/PodsAdmin.php:549 classes/PodsAdmin.php:2351
+msgid "Components"
+msgstr "Components"
+
+#: classes/PodsAdmin.php:561 classes/PodsAdmin.php:582
+#: tribe-common/src/Tribe/Settings_Manager.php:323
+msgid "Help"
+msgstr "Ajuda"
+
+#: classes/PodsAdmin.php:276 classes/PodsAdmin.php:1354
+#: classes/PodsAdmin.php:2391 tribe-common/src/Tribe/Main.php:324
+msgid "All"
+msgstr "Tot"
+
+#: classes/Pods.php:4455 components/Migrate-Packages/ui/wizard.php:65
+#: src/Pods/Admin/Config/Pod.php:1475
+msgid "Export"
+msgstr "Exporta"
+
+#: classes/PodsAdmin.php:936 classes/PodsAdmin.php:1356
+msgid "Type"
+msgstr "Tipus"
+
+#: classes/Pods.php:4354 src/Pods/Tools/Repair.php:394
+#: src/Pods/Tools/Repair.php:490 src/Pods/Tools/Repair.php:583
+#: src/Pods/Tools/Repair.php:648
+msgid "ID"
+msgstr "Id"
+
+#: src/Pods/Admin/Config/Pod.php:645 src/Pods/Admin/Config/Pod.php:684
+#: src/Pods/Admin/Config/Pod.php:1075
+msgid "Menu Name"
+msgstr "Nom del menú"
+
+#: src/Pods/Admin/Config/Field.php:280
+msgid "Visual"
+msgstr "Visual"
+
+#: classes/PodsAdmin.php:555 classes/PodsAdmin.php:576
+#: tribe-common/src/Tribe/Settings.php:254 ui/admin/components-admin.php:10
+#: ui/admin/settings-settings.php:68 ui/admin/settings-settings.php:72
+#: ui/admin/settings.php:11 ui/admin/upgrade/upgrade_2_0_0.php:203
+msgid "Settings"
+msgstr "Opcions"
+
+#: src/Pods/Admin/Config/Pod.php:780 src/Pods/Admin/Config/Pod.php:1193
+msgid "Public"
+msgstr "Pública"
+
+#: classes/PodsAdmin.php:933 classes/PodsAdmin.php:2356 classes/PodsUI.php:785
+#: components/Roles/Roles.php:91 components/Roles/ui/add.php:50
+#: src/Pods/Admin/Config/Field.php:134 src/Pods/Admin/Config/Group.php:99
+#: src/Pods/Tools/Repair.php:581 src/Pods/Tools/Repair.php:646
+msgid "Name"
+msgstr "Nom"
+
+#: classes/PodsAdmin.php:2397 src/Pods/Admin/Config/Field.php:52
+#: src/Pods/Admin/Config/Group.php:24 src/Pods/Admin/Config/Group.php:209
+#: ui/admin/setup-add.php:261 ui/admin/setup-add.php:465
+msgid "Advanced"
+msgstr "Avançat"
+
+#: src/Pods/Admin/Config/Pod.php:54
+msgid "Labels"
+msgstr "Etiquetes"
+
+#: classes/PodsInit.php:1170
+#: components/Builder/modules/field/PodsBuilderModuleField.php:85
+#: components/Builder/modules/form/PodsBuilderModuleForm.php:87
+#: components/Builder/modules/list/PodsBuilderModuleList.php:90
+#: components/Builder/modules/single/PodsBuilderModuleSingle.php:86
+#: src/Pods/Whatsit/Store.php:105 ui/admin/settings-reset.php:131
+#: ui/admin/settings-tools.php:103 ui/admin/widgets/field.php:26
+#: ui/admin/widgets/form.php:26 ui/admin/widgets/list.php:28
+#: ui/admin/widgets/single.php:28
+msgid "Pod"
+msgstr "Pod"
+
+#: classes/PodsInit.php:1169 ui/admin/upgrade/upgrade_2_0_0.php:68
+#: ui/admin/upgrade/upgrade_2_0_0.php:176
+msgid "Pods"
+msgstr "Pods"
+
+#: src/Pods/Admin/Config/Field.php:292
+msgid "Values"
+msgstr "Valors"
+
+#: src/Pods/Admin/Config/Field.php:297
+msgid "Default Value"
+msgstr "Valor per defecte"
+
+#: classes/PodsAdmin.php:930 components/Roles/Roles.php:90
+#: components/Roles/ui/add.php:40 src/Pods/Admin/Config/Field.php:126
+#: src/Pods/Admin/Config/Group.php:91 src/Pods/Admin/Config/Pod.php:137
+msgid "Label"
+msgstr "Etiqueta"
+
+#: classes/PodsAPI.php:933 classes/PodsAPI.php:944
+msgid "Open"
+msgstr "Obert"
+
+#: classes/PodsAPI.php:934 classes/PodsAPI.php:945
+msgid "Closed"
+msgstr "Tancat"
+
+#: classes/Pods.php:3304
+msgid "&laquo; First"
+msgstr "&laquo; Primer"
+
+#: classes/Pods.php:3305
+msgid "&lsaquo; Previous"
+msgstr "&lsaquo; Anterior"
+
+#: classes/Pods.php:3306
+msgid "Next &rsaquo;"
+msgstr "Següent &rsaquo;"
+
+#: classes/Pods.php:3307
+msgid "Last &raquo;"
+msgstr "Últim &raquo;"
+
+#: classes/Pods.php:4021
+msgid "Form submitted successfully"
+msgstr "Formulari enviat amb èxit"
