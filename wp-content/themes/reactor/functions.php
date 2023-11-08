@@ -423,16 +423,16 @@ add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
 /**
- * Remove access to email_subscribers' menu if user role is not administrator or editor
- * 
- * @author Toni Ginard
+ * Move WP Telegram main menu option to an option 'Options General'.
+ *
+ * @return void
  */
-function hide_es_menu() {
-    if (!current_user_can('administrator') && !current_user_can('editor')) {
-        remove_menu_page('es_dashboard');
-    }
+function rebuild_wptelegram_menu(): void {
+    remove_menu_page('wptelegram');
+    add_submenu_page('options-general.php', __('WP Telegram', 'wptelegram'), __('WP Telegram', 'wptelegram'), 'manage_options', 'wptelegram');
 }
-add_action('admin_menu', 'hide_es_menu');
+
+add_action('admin_menu', 'rebuild_wptelegram_menu');
 
 // Unregister bp-mail post type to disable functionality
 function unregister_bp_mail () {
