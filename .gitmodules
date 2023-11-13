@@ -112,3 +112,6 @@
 [submodule "wp-content/plugins/koko-analytics"]
 	path = wp-content/plugins/koko-analytics
 	url = https://github.com/projectestac/wordpress-koko-analytics.git
+[submodule "wp-content/plugins/gtranslate"]
+	path = wp-content/plugins/gtranslate
+	url = https://github.com/projectestac/wordpress-gtranslate.git
