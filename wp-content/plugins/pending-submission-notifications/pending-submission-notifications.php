@@ -16,7 +16,12 @@ add_action('transition_post_status', 'pending_submission_send_email', 10, 3);
 
 function pending_submission_send_email($new_status, $old_status, $post) {
 
-    if ($new_status == 'pending' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
+    // If the post type is 'calendar_booking', don't send email.
+    if ($post->post_type === 'calendar_booking') {
+        return;
+    }
+
+    if ($new_status === 'pending' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
 
         // Notify Admin that Contributor has written a post
         $admins = get_option('admin_email');
@@ -35,7 +40,7 @@ function pending_submission_send_email($new_status, $old_status, $post) {
 
         wp_mail($admins, $subject, $message);
 
-    } else if ($old_status == 'pending' && $new_status == 'publish' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
+    } elseif ($old_status === 'pending' && $new_status === 'publish' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
 
         // Notify Contributor that Admin has published their post
         $username = get_userdata($post->post_author);
