@@ -124,6 +124,10 @@ function xtec_booking_get_events( $resourceID = false ){
 
 		if ( ( ( $resourceID == false ) || in_array( $resource->ID, (array) $resourceID ) ) && $resourceID != 'no-events' ){
 
+            if (!isset($resource->post_status)) {
+                continue;
+            }
+
 			if ( $resource->post_status == "publish" || ( ( $resource->post_status == "private" ) && ( in_array( 'administrator', (array) $roles->roles ) or in_array( 'editor', (array) $roles->roles ) ) ) ){
 
 				if( $ResourceStatus == 'inactive' ){
@@ -159,6 +163,10 @@ function xtec_booking_get_events( $resourceID = false ){
 
 					$dateStart = explode( '-',$data['_xtec-booking-start-date'] );
 					$dateEnd = explode( '-',$data['_xtec-booking-finish-date'] );
+
+                    if (!isset($timeStart[1], $dateStart[2])) {
+                        continue;
+                    }
 
 					$startDateTime = mktime( $timeStart[0],$timeStart[1],0,$dateStart[1],$dateStart[0],$dateStart[2] );
 					$endDateTime = mktime( $timeEnd[0],$timeEnd[1],0,$dateEnd[1],$dateEnd[0],$dateEnd[2] );
