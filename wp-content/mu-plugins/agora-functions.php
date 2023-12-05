@@ -1292,11 +1292,11 @@ function xtec_polylang_check() {
     if( is_plugin_active( 'polylang/polylang.php' )) {
 
         // Load polylang translation
-        load_plugin_textdomain( 'polylang', false, basename( POLYLANG_DIR ) . '/languages' );
+        load_plugin_textdomain( 'polylang', false, 'polylang/languages' );
 
         // Reload translation of some extensions that polylang blocks
         load_plugin_textdomain( 'slideshow-jquery-image-gallery', false, 'slideshow-jquery-image-gallery/languages' );
-        load_plugin_textdomain( 'google-calendar-events', false, dirname( plugin_basename( SIMPLE_CALENDAR_MAIN_FILE ) ) . '/i18n' );
+        load_plugin_textdomain( 'google-calendar-events', false, 'google-calendar-events/i18n' );
         load_plugin_textdomain( 'xtec-stats', false, 'xtec-stats/languages' );
         load_plugin_textdomain( 'buddypress', false, 'buddypress/bp-languages' );
         load_plugin_textdomain( 'bp-docs', false, 'buddypress-docs/languages' );
@@ -1304,8 +1304,6 @@ function xtec_polylang_check() {
         load_plugin_textdomain( 'email-subscribers', false, 'email-subscribers/languages' );
         load_plugin_textdomain( 'grup-classe', false, 'grup-classe/languages' );
         load_plugin_textdomain( 'add-to-any', false, 'add-to-any/languages' );
-        load_plugin_textdomain( 'bpfb', false, 'buddypress-activity-plus/languages' );
-        load_plugin_textdomain( 'buddypress-like', false, 'buddypress-like/languages' );
         load_plugin_textdomain( 'tinymce-advanced', false, 'tinymce-advanced/langs' );
         load_plugin_textdomain( 'wordpress-social-login', false, 'wordpress-social-login/languages' );
 
