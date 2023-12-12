@@ -2,18 +2,14 @@
 # This file is distributed under the same license as the Plugins - Translate WordPress with GTranslate - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - Translate WordPress with GTranslate - Stable "
-"(latest release)\n"
-"PO-Revision-Date: 2023-11-09 15:24+0100\n"
-"Language: ca\n"
+"PO-Revision-Date: 2023-11-09 15:07:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.6\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
-"Language-Team: \n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Translate WordPress with GTranslate - Stable (latest release)\n"
 
 #: gtranslate.php:1447
 msgid "We try to help everyone as time permits."
@@ -29,110 +25,51 @@ msgstr "Fòrum de suport (gratuït)"
 
 #: gtranslate.php:1439
 msgid "Live Chat (for paid plans and pre-sales questions)"
-msgstr ""
-"Xat en directe (per a plans de pagament i preguntes prèvies a la venda)"
+msgstr "Xat en directe (per a plans de pagament i preguntes prèvies a la venda)"
 
 #: gtranslate.php:1372
-msgid ""
-"Wrapper selector CSS can be used to render the language selector inside "
-"matching elements."
-msgstr ""
-"El selector de la caixa que conté el codi CSS es pot utilitzar per "
-"modificar l'aspecte del selector d'idioma dins d'elements coincidents."
+msgid "Wrapper selector CSS can be used to render the language selector inside matching elements."
+msgstr "El selector de la caixa que conté el codi CSS es pot utilitzar per modificar l'aspecte del selector d'idioma dins d'elements coincidents."
 
 #: gtranslate.php:1371
-msgid ""
-"Language codes for lang attribute are case sensitive. The full list can be "
-"found on <a href=\"https://gtranslate.io/supported-languages\" target="
-"\"_blank\" rel=\"noreferrer\">https://gtranslate.io/supported-languages</a>"
-msgstr ""
-"Els codis d'idioma de l'atribut lang distingeixen majúscules i minúscules. "
-"La llista completa es pot trobar a <a href=\"https://gtranslate.io/"
-"supported-languages\" target=\"blank\" rel=\"noreferrer\">https://"
-"gtranslate.io/supported-languages</a>"
+msgid "Language codes for lang attribute are case sensitive. The full list can be found on <a href=\"https://gtranslate.io/supported-languages\" target=\"_blank\" rel=\"noreferrer\">https://gtranslate.io/supported-languages</a>"
+msgstr "Els codis d'idioma de l'atribut lang distingeixen majúscules i minúscules. La llista completa es pot trobar a <a href=\"https://gtranslate.io/supported-languages\" target=\"blank\" rel=\"noreferrer\">https://gtranslate.io/supported-languages</a>"
 
 #: gtranslate.php:1371
-msgid ""
-"Valid values for widget_look attribute are <b>flags</b>, <b>flags_code</b>, "
-"<b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
-msgstr ""
-"Els valors vàlids per a l'atribut widgetlook són <b>flags</b>, "
-"<b>flags_code</b>, <b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
+msgid "Valid values for widget_look attribute are <b>flags</b>, <b>flags_code</b>, <b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
+msgstr "Els valors vàlids per a l'atribut widgetlook són <b>flags</b>, <b>flags_code</b>, <b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
 
 #: gtranslate.php:1371
-msgid ""
-"It is mainly used to easily place individual language links inside menu "
-"items. For example you can create a menu item with URL = #, Navigation "
-"Label = Spanish and Description = <code>[gt-link lang=\"es\" label=\"Spanish"
-"\" widget_look=\"flags_name\"]</code> and a single menu item will appear to "
-"change the language to Spanish."
-msgstr ""
-"S'utilitza principalment per col·locar fàcilment enllaços d'idioma "
-"individuals dins dels elements del menú. Per exemple, podeu crear un "
-"element de menú amb URL = #, Etiqueta de navegació = Espanyol i Descripció "
-"= <code>[gt-link lang=\"es\" label=\"Espanyol\" widget_look=\"flags_name"
-"\"]</code> i un únic element de menú apareixerà per canviar l'idioma al "
-"castellà."
+msgid "It is mainly used to easily place individual language links inside menu items. For example you can create a menu item with URL = #, Navigation Label = Spanish and Description = <code>[gt-link lang=\"es\" label=\"Spanish\" widget_look=\"flags_name\"]</code> and a single menu item will appear to change the language to Spanish."
+msgstr "S'utilitza principalment per col·locar fàcilment enllaços d'idioma individuals dins dels elements del menú. Per exemple, podeu crear un element de menú amb URL = #, Etiqueta de navegació = Espanyol i Descripció = <code>[gt-link lang=\"es\" label=\"Espanyol\" widget_look=\"flags_name\"]</code> i un únic element de menú apareixerà per canviar l'idioma al castellà."
 
 #: gtranslate.php:1371
-msgid ""
-"<code>[gt-link lang=\"en\" label=\"English\" widget_look=\"flags_name\"]</"
-"code> shortcode can be used to render individual language links."
-msgstr ""
-"El codi curt <code>[gt-link lang=\"en\" label=\"English\" widgetlook="
-"\"flags_name\"]</code> es pot utilitzar per renderitzar enllaços d'idioma "
-"individuals."
+msgid "<code>[gt-link lang=\"en\" label=\"English\" widget_look=\"flags_name\"]</code> shortcode can be used to render individual language links."
+msgstr "El codi curt <code>[gt-link lang=\"en\" label=\"English\" widgetlook=\"flags_name\"]</code> es pot utilitzar per renderitzar enllaços d'idioma individuals."
 
 #: gtranslate.php:1370
-msgid ""
-"You can use additional widget_look attribute to place a specific selector, "
-"for example <code>[gtranslate widget_look=\"popup\"]</code>. Valid values "
-"are <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, <b>dropdown</"
-"b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, <b>flags_code</"
-"b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
-msgstr ""
-"Podeu utilitzar l'atribut addicional widget_look per ubicar un selector "
-"específic, per exemple <code>[gtranslate widget_look=\"popup\"]</code>. Els "
-"valors vàlids són <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, "
-"<b>dropdown</b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, "
-"<b>flags_code</b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
+msgid "You can use additional widget_look attribute to place a specific selector, for example <code>[gtranslate widget_look=\"popup\"]</code>. Valid values are <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, <b>dropdown</b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, <b>flags_code</b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
+msgstr "Podeu utilitzar l'atribut addicional widget_look per ubicar un selector específic, per exemple <code>[gtranslate widget_look=\"popup\"]</code>. Els valors vàlids són <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, <b>dropdown</b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, <b>flags_code</b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
 
 #: gtranslate.php:1370
-msgid ""
-"In theme files you can call <code>echo do_shortcode('[gtranslate]');</code> "
-"in PHP context."
-msgstr ""
-"En els fitxers del tema podeu cridar <code>echo "
-"do_shortcode('[gtranslate]');</code> en el context PHP."
+msgid "In theme files you can call <code>echo do_shortcode('[gtranslate]');</code> in PHP context."
+msgstr "En els fitxers del tema podeu cridar <code>echo do_shortcode('[gtranslate]');</code> en el context PHP."
 
 #: gtranslate.php:1370
-msgid ""
-"You can use <code>[gtranslate]</code> inside posts, menu items or anywhere "
-"else."
-msgstr ""
-"Podeu utilitzar <code>[gtranslate]</code> dins d'articles, elements de menú "
-"o a qualsevol altre lloc."
+msgid "You can use <code>[gtranslate]</code> inside posts, menu items or anywhere else."
+msgstr "Podeu utilitzar <code>[gtranslate]</code> dins d'articles, elements de menú o a qualsevol altre lloc."
 
 #: gtranslate.php:1370
-msgid ""
-"<code>[gtranslate]</code> shortcode can be used anywhere on your website."
-msgstr ""
-"El codi curt <code>[gtranslate]</code> es pot utilitzar a qualsevol lloc "
-"del vostre lloc web."
+msgid "<code>[gtranslate]</code> shortcode can be used anywhere on your website."
+msgstr "El codi curt <code>[gtranslate]</code> es pot utilitzar a qualsevol lloc del vostre lloc web."
 
 #: gtranslate.php:1369
 msgid "You can use GTranslate Widget in any pre-defined widget locations."
-msgstr ""
-"Podeu utilitzar el giny de traducció del GTranslate a qualsevol ubicació "
-"predefinida del giny."
+msgstr "Podeu utilitzar el giny de traducció del GTranslate a qualsevol ubicació predefinida del giny."
 
 #: gtranslate.php:1367
-msgid ""
-"Show floating language selector option is the easiest and suitable for most "
-"websites."
-msgstr ""
-"L'opció de mostrar el selector flotant d'idioma és la més fàcil i adequada "
-"per a la majoria de llocs web."
+msgid "Show floating language selector option is the easiest and suitable for most websites."
+msgstr "L'opció de mostrar el selector flotant d'idioma és la més fàcil i adequada per a la majoria de llocs web."
 
 #: gtranslate.php:1364
 msgid "Language selector positioning tips"
@@ -175,60 +112,28 @@ msgid "Open direction"
 msgstr "Direcció oberta"
 
 #: gtranslate.php:1110
-msgid ""
-"If you are not using this option make sure it is empty or has the default "
-"value to not have additional unused code on your front-end. Default value "
-"for Wrapper Selector is <code>.gtranslate_wrapper</code>"
-msgstr ""
-"Si no esteu utilitzant aquesta opció assegureu-vos que està buit o que té "
-"el valor predeterminat per a no tenir codi addicional no utilitzat al "
-"frontal. El valor predeterminat per al selector de la caixa que conté el "
-"codi CSS és <code>.gtranslate_wrapper</code>"
+msgid "If you are not using this option make sure it is empty or has the default value to not have additional unused code on your front-end. Default value for Wrapper Selector is <code>.gtranslate_wrapper</code>"
+msgstr "Si no esteu utilitzant aquesta opció assegureu-vos que està buit o que té el valor predeterminat per a no tenir codi addicional no utilitzat al frontal. El valor predeterminat per al selector de la caixa que conté el codi CSS és <code>.gtranslate_wrapper</code>"
 
 #: gtranslate.php:1110
-msgid ""
-"If you want the language selector to appear inside a particular HTML "
-"element on your page then this option is for you. You simply need to write "
-"a CSS selector to point to that HTML element and GTranslate will appear "
-"inside of it."
-msgstr ""
-"Si voleu que el selector d'idioma aparegui dins d'un element HTML concret a "
-"la pàgina, aquesta opció és per a vós. Simplement heu d'escriure un "
-"selector CSS per apuntar a aquest element HTML i GTranslate apareixerà dins "
-"seu."
+msgid "If you want the language selector to appear inside a particular HTML element on your page then this option is for you. You simply need to write a CSS selector to point to that HTML element and GTranslate will appear inside of it."
+msgstr "Si voleu que el selector d'idioma aparegui dins d'un element HTML concret a la pàgina, aquesta opció és per a vós. Simplement heu d'escriure un selector CSS per apuntar a aquest element HTML i GTranslate apareixerà dins seu."
 
 #: gtranslate.php:1110
 msgid "Wrapper selector CSS"
 msgstr "Selector de la caixa CSS"
 
 #: gtranslate.php:1098
-msgid ""
-"Show floating language selector option is the easiest and suitable for most "
-"websites. It is best for <b>Float</b>, <b>Nice dropdown with flags</b>, "
-"<b>Popup</b>, <b>Globe</b> widget looks."
-msgstr ""
-"L'opció de mostrar el selector flotant de l'idioma és la més fàcil i "
-"adequada per a la majoria de llocs web. És la millor pels aspectes del giny "
-"següents: <b>Flota</b>, <b>Desplegable amb banderes</b>, <b>Finestra "
-"emergent</b> i <b>Globus</b>."
+msgid "Show floating language selector option is the easiest and suitable for most websites. It is best for <b>Float</b>, <b>Nice dropdown with flags</b>, <b>Popup</b>, <b>Globe</b> widget looks."
+msgstr "L'opció de mostrar el selector flotant de l'idioma és la més fàcil i adequada per a la majoria de llocs web. És la millor pels aspectes del giny següents: <b>Flota</b>, <b>Desplegable amb banderes</b>, <b>Finestra emergent</b> i <b>Globus</b>."
 
 #: gtranslate.php:1086
-msgid ""
-"Other looks most likely will require additional CSS rules to match your "
-"theme design."
-msgstr ""
-"És molt probable que els altres aspectes requereixin regles CSS addicionals "
-"perquè concordin amb el disseny del tema."
+msgid "Other looks most likely will require additional CSS rules to match your theme design."
+msgstr "És molt probable que els altres aspectes requereixin regles CSS addicionals perquè concordin amb el disseny del tema."
 
 #: gtranslate.php:1086 gtranslate.php:1368
-msgid ""
-"Show in menu option is best for <b>Flags</b>, <b>Flags with language name</"
-"b>, <b>Flags with language code</b>, <b>Language names</b>, <b>Language "
-"codes</b> widget looks."
-msgstr ""
-"L'opció de mostrar en el menú és la millor pels aspectes del giny següents: "
-"<b>Banderes</b>, <b>Banderes amb el nom d'idioma</b>, <b>Banderes amb el "
-"codi d'idioma</b>, <b>Noms d'idioma</b> i <b>Codis d'idioma</b>."
+msgid "Show in menu option is best for <b>Flags</b>, <b>Flags with language name</b>, <b>Flags with language code</b>, <b>Language names</b>, <b>Language codes</b> widget looks."
+msgstr "L'opció de mostrar en el menú és la millor pels aspectes del giny següents: <b>Banderes</b>, <b>Banderes amb el nom d'idioma</b>, <b>Banderes amb el codi d'idioma</b>, <b>Noms d'idioma</b> i <b>Codis d'idioma</b>."
 
 #: gtranslate.php:1082
 msgid "Select language label"
@@ -259,31 +164,16 @@ msgid "View debug.txt"
 msgstr "Visualitza el debug.txt"
 
 #: gtranslate.php:2005 gtranslate.php:2020
-msgid ""
-"Please note that sensitive information can be written into gtranslate/"
-"url_addon/debug.txt file, which can be accessed publicly. It is your "
-"responsibility to deny public access to it and clean debug information "
-"after you are done."
-msgstr ""
-"Tingueu en compte que es pot escriure informació sensible al fitxer "
-"gtranslate/url_addon/debug.txt, al qual es pot accedir públicament. És "
-"responsabilitat vostra denegar-hi l'accés públic i netejar-ne la informació "
-"de depuració una vegada hàgiu acabat."
+msgid "Please note that sensitive information can be written into gtranslate/url_addon/debug.txt file, which can be accessed publicly. It is your responsibility to deny public access to it and clean debug information after you are done."
+msgstr "Tingueu en compte que es pot escriure informació sensible al fitxer gtranslate/url_addon/debug.txt, al qual es pot accedir públicament. És responsabilitat vostra denegar-hi l'accés públic i netejar-ne la informació de depuració una vegada hàgiu acabat."
 
 #: gtranslate.php:2004
 msgid "Email translation debug mode is ON."
-msgstr ""
-"El mode de depuració de la traducció per correu electrònic està activat."
+msgstr "El mode de depuració de la traducció per correu electrònic està activat."
 
 #. Description of the plugin
-msgid ""
-"Translate your website and make it multilingual. For support visit <a href="
-"\"https://wordpress.org/support/plugin/gtranslate\">GTranslate Support "
-"Forum</a>."
-msgstr ""
-"Tradueix la teva web i fes-la multilingüe. Per a més informació, visiteu el "
-"<a href=\"https://wordpress.org/support/plugin/gtranslate\">fòrum de suport "
-"del GTranslate</a>."
+msgid "Translate your website and make it multilingual. For support visit <a href=\"https://wordpress.org/support/plugin/gtranslate\">GTranslate Support Forum</a>."
+msgstr "Tradueix la teva web i fes-la multilingüe. Per a més informació, visiteu el <a href=\"https://wordpress.org/support/plugin/gtranslate\">fòrum de suport del GTranslate</a>."
 
 #: gtranslate.php:1145
 msgid "Flag style"
@@ -294,12 +184,8 @@ msgid "Detect browser language"
 msgstr "Detecta l'idioma del navegador"
 
 #: gtranslate.php:1281
-msgid ""
-"Synchronize custom domains with GTranslate dashboard: https://my.gtranslate."
-"io"
-msgstr ""
-"Sincronitza els dominis personalitzats amb el tauler de GTranslate: https://"
-"my.gtranslate.io"
+msgid "Synchronize custom domains with GTranslate dashboard: https://my.gtranslate.io"
+msgstr "Sincronitza els dominis personalitzats amb el tauler de GTranslate: https://my.gtranslate.io"
 
 #: gtranslate.php:1268
 msgid "Domain"
@@ -378,10 +264,8 @@ msgid "Website Translation Quote"
 msgstr "Cita de traducció del lloc web"
 
 #: gtranslate.php:1387
-msgid ""
-"Automatic translation post-editing service and professional translations"
-msgstr ""
-"Servei de postedició de traducció automàtica i traduccions professionals"
+msgid "Automatic translation post-editing service and professional translations"
+msgstr "Servei de postedició de traducció automàtica i traduccions professionals"
 
 #: gtranslate.php:1062
 msgid "Enable WooCommerce Email Translation"
@@ -445,9 +329,7 @@ msgstr "Augment del trànsit internacional i ingressos AdSense"
 
 #: gtranslate.php:1390
 msgid "Language hosting (custom domain like example.fr, example.es)"
-msgstr ""
-"Allotjament de l'idioma (domini personalitzat com ara example.fr, example."
-"es)"
+msgstr "Allotjament de l'idioma (domini personalitzat com ara example.fr, example.es)"
 
 #: gtranslate.php:1388
 msgid "Meta data translation (keywords, page description, etc...)"
@@ -474,12 +356,8 @@ msgid "Popup"
 msgstr "Finestra emergent"
 
 #: gtranslate.php:2034
-msgid ""
-"You can have <b>neural machine translations</b> which are human level by "
-"upgrading your GTranslate."
-msgstr ""
-"Podeu tenir <b>traduccions fetes per màquines neuronals</b> que són de "
-"nivell humà actualitzant el vostre GTranslate."
+msgid "You can have <b>neural machine translations</b> which are human level by upgrading your GTranslate."
+msgstr "Podeu tenir <b>traduccions fetes per màquines neuronals</b> que són de nivell humà actualitzant el vostre GTranslate."
 
 #: gtranslate.php:1731
 msgid "Title:"
@@ -550,12 +428,8 @@ msgid "Flags with language name"
 msgstr "Banderes amb el nom d'idioma"
 
 #: gtranslate.php:1575
-msgid ""
-"Cannot update gtranslate/url_addon/config.php file. Make sure to update it "
-"manually and set correct $main_lang."
-msgstr ""
-"No es pot actualitzar el fitxer gtranslate/url_addon/config.php. Assegureu-"
-"vos d'actualitzar-lo manualment i establir el $main_lang correcte."
+msgid "Cannot update gtranslate/url_addon/config.php file. Make sure to update it manually and set correct $main_lang."
+msgstr "No es pot actualitzar el fitxer gtranslate/url_addon/config.php. Assegureu-vos d'actualitzar-lo manualment i establir el $main_lang correcte."
 
 #: gtranslate.php:1564
 msgid "Please add the following rules to the top of your .htaccess file"
@@ -624,24 +498,15 @@ msgstr "Xat en directe"
 
 #: gtranslate.php:2074
 msgid "You can <b>edit translations</b> by upgrading your GTranslate."
-msgstr ""
-"Podeu <b>editar les traduccions</b> actualitzant el vostre GTranslate."
+msgstr "Podeu <b>editar les traduccions</b> actualitzant el vostre GTranslate."
 
 #: gtranslate.php:2064
-msgid ""
-"You can <b>increase</b> your <b>AdSense revenue</b> by upgrading your "
-"GTranslate."
-msgstr ""
-"Podeu <b>augmentar</b> els vostres <b>ingressos AdSense</b> actualitzant el "
-"vostre GTranslate."
+msgid "You can <b>increase</b> your <b>AdSense revenue</b> by upgrading your GTranslate."
+msgstr "Podeu <b>augmentar</b> els vostres <b>ingressos AdSense</b> actualitzant el vostre GTranslate."
 
 #: gtranslate.php:2054
-msgid ""
-"You can have your <b>translated pages indexed</b> in search engines by "
-"upgrading your GTranslate."
-msgstr ""
-"Podeu tenir les vostres <b>pàgines traduïdes indexades</b> en els motors de "
-"cerca actualitzant el vostre GTranslate."
+msgid "You can have your <b>translated pages indexed</b> in search engines by upgrading your GTranslate."
+msgstr "Podeu tenir les vostres <b>pàgines traduïdes indexades</b> en els motors de cerca actualitzant el vostre GTranslate."
 
 #: gtranslate.php:2035 gtranslate.php:2045 gtranslate.php:2055
 #: gtranslate.php:2065 gtranslate.php:2075
@@ -649,12 +514,8 @@ msgid "Learn more"
 msgstr "Més informació"
 
 #: gtranslate.php:2044
-msgid ""
-"You can <b>increase</b> your international <b>traffic</b> by upgrading your "
-"GTranslate."
-msgstr ""
-"Podeu <b>augmentar</b> el vostre <b>trànsit</b> internacional actualitzant "
-"el vostre GTranslate."
+msgid "You can <b>increase</b> your international <b>traffic</b> by upgrading your GTranslate."
+msgstr "Podeu <b>augmentar</b> el vostre <b>trànsit</b> internacional actualitzant el vostre GTranslate."
 
 #: gtranslate.php:2033 gtranslate.php:2043 gtranslate.php:2053
 #: gtranslate.php:2063 gtranslate.php:2073
@@ -675,14 +536,8 @@ msgid "Sure! I would love to!"
 msgstr "És clar! M'encantaria!"
 
 #: gtranslate.php:1987
-msgid ""
-"We hope you have enjoyed using GTranslate! Would you mind taking a few "
-"minutes to write a review on WordPress.org? <br>Just writing a simple "
-"<b>'thank you'</b> will make us happy!"
-msgstr ""
-"Esperem que us hagi agradat utilitzar el GTranslate! Podríeu dedicar uns "
-"minuts a escriure una ressenya a WordPress.org? Només escriure un senzill "
-"<b>'gràcies'</b> ens farà feliços!"
+msgid "We hope you have enjoyed using GTranslate! Would you mind taking a few minutes to write a review on WordPress.org? <br>Just writing a simple <b>'thank you'</b> will make us happy!"
+msgstr "Esperem que us hagi agradat utilitzar el GTranslate! Podríeu dedicar uns minuts a escriure una ressenya a WordPress.org? <br>Només escriure un senzill <b>'gràcies'</b> ens farà feliços!"
 
 #: gtranslate.php:1986
 msgid "Please Leave a Review"
