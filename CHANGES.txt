@@ -4,6 +4,19 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 23.12.18
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.3.2
+- Updated custom welcome panel
+- Updated translations for all languages (Catalan, Spanish, French, Euskara, Galician and Occitan)
+- gtranslate: Added catalan translation
+- bbpress: Upgraded plugin
+- email-subscribers: Removed style 'body {margin: 0;}' because moves home page content to the left
+- Pending Submission Notifications: Added an exception for post type 'calendar_booking'
+- Theme reactor: Removed some custom code for Internet Explorer
+- xtec-booking: Fixed PHP warnings
+
+
 Changes 23.11.28
 ---------------------------------------------------------------------------------------
 - advanced-nocaptcha-recaptcha: Upgraded plugin
