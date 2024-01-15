@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.3.x\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-11-03 11:41+0100\n"
+"PO-Revision-Date: 2024-01-15 12:25+0100\n"
 "Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: wp-includes/theme.json
 msgctxt "Duotone name"
@@ -18287,7 +18287,7 @@ msgstr "Pàgines:"
 
 #: wp-includes/post-template.php:422
 msgid "There is no excerpt because this is a protected post."
-msgstr "No hi ha resum perquè és un article protegida."
+msgstr "No hi ha resum perquè és un article protegit."
 
 #: wp-includes/post-template.php:311
 msgid "(more&hellip;)"
