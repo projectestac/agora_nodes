@@ -12,10 +12,24 @@ load_muplugin_textdomain('agora-functions', '/languages');
  * Load agora-functions javascript file
  */
 function agora_functions_load_js() {
-    wp_register_script( 'agora-functions-js', plugins_url( '/javascript/agora-functions.js', __FILE__ ), array( 'jquery' ) );
-    wp_enqueue_script( 'agora-functions-js' );
+    wp_register_script('agora-functions-js', plugins_url('/javascript/agora-functions.js', __FILE__), ['jquery']);
+    wp_register_script('cookie-consent-js', plugins_url('/javascript/cookie-consent.min.js', __FILE__));
+    wp_enqueue_script('agora-functions-js');
+    wp_enqueue_script('cookie-consent-js');
 }
-add_action( 'wp_enqueue_scripts', 'agora_functions_load_js' );
+add_action('wp_enqueue_scripts', 'agora_functions_load_js');
+
+/**
+ * Load script to show a bottom bar with a message to accept the usage of cookies.
+ */
+function bps_cookie_script() {
+    echo '
+        <script type="text/javascript">
+            window.cookieconsent_options = {"message":"En aquest web es fan servir galetes. En cas que continuïs navegant, entendrem que acceptes la instal·lació d’aquestes tal com es detalla a la ","dismiss":"Accepta","learnMore":"política de galetes.","link":"https://projectes.xtec.cat/digital/politica-de-galetes/","theme":"dark-bottom"};
+        </script>
+    ';
+}
+add_action('wp_head', 'bps_cookie_script');
 
 /**
  * Build a navigation link and add it to the profile main menu
