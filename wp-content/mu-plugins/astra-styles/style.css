@@ -1,0 +1,199 @@
+
+#wpadminbar {
+    background-color: #000000;
+    height: 46px;
+    padding: 5px 0 5px 30px;
+}
+
+#wpadminbar #dept-educacio-logo {
+    height: 36px !important;
+    margin: 0 !important;
+}
+
+#wpadminbar li#wp-admin-bar-login-link-admin-bar > .ab-item::before {
+    content: ""; /* Key icon */
+    margin-top: 4px;
+}
+
+.main-header-bar {
+    border-radius: 30px;
+}
+
+/* Force a gap between the admin bar and the header */
+.ast-main-header-wrap {
+    margin-top: 30px;
+}
+
+.ast-below-header.ast-below-header-bar {
+    border-radius: 30px;
+}
+
+.tipus-centre {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #75818D
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.ast-single-post.ast-page-builder-template .site-main > article, .woocommerce.ast-page-builder-template .site-main {
+    padding-top: 0;
+}
+
+.border-radius-30, .border-radius-30 figure img {
+    border-radius: 30px;
+}
+
+.border-radius-30 figure img {
+    border-radius: 30px 30px 0 0;
+}
+
+.grid-container {
+    margin-left: 0;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* Two rows with equal height */
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 0; /* Adjust the gap between grid items */
+    padding: 0; /* Optional padding for the grid container */
+}
+
+.grid-item {
+    background-color: #f0f0f0; /* Background color of grid items */
+    padding: 20px; /* Adjust the padding of grid items */
+    text-align: center;
+}
+
+.slider-h {
+    max-height: 500px
+}
+
+.site-primary-header-wrap.ast-builder-grid-row-container.site-header-focus-item.ast-container {
+    padding-right: 0;
+}
+
+.uagb-post-grid.is-grid.uagb-post__image-position-top .uagb-post__image a[class^="uagb-image-ratio-"] > img {
+    border-radius: 20px 20px 0 0;
+}
+
+.ginys-container {
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.uagb-infobox__content-wrap img {
+    border-radius: 0 0 30px 30px !important;
+}
+
+.border-radius-30-r, .border-radius-30-r figure img {
+    border-radius: 30px !important;
+}
+
+.border-radius-30-r figure img {
+    border-radius: 0 0 30px 30px;
+}
+
+.blog-layout-1 {
+    background-color: white;
+    border-radius: 30px;
+}
+
+.blog-layout-3 h2.entry-title {
+    padding: 0 20px;
+}
+
+.blog-layout-3 .entry-content {
+    padding: 0 20px 10px 20px
+}
+
+img.attachment-large.size-large.wp-post-image {
+    border-radius: 30px 30px 0 0;
+}
+
+.blog main {
+    margin: 15px 15px 0;
+}
+
+.ast-post-format-.single-layout-1 {
+    border-radius: 30px;
+    background-color: white;
+    padding: 15px 30px;
+    margin-top: 15px;
+}
+
+#comments .submit, .search .search-submit {
+    border-radius: 30px;
+}
+
+.site-primary-footer-wrap[data-section="section-primary-footer-builder"] {
+    border: 0 !important;
+}
+
+.site-below-footer-wrap[data-section="section-below-footer-builder"] {
+    border: 0 !important;
+}
+
+ul.wp-block-page-list {
+    list-style: none outside none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.wp-block-page-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #38a09b;
+}
+
+ul.wp-block-page-list li a {
+    text-decoration: none !important;
+}
+
+.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond, .ast-separate-container .comments-area .ast-comment-list li, .woocommerce.ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container .site-main .ast-author-meta, .ast-separate-container .related-posts-title-wrapper, .ast-separate-container .comments-count-wrapper, .ast-box-layout.ast-plain-container .site-content, .ast-padded-layout.ast-plain-container .site-content, .ast-separate-container .comments-area .comments-title, .ast-separate-container .ast-archive-description {
+    background-color: var(--ast-global-color-5);
+    background-image: none;
+    border-radius: 30px;
+}
+
+/* Header borderl hack */
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1.3fr repeat(2, 1fr);
+    gap: 0;
+    padding: 0;
+}
+
+.grid-item-xl {
+    padding-left: 50px !important;
+}
+
+.grid-item {
+    padding: 20px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.detail-container:before {
+    content: "";
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -12px;
+    background-color: white;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 9px 0 8px #00000044;
+}
+
+.detail-container {
+    position: relative;
+    margin-right: -36px;
+}
+
+/* Hide the blog name included in the site identity provided by Astra */
+.ast-site-title-wrap {
+    display: none;
+}
