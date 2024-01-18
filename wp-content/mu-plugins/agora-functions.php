@@ -1802,3 +1802,9 @@ function configure_block_editor() {
 }
 
 add_action('enqueue_block_editor_assets', 'configure_block_editor');
+
+// Widgets: Use legacy widgets configuration.
+add_action('after_setup_theme', 'nodes_remove_theme_support');
+function nodes_remove_theme_support(): void {
+    remove_theme_support('widgets-block-editor');
+}
