@@ -1,0 +1,16 @@
+
+#wpadminbar {
+    background-color: #000000;
+    height: 46px;
+    padding: 5px 0 5px 30px;
+}
+
+#wpadminbar #dept-educacio-logo {
+    height: 36px !important;
+    margin: 0 !important;
+}
+
+#wpadminbar li#wp-admin-bar-login-link-admin-bar > .ab-item::before {
+    content: ""; /* Key icon */
+    margin-top: 4px;
+}
