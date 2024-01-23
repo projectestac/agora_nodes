@@ -165,7 +165,7 @@ function nodes_remove_customizer_header_footer_sections($configurations): array 
 }
 
 // Customizer: Add custom sections.
-add_action('customize_register', 'nodes_add_customizer_sections');
+//add_action('customize_register', 'nodes_add_customizer_sections');
 function nodes_add_customizer_sections($wp_customize): void {
     // Secció Color de Fons
     $wp_customize->add_section('nodes_header', [
@@ -187,6 +187,15 @@ function nodes_add_customizer_sections($wp_customize): void {
 }
 
 
+// After the control is added, you can add an action to the 'customize_save_after' hook
+// This action will be triggered after the customizer settings are saved
+add_action('customize_save_after', function($wp_customize) {
+    // Get the value of the 'astra_nodes_options[custom_logo]' setting
+    $logo_id = $wp_customize->get_setting('astra_nodes_options[custom_logo]')->value();
+
+    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting
+    set_theme_mod('custom_logo', $logo_id);
+});
 
 
 
