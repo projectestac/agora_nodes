@@ -16,11 +16,12 @@ add_action('widgets_init', function() {
 
 class XTEC_Widget extends WP_Widget {
 
-    public $recursos = [
+    public array $recursos = [
         'ensenyament' => ['nom' => 'Dep.Educació', 'url' => 'https://educacio.gencat.cat/ca/inici/', 'img' => 'educacio-icon.png', 'desc' => 'Pàgina del Departament d\'Educació'],
-        'xtec' => ['nom' => 'XTEC', 'url' => 'http://xtec.gencat.cat', 'img' => 'xtec-icon.png', 'desc' => 'Recursos educatius'],
+        'xtec' => ['nom' => 'XTEC', 'url' => 'https://xtec.gencat.cat/ca/inici', 'img' => 'xtec-icon.png', 'desc' => 'Recursos educatius'],
         'edu365' => ['nom' => 'Edu365', 'url' => 'https://www.edu365.cat/', 'img' => 'edu365-icon.png', 'desc' => 'Recursos educatius'],
-        'edu3' => ['nom' => 'Edu3', 'url' => 'http://www.edu3.cat', 'img' => 'edu3-icon.png', 'desc' => 'Videos educatius'],
+        'nus' => ['nom' => 'Nus', 'url' => 'https://comunitat.edigital.cat/', 'img' => 'nus-icon.jpg', 'desc' => 'Xarxa docent de Catalunya'],
+        'digital' => ['nom' => 'Digital', 'url' => 'https://projectes.xtec.cat/digital/', 'img' => 'pedc-icon.jpg', 'desc' => 'Digital'],
         'ateneu' => ['nom' => 'Ateneu', 'url' => 'https://ateneu.xtec.cat/', 'img' => 'ateneu-icon.png', 'desc' => 'Materials i recursos per la formació'],
         'alexandria' => ['nom' => 'Alexandria', 'url' => 'https://alexandria.xtec.cat', 'img' => 'alexandria-icon.png', 'desc' => 'Cursos moodle i activitats PDI per descarregar'],
         'linkat' => ['nom' => 'Linkat', 'url' => 'http://linkat.xtec.cat/', 'img' => 'linkat-icon.png', 'desc' => 'Linux pels centres educatius'],
@@ -47,8 +48,8 @@ class XTEC_Widget extends WP_Widget {
         'cesire' => ['nom' => 'CESIRE', 'url' => 'https://serveiseducatius.xtec.cat/cesire', 'img' => 'cesire-icon.png', 'desc' => 'Pàgina del CESIRE'],
     ];
 
-    public $recursosXtec = [
-        'ensenyament', 'xtec', 'edu365', 'edu3', 'ateneu', 'alexandria',
+    public array $recursosXtec = [
+        'ensenyament', 'xtec', 'edu365', 'nus', 'digital', 'ateneu', 'alexandria',
         'linkat', 'jclic', 'merli', 'arc', 'odissea', 'atri', 'saga', 'familia-escola',
         'internet-segura', 'portalcentre', 'epergam', 'lamevaxtec', 'esfera', 'evalisa',
         'ioc', 'sinapsi', 'cesire'
@@ -71,7 +72,7 @@ class XTEC_Widget extends WP_Widget {
 
 
     // Front-End Display of the Widget
-    public function widget($args, $instance) {
+    public function widget($args, $instance): void {
 
         extract($args);
         // Saved widget options
@@ -114,7 +115,7 @@ class XTEC_Widget extends WP_Widget {
     }
 
     // Back-end form of the Widget
-    public function form($instance) {
+    public function form($instance): void {
 
         // Check for values
         $title = $instance['title'] ?? 'Enllaços educatius';
@@ -146,7 +147,7 @@ class XTEC_Widget extends WP_Widget {
     }
 
     // Sanitize and return the safe form values
-    public function update($new_instance, $old_instance) {
+    public function update($new_instance, $old_instance): array {
 
         $instance = [];
         $instance['title'] = (!empty($new_instance['title'])) ? sanitize_text_field($new_instance['title']) : '';
