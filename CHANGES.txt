@@ -4,6 +4,16 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 24.01.25
+---------------------------------------------------------------------------------------
+- agora-functions: Widgets: Use legacy widgets configuration
+- Cookies: Load and execute javascript to show a Cookie consent message
+- enllacos-educatius: Updated services to link
+- Menu Recursos TAC: Updated menu items
+- MU Common: Minor improvements
+- langs: Fixed language customization
+
+
 Changes 23.12.18
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 6.3.2
