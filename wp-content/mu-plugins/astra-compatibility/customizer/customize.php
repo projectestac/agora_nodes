@@ -1,28 +1,27 @@
 <?php
 
-/**
- * JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since 1.0.0
- */
+// Customizer: JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
 add_action('customize_preview_init', function () {
-    wp_enqueue_script('reactor-customizer', plugins_url('/astra-compatibility/customizer/js/theme-customizer.js', __FILE__), ['customize-preview'],
-        '', true);
+    wp_enqueue_script(
+        'astra-nodes-customizer',
+        plugins_url('/js/theme-customizer.js', __FILE__),
+        ['jquery','customize-preview'],
+        '',
+        true
+    );
 });
 
-/**
- * Add CSS to the WP Theme Customizer page
- *
- * @since 1.0.0
- */
+// Customizer: Add custom CSS.
 add_action('customize_controls_print_styles', function () {
-    echo '
-	<style>
-		.customize-control { margin-bottom:5px; }
-		.customize-control-radio { padding:0; }
-		.customize-control-checkbox label { line-height:20px; }
-	</style>';
-}, 99);
+    $custom_css = '
+        .customize-control {
+            margin-top: 30px !important;
+            padding-top: 30px;
+            border-top: 1px solid #cccccc;
+        }
+    ';
+    wp_add_inline_style('customize-controls', $custom_css);
+}, 1);
 
 /**
  * Register Customizer
@@ -30,14 +29,14 @@ add_action('customize_controls_print_styles', function () {
 add_action('customize_register', 'nodes_customize_register');
 
 function nodes_customize_register($wp_customize) {
-    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
 
-    // Header.
+    // Header section.
     $wp_customize->add_section('astra_nodes_customizer_header', [
         'title' => __('Header', 'astra-nodes'),
         'priority' => 1,
     ]);
 
+    // Custom logo.
     $wp_customize->add_setting('astra_nodes_options[custom_logo]', [
         'default' => '',
         'type' => 'option',
@@ -57,108 +56,42 @@ function nodes_customize_register($wp_customize) {
         )
     );
 
-
-
-/*
-
-
-    $wp_customize->add_setting('nodesbox_name', [
-        'default' => get_option('nodesbox_name'),
+    // Text preceding the blog name.
+    $wp_customize->add_setting('astra_nodes_options[pre_blog_name]', [
+        'default' => '',
+        'type' => 'option',
         'capability' => 'manage_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_control('nodesbox_name', [
-        'label' => __('Nom del centre', 'reactor'),
-        'type' => 'textarea',
+    $wp_customize->add_control('astra_nodes_customizer_header_pre_blog_name', [
+        'label' => __('Text preceding the blog name', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
-        'priority' => 1,
-    ]);
-
-    $wp_customize->add_setting('reactor_options[tamany_font_nom]', [
-        'default' => '2.5em',
-        'capability' => 'manage_options',
-        'transport' => 'refresh',
-    ]);
-
-    $wp_customize->add_control('reactor_options[tamany_font_nom]', [
-        'label' => __('Mida de la lletra', 'reactor'),
-        'section' => 'astra_nodes_customizer_header',
-        'type' => 'select',
-        'choices' => [
-            '1.2vw' => '1',
-            '1.3vw' => '2',
-            '1.4vw' => '3',
-            '1.5vw' => '4',
-            '1.6vw' => '5',
-            '1.7vw' => '6',
-            '1.8vw' => '7',
-            '1.9vw' => '8',
-            '2.0vw' => '9',
-            '2.1vw' => '10',
-            '2.2vw' => '11',
-            '2.3vw' => '12',
-            '2.4vw' => '13',
-            '2.5vw' => '14',
-            '2.6vw' => '15',
-            '2.7vw' => '16',
-            '2.8vw' => '17',
-            '2.9vw' => '18',
-            '3.0vw' => '19',
-            '3.1vw' => '20',
-        ],
+        'settings' => 'astra_nodes_options[pre_blog_name]',
         'priority' => 2,
     ]);
 
-    $wp_customize->add_setting('blogdescription', [
-        'default' => get_option('blogdescription'),
+    // Blog name.
+    $wp_customize->add_setting('astra_nodes_options[blog_name]', [
+        'default' => '',
+        'type' => 'option',
         'capability' => 'manage_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
     ]);
-
-    $wp_customize->add_control('blogdescription', [
-        'label' => __('Descripció / Lema', 'reactor'),
+    
+    $wp_customize->add_control('astra_nodes_customizer_header_blog_name', [
+        'label' => __('Blog name', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
-        'type' => 'textarea',
+        'settings' => 'astra_nodes_options[blog_name]',
         'priority' => 3,
     ]);
 
-    $wp_customize->add_setting('reactor_options[blogdescription_link]', [
-        'default' => '',
-        'capability' => 'manage_options',
-        'transport' => 'refresh',
-    ]);
 
-    $wp_customize->add_control('reactor_options[blogdescription_link]', [
-        'label' => __('Enllaç descripció / lema', 'reactor'),
-        'section' => 'astra_nodes_customizer_header',
-        'type' => 'option',
-        'priority' => 4,
-    ]);
-*/
-    // Carrusel combo
-    $args = ['posts_per_page' => -1, 'post_type' => 'slideshow'];
-    $carrusels = get_posts($args);
 
-    foreach ($carrusels as $carrusel) {
-        $aCarrusel[$carrusel->ID] = $carrusel->post_title;
-    }
 
-    $wp_customize->add_setting('reactor_options[carrusel]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-    ]);
 
-    $wp_customize->add_control('reactor_options[carrusel]', [
-        'label' => __('Carrusel', 'reactor'),
-        'description' => 'No aplica si hi ha una imatge de capçalera definida',
-        'section' => 'astra_nodes_customizer_header',
-        'type' => 'select',
-        'choices' => $aCarrusel,
-        'priority' => 6,
-    ]);
 
+    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/simpleHTML.php';
 
     // Graella d'icones

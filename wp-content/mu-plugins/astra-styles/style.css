@@ -161,8 +161,8 @@ ul.wp-block-page-list li a {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 1.3fr repeat(2, 1fr);
-    gap: 0px;
-    padding: 0px;
+    gap: 0;
+    padding: 0;
 }
 
 .grid-item-xl {
@@ -190,4 +190,9 @@ ul.wp-block-page-list li a {
 
 .detail-container {
     position: relative;
+}
+
+/* Hide the blog name included in the site identity provided by Astra */
+.ast-site-title-wrap {
+    display: none;
 }

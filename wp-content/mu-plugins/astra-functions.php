@@ -17,25 +17,22 @@ include_once WPMU_PLUGIN_DIR . '/astra-compatibility/customizer/customize.php';
 include_once WPMU_PLUGIN_DIR . '/astra-widgets/logo-client-widget.php';
 
 // Load styles to customize Astra theme.
-function astra_load_css(): void {
+add_action('wp_enqueue_scripts', function () {
     wp_register_style('astra-functions-css', plugins_url('/astra-styles/style.css', __FILE__));
     wp_enqueue_style('astra-functions-css');
-}
-add_action('wp_enqueue_scripts', 'astra_load_css');
+});
 
 // Admin bar: Force to be always shown, including for non-logged users.
 add_filter('show_admin_bar', '__return_true');
 
 // Admin bar: Remove WordPress logo.
-add_action('wp_before_admin_bar_render', 'nodes_admin_bar_remove_logo');
-function nodes_admin_bar_remove_logo(): void {
+add_action('wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
     $wp_admin_bar->remove_node('wp-logo');
-}
+});
 
 // Admin bar: Add Departament d'Educació logo in the first position and menu with XTEC resources.
-add_action('admin_bar_menu', 'nodes_modify_admin_bar');
-function nodes_modify_admin_bar($wp_admin_bar): void {
+add_action('admin_bar_menu', function ($wp_admin_bar) {
 
     $wp_admin_bar->add_node([
         'id' => 'dept-educacio-logo-wrapper',
@@ -135,33 +132,77 @@ function nodes_modify_admin_bar($wp_admin_bar): void {
             'parent' => 'top-secondary',
             'id' => 'login-link-admin-bar',
             'title' => __('Log in'),
-            'href' => wp_login_url(),
+            'href' => wp_login_url($_SERVER['REQUEST_URI']),
         ]);
     }
 
-}
+});
 
 // Customizer: Remove all Astra sections.
-add_filter('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
-add_filter('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
-add_filter('astra_customizer_sections', 'nodes_remove_customizer_general_sections');
-
-function nodes_remove_customizer_general_sections ($configurations): array {
+add_filter('astra_customizer_sections', function ($configurations) {
     if (is_xtec_super_admin()) {
         return $configurations;
     }
-
     return array_filter($configurations, static function ($configuration) {
         return $configuration['type'] !== 'section';
     });
-}
+});
+
+// Customizer: Remove all header and footer sections.
+add_filter('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
+add_filter('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
 
 function nodes_remove_customizer_header_footer_sections($configurations): array {
     if (is_xtec_super_admin()) {
         return $configurations;
     }
-
     return [];
+}
+
+// Customizer: Update logo when saving.
+add_action('customize_save_after', function ($wp_customize) {
+
+    // Get the value of the 'astra_nodes_options[custom_logo]' setting
+    $logo = $wp_customize->get_setting('astra_nodes_options[custom_logo]')->value();
+
+    // Get the attachment ID from the URL
+    $logo_id = attachment_url_to_postid($logo);
+
+    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting
+    set_theme_mod('custom_logo', $logo_id);
+    astra_update_option('custom_logo', $logo_id);
+
+    // Set the blog name to the value of the 'astra_nodes_options[blog_name]' setting
+    update_option('blogname', $wp_customize->get_setting('astra_nodes_options[blog_name]')->value());
+
+});
+
+add_filter('astra_get_option_header-html-3', function () {
+
+    // Get the option array from the wp_options table.
+    $astra_nodes_options = get_option('astra_nodes_options');
+
+    // Check if the option exists and is an array.
+    if ($astra_nodes_options && is_array($astra_nodes_options)) {
+        $pre_blog_name = $astra_nodes_options['pre_blog_name'];
+    } else {
+        $pre_blog_name = '';
+    }
+
+    return '
+        <div id="client-type" class="tipus-centre">' . $pre_blog_name . '</div>
+        <h1 id="blog-name">' . get_bloginfo('name') . '</h1>
+        <h2><span style="color: #00b856; font-size: 18pt;">ESO Batxillerat Cicles Formatius</span></h2>
+        ';
+
+}, 120, 0);
+
+
+
+
+
+function custom_header_html_3() {
+//    $content = astra_get_option('header-html-1');
 }
 
 // Customizer: Add custom sections.
@@ -186,45 +227,3 @@ function nodes_add_customizer_sections($wp_customize): void {
     ]));
 }
 
-
-// After the control is added, you can add an action to the 'customize_save_after' hook
-// This action will be triggered after the customizer settings are saved
-add_action('customize_save_after', function($wp_customize) {
-    // Get the value of the 'astra_nodes_options[custom_logo]' setting
-    $logo_id = $wp_customize->get_setting('astra_nodes_options[custom_logo]')->value();
-
-    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting
-    set_theme_mod('custom_logo', $logo_id);
-});
-
-
-
-
-
-
-
-//add_filter('astra_get_option_header-html-3', 'custom_header_html_3', 120, 0);
-function custom_header_html_3() {
-//    $content = astra_get_option('header-html-1');
-    return '<div class="tipus-centre">Centre formatiu</div>
-<h1>Institut Agustí Serra i Fontanet</h1>
-<h2><span style="color: #00b856; font-size: 18pt;">ESO Batxillerat Cicles Formatius</span></h2>';
-}
-
-//add_action('wp_footer', 'meu_tema_elimina_personalitzador', 200);
-function meu_tema_elimina_personalitzador() {
-    global $wp_customize;
-    // Treure la secció Color de Fons
-    //$wp_customize->remove_section('panel-global');
-    $wp_customize->remove_panel('panel-global');
-
-    // O bé, pots treure controls específics
-    //$wp_customize->remove_control('astra-global');
-}
-
-//add_action('customize_register', 'llistar_seccions_personalitzador', 120);
-function llistar_seccions_personalitzador($wp_customize) {
-    foreach ($wp_customize->panels() as $key => $object ) {
-        echo $key . ' - ' . $object->title . "\n";
-    }
-}
