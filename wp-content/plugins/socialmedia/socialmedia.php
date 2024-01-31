@@ -12,25 +12,25 @@
 class SocialMedia_Widget extends WP_Widget {
 
     public $socialmedia = [
-        'twitter' => ['nom' => 'Twitter', 'url' => '', 'img' => 'twitter-square'],
-        'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'facebook-square'],
-        'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'google-plus-square'],
-        'youtube' => ['nom' => 'Youtube', 'url' => '', 'img' => 'youtube-square'],
-        'vimeo' => ['nom' => 'Vimeo', 'url' => '', 'img' => 'vimeo-square'],
-        'picasa' => ['nom' => 'Picasa', 'url' => '', 'img' => 'camera'],
-        'flickr' => ['nom' => 'Flickr', 'url' => '', 'img' => 'flickr'],
-        'pinterest' => ['nom' => 'Pinterest', 'url' => '', 'img' => 'pinterest-square'],
-        'instagram' => ['nom' => 'Instagram', 'url' => '', 'img' => 'instagram'],
-        'tumblr' => ['nom' => 'Tumblr', 'url' => '', 'img' => 'tumblr-square'],
-        'soundcloud' => ['nom' => 'Soundcloud', 'url' => '', 'img' => 'soundcloud'],
-        'dropbox' => ['nom' => 'Dropbox', 'url' => '', 'img' => 'dropbox'],
-        'rss' => ['nom' => 'rss', 'url' => '', 'img' => 'rss-square'],
-        'email' => ['nom' => 'Correu', 'url' => '', 'img' => 'envelope-square'],
-        'moodle' => ['nom' => 'Moodle', 'url' => '', 'img' => 'graduation-cap'],
-        'xarxanodes' => ['nom' => 'Xarxa Nodes', 'url' => '', 'img' => 'comments'],
-        'docs' => ['nom' => 'Documents', 'url' => '', 'img' => 'folder-open'],
-        'fotos' => ['nom' => 'Fotos', 'url' => '', 'img' => 'photo'],
-        'video' => ['nom' => 'Videos', 'url' => '', 'img' => 'caret-square-o-right']
+        'twitter' => ['nom' => 'Twitter', 'url' => '', 'img' => 'fab fa-twitter-square'],
+        'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'fab fa-facebook-square'],
+        'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'fab fa-google-plus-square'],
+        'youtube' => ['nom' => 'Youtube', 'url' => '', 'img' => 'fab fa-youtube-square'],
+        'vimeo' => ['nom' => 'Vimeo', 'url' => '', 'img' => 'fab fa-vimeo-square'],
+        'picasa' => ['nom' => 'Picasa', 'url' => '', 'img' => 'fas fa-camera'],
+        'flickr' => ['nom' => 'Flickr', 'url' => '', 'img' => 'fab fa-flickr'],
+        'pinterest' => ['nom' => 'Pinterest', 'url' => '', 'img' => 'fab fa-pinterest-square'],
+        'instagram' => ['nom' => 'Instagram', 'url' => '', 'img' => 'fab fa-instagram'],
+        'tumblr' => ['nom' => 'Tumblr', 'url' => '', 'img' => 'fab fa-tumblr-square'],
+        'soundcloud' => ['nom' => 'Soundcloud', 'url' => '', 'img' => 'fab fa-soundcloud'],
+        'dropbox' => ['nom' => 'Dropbox', 'url' => '', 'img' => 'fab fa-dropbox'],
+        'rss' => ['nom' => 'rss', 'url' => '', 'img' => 'fas fa-rss-square'],
+        'email' => ['nom' => 'Correu', 'url' => '', 'img' => 'fas fa-envelope-square'],
+        'moodle' => ['nom' => 'Moodle', 'url' => '', 'img' => 'fas fa-graduation-cap'],
+        'xarxanodes' => ['nom' => 'Xarxa Nodes', 'url' => '', 'img' => 'fas fa-comments'],
+        'docs' => ['nom' => 'Documents', 'url' => '', 'img' => 'fas fa-folder-open'],
+        'fotos' => ['nom' => 'Fotos', 'url' => '', 'img' => 'fas fa-photo'],
+        'video' => ['nom' => 'Videos', 'url' => '', 'img' => 'fas fa-caret-square-o-right']
     ];
 
     // Constructor
@@ -145,10 +145,14 @@ class SocialMedia_Widget extends WP_Widget {
 
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
             if (!empty($instance[$idSocialMedia . '_url'])) {
-                if ($idSocialMedia == 'email') {
-                    echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\" href=\"mailto:" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\"></a>";
+                if ($idSocialMedia === 'email') {
+                    echo "<a href=\"mailto:" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\">
+                            <i class=\"" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\"></i>
+                          </a>";
                 } else {
-                    echo "<a class=\"fa fa-" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\" href=\"" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\"></a>";
+                    echo "<a href=\"" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\">
+                           <i class=\"" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\"></i>
+                         </a>";
                 }
             }
         }
