@@ -23,20 +23,53 @@
     });
 
     // Blog name.
-    wp.customize('astra_nodes_options[blog_name]', function (value) {
+    wp.customize('blogname', function (value) {
         value.bind(function (text) {
             $('#blog-name').html(text);
         });
     });
-
-
-
+    
+    // Text following the blog name.
     wp.customize('blogdescription', function (value) {
-        value.bind(function (to) {
-            $('.site-description').html(to);
+        value.bind(function (text) {
+            $('#blog-description').html(text);
         });
     });
-  
+
+    // Postal address.
+    wp.customize('astra_nodes_options[postal_address]', function (value) {
+        value.bind(function (text) {
+            $('#postal-address').html(text);
+        });
+    });
+
+    // Postal code and city.
+    wp.customize('astra_nodes_options[postal_code_city]', function (value) {
+        value.bind(function (text) {
+            $('#postal-code-city').html(text);
+        });
+    });
+
+    // Email address.
+    wp.customize('astra_nodes_options[email_address]', function (value) {
+        value.bind(function (text) {
+            let email = $('#email-address');
+            email.attr('href', 'mailto:' + text);
+            email.html(text);
+        });
+});
+
+    // Phone number.
+    wp.customize('astra_nodes_options[phone_number]', function (value) {
+        value.bind(function (text) {
+            $('#phone-number').html(text);
+        });
+    });
+
+
+
+
+    
     wp.customize('reactor_options[show_title]', function (value) {
         value.bind(function (to) {
             if (to === '') {

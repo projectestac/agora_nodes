@@ -15,8 +15,8 @@ add_action('customize_preview_init', function () {
 add_action('customize_controls_print_styles', function () {
     $custom_css = '
         .customize-control {
-            margin-top: 30px !important;
-            padding-top: 30px;
+            margin-top: 20px !important;
+            padding-top: 20px;
             border-top: 1px solid #cccccc;
         }
     ';
@@ -72,55 +72,125 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     // Blog name.
-    $wp_customize->add_setting('astra_nodes_options[blog_name]', [
+    $wp_customize->add_setting('blogname', [
         'default' => '',
         'type' => 'option',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
-    
+
     $wp_customize->add_control('astra_nodes_customizer_header_blog_name', [
         'label' => __('Blog name', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
-        'settings' => 'astra_nodes_options[blog_name]',
+        'settings' => 'blogname',
         'priority' => 3,
     ]);
 
+    // Text following the blog name.
+    $wp_customize->add_setting('blogdescription', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
 
+    $wp_customize->add_control('astra_nodes_customizer_header_blog_description', [
+        'label' => __('Blog description', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'blogdescription',
+        'priority' => 4,
+    ]);
+
+    // Postal address.
+    $wp_customize->add_setting('astra_nodes_options[postal_address]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_postal_address', [
+        'label' => __('Postal address', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[postal_address]',
+        'priority' => 5,
+    ]);
+
+    // Postal code and city.
+    $wp_customize->add_setting('astra_nodes_options[postal_code_city]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_postal_code_city', [
+        'label' => __('Postal code and city', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[postal_code_city]',
+        'priority' => 6,
+    ]);
+    
+    // Email address.
+    $wp_customize->add_setting('astra_nodes_options[email_address]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_email', [
+        'label' => __('Email', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[email_address]',
+        'priority' => 7,
+    ]);
+
+    // Phone number.
+    $wp_customize->add_setting('astra_nodes_options[phone_number]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_phone_number', [
+        'label' => __('Phone number', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[phone_number]',
+        'priority' => 8,
+    ]);
+
+    // Link to the map.
+    $wp_customize->add_setting('astra_nodes_options[link_to_map]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_link_to_map', [
+        'label' => __('Map', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[link_to_map]',
+        'priority' => 9,
+    ]);
+
+    // Link to the contact page.
+    $wp_customize->add_setting('astra_nodes_options[contact_page]', [
+        'default' => '',
+        'type' => 'option',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_link_to_contact_page', [
+        'label' => __('Contact', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header',
+        'settings' => 'astra_nodes_options[contact_page]',
+        'priority' => 10,
+    ]);
 
 
 
 
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
-    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/simpleHTML.php';
-
-    // Graella d'icones
-    $wp_customize->add_setting('icones_capcalera', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control(new simpleHTML($wp_customize, 'icones_capcalera', [
-        'label' => __('Graella d\'icones', 'reactor'),
-        'section' => 'astra_nodes_customizer_header',
-        'priority' => 7,
-    ]));
-
-    $wp_customize->add_setting('reactor_options[favicon_image]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-    ]);
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'reactor_favicon_image', [
-        'label' => __('Favicon', 'reactor'),
-        'section' => 'astra_nodes_customizer_header',
-        'settings' => 'reactor_options[favicon_image]',
-        'description' => 'Icona a la pestanya del navegador',
-        'priority' => 8,
-    ]));
 
     // Pestanya Identificació del centre
     $wp_customize->add_section('reactor_customizer_idcentre', [
@@ -128,73 +198,6 @@ function nodes_customize_register($wp_customize) {
         'priority' => 2,
     ]);
 
-    $wp_customize->add_setting('reactor_options[logo_image]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-    ]);
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'reactor_logo_image', [
-        'label' => __('Logotip', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'settings' => 'reactor_options[logo_image]',
-        'priority' => 1,
-    ]));
-
-    $wp_customize->add_setting('reactor_options[logo_inline]', [
-        'default' => 1,
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control('reactor_options[logo_inline]', [
-        'label' => __('Alineat amb l\'adreça', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'type' => 'checkbox',
-        'priority' => 2,
-    ]);
-
-    // Tornem a demanar el nom del centre perquè pot ser diferent (noms llargs)
-
-    $wp_customize->add_setting('reactor_options[nomCanonicCentre]', [
-        'default' => 'Nom del centre', // S'agafa de la base de dades
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control('reactor_options[nomCanonicCentre]', [
-        'label' => __('Nom del centre', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'priority' => 3,
-    ]);
-
-    $wp_customize->add_setting('reactor_options[direccioCentre]', array(
-        'default' => 'C/Carrer 1', // S'agafa de la base de dades
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ));
-
-    $wp_customize->add_control('reactor_options[direccioCentre]', [
-        'label' => __('Adreça (física)', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'priority' => 4,
-    ]);
-
-    $wp_customize->add_setting('reactor_options[cpCentre]', array(
-        'default' => '00000 Localitat', // S'agafa de la base de dades
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ));
-
-    $wp_customize->add_control('reactor_options[cpCentre]', [
-        'label' => __('Codi postal i localitat', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'priority' => 5,
-    ]);
 
     $wp_customize->add_setting('reactor_options[telCentre]', [
         'default' => '00 000 000', // S'agafa de la base de dades

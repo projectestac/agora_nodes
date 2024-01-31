@@ -168,12 +168,13 @@ add_action('customize_save_after', function ($wp_customize) {
     // Get the attachment ID from the URL
     $logo_id = attachment_url_to_postid($logo);
 
-    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting
+    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting.
     set_theme_mod('custom_logo', $logo_id);
     astra_update_option('custom_logo', $logo_id);
 
-    // Set the blog name to the value of the 'astra_nodes_options[blog_name]' setting
-    update_option('blogname', $wp_customize->get_setting('astra_nodes_options[blog_name]')->value());
+    // Set the blog name and description.
+    update_option('blogname', $wp_customize->get_setting('blogname')->value());
+    update_option('blogdescription', $wp_customize->get_setting('blogdescription')->value());
 
 });
 
@@ -182,20 +183,56 @@ add_filter('astra_get_option_header-html-3', function () {
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_option('astra_nodes_options');
 
-    // Check if the option exists and is an array.
-    if ($astra_nodes_options && is_array($astra_nodes_options)) {
-        $pre_blog_name = $astra_nodes_options['pre_blog_name'];
-    } else {
-        $pre_blog_name = '';
-    }
+    // Check if the option exists and is not null.
+    $pre_blog_name = $astra_nodes_options['pre_blog_name'] ?? '';
 
     return '
         <div id="client-type" class="tipus-centre">' . $pre_blog_name . '</div>
-        <h1 id="blog-name">' . get_bloginfo('name') . '</h1>
-        <h2><span style="color: #00b856; font-size: 18pt;">ESO Batxillerat Cicles Formatius</span></h2>
+        <h1 id="blog-name" style="line-height: 1;">' . get_bloginfo('name') . '</h1>
+        <h2><span id="blog-description" style="color: #00b856; font-size: 18pt;">' . get_bloginfo('description') . '</span></h2>
         ';
 
 }, 120, 0);
+
+add_filter('astra_get_option_header-html-1', function () {
+
+    // Get the option array from the wp_options table.
+    $astra_nodes_options = get_option('astra_nodes_options');
+
+    // Check if the option exists and is not null.
+    $postal_address = $astra_nodes_options['postal_address'] ?? '';
+    $postal_code_city = $astra_nodes_options['postal_code_city'] ?? '';
+    $email_address = $astra_nodes_options['email_address'] ?? '';
+    $phone_number = $astra_nodes_options['phone_number'] ?? '';
+    $link_to_map = $astra_nodes_options['link_to_map'] ?? '';
+    $contact_page = $astra_nodes_options['contact_page'] ?? '';
+
+    $content = '
+            <p style="text-align: right;">
+                <span id="postal-address" style="font-size: 14pt;">' . $postal_address . '</span>
+                <br>
+                <span id="postal-code-city" style="font-size: 14pt;">' . $postal_code_city . '</span>
+                <br>
+                <span style="font-size: 14pt;">
+                    <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
+                </span>
+                <br>
+                <span id="phone-number" style="font-size: 14pt;">' . $phone_number . '</span>
+            </p>
+            <p style="text-align: right;">
+                <span style="font-size: 14pt;">
+                    <strong>
+                        <a style="color: #1ea19b;" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes'). '</a> |
+                        <a style="color: #1ea19b;" href="' . $contact_page . '" target="_blank">' . __('Contact', 'astra-nodes'). '</a>
+                    </strong>
+                </span>
+            </p>
+        ';
+
+    // Remove all the "\n" characters.
+    return str_replace("\n", '', $content);
+
+    }, 120, 0);
 
 
 
