@@ -12,25 +12,27 @@
 class SocialMedia_Widget extends WP_Widget {
 
     public $socialmedia = [
-        'twitter' => ['nom' => 'Twitter', 'url' => '', 'img' => 'fab fa-twitter-square'],
-        'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'fab fa-facebook-square'],
-        'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'fab fa-google-plus-square'],
-        'youtube' => ['nom' => 'Youtube', 'url' => '', 'img' => 'fab fa-youtube-square'],
-        'vimeo' => ['nom' => 'Vimeo', 'url' => '', 'img' => 'fab fa-vimeo-square'],
-        'picasa' => ['nom' => 'Picasa', 'url' => '', 'img' => 'fas fa-camera'],
-        'flickr' => ['nom' => 'Flickr', 'url' => '', 'img' => 'fab fa-flickr'],
-        'pinterest' => ['nom' => 'Pinterest', 'url' => '', 'img' => 'fab fa-pinterest-square'],
-        'instagram' => ['nom' => 'Instagram', 'url' => '', 'img' => 'fab fa-instagram'],
-        'tumblr' => ['nom' => 'Tumblr', 'url' => '', 'img' => 'fab fa-tumblr-square'],
-        'soundcloud' => ['nom' => 'Soundcloud', 'url' => '', 'img' => 'fab fa-soundcloud'],
-        'dropbox' => ['nom' => 'Dropbox', 'url' => '', 'img' => 'fab fa-dropbox'],
-        'rss' => ['nom' => 'rss', 'url' => '', 'img' => 'fas fa-rss-square'],
-        'email' => ['nom' => 'Correu', 'url' => '', 'img' => 'fas fa-envelope-square'],
-        'moodle' => ['nom' => 'Moodle', 'url' => '', 'img' => 'fas fa-graduation-cap'],
-        'xarxanodes' => ['nom' => 'Xarxa Nodes', 'url' => '', 'img' => 'fas fa-comments'],
-        'docs' => ['nom' => 'Documents', 'url' => '', 'img' => 'fas fa-folder-open'],
-        'fotos' => ['nom' => 'Fotos', 'url' => '', 'img' => 'fas fa-photo'],
-        'video' => ['nom' => 'Videos', 'url' => '', 'img' => 'fas fa-caret-square-o-right']
+        'twitter' => ['nom' => 'X', 'url' => '', 'img' => 'fa-brands fa-square-x-twitter'],
+        'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'fa-brands fa-square-facebook'],
+        'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'fa-brands fa-square-google-plus'],
+        'youtube' => ['nom' => 'Youtube', 'url' => '', 'img' => 'fa-brands fa-square-youtube'],
+        'telegram' => ['nom' => 'Telegram', 'url' => '', 'img' => 'fa-brands fa-telegram'],
+        'spotify' => ['nom' => 'Spotify', 'url' => '', 'img' => 'fa-brands fa-spotify'],
+        'vimeo' => ['nom' => 'Vimeo', 'url' => '', 'img' => 'fa-brands fa-square-vimeo'],
+        'picasa' => ['nom' => 'Picasa', 'url' => '', 'img' => 'fa-solid fa-camera'],
+        'flickr' => ['nom' => 'Flickr', 'url' => '', 'img' => 'fa-brands fa-flickr'],
+        'pinterest' => ['nom' => 'Pinterest', 'url' => '', 'img' => 'fa-brands fa-square-pinterest'],
+        'instagram' => ['nom' => 'Instagram', 'url' => '', 'img' => 'fa-brands fa-square-instagram'],
+        'tumblr' => ['nom' => 'Tumblr', 'url' => '', 'img' => 'fa-brands fa-square-tumblr'],
+        'soundcloud' => ['nom' => 'Soundcloud', 'url' => '', 'img' => 'fa-brands fa-soundcloud'],
+        'dropbox' => ['nom' => 'Dropbox', 'url' => '', 'img' => 'fa-brands fa-dropbox'],
+        'rss' => ['nom' => 'rss', 'url' => '', 'img' => 'fa-solid fa-square-rss'],
+        'email' => ['nom' => 'Correu', 'url' => '', 'img' => 'fa-solid fa-square-envelope'],
+        'moodle' => ['nom' => 'Moodle', 'url' => '', 'img' => 'fa-solid fa-graduation-cap'],
+        'xarxanodes' => ['nom' => 'Xarxa Nodes', 'url' => '', 'img' => 'fa-solid fa-comments'],
+        'docs' => ['nom' => 'Documents', 'url' => '', 'img' => 'fa-solid fa-folder-open'],
+        'fotos' => ['nom' => 'Fotos', 'url' => '', 'img' => 'fa-solid fa-image'],
+        'video' => ['nom' => 'Videos', 'url' => '', 'img' => 'fa-solid fa-square-caret-right']
     ];
 
     // Constructor
