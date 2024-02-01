@@ -10,12 +10,13 @@
 
 <head>
     <!-- Add common styles to all themes -->
-    <?php include get_theme_root()."/reactor/custom-tac/styles/styles.php"; ?>
+    <?php
+        include_once get_theme_root() . '/reactor/custom-tac/styles/styles.php';
+        include_once get_stylesheet_directory() . '/style.php';
+    ?>
 
-    <?php include get_stylesheet_directory()."/style.php"; ?>
-
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" type="text/css" />
 
     <?php
         wp_head();
