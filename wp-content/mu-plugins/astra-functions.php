@@ -18,8 +18,8 @@ include_once WPMU_PLUGIN_DIR . '/astra-widgets/logo-client-widget.php';
 
 // Load styles to customize Astra theme.
 add_action('wp_enqueue_scripts', function () {
-    wp_register_style('astra-functions-css', plugins_url('/astra-styles/style.css', __FILE__));
-    wp_enqueue_style('astra-functions-css');
+    wp_enqueue_style('astra-functions-css', plugins_url('/astra-styles/style.css', __FILE__));
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 });
 
 // Admin bar: Force to be always shown, including for non-logged users.
@@ -159,7 +159,7 @@ function nodes_remove_customizer_header_footer_sections($configurations): array 
     return [];
 }
 
-// Customizer: Update logo when saving.
+// Customizer: Update logo and other information when saving.
 add_action('customize_save_after', function ($wp_customize) {
 
     // Get the value of the 'astra_nodes_options[custom_logo]' setting
@@ -178,6 +178,7 @@ add_action('customize_save_after', function ($wp_customize) {
 
 });
 
+// Header: Content of the central area, which includes the name of the client.
 add_filter('astra_get_option_header-html-3', function () {
 
     // Get the option array from the wp_options table.
@@ -189,11 +190,12 @@ add_filter('astra_get_option_header-html-3', function () {
     return '
         <div id="client-type" class="tipus-centre">' . $pre_blog_name . '</div>
         <h1 id="blog-name" style="line-height: 1;">' . get_bloginfo('name') . '</h1>
-        <h2><span id="blog-description" style="color: #00b856; font-size: 18pt;">' . get_bloginfo('description') . '</span></h2>
+        <h2><span id="blog-description" style="color: #00b856; font-size: 16pt;">' . get_bloginfo('description') . '</span></h2>
         ';
 
-}, 120, 0);
+}, 20, 0);
 
+// Header: Content of the area that shows the contact information.
 add_filter('astra_get_option_header-html-1', function () {
 
     // Get the option array from the wp_options table.
@@ -208,19 +210,19 @@ add_filter('astra_get_option_header-html-1', function () {
     $contact_page = $astra_nodes_options['contact_page'] ?? '';
 
     $content = '
-            <p style="text-align: right;">
-                <span id="postal-address" style="font-size: 14pt;">' . $postal_address . '</span>
+            <p style="text-align: right; line-height: 1.1;">
+                <span id="postal-address" style="">' . $postal_address . '</span>
                 <br>
-                <span id="postal-code-city" style="font-size: 14pt;">' . $postal_code_city . '</span>
+                <span id="postal-code-city" style="">' . $postal_code_city . '</span>
                 <br>
-                <span style="font-size: 14pt;">
+                <span style="">
                     <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
                 </span>
                 <br>
-                <span id="phone-number" style="font-size: 14pt;">' . $phone_number . '</span>
+                <span id="phone-number" style="">' . $phone_number . '</span>
             </p>
             <p style="text-align: right;">
-                <span style="font-size: 14pt;">
+                <span style="">
                     <strong>
                         <a style="color: #1ea19b;" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes'). '</a> |
                         <a style="color: #1ea19b;" href="' . $contact_page . '" target="_blank">' . __('Contact', 'astra-nodes'). '</a>
@@ -232,7 +234,58 @@ add_filter('astra_get_option_header-html-1', function () {
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
 
-    }, 120, 0);
+    }, 20, 0);
+
+// Header: Content of the buttons area.
+add_filter('astra_get_option_header-html-4', function () {
+
+    // Get the option array from the wp_options table.
+    $astra_nodes_options = get_option('astra_nodes_options');
+
+    // TODO: Get the data.
+    $classes_icon_1 = get_theme_mod('astra_nodes_options[header_button_1]' ,'fa-solid fa-graduation-cap');
+
+    $content = '
+        <div class="detail-container">
+        <div class="grid-container">
+        <div class="grid-item" style="background-color: #38a09b; color: white;">
+            <i class="' . $classes_icon_1 . '"></i> 
+            <br>
+            <span>Ítem 1</span>
+        </div>
+        <div class="grid-item" style="background-color: #25627e; color: white;">
+            <i class="' . $classes_icon_1 . '"></i>
+            <br>
+            <span>Ítem 2</span>
+        </div>
+        <div class="grid-item" style="background-color: #2b245e; color: white; border-radius: 0 30px 0 0;">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <br>
+            <span>Ítem 3</span>
+        </div>
+        <div class="grid-item" style="background-color: #2b245e; color: white;">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <br>
+            <span>Ítem 4</span>
+        </div>
+        <div class="grid-item" style="background-color: #38a09b; color: white;">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <br>
+            <span>Ítem 5</span>
+        </div>
+        <div class="grid-item" style="background-color: #25627e; color: white; border-radius: 0 0 30px 0;">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <br>
+            <span>Ítem 6</span>
+        </div>
+        </div>
+        </div>
+        ';
+
+    // Remove all the "\n" characters.
+    return str_replace("\n", '', $content);
+
+}, 20, 0);
 
 
 

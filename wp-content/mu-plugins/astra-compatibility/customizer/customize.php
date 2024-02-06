@@ -5,7 +5,7 @@ add_action('customize_preview_init', function () {
     wp_enqueue_script(
         'astra-nodes-customizer',
         plugins_url('/js/theme-customizer.js', __FILE__),
-        ['jquery','customize-preview'],
+        ['jquery', 'customize-preview'],
         '',
         true
     );
@@ -15,9 +15,8 @@ add_action('customize_preview_init', function () {
 add_action('customize_controls_print_styles', function () {
     $custom_css = '
         .customize-control {
-            margin-top: 20px !important;
-            padding-top: 20px;
-            border-top: 1px solid #cccccc;
+            margin-top: 10px !important;
+            padding-top: 10px;
         }
     ';
     wp_add_inline_style('customize-controls', $custom_css);
@@ -130,11 +129,11 @@ function nodes_customize_register($wp_customize) {
         'settings' => 'astra_nodes_options[postal_code_city]',
         'priority' => 6,
     ]);
-    
+
     // Email address.
     $wp_customize->add_setting('astra_nodes_options[email_address]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'email',
         'capability' => 'manage_options',
     ]);
 
@@ -187,9 +186,61 @@ function nodes_customize_register($wp_customize) {
         'priority' => 10,
     ]);
 
+    // Header: Buttons section.
+    $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
+        'title' => __('Header Buttons', 'astra-nodes'),
+        'priority' => 2,
+    ]);
+
+    /*
+    // Button 1.
+    $wp_customize->add_setting('astra_nodes_options[header_button_1]', [
+        'default' => '',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_header_button_1', [
+        'label' => __('Button 1', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header_buttons',
+        'settings' => 'astra_nodes_options[header_button_1]',
+        'priority' => 1,
+        'type' => 'select',
+        'choices' => [
+            'fas fa-phone' => '<i class="fa-solid fa-graduation-cap"></i>' . __('Phone', 'astra-nodes'),
+            'fas fa-envelope' => __('Email', 'astra-nodes'),
+            'fas fa-map-marker-alt' => __('Map', 'astra-nodes'),
+            'fas fa-user' => __('Contact', 'astra-nodes'),
+        ],
+    ]);
+    */
+
+    // Button 2.
+    $wp_customize->add_setting('astra_nodes_options[header_button_2]', [
+        'default' => '',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    require_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/FontIconPicker_Customize_Control.php';
+
+    $wp_customize->add_control(
+        new FontIconPicker_Customize_Control(
+            $wp_customize,
+            'astra_nodes_customizer_header_icon',
+            [
+                'label' => __('Header Icon 1', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_header_buttons',
+                'settings' => 'astra_nodes_options[header_button_2]',
+                'priority' => 2,
+            ]
+        )
+    );
 
 
 
+
+    /*
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
 
     // Pestanya Identificació del centre
@@ -424,5 +475,6 @@ function nodes_customize_register($wp_customize) {
             'priority' => 7,
         ]);
     }
+    */
 
 }

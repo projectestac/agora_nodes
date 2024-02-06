@@ -19,7 +19,7 @@
     border-radius: 30px;
 }
 
-/* Toni */
+/* Force a gap between the admin bar and the header */
 .ast-main-header-wrap {
     margin-top: 30px;
 }
@@ -190,6 +190,7 @@ ul.wp-block-page-list li a {
 
 .detail-container {
     position: relative;
+    margin-right: -36px;
 }
 
 /* Hide the blog name included in the site identity provided by Astra */
