@@ -2051,7 +2051,15 @@ function find_posts_div( $found_action = '' ) {
 					_e( 'Search' );
 					?>
 				</label>
+
+                <!--
+                XTEC ************ ELIMINAT - Removed parameter to avoid blocks by the ELB
+                2024.02.08 @aginard
+                -->
+                <!--
 				<input type="text" id="find-posts-input" name="ps" value="" />
+                -->
+
 				<span class="spinner"></span>
 				<input type="button" id="find-posts-search" value="<?php esc_attr_e( 'Search' ); ?>" class="button" />
 				<div class="clear"></div>
