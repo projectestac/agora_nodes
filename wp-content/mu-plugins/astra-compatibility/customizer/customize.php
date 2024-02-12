@@ -186,13 +186,17 @@ function nodes_customize_register($wp_customize) {
         'priority' => 10,
     ]);
 
+
+
+
+
+
     // Header: Buttons section.
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Header Buttons', 'astra-nodes'),
         'priority' => 2,
     ]);
 
-    /*
     // Button 1.
     $wp_customize->add_setting('astra_nodes_options[header_button_1]', [
         'default' => '',
@@ -213,7 +217,6 @@ function nodes_customize_register($wp_customize) {
             'fas fa-user' => __('Contact', 'astra-nodes'),
         ],
     ]);
-    */
 
     // Button 2.
     $wp_customize->add_setting('astra_nodes_options[header_button_2]', [
@@ -227,9 +230,9 @@ function nodes_customize_register($wp_customize) {
     $wp_customize->add_control(
         new FontIconPicker_Customize_Control(
             $wp_customize,
-            'astra_nodes_customizer_header_icon',
+            'astra_nodes_customizer_header_button_2',
             [
-                'label' => __('Header Icon 1', 'astra-nodes'),
+                'label' => __('Header Icon 2', 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'settings' => 'astra_nodes_options[header_button_2]',
                 'priority' => 2,
