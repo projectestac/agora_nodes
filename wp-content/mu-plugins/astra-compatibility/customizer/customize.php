@@ -192,31 +192,121 @@ function nodes_customize_register($wp_customize) {
 
 
     // Header: Buttons section.
+
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Header Buttons', 'astra-nodes'),
         'priority' => 2,
     ]);
 
-    // Button 1.
-    $wp_customize->add_setting('astra_nodes_options[header_button_1]', [
+    // Button to select icon
+
+    $wp_customize->add_setting('astra_nodes_options[header_button_1_image]', [
+        'default' => '',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+    
+    $wp_customize->add_control(
+        'astra_nodes_customizer_header_button_1', [
+            'label' => __('Change icon', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_button_1_image]',
+            'type' => 'button',
+            'input_attrs' => array(
+                'value' => __('Change icon', 'astra-nodes'),
+            ),
+            'priority' => 1
+        ]
+    );
+
+    // Field to receive the select icon value
+    // We simulate a change event in this field to trigger the "Publicate" button of WordPress
+
+    $wp_customize->add_setting('astra_nodes_options[header_icon_value]', [
         'default' => '',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_header_button_1', [
-        'label' => __('Button 1', 'astra-nodes'),
+    $wp_customize->add_control('astra_nodes_customizer_header_icon_value', [
+        'label' => __('Header icon value', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header_buttons',
-        'settings' => 'astra_nodes_options[header_button_1]',
-        'priority' => 1,
-        'type' => 'select',
-        'choices' => [
-            'fas fa-phone' => '<i class="fa-solid fa-graduation-cap"></i>' . __('Phone', 'astra-nodes'),
-            'fas fa-envelope' => __('Email', 'astra-nodes'),
-            'fas fa-map-marker-alt' => __('Map', 'astra-nodes'),
-            'fas fa-user' => __('Contact', 'astra-nodes'),
-        ],
+        'settings' => 'astra_nodes_options[header_icon_value]',
+        'priority' => 2,
+        'type' => 'text',
     ]);
+
+    // Field to edit URL
+    
+    $wp_customize->add_setting('astra_nodes_options[header_button_1_text]', [
+        'default' => '',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+    
+    $wp_customize->add_control('astra_nodes_customizer_header_button_1_text', [
+        'label' => __('Button 1 Text', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header_buttons',
+        'settings' => 'astra_nodes_options[header_button_1_text]',
+        'priority' => 2,
+        'type' => 'text',
+    ]);
+
+    // Script to handle picker
+
+    class WP_Customize_HTML_Control extends WP_Customize_Control {
+        public $type = 'html';
+    
+        public function render_content() {
+            echo '
+            <link rel="stylesheet" href="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
+            <script src="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/js/universal-icon-picker.min.js')) . '"></script>
+        
+            <style>
+                .uip-modal {
+                    z-index: 1000000;
+                }
+            </style>
+        
+            <script>
+                var uip = new UniversalIconPicker("#_customize-input-astra_nodes_customizer_header_button_1", {
+                    iconLibraries: [
+                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/icons-libraries/happy-icons.min.json')) . '",
+                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/icons-libraries/font-awesome.min.json')) . '"
+                    ],
+                    iconLibrariesCss: [
+                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/happy-icons.min.css')) . '",
+                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                    ],
+                    onSelect: function(jsonIconData) {
+                        console.log(jsonIconData);
+                        var iconField = document.querySelector("#_customize-input-astra_nodes_customizer_header_icon_value");
+        
+                        // Changing field value
+                        iconField.value = jsonIconData.iconClass;
+        
+                        // Simulating a user changing the field, to trigger WordPress "Publish" button.
+                        iconField.dispatchEvent(new Event("change"));
+                    },
+                    onReset: function() {
+                        // Do something on reset if needed
+                    }
+                });
+            </script>';
+        }        
+    }
+    
+    $wp_customize->add_setting('header_button_html', array(
+        'default' => '',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_HTML_Control($wp_customize, 'header_button_html_control', array(
+        'label' => __('Header Button HTML', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header_buttons',
+        'settings' => 'header_button_html',
+        'priority' => 10
+    )));
+    
 
     // Button 2.
     $wp_customize->add_setting('astra_nodes_options[header_button_2]', [
@@ -225,20 +315,20 @@ function nodes_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ]);
 
-    require_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/FontIconPicker_Customize_Control.php';
+    // require_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/FontIconPicker_Customize_Control.php';
 
-    $wp_customize->add_control(
-        new FontIconPicker_Customize_Control(
-            $wp_customize,
-            'astra_nodes_customizer_header_button_2',
-            [
-                'label' => __('Header Icon 2', 'astra-nodes'),
-                'section' => 'astra_nodes_customizer_header_buttons',
-                'settings' => 'astra_nodes_options[header_button_2]',
-                'priority' => 2,
-            ]
-        )
-    );
+    // $wp_customize->add_control(
+    //     new FontIconPicker_Customize_Control(
+    //         $wp_customize,
+    //         'astra_nodes_customizer_header_button_2',
+    //         [
+    //             'label' => __('Header Icon 2', 'astra-nodes'),
+    //             'section' => 'astra_nodes_customizer_header_buttons',
+    //             'settings' => 'astra_nodes_options[header_button_2]',
+    //             'priority' => 2,
+    //         ]
+    //     )
+    // );
 
 
 
