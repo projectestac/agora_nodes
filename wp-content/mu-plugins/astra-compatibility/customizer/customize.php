@@ -187,14 +187,21 @@ function nodes_customize_register($wp_customize) {
     ]);
 
 
-
-
-
-
     // Header: Buttons section.
 
-    // Script to handle picker
 
+    // To load dependencies
+    class WP_Customize_Load_Dependencies extends WP_Customize_Control {
+        public $type = 'html';
+    
+        public function render_content() {
+            echo '
+            <link rel="stylesheet" href="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
+            <script src="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/js/universal-icon-picker.min.js')) . '"></script>';
+        }        
+    }
+
+    // Script to handle picker
     class WP_Customize_HTML_Control extends WP_Customize_Control {
         public $type = 'html';
         private $i;
@@ -206,9 +213,6 @@ function nodes_customize_register($wp_customize) {
     
         public function render_content() {
             echo '
-            <link rel="stylesheet" href="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
-            <script src="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/js/universal-icon-picker.min.js')) . '"></script>
-    
             <style>
                 .uip-modal {
                     z-index: 1000000;
@@ -226,7 +230,6 @@ function nodes_customize_register($wp_customize) {
                         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                     ],
                     onSelect: function(jsonIconData) {
-                        console.log(jsonIconData);
                         var iconField = document.querySelector("#_customize-input-astra_nodes_customizer_header_icon_' . esc_attr($this->i) . '_value");
     
                         // Changing field value
@@ -248,13 +251,25 @@ function nodes_customize_register($wp_customize) {
         'priority' => 2,
     ]);
 
+    $wp_customize->add_setting('header_buttons_loading_scripts', array(
+        'default' => '',
+    ));
+    
+    // Loading dependencies
+    $wp_customize->add_control(new WP_Customize_Load_Dependencies($wp_customize, 'header_buttons_loading_scripts', array(
+        'label' => __('Header Button HTML', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header_buttons',
+        'settings' => 'header_buttons_loading_scripts',
+        'priority' => 1,
+    )));  
+
     $header_buttons = [
-        ['icon' => 'astra_nodes_options[header_icon_1_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_2_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_3_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_4_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_5_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_6_value]', 'url' => 'https://www.google.com']
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com']
     ];
 
     for($c = 0; $c < count($header_buttons); $c++) {
@@ -272,12 +287,12 @@ function nodes_customize_register($wp_customize) {
         
         $wp_customize->add_control(
             'astra_nodes_customizer_header_button_' . $i, [
-                'label' => __('Canvia la icona', 'astra-nodes'),
+                'label' => __('Canvia la icona ' . $i, 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'settings' => 'astra_nodes_options[header_button_' . $i . '_icon]',
                 'type' => 'button',
                 'input_attrs' => array(
-                    'value' => __('Canvia la icona', 'astra-nodes'),
+                    'value' => __('Canvia la icona ' . $i, 'astra-nodes'),
                 ),
                 'priority' => 2
             ]
@@ -318,11 +333,9 @@ function nodes_customize_register($wp_customize) {
             'priority' => 2,
             'type' => 'text',
             'input_attrs' => array(
-                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes'),
-            )
+                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes')
+            ),
         ]);
-
-
         
         $wp_customize->add_setting('header_buttons_script_' . $i, array(
             'default' => '',
@@ -336,34 +349,6 @@ function nodes_customize_register($wp_customize) {
             'i' => $i
         )));        
     }
-
-
-    
-
-    // // Button 2.
-    // $wp_customize->add_setting('astra_nodes_options[header_button_2]', [
-    //     'default' => '',
-    //     'capability' => 'manage_options',
-    //     'transport' => 'postMessage',
-    // ]);
-
-    // require_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/FontIconPicker_Customize_Control.php';
-
-    // $wp_customize->add_control(
-    //     new FontIconPicker_Customize_Control(
-    //         $wp_customize,
-    //         'astra_nodes_customizer_header_button_2',
-    //         [
-    //             'label' => __('Header Icon 2', 'astra-nodes'),
-    //             'section' => 'astra_nodes_customizer_header_buttons',
-    //             'settings' => 'astra_nodes_options[header_button_2]',
-    //             'priority' => 2,
-    //         ]
-    //     )
-    // );
-
-
-
 
     /*
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
