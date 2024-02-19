@@ -249,16 +249,18 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $header_buttons = [
-        ['icon' => 'astra_nodes_options[header_icon_1_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_2_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_3_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_4_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_5_value]', 'url' => 'https://www.google.com'],
-        ['icon' => 'astra_nodes_options[header_icon_6_value]', 'url' => 'https://www.google.com']
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com'],
+        ['default_url' => 'https://www.google.com']
     ];
 
-    for($i = 0; $i < count($header_buttons); $i++) {
-        $button = $header_buttons[$i];
+    for($c = 0; $c < count($header_buttons); $c++) {
+        $button = $header_buttons[$c];
+
+        $i = $c + 1;
 
         // Button to select icon
 
@@ -269,15 +271,15 @@ function nodes_customize_register($wp_customize) {
         ]);
         
         $wp_customize->add_control(
-            'astra_nodes_customizer_header_button_' . $i, [
-                'label' => __('Change icon', 'astra-nodes'),
+            'astra_nodes_customizer_header_button_' . $i . '_icon', [
+                'label' => __('Canvia la icona', 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'settings' => 'astra_nodes_options[header_button_' . $i . '_icon]',
                 'type' => 'button',
                 'input_attrs' => array(
-                    'value' => __('Change icon', 'astra-nodes'),
+                    'value' => __('Canvia la icona', 'astra-nodes'),
                 ),
-                'priority' => 1
+                'priority' => 2
             ]
         );
 
@@ -291,11 +293,14 @@ function nodes_customize_register($wp_customize) {
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_value', [
-            'label' => __('Icon ' . $i . ' value', 'astra-nodes'),
+            'label' => __('Valor de la icona ' . $i, 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
             'settings' => 'astra_nodes_options[header_icon_' . $i . '_value]',
             'priority' => 2,
             'type' => 'text',
+            'input_attrs' => array(
+                'placeholder' => __('Selecciona una icona', 'astra-nodes'),
+            ),
         ]);
 
         // Field to edit URL
@@ -307,11 +312,15 @@ function nodes_customize_register($wp_customize) {
         ]);
         
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_url', [
-            'label' => __('Icon ' . $i . ' URL', 'astra-nodes'),
+            'label' => __('URL de la icona ' . $i, 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
             'settings' => 'astra_nodes_options[header_icon_' . $i . '_url]',
             'priority' => 2,
             'type' => 'text',
+            'input_attrs' => array(
+                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes'),
+            ),
+            'default' => get_theme_mod('astra_nodes_options[header_icon_' . $i . '_url]', $button['default_url'])
         ]);
 
 
