@@ -249,12 +249,12 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $header_buttons = [
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com']
+        ['icon' => 'astra_nodes_options[header_icon_1_value]', 'url' => 'https://www.google.com'],
+        ['icon' => 'astra_nodes_options[header_icon_2_value]', 'url' => 'https://www.google.com'],
+        ['icon' => 'astra_nodes_options[header_icon_3_value]', 'url' => 'https://www.google.com'],
+        ['icon' => 'astra_nodes_options[header_icon_4_value]', 'url' => 'https://www.google.com'],
+        ['icon' => 'astra_nodes_options[header_icon_5_value]', 'url' => 'https://www.google.com'],
+        ['icon' => 'astra_nodes_options[header_icon_6_value]', 'url' => 'https://www.google.com']
     ];
 
     for($c = 0; $c < count($header_buttons); $c++) {
@@ -271,7 +271,7 @@ function nodes_customize_register($wp_customize) {
         ]);
         
         $wp_customize->add_control(
-            'astra_nodes_customizer_header_button_' . $i . '_icon', [
+            'astra_nodes_customizer_header_button_' . $i, [
                 'label' => __('Canvia la icona', 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'settings' => 'astra_nodes_options[header_button_' . $i . '_icon]',
@@ -300,7 +300,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'text',
             'input_attrs' => array(
                 'placeholder' => __('Selecciona una icona', 'astra-nodes'),
-            ),
+            )
         ]);
 
         // Field to edit URL
@@ -319,8 +319,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'text',
             'input_attrs' => array(
                 'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes'),
-            ),
-            'default' => get_theme_mod('astra_nodes_options[header_icon_' . $i . '_url]', $button['default_url'])
+            )
         ]);
 
 
