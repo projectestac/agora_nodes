@@ -209,8 +209,8 @@ function nodes_customize_register($wp_customize) {
     
         public function render_content() {
             echo '
-            <link rel="stylesheet" href="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
-            <script src="' . esc_url(includes_url('/js/universal-icon-picker-main/assets/js/universal-icon-picker.min.js')) . '"></script>';
+            <link rel="stylesheet" href="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
+            <script src="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/js/universal-icon-picker.js')) . '"></script>';
         }        
     }
 
@@ -235,11 +235,11 @@ function nodes_customize_register($wp_customize) {
             <script>
                 var uip = new UniversalIconPicker("#_customize-input-astra_nodes_customizer_header_button_' . esc_attr($this->i) . '", {
                     iconLibraries: [
-                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/icons-libraries/happy-icons.min.json')) . '",
-                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/icons-libraries/font-awesome.min.json')) . '"
+                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/icons-libraries/happy-icons.min.json')) . '",
+                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/icons-libraries/font-awesome.min.json')) . '"
                     ],
                     iconLibrariesCss: [
-                        "' . esc_url(includes_url('/js/universal-icon-picker-main/assets/stylesheets/happy-icons.min.css')) . '",
+                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/happy-icons.min.css')) . '",
                         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                     ],
                     onSelect: function(jsonIconData) {
