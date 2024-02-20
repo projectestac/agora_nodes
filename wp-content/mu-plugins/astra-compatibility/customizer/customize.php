@@ -189,6 +189,19 @@ function nodes_customize_register($wp_customize) {
 
     // Header: Buttons section.
 
+    class WP_Customize_Raw_HTML extends WP_Customize_Control {
+        public $type = 'html';
+        private $content;
+    
+        public function __construct( $manager, $id, $args = array() ) {
+            $this->content = $args['content'];
+            parent::__construct( $manager, $id, $args );
+        }
+    
+        public function render_content() {
+            echo $this->content;
+        }        
+    }
 
     // To load dependencies
     class WP_Customize_Load_Dependencies extends WP_Customize_Control {
@@ -237,6 +250,10 @@ function nodes_customize_register($wp_customize) {
     
                         // Simulating a user changing the field, to trigger WordPress "Publish" button.
                         iconField.dispatchEvent(new Event("change"));
+
+                        // Updating UI
+                        var iconImage = document.querySelector("#customize-control-icon_preview_' . esc_attr($this->i) . ' > i");
+                        iconImage.setAttribute("class", jsonIconData.iconClass);
                     },
                     onReset: function() {
                         // Do something on reset if needed
@@ -315,8 +332,22 @@ function nodes_customize_register($wp_customize) {
             'type' => 'text',
             'input_attrs' => array(
                 'placeholder' => __('Selecciona una icona', 'astra-nodes'),
+                'style' => 'display: none'
             )
         ]);
+
+        $wp_customize->add_setting('icon_preview_' . $i, array(
+            'default' => '',
+        ));
+        
+        $wp_customize->add_control(new WP_Customize_Raw_HTML($wp_customize, 'icon_preview_' . $i, array(
+            'id' => 'icon_preview_' . $i,
+            'label' => __('Header Button HTML', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'priority' => 2,
+            'content' => '<i style="font-size: 35px" class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_value'] . '"></i>'
+        )));
+        
 
         // Field to edit URL
         
