@@ -192,38 +192,38 @@ function nodes_customize_register($wp_customize) {
     class WP_Customize_Raw_HTML extends WP_Customize_Control {
         public $type = 'html';
         private $content;
-    
-        public function __construct( $manager, $id, $args = array() ) {
+
+        public function __construct($manager, $id, $args = array()) {
             $this->content = $args['content'];
-            parent::__construct( $manager, $id, $args );
+            parent::__construct($manager, $id, $args);
         }
-    
+
         public function render_content() {
             echo $this->content;
-        }        
+        }
     }
 
     // To load dependencies
     class WP_Customize_Load_Dependencies extends WP_Customize_Control {
         public $type = 'html';
-    
+
         public function render_content() {
             echo '
             <link rel="stylesheet" href="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
             <script src="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/js/universal-icon-picker.js')) . '"></script>';
-        }        
+        }
     }
 
     // Script to handle picker
     class WP_Customize_HTML_Control extends WP_Customize_Control {
         public $type = 'html';
         private $i;
-    
-        public function __construct( $manager, $id, $args = array() ) {
+
+        public function __construct($manager, $id, $args = array()) {
             $this->i = $args['i'];
-            parent::__construct( $manager, $id, $args );
+            parent::__construct($manager, $id, $args);
         }
-    
+
         public function render_content() {
             echo '
             <style>
@@ -260,8 +260,8 @@ function nodes_customize_register($wp_customize) {
                     }
                 });
             </script>';
-        }        
-    }    
+        }
+    }
 
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Header Buttons', 'astra-nodes'),
@@ -271,14 +271,14 @@ function nodes_customize_register($wp_customize) {
     $wp_customize->add_setting('header_buttons_loading_scripts', array(
         'default' => '',
     ));
-    
+
     // Loading dependencies
     $wp_customize->add_control(new WP_Customize_Load_Dependencies($wp_customize, 'header_buttons_loading_scripts', array(
         'label' => __('Header Button HTML', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header_buttons',
         'settings' => 'header_buttons_loading_scripts',
         'priority' => 1,
-    )));  
+    )));
 
     $header_buttons = [
         ['default_url' => 'https://www.google.com'],
@@ -286,11 +286,10 @@ function nodes_customize_register($wp_customize) {
         ['default_url' => 'https://www.google.com'],
         ['default_url' => 'https://www.google.com'],
         ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com']
+        ['default_url' => 'https://www.google.com'],
     ];
 
-    for($c = 0; $c < count($header_buttons); $c++) {
-        $button = $header_buttons[$c];
+    foreach ($header_buttons as $c => $cValue) {
 
         $i = $c + 1;
 
@@ -301,7 +300,7 @@ function nodes_customize_register($wp_customize) {
             'capability' => 'manage_options',
             'transport' => 'postMessage',
         ]);
-        
+
         $wp_customize->add_control(
             'astra_nodes_customizer_header_button_' . $i, [
                 'label' => __('Canvia la icona ' . $i, 'astra-nodes'),
@@ -311,7 +310,7 @@ function nodes_customize_register($wp_customize) {
                 'input_attrs' => array(
                     'value' => __('Canvia la icona ' . $i, 'astra-nodes'),
                 ),
-                'priority' => 2
+                'priority' => 2,
             ]
         );
 
@@ -332,31 +331,30 @@ function nodes_customize_register($wp_customize) {
             'type' => 'text',
             'input_attrs' => array(
                 'placeholder' => __('Selecciona una icona', 'astra-nodes'),
-                'style' => 'display: none'
-            )
+                'style' => 'display: none',
+            ),
         ]);
 
         $wp_customize->add_setting('icon_preview_' . $i, array(
             'default' => '',
         ));
-        
+
         $wp_customize->add_control(new WP_Customize_Raw_HTML($wp_customize, 'icon_preview_' . $i, array(
             'id' => 'icon_preview_' . $i,
             'label' => __('Header Button HTML', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
             'priority' => 2,
-            'content' => '<i style="font-size: 35px" class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_value'] . '"></i>'
+            'content' => '<i style="font-size: 35px" class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_value'] . '"></i>',
         )));
-        
 
         // Field to edit URL
-        
+
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_url]', [
             'default' => '',
             'capability' => 'manage_options',
             'transport' => 'postMessage',
         ]);
-        
+
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_url', [
             'label' => __('URL de la icona ' . $i, 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
@@ -364,21 +362,21 @@ function nodes_customize_register($wp_customize) {
             'priority' => 2,
             'type' => 'text',
             'input_attrs' => array(
-                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes')
+                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes'),
             ),
         ]);
-        
+
         $wp_customize->add_setting('header_buttons_script_' . $i, array(
             'default' => '',
         ));
-        
+
         $wp_customize->add_control(new WP_Customize_HTML_Control($wp_customize, 'header_buttons_script_' . $i, array(
             'label' => __('Header Button HTML', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
             'settings' => 'header_buttons_script_' . $i,
             'priority' => 10,
-            'i' => $i
-        )));        
+            'i' => $i,
+        )));
     }
 
     /*

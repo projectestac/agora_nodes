@@ -237,7 +237,7 @@ add_filter('astra_get_option_header-html-1', function () {
     }, 20, 0);
 
 // Header: Content of the buttons area.
-add_filter('astra_get_option_header-html-4', function () {
+add_filter('astra_get_option_header-html-2', function () {
 
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_option('astra_nodes_options');
