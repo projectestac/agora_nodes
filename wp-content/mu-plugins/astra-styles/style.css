@@ -28,10 +28,22 @@
     border-radius: 30px;
 }
 
-.tipus-centre {
+/* Text in the header above the blog name */
+#client-type {
     text-transform: uppercase;
     font-weight: 500;
     color: #75818D
+}
+
+/* Blog name (in the header) */
+h1#blog-name {
+    line-height: 1;
+}
+
+/* Text in the header under the blog name */
+#blog-description {
+    color: #00b856;
+    font-size: 16pt;
 }
 
 .w-100 {
@@ -196,4 +208,18 @@ ul.wp-block-page-list li a {
 /* Hide the blog name included in the site identity provided by Astra */
 .ast-site-title-wrap {
     display: none;
+}
+
+/* Header buttons */
+.detail-container .grid-container .grid-item,
+.detail-container .grid-container .grid-item a {
+    color: var(--ast-global-color-6);
+}
+.grid-item #header-button-1,
+.grid-item #header-button-2,
+.grid-item #header-button-3,
+.grid-item #header-button-4,
+.grid-item #header-button-5,
+.grid-item #header-button-6 {
+   font-size: 30px;
 }

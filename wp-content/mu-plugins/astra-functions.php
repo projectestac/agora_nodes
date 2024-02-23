@@ -188,9 +188,9 @@ add_filter('astra_get_option_header-html-3', function () {
     $pre_blog_name = $astra_nodes_options['pre_blog_name'] ?? '';
 
     return '
-        <div id="client-type" class="tipus-centre">' . $pre_blog_name . '</div>
-        <h1 id="blog-name" style="line-height: 1;">' . get_bloginfo('name') . '</h1>
-        <h2><span id="blog-description" style="color: #00b856; font-size: 16pt;">' . get_bloginfo('description') . '</span></h2>
+        <div id="client-type">' . $pre_blog_name . '</div>
+        <h1 id="blog-name">' . get_bloginfo('name') . '</h1>
+        <h2><span id="blog-description">' . get_bloginfo('description') . '</span></h2>
         ';
 
 }, 20, 0);
@@ -243,43 +243,64 @@ add_filter('astra_get_option_header-html-1', function () {
 add_filter('astra_get_option_header-html-2', function () {
 
     // Get the option array from the wp_options table.
-    $astra_nodes_options = get_option('astra_nodes_options');
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
-    // TODO: Get the data.
-    $classes_icon_1 = get_theme_mod('astra_nodes_options[header_button_1]' ,'fa-solid fa-graduation-cap');
+    $classes_icon_1 = $astra_nodes_options['header_icon_1_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_1 = $astra_nodes_options['header_icon_1_text'] ?? __('Item', 'astra-nodes') . ' 1';
+    $link_icon_1 = $astra_nodes_options['header_icon_1_link'] ?? '';
+
+    $classes_icon_2 = $astra_nodes_options['header_icon_2_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_2 = $astra_nodes_options['header_icon_2_text'] ?? __('Item', 'astra-nodes') . ' 2';
+    $link_icon_2 = $astra_nodes_options['header_icon_2_link'] ?? '';
+
+    $classes_icon_3 = $astra_nodes_options['header_icon_3_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_3 = $astra_nodes_options['header_icon_3_text'] ?? __('Item', 'astra-nodes') . ' 3';
+    $link_icon_3 = $astra_nodes_options['header_icon_3_link'] ?? '';
+
+    $classes_icon_4 = $astra_nodes_options['header_icon_4_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_4 = $astra_nodes_options['header_icon_4_text'] ?? __('Item', 'astra-nodes') . ' 4';
+    $link_icon_4 = $astra_nodes_options['header_icon_4_link'] ?? '';
+
+    $classes_icon_5 = $astra_nodes_options['header_icon_5_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_5 = $astra_nodes_options['header_icon_5_text'] ?? __('Item', 'astra-nodes') . ' 5';
+    $link_icon_5 = $astra_nodes_options['header_icon_5_link'] ?? '';
+
+    $classes_icon_6 = $astra_nodes_options['header_icon_6_classes'] ?? 'fa-solid fa-graduation-cap';
+    $text_icon_6 = $astra_nodes_options['header_icon_6_text'] ?? __('Item', 'astra-nodes') . ' 6';
+    $link_icon_6 = $astra_nodes_options['header_icon_6_link'] ?? '';
 
     $content = '
         <div class="detail-container">
         <div class="grid-container">
-        <div class="grid-item" style="background-color: #38a09b; color: white;">
-            <i class="' . $classes_icon_1 . '"></i> 
+        <div class="grid-item" style="background-color: #38a09b;">
+            <i id="header-button-1" class="' . $classes_icon_1 . '""></i> 
             <br>
-            <span>Ítem 1</span>
+            <a href="' . $link_icon_1 . '">' . $text_icon_1 . '</a>
         </div>
-        <div class="grid-item" style="background-color: #25627e; color: white;">
-            <i class="' . $classes_icon_1 . '"></i>
+        <div class="grid-item" style="background-color: #25627e;">
+            <i id="header-button-2" class="' . $classes_icon_2 . '"></i>
             <br>
-            <span>Ítem 2</span>
+            <a href="' . $link_icon_2 . '">' . $text_icon_2 . '</a>
         </div>
-        <div class="grid-item" style="background-color: #2b245e; color: white; border-radius: 0 30px 0 0;">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="grid-item" style="background-color: #2b245e; border-radius: 0 30px 0 0;">
+            <i id="header-button-3" class="' . $classes_icon_3 . '"></i>
             <br>
-            <span>Ítem 3</span>
+            <a href="' . $link_icon_3 . '">' . $text_icon_3 . '</a>
         </div>
-        <div class="grid-item" style="background-color: #2b245e; color: white;">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="grid-item" style="background-color: #2b245e;">
+            <i id="header-button-4" class="' . $classes_icon_4 . '"></i>
             <br>
-            <span>Ítem 4</span>
+            <a href="' . $link_icon_4 . '">' . $text_icon_4 . '</a>
         </div>
-        <div class="grid-item" style="background-color: #38a09b; color: white;">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="grid-item" style="background-color: #38a09b;">
+            <i id="header-button-5" class="' . $classes_icon_5 . '"></i>
             <br>
-            <span>Ítem 5</span>
+            <a href="' . $link_icon_5 . '">' . $text_icon_5 . '</a>
         </div>
         <div class="grid-item" style="background-color: #25627e; color: white; border-radius: 0 0 30px 0;">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i id="header-button-6" class="' . $classes_icon_6 . '"></i>
             <br>
-            <span>Ítem 6</span>
+            <a href="' . $link_icon_6 . '">' . $text_icon_6 . '</a>
         </div>
         </div>
         </div>
