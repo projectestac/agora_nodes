@@ -28,7 +28,7 @@
             $('#blog-name').html(text);
         });
     });
-    
+
     // Text following the blog name.
     wp.customize('blogdescription', function (value) {
         value.bind(function (text) {
@@ -57,75 +57,12 @@
             email.attr('href', 'mailto:' + text);
             email.html(text);
         });
-});
+    });
 
     // Phone number.
     wp.customize('astra_nodes_options[phone_number]', function (value) {
         value.bind(function (text) {
             $('#phone-number').html(text);
-        });
-    });
-
-
-
-
-    
-    wp.customize('reactor_options[show_title]', function (value) {
-        value.bind(function (to) {
-            if (to === '') {
-                $('.site-title, .site-description').css('display', 'none');
-            } else if (to === 1) {
-                $('.site-title, .site-description').css('display', 'block');
-            }
-        });
-    });
-
-    // Top Bar
-    wp.customize('reactor_options[topbar_title]', function (value) {
-        value.bind(function (to) {
-            $('li.name h1 a').html(to);
-        });
-    });
-
-    wp.customize('reactor_options[topbar_fixed]', function (value) {
-        value.bind(function (to) {
-            if (to === '') {
-                $('.top-bar-container').removeClass('fixed');
-                $('body').css('padding-top', 0);
-            } else if (to === 1) {
-                $('.top-bar-container').addClass('fixed');
-                $('body').css('padding-top', $('.top-bar').outerHeight());
-            }
-        });
-    });
-
-    wp.customize('reactor_options[topbar_contain]', function (value) {
-        value.bind(function (to) {
-            if (to === '') {
-                $('.top-bar-container').removeClass('contain-to-grid');
-            } else if (to === 1) {
-                $('.top-bar-container').addClass('contain-to-grid');
-            }
-        });
-    });
-
-    wp.customize('reactor_options[megadrop_textarea]', function (value) {
-        value.bind(function (to) {
-            $('.top-megadrop').html(to);
-        });
-    });
-
-    // Posts & Pages
-    wp.customize('reactor_options[post_readmore]', function (value) {
-        value.bind(function (to) {
-            $('.more-link').html(to);
-        });
-    });
-
-    // Footer
-    wp.customize('reactor_options[footer_siteinfo]', function (value) {
-        value.bind(function (to) {
-            $('#colophon').html(to);
         });
     });
 
