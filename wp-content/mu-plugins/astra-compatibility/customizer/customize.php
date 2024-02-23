@@ -18,6 +18,9 @@ add_action('customize_controls_print_styles', function () {
             margin-top: 10px !important;
             padding-top: 10px;
         }
+        .uip-modal {
+            z-index: 1000000;
+        }
     ';
     wp_add_inline_style('customize-controls', $custom_css);
 }, 1);
@@ -190,194 +193,109 @@ function nodes_customize_register($wp_customize) {
 
     // Header: Buttons section.
 
-    class WP_Customize_Raw_HTML extends WP_Customize_Control {
-        public $type = 'html';
-        private $content;
-
-        public function __construct($manager, $id, $args = array()) {
-            $this->content = $args['content'];
-            parent::__construct($manager, $id, $args);
-        }
-
-        public function render_content() {
-            echo $this->content;
-        }
-    }
-
-    // To load dependencies
-    class WP_Customize_Load_Dependencies extends WP_Customize_Control {
-        public $type = 'html';
-
-        public function render_content() {
-            echo '
-            <link rel="stylesheet" href="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css')) . '">
-            <script src="' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/js/universal-icon-picker.js')) . '"></script>';
-        }
-    }
-
-    // Script to handle picker
-    class WP_Customize_HTML_Control extends WP_Customize_Control {
-        public $type = 'html';
-        private $i;
-
-        public function __construct($manager, $id, $args = array()) {
-            $this->i = $args['i'];
-            parent::__construct($manager, $id, $args);
-        }
-
-        public function render_content() {
-            echo '
-            <style>
-                .uip-modal {
-                    z-index: 1000000;
-                }
-            </style>
-    
-            <script>
-                var uip = new UniversalIconPicker("#_customize-input-astra_nodes_customizer_header_button_' . esc_attr($this->i) . '", {
-                    iconLibraries: [
-                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/icons-libraries/happy-icons.min.json')) . '",
-                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/icons-libraries/font-awesome.min.json')) . '"
-                    ],
-                    iconLibrariesCss: [
-                        "' . esc_url(content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/happy-icons.min.css')) . '",
-                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                    ],
-                    onSelect: function(jsonIconData) {
-                        var iconField = document.querySelector("#_customize-input-astra_nodes_customizer_header_icon_' . esc_attr($this->i) . '_value");
-    
-                        // Changing field value
-                        iconField.value = jsonIconData.iconClass;
-    
-                        // Simulating a user changing the field, to trigger WordPress "Publish" button.
-                        iconField.dispatchEvent(new Event("change"));
-
-                        // Updating UI
-                        var iconImage = document.querySelector("#customize-control-icon_preview_' . esc_attr($this->i) . ' > i");
-                        iconImage.setAttribute("class", jsonIconData.iconClass);
-                    },
-                    onReset: function() {
-                        // Do something on reset if needed
-                    }
-                });
-            </script>';
-        }
-    }
+    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Font_Icon_Picker_Control.php';
+    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Raw_HTML_Control.php';
 
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Header Buttons', 'astra-nodes'),
         'priority' => 2,
     ]);
 
-    $wp_customize->add_setting('header_buttons_loading_scripts', array(
-        'default' => '',
-    ));
+    define('NUM_BUTTONS', 6);
 
-    // Loading dependencies
-    $wp_customize->add_control(new WP_Customize_Load_Dependencies($wp_customize, 'header_buttons_loading_scripts', array(
-        'label' => __('Header Button HTML', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header_buttons',
-        'settings' => 'header_buttons_loading_scripts',
-        'priority' => 1,
-    )));
+    for ($i = 1; $i <= NUM_BUTTONS; $i++) {
 
-    $header_buttons = [
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-    ];
-
-    foreach ($header_buttons as $c => $cValue) {
-
-        $i = $c + 1;
-
-        // Button to select icon
-
-        $wp_customize->add_setting('astra_nodes_options[header_button_' . $i . '_icon]', [
-            'default' => '',
+        // Add the Icon title text, the preview and the button to change the icon.
+        $wp_customize->add_setting('icon_preview_' . $i, [
+            'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'transport' => 'postMessage',
-        ]);
-
-        $wp_customize->add_control(
-            'astra_nodes_customizer_header_button_' . $i, [
-                'label' => __('Canvia la icona ' . $i, 'astra-nodes'),
-                'section' => 'astra_nodes_customizer_header_buttons',
-                'settings' => 'astra_nodes_options[header_button_' . $i . '_icon]',
-                'type' => 'button',
-                'input_attrs' => array(
-                    'value' => __('Canvia la icona ' . $i, 'astra-nodes'),
-                ),
-                'priority' => 2,
-            ]
-        );
-
-        // Field to receive the select icon value
-        // We simulate a change event in this field to trigger the "Publicate" button of WordPress
-
-        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_value]', [
             'default' => '',
-            'capability' => 'manage_options',
-            'transport' => 'postMessage',
         ]);
 
-        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_value', [
-            'label' => __('Valor de la icona ' . $i, 'astra-nodes'),
-            'section' => 'astra_nodes_customizer_header_buttons',
-            'settings' => 'astra_nodes_options[header_icon_' . $i . '_value]',
-            'priority' => 2,
-            'type' => 'text',
-            'input_attrs' => array(
-                'placeholder' => __('Selecciona una icona', 'astra-nodes'),
-                'style' => 'display: none',
-            ),
-        ]);
-
-        $wp_customize->add_setting('icon_preview_' . $i, array(
-            'default' => '',
-        ));
-
-        $wp_customize->add_control(new WP_Customize_Raw_HTML($wp_customize, 'icon_preview_' . $i, array(
+        $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'icon_preview_' . $i, [
             'id' => 'icon_preview_' . $i,
             'label' => __('Header Button HTML', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
-            'priority' => 2,
-            'content' => '<i style="font-size: 35px" class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_value'] . '"></i>',
-        )));
+            'priority' => 1,
+            'content' => '
+                <strong>' . __('Icon ' . $i, 'astra-nodes') . '</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i style="font-size: 20px;"
+                   class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_classes'] . '"></i>
+                <input type="button" id="_customize-input-astra_nodes_customizer_header_button_' . $i . '" class="universal-icon-picker" value="Change" />
+                ',
+        ]));
 
-        // Field to edit URL
-
-        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_url]', [
-            'default' => '',
+        // Field to receive the select icon value. It simulates a change event in this field to trigger
+        // the "Publish" button of WordPress.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
+            'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'transport' => 'postMessage',
+            'default' => '',
         ]);
 
-        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_url', [
-            'label' => __('URL de la icona ' . $i, 'astra-nodes'),
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_classes', [
+            'label' => '',
             'section' => 'astra_nodes_customizer_header_buttons',
-            'settings' => 'astra_nodes_options[header_icon_' . $i . '_url]',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_classes]',
             'priority' => 2,
             'type' => 'text',
-            'input_attrs' => array(
-                'placeholder' => __('Introdueix l\'URL aquí', 'astra-nodes'),
-            ),
+            'input_attrs' => [
+                'placeholder' => __('Choose an icon', 'astra-nodes'),
+                'style' => 'display: none',
+            ],
         ]);
 
-        $wp_customize->add_setting('header_buttons_script_' . $i, array(
+        // Field to edit the text for the link.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_text]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
             'default' => '',
-        ));
+        ]);
 
-        $wp_customize->add_control(new WP_Customize_HTML_Control($wp_customize, 'header_buttons_script_' . $i, array(
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_text', [
+            'label' => '',
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_text]',
+            'priority' => 1,
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('Icon text', 'astra-nodes'),
+            ],
+        ]);
+
+        // Field to edit URL.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_link]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_link', [
+            'label' => '',
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_link]',
+            'priority' => 1,
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('https://', 'astra-nodes'),
+            ],
+        ]);
+
+        // Add the javascript code to load the icon picker.
+        $wp_customize->add_setting('header_buttons_script_' . $i, [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control(new WP_Customize_Font_Icon_Picker_Control($wp_customize, 'header_buttons_script_' . $i, [
             'label' => __('Header Button HTML', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_header_buttons',
             'settings' => 'header_buttons_script_' . $i,
-            'priority' => 10,
+            'priority' => 1,
             'i' => $i,
-        )));
+        ]));
+
     }
 
     /*
