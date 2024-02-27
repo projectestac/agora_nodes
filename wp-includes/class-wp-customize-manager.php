@@ -4975,6 +4975,40 @@ final class WP_Customize_Manager {
 			}
 		}
 
+		// ============================== WIP PALETTES ==============================
+
+		include WP_CONTENT_DIR . '/themes/reactor/custom-tac/colors_nodes.php';
+
+		$palettes_names = [];
+
+		foreach ($colors_nodes as $color) {
+			$palettes_names[] = $color['nom'];
+		}
+
+		echo "<script>var palettes_names = ['" . implode("','", $palettes_names) . "'];
+
+		var palettes_names_labels_are_set = false;
+
+		// when labels are created, we update them
+		var check_labels = window.setInterval(function()
+		{
+			var palettes_names_labels = document.querySelectorAll('.ast-color-palette-container span.ast-palette-label-wrap');
+
+			if(palettes_names_labels.length > 0)
+			{
+				for(i = 0; i < palettes_names_labels.length; i++)
+				{
+					palettes_names_labels[i].innerHTML = palettes_names[i];
+				}
+
+				window.clearInterval(check_labels);
+			}
+		}, 500);
+		
+		</script>";
+
+		// ============================== END WIP PALETTES ==============================
+
 		?>
 		<script type="text/javascript">
 			var _wpCustomizeSettings = <?php echo wp_json_encode( $settings ); ?>;
