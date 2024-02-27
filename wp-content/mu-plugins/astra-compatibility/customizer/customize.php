@@ -200,18 +200,9 @@ function nodes_customize_register($wp_customize) {
         'priority' => 2,
     ]);
 
-    $header_buttons = [
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-        ['default_url' => 'https://www.google.com'],
-    ];
+    define('NUM_BUTTONS', 6);
 
-    foreach ($header_buttons as $c => $cValue) {
-
-        $i = $c + 1;
+    for ($i = 1; $i <= NUM_BUTTONS; $i++) {
 
         // Add the Icon title text, the preview and the button to change the icon.
         $wp_customize->add_setting('icon_preview_' . $i, [
@@ -234,8 +225,8 @@ function nodes_customize_register($wp_customize) {
                 ',
         ]));
 
-        // Field to receive the select icon value.
-        // We simulate a change event in this field to trigger the "Publish" button of WordPress.
+        // Field to receive the select icon value. It simulates a change event in this field to trigger
+        // the "Publish" button of WordPress.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
             'type' => 'theme_mod',
             'capability' => 'manage_options',
