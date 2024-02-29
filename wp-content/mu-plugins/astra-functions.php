@@ -172,6 +172,17 @@ add_action('customize_save_after', function ($wp_customize) {
     set_theme_mod('custom_logo', $logo_id);
     astra_update_option('custom_logo', $logo_id);
 
+    /*
+    // Get the value of the 'astra_nodes_options[custom_logo]' setting
+    $logo = $wp_customize->get_setting('astra_nodes_options[card_1_image]')->value();
+
+    // Get the attachment ID from the URL
+    $logo_id = attachment_url_to_postid($logo);
+
+    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting.
+    set_theme_mod('astra_nodes_options[card_1_image]', $logo_id);
+    */
+
     // Set the blog name and description.
     update_option('blogname', $wp_customize->get_setting('blogname')->value());
     update_option('blogdescription', $wp_customize->get_setting('blogdescription')->value());
@@ -311,7 +322,44 @@ add_filter('astra_get_option_header-html-2', function () {
 
 }, 20, 0);
 
+add_filter('astra_header_after', function () {
 
+    // Get the option array from the wp_options table.
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    echo '
+        <div class="wp-block-columns has-small-font-size is-layout-flex wp-container-7" style="padding: var(--wp--preset--spacing--60);">
+    ';
+
+    for ($i = 1; $i <= 4; $i++) {
+        $card_title = $astra_nodes_options['card_' . $i . '_title'] ?? '';
+        $card_image = $astra_nodes_options['card_' . $i . '_image'] ?? '';
+
+        echo '
+            <div class="wp-block-column border-radius-30-r has-ast-global-color-0-background-color has-background is-layout-flow"
+                 style="border-style:none; border-width:0; padding:0;">
+                <div class="wp-block-uagb-info-box uagb-block-681b6c87 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-below-title uagb-infobox-image-valign-top">
+                    <a href="" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" target="_self" aria-label="Infobox Link" rel="noopener noreferrer"
+                       onclick="return false;"></a>
+                    <div class="uagb-ifb-content">
+                        <div class="uagb-ifb-title-wrap">
+                            <h3 class="uagb-ifb-title">' . $card_title . '</h3>
+                        </div>
+                        <div class="uagb-ifb-image-content">
+                            <img decoding="async"
+                                 src="' . $card_image . '"
+                                 alt="" width="1010" height="673" loading="lazy">
+                        </div>
+                        <div class="uagb-ifb-button-wrapper wp-block-button"></div>
+                    </div>
+                </div>
+            </div>
+        ';
+    }
+
+    echo '</div>';
+
+});
 
 
 
