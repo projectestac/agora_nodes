@@ -218,9 +218,8 @@ function nodes_customize_register($wp_customize) {
             'priority' => 1,
             'content' => '
                 <strong>' . __('Icon ' . $i, 'astra-nodes') . '</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                <i style="font-size: 20px;" class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_classes'] .
-                '"></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <i style="font-size: 20px;"
+                   class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_classes'] . '"></i>
                 <input type="button" id="_customize-input-astra_nodes_customizer_header_button_' . $i . '" class="universal-icon-picker" value="Change" />
                 ',
         ]));

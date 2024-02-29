@@ -66,11 +66,4 @@
         });
     });
 
-    // Header icon 1.
-    wp.customize('astra_nodes_options[header_icon_1_classes]', function (value) {
-        value.bind(function (classes) {
-            $('#header-button-1').className = classes;
-        });
-    });
-
 })(jQuery);
