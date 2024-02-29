@@ -297,6 +297,76 @@ function nodes_customize_register($wp_customize) {
 
     }
 
+
+    // Cards in the front page.
+    $wp_customize->add_section('astra_nodes_customizer_front_page_cards', [
+        'title' => __('Front Page Cards', 'astra-nodes'),
+        'priority' => 3,
+    ]);
+
+    // Number of cards.
+    $wp_customize->add_setting('astra_nodes_options[number_of_cards]', [
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'default' => '',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_cards_number', [
+        'label' => __('Number of cards', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_cards',
+        'settings' => 'astra_nodes_options[number_of_cards]',
+        'priority' => 1,
+        'type' => 'number',
+        'input_attrs' => [
+            'min' => 3,
+            'max' => 4,
+            'step' => 1,
+        ],
+    ]);
+
+    define('NUM_CARDS', 4);
+
+    for ($i = 1; $i <= NUM_CARDS; $i++) {
+
+        // Card $i.
+        $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_title]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_title', [
+            'label' => __('Card', 'astra-nodes') . ' ' . $i,
+            'section' => 'astra_nodes_customizer_front_page_cards',
+            'settings' => 'astra_nodes_options[card_' . $i . '_title]',
+            'priority' => $i + 2,
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('Card title', 'astra-nodes'),
+            ],
+        ]);
+
+        $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_image]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize, 'astra_nodes_customizer_front_page_card_' . $i . '_image', [
+                    'label' => '',
+                    'section' => 'astra_nodes_customizer_front_page_cards',
+                    'description' => 'Recomanacions: 300 x 200 px i menys de 200 kB',
+                    'settings' => 'astra_nodes_options[card_' . $i . '_image]',
+                    'priority' => $i + 2,
+                ]
+            )
+        );
+
+    }
+
+
     /*
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
 
