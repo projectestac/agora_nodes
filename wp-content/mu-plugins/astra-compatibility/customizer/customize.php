@@ -387,10 +387,118 @@ function nodes_customize_register($wp_customize) {
         'priority' => 4,
     ]);
 
+    // ========================= WIP RADIO BUTTON THEME SELECTION ASTRA =========================
 
+    include WP_CONTENT_DIR . '/themes/reactor/custom-tac/colors_nodes.php';
 
+    $data = [
+        "astra-settings[global-color-palette]" => [
+            "palette" => ["#0eb1ff", "#087eb6", "#0eb1ff", "white", "#087eb6", "#087eb6", "#087eb6", "#0eb1ff", "#0eb1ff"],
+            "flag" => false
+        ],
+        "astra-color-palettes" => [
+            "currentPalette" => "palette_2",
+            "palettes" => [],
+            "flag" => true
+        ]
+    ];
 
+    $i = 0;
 
+    foreach($colors_nodes as $name => $node)
+    {
+        $i++;
+
+        $primary = $node["primary"];
+        $secondary = $node["secondary"];
+        $tertiary = $node["tertiary"] ?? $secondary;
+        $footer = $node["footer"] ?? $secondary;
+        $link = $node["link"] ?? $secondary;
+        $calendar = $node["calendar"] ?? $secondary;
+
+        // Astra theme colors
+        // 9 colors, in order : accent - links - header , mouse over link , ??? , body text , site background , content background , borders , ??? , ???
+
+        $list = [$primary , $link , $primary , "white", $secondary , $secondary , $secondary , $primary , $primary];
+
+        $data["astra-color-palettes"]["palettes"]["palette_" . $i] = $list;
+    }
+
+    // Section Colors
+    $wp_customize->add_section( 'astra_nodes_customizer_themes', [
+        'title' => __( 'Theme Colors', 'astra-nodes' ),
+        'priority' => 3,
+    ] );
+
+    // Setting and Control for selecting color
+    $wp_customize->add_setting( 'astra_nodes_options[selected_theme]', [
+        'default' => 'blau-vermell',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+    ] );
+
+    // Generating radio buttons
+
+    $radio_buttons = '';
+    $i = 0;
+
+    foreach ($colors_nodes as $key => $value) {
+        $i++;
+
+        $radio_buttons .= '<input type="radio" id="palette_' . $i . '" name="color" value="' . $key . '" onchange="updateAstraTheme(this)">';
+        $radio_buttons .= '<label for="' . $key . '" style="color:' . $value['primary'] . '; background-color:' . $value['secondary'] . ';">' . $value['nom'] . '</label><br>';
+    }
+
+    // Adding radio buttons and script to the section
+    $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'astra_nodes_options[selected_theme]', [
+        'label' => __('toto', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_themes',
+        'priority' => 3,
+        'content' =>
+            $radio_buttons .
+            "<script>
+                var themesData = " . json_encode($data) . ";
+
+                function updateAstraTheme(radioButton) {
+                    themesData['astra-color-palettes']['currentPalette'] = radioButton.id;
+                    themesData['astra-settings[global-color-palette]']['palette'] = themesData['astra-color-palettes']['palettes'][radioButton.id];
+
+                    var data = {
+                        wp_customize: 'on',
+                        customize_theme: 'astra',
+                        customize_autosaved: 'on',
+                        customized: JSON.stringify(themesData),
+                        customize_changeset_status: 'publish',
+                        action: 'customize_save'
+                    };
+
+                    var formData = new URLSearchParams();
+                    for (var key in data) {
+                        formData.append(key, data[key]);
+                    }
+
+                    var options = {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    };
+
+                    var url = 'https://agora-aws-nodes.xtec.cat/centre-3/wp-admin/admin-ajax.php';
+
+                    fetch(url, options)
+                        .then(function(response) {
+                            console.log(response);
+                        })
+                        .catch(function(error) {
+                            console.error('Error:', error);
+                        });
+                }
+            </script>",
+    ]));
+
+    // ========================= / END RADIO BUTTON THEME SELECTION ASTRA =========================
 
     /*
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
