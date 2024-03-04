@@ -304,6 +304,21 @@ function nodes_customize_register($wp_customize) {
         'priority' => 3,
     ]);
 
+    // Activate cards in front page.
+    $wp_customize->add_setting('astra_nodes_options[cards_enable]', [
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'default' => '',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_cards_enable', [
+        'label' => __('Use cards in front page', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_cards',
+        'settings' => 'astra_nodes_options[cards_enable]',
+        'priority' => 1,
+        'type' => 'checkbox',
+    ]);
+
     // Number of cards.
     $wp_customize->add_setting('astra_nodes_options[number_of_cards]', [
         'type' => 'theme_mod',
@@ -315,7 +330,7 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Number of cards', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_cards',
         'settings' => 'astra_nodes_options[number_of_cards]',
-        'priority' => 1,
+        'priority' => 2,
         'type' => 'number',
         'input_attrs' => [
             'min' => 3,
@@ -339,7 +354,7 @@ function nodes_customize_register($wp_customize) {
             'label' => __('Card', 'astra-nodes') . ' ' . $i,
             'section' => 'astra_nodes_customizer_front_page_cards',
             'settings' => 'astra_nodes_options[card_' . $i . '_title]',
-            'priority' => $i + 2,
+            'priority' => $i + 3,
             'type' => 'text',
             'input_attrs' => [
                 'placeholder' => __('Card title', 'astra-nodes'),
@@ -365,6 +380,16 @@ function nodes_customize_register($wp_customize) {
         );
 
     }
+
+    // Notice in the front page.
+    $wp_customize->add_section('astra_nodes_customizer_front_page_notice', [
+        'title' => __('Front Page Notice', 'astra-nodes'),
+        'priority' => 4,
+    ]);
+
+
+
+
 
 
     /*
