@@ -321,8 +321,18 @@ add_filter('astra_get_option_header-html-2', function () {
 
 add_filter('astra_header_after', function () {
 
+    // Check if it is front page.
+    if (!is_front_page()) {
+        return;
+    }
+
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    // If cards are not enabled, don't show them.
+    if (!$astra_nodes_options['cards_enable']) {
+        return;
+    }
 
     echo '
         <div class="wp-block-columns has-small-font-size is-layout-flex wp-container-7" style="padding: var(--wp--preset--spacing--60);">
