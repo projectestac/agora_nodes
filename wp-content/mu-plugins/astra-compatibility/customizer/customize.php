@@ -299,10 +299,41 @@ function nodes_customize_register($wp_customize) {
     }
 
 
+    // Configure palette colors.
+
+    $wp_customize->add_section('astra_nodes_customizer_themes', [
+        'title' => __('Theme Colors', 'astra-nodes'),
+        'priority' => 3,
+    ]);
+
+    $astra_color_palettes = get_option('astra-color-palettes');
+    $current_palette = $astra_color_palettes['currentPalette'];
+    $palettes = $astra_color_palettes['palettes'];
+
+    $palettes_form = [];
+    foreach ($palettes as $name => $palette) {
+        $palettes_form[$name] = $name;
+    }
+
+    $wp_customize->add_setting('astra-color-palettes[currentPalette]', [
+        'default' => $current_palette,
+        'type' => 'option',
+        'capability' => 'edit_theme_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_select_color', [
+        'label' => __('Theme Colors', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_themes',
+        'settings' => 'astra-color-palettes[currentPalette]',
+        'priority' => 1,
+        'type' => 'radio',
+        'choices' => $palettes_form,
+    ]);
+
     // Cards in the front page.
     $wp_customize->add_section('astra_nodes_customizer_front_page_cards', [
         'title' => __('Front Page Cards', 'astra-nodes'),
-        'priority' => 3,
+        'priority' => 4,
     ]);
 
     // Activate cards in front page.
@@ -375,11 +406,27 @@ function nodes_customize_register($wp_customize) {
                     'section' => 'astra_nodes_customizer_front_page_cards',
                     'description' => 'Recomanacions: 300 x 200 px i menys de 200 kB',
                     'settings' => 'astra_nodes_options[card_' . $i . '_image]',
-                    'priority' => $i + 2,
+                    'priority' => $i + 3
                 ]
             )
         );
 
+        $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_url]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_url', [
+            'label' => __('Camp d\'URL', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_front_page_cards',
+            'settings' => 'astra_nodes_options[card_' . $i . '_url]',
+            'priority' => $i + 4,
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('Introduïu l\'URL', 'astra-nodes'),
+            ],
+        ]);
     }
 
     // Notice in the front page.
@@ -388,10 +435,59 @@ function nodes_customize_register($wp_customize) {
         'priority' => 4,
     ]);
 
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_enable]', [
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'default' => '',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_notice_enable', [
+        'label' => __('Utilitzar avís a la pàgina principal', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_enable]',
+        'priority' => 1,
+        'type' => 'checkbox',
+    ]);
+
+    // Afegir paràmetres per a la imatge
+    $wp_customize->add_setting('front_page_notice_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_notice_image', array(
+        'label' => __('Imatge de l\'avis a la pàgina principal', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'front_page_notice_image',
+    )));
+
+    // Afegir paràmetres per al títol en majúscules
+    $wp_customize->add_setting('front_page_notice_title_uppercase');
+    $wp_customize->add_control('front_page_notice_title_uppercase', [
+        'label' => __('Títol en majúscules', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'type' => 'text',
+    ]);
 
 
 
+    // Afegir paràmetres per al títol en majúscules
+    $wp_customize->add_setting('front_page_notice_title_uppercase');
+    $wp_customize->add_control('front_page_notice_title_uppercase', [
+        'label' => __('Títol en majúscules', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'type' => 'text',
+    ]);
 
+    $wp_customize->add_setting('front_page_notice_title_normal');
+    $wp_customize->add_control('front_page_notice_title_normal', [
+        'label' => __('Títol normal', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'type' => 'text',
+    ]);
+
+    $wp_customize->add_setting('front_page_notice_text');
+    $wp_customize->add_control('front_page_notice_text', [
+        'label' => __('Text', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'type' => 'textarea',
+    ]);
 
     /*
     include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
