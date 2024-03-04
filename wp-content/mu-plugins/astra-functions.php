@@ -172,20 +172,20 @@ add_action('customize_save_after', function ($wp_customize) {
     set_theme_mod('custom_logo', $logo_id);
     astra_update_option('custom_logo', $logo_id);
 
-    /*
-    // Get the value of the 'astra_nodes_options[custom_logo]' setting
-    $logo = $wp_customize->get_setting('astra_nodes_options[card_1_image]')->value();
-
-    // Get the attachment ID from the URL
-    $logo_id = attachment_url_to_postid($logo);
-
-    // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting.
-    set_theme_mod('astra_nodes_options[card_1_image]', $logo_id);
-    */
-
     // Set the blog name and description.
     update_option('blogname', $wp_customize->get_setting('blogname')->value());
     update_option('blogdescription', $wp_customize->get_setting('blogdescription')->value());
+
+});
+
+// Customizer: Update the register in wp_options that makes possible to change the color palette in the preview.
+add_action('customize_preview_init', function ($wp_customize) {
+
+    $palette = $wp_customize->get_setting('astra-color-palettes[currentPalette]')->value();
+    $astra_color_palettes = get_option('astra-color-palettes');
+    $astra_settings = get_option('astra-settings');
+    $astra_settings['global-color-palette']['palette'] = $astra_color_palettes['palettes'][$palette];
+    update_option('astra-settings', $astra_settings);
 
 });
 
@@ -324,8 +324,18 @@ add_filter('astra_get_option_header-html-2', function () {
 
 add_filter('astra_header_after', function () {
 
+    // Check if it is front page.
+    if (!is_front_page()) {
+        return;
+    }
+
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    // If cards are not enabled, don't show them.
+    if (!$astra_nodes_options['cards_enable']) {
+        return;
+    }
 
     echo '
         <div class="wp-block-columns has-small-font-size is-layout-flex wp-container-7" style="padding: var(--wp--preset--spacing--60);">
@@ -333,31 +343,47 @@ add_filter('astra_header_after', function () {
 
     for ($i = 1; $i <= 4; $i++) {
         $card_title = $astra_nodes_options['card_' . $i . '_title'] ?? '';
-        $card_image = $astra_nodes_options['card_' . $i . '_image'] ?? '';
+        $card_image = $astra_nodes_options['card_' . $i . '_image'] != '' ? $astra_nodes_options['card_' . $i . '_image'] : '/wordpress/wp-includes/images/blank.gif';
+        $card_url = $astra_nodes_options['card_' . $i . '_url'] != '' ? $astra_nodes_options['card_' . $i . '_url'] : home_url();
 
         echo '
-            <div class="wp-block-column border-radius-30-r has-ast-global-color-0-background-color has-background is-layout-flow"
-                 style="border-style:none; border-width:0; padding:0;">
-                <div class="wp-block-uagb-info-box uagb-block-681b6c87 uagb-infobox__content-wrap  uagb-infobox_cta-type-all uagb-infobox-icon-below-title uagb-infobox-image-valign-top">
-                    <a href="" class="uagb-infobox-link-wrap uagb-infbox__link-to-all" target="_self" aria-label="Infobox Link" rel="noopener noreferrer"
-                       onclick="return false;"></a>
-                    <div class="uagb-ifb-content">
-                        <div class="uagb-ifb-title-wrap">
-                            <h3 class="uagb-ifb-title">' . $card_title . '</h3>
-                        </div>
-                        <div class="uagb-ifb-image-content">
-                            <img decoding="async"
-                                 src="' . $card_image . '"
-                                 alt="" width="1010" height="673" loading="lazy">
-                        </div>
-                        <div class="uagb-ifb-button-wrapper wp-block-button"></div>
+            <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card" onclick="window.open(\'' . $card_url . '\')">
+                    <div>
+                        <h3>' . $card_title . '</h3>
                     </div>
-                </div>
+                    <div>
+                        <img decoding="async" src="' . $card_image . '">
+                    </div>
             </div>
         ';
     }
 
     echo '</div>';
+
+    
+    // Display custom notice if enabled
+    $front_page_notice_enable = $astra_nodes_options['front_page_notice_enable'] ?? false;
+
+    $front_page_notice_image = get_theme_mod('front_page_notice_image');
+    $front_page_notice_title_uppercase = get_theme_mod('front_page_notice_title_uppercase');
+    $front_page_notice_title_normal = get_theme_mod('front_page_notice_title_normal');
+    $front_page_notice_text = get_theme_mod('front_page_notice_text');
+
+    if ($front_page_notice_enable) {
+        echo '
+        <div class="wp-block-columns custom-notice-container">
+            <div class="wp-block-column" style="flex: 1">
+                <img src="' . $front_page_notice_image . '" class="wp-image custom-notice-image">
+            </div>
+            
+            <div class="wp-block-column custom-notice-content" style="flex: 2">
+                <div class="front-page-notice-title-uppercase has-ast-global-color-0-color">' . $front_page_notice_title_uppercase . '</div>
+                <h2 class="front-page-notice-title-normal has-ast-global-color-1-color">' . $front_page_notice_title_normal . '</h2>
+                <div class="front-page-notice-text">' . $front_page_notice_text . '</div>
+            </div>
+        </div>
+        ';
+    }
 
 });
 

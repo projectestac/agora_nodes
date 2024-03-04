@@ -224,3 +224,79 @@ ul.wp-block-page-list li a {
 .grid-item #header-button-6 {
     font-size: 30px;
 }
+
+/* Front page cards */
+.front-page-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    cursor: pointer;
+    max-height: 400px;
+}
+
+.front-page-card > div:first-child {
+    height: 60px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-page-card > div:last-child {
+    margin: 0;
+    flex: 1;
+}
+
+.front-page-card h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: white;
+    font-size: 28px;
+}
+
+.front-page-card img {
+    border-radius: 0 0 30px 30px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Front page notice banner */
+.front-page-notice-title-uppercase {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.front-page-notice-title-normal {
+    margin: 10px 0;
+}
+
+.front-page-notice-text {
+    text-align: justify;
+}
+
+.custom-notice-container {
+    margin: 37px;
+    display: flex;
+}
+
+.custom-notice-container > div:last-child {
+    margin-left: 200px;
+}
+
+.custom-notice-image {
+    border-radius: 40px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.custom-notice-content {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.custom-notice-content > * {
+    font-family: "Roboto", sans-serif;
+}
