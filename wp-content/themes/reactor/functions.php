@@ -748,7 +748,7 @@ add_filter( 'bp_activity_allowed_tags', 'besocial_buddypress_activity_allowed_ta
 
 function tinymce_custom( $in ) {
 
-	if ($in['selector'] ==  '#whats-new'){
+	if (!empty($in['selector']) && ($in['selector'] === '#whats-new')) {
 		$in['menubar'] = false;
 		$in['toolbar'] = '';
 		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard gifmaster_new ';
