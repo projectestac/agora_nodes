@@ -1401,3 +1401,26 @@ div.dir-search {
 .bp_activity #whats-new-post-in-box{
     display:none;
 }
+
+/* Rules for the Compatibility between the plugins getwid and tabs-responsive */
+.wp-block-getwid-tabs.ui-widget-content,
+.wp-block-getwid-tabs .wp-block-getwid-tabs__tab-content {
+    border: 0
+}
+
+.wp-block-getwid-tabs .ui-widget-header {
+    border: 0;
+    background: inherit;
+}
+
+.wp-block-getwid-tabs.ui-tabs .ui-tabs-nav {
+    padding: 0;
+}
+
+.wp-block-getwid-tabs__tab-content-wrapper.ui-widget-content.is-active-tab {
+    border: 1px solid #aaaaaa;
+}
+
+.wp-block-getwid-tabs__nav-link.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab.ui-tabs-active.ui-state-active {
+    top: 2px;
+}
