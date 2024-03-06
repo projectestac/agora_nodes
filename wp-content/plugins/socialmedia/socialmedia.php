@@ -12,9 +12,10 @@
 class SocialMedia_Widget extends WP_Widget {
 
     public $socialmedia = [
-        'twitter' => ['nom' => 'X', 'url' => '', 'img' => 'fa-brands fa-square-x-twitter'],
+        'twitter' => ['nom' => 'X (Twitter)', 'url' => '', 'img' => 'fa-brands fa-square-x-twitter'],
         'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'fa-brands fa-square-facebook'],
         'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'fa-brands fa-square-google-plus'],
+        'linkedin' => ['nom' => 'LinkedIn', 'url' => '', 'img' => 'fa-brands fa-linkedin'],
         'youtube' => ['nom' => 'Youtube', 'url' => '', 'img' => 'fa-brands fa-square-youtube'],
         'telegram' => ['nom' => 'Telegram', 'url' => '', 'img' => 'fa-brands fa-telegram'],
         'spotify' => ['nom' => 'Spotify', 'url' => '', 'img' => 'fa-brands fa-spotify'],
