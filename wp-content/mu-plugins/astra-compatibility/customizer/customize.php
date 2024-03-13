@@ -298,6 +298,45 @@ function nodes_customize_register($wp_customize) {
 
     }
 
+    // Add the translation of the text of the icon picker.
+    load_textdomain( 'astra-nodes-ca', WP_LANG_DIR . '/astra-nodes-ca.mo' );
+
+    // Add the javascript code to translate the text of the icon picker.
+    $wp_customize->add_setting('translation_script', [
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'default' => '',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'translation_script', [
+        'label' => __('Header Button HTML', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_header_buttons',
+        'priority' => 2,
+        'content' => 
+        '<script>
+            // Translate the text of the icon picker.
+            var elements =
+                [
+                    {"selector" : ".uip-insert-icon-button", "text" : "' . __("Insert") . '", "type" : "textContent"},
+                    {"selector" : ".uip-modal--icon-search > input", "text" : "' . __("Filter by name", "astra-nodes-ca") . '", "type" : "placeholder"}
+                ];
+
+            // Wait for the modal to be loaded and then translate the text.
+            const intervalId = setInterval(() => {
+                const modalContent = document.querySelector(".uip-modal--content");
+                if (modalContent) {
+                    elements.forEach((element) => {
+                        const el = modalContent.querySelector(element.selector);
+                        if (el) {
+                            el[element.type] = element.text;
+                        }
+                    });
+                    clearInterval(intervalId);
+                }
+            }, 100);
+        </script>'
+    ]));
+
 
     // Configure palette colors.
 
