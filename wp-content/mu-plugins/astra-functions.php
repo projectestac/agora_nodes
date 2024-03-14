@@ -256,66 +256,28 @@ add_filter('astra_get_option_header-html-2', function () {
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
-    $classes_icon_1 = $astra_nodes_options['header_icon_1_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_1 = $astra_nodes_options['header_icon_1_text'] ?? __('Item', 'astra-nodes') . ' 1';
-    $link_icon_1 = $astra_nodes_options['header_icon_1_link'] ?? '';
+    $content = '<div class="detail-container">
+    <div class="grid-container">';
 
-    $classes_icon_2 = $astra_nodes_options['header_icon_2_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_2 = $astra_nodes_options['header_icon_2_text'] ?? __('Item', 'astra-nodes') . ' 2';
-    $link_icon_2 = $astra_nodes_options['header_icon_2_link'] ?? '';
+    // Array of background colors for the buttons.
+    $background_colors = ['#38a09b', '#25627e', '#2b245e', '#2b245e', '#38a09b', '#25627e'];
+    $border_radii = ['', '', 'border-radius: 0 30px 0 0;', '', '', 'border-radius: 0 0 30px 0;'];
 
-    $classes_icon_3 = $astra_nodes_options['header_icon_3_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_3 = $astra_nodes_options['header_icon_3_text'] ?? __('Item', 'astra-nodes') . ' 3';
-    $link_icon_3 = $astra_nodes_options['header_icon_3_link'] ?? '';
+    // Loop through the 6 buttons.
+    for ($i = 1; $i <= 6; $i++) {
+        $classes_icon = $astra_nodes_options['header_icon_' . $i . '_classes'] ?? 'fa-solid fa-graduation-cap';
+        $text_icon = $astra_nodes_options['header_icon_' . $i . '_text'] ?? __('Item', 'astra-nodes') . ' ' . $i;
+        $link_icon = $astra_nodes_options['header_icon_' . $i . '_link'] ?? '';
+        $open_in_new_tab = $astra_nodes_options['header_icon_' . $i . '_open_in_new_tab'] ?? false;
 
-    $classes_icon_4 = $astra_nodes_options['header_icon_4_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_4 = $astra_nodes_options['header_icon_4_text'] ?? __('Item', 'astra-nodes') . ' 4';
-    $link_icon_4 = $astra_nodes_options['header_icon_4_link'] ?? '';
+        // Add the button to the content.
+        $content .= '<div class="grid-item" style="background-color: ' . $background_colors[$i-1] . ';' . $border_radii[$i-1] . '">
+                <i id="header-button-' . $i . '" class="' . $classes_icon . '"></i> <br>
+                <a href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>' . $text_icon . '</a>
+            </div>';
+    }
 
-    $classes_icon_5 = $astra_nodes_options['header_icon_5_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_5 = $astra_nodes_options['header_icon_5_text'] ?? __('Item', 'astra-nodes') . ' 5';
-    $link_icon_5 = $astra_nodes_options['header_icon_5_link'] ?? '';
-
-    $classes_icon_6 = $astra_nodes_options['header_icon_6_classes'] ?? 'fa-solid fa-graduation-cap';
-    $text_icon_6 = $astra_nodes_options['header_icon_6_text'] ?? __('Item', 'astra-nodes') . ' 6';
-    $link_icon_6 = $astra_nodes_options['header_icon_6_link'] ?? '';
-
-    $content = '
-        <div class="detail-container">
-        <div class="grid-container">
-        <div class="grid-item" style="background-color: #38a09b;">
-            <i id="header-button-1" class="' . $classes_icon_1 . '""></i> 
-            <br>
-            <a href="' . $link_icon_1 . '">' . $text_icon_1 . '</a>
-        </div>
-        <div class="grid-item" style="background-color: #25627e;">
-            <i id="header-button-2" class="' . $classes_icon_2 . '"></i>
-            <br>
-            <a href="' . $link_icon_2 . '">' . $text_icon_2 . '</a>
-        </div>
-        <div class="grid-item" style="background-color: #2b245e; border-radius: 0 30px 0 0;">
-            <i id="header-button-3" class="' . $classes_icon_3 . '"></i>
-            <br>
-            <a href="' . $link_icon_3 . '">' . $text_icon_3 . '</a>
-        </div>
-        <div class="grid-item" style="background-color: #2b245e;">
-            <i id="header-button-4" class="' . $classes_icon_4 . '"></i>
-            <br>
-            <a href="' . $link_icon_4 . '">' . $text_icon_4 . '</a>
-        </div>
-        <div class="grid-item" style="background-color: #38a09b;">
-            <i id="header-button-5" class="' . $classes_icon_5 . '"></i>
-            <br>
-            <a href="' . $link_icon_5 . '">' . $text_icon_5 . '</a>
-        </div>
-        <div class="grid-item" style="background-color: #25627e; color: white; border-radius: 0 0 30px 0;">
-            <i id="header-button-6" class="' . $classes_icon_6 . '"></i>
-            <br>
-            <a href="' . $link_icon_6 . '">' . $text_icon_6 . '</a>
-        </div>
-        </div>
-        </div>
-        ';
+    $content .= '</div></div>';
 
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
