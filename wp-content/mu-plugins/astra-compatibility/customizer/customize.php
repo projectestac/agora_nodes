@@ -225,6 +225,21 @@ function nodes_customize_register($wp_customize) {
                 ',
         ]));
 
+        // Field to open the link in a new tab.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_open_in_new_tab', [
+            'label' => __('Open in new tab', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]',
+            'priority' => 1,
+            'type' => 'checkbox',
+        ]);
+
         // Field to receive the select icon value. It simulates a change event in this field to trigger
         // the "Publish" button of WordPress.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
