@@ -4,6 +4,19 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 24.03.19
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.3.3
+- blogger-importer: Upgraded plugin
+- media: Fixed error 403 Forbidden in search box in media list
+- nodes-editor-widget: Updated widget text
+- socialmedia: Upgraded to Font Awesome 6.5. Added more icons
+- Theme reactor: Upgraded Font Awesome to version 6.5
+- Theme reactor: Added rules for the Compatibility between the plugins getwid and tabs-responsive
+- widget-visibility-without-jetpack: Removed patches for buddypress
+- wordpress-importer: Upgraded plugin
+
+
 Changes 24.01.25
 ---------------------------------------------------------------------------------------
 - agora-functions: Widgets: Use legacy widgets configuration
