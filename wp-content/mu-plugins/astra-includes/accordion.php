@@ -68,6 +68,10 @@
         margin-top: 20px;
     }
 
+    div.sidebar-main .widget {
+        display: none;
+    }
+
 	/* CSS styles for the accordion menu */
 	.accordion {
 		list-style-type: none;
