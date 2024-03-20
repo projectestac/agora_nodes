@@ -349,7 +349,20 @@ add_filter('astra_header_after', function () {
 
 });
 
+// Add the breadcrumb to the top of the content.
+function show_breadcrumb_astra_content_before() {
+    if (function_exists('astra_get_breadcrumb')) {
+        echo astra_get_breadcrumb();
+    }
+}
 
+add_action('astra_content_before', 'show_breadcrumb_astra_content_before');
+
+
+// Add the accordion to the sidebar.
+add_filter('astra_sidebars_after' , function () {
+    include realpath(ABSPATH . 'wp-content') . '/mu-plugins/astra-includes/accordion.php';
+});
 
 function custom_header_html_3() {
 //    $content = astra_get_option('header-html-1');
