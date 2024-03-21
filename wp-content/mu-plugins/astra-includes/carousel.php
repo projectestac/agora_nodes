@@ -23,7 +23,7 @@
     {
         margin-top: -1px;
     }
-    
+
     #ast-desktop-header > div.ast-below-header-wrap > div.entry-content.clear > div.wp-block-getwid-images-slider.has-arrows-inside.has-dots-inside.has-images-center.has-cropped-images.has-fixed-height.getwid-init > div
     {
         max-width: none;
@@ -46,15 +46,7 @@
         position: absolute;
         top: 231px;
         z-index: 100;
-        width: calc(100% - 2 * 25px);
+        width: calc(100% - 2* 25px - 2* 20px); /* 2 * margin of 25px and 2 * header margin of 20px */
         margin: 25px;
-    }
-
-    #ast-desktop-header > div.ast-main-header-wrap.main-header-bar-wrap > div > div
-    {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: none;
-        width: calc(100% - 36px);
     }
 </style>
