@@ -12,13 +12,14 @@ if (wp_get_theme()->name !== 'Astra') {
     return;
 }
 
-include_once WPMU_PLUGIN_DIR . '/astra-compatibility/get-options.php';
-include_once WPMU_PLUGIN_DIR . '/astra-compatibility/customizer/customize.php';
-include_once WPMU_PLUGIN_DIR . '/astra-widgets/logo-client-widget.php';
+include_once WPMU_PLUGIN_DIR . '/astra-nodes/customizer/customize.php';
+
+// Load translations.
+load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages');
 
 // Load styles to customize Astra theme.
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('astra-functions-css', plugins_url('/astra-styles/style.css', __FILE__));
+    wp_enqueue_style('astra-functions-css', plugins_url('/astra-nodes/styles/style.css', __FILE__));
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 });
 
@@ -37,7 +38,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     $wp_admin_bar->add_node([
         'id' => 'dept-educacio-logo-wrapper',
         'parent' => '',
-        'title' => '<img id="logo-dept-educacio" alt="Logo Educació" src="' . WPMU_PLUGIN_URL . '/astra-images/logo_gene.png' . '">',
+        'title' => '<img id="logo-dept-educacio" alt="Logo Educació" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_gene.png' . '">',
         'href' => 'https://educacio.gencat.cat/ca/inici/',
         'meta' => [
             'tabindex' => -1,
@@ -46,7 +47,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
     $wp_admin_bar->add_node([
         'id' => 'recursosXTEC',
-        'title' => '<img id="logo-xtec" alt="Logotip XTEC" src="' . WPMU_PLUGIN_URL . '/astra-images/logo_xtec.png' . '">',
+        'title' => '<img id="logo-xtec" alt="Logotip XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.png' . '">',
         'parent' => false,
     ]);
 
@@ -351,49 +352,19 @@ add_filter('astra_header_after', function () {
     include realpath(ABSPATH . 'wp-content') . '/mu-plugins/astra-includes/carousel.php';
 });
 
-// Add the breadcrumb to the top of the content.
-function show_breadcrumb_astra_content_before() {
+// Breadcrumb: Add the breadcrumb to the top of the content.
+add_action('astra_content_before', function () {
     if (function_exists('astra_get_breadcrumb')) {
         echo astra_get_breadcrumb();
     }
-}
+});
 
-add_action('astra_content_before', 'show_breadcrumb_astra_content_before');
-
-
-// Add the accordion to the sidebar.
+// Side menu: Add the accordion to the sidebar.
 add_filter('astra_sidebars_after' , function () {
     if (!is_front_page()) {
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_script('jquery');
         });
-        include_once WPMU_PLUGIN_DIR . '/astra-includes/accordion.php';
+        include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
     }
 });
-
-function custom_header_html_3() {
-//    $content = astra_get_option('header-html-1');
-}
-
-// Customizer: Add custom sections.
-//add_action('customize_register', 'nodes_add_customizer_sections');
-function nodes_add_customizer_sections($wp_customize): void {
-    // Secció Color de Fons
-    $wp_customize->add_section('nodes_header', [
-        'title' => __('Header', 'astra-nodes'),
-        'priority' => 30,
-    ]);
-
-    // Configuració de Color de Fons
-    $wp_customize->add_setting('color_fons_setting', [
-        'default' => '#ffffff',
-        'transport' => 'refresh',
-    ]);
-
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color_fons_control', [
-        'label' => __('Selecciona el color de fons', 'astra-nodes'),
-        'section' => 'nodes_header',
-        'settings' => 'color_fons_setting',
-    ]));
-}
-
