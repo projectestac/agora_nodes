@@ -193,8 +193,8 @@ function nodes_customize_register($wp_customize) {
 
     // Header: Buttons section.
 
-    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Font_Icon_Picker_Control.php';
-    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Raw_HTML_Control.php';
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Font_Icon_Picker_Control.php';
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Raw_HTML_Control.php';
 
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Header Buttons', 'astra-nodes'),
@@ -313,9 +313,6 @@ function nodes_customize_register($wp_customize) {
 
     }
 
-    // Add the translation of the text of the icon picker.
-    load_textdomain( 'astra-nodes-ca', WP_LANG_DIR . '/astra-nodes-ca.mo' );
-
     // Add the javascript code to translate the text of the icon picker.
     $wp_customize->add_setting('translation_script', [
         'type' => 'theme_mod',
@@ -327,13 +324,13 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Header Button HTML', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header_buttons',
         'priority' => 2,
-        'content' => 
-        '<script>
+        'content' =>
+            '<script>
             // Translate the text of the icon picker.
             var elements =
                 [
-                    {"selector" : ".uip-insert-icon-button", "text" : "' . __("Insert") . '", "type" : "textContent"},
-                    {"selector" : ".uip-modal--icon-search > input", "text" : "' . __("Filter by name", "astra-nodes-ca") . '", "type" : "placeholder"}
+                    {"selector" : ".uip-insert-icon-button", "text" : "' . __('Insert', 'astra-nodes') . '", "type" : "textContent"},
+                    {"selector" : ".uip-modal--icon-search > input", "text" : "' . __('Filter by name', 'astra-nodes') . '", "type" : "placeholder"}
                 ];
 
             // Wait for the modal to be loaded and then translate the text.
@@ -349,12 +346,10 @@ function nodes_customize_register($wp_customize) {
                     clearInterval(intervalId);
                 }
             }, 100);
-        </script>'
+        </script>',
     ]));
 
-
     // Configure palette colors.
-
     $wp_customize->add_section('astra_nodes_customizer_themes', [
         'title' => __('Theme Colors', 'astra-nodes'),
         'priority' => 3,
@@ -460,7 +455,7 @@ function nodes_customize_register($wp_customize) {
                     'section' => 'astra_nodes_customizer_front_page_cards',
                     'description' => 'Recomanacions: 300 x 200 px i menys de 200 kB',
                     'settings' => 'astra_nodes_options[card_' . $i . '_image]',
-                    'priority' => $i + 3
+                    'priority' => $i + 3,
                 ]
             )
         );
@@ -520,7 +515,6 @@ function nodes_customize_register($wp_customize) {
     ]);
 
 
-
     // Afegir paràmetres per al títol en majúscules
     $wp_customize->add_setting('front_page_notice_title_uppercase');
     $wp_customize->add_control('front_page_notice_title_uppercase', [
@@ -542,242 +536,5 @@ function nodes_customize_register($wp_customize) {
         'section' => 'astra_nodes_customizer_front_page_notice',
         'type' => 'textarea',
     ]);
-
-    /*
-    include_once WPMU_PLUGIN_DIR . '/astra-compatibility/classes/WP_Customize_Dropdown_Categories_Control.php';
-
-    // Pestanya Identificació del centre
-    $wp_customize->add_section('reactor_customizer_idcentre', [
-        'title' => __('Identificació del centre', 'reactor'),
-        'priority' => 2,
-    ]);
-
-
-    $wp_customize->add_setting('reactor_options[telCentre]', [
-        'default' => '00 000 000', // S'agafa de la base de dades
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control('reactor_options[telCentre]', [
-        'label' => __('Telèfon', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'priority' => 6,
-    ]);
-
-    $wp_customize->add_setting('reactor_options[googleMaps]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control('reactor_options[googleMaps]', [
-        'label' => __('Mapa', 'reactor'),
-        'description' => 'Adreça de Google Maps',
-        'section' => 'reactor_customizer_idcentre',
-        'priority' => 7,
-    ]);
-
-    // Field to contact page
-    $wp_customize->add_setting('reactor_options[contacteCentre]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    // Field to contact page
-    $wp_customize->add_control('reactor_options[contacteCentre]', [
-        'label' => __('Contacte principal', 'reactor'),
-        'section' => 'reactor_customizer_idcentre',
-        'description' => " <a style='float:left;margin-top:-44px; margin-left:135px;height:0px;width:0px;font-style: normal;' target='_blank' href='http://agora.xtec.cat/moodle/moodle/mod/glossary/view.php?id=1741&mode=entry&hook=2681'> <br> (" . __('Ajuda', 'reactor') . ")</a>" . __('Pàgina de contacte', 'reactor'),
-        'priority' => 8,
-    ]);
-
-    // Add field mail
-    $wp_customize->add_setting('reactor_options[correuCentre]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
-
-    $wp_customize->add_control('reactor_options[correuCentre]', [
-        'section' => 'reactor_customizer_idcentre',
-        'description' => __('Adreça electrònica', 'reactor'),
-        'priority' => 9,
-    ]);
-
-    global $colors_nodes;
-
-    foreach ($colors_nodes as $color_value => $color_properties) {
-        $paletes[$color_value] = $color_properties['nom'];
-    }
-
-    $wp_customize->add_section('reactor_customizer_colors', [
-        'title' => __('Colors', 'reactor'),
-        'priority' => 7,
-    ]);
-
-    $wp_customize->add_setting('reactor_options[paleta_colors]', [
-        'default' => '',
-        'type' => 'option',
-        'capability' => 'manage_options',
-    ]);
-    $wp_customize->add_control('reactor_options[paleta_colors]', [
-        'label' => __('Paleta', 'reactor'),
-        'section' => 'reactor_customizer_colors',
-        'type' => 'radio',
-        'choices' => $paletes,
-    ]);
-
-    $templates = get_theme_support('reactor-page-templates');
-
-    if (!is_array($templates[0])) {
-        $templates[0] = [];
-    }
-
-    // Front Page
-    if (in_array('front-page', $templates[0])) {
-        $wp_customize->add_section('frontpage_settings', [
-            'title' => __('Pàgina d\'inici', 'reactor'),
-            'priority' => 6,
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_setting('reactor_options[frontpage_page]', [
-            'default' => '',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'reactor_options[frontpage_page]', [
-            'label' => __('Pàgina d\'inici', 'theme-name'),
-            'section' => 'frontpage_settings',
-            'type' => 'dropdown-pages',
-            'settings' => 'reactor_options[frontpage_page]',
-            'priority' => 1,
-        ]));
-
-        $wp_customize->add_setting('reactor_options[frontpage_post_category]', [
-            'default' => '',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control(new WP_Customize_Dropdown_Categories_Control($wp_customize, 'reactor_frontpage_post_category', [
-            'label' => __('Categoria d\'articles', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'dropdown-categories',
-            'settings' => 'reactor_options[frontpage_post_category]',
-            'priority' => 2,
-        ]));
-
-        $wp_customize->add_setting('reactor_options[frontpage_layout]', [
-            'default' => '2c-r',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control('reactor_options[frontpage_layout]', [
-            'label' => __('Composició', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'select',
-            'choices' => [
-                '1c' => __('Sense barres laterals', 'reactor'),
-                '2c-l' => __('Barra esquerra', 'reactor'),
-                '2c-r' => __('Barra dreta', 'reactor'),
-                '3c-c' => __('Barra esquerra i dreta', 'reactor'),
-            ],
-            'priority' => 3,
-        ]);
-
-        $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_1]', [
-            'default' => '2',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_1]', [
-            'label' => __('Fila 1', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'select',
-            'choices' => [
-                '0' => __('0 articles', 'reactor'),
-                '1' => __('1 article', 'reactor'),
-                '2' => __('2 articles iguals', 'reactor'),
-                '33' => __('2 articles (1/3+2/3)', 'reactor'),
-                '66' => __('2 articles (2/3+1/3)', 'reactor'),
-                '3' => __('3 articles', 'reactor'),
-                '4' => __('4 articles', 'reactor'),
-            ],
-            'priority' => 4,
-        ]);
-
-        $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_2]', [
-            'default' => '2',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_2]', [
-            'label' => __('Fila 2', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'select',
-            'choices' => [
-                '0' => __('0 articles', 'reactor'),
-                '1' => __('1 article', 'reactor'),
-                '2' => __('2 articles iguals', 'reactor'),
-                '33' => __('2 articles (1/3+2/3)', 'reactor'),
-                '66' => __('2 articles (2/3+1/3)', 'reactor'),
-                '3' => __('3 articles', 'reactor'),
-                '4' => __('4 articles', 'reactor'),
-            ],
-            'priority' => 5,
-        ]);
-
-        $wp_customize->add_setting('reactor_options[frontpage_posts_per_fila_n]', [
-            'default' => '3',
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control('reactor_options[frontpage_posts_per_fila_n]', [
-            'label' => __('Resta de files', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'select',
-            'choices' => [
-                '0' => __('0 articles', 'reactor'),
-                '1' => __('1 article', 'reactor'),
-                '2' => __('2 articles', 'reactor'),
-                '3' => __('3 articles', 'reactor'),
-                '4' => __('4 articles', 'reactor'),
-            ],
-            'priority' => 6,
-        ]);
-
-        $wp_customize->add_setting('reactor_options[frontpage_number_posts]', [
-            'default' => 3,
-            'type' => 'option',
-            'capability' => 'manage_options',
-            'theme_supports' => 'reactor-page-templates',
-        ]);
-
-        $wp_customize->add_control('reactor_options[frontpage_number_posts]', [
-            'label' => __('Nombre d\'articles per pàgina', 'reactor'),
-            'section' => 'frontpage_settings',
-            'type' => 'text',
-            'priority' => 7,
-        ]);
-    }
-    */
 
 }
