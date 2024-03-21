@@ -12,6 +12,9 @@ if (wp_get_theme()->name !== 'Astra') {
     return;
 }
 
+const NUM_BUTTONS_IN_HEADER = 6;
+const NUM_CARDS_IN_FRONT_PAGE = 4;
+
 include_once WPMU_PLUGIN_DIR . '/astra-nodes/customizer/customize.php';
 
 // Load translations.
@@ -141,9 +144,11 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
 // Customizer: Remove all Astra sections.
 add_filter('astra_customizer_sections', function ($configurations) {
+    // TODO: Fix admin not being able to see the live update.
     if (is_xtec_super_admin()) {
         return $configurations;
     }
+
     return array_filter($configurations, static function ($configuration) {
         return $configuration['type'] !== 'section';
     });
@@ -190,11 +195,11 @@ add_action('customize_preview_init', function ($wp_customize) {
 
 });
 
-// Header: Content of the central area, which includes the name of the client.
+// Header: Content of the central area (html-3), which includes the name of the client.
 add_filter('astra_get_option_header-html-3', function () {
 
     // Get the option array from the wp_options table.
-    $astra_nodes_options = get_option('astra_nodes_options');
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
     // Check if the option exists and is not null.
     $pre_blog_name = $astra_nodes_options['pre_blog_name'] ?? '';
@@ -207,11 +212,11 @@ add_filter('astra_get_option_header-html-3', function () {
 
 }, 20, 0);
 
-// Header: Content of the area that shows the contact information.
+// Header: Content of the area that shows the contact information (html-1).
 add_filter('astra_get_option_header-html-1', function () {
 
     // Get the option array from the wp_options table.
-    $astra_nodes_options = get_option('astra_nodes_options');
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
     // Check if the option exists and is not null.
     $postal_address = $astra_nodes_options['postal_address'] ?? '';
@@ -222,7 +227,7 @@ add_filter('astra_get_option_header-html-1', function () {
     $contact_page = $astra_nodes_options['contact_page'] ?? '';
 
     // Contact is a mailto link if contact_page is empty.
-    $contact_page_url = $contact_page != '' ? $contact_page : 'mailto:' . $email_address;
+    $contact_page_url = $contact_page !== '' ? $contact_page : 'mailto:' . $email_address;
 
     $content = '
             <p style="text-align: right; line-height: 1.1;">
@@ -239,8 +244,8 @@ add_filter('astra_get_option_header-html-1', function () {
             <p style="text-align: right;">
                 <span style="">
                     <strong>
-                        <a style="color: #1ea19b;" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes'). '</a> |
-                        <a style="color: #1ea19b;" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes'). '</a>
+                        <a style="color: #1ea19b;" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes') . '</a> |
+                        <a style="color: #1ea19b;" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes') . '</a>
                     </strong>
                 </span>
             </p>
@@ -249,33 +254,37 @@ add_filter('astra_get_option_header-html-1', function () {
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
 
-    }, 20, 0);
+}, 20, 0);
 
-// Header: Content of the buttons area.
+// Header: Content of the buttons area (html-2).
 add_filter('astra_get_option_header-html-2', function () {
 
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
-    $content = '<div class="detail-container">
-    <div class="grid-container">';
+    $content = '
+            <div class="detail-container">
+                <div class="grid-container">
+    ';
 
     // Array of background colors for the buttons.
     $background_colors = ['#38a09b', '#25627e', '#2b245e', '#2b245e', '#38a09b', '#25627e'];
     $border_radii = ['', '', 'border-radius: 0 30px 0 0;', '', '', ''];
 
     // Loop through the 6 buttons.
-    for ($i = 1; $i <= 6; $i++) {
+    for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
         $classes_icon = $astra_nodes_options['header_icon_' . $i . '_classes'] ?? 'fa-solid fa-graduation-cap';
         $text_icon = $astra_nodes_options['header_icon_' . $i . '_text'] ?? __('Item', 'astra-nodes') . ' ' . $i;
         $link_icon = $astra_nodes_options['header_icon_' . $i . '_link'] ?? '';
         $open_in_new_tab = $astra_nodes_options['header_icon_' . $i . '_open_in_new_tab'] ?? false;
 
         // Add the button to the content.
-        $content .= '<div class="grid-item" style="background-color: ' . $background_colors[$i-1] . ';' . $border_radii[$i-1] . '">
+        $content .= '
+            <div class="grid-item" style="background-color: ' . $background_colors[$i - 1] . ';' . $border_radii[$i - 1] . '">
                 <i id="header-button-' . $i . '" class="' . $classes_icon . '"></i> <br>
                 <a href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>' . $text_icon . '</a>
-            </div>';
+            </div>
+            ';
     }
 
     $content .= '</div></div>';
@@ -285,6 +294,14 @@ add_filter('astra_get_option_header-html-2', function () {
 
 }, 20, 0);
 
+// Front page: Move homepage carrousel to top page header
+/*
+add_filter('astra_header_after', function () {
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/carousel.php';
+});
+*/
+
+// Front page: Show the cards if they are enabled.
 add_filter('astra_header_after', function () {
 
     // Check if it is front page.
@@ -304,10 +321,10 @@ add_filter('astra_header_after', function () {
         <div class="wp-block-columns has-small-font-size is-layout-flex wp-container-7" style="padding: var(--wp--preset--spacing--60);">
     ';
 
-    for ($i = 1; $i <= 4; $i++) {
+    for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
         $card_title = $astra_nodes_options['card_' . $i . '_title'] ?? '';
-        $card_image = $astra_nodes_options['card_' . $i . '_image'] != '' ? $astra_nodes_options['card_' . $i . '_image'] : '/wordpress/wp-includes/images/blank.gif';
-        $card_url = $astra_nodes_options['card_' . $i . '_url'] != '' ? $astra_nodes_options['card_' . $i . '_url'] : home_url();
+        $card_image = $astra_nodes_options['card_' . $i . '_image'] !== '' ? $astra_nodes_options['card_' . $i . '_image'] : '/wordpress/wp-includes/images/blank.gif';
+        $card_url = $astra_nodes_options['card_' . $i . '_url'] !== '' ? $astra_nodes_options['card_' . $i . '_url'] : home_url();
 
         echo '
             <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card" onclick="window.open(\'' . $card_url . '\')">
@@ -315,7 +332,7 @@ add_filter('astra_header_after', function () {
                         <h3>' . $card_title . '</h3>
                     </div>
                     <div>
-                        <img decoding="async" src="' . $card_image . '">
+                        <img decoding="async" src="' . $card_image . '" alt="">
                     </div>
             </div>
         ';
@@ -323,48 +340,61 @@ add_filter('astra_header_after', function () {
 
     echo '</div>';
 
-    
-    // Display custom notice if enabled
-    $front_page_notice_enable = $astra_nodes_options['front_page_notice_enable'] ?? false;
+});
+
+// Front page: Show the notice if it is enabled.
+add_filter('astra_header_after', function () {
+
+    // Check if it is front page.
+    if (!is_front_page()) {
+        return;
+    }
+
+    // Get the option array from the wp_options table.
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    // If front page notice is not enabled, don't show it.
+    if (!$astra_nodes_options['front_page_notice_enable']) {
+        return;
+    }
 
     $front_page_notice_image = get_theme_mod('front_page_notice_image');
     $front_page_notice_title_uppercase = get_theme_mod('front_page_notice_title_uppercase');
     $front_page_notice_title_normal = get_theme_mod('front_page_notice_title_normal');
     $front_page_notice_text = get_theme_mod('front_page_notice_text');
 
-    if ($front_page_notice_enable) {
-        echo '
-        <div class="wp-block-columns custom-notice-container">
-            <div class="wp-block-column" style="flex: 1">
-                <img src="' . $front_page_notice_image . '" class="wp-image custom-notice-image">
-            </div>
-            
-            <div class="wp-block-column custom-notice-content" style="flex: 2">
-                <div class="front-page-notice-title-uppercase has-ast-global-color-0-color">' . $front_page_notice_title_uppercase . '</div>
-                <h2 class="front-page-notice-title-normal has-ast-global-color-1-color">' . $front_page_notice_title_normal . '</h2>
-                <div class="front-page-notice-text">' . $front_page_notice_text . '</div>
-            </div>
+    echo '
+    <div class="wp-block-columns custom-notice-container">
+        <div class="wp-block-column" style="flex: 1">
+            <img src="' . $front_page_notice_image . '" class="wp-image custom-notice-image" alt="">
         </div>
-        ';
-    }
+        
+        <div class="wp-block-column custom-notice-content" style="flex: 2">
+            <div class="front-page-notice-title-uppercase has-ast-global-color-0-color">' . $front_page_notice_title_uppercase . '</div>
+            <h2 class="front-page-notice-title-normal has-ast-global-color-1-color">' . $front_page_notice_title_normal . '</h2>
+            <div class="front-page-notice-text">' . $front_page_notice_text . '</div>
+        </div>
+    </div>
+    ';
 
-    // Move homepage carrousel to top page header
-    include realpath(ABSPATH . 'wp-content') . '/mu-plugins/astra-includes/carousel.php';
 });
 
-// Breadcrumb: Add the breadcrumb to the top of the content.
+// Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
-    if (function_exists('astra_get_breadcrumb')) {
+    if (!is_front_page()) {
         echo astra_get_breadcrumb();
     }
 });
 
-// Side menu: Add the accordion to the sidebar.
-add_filter('astra_sidebars_after' , function () {
-    if (!is_front_page()) {
+// Side menu: Add the accordion to the sidebar in case the post_type is "page", excluding the front page.
+add_filter('astra_sidebars_after', function () {
+
+    if (!is_front_page() && is_page()) {
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_script('jquery');
         });
+
         include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
     }
+
 });
