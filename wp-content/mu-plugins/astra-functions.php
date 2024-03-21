@@ -261,7 +261,7 @@ add_filter('astra_get_option_header-html-2', function () {
 
     // Array of background colors for the buttons.
     $background_colors = ['#38a09b', '#25627e', '#2b245e', '#2b245e', '#38a09b', '#25627e'];
-    $border_radii = ['', '', 'border-radius: 0 30px 0 0;', '', '', 'border-radius: 0 0 30px 0;'];
+    $border_radii = ['', '', 'border-radius: 0 30px 0 0;', '', '', ''];
 
     // Loop through the 6 buttons.
     for ($i = 1; $i <= 6; $i++) {
@@ -347,6 +347,8 @@ add_filter('astra_header_after', function () {
         ';
     }
 
+    // Move homepage carrousel to top page header
+    include realpath(ABSPATH . 'wp-content') . '/mu-plugins/astra-includes/carousel.php';
 });
 
 // Add the breadcrumb to the top of the content.
