@@ -41,7 +41,7 @@ function nodes_customize_register($wp_customize) {
     // Custom logo.
     $wp_customize->add_setting('astra_nodes_options[custom_logo]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
@@ -61,7 +61,7 @@ function nodes_customize_register($wp_customize) {
     // Text preceding the blog name.
     $wp_customize->add_setting('astra_nodes_options[pre_blog_name]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
@@ -106,7 +106,7 @@ function nodes_customize_register($wp_customize) {
     // Postal address.
     $wp_customize->add_setting('astra_nodes_options[postal_address]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
@@ -121,7 +121,7 @@ function nodes_customize_register($wp_customize) {
     // Postal code and city.
     $wp_customize->add_setting('astra_nodes_options[postal_code_city]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
@@ -136,8 +136,9 @@ function nodes_customize_register($wp_customize) {
     // Phone number.
     $wp_customize->add_setting('astra_nodes_options[phone_number]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_header_phone_number', [
@@ -150,8 +151,9 @@ function nodes_customize_register($wp_customize) {
     // Link to the map.
     $wp_customize->add_setting('astra_nodes_options[link_to_map]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_header_link_to_map', [
@@ -164,8 +166,9 @@ function nodes_customize_register($wp_customize) {
     // Link to the contact page.
     $wp_customize->add_setting('astra_nodes_options[contact_page]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_header_link_to_contact_page', [
@@ -178,7 +181,7 @@ function nodes_customize_register($wp_customize) {
     // Email address.
     $wp_customize->add_setting('astra_nodes_options[email_address]', [
         'default' => '',
-        'type' => 'option',
+        'type' => 'theme_mod',
         'capability' => 'manage_options',
         'transport' => 'postMessage',
     ]);
@@ -201,15 +204,13 @@ function nodes_customize_register($wp_customize) {
         'priority' => 2,
     ]);
 
-    define('NUM_BUTTONS', 6);
-
-    for ($i = 1; $i <= NUM_BUTTONS; $i++) {
+    for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
 
         // Add the Icon title text, the preview and the button to change the icon.
         $wp_customize->add_setting('icon_preview_' . $i, [
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'default' => '',
         ]);
 
         $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'icon_preview_' . $i, [
@@ -225,27 +226,12 @@ function nodes_customize_register($wp_customize) {
                 ',
         ]));
 
-        // Field to open the link in a new tab.
-        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]', [
-            'type' => 'theme_mod',
-            'capability' => 'manage_options',
-            'default' => '',
-        ]);
-
-        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_open_in_new_tab', [
-            'label' => __('Open in new tab', 'astra-nodes'),
-            'section' => 'astra_nodes_customizer_header_buttons',
-            'settings' => 'astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]',
-            'priority' => 1,
-            'type' => 'checkbox',
-        ]);
-
         // Field to receive the select icon value. It simulates a change event in this field to trigger
         // the "Publish" button of WordPress.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'default' => '',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_classes', [
@@ -262,9 +248,9 @@ function nodes_customize_register($wp_customize) {
 
         // Field to edit the text for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_text]', [
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'default' => '',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_text', [
@@ -280,9 +266,9 @@ function nodes_customize_register($wp_customize) {
 
         // Field to edit URL.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_link]', [
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
-            'default' => '',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_link', [
@@ -296,11 +282,26 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Add the javascript code to load the icon picker.
-        $wp_customize->add_setting('header_buttons_script_' . $i, [
+        // Field to open the link in a new tab.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]', [
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_open_in_new_tab', [
+            'label' => __('Open in new tab', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]',
+            'priority' => 1,
+            'type' => 'checkbox',
+        ]);
+
+        // Add the javascript code to load the icon picker.
+        $wp_customize->add_setting('header_buttons_script_' . $i, [
             'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
         ]);
 
         $wp_customize->add_control(new WP_Customize_Font_Icon_Picker_Control($wp_customize, 'header_buttons_script_' . $i, [
@@ -315,9 +316,10 @@ function nodes_customize_register($wp_customize) {
 
     // Add the javascript code to translate the text of the icon picker.
     $wp_customize->add_setting('translation_script', [
+        'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
-        'default' => '',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'translation_script', [
