@@ -10,15 +10,15 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
         parent::__construct($manager, $id, $args);
     }
 
-    public function render_content() {
+    public function render_content(): void {
         echo '
             <script>
                 var uip = new UniversalIconPicker("#_customize-input-astra_nodes_customizer_header_button_' . $this->i . '", {
                     iconLibraries: [
-                        "' . content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/icons-libraries/font-awesome-solid.min.json') . '"
+                        "' . content_url('mu-plugins/astra-lib/universal-icon-picker/assets/icons-libraries/font-awesome-solid.min.json') . '"
                     ],
                     iconLibrariesCss: [
-                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                     ],
                     onSelect: function(jsonIconData) {
                         var iconField = document.querySelector("#_customize-input-astra_nodes_customizer_header_icon_' . $this->i . '_classes");
@@ -45,8 +45,8 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
     }
 
     public function enqueue(): void {
-        wp_enqueue_style('font-awesome', content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/stylesheets/universal-icon-picker.min.css'));
-        wp_enqueue_script('universal-icon-picker', content_url('mu-plugins/astra-lib/universal-icon-picker-main/assets/js/universal-icon-picker.js'),
+        wp_enqueue_style('font-awesome', content_url('mu-plugins/astra-lib/universal-icon-picker/assets/stylesheets/universal-icon-picker.min.css'));
+        wp_enqueue_script('universal-icon-picker', content_url('mu-plugins/astra-lib/universal-icon-picker/assets/js/universal-icon-picker.js'),
             [], null, true);
     }
 
