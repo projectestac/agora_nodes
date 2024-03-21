@@ -31,31 +31,29 @@
 	?>
 </ul>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
-	$(document).ready(function() {
+	jQuery(document).ready(function() {
 
-		$('.accordion-toggle').click(function(e) {
+		jQuery('.accordion-toggle').click(function(e) {
 			e.preventDefault();
-			$(this).parent().siblings().find('> .submenu').slideUp();
-			$(this).parent().siblings().find('> .accordion-toggle').removeClass('active');
-			$(this).toggleClass('active').next('.submenu').slideToggle();
+			jQuery(this).parent().siblings().find('> .submenu').slideUp();
+			jQuery(this).parent().siblings().find('> .accordion-toggle').removeClass('active');
+			jQuery(this).toggleClass('active').next('.submenu').slideToggle();
 
 			// Change arrow direction
-			$(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+			jQuery(this).find('i').toggleClass('fa-angle-down fa-angle-up');
 		});
 
 		// Close submenus by default
-		$('.submenu').hide();
+		jQuery('.submenu').hide();
 
 		// Add the "current-menu-item" class to the link of the current page
-		$('ul.accordion a').each(function(){
-			if ($(this).attr('href') === window.location.href) {
-				$(this).closest('.submenu').show();
-				$(this).parent().addClass('current-menu-item');
-				console.log($(this).closest('.submenu').prev());
-				$(this).closest('.submenu').prev().find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+		jQuery('ul.accordion a').each(function(){
+			if (jQuery(this).attr('href') === window.location.href) {
+				jQuery(this).closest('.submenu').show();
+				jQuery(this).parent().addClass('current-menu-item');
+				console.log(jQuery(this).closest('.submenu').prev());
+				jQuery(this).closest('.submenu').prev().find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
 			}
 		});
 	});

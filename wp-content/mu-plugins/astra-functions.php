@@ -364,7 +364,10 @@ add_action('astra_content_before', 'show_breadcrumb_astra_content_before');
 // Add the accordion to the sidebar.
 add_filter('astra_sidebars_after' , function () {
     if (!is_front_page()) {
-        include realpath(ABSPATH . 'wp-content') . '/mu-plugins/astra-includes/accordion.php';
+        add_action('wp_enqueue_scripts', function () {
+            wp_enqueue_script('jquery');
+        });
+        include_once WPMU_PLUGIN_DIR . '/astra-includes/accordion.php';
     }
 });
 
