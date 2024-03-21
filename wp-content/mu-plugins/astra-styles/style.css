@@ -205,6 +205,38 @@ ul.wp-block-page-list li a {
     margin-right: -36px;
 }
 
+/* Header */
+#ast-desktop-header > div.ast-below-header-wrap > div.ast-below-header-bar.ast-below-header.site-header-focus-item
+{
+    width: calc(100% - 2* 20px);
+    margin: 25px;
+}
+
+#ast-desktop-header > div.ast-main-header-wrap.main-header-bar-wrap > div > div
+{
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    width: calc(100% - 36px);
+}
+
+#ast-desktop-header
+{
+    margin: 0px 20px;
+}
+
+#ast-desktop-header > div.ast-main-header-wrap.main-header-bar-wrap > div > div > div > div.site-header-primary-section-right.site-header-section.ast-flex.ast-grid-right-section > div.ast-builder-layout-element.ast-flex.site-header-focus-item.ast-header-html-2
+{
+    margin-left: 30px;
+}
+
+.detail-container:before
+{
+    left: -40px;
+    border-radius: initial;
+    box-shadow: none;
+}
+
 /* Hide the blog name included in the site identity provided by Astra */
 .ast-site-title-wrap {
     display: none;
