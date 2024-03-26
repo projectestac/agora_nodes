@@ -142,16 +142,25 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
 });
 
-// Customizer: Remove all Astra sections.
+// Customizer: Remove Astra sections in customizer.
 add_filter('astra_customizer_sections', function ($configurations) {
-    // TODO: Fix admin not being able to see the live update.
+
+    // xtecadmin has access to all sections.
     if (is_xtec_super_admin()) {
         return $configurations;
     }
 
+    // Remove all the sections added by Astra theme in customizer.
     return array_filter($configurations, static function ($configuration) {
-        return $configuration['type'] !== 'section';
+        return $configuration['name'] !== 'panel-global'
+            && $configuration['name'] !== 'section-breadcrumb'
+            && $configuration['name'] !== 'section-blog-group'
+            && $configuration['name'] !== 'section-blog'
+            && $configuration['name'] !== 'section-blog-single'
+            && $configuration['name'] !== 'section-page-dynamic-group'
+            && $configuration['name'] !== 'section-sidebars';
     });
+
 });
 
 // Customizer: Remove all header and footer sections.
