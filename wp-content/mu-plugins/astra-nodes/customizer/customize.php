@@ -381,17 +381,26 @@ function nodes_customize_register($wp_customize) {
         'choices' => $palettes_form,
     ]);
 
+
+    // Panel to group all front page settings.
+    $wp_customize->add_panel('astra_nodes_front_page', [
+        'title' => __('Front Page', 'astra-nodes'),
+        'description' => __('Customization of the front page', 'astra-nodes'),
+        'priority' => 25,
+    ]);
+
     // Cards in the front page.
     $wp_customize->add_section('astra_nodes_customizer_front_page_cards', [
         'title' => __('Front Page Cards', 'astra-nodes'),
+        'panel' => 'astra_nodes_front_page',
         'priority' => 4,
     ]);
 
     // Activate cards in front page.
     $wp_customize->add_setting('astra_nodes_options[cards_enable]', [
+        'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
-        'default' => '',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_cards_enable', [
@@ -402,31 +411,31 @@ function nodes_customize_register($wp_customize) {
         'type' => 'checkbox',
     ]);
 
-    // Number of cards.
-    $wp_customize->add_setting('astra_nodes_options[number_of_cards]', [
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-        'default' => '',
-    ]);
+    /*
+        // Number of cards.
+        $wp_customize->add_setting('astra_nodes_options[number_of_cards]', [
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'default' => '',
+        ]);
+    
+        $wp_customize->add_control('astra_nodes_customizer_front_page_cards_number', [
+            'label' => __('Number of cards', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_front_page_cards',
+            'settings' => 'astra_nodes_options[number_of_cards]',
+            'priority' => 2,
+            'type' => 'number',
+            'input_attrs' => [
+                'min' => 3,
+                'max' => 4,
+                'step' => 1,
+            ],
+        ]);
+    */
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_cards_number', [
-        'label' => __('Number of cards', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_cards',
-        'settings' => 'astra_nodes_options[number_of_cards]',
-        'priority' => 2,
-        'type' => 'number',
-        'input_attrs' => [
-            'min' => 3,
-            'max' => 4,
-            'step' => 1,
-        ],
-    ]);
+    for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
 
-    define('NUM_CARDS', 4);
-
-    for ($i = 1; $i <= NUM_CARDS; $i++) {
-
-        // Card $i.
+        // Title of the card.
         $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_title]', [
             'type' => 'theme_mod',
             'capability' => 'manage_options',
@@ -444,6 +453,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
+        // Image of the card.
         $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_image]', [
             'type' => 'theme_mod',
             'capability' => 'manage_options',
@@ -462,6 +472,7 @@ function nodes_customize_register($wp_customize) {
             )
         );
 
+        // URL of the card.
         $wp_customize->add_setting('astra_nodes_options[card_' . $i . '_url]', [
             'type' => 'theme_mod',
             'capability' => 'manage_options',
@@ -478,18 +489,22 @@ function nodes_customize_register($wp_customize) {
                 'placeholder' => __('Introduïu l\'URL', 'astra-nodes'),
             ],
         ]);
+
     }
+
 
     // Notice in the front page.
     $wp_customize->add_section('astra_nodes_customizer_front_page_notice', [
         'title' => __('Front Page Notice', 'astra-nodes'),
+        'panel' => 'astra_nodes_front_page',
         'priority' => 4,
     ]);
 
+    // Enable notice in front page.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_enable]', [
+        'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
-        'default' => '',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_notice_enable', [
@@ -500,42 +515,61 @@ function nodes_customize_register($wp_customize) {
         'type' => 'checkbox',
     ]);
 
-    // Afegir paràmetres per a la imatge
-    $wp_customize->add_setting('front_page_notice_image');
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_notice_image', array(
-        'label' => __('Imatge de l\'avis a la pàgina principal', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_notice',
-        'settings' => 'front_page_notice_image',
-    )));
+    // Image of the notice.
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_image]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
 
-    // Afegir paràmetres per al títol en majúscules
-    $wp_customize->add_setting('front_page_notice_title_uppercase');
-    $wp_customize->add_control('front_page_notice_title_uppercase', [
-        'label' => __('Títol en majúscules', 'astra-nodes'),
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_notice_image', [
+        'label' => __('Image for the front page notice', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_image]',
+    ]));
+
+    // Text preceding the title of the notice.
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_pre_title]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    $wp_customize->add_control('front_page_notice_pre_title', [
+        'label' => __('Text preceding the title', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_pre_title]',
         'type' => 'text',
     ]);
 
+    // Title of the notice.
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_title]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
 
-    // Afegir paràmetres per al títol en majúscules
-    $wp_customize->add_setting('front_page_notice_title_uppercase');
-    $wp_customize->add_control('front_page_notice_title_uppercase', [
-        'label' => __('Títol en majúscules', 'astra-nodes'),
+    $wp_customize->add_control('front_page_notice_title', [
+        'label' => __('Title', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_title]',
         'type' => 'text',
     ]);
 
-    $wp_customize->add_setting('front_page_notice_title_normal');
-    $wp_customize->add_control('front_page_notice_title_normal', [
-        'label' => __('Títol normal', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_notice',
-        'type' => 'text',
+    // Content of the notice.
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_content]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_setting('front_page_notice_text');
-    $wp_customize->add_control('front_page_notice_text', [
-        'label' => __('Text', 'astra-nodes'),
+    $wp_customize->add_control('front_page_notice_content', [
+        'label' => __('Content', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_content]',
         'type' => 'textarea',
     ]);
 
