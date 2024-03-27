@@ -303,15 +303,47 @@ add_filter('astra_get_option_header-html-2', function () {
 
 }, 20, 0);
 
-// Front page: Move homepage carrousel to top page header
-/*
-add_filter('astra_header_after', function () {
-    include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/carousel.php';
+// Header: Add the carousel in the header if it is the front page.
+add_action('astra_masthead_bottom', function () {
+
+    if (is_front_page()) {
+        include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_slider.php';
+        $block = parse_blocks(get_front_page_slider());
+        foreach ($block as $item) {
+            if (empty($item['blockName'])) {
+                continue;
+            }
+            echo '
+                <div class="astra-nodes-header-block">
+                ' . apply_filters('the_content', render_block($item)) . '
+                </div>
+                ';
+        }
+    }
 });
-*/
+
+$astra_nodes_options = get_theme_mod('astra_nodes_options');
+$front_page_config = $astra_nodes_options['front_page_config'] ?? 1;
+
+// Default is configuration 3.
+$cards_action = 'astra_content_before';
+$cards_priority = 20;
+$notice_action = 'astra_content_before';
+$notice_priority = 10;
+
+if ($front_page_config === '1') {
+    $cards_action = 'astra_entry_after';
+    $notice_action = 'astra_entry_after';
+    $notice_priority = 30;
+}
+
+if ($front_page_config === '2') {
+    $cards_action = 'astra_entry_before';
+    $notice_action = 'astra_entry_before';
+}
 
 // Front page: Show the cards if they are enabled.
-add_filter('astra_header_after', function () {
+add_action($cards_action, function () {
 
     // Check if it is front page.
     if (!is_front_page()) {
@@ -349,10 +381,10 @@ add_filter('astra_header_after', function () {
 
     echo '</div>';
 
-});
+}, $cards_priority, 0);
 
 // Front page: Show the notice if it is enabled.
-add_filter('astra_header_after', function () {
+add_action($notice_action, function () {
 
     // Check if it is front page.
     if (!is_front_page()) {
@@ -385,7 +417,7 @@ add_filter('astra_header_after', function () {
     </div>
     ';
 
-});
+}, $notice_priority, 0);
 
 // Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
@@ -395,7 +427,7 @@ add_action('astra_content_before', function () {
 });
 
 // Side menu: Add the accordion to the sidebar in case the post_type is "page", excluding the front page.
-add_filter('astra_sidebars_after', function () {
+add_action('astra_sidebars_after', function () {
 
     if (!is_front_page() && is_page()) {
         add_action('wp_enqueue_scripts', function () {
