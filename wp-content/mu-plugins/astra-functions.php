@@ -367,21 +367,20 @@ add_filter('astra_header_after', function () {
         return;
     }
 
-    $front_page_notice_image = get_theme_mod('front_page_notice_image');
-    $front_page_notice_title_uppercase = get_theme_mod('front_page_notice_title_uppercase');
-    $front_page_notice_title_normal = get_theme_mod('front_page_notice_title_normal');
-    $front_page_notice_text = get_theme_mod('front_page_notice_text');
+    $front_page_notice_image = $astra_nodes_options['front_page_notice_image'];
+    $front_page_notice_pre_title = $astra_nodes_options['front_page_notice_pre_title'];
+    $front_page_notice_title = $astra_nodes_options['front_page_notice_title'];
+    $front_page_notice_content = $astra_nodes_options['front_page_notice_content'];
 
     echo '
-    <div class="wp-block-columns custom-notice-container">
+    <div id="front-page-notice-container" class="wp-block-columns">
         <div class="wp-block-column" style="flex: 1">
-            <img src="' . $front_page_notice_image . '" class="wp-image custom-notice-image" alt="">
+            <img id="front-page-notice-image" src="' . $front_page_notice_image . '" class="wp-image" alt="">
         </div>
-        
-        <div class="wp-block-column custom-notice-content" style="flex: 2">
-            <div class="front-page-notice-title-uppercase has-ast-global-color-0-color">' . $front_page_notice_title_uppercase . '</div>
-            <h2 class="front-page-notice-title-normal has-ast-global-color-1-color">' . $front_page_notice_title_normal . '</h2>
-            <div class="front-page-notice-text">' . $front_page_notice_text . '</div>
+        <div id="front-page-notice-body" class="wp-block-column" style="flex: 2">
+            <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $front_page_notice_pre_title . '</div>
+            <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $front_page_notice_title . '</h2>
+            <div id="front-page-notice-content">' . $front_page_notice_content . '</div>
         </div>
     </div>
     ';
