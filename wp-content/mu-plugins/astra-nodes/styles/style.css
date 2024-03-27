@@ -244,6 +244,17 @@ ul.wp-block-page-list li a {
     font-size: 30px;
 }
 
+/* Header slideshow */
+.astra-nodes-header-block {
+    padding: 0 var(--wp--preset--spacing--60);
+    margin-top: -111px;
+}
+
+.astra-nodes-header-block div {
+    border-radius: 30px;
+    z-index: -1;
+}
+
 /* Front page cards */
 .front-page-card {
     display: flex;
@@ -315,9 +326,4 @@ ul.wp-block-page-list li a {
 
 #front-page-notice-content > * {
     font-family: "Roboto", sans-serif;
-}
-
-/* Move container of the slideshow up in the header */
-.slideshow_container {
-    height: 400px;
 }
