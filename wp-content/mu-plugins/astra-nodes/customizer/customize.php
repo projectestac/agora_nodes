@@ -38,7 +38,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 1,
     ]);
 
-    // Custom logo.
+    // Header section: Custom logo.
     $wp_customize->add_setting('astra_nodes_options[custom_logo]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -58,7 +58,7 @@ function nodes_customize_register($wp_customize) {
         )
     );
 
-    // Text preceding the blog name.
+    // Header section: Text preceding the blog name.
     $wp_customize->add_setting('astra_nodes_options[pre_blog_name]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -73,7 +73,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 2,
     ]);
 
-    // Blog name.
+    // Header section: Blog name.
     $wp_customize->add_setting('blogname', [
         'default' => '',
         'type' => 'option',
@@ -88,7 +88,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 3,
     ]);
 
-    // Text following the blog name.
+    // Header section: Text following the blog name.
     $wp_customize->add_setting('blogdescription', [
         'default' => '',
         'type' => 'option',
@@ -103,7 +103,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 4,
     ]);
 
-    // Postal address.
+    // Header section: Postal address.
     $wp_customize->add_setting('astra_nodes_options[postal_address]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -118,7 +118,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 5,
     ]);
 
-    // Postal code and city.
+    // Header section: Postal code and city.
     $wp_customize->add_setting('astra_nodes_options[postal_code_city]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -133,7 +133,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 6,
     ]);
 
-    // Phone number.
+    // Header section: Phone number.
     $wp_customize->add_setting('astra_nodes_options[phone_number]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -148,7 +148,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 8,
     ]);
 
-    // Link to the map.
+    // Header section: Link to the map.
     $wp_customize->add_setting('astra_nodes_options[link_to_map]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -163,7 +163,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 9,
     ]);
 
-    // Link to the contact page.
+    // Header section: Link to the contact page.
     $wp_customize->add_setting('astra_nodes_options[contact_page]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -178,7 +178,7 @@ function nodes_customize_register($wp_customize) {
         'priority' => 10,
     ]);
 
-    // Email address.
+    // Header section: Email address.
     $wp_customize->add_setting('astra_nodes_options[email_address]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -194,7 +194,7 @@ function nodes_customize_register($wp_customize) {
     ]);
 
 
-    // Header: Buttons section.
+    // Header section: Buttons area.
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Font_Icon_Picker_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Raw_HTML_Control.php';
@@ -206,7 +206,7 @@ function nodes_customize_register($wp_customize) {
 
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
 
-        // Add the Icon title text, the preview and the button to change the icon.
+        // Buttons area: Add the Icon title text, the preview and the button to change the icon.
         $wp_customize->add_setting('icon_preview_' . $i, [
             'default' => '',
             'type' => 'theme_mod',
@@ -226,8 +226,7 @@ function nodes_customize_register($wp_customize) {
                 ',
         ]));
 
-        // Field to receive the select icon value. It simulates a change event in this field to trigger
-        // the "Publish" button of WordPress.
+        // Buttons area: Field to receive the selected icon value.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -246,7 +245,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Field to edit the text for the link.
+        // Buttons area: Text for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_text]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -264,7 +263,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Field to edit URL.
+        // Buttons area: URL for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_link]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -282,7 +281,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Field to open the link in a new tab.
+        // Buttons area: Open the link in a new tab.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -297,7 +296,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'checkbox',
         ]);
 
-        // Add the javascript code to load the icon picker.
+        // Buttons area: Add the javascript code to load the icon picker.
         $wp_customize->add_setting('header_buttons_script_' . $i, [
             'default' => '',
             'type' => 'theme_mod',
@@ -314,7 +313,7 @@ function nodes_customize_register($wp_customize) {
 
     }
 
-    // Add the javascript code to translate the text of the icon picker.
+    // Buttons area: Add the javascript code to translate the text of the icon picker.
     $wp_customize->add_setting('translation_script', [
         'default' => '',
         'type' => 'theme_mod',
@@ -351,7 +350,9 @@ function nodes_customize_register($wp_customize) {
         </script>',
     ]));
 
-    // Configure palette colors.
+
+    // Theme colors.
+
     $wp_customize->add_section('astra_nodes_customizer_themes', [
         'title' => __('Theme Colors', 'astra-nodes'),
         'priority' => 3,
@@ -366,6 +367,7 @@ function nodes_customize_register($wp_customize) {
         $palettes_form[$name] = $name;
     }
 
+    // Theme colors: Select palette.
     $wp_customize->add_setting('astra-color-palettes[currentPalette]', [
         'default' => $current_palette,
         'type' => 'option',
@@ -391,9 +393,9 @@ function nodes_customize_register($wp_customize) {
 
     // Cards in the front page.
     $wp_customize->add_section('astra_nodes_customizer_front_page_cards', [
-        'title' => __('Front Page Cards', 'astra-nodes'),
+        'title' => __('Cards', 'astra-nodes'),
         'panel' => 'astra_nodes_front_page',
-        'priority' => 4,
+        'priority' => 1,
     ]);
 
     // Activate cards in front page.
@@ -493,14 +495,15 @@ function nodes_customize_register($wp_customize) {
     }
 
 
-    // Notice in the front page.
+    // Front page notice.
+
     $wp_customize->add_section('astra_nodes_customizer_front_page_notice', [
-        'title' => __('Front Page Notice', 'astra-nodes'),
+        'title' => __('Notice', 'astra-nodes'),
         'panel' => 'astra_nodes_front_page',
-        'priority' => 4,
+        'priority' => 2,
     ]);
 
-    // Enable notice in front page.
+    // Front page notice: Enable notice.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_enable]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -515,7 +518,7 @@ function nodes_customize_register($wp_customize) {
         'type' => 'checkbox',
     ]);
 
-    // Image of the notice.
+    // Front page notice: Image.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_image]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -528,7 +531,7 @@ function nodes_customize_register($wp_customize) {
         'settings' => 'astra_nodes_options[front_page_notice_image]',
     ]));
 
-    // Text preceding the title of the notice.
+    // Front page notice: Text preceding the title.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_pre_title]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -543,7 +546,7 @@ function nodes_customize_register($wp_customize) {
         'type' => 'text',
     ]);
 
-    // Title of the notice.
+    // Front page notice: Title.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_title]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -558,7 +561,7 @@ function nodes_customize_register($wp_customize) {
         'type' => 'text',
     ]);
 
-    // Content of the notice.
+    // Front page notice: Content.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_content]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -571,6 +574,34 @@ function nodes_customize_register($wp_customize) {
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_content]',
         'type' => 'textarea',
+    ]);
+
+
+    // Front page configuration.
+
+    $wp_customize->add_section('astra_nodes_customizer_front_page_config', [
+        'title' => __('Configuration', 'astra-nodes'),
+        'panel' => 'astra_nodes_front_page',
+        'priority' => 3,
+    ]);
+
+    // Front page configuration: Radio buttons to select the format of the front page.
+    $wp_customize->add_setting('astra_nodes_options[front_page_config]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+    
+    $wp_customize->add_control('astra_nodes_customizer_front_page_config_select', [
+        'label' => __('Layout', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_config',
+        'settings' => 'astra_nodes_options[front_page_config]',
+        'type' => 'radio',
+        'choices' => [
+            1 => __('Sidebar long 1', 'astra-nodes'),
+            2 => __('Sidebar long 2', 'astra-nodes'),
+            3 => __('Sidebar short', 'astra-nodes'),
+        ],
     ]);
 
 }
