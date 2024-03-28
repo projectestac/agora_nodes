@@ -388,7 +388,7 @@ function nodes_customize_register($wp_customize) {
     $wp_customize->add_panel('astra_nodes_front_page', [
         'title' => __('Front Page', 'astra-nodes'),
         'description' => __('Customization of the front page', 'astra-nodes'),
-        'priority' => 25,
+        'priority' => 4,
     ]);
 
     // Cards in the front page.
@@ -406,7 +406,7 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_cards_enable', [
-        'label' => __('Use cards in front page', 'astra-nodes'),
+        'label' => __('Show the cards', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_cards',
         'settings' => 'astra_nodes_options[cards_enable]',
         'priority' => 1,
@@ -467,7 +467,7 @@ function nodes_customize_register($wp_customize) {
                 $wp_customize, 'astra_nodes_customizer_front_page_card_' . $i . '_image', [
                     'label' => '',
                     'section' => 'astra_nodes_customizer_front_page_cards',
-                    'description' => 'Recomanacions: 300 x 200 px i menys de 200 kB',
+                    'description' => 'Recommendations: 300 x 200 px and less than 200 kB',
                     'settings' => 'astra_nodes_options[card_' . $i . '_image]',
                     'priority' => $i + 3,
                 ]
@@ -482,7 +482,7 @@ function nodes_customize_register($wp_customize) {
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_url', [
-            'label' => __('Camp d\'URL', 'astra-nodes'),
+            'label' => __('URL', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_front_page_cards',
             'settings' => 'astra_nodes_options[card_' . $i . '_url]',
             'priority' => $i + 4,
@@ -511,7 +511,7 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_notice_enable', [
-        'label' => __('Utilitzar avís a la pàgina principal', 'astra-nodes'),
+        'label' => __('Show the notice', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_enable]',
         'priority' => 1,
@@ -591,7 +591,7 @@ function nodes_customize_register($wp_customize) {
         'type' => 'theme_mod',
         'capability' => 'manage_options',
     ]);
-    
+
     $wp_customize->add_control('astra_nodes_customizer_front_page_config_select', [
         'label' => __('Layout', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_config',

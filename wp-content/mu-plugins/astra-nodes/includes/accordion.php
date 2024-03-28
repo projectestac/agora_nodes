@@ -59,17 +59,12 @@
 </script>
 
 <style>
-    /* CSS styles for the breadcrumbs */
-    div.ast-breadcrumbs-wrapper {
-        margin-left: 20px;
-        margin-top: 20px;
-    }
 
+    /* Hide default sidebar widgets */
     div.sidebar-main .widget {
         display: none;
     }
 
-    /* CSS styles for the accordion menu */
     .accordion {
         list-style-type: none;
         padding: 0;
@@ -78,13 +73,11 @@
     }
 
     .accordion li {
-        /* margin-bottom: 10px; */
         color: #444;
         border-bottom: 1px solid #DBDBDB;
     }
 
     .accordion li ul li {
-        /* margin-bottom: 10px; */
         border-bottom: 1px solid #ededed;
     }
 
@@ -94,7 +87,6 @@
         text-decoration: none;
         padding: 15px;
         position: relative;
-
         font-weight: 500;
     }
 
