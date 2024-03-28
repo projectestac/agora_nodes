@@ -27,7 +27,7 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 // Admin bar: Force to be always shown, including for non-logged users.
-add_filter('show_admin_bar', '__return_true');
+add_action('show_admin_bar', '__return_true');
 
 // Admin bar: Remove WordPress logo.
 add_action('wp_before_admin_bar_render', function () {
@@ -143,7 +143,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 });
 
 // Customizer: Remove Astra sections in customizer.
-add_filter('astra_customizer_sections', function ($configurations) {
+add_action('astra_customizer_sections', function ($configurations) {
 
     // xtecadmin has access to all sections.
     if (is_xtec_super_admin()) {
@@ -164,8 +164,8 @@ add_filter('astra_customizer_sections', function ($configurations) {
 });
 
 // Customizer: Remove all header and footer sections.
-add_filter('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
-add_filter('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
+add_action('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
+add_action('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
 
 function nodes_remove_customizer_header_footer_sections($configurations): array {
     if (is_xtec_super_admin()) {
@@ -205,7 +205,7 @@ add_action('customize_preview_init', function ($wp_customize) {
 });
 
 // Header: Content of the central area (html-3), which includes the name of the client.
-add_filter('astra_get_option_header-html-3', function () {
+add_action('astra_get_option_header-html-3', function () {
 
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
@@ -219,10 +219,10 @@ add_filter('astra_get_option_header-html-3', function () {
         <h2><span id="blog-description">' . get_bloginfo('description') . '</span></h2>
         ';
 
-}, 20, 0);
+});
 
 // Header: Content of the area that shows the contact information (html-1).
-add_filter('astra_get_option_header-html-1', function () {
+add_action('astra_get_option_header-html-1', function () {
 
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
@@ -263,10 +263,10 @@ add_filter('astra_get_option_header-html-1', function () {
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
 
-}, 20, 0);
+});
 
 // Header: Content of the buttons area (html-2).
-add_filter('astra_get_option_header-html-2', function () {
+add_action('astra_get_option_header-html-2', function () {
 
     // Get the option array from the wp_options table.
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
@@ -278,7 +278,7 @@ add_filter('astra_get_option_header-html-2', function () {
 
     // Array of background colors for the buttons.
     $background_colors = ['#38a09b', '#25627e', '#2b245e', '#2b245e', '#38a09b', '#25627e'];
-    $border_radii = ['', '', 'border-radius: 0 30px 0 0;', '', '', ''];
+    $border_radius = ['', '', 'border-radius: 0 30px 0 0;', '', '', ''];
 
     // Loop through the 6 buttons.
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
@@ -289,7 +289,7 @@ add_filter('astra_get_option_header-html-2', function () {
 
         // Add the button to the content.
         $content .= '
-            <div class="grid-item" style="background-color: ' . $background_colors[$i - 1] . ';' . $border_radii[$i - 1] . '">
+            <div class="grid-item" style="background-color: ' . $background_colors[$i - 1] . ';' . $border_radius[$i - 1] . '">
                 <i id="header-button-' . $i . '" class="' . $classes_icon . '"></i> <br>
                 <a href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>' . $text_icon . '</a>
             </div>
@@ -301,9 +301,9 @@ add_filter('astra_get_option_header-html-2', function () {
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
 
-}, 20, 0);
+});
 
-// Header: Add the carousel in the header if it is the front page.
+// Header: Add the slider in the header if it is the front page.
 add_action('astra_masthead_bottom', function () {
 
     if (is_front_page()) {
@@ -427,7 +427,7 @@ add_action('astra_content_before', function () {
 });
 
 // Side menu: Add the accordion to the sidebar in case the post_type is "page", excluding the front page.
-add_action('astra_sidebars_after', function () {
+add_action('astra_sidebars_before', function () {
 
     if (!is_front_page() && is_page()) {
         add_action('wp_enqueue_scripts', function () {
@@ -438,3 +438,68 @@ add_action('astra_sidebars_after', function () {
     }
 
 });
+
+// Widgets: Remove areas not used in the theme.
+add_action('widgets_init', function () {
+
+    if (is_xtec_super_admin()) {
+        return;
+    }
+
+    unregister_sidebar('ast-widgets');
+    unregister_sidebar('header-widget');
+    unregister_sidebar('footer-widget-5');
+    unregister_sidebar('footer-widget-6');
+    unregister_sidebar('footer-widget-7');
+    unregister_sidebar('footer-widget-8');
+    unregister_sidebar('footer-widget-9');
+    unregister_sidebar('footer-widget-10');
+    unregister_sidebar('header-widget-5');
+    unregister_sidebar('header-widget-6');
+    unregister_sidebar('header-widget-7');
+    unregister_sidebar('header-widget-8');
+    unregister_sidebar('header-widget-9');
+    unregister_sidebar('header-widget-10');
+    unregister_sidebar('advanced-footer-widget-1');
+    unregister_sidebar('advanced-footer-widget-2');
+    unregister_sidebar('advanced-footer-widget-3');
+    unregister_sidebar('advanced-footer-widget-4');
+
+}, 11);
+
+// Menus: Remove all the menus not used in the theme.
+add_action('init', function () {
+
+    if (is_xtec_super_admin()) {
+        return;
+    }
+
+    unregister_nav_menu('secondary_menu');
+    unregister_nav_menu('mobile_menu');
+    unregister_nav_menu('menu_3');
+    unregister_nav_menu('menu_4');
+    unregister_nav_menu('menu_5');
+    unregister_nav_menu('menu_6');
+    unregister_nav_menu('menu_7');
+    unregister_nav_menu('menu_8');
+    unregister_nav_menu('menu_9');
+    unregister_nav_menu('menu_10');
+    unregister_nav_menu('loggedin_account_menu');
+    unregister_nav_menu('footer_menu');
+
+}, 11);
+
+// Admin: Remove Astra menu from the admin panel and block access.
+add_action('admin_menu', function () {
+
+    if (!is_xtec_super_admin()) {
+        remove_menu_page('astra');
+
+        global $pagenow;
+        if ($pagenow === 'admin.php' && isset($_GET['page']) && $_GET['page'] === 'astra') {
+            wp_redirect(home_url());
+            exit;
+        }
+    }
+
+}, 11);
