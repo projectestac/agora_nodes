@@ -580,7 +580,7 @@ function nodes_customize_register($wp_customize) {
     // Front page configuration.
 
     $wp_customize->add_section('astra_nodes_customizer_front_page_config', [
-        'title' => __('Configuration', 'astra-nodes'),
+        'title' => __('Layout', 'astra-nodes'),
         'panel' => 'astra_nodes_front_page',
         'priority' => 3,
     ]);
@@ -593,7 +593,6 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_config_select', [
-        'label' => __('Layout', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_config',
         'settings' => 'astra_nodes_options[front_page_config]',
         'type' => 'radio',
@@ -603,5 +602,30 @@ function nodes_customize_register($wp_customize) {
             3 => __('Sidebar short', 'astra-nodes'),
         ],
     ]);
+
+    // Pages configuration.
+    $wp_customize->add_section('astra_nodes_customizer_pages', [
+        'title' => __('Pages', 'astra-nodes'),
+        'priority' => 5,
+    ]);
+
+    $wp_customize->add_setting('astra_nodes_options[pages_sidebar]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_pages_sidebar', [
+        'label' => __('Sidebar type', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_pages',
+        'settings' => 'astra_nodes_options[pages_sidebar]',
+        'type' => 'radio',
+        'choices' => [
+            'menu' => __('Menu of pages', 'astra-nodes'),
+            'widgets' => __('Widgets', 'astra-nodes'),
+            'none' => __('No sidebar', 'astra-nodes'),
+        ],
+    ]);
+
 
 }
