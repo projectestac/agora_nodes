@@ -17,6 +17,9 @@ const NUM_CARDS_IN_FRONT_PAGE = 4;
 
 include_once WPMU_PLUGIN_DIR . '/astra-nodes/customizer/customize.php';
 
+// Get the option array from the wp_options table. Will be used in several places.
+$astra_nodes_options = get_theme_mod('astra_nodes_options');
+
 // Load translations.
 load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages');
 
@@ -150,7 +153,7 @@ add_action('astra_customizer_sections', function ($configurations) {
         return $configurations;
     }
 
-    // Remove all the sections added by Astra theme in customizer.
+    // Remove all the sections added by Astra theme and by plugins (custom post-types) in customizer.
     return array_filter($configurations, static function ($configuration) {
         return $configuration['name'] !== 'panel-global'
             && $configuration['name'] !== 'section-breadcrumb'
@@ -158,7 +161,9 @@ add_action('astra_customizer_sections', function ($configurations) {
             && $configuration['name'] !== 'section-blog'
             && $configuration['name'] !== 'section-blog-single'
             && $configuration['name'] !== 'section-page-dynamic-group'
-            && $configuration['name'] !== 'section-sidebars';
+            && $configuration['name'] !== 'section-sidebars'
+            && $configuration['name'] !== 'section-posts-structure'
+            && !str_starts_with($configuration['section'], 'section-posttype-');
     });
 
 });
@@ -205,10 +210,7 @@ add_action('customize_preview_init', function ($wp_customize) {
 });
 
 // Header: Content of the central area (html-3), which includes the name of the client.
-add_action('astra_get_option_header-html-3', function () {
-
-    // Get the option array from the wp_options table.
-    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+add_action('astra_get_option_header-html-3', function () use ($astra_nodes_options) {
 
     // Check if the option exists and is not null.
     $pre_blog_name = $astra_nodes_options['pre_blog_name'] ?? '';
@@ -222,10 +224,7 @@ add_action('astra_get_option_header-html-3', function () {
 });
 
 // Header: Content of the area that shows the contact information (html-1).
-add_action('astra_get_option_header-html-1', function () {
-
-    // Get the option array from the wp_options table.
-    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+add_action('astra_get_option_header-html-1', function () use ($astra_nodes_options) {
 
     // Check if the option exists and is not null.
     $postal_address = $astra_nodes_options['postal_address'] ?? '';
@@ -266,10 +265,7 @@ add_action('astra_get_option_header-html-1', function () {
 });
 
 // Header: Content of the buttons area (html-2).
-add_action('astra_get_option_header-html-2', function () {
-
-    // Get the option array from the wp_options table.
-    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+add_action('astra_get_option_header-html-2', function () use ($astra_nodes_options) {
 
     $content = '
             <div class="detail-container">
@@ -322,7 +318,6 @@ add_action('astra_masthead_bottom', function () {
     }
 });
 
-$astra_nodes_options = get_theme_mod('astra_nodes_options');
 $front_page_config = $astra_nodes_options['front_page_config'] ?? 1;
 
 // Default is configuration 3.
@@ -343,15 +338,12 @@ if ($front_page_config === '2') {
 }
 
 // Front page: Show the cards if they are enabled.
-add_action($cards_action, function () {
+add_action($cards_action, function () use ($astra_nodes_options) {
 
     // Check if it is front page.
     if (!is_front_page()) {
         return;
     }
-
-    // Get the option array from the wp_options table.
-    $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
     // If cards are not enabled, don't show them.
     if (!$astra_nodes_options['cards_enable']) {
@@ -384,15 +376,12 @@ add_action($cards_action, function () {
 }, $cards_priority, 0);
 
 // Front page: Show the notice if it is enabled.
-add_action($notice_action, function () {
+add_action($notice_action, function () use ($astra_nodes_options) {
 
     // Check if it is front page.
     if (!is_front_page()) {
         return;
     }
-
-    // Get the option array from the wp_options table.
-    $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
     // If front page notice is not enabled, don't show it.
     if (!$astra_nodes_options['front_page_notice_enable']) {
@@ -426,18 +415,43 @@ add_action('astra_content_before', function () {
     }
 });
 
-// Side menu: Add the accordion to the sidebar in case the post_type is "page", excluding the front page.
-add_action('astra_sidebars_before', function () {
+// Side menu: To remove the sidebar is necessary to use an early hook, but to change the contents in the sidebar, we need to use a
+// later hook. So depending on the configuration, different actions are used.
+$pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
 
-    if (!is_front_page() && is_page()) {
+if ($pages_sidebar === 'menu') {
+    add_action('astra_sidebars_before', function () {
+        // is_front_page() and is_page() are not defined when this file is loaded, so they must be called using hooks.
+        if (is_front_page() || !is_page()) {
+            return ;
+        }
+        add_filter('is_active_sidebar', '__return_false');
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_script('jquery');
         });
-
         include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
-    }
+    });
+}
 
-});
+if ($pages_sidebar === 'widgets') {
+    add_action('astra_sidebars_before', function () {
+        if (is_front_page() || !is_page()) {
+            return ;
+        }
+        astra_get_sidebar('primary_menu');
+    });
+}
+
+if ($pages_sidebar === 'none') {
+    add_action('astra_head_top', function () {
+        if (is_front_page() || !is_page()) {
+            return ;
+        }
+        add_filter('astra_page_layout', function () {
+            return 'no-sidebar';
+        });
+    });
+}
 
 // Widgets: Remove areas not used in the theme.
 add_action('widgets_init', function () {
