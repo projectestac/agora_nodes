@@ -60,11 +60,6 @@
 
 <style>
 
-    /* Hide default sidebar widgets */
-    div.sidebar-main .widget {
-        display: none;
-    }
-
     .accordion {
         list-style-type: none;
         padding: 0;
