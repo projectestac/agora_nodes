@@ -163,14 +163,14 @@ add_action('astra_customizer_sections', function ($configurations) {
             && $configuration['name'] !== 'section-page-dynamic-group'
             && $configuration['name'] !== 'section-sidebars'
             && $configuration['name'] !== 'section-posts-structure'
-            && !str_starts_with($configuration['section'], 'section-posttype-');
+            && !str_starts_with($configuration['section'] ?? '', 'section-posttype-');
     });
 
 });
 
 // Customizer: Remove all header and footer sections.
 add_action('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
-add_action('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
+//add_action('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
 
 function nodes_remove_customizer_header_footer_sections($configurations): array {
     if (is_xtec_super_admin()) {
@@ -322,19 +322,20 @@ $front_page_config = $astra_nodes_options['front_page_config'] ?? 1;
 
 // Default is configuration 3.
 $cards_action = 'astra_content_before';
-$cards_priority = 20;
+$cards_priority = 10;
 $notice_action = 'astra_content_before';
-$notice_priority = 10;
+$notice_priority = 20;
 
 if ($front_page_config === '1') {
     $cards_action = 'astra_entry_after';
     $notice_action = 'astra_entry_after';
-    $notice_priority = 30;
+    $notice_priority = 5;
 }
 
 if ($front_page_config === '2') {
     $cards_action = 'astra_entry_before';
     $notice_action = 'astra_entry_before';
+    $notice_priority = 30;
 }
 
 // Front page: Show the cards if they are enabled.
@@ -351,7 +352,7 @@ add_action($cards_action, function () use ($astra_nodes_options) {
     }
 
     echo '
-        <div class="wp-block-columns has-small-font-size is-layout-flex wp-container-7" style="padding: var(--wp--preset--spacing--60);">
+        <div id="front-page-cards-container" class="wp-block-columns has-small-font-size is-layout-flex wp-container-7">
     ';
 
     for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
@@ -425,7 +426,7 @@ if ($pages_sidebar === 'menu') {
         if (is_front_page() || !is_page()) {
             return ;
         }
-        add_filter('is_active_sidebar', '__return_false');
+        unregister_sidebar('sidebar-1');
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_script('jquery');
         });
@@ -453,6 +454,33 @@ if ($pages_sidebar === 'none') {
     });
 }
 
+// Footer: Add the legal notice in the footer.
+add_action('astra_footer_after', function () {
+    echo '
+        <div class="site-below-footer-wrap ast-builder-grid-row-container site-footer-focus-item ast-builder-grid-row-full ast-builder-grid-row-tablet-full ast-builder-grid-row-mobile-full ast-footer-row-stack ast-footer-row-tablet-stack ast-footer-row-mobile-stack"
+         data-section="section-below-footer-builder">
+            <div class="ast-builder-grid-row-container-inner">
+                <div class="ast-builder-footer-grid-columns site-below-footer-inner-wrap">
+                    <div class="site-footer-below-section-1 site-footer-section">
+                        <div class="footer-widget-area widget-area site-footer-focus-item">
+                            <div class="ast-header-html inner-link-style-">
+                                <div class="ast-builder-html-element">
+                                    <p id="astra-nodes-copyright">
+                                        <a target="_blank" href="https://web.gencat.cat/ca/ajuda/avis_legal/">Avís legal</a> |
+                                        <a target="_blank" href="https://agora.xtec.cat/nodes/">Sobre el web</a> |
+                                        <span class="copyright">© ' . date("Y") . ' Generalitat de Catalunya | </span>
+                                        <span class="site-source">Fet amb el <a target="_blank" href="https://wordpress.org">WordPress</a></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ';
+});
+
 // Widgets: Remove areas not used in the theme.
 add_action('widgets_init', function () {
 
@@ -468,6 +496,10 @@ add_action('widgets_init', function () {
     unregister_sidebar('footer-widget-8');
     unregister_sidebar('footer-widget-9');
     unregister_sidebar('footer-widget-10');
+    unregister_sidebar('header-widget-1');
+    unregister_sidebar('header-widget-2');
+    unregister_sidebar('header-widget-3');
+    unregister_sidebar('header-widget-4');
     unregister_sidebar('header-widget-5');
     unregister_sidebar('header-widget-6');
     unregister_sidebar('header-widget-7');
