@@ -129,6 +129,10 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Front page cards */
+#front-page-cards-container {
+    padding: var(--wp--preset--spacing--60);
+}
+
 .front-page-card {
     display: flex;
     flex-direction: column;
@@ -199,4 +203,9 @@ div.ast-breadcrumbs-wrapper {
 
 #front-page-notice-content > * {
     font-family: "Roboto", sans-serif;
+}
+
+/* Footer */
+#astra-nodes-copyright {
+    text-align: center;
 }

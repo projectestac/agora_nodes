@@ -21,6 +21,9 @@ add_action('customize_controls_print_styles', function () {
         .uip-modal {
             z-index: 1000000;
         }
+        #customize-control-astra_nodes_customizer_select_color .customize-inside-control-row {
+            padding: 5px 0;
+        }
     ';
     wp_add_inline_style('customize-controls', $custom_css);
 }, 1);
@@ -353,35 +356,27 @@ function nodes_customize_register($wp_customize) {
 
     // Theme colors.
 
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Palette_Control.php';
+
     $wp_customize->add_section('astra_nodes_customizer_themes', [
         'title' => __('Theme Colors', 'astra-nodes'),
         'priority' => 3,
     ]);
 
-    $astra_color_palettes = get_option('astra-color-palettes');
-    $current_palette = $astra_color_palettes['currentPalette'];
-    $palettes = $astra_color_palettes['palettes'];
-
-    $palettes_form = [];
-    foreach ($palettes as $name => $palette) {
-        $palettes_form[$name] = $name;
-    }
-
     // Theme colors: Select palette.
     $wp_customize->add_setting('astra-color-palettes[currentPalette]', [
-        'default' => $current_palette,
+        'default' => '',
         'type' => 'option',
         'capability' => 'edit_theme_options',
     ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_select_color', [
+    $wp_customize->add_control(new WP_Customize_Palette_Control($wp_customize,'astra-color-palettes[currentPalette]', [
         'label' => __('Theme Colors', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_themes',
         'settings' => 'astra-color-palettes[currentPalette]',
         'priority' => 1,
         'type' => 'radio',
-        'choices' => $palettes_form,
-    ]);
+    ]));
 
 
     // Panel to group all front page settings.
