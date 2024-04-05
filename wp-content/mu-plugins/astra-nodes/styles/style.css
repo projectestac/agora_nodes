@@ -1,4 +1,3 @@
-
 /* Top site bar */
 #wpadminbar {
     background-color: #000000;
@@ -129,6 +128,10 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Front page cards */
+#front-page-cards-container {
+    padding: var(--wp--preset--spacing--60);
+}
+
 .front-page-card {
     display: flex;
     flex-direction: column;
@@ -199,4 +202,33 @@ div.ast-breadcrumbs-wrapper {
 
 #front-page-notice-content > * {
     font-family: "Roboto", sans-serif;
+}
+
+/* Footer */
+#astra-nodes-copyright {
+    text-align: center;
+}
+
+/* Customizer: Palettes section */
+.astra-nodes-palette-container {
+    width: 140px;
+    float: left;
+}
+
+.astra-nodes-palette-item {
+    width: 25%;
+    height: 48px;
+    display: inline-block;
+}
+
+.astra-nodes-palette-footer {
+    color: #9ca3af;
+    padding: 0 3px 5px 3px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.astra-nodes-palette-footer input {
+    display: none;
 }
