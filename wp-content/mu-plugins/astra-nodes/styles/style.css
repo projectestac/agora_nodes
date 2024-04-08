@@ -65,7 +65,7 @@ h1#blog-name {
 
 #ast-desktop-header > div.ast-below-header-wrap > div.ast-below-header-bar.ast-below-header.site-header-focus-item {
     width: calc(100% - 2 * 20px);
-    margin: 20px;
+    margin: 5px 20px;
 }
 
 #ast-desktop-header > div.ast-main-header-wrap.main-header-bar-wrap > div > div {
@@ -116,15 +116,17 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Header slideshow */
-.astra-nodes-header-block {
+#astra-nodes-header-block {
     padding: 0 var(--wp--preset--spacing--60);
     margin-top: -100px;
     margin-bottom: 30px;
+    border-radius: 0 0 30px 30px;
 }
 
-.astra-nodes-header-block div {
-    border-radius: 0 0 30px 30px;
-    z-index: -1;
+/* Header menu */
+.ast-below-header-wrap .ast-below-header-bar {
+    position: relative; /* To make the z-index work */
+    z-index: 1;
 }
 
 /* Front page cards */
