@@ -1,4 +1,3 @@
-
 /* Top site bar */
 #wpadminbar {
     background-color: #000000;
@@ -208,4 +207,28 @@ div.ast-breadcrumbs-wrapper {
 /* Footer */
 #astra-nodes-copyright {
     text-align: center;
+}
+
+/* Customizer: Palettes section */
+.astra-nodes-palette-container {
+    width: 140px;
+    float: left;
+}
+
+.astra-nodes-palette-item {
+    width: 25%;
+    height: 48px;
+    display: inline-block;
+}
+
+.astra-nodes-palette-footer {
+    color: #9ca3af;
+    padding: 0 3px 5px 3px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.astra-nodes-palette-footer input {
+    display: none;
 }
