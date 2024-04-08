@@ -300,11 +300,11 @@ add_action('astra_get_option_header-html-2', function () use ($astra_nodes_optio
 });
 
 // Header: Add the slider in the header if it is the front page.
-add_action('astra_masthead_bottom', function () {
+add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
 
-    if (is_front_page()) {
+    if (isset($astra_nodes_options['front_page_slider_enable']) && $astra_nodes_options['front_page_slider_enable'] && is_front_page()) {
         include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_slider.php';
-        $block = parse_blocks(get_front_page_slider());
+        $block = parse_blocks(get_front_page_slider($astra_nodes_options));
         foreach ($block as $item) {
             if (empty($item['blockName'])) {
                 continue;

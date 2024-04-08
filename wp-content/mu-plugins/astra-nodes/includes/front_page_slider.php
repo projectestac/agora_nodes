@@ -1,6 +1,17 @@
 <?php
 
-function get_front_page_slider() {
+function extract_slider_params($astra_nodes_options): array {
+    return [
+        'minHeight' => $astra_nodes_options['front_page_slider']['front_page_slider_min_height'],
+        'sliderAutoplay' => $astra_nodes_options['front_page_slider']['front_page_slider_autoplay'],
+        'sliderArrows' => $astra_nodes_options['front_page_slider']['front_page_slider_arrows'],
+        'sliderDots' => $astra_nodes_options['front_page_slider']['front_page_slider_dots'],
+    ];
+}
+
+function get_front_page_slider($astra_nodes_options) {
+
+    $params = extract_slider_params($astra_nodes_options);
 
     $front_page_slider = '
         <!-- wp:getwid/media-text-slider {"slideCount":4,"minHeight":"500px","sliderAutoplay":true,"sliderArrows":"inside","sliderDots":"inside"} -->
