@@ -14,6 +14,7 @@ if (wp_get_theme()->name !== 'Astra') {
 
 const NUM_BUTTONS_IN_HEADER = 6;
 const NUM_CARDS_IN_FRONT_PAGE = 4;
+const NUM_SLIDES_IN_FRONT_PAGE = 5;
 
 include_once WPMU_PLUGIN_DIR . '/astra-nodes/customizer/customize.php';
 
