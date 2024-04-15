@@ -302,20 +302,13 @@ add_action('astra_get_option_header-html-2', function () use ($astra_nodes_optio
 // Header: Add the slider in the header if it is the front page.
 add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
 
-    if (isset($astra_nodes_options['front_page_slider_enable']) && $astra_nodes_options['front_page_slider_enable'] && is_front_page()) {
+    $slider_enabled = isset($astra_nodes_options['front_page_slider_enable']) && $astra_nodes_options['front_page_slider_enable'];
+
+    if ($slider_enabled && is_front_page()) {
         include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_slider.php';
-        $block = parse_blocks(get_front_page_slider($astra_nodes_options));
-        foreach ($block as $item) {
-            if (empty($item['blockName'])) {
-                continue;
-            }
-            echo '
-                <div class="astra-nodes-header-block">
-                ' . apply_filters('the_content', render_block($item)) . '
-                </div>
-                ';
-        }
+        echo '<div id="astra-nodes-header-block">' . get_front_page_slider($astra_nodes_options) . '</div>';
     }
+
 });
 
 $front_page_config = $astra_nodes_options['front_page_config'] ?? 1;
@@ -362,11 +355,11 @@ add_action($cards_action, function () use ($astra_nodes_options) {
 
         echo '
             <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card" onclick="window.open(\'' . $card_url . '\')">
-                    <div>
+                    <div class="astra-nodes-card-title">
                         <h3>' . $card_title . '</h3>
                     </div>
-                    <div>
-                        <img decoding="async" src="' . $card_image . '" alt="">
+                    <div class="astra-nodes-card-body">
+                        <img class="astra-nodes-card-image" decoding="async" src="' . $card_image . '" alt="">
                     </div>
             </div>
         ';
