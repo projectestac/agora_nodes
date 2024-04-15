@@ -724,144 +724,111 @@ function nodes_customize_register($wp_customize) {
         ],
     ]);
 
-    // Front page slider: Separator.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_separator]', [
-        'default' => '',
-        'type' => 'theme_mod',
-    ]);
+    for ($i = 1, $num_controls = 6; $i <= NUM_SLIDES_IN_FRONT_PAGE; $i++) {
 
-    $wp_customize->add_control(
-        new WP_Customize_Separator_Control(
-            $wp_customize, 'front_page_slider_separator_1', [
-            'label' => '',
-            'settings' => 'astra_nodes_options[front_page_slider_separator]',
-            'priority' => 6,
-            'section' => 'astra_nodes_customizer_front_page_slider',
-        ]));
+        // Front page slider: Separator.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_separator]', [
+            'default' => '',
+            'type' => 'theme_mod',
+        ]);
 
-    // Front page slider: Image 1.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_image_1]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize, 'astra_nodes_customizer_front_page_slider_image_1', [
-                'label' => __('Image 1', 'astra-nodes'),
+        $wp_customize->add_control(
+            new WP_Customize_Separator_Control(
+                $wp_customize, 'front_page_slider_separator_' . $i, [
+                'label' => '',
+                'settings' => 'astra_nodes_options[front_page_slider_separator]',
+                'priority' => 6 + ($num_controls * $i),
                 'section' => 'astra_nodes_customizer_front_page_slider',
-                'description' => __('astra-nodes', 'Recommendations: 1920 x 1080 px and less than 200 kB'),
-                'settings' => 'astra_nodes_options[front_page_slider_image_1]',
-                'priority' => 7,
-            ]
-        )
-    );
+            ]));
 
-    // Front page slider: Heading for image 1.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_heading_1]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
+        // Front page slider: Image $i.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_image_' . $i . ']', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+        ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_slider_heading_1', [
-        'label' => __('Heading 1', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_slider',
-        'settings' => 'astra_nodes_options[front_page_slider_heading_1]',
-        'priority' => 8,
-        'type' => 'text',
-        'input_attrs' => [
-            'placeholder' => __('Heading 1', 'astra-nodes'),
-        ],
-    ]);
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize, 'astra_nodes_customizer_front_page_slider_image_' . $i, [
+                    'label' => __('Image', 'astra-nodes') . ' ' . $i,
+                    'section' => 'astra_nodes_customizer_front_page_slider',
+                    'description' => __('astra-nodes', 'Recommendations: 1920 x 1080 px and less than 200 kB'),
+                    'settings' => 'astra_nodes_options[front_page_slider_image_' . $i . ']',
+                    'priority' => 7 + ($num_controls * $i),
+                ]
+            )
+        );
 
-    // Front page slider: Text for image 1.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_text_1]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
+        // Front page slider: Link for image $i.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_link_' . $i . ']', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+        ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_slider_text_1', [
-        'label' => __('Text 1', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_slider',
-        'settings' => 'astra_nodes_options[front_page_slider_text_1]',
-        'priority' => 9,
-        'type' => 'textarea',
-        'input_attrs' => [
-            'placeholder' => __('Text 1', 'astra-nodes'),
-        ],
-    ]);
-
-    // Front page slider: Separator.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_separator]', [
-        'default' => '',
-        'type' => 'theme_mod',
-    ]);
-
-    $wp_customize->add_control(
-        new WP_Customize_Separator_Control(
-            $wp_customize, 'front_page_slider_separator_2', [
-            'label' => '',
-            'settings' => 'astra_nodes_options[front_page_slider_separator]',
-            'priority' => 10,
+        $wp_customize->add_control('astra_nodes_customizer_front_page_slider_link_' . $i, [
+            'label' => __('Link', 'astra-nodes') . ' ' . $i,
             'section' => 'astra_nodes_customizer_front_page_slider',
-        ]));
+            'settings' => 'astra_nodes_options[front_page_slider_link_' . $i . ']',
+            'priority' => 8 + ($num_controls * $i),
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('https://', 'astra-nodes'),
+            ],
+        ]);
 
-    // Front page slider: Image 2.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_image_2]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
+        // Front page slider: Open link in new tab for image $i.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_open_in_new_tab_' . $i . ']', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+        ]);
 
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize, 'astra_nodes_customizer_front_page_slider_image_2', [
-                'label' => __('Image 2', 'astra-nodes'),
-                'section' => 'astra_nodes_customizer_front_page_slider',
-                'description' => __('astra-nodes', 'Recommendations: 1920 x 1080 px and less than 200 kB'),
-                'settings' => 'astra_nodes_options[front_page_slider_image_2]',
-                'priority' => 11,
-            ]
-        )
-    );
+        $wp_customize->add_control('astra_nodes_customizer_front_page_slider_open_in_new_tab_' . $i, [
+            'label' => __('Open in new tab', 'astra-nodes') . ' ' . $i,
+            'section' => 'astra_nodes_customizer_front_page_slider',
+            'settings' => 'astra_nodes_options[front_page_slider_open_in_new_tab_' . $i . ']',
+            'priority' => 9 + ($num_controls * $i),
+            'type' => 'checkbox',
+        ]);
 
-    // Front page slider: Heading for image 2.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_heading_2]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
+        // Front page slider: Heading for image $i.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_heading_' . $i . ']', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+        ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_slider_heading_2', [
-        'label' => __('Heading 2', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_slider',
-        'settings' => 'astra_nodes_options[front_page_slider_heading_2]',
-        'priority' => 12,
-        'type' => 'text',
-        'input_attrs' => [
-            'placeholder' => __('Heading 2', 'astra-nodes'),
-        ],
-    ]);
+        $wp_customize->add_control('astra_nodes_customizer_front_page_slider_heading_' . $i, [
+            'label' => __('Heading', 'astra-nodes') . ' ' . $i,
+            'section' => 'astra_nodes_customizer_front_page_slider',
+            'settings' => 'astra_nodes_options[front_page_slider_heading_' . $i . ']',
+            'priority' => 10 + ($num_controls * $i),
+            'type' => 'text',
+            'input_attrs' => [
+                'placeholder' => __('Heading', 'astra-nodes') . ' ' . $i,
+            ],
+        ]);
 
-    // Front page slider: Text for image 2.
-    $wp_customize->add_setting('astra_nodes_options[front_page_slider_text_2]', [
-        'default' => '',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-    ]);
+        // Front page slider: Text for image $i.
+        $wp_customize->add_setting('astra_nodes_options[front_page_slider_text_' . $i . ']', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+        ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_slider_text_2', [
-        'label' => __('Text 2', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_front_page_slider',
-        'settings' => 'astra_nodes_options[front_page_slider_text_2]',
-        'priority' => 13,
-        'type' => 'textarea',
-        'input_attrs' => [
-            'placeholder' => __('Text 2', 'astra-nodes'),
-        ],
-    ]);
+        $wp_customize->add_control('astra_nodes_customizer_front_page_slider_text_' . $i, [
+            'label' => __('Text', 'astra-nodes') . ' ' . $i,
+            'section' => 'astra_nodes_customizer_front_page_slider',
+            'settings' => 'astra_nodes_options[front_page_slider_text_' . $i . ']',
+            'priority' => 11 + ($num_controls * $i),
+            'type' => 'textarea',
+            'input_attrs' => [
+                'placeholder' => __('Text', 'astra-nodes') . ' ' . $i,
+            ],
+        ]);
+
+    }
 
 }
