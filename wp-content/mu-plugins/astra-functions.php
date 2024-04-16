@@ -359,7 +359,7 @@ add_action($cards_action, function () use ($astra_nodes_options) {
     }
 
     // If cards are not enabled, don't show them.
-    if (!$astra_nodes_options['cards_enable']) {
+    if (!$astra_nodes_options['front_page_cards_enable']) {
         return;
     }
 
@@ -368,20 +368,31 @@ add_action($cards_action, function () use ($astra_nodes_options) {
     ';
 
     for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
-        $card_title = $astra_nodes_options['card_' . $i . '_title'] ?? '';
-        $card_image = $astra_nodes_options['card_' . $i . '_image'] !== '' ? $astra_nodes_options['card_' . $i . '_image'] : '/wordpress/wp-includes/images/blank.gif';
-        $card_url = $astra_nodes_options['card_' . $i . '_url'] !== '' ? $astra_nodes_options['card_' . $i . '_url'] : home_url();
+
+        $card_title = $astra_nodes_options['front_page_card_' . $i . '_title'] ?? '';
+        $card_image = $astra_nodes_options['front_page_card_' . $i . '_image'] ?? '';
+        $card_url = $astra_nodes_options['front_page_card_' . $i . '_url'] !== '' ? $astra_nodes_options['front_page_card_' . $i . '_url'] : home_url();
+
+        $card_open_in_new_tab = $astra_nodes_options['front_page_card_' . $i . '_open_in_new_tab'] ?? false;
+        $card_target = $card_open_in_new_tab ? 'target="_blank"' : '';
+
+        $card_color = $astra_nodes_options['front_page_card_' . $i . '_color'] ?? '';
+        $card_background = !empty($card_color) ? 'background-color: ' . $card_color . ' !important' : ''; // Important to override Astra's default color.
 
         echo '
-            <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card" onclick="window.open(\'' . $card_url . '\')">
-                    <div class="astra-nodes-card-title">
-                        <h3>' . $card_title . '</h3>
-                    </div>
-                    <div class="astra-nodes-card-body">
+            <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
+                 style="' . $card_background . '">
+                <div class="astra-nodes-card-title">
+                    <h3>' . $card_title . '</h3>
+                </div>
+                <div class="astra-nodes-card-body">
+                     <a href="' . $card_url . '" ' . $card_target . '>
                         <img class="astra-nodes-card-image" decoding="async" src="' . $card_image . '" alt="">
-                    </div>
+                     </a>
+                </div>
             </div>
         ';
+
     }
 
     echo '</div>';
@@ -401,23 +412,41 @@ add_action($notice_action, function () use ($astra_nodes_options) {
         return;
     }
 
-    $front_page_notice_image = $astra_nodes_options['front_page_notice_image'];
-    $front_page_notice_pre_title = $astra_nodes_options['front_page_notice_pre_title'];
-    $front_page_notice_title = $astra_nodes_options['front_page_notice_title'];
-    $front_page_notice_content = $astra_nodes_options['front_page_notice_content'];
+    $image = $astra_nodes_options['front_page_notice_image'];
+    $background_color = $astra_nodes_options['front_page_notice_background_color'];
+    $url = $astra_nodes_options['front_page_notice_url'];
+    $open_in_new_tab = $astra_nodes_options['front_page_notice_open_in_new_tab'];
+    $pre_title = $astra_nodes_options['front_page_notice_pre_title'];
+    $title = $astra_nodes_options['front_page_notice_title'];
+    $content = $astra_nodes_options['front_page_notice_content'];
 
-    echo '
-    <div id="front-page-notice-container" class="wp-block-columns">
-        <div class="wp-block-column" style="flex: 1">
-            <img id="front-page-notice-image" src="' . $front_page_notice_image . '" class="wp-image" alt="">
-        </div>
-        <div id="front-page-notice-body" class="wp-block-column" style="flex: 2">
-            <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $front_page_notice_pre_title . '</div>
-            <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $front_page_notice_title . '</h2>
-            <div id="front-page-notice-content">' . $front_page_notice_content . '</div>
-        </div>
-    </div>
-    ';
+    $style = !empty($background_color) ? 'background-color: ' . $background_color : '';
+
+    if (!empty($image)) {
+        echo '
+            <div id="front-page-notice-container-no-image" class="wp-block-columns">
+                <div class="wp-block-column" style="' . $style . '">
+                    <div id="front-page-notice-image-no-image" style="background-image:url(' . $image . ');">
+                        <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+                            <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
+                            <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
+                            <div id="front-page-notice-content">' . $content . '</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        ';
+    } else {
+        echo '
+            <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
+                <div id="front-page-notice-body" class="wp-block-column">
+                    <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
+                    <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
+                    <div id="front-page-notice-content">' . $content . '</div>
+                </div>
+            </div>
+            ';
+    }
 
 }, $notice_priority, 0);
 
