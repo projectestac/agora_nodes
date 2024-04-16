@@ -9,6 +9,34 @@ function extract_slider_params($astra_nodes_options): array {
         'dots' => $astra_nodes_options['front_page_slider_dots'] ?? 'inside',
     ];
 
+    switch ($params['arrows']) {
+        case 'inside':
+            $params['class_arrows'] = 'has-arrows-inside';
+            break;
+        case 'outside':
+            $params['class_arrows'] = 'has-arrows-outside';
+            break;
+        case 'none':
+            $params['class_arrows'] = 'has-arrows-none';
+            break;
+        default:
+            $params['class_arrows'] = 'has-arrows-inside';
+    }
+
+    switch ($params['dots']) {
+        case 'inside':
+            $params['class_dots'] = 'has-dots-inside';
+            break;
+        case 'outside':
+            $params['class_dots'] = 'has-dots-outside';
+            break;
+        case 'none':
+            $params['class_dots'] = 'has-dots-none';
+            break;
+        default:
+            $params['class_dots'] = 'has-dots-inside';
+    }
+
     for ($i = 1, $count = 0; $i <= 5; $i++) {
 
         if (empty($astra_nodes_options['front_page_slider_image_' . $i]) &&
@@ -38,10 +66,18 @@ function get_front_page_slider($astra_nodes_options): string {
 
     $params = extract_slider_params($astra_nodes_options);
 
-    $slider = '<!-- wp:getwid/media-text-slider {"slideCount":' . $params['slideCount'] . ',"minHeight":"' . $params['minHeight'] . 'px","sliderAutoplay":' . $params['autoplay'] . ',"sliderArrows":"inside","sliderDots":"inside"} -->
-    <div class="wp-block-getwid-media-text-slider wp-block-getwid-media-text-slider--current-slide-1 has-arrows-inside has-dots-inside" data-labels="[&quot;Slide 1&quot;,&quot;Slide 2&quot;,&quot;Slide 3&quot;,&quot;Slide 4&quot;]" data-animation="fadeIn" data-duration="1500ms" data-delay="0ms">
+    for ($i = 1, $data_labels_array = []; $i <= $params['slideCount']; $i++) {
+        $data_labels_array[] = '&quot;' . __('Slide', 'astra-nodes') . ' ' . $i . '&quot;';
+    }
+
+    $data_labels = '[' . implode(',', $data_labels_array) . ']';
+
+    $slider = '<!-- wp:getwid/media-text-slider {"slideCount":' . $params['slideCount'] . ',"minHeight":"' . $params['minHeight'] . 'px","sliderAutoplay":' . $params['autoplay'] . ',"sliderArrows":"none","sliderDots":"inside"} -->
+    <div class="wp-block-getwid-media-text-slider wp-block-getwid-media-text-slider--current-slide-1 ' . $params['class_arrows'] . ' ' . $params['class_dots'] . '"
+         data-labels="' . $data_labels . '"
+         data-animation="fadeIn" data-duration="1500ms" data-delay="0ms">
         <div class="wp-block-getwid-media-text-slider__slides-wrapper">
-            <div class="wp-block-getwid-media-text-slider__content" data-slide-autoplay="true" data-slide-pause-on-hover="true" data-slide-autoplay-speed="5000" data-slide-speed="1000" data-infinite="true">';
+            <div class="wp-block-getwid-media-text-slider__content" data-slide-autoplay="' . $params['autoplay'] . '" data-slide-pause-on-hover="true" data-slide-autoplay-speed="5000" data-slide-speed="1000" data-infinite="true">';
 
     for ($i = 1; $i <= $params['slideCount']; $i++) {
         $slider .= '
