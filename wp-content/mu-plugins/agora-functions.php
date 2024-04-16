@@ -1808,3 +1808,22 @@ add_action('after_setup_theme', 'nodes_remove_theme_support');
 function nodes_remove_theme_support(): void {
     remove_theme_support('widgets-block-editor');
 }
+
+// Check if plugin is inactive & not logged in
+add_action('admin_bar_menu', function ($wp_admin_bar) {
+    if (!is_plugin_active('buddypress/bp-loader.php') && !is_user_logged_in()) {
+        $wp_admin_bar->add_node([
+            'parent' => 'top-secondary',
+            'id' => 'login-link-admin-bar',
+            'title' => __('Log in'),
+            'href' => wp_login_url($_SERVER['REQUEST_URI']),
+        ]);
+
+        echo '<style>
+        #wpadminbar li#wp-admin-bar-login-link-admin-bar > .ab-item::before {
+            content: "";
+            margin-top: 4px;
+        }
+        </style>';
+    }
+});
