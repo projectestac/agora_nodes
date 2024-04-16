@@ -30,6 +30,24 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 });
 
+// Welcome panel: Remove the box in the dashboard.
+add_action('admin_init', function () {
+    remove_action('welcome_panel', 'wp_welcome_panel');
+});
+
+// Dashboard: Remove some boxes in the dashboard.
+add_action('wp_dashboard_setup', function () {
+
+    if (is_xtec_super_admin()) {
+        return;
+    }
+
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+
+});
+
 // Admin bar: Force to be always shown, including for non-logged users.
 add_action('show_admin_bar', '__return_true');
 
