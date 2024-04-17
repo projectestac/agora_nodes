@@ -26,8 +26,11 @@ load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages');
 
 // Load styles to customize Astra theme.
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('astra-functions-css', plugins_url('/astra-nodes/styles/style.css', __FILE__));
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+    wp_enqueue_style('astra-functions', plugins_url('/astra-nodes/styles/style.css', __FILE__));
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', [], '6.5.1');
+    if (is_plugin_active('getwid/getwid.php')) {
+        wp_enqueue_script('slick', getwid_get_plugin_url('vendors/slick/slick/slick.min.js'), ['jquery'], '1.9.0', true);
+    }
 });
 
 // Welcome panel: Remove the box in the dashboard.
@@ -321,6 +324,11 @@ add_action('astra_get_option_header-html-2', function () use ($astra_nodes_optio
 // Header: Add the slider in the header if it is the front page.
 add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
 
+    // The slider is created using a block from the Getwid plugin.
+    if (!is_plugin_active('getwid/getwid.php')) {
+        return;
+    }
+
     $slider_enabled = isset($astra_nodes_options['front_page_slider_enable']) && $astra_nodes_options['front_page_slider_enable'];
 
     if ($slider_enabled && is_front_page()) {
@@ -371,7 +379,7 @@ add_action($cards_action, function () use ($astra_nodes_options) {
 
         $card_title = $astra_nodes_options['front_page_card_' . $i . '_title'] ?? '';
         $card_image = $astra_nodes_options['front_page_card_' . $i . '_image'] ?? '';
-        $card_url = $astra_nodes_options['front_page_card_' . $i . '_url'] !== '' ? $astra_nodes_options['front_page_card_' . $i . '_url'] : home_url();
+        $card_url = $astra_nodes_options['front_page_card_' . $i . '_url'] ?? home_url();
 
         $card_open_in_new_tab = $astra_nodes_options['front_page_card_' . $i . '_open_in_new_tab'] ?? false;
         $card_target = $card_open_in_new_tab ? 'target="_blank"' : '';
@@ -449,6 +457,37 @@ add_action($notice_action, function () use ($astra_nodes_options) {
     }
 
 }, $notice_priority, 0);
+
+// Front page: News configuration.
+add_action('astra_entry_before', function () use ($astra_nodes_options) {
+
+    if (!is_plugin_active('getwid/getwid.php')) {
+        return;
+    }
+
+    // Check if it is front page.
+    if (!is_front_page()) {
+        return;
+    }
+
+    // If news are not enabled, don't show them.
+    if (!$astra_nodes_options['front_page_news_enable']) {
+        return;
+    }
+
+   include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_news.php';
+
+    $blocks = parse_blocks(get_front_page_news($astra_nodes_options));
+
+    echo '<div id="front-page-news-carousel-container">';
+
+    foreach ($blocks as $block) {
+        echo render_block($block);
+    }
+
+    echo '</div>';
+
+});
 
 // Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
