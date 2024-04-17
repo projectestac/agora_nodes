@@ -220,6 +220,11 @@ div.ast-breadcrumbs-wrapper {
     font-family: "Roboto", sans-serif;
 }
 
+/* Front page news */
+#front-page-news-carousel-container {
+    padding: 0 40px 0 40px;
+}
+
 /* Footer */
 #astra-nodes-copyright {
     text-align: center;
