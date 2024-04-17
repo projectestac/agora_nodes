@@ -465,14 +465,14 @@ function nodes_customize_register($wp_customize) {
                 ]
             )
         );
-        
+
         // Color picker for card $i.
         $wp_customize->add_setting('astra_nodes_options[front_page_card_' . $i . '_color]', [
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
         ]);
-        
+
         $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'astra_nodes_customizer_front_page_card_' . $i . '_color', [
             'label' => __('Color', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_front_page_cards',
@@ -575,7 +575,7 @@ function nodes_customize_register($wp_customize) {
         'type' => 'theme_mod',
         'capability' => 'manage_options',
     ]);
-    
+
     $wp_customize->add_control('front_page_notice_url', [
         'label' => __('URL', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
@@ -906,5 +906,77 @@ function nodes_customize_register($wp_customize) {
         ]);
 
     }
+
+
+    // Front page news.
+
+    $wp_customize->add_section('astra_nodes_customizer_front_page_news', [
+        'title' => __('News', 'astra-nodes'),
+        'panel' => 'astra_nodes_front_page',
+        'priority' => 5,
+    ]);
+
+    // Front page slider: Enable slider.
+    $wp_customize->add_setting('astra_nodes_options[front_page_news_enable]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control(
+        new WP_Customize_Toggle_Control($wp_customize, 'astra_nodes_customizer_front_page_news_enable', [
+            'label' => __('Show the news', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_front_page_news',
+            'settings' => 'astra_nodes_options[front_page_news_enable]',
+            'priority' => 1,
+        ]));
+
+    // Get the list of categories (array of objects).
+    $categories = get_categories([
+        'orderby' => 'name',
+        'order' => 'ASC',
+    ]);
+
+    // Get an array with the form [term_id => category_name].
+    $categories_filtered = array_reduce($categories, static function ($carry, $object) {
+        $carry[$object->term_id] = $object->name;
+        return $carry;
+    }, []);
+
+    // Front page: Post category.
+    $wp_customize->add_setting('astra_nodes_options[front_page_news_category]', [
+        'default' => array_search('Portada', $categories_filtered, true),
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_news_category', [
+        'label' => __('Category', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_news',
+        'settings' => 'astra_nodes_options[front_page_news_category]',
+        'priority' => 2,
+        'type' => 'select',
+        'choices' => $categories_filtered,
+    ]);
+
+    // Front page news: Number of news.
+    $wp_customize->add_setting('astra_nodes_options[front_page_news_num_posts]', [
+        'default' => 20,
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_news_number', [
+        'label' => __('Number of posts', 'astra-nodes'),
+        'section' => 'astra_nodes_customizer_front_page_news',
+        'settings' => 'astra_nodes_options[front_page_news_num_posts]',
+        'priority' => 3,
+        'type' => 'number',
+        'input_attrs' => [
+            'min' => 1,
+            'max' => 100,
+            'step' => 1,
+        ],
+    ]);
 
 }
