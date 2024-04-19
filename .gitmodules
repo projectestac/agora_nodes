@@ -115,3 +115,6 @@
 [submodule "wp-content/plugins/gtranslate"]
 	path = wp-content/plugins/gtranslate
 	url = https://github.com/projectestac/wordpress-gtranslate.git
+[submodule "wp-content/plugins/enllacos-educatius"]
+	path = wp-content/plugins/enllacos-educatius
+	url = https://github.com/projectestac/wordpress-enllacos-educatius.git
