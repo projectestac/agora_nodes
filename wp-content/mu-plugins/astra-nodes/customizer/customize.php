@@ -222,10 +222,10 @@ function nodes_customize_register($wp_customize) {
             'section' => 'astra_nodes_customizer_header_buttons',
             'priority' => 1,
             'content' => '
-                <strong>' . __('Icon ' . $i, 'astra-nodes') . '</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                <i style="font-size: 20px;"
-                   class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_classes'] . '"></i>
-                <input type="button" id="_customize-input-astra_nodes_customizer_header_button_' . $i . '" class="universal-icon-picker" value="Change" />
+                <strong>' . __('Icon' . ' ' . $i, 'astra-nodes') . '</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="' . get_theme_mod('astra_nodes_options')['header_icon_' . $i . '_classes'] . ' astra-nodes-customizer-theme-icon"></i>
+                <input type="button" id="_customize-input-astra_nodes_customizer_header_button_' . $i . '"
+                       class="button change-theme universal-icon-picker-button" value="' . __('Change') . '" />
                 ',
         ]));
 
@@ -653,27 +653,28 @@ function nodes_customize_register($wp_customize) {
 
     // Front page configuration.
 
-    $wp_customize->add_section('astra_nodes_customizer_front_page_config', [
+    $wp_customize->add_section('astra_nodes_customizer_front_page_layout', [
         'title' => __('Layout', 'astra-nodes'),
         'panel' => 'astra_nodes_front_page',
         'priority' => 3,
     ]);
 
     // Front page configuration: Radio buttons to select the format of the front page.
-    $wp_customize->add_setting('astra_nodes_options[front_page_config]', [
+    $wp_customize->add_setting('astra_nodes_options[front_page_layout]', [
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
     ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_config_select', [
-        'section' => 'astra_nodes_customizer_front_page_config',
-        'settings' => 'astra_nodes_options[front_page_config]',
+    $wp_customize->add_control('astra_nodes_customizer_front_page_layout_select', [
+        'section' => 'astra_nodes_customizer_front_page_layout',
+        'settings' => 'astra_nodes_options[front_page_layout]',
         'type' => 'radio',
         'choices' => [
-            1 => __('Sidebar long 1', 'astra-nodes'),
-            2 => __('Sidebar long 2', 'astra-nodes'),
-            3 => __('Sidebar short', 'astra-nodes'),
+            'boxes' => __('Boxes', 'astra-nodes'),
+            'sidebar_boxes' => __('Sidebar and boxes', 'astra-nodes'),
+            'sidebar_news' => __('Sidebar and news', 'astra-nodes'),
+            'wp_default' => __('WordPress default', 'astra-nodes'),
         ],
     ]);
 
