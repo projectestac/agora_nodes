@@ -48,6 +48,16 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
         wp_enqueue_style('font-awesome', content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/stylesheets/universal-icon-picker.min.css'));
         wp_enqueue_script('universal-icon-picker', content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/js/universal-icon-picker.js'),
             [], null, true);
+
+        wp_register_style('universal-icon-picker', '', [], '', 'all');
+        wp_enqueue_style('universal-icon-picker');
+        wp_add_inline_style('universal-icon-picker', '
+            .customize-control .universal-icon-picker-button {
+                float: right;
+            }
+            .astra-nodes-customizer-theme-icon {
+                font-size: 20px;
+        ');
     }
 
 }
