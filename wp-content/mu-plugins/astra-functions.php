@@ -338,31 +338,29 @@ add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
 
 });
 
-$front_page_config = $astra_nodes_options['front_page_config'] ?? 1;
+$front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
 
-// Default is configuration 3.
-$cards_action = 'astra_content_before';
-$cards_priority = 10;
-$notice_action = 'astra_content_before';
+// Default layout is 'sidebar_news'.
+$action = 'astra_entry_after';
+$news_priority = 10;
 $notice_priority = 20;
+$cards_priority = 30;
 
-if ($front_page_config === '1') {
-    $cards_action = 'astra_entry_after';
-    $notice_action = 'astra_entry_after';
-    $notice_priority = 5;
+if ($front_page_layout === 'boxes') {
+    $action = 'astra_content_before';
+    $cards_priority = 10;
 }
 
-if ($front_page_config === '2') {
-    $cards_action = 'astra_entry_before';
-    $notice_action = 'astra_entry_before';
-    $notice_priority = 30;
+if ($front_page_layout === 'sidebar_boxes') {
+    $cards_priority = 10;
+    $news_priority = 30;
 }
 
 // Front page: Show the cards if they are enabled.
-add_action($cards_action, function () use ($astra_nodes_options) {
+add_action($action, function () use ($astra_nodes_options) {
 
-    // Check if it is front page.
-    if (!is_front_page()) {
+    // Check if the layout is WordPress default or if it is not front page.
+    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
         return;
     }
 
@@ -408,10 +406,10 @@ add_action($cards_action, function () use ($astra_nodes_options) {
 }, $cards_priority, 0);
 
 // Front page: Show the notice if it is enabled.
-add_action($notice_action, function () use ($astra_nodes_options) {
+add_action($action, function () use ($astra_nodes_options) {
 
-    // Check if it is front page.
-    if (!is_front_page()) {
+    // Check if the layout is WordPress default or if it is not front page.
+    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
         return;
     }
 
@@ -459,14 +457,14 @@ add_action($notice_action, function () use ($astra_nodes_options) {
 }, $notice_priority, 0);
 
 // Front page: News configuration.
-add_action('astra_entry_before', function () use ($astra_nodes_options) {
+add_action('astra_entry_after', function () use ($astra_nodes_options) {
 
     if (!is_plugin_active('getwid/getwid.php')) {
         return;
     }
 
-    // Check if it is front page.
-    if (!is_front_page()) {
+    // Check if the layout is WordPress default or if it is not front page.
+    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
         return;
     }
 
@@ -487,7 +485,7 @@ add_action('astra_entry_before', function () use ($astra_nodes_options) {
 
     echo '</div>';
 
-});
+}, $news_priority, 0);
 
 // Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
