@@ -54,10 +54,11 @@ add_action('wp_dashboard_setup', function () {
 // Admin bar: Force to be always shown, including for non-logged users.
 add_action('show_admin_bar', '__return_true');
 
-// Admin bar: Remove WordPress logo.
+// Admin bar: Remove WordPress logo and search box.
 add_action('wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
     $wp_admin_bar->remove_node('wp-logo');
+    $wp_admin_bar->remove_node('search');
 });
 
 // Admin bar: Add Departament d'Educació logo in the first position and menu with XTEC resources.
@@ -94,16 +95,16 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     ]);
 
     $wp_admin_bar->add_node([
-        'id' => 'edu3',
-        'href' => 'http://www.edu3.cat/',
-        'title' => 'Edu3',
+        'id' => 'digital',
+        'href' => 'https://projectes.xtec.cat/digital/',
+        'title' => 'Digital',
         'parent' => 'recursosXTEC',
     ]);
 
     $wp_admin_bar->add_node([
-        'id' => 'sinapsi',
-        'href' => 'https://sinapsi.xtec.cat',
-        'title' => 'Sinapsi',
+        'id' => 'nus',
+        'href' => 'https://comunitat.edigital.cat/',
+        'title' => 'Nus (Xarxa docent)',
         'parent' => 'recursosXTEC',
     ]);
 
@@ -124,7 +125,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     $wp_admin_bar->add_node([
         'id' => 'merli',
         'title' => 'Merlí',
-        'href' => 'http://aplitic.xtec.cat/merli/',
+        'href' => 'https://merli.xtec.cat/',
         'parent' => 'recursosXTEC',
     ]);
 
@@ -153,6 +154,20 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         'id' => 'agora',
         'title' => 'Àgora',
         'href' => 'https://educaciodigital.cat/',
+        'parent' => 'recursosXTEC',
+    ]);
+
+    $wp_admin_bar->add_node([
+        'id' => 'sinapsi',
+        'href' => 'https://sinapsi.xtec.cat',
+        'title' => 'Sinapsi',
+        'parent' => 'recursosXTEC',
+    ]);
+
+    $wp_admin_bar->add_node([
+        'id' => 'dossier',
+        'href' => 'https://dossier.xtec.cat/',
+        'title' => 'Dossier',
         'parent' => 'recursosXTEC',
     ]);
 
