@@ -1,6 +1,6 @@
 <?php
 
-// Customizer: JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
+// Add JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
 add_action('customize_preview_init', function () {
     wp_enqueue_script(
         'astra-nodes-customizer',
@@ -11,26 +11,26 @@ add_action('customize_preview_init', function () {
     );
 });
 
-// Customizer: Add custom CSS.
-add_action('customize_controls_print_styles', function () {
-    $custom_css = '
-        .customize-control {
-            margin-top: 10px !important;
-            padding-top: 10px;
-        }
-        .uip-modal {
-            z-index: 1000000;
-        }
-        #customize-control-astra_nodes_customizer_select_color .customize-inside-control-row {
-            padding: 5px 0;
-        }
-    ';
-    wp_add_inline_style('customize-controls', $custom_css);
-}, 1);
+// Add JavaScript for the universal icon picker.
+add_action('customize_controls_enqueue_scripts', function () {
+    wp_enqueue_script(
+        'universal-icon-picker',
+        content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/js/universal-icon-picker.js'),
+        [],
+        null,
+        true
+    );
+});
 
-/**
- * Register Customizer
- */
+// Add custom CSS in the Customizer.
+add_action('customize_controls_print_styles', function () {
+    wp_enqueue_style(
+        'astra-nodes-css',
+        content_url('mu-plugins/astra-nodes/styles/customizer.css')
+    );
+}, 50); // Priority is important.
+
+// Register Customizer settings.
 add_action('customize_register', 'nodes_customize_register');
 
 function nodes_customize_register($wp_customize) {
