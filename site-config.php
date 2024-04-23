@@ -44,7 +44,6 @@ if (isset($agora['iseoi']) && $agora['iseoi']) {
 // Load only the plugin files associated with the current type of school to improve the performance.
 if (isset($agora['isProjecte']) && !$agora['isProjecte']) {
     $agora['nodes']['plugins_to_remove'] = [
-        'astra-addon',
         'astra-sites',
         'wpforms-lite',
     ];
