@@ -198,8 +198,9 @@ add_action('astra_customizer_sections', function ($configurations) {
             && $configuration['name'] !== 'section-blog'
             && $configuration['name'] !== 'section-blog-single'
             && $configuration['name'] !== 'section-page-dynamic-group'
+            && $configuration['name'] !== 'section-single-page'
             && $configuration['name'] !== 'section-sidebars'
-            && $configuration['name'] !== 'section-posts-structure'
+            && $configuration['name'] !== 'ast-section-search-page'
             && !str_starts_with($configuration['section'] ?? '', 'section-posttype-');
     });
 
