@@ -37,7 +37,6 @@ class WP_Customize_Palette_Control extends WP_Customize_Control {
     }
 
     public function enqueue(): void {
-        wp_enqueue_style('astra-nodes-css', content_url('mu-plugins/astra-nodes/styles/style.css'));
         wp_register_script('astra-nodes-js-palette', '', ['jquery'], '', true);
         wp_enqueue_script('astra-nodes-js-palette');
         wp_add_inline_script('astra-nodes-js-palette', "
