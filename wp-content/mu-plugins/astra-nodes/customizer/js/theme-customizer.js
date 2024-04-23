@@ -72,21 +72,21 @@
             $('#front-page-notice-image').attr('src', url);
         });
     });
-    
+
     // Front page notice: pre-title.
     wp.customize('astra_nodes_options[front_page_notice_pre_title]', function (value) {
         value.bind(function (text) {
             $('#front-page-notice-pre-title').html(text);
         });
     });
-    
+
     // Front page notice: title.
     wp.customize('astra_nodes_options[front_page_notice_title]', function (value) {
         value.bind(function (text) {
             $('#front-page-notice-title').html(text);
         });
     });
-    
+
     // Front page notice: content.
     wp.customize('astra_nodes_options[front_page_notice_content]', function (value) {
         value.bind(function (text) {
