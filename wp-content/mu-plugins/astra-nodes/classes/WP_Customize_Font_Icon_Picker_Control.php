@@ -45,7 +45,6 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
     }
 
     public function enqueue(): void {
-        wp_enqueue_style('font-awesome', content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/stylesheets/universal-icon-picker.min.css'));
         wp_enqueue_script('universal-icon-picker', content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/js/universal-icon-picker.js'),
             [], null, true);
 
@@ -57,6 +56,23 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
             }
             .astra-nodes-customizer-theme-icon {
                 font-size: 20px;
+            }
+            /* Hide sidebar */
+            .uip-modal--sidebar {
+                display: none;
+            }
+            /* Use the space left by the sidebar */
+            .uip-modal .uip-modal--content {
+                max-width: 900px !important;
+            }
+            .uip-modal .uip-modal--content .uip-modal--body .uip-modal--icon-preview-wrap {
+                width: 100% !important;
+            }
+            /* Set color to black */
+            .uip-modal .uip-modal--content .uip-modal--body .uip-modal--icon-preview-wrap .uip-modal--icon-preview-inner .uip-modal--icon-preview .uip-icon-item .uip-icon-item-inner i,
+            .uip-modal .uip-modal--content .uip-modal--body .uip-modal--icon-preview-wrap .uip-modal--icon-preview-inner .uip-modal--icon-preview .uip-icon-item .uip-icon-item-inner .uip-icon-item-name{
+                color: inherit !important;
+            }
         ');
     }
 
