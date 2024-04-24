@@ -19,6 +19,7 @@ const NUM_SLIDES_IN_FRONT_PAGE = 5;
 include_once WPMU_PLUGIN_DIR . '/astra-nodes/customizer/customize.php';
 
 // Get the option array from the wp_options table. Will be used in several places.
+global $astra_nodes_options;
 $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
 // Load translations.
@@ -239,16 +240,25 @@ add_action('customize_save_after', function ($wp_customize) {
 // Customizer: Update the register in wp_options that makes possible to change the color palette in the preview.
 add_action('customize_preview_init', function ($wp_customize) {
 
+    global $astra_nodes_options;
+
     $palette = $wp_customize->get_setting('astra-color-palettes[currentPalette]')->value();
     $astra_color_palettes = get_option('astra-color-palettes');
     $astra_settings = get_option('astra-settings');
     $astra_settings['global-color-palette']['palette'] = $astra_color_palettes['palettes'][$palette];
+
+    // Update the layout only for this page load.
+    $layout = $wp_customize->get_setting('astra_nodes_options[front_page_layout]')->value();
+    $astra_nodes_options['front_page_layout'] = $layout;
+
     update_option('astra-settings', $astra_settings);
 
 });
 
 // Header: Content of the central area (html-3), which includes the name of the client.
-add_action('astra_get_option_header-html-3', function () use ($astra_nodes_options) {
+add_action('astra_get_option_header-html-3', function () {
+
+    global $astra_nodes_options;
 
     // Check if the option exists and is not null.
     $pre_blog_name = $astra_nodes_options['pre_blog_name'] ?? '';
@@ -262,7 +272,9 @@ add_action('astra_get_option_header-html-3', function () use ($astra_nodes_optio
 });
 
 // Header: Content of the area that shows the contact information (html-1).
-add_action('astra_get_option_header-html-1', function () use ($astra_nodes_options) {
+add_action('astra_get_option_header-html-1', function () {
+
+    global $astra_nodes_options;
 
     // Check if the option exists and is not null.
     $postal_address = $astra_nodes_options['postal_address'] ?? '';
@@ -303,7 +315,9 @@ add_action('astra_get_option_header-html-1', function () use ($astra_nodes_optio
 });
 
 // Header: Content of the buttons area (html-2).
-add_action('astra_get_option_header-html-2', function () use ($astra_nodes_options) {
+add_action('astra_get_option_header-html-2', function () {
+
+    global $astra_nodes_options;
 
     $content = '
             <div class="detail-container">
@@ -338,7 +352,9 @@ add_action('astra_get_option_header-html-2', function () use ($astra_nodes_optio
 });
 
 // Header: Add the slider in the header if it is the front page.
-add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
+add_action('astra_masthead_bottom', function () {
+
+    global $astra_nodes_options;
 
     // The slider is created using a block from the Getwid plugin.
     if (!is_plugin_active('getwid/getwid.php')) {
@@ -354,54 +370,63 @@ add_action('astra_masthead_bottom', function () use ($astra_nodes_options) {
 
 });
 
-$front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
+// Front page layout: The layout is hooked to the first Astra action available. When this file is loaded,
+// the layout cannot be set because the decision vary if it is a preview or not, so it is postponed to the
+// first action available. 
+add_action('astra_html_before', function () {
 
-// Default layout is 'sidebar_news'.
-$action = 'astra_entry_after';
-$news_priority = 10;
-$notice_priority = 20;
-$cards_priority = 30;
+    global $astra_nodes_options;
 
-if ($front_page_layout === 'boxes') {
-    $action = 'astra_content_before';
-    $cards_priority = 10;
-}
+    $front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
 
-if ($front_page_layout === 'sidebar_boxes') {
-    $cards_priority = 10;
-    $news_priority = 30;
-}
+    // Default layout is 'sidebar_news'.
+    $action = 'astra_entry_after';
+    $news_priority = 10;
+    $notice_priority = 20;
+    $cards_priority = 30;
 
-// Front page: Show the cards if they are enabled.
-add_action($action, function () use ($astra_nodes_options) {
-
-    // Check if the layout is WordPress default or if it is not front page.
-    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
-        return;
+    if ($front_page_layout === 'boxes') {
+        $action = 'astra_content_before';
+        $cards_priority = 10;
     }
 
-    // If cards are not enabled, don't show them.
-    if (!$astra_nodes_options['front_page_cards_enable']) {
-        return;
+    if ($front_page_layout === 'sidebar_boxes') {
+        $cards_priority = 10;
+        $news_priority = 30;
     }
 
-    echo '
+    // Front page: Show the cards if they are enabled.
+    add_action($action, function () {
+
+        global $astra_nodes_options;
+
+        // Check if the layout is WordPress default or if it is not front page.
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+            return;
+        }
+
+        // If cards are not enabled, don't show them.
+        if (!$astra_nodes_options['front_page_cards_enable']) {
+            return;
+        }
+
+        echo '
         <div id="front-page-cards-container" class="wp-block-columns has-small-font-size is-layout-flex wp-container-7">
     ';
 
-    for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
+        for ($i = 1; $i <= NUM_CARDS_IN_FRONT_PAGE; $i++) {
 
-        $card_title = $astra_nodes_options['front_page_card_' . $i . '_title'] ?? '';
-        $card_image = $astra_nodes_options['front_page_card_' . $i . '_image'] ?? '';
-        $card_url = $astra_nodes_options['front_page_card_' . $i . '_url'] ?? home_url();
+            $card_title = $astra_nodes_options['front_page_card_' . $i . '_title'] ?? '';
+            $card_image = $astra_nodes_options['front_page_card_' . $i . '_image'] ?? '';
+            $card_url = $astra_nodes_options['front_page_card_' . $i . '_url'] ?? home_url();
 
-        $card_open_in_new_tab = $astra_nodes_options['front_page_card_' . $i . '_open_in_new_tab'] ?? false;
-        $card_target = $card_open_in_new_tab ? 'target="_blank"' : '';
+            $card_open_in_new_tab = $astra_nodes_options['front_page_card_' . $i . '_open_in_new_tab'] ?? false;
+            $card_target = $card_open_in_new_tab ? 'target="_blank"' : '';
 
-        $card_color = $astra_nodes_options['front_page_card_' . $i . '_color'] ?? '';
-        $card_background = !empty($card_color) ? 'background-color: ' . $card_color . ' !important' : ''; // Important to override Astra's default color.
+            $card_color = $astra_nodes_options['front_page_card_' . $i . '_color'] ?? '';
+            $card_background = !empty($card_color) ? 'background-color: ' . $card_color . ' !important' : ''; // Important to override Astra's default color.
 
-        echo '
+            echo '
             <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
                  style="' . $card_background . '">
                 <div class="astra-nodes-card-title">
@@ -415,37 +440,39 @@ add_action($action, function () use ($astra_nodes_options) {
             </div>
         ';
 
-    }
+        }
 
-    echo '</div>';
+        echo '</div>';
 
-}, $cards_priority, 0);
+    }, $cards_priority, 0);
 
-// Front page: Show the notice if it is enabled.
-add_action($action, function () use ($astra_nodes_options) {
+    // Front page: Show the notice if it is enabled.
+    add_action($action, function () {
 
-    // Check if the layout is WordPress default or if it is not front page.
-    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
-        return;
-    }
+        global $astra_nodes_options;
 
-    // If front page notice is not enabled, don't show it.
-    if (!$astra_nodes_options['front_page_notice_enable']) {
-        return;
-    }
+        // Check if the layout is WordPress default or if it is not front page.
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+            return;
+        }
 
-    $image = $astra_nodes_options['front_page_notice_image'];
-    $background_color = $astra_nodes_options['front_page_notice_background_color'];
-    $url = $astra_nodes_options['front_page_notice_url'];
-    $open_in_new_tab = $astra_nodes_options['front_page_notice_open_in_new_tab'];
-    $pre_title = $astra_nodes_options['front_page_notice_pre_title'];
-    $title = $astra_nodes_options['front_page_notice_title'];
-    $content = $astra_nodes_options['front_page_notice_content'];
+        // If front page notice is not enabled, don't show it.
+        if (!$astra_nodes_options['front_page_notice_enable']) {
+            return;
+        }
 
-    $style = !empty($background_color) ? 'background-color: ' . $background_color : '';
+        $image = $astra_nodes_options['front_page_notice_image'];
+        $background_color = $astra_nodes_options['front_page_notice_background_color'];
+        $url = $astra_nodes_options['front_page_notice_url'];
+        $open_in_new_tab = $astra_nodes_options['front_page_notice_open_in_new_tab'];
+        $pre_title = $astra_nodes_options['front_page_notice_pre_title'];
+        $title = $astra_nodes_options['front_page_notice_title'];
+        $content = $astra_nodes_options['front_page_notice_content'];
 
-    if (!empty($image)) {
-        echo '
+        $style = !empty($background_color) ? 'background-color: ' . $background_color : '';
+
+        if (!empty($image)) {
+            echo '
             <div id="front-page-notice-container-no-image" class="wp-block-columns">
                 <div class="wp-block-column" style="' . $style . '">
                     <div id="front-page-notice-image-no-image" style="background-image:url(' . $image . ');">
@@ -458,8 +485,8 @@ add_action($action, function () use ($astra_nodes_options) {
                 </div>
             </div>
         ';
-    } else {
-        echo '
+        } else {
+            echo '
             <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
                 <div id="front-page-notice-body" class="wp-block-column">
                     <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
@@ -468,40 +495,44 @@ add_action($action, function () use ($astra_nodes_options) {
                 </div>
             </div>
             ';
-    }
+        }
 
-}, $notice_priority, 0);
+    }, $notice_priority, 0);
 
-// Front page: News configuration.
-add_action('astra_entry_after', function () use ($astra_nodes_options) {
+    // Front page: News configuration.
+    add_action('astra_entry_after', function () {
 
-    if (!is_plugin_active('getwid/getwid.php')) {
-        return;
-    }
+        global $astra_nodes_options;
 
-    // Check if the layout is WordPress default or if it is not front page.
-    if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
-        return;
-    }
+        if (!is_plugin_active('getwid/getwid.php')) {
+            return;
+        }
 
-    // If news are not enabled, don't show them.
-    if (!$astra_nodes_options['front_page_news_enable']) {
-        return;
-    }
+        // Check if the layout is WordPress default or if it is not front page.
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+            return;
+        }
 
-   include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_news.php';
+        // If news are not enabled, don't show them.
+        if (!$astra_nodes_options['front_page_news_enable']) {
+            return;
+        }
 
-    $blocks = parse_blocks(get_front_page_news($astra_nodes_options));
+        include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_news.php';
 
-    echo '<div id="front-page-news-carousel-container">';
+        $blocks = parse_blocks(get_front_page_news($astra_nodes_options));
 
-    foreach ($blocks as $block) {
-        echo render_block($block);
-    }
+        echo '<div id="front-page-news-carousel-container">';
 
-    echo '</div>';
+        foreach ($blocks as $block) {
+            echo render_block($block);
+        }
 
-}, $news_priority, 0);
+        echo '</div>';
+
+    }, $news_priority, 0);
+
+});
 
 // Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
@@ -518,7 +549,7 @@ if ($pages_sidebar === 'menu') {
     add_action('astra_sidebars_before', function () {
         // is_front_page() and is_page() are not defined when this file is loaded, so they must be called using hooks.
         if (is_front_page() || !is_page()) {
-            return ;
+            return;
         }
         unregister_sidebar('sidebar-1');
         add_action('wp_enqueue_scripts', function () {
@@ -531,7 +562,7 @@ if ($pages_sidebar === 'menu') {
 if ($pages_sidebar === 'widgets') {
     add_action('astra_sidebars_before', function () {
         if (is_front_page() || !is_page()) {
-            return ;
+            return;
         }
         astra_get_sidebar('primary_menu');
     });
@@ -540,7 +571,7 @@ if ($pages_sidebar === 'widgets') {
 if ($pages_sidebar === 'none') {
     add_action('astra_head_top', function () {
         if (is_front_page() || !is_page()) {
-            return ;
+            return;
         }
         add_filter('astra_page_layout', function () {
             return 'no-sidebar';
