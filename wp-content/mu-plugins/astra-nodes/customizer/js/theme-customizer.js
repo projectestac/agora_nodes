@@ -66,6 +66,13 @@
         });
     });
 
+    // Front page button 1.
+    wp.customize('astra_nodes_options[header_icon_1_classes]', function (value) {
+        value.bind(function (text) {
+            $('#header-button-1').attr('class', text + ' astra-nodes-header-icon');
+        });
+    });
+
     // Front page notice: Image.
     wp.customize('astra_nodes_options[front_page_notice_image]', function (value) {
         value.bind(function (url) {
