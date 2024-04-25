@@ -373,13 +373,14 @@ function nodes_customize_register($wp_customize) {
         'capability' => 'edit_theme_options',
     ]);
 
-    $wp_customize->add_control(new WP_Customize_Palette_Control($wp_customize, 'astra-color-palettes[currentPalette]', [
-        'label' => __('Theme Colors', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_themes',
-        'settings' => 'astra-color-palettes[currentPalette]',
-        'priority' => 1,
-        'type' => 'radio',
-    ]));
+    $wp_customize->add_control(
+        new WP_Customize_Palette_Control($wp_customize, 'astra-color-palettes[currentPalette]', [
+            'label' => __('Theme Colors', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_themes',
+            'settings' => 'astra-color-palettes[currentPalette]',
+            'priority' => 1,
+            'type' => 'radio',
+        ]));
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Toggle_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Separator_Control.php';
