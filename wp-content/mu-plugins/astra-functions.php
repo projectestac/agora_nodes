@@ -266,7 +266,7 @@ add_action('astra_get_option_header-html-3', function () {
     return '
         <div id="client-type">' . $pre_blog_name . '</div>
         <h1 id="blog-name">' . get_bloginfo('name') . '</h1>
-        <h2><span id="blog-description">' . get_bloginfo('description') . '</span></h2>
+        <h2 id="blog-description">' . get_bloginfo('description') . '</h2>
         ';
 
 });
@@ -288,25 +288,21 @@ add_action('astra_get_option_header-html-1', function () {
     $contact_page_url = $contact_page !== '' ? $contact_page : 'mailto:' . $email_address;
 
     $content = '
-            <p style="text-align: right; line-height: 1.1;">
-                <span id="postal-address" style="">' . $postal_address . '</span>
-                <br>
-                <span id="postal-code-city" style="">' . $postal_code_city . '</span>
-                <br>
-                <span style="">
+            <div id="contact-info-1-wrapper">
+                <div id="postal-address">' . $postal_address . '</div>
+                <div id="postal-code-city">' . $postal_code_city . '</div>
+                <div id="email-address-wrapper">
                     <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
-                </span>
-                <br>
-                <span id="phone-number" style="">' . $phone_number . '</span>
-            </p>
-            <p style="text-align: right;">
-                <span style="">
-                    <strong>
-                        <a style="color: #1ea19b;" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes') . '</a> |
-                        <a style="color: #1ea19b;" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes') . '</a>
-                    </strong>
-                </span>
-            </p>
+                </div>
+                <div id="phone-number">' . $phone_number . '</div>
+            </div>
+            <div id="contact-info-2-wrapper">
+                <strong>
+                    <a id="contact-info-link-to-map" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes') . '</a>
+                    |
+                    <a id="contact-info-page-url" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes') . '</a>
+                </strong>
+            </div>
         ';
 
     // Remove all the "\n" characters.
@@ -324,10 +320,6 @@ add_action('astra_get_option_header-html-2', function () {
                 <div class="grid-container">
     ';
 
-    // Array of background colors for the buttons.
-    $background_colors = ['#38a09b', '#25627e', '#2b245e', '#2b245e', '#38a09b', '#25627e'];
-    $border_radius = ['', '', 'border-radius: 0 30px 0 0;', '', '', ''];
-
     // Loop through the 6 buttons.
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
         $classes_icon = $astra_nodes_options['header_icon_' . $i . '_classes'] ?? 'fa-solid fa-graduation-cap';
@@ -337,8 +329,7 @@ add_action('astra_get_option_header-html-2', function () {
 
         // Add the button to the content.
         $content .= '
-            <div class="grid-item grid-item-' . $i . '"
-                 style="background-color: ' . $background_colors[$i - 1] . ';' . $border_radius[$i - 1] . '">
+            <div class="grid-item grid-item-' . $i . '">
                 <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
                 <a class="header-button-link-' . $i . ' astra-nodes-header-icon-link"
                    href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>' . $text_icon . '</a>

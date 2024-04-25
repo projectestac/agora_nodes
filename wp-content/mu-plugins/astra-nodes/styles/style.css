@@ -14,7 +14,7 @@
     margin: 0 !important;
 }
 
-/* Color en la admin bar */
+/* Admin bar color */
 #wpadminbar #adminbarsearch::before, #wpadminbar .ab-icon::before, #wpadminbar .ab-item::before,
 #wpadminbar ul#wp-admin-bar-root-default li a,
 #wpadminbar ul#wp-admin-bar-root-default li a span,
@@ -34,48 +34,7 @@
     border-radius: 30px;
 }
 
-/* Text in the header above the blog name */
-#client-type {
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #75818D
-}
-
-/* Blog name (in the header) */
-h1#blog-name {
-    line-height: 1;
-}
-
-/* Text in the header under the blog name */
-#blog-description {
-    color: #00b856;
-    font-size: 16pt;
-}
-
 /* Header */
-.grid-container {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1.3fr repeat(2, 1fr);
-    gap: 0;
-    padding: 0;
-}
-
-.grid-item-xl {
-    padding-left: 50px !important;
-}
-
-.grid-item {
-    padding: 20px;
-    text-align: center;
-    min-width: 100px;
-}
-
-.detail-container {
-    position: relative;
-    margin-right: -36px;
-}
-
 #ast-desktop-header > div.ast-below-header-wrap > div.ast-below-header-bar.ast-below-header.site-header-focus-item {
     width: calc(100% - 2 * 20px);
     margin: 5px 20px;
@@ -96,21 +55,92 @@ h1#blog-name {
     margin-left: 30px;
 }
 
+/* Hide the blog name included in the site identity provided by Astra */
+.ast-site-title-wrap {
+    display: none;
+}
+
+/* Text in the header above the blog name */
+#client-type {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #75818D
+}
+
+/* Blog name (in the header) */
+h1#blog-name {
+    line-height: 1;
+}
+
+/* Text in the header under the blog name */
+#blog-description {
+    color: #00b856;
+    font-size: 16pt;
+}
+
+/* Contact information in the header */
+
+#contact-info-1-wrapper {
+    text-align: right;
+    line-height: 1.1;
+}
+
+#contact-info-2-wrapper {
+    text-align: right;
+}
+
+#contact-info-link-to-map,
+#contact-info-page-url {
+    color: var(--ast-global-color-1)
+}
+
+/* Header buttons */
+
+.detail-container {
+    position: relative;
+    margin-right: -36px;
+}
+
 .detail-container:before {
     left: -40px;
     border-radius: initial;
     box-shadow: none;
 }
 
-/* Hide the blog name included in the site identity provided by Astra */
-.ast-site-title-wrap {
-    display: none;
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1.3fr repeat(2, 1fr);
+    gap: 0;
+    padding: 0;
 }
 
-/* Header buttons */
-.detail-container .grid-container .grid-item i,
-.detail-container .grid-container .grid-item a {
+.grid-item-xl {
+    padding-left: 50px !important;
+}
+
+.grid-item {
+    padding: 20px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.grid-item-1,
+.grid-item-5 {
     color: var(--ast-global-color-6);
+    background-color: var(--ast-global-color-0);
+}
+
+.grid-item-2,
+.grid-item-6 {
+    color: var(--ast-global-color-6);
+    background-color: color-mix(in srgb, var(--ast-global-color-1) 50%, var(--ast-global-color-0) 50%);
+}
+
+.grid-item-3,
+.grid-item-4 {
+    color: var(--ast-global-color-6);
+    background-color: var(--ast-global-color-1);
 }
 
 .grid-item #header-button-1,
@@ -197,6 +227,7 @@ div.ast-breadcrumbs-wrapper {
     width: 100%;
     object-fit: cover;
     padding: 60px;
+    background-position: center;
 }
 
 #front-page-notice-container {
