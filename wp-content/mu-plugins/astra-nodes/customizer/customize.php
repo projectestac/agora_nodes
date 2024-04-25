@@ -664,23 +664,28 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     // Front page configuration: Radio buttons to select the format of the front page.
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Layout_Control.php';
+
     $wp_customize->add_setting('astra_nodes_options[front_page_layout]', [
         'default' => '',
         'type' => 'theme_mod',
-        'capability' => 'manage_options',
+        'capability' => 'edit_theme_options',
     ]);
 
-    $wp_customize->add_control('astra_nodes_customizer_front_page_layout_select', [
-        'section' => 'astra_nodes_customizer_front_page_layout',
-        'settings' => 'astra_nodes_options[front_page_layout]',
-        'type' => 'radio',
-        'choices' => [
-            'boxes' => __('Boxes', 'astra-nodes'),
-            'sidebar_boxes' => __('Sidebar and boxes', 'astra-nodes'),
-            'sidebar_news' => __('Sidebar and news', 'astra-nodes'),
-            'wp_default' => __('WordPress default', 'astra-nodes'),
-        ],
-    ]);
+    $wp_customize->add_control(
+        new WP_Customize_Layout_Control($wp_customize, 'astra_nodes_options[front_page_layout]', [
+            'label' => __('Front Page Layout', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_front_page_layout',
+            'settings' => 'astra_nodes_options[front_page_layout]',
+            'priority' => 1,
+            'type' => 'radio',
+            'choices' => [
+                'boxes' => __('Boxes', 'astra-nodes'),
+                'sidebar_boxes' => __('Sidebar and boxes', 'astra-nodes'),
+                'sidebar_news' => __('Sidebar and news', 'astra-nodes'),
+                'wp_default' => __('WordPress default', 'astra-nodes'),
+            ],
+        ]));
 
     // Pages configuration.
     $wp_customize->add_section('astra_nodes_customizer_pages', [

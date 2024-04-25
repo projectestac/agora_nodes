@@ -136,3 +136,28 @@
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     right: 0;
 }
+
+/* Customizer: Layout section */
+.layout-control {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.astra-nodes-layout-container {
+    width: 130px;
+    text-align: center;
+}
+
+.astra-nodes-layout-item {
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.astra-nodes-layout-item input {
+    display: none;
+}
