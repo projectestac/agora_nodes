@@ -1827,3 +1827,456 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         </style>';
     }
 });
+
+add_action('switch_theme', function ($new_theme) {
+    if ($new_theme === 'Astra') {
+        initialize_theme_mod();
+        initialize_palettes();
+    }
+}, 10, 1);
+
+function initialize_theme_mod() {
+    $default_values = default_theme_mod();
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    if (empty($astra_nodes_options)) {
+        $astra_nodes_options = $default_values;
+    } else {
+        foreach ($default_values as $key => $value) {
+            if (!array_key_exists($key, $astra_nodes_options)) {
+                $astra_nodes_options[$key] = $value;
+            }
+        }
+    }
+    set_theme_mod('astra_nodes_options', $astra_nodes_options);
+}
+
+function default_theme_mod(): array {
+
+    return [
+        'custom_logo' => '',
+        'pre_blog_name' => '',
+        'postal_address' => '',
+        'postal_code_city' => '',
+        'phone_number' => '',
+        'link_to_map' => '',
+        'contact_page' => '',
+        'email_address' => '',
+        'header_icon_1_classes' => '',
+        'header_icon_1_text' => '',
+        'header_icon_1_link' => '',
+        'header_icon_1_open_in_new_tab' => false,
+        'header_icon_2_classes' => '',
+        'header_icon_2_text' => '',
+        'header_icon_2_link' => '',
+        'header_icon_2_open_in_new_tab' => false,
+        'header_icon_3_classes' => '',
+        'header_icon_3_text' => '',
+        'header_icon_3_link' => '',
+        'header_icon_3_open_in_new_tab' => false,
+        'header_icon_4_classes' => '',
+        'header_icon_4_text' => '',
+        'header_icon_4_link' => '',
+        'header_icon_4_open_in_new_tab' => false,
+        'header_icon_5_classes' => '',
+        'header_icon_5_text' => '',
+        'header_icon_5_link' => '',
+        'header_icon_5_open_in_new_tab' => false,
+        'header_icon_6_classes' => '',
+        'header_icon_6_text' => '',
+        'header_icon_6_link' => '',
+        'header_icon_6_open_in_new_tab' => false,
+        'front_page_notice_enable' => true,
+        'front_page_notice_image' => '',
+        'front_page_notice_url' => '',
+        'front_page_notice_open_in_new_tab' => false,
+        'front_page_notice_background_color' => '',
+        'front_page_notice_pre_title' => '',
+        'front_page_notice_title' => '',
+        'front_page_notice_content' => '',
+        'front_page_cards_enable' => true,
+        'front_page_card_1_title' => '',
+        'front_page_card_1_image' => '',
+        'front_page_card_1_url' => '',
+        'front_page_card_2_title' => '',
+        'front_page_card_2_image' => '',
+        'front_page_card_2_url' => '',
+        'front_page_card_3_title' => '',
+        'front_page_card_3_image' => '',
+        'front_page_card_3_url' => '',
+        'front_page_card_4_title' => '',
+        'front_page_card_4_image' => '',
+        'front_page_card_4_url' => '',
+        'front_page_slider_enable' => true,
+        'front_page_slider_arrows' => 'inside',
+        'front_page_slider_dots' => 'inside',
+        'front_page_slider_min_height' => 500,
+        'front_page_slider_autoplay' => true,
+        'front_page_slider_image_1' => '',
+        'front_page_slider_link_1' => '',
+        'front_page_slider_open_in_new_tab_1' => false,
+        'front_page_slider_heading_1' => '',
+        'front_page_slider_text_1' => '',
+        'front_page_slider_image_2' => '',
+        'front_page_slider_link_2' => '',
+        'front_page_slider_open_in_new_tab_2' => false,
+        'front_page_slider_heading_2' => '',
+        'front_page_slider_text_2' => '',
+        'front_page_slider_image_3' => '',
+        'front_page_slider_link_3' => '',
+        'front_page_slider_open_in_new_tab_3' => false,
+        'front_page_slider_heading_3' => '',
+        'front_page_slider_text_3' => '',
+        'front_page_slider_image_4' => '',
+        'front_page_slider_link_4' => '',
+        'front_page_slider_open_in_new_tab_4' => false,
+        'front_page_slider_heading_4' => '',
+        'front_page_slider_text_4' => '',
+        'front_page_slider_image_5' => '',
+        'front_page_slider_link_5' => '',
+        'front_page_slider_open_in_new_tab_5' => false,
+        'front_page_slider_heading_5' => '',
+        'front_page_slider_text_5' => '',
+        'front_page_news_enable' => true,
+        'front_page_news_number' => 20,
+        'front_page_news_category' => 29,
+        'front_page_layout' => 'sidebar_boxes',
+        'pages_sidebar' => 'menu',
+    ];
+
+}
+
+function initialize_palettes() {
+
+    $default_palettes = get_default_palettes();
+    $default_palettes['currentPalette'] = get_reactor_palette();
+    $palettes = get_option('astra-color-palettes');
+
+    if (!$palettes || !isset($palettes['palettes'])) {
+        $palettes = $default_palettes;
+    } else {
+        foreach ($default_palettes['palettes'] as $key => $value) {
+            if (!array_key_exists($key, $palettes['palettes'])) {
+                $palettes['palettes'][$key] = $value;
+            }
+        }
+    }
+
+    update_option('astra-color-palettes', $palettes);
+
+}
+
+function get_reactor_palette(): string {
+
+    $reactor_options = get_option('reactor_options');
+
+    // Take the value from the theme reactor configuration.
+    if (!empty($reactor_options['paleta_colors'])) {
+        $palette = $reactor_options['paleta_colors'];
+
+        include_once get_theme_root() . '/reactor/custom-tac/colors_nodes.php';
+        global $colors_nodes;
+
+        return $colors_nodes[$palette]['nom'];
+    }
+
+    // Safe default value in case no configuration is found.
+    return 'Blau clar i blau fosc';
+
+}
+
+function get_default_palettes(): array {
+
+    return [
+        'palettes' => [
+            'Vermell i blau' => [
+                0 => '#ff3257', // Primary
+                1 => '#4c86a6', // Secondary
+                2 => '', // Tertiary
+                3 => '', // Link
+                4 => '', // Calendar
+                5 => '', // Icon22
+                6 => '', // Footer
+                7 => '',
+                8 => '',
+            ],
+            'Blau clar i blau fosc' => [
+                0 => '#0eb1ff',
+                1 => '#087eb6',
+                2 => '#00688B',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i blau' => [
+                0 => '#FFA00C',
+                1 => '#3C7C80',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i lila' => [
+                0 => '#ffa00c',
+                1 => '#B03BBA',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '#B03BBA',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i verd' => [
+                0 => '#fea200',
+                1 => '#0f6333',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i vermell' => [
+                0 => '#FCB535',
+                1 => '#E04B35',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd i blau' => [
+                0 => '#92AE01',
+                1 => '#0988A9',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Rosa i gris' => [
+                0 => '#ff3257',
+                1 => '#6c6c6c',
+                2 => '',
+                3 => '#ff3257',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Roses' => [
+                0 => '#FF2189',
+                1 => '#A41159',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Sienna' => [
+                0 => '#CA5F5F',
+                1 => '#763333',
+                2 => '',
+                3 => '',
+                4 => '#CA5F5F',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronges' => [
+                0 => '#FF4C00',
+                1 => '#C42300',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i gris' => [
+                0 => '#FF4C00',
+                1 => '#7D7D7D',
+                2 => '',
+                3 => '#FF4C00',
+                4 => '#FF4C00',
+                5 => '#7D7D7D',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i verd' => [
+                0 => '#ff5a26',
+                1 => '#1fa799',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Turqueses' => [
+                0 => '#40C3C4',
+                1 => '#2F5D5D',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd i marró' => [
+                0 => '#00B36B',
+                1 => '#752800',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Rosa i verd' => [
+                0 => '#fc3b56',
+                1 => '#2ca698',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd clar i verd fosc' => [
+                0 => '#55CD00',
+                1 => '#418000',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Vermell i taronja' => [
+                0 => '#ff2a2a',
+                1 => '#ff5a26',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Vermell i verd' => [
+                0 => '#ff2a2a',
+                1 => '#00854e',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Xocolata' => [
+                0 => '#521A09',
+                1 => '#923917',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i blau' => [
+                0 => '#ff5a26',
+                1 => '#087eb6',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd clar i lila' => [
+                0 => '#92AE01',
+                1 => '#5E3A73',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Bordeus' => [
+                0 => '#B5196E',
+                1 => '#770E4B',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i oliva' => [
+                0 => '#EA6A00',
+                1 => '#768703',
+                2 => '',
+                3 => '#6A7A00',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Lila i vermell' => [
+                0 => '#9068be',
+                1 => '#e62739',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Blau fosc i taronja' => [
+                0 => '#3A5863',
+                1 => '#D86E3E',
+                2 => '',
+                3 => '#D85E27',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+        ],
+        'flag' => true,
+    ];
+
+}
