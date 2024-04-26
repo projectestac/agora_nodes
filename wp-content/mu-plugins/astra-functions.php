@@ -423,7 +423,7 @@ add_action('astra_html_before', function () {
             <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
                  style="' . $card_background . '">
                 <div class="astra-nodes-card-title">
-                    <h3>' . $card_title . '</h3>
+                    <h3 style="color:' . $card_color . '">' . $card_title . '</h3>
                 </div>
                 <div class="astra-nodes-card-body">
                      <a href="' . $card_url . '" ' . $card_target . '>
