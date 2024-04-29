@@ -4,6 +4,18 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 24.04.30
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.3.4
+- buddypress: Removed dependency that prevented log in to appear when the plugin is disabled
+- enllacos-educatius: Moved images from theme reactor to plugin to remove dependency
+- nodes-editor-widget: tinymce-advanced: Removing hybrid_mode on block editor activation
+- slideshow: Disable the creation of new slideshows when using Gutenberg editor
+- super-emoji-plus: Removed plugin
+- tabs-responsive: Disable the creation of new tabs when using Gutenberg editor
+- Theme astra: Upgraded version
+
+
 Changes 24.03.19
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 6.3.3
