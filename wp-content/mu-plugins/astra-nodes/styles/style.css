@@ -5,7 +5,8 @@
     padding: 5px 0 5px 30px;
 }
 
-.ast-plain-container, .ast-page-builder-template {
+.ast-plain-container,
+.ast-page-builder-template {
     background-color: #f2f2f2;
 }
 
@@ -15,7 +16,9 @@
 }
 
 /* Admin bar color */
-#wpadminbar #adminbarsearch::before, #wpadminbar .ab-icon::before, #wpadminbar .ab-item::before,
+#wpadminbar #adminbarsearch::before,
+#wpadminbar .ab-icon::before,
+#wpadminbar .ab-item::before,
 #wpadminbar ul#wp-admin-bar-root-default li a,
 #wpadminbar ul#wp-admin-bar-root-default li a span,
 #wpadminbar li#wp-admin-bar-login-link-admin-bar a {
@@ -131,8 +134,10 @@ h1#blog-name {
     background-color: var(--ast-global-color-0);
 }
 
-.grid-item-1 a, .grid-item-1 i,
-.grid-item-5 a, .grid-item-5 i {
+.grid-item-1 a,
+.grid-item-1 i,
+.grid-item-5 a,
+.grid-item-5 i {
     color: var(--ast-global-color-0);
     filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
     mix-blend-mode: luminosity;
@@ -144,8 +149,10 @@ h1#blog-name {
     background-color: color-mix(in srgb, var(--ast-global-color-1) 50%, var(--ast-global-color-0) 50%);
 }
 
-.grid-item-2 a, .grid-item-2 i,
-.grid-item-6 a, .grid-item-6 i {
+.grid-item-2 a,
+.grid-item-2 i,
+.grid-item-6 a,
+.grid-item-6 i {
     color: color-mix(in srgb, var(--ast-global-color-1) 50%, var(--ast-global-color-0) 50%);
     filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
     mix-blend-mode: luminosity;
@@ -157,8 +164,10 @@ h1#blog-name {
     background-color: var(--ast-global-color-1);
 }
 
-.grid-item-3 a, .grid-item-3 i,
-.grid-item-4 a, .grid-item-4 i {
+.grid-item-3 a,
+.grid-item-3 i,
+.grid-item-4 a,
+.grid-item-4 i {
     color: var(--ast-global-color-1);
     filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
     mix-blend-mode: luminosity;
