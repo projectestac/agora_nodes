@@ -21,8 +21,6 @@ class WP_Customize_Palette_Control extends WP_Customize_Control {
             echo '<div class="astra-nodes-palette-container" style="border:' . $border . '">';
             echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[0] . ';"></div>';
             echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[1] . ';"></div>';
-            echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[2] . ';"></div>';
-            echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[3] . ';"></div>';
             echo '<span class="astra-nodes-palette-footer">'
                 . $name
                 . '<input type="radio" id="' . $name . '" name="palette" value="' . $name . '" data-customize-setting-link="astra-color-palettes[currentPalette]">';
