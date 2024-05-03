@@ -3,11 +3,16 @@
 function extract_slider_params($astra_nodes_options): array {
 
     $params = [
-        'minHeight' => $astra_nodes_options['front_page_slider_min_height'] ?? 300,
+        'minHeight' => $astra_nodes_options['front_page_slider_min_height'] ?? 200,
         'autoplay' => $astra_nodes_options['front_page_slider_autoplay'] ? 'true' : 'false',
         'arrows' => $astra_nodes_options['front_page_slider_arrows'] ?? 'inside',
         'dots' => $astra_nodes_options['front_page_slider_dots'] ?? 'inside',
     ];
+
+    // Minimum height.
+    if ($params['minHeight'] < 200) {
+        $params['minHeight'] = 200;
+    }
 
     switch ($params['arrows']) {
         case 'inside':
@@ -82,8 +87,8 @@ function get_front_page_slider($astra_nodes_options): string {
     for ($i = 1; $i <= $params['slideCount']; $i++) {
         $slider .= '
             <!-- wp:getwid/media-text-slider-slide {"slideId":' . $i . ',"outerParent":{"attributes":{"minHeight":"' . $params['minHeight'] . 'px","overlayOpacity":"30","imageSize":"full"}}} -->
-            <div style="min-height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide wp-block-getwid-media-text-slider-slide__content-wrapper slide-' . $i . '">
-                <div style="min-height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide__content">
+            <div style="height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide wp-block-getwid-media-text-slider-slide__content-wrapper slide-' . $i . '">
+                <div style="height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide__content">
                     <!-- wp:getwid/media-text-slider-slide-content {"mediaId":' . $params['image_' . $i . '_id'] . ',"mediaType":"image","innerParent":{"attributes":{"minHeight":"' . $params['minHeight'] . 'px","overlayOpacity":"30","imageSize":"full"}}} -->
                     <div class="wp-block-getwid-media-text-slider-slide-content">
                         <a href="' . $params['url_' . $i] . '" target="_blank">

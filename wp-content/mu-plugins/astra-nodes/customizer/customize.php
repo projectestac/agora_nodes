@@ -743,7 +743,7 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_slider_min_height', [
-        'label' => __('Minimum height of the images', 'astra-nodes'),
+        'label' => __('Height of the slider', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_slider',
         'settings' => 'astra_nodes_options[front_page_slider_min_height]',
         'priority' => 2,
