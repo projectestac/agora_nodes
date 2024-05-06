@@ -269,43 +269,41 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Front page notice */
-#front-page-notice-container-no-image {
-    display: flex;
-    margin: 40px;
-}
-
-#front-page-notice-container-no-image > div {
-    border-radius: 30px;
-}
-
-#front-page-notice-image-no-image {
-    border-radius: 30px;
-    height: 350px;
-    width: 100%;
-    object-fit: cover;
-    padding: 60px;
-    background-position: center;
-}
-
 #front-page-notice-container {
     display: flex;
+    height: 350px;
     margin: 37px;
+    border-radius: 30px;
+}
+
+#front-page-notice-container a {
+    width: 100%;
+}
+
+#front-page-notice-container a div {
+    border-radius: 30px;
+}
+
+#front-page-notice-image-container {
     border-radius: 30px;
 }
 
 #front-page-notice-image {
     border-radius: 30px;
     height: 350px;
+    width: 100%;
     object-fit: cover;
 }
 
-#front-page-notice-body {
+#front-page-notice-text {
+    border-radius: 30px;
+    flex: 2;
+    flex-direction: column;
     text-align: justify;
     justify-content: center;
-    flex-direction: column;
     min-height: 300px;
-    padding-top: 30px;
-    margin-left: 100px;
+    padding: 50px;
+    margin-left: 50px;
 }
 
 #front-page-notice-pre-title {
@@ -527,10 +525,6 @@ div#content {
     padding: 16px var(--wp--preset--spacing--60);
 }
 
-#front-page-notice-container-no-image {
-    margin: 0 40px 40px 40px;
-}
-
 .ast-single-post.ast-page-builder-template .site-main > article,
 .woocommerce.ast-page-builder-template .site-main {
     padding-top: 0;
@@ -682,7 +676,7 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    border-radius: 40px !important;
+    border-radius: 40px;
 }
 
 .ast-search-box.full-screen {
