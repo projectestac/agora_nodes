@@ -454,7 +454,8 @@ add_action('astra_html_before', function () {
             return;
         }
 
-        $image = $astra_nodes_options['front_page_notice_image'];
+        $layout = $astra_nodes_options['front_page_notice_layout'] ?? 'image_text';
+        $image = $astra_nodes_options['front_page_notice_image'] ?? '';
         $background_color = $astra_nodes_options['front_page_notice_background_color'];
         $url = $astra_nodes_options['front_page_notice_url'];
         $open_in_new_tab = $astra_nodes_options['front_page_notice_open_in_new_tab'];
@@ -464,30 +465,45 @@ add_action('astra_html_before', function () {
 
         $style = !empty($background_color) ? 'background-color: ' . $background_color : '';
 
-        if (!empty($image)) {
-            echo '
-            <div id="front-page-notice-container-no-image" class="wp-block-columns">
-                <div class="wp-block-column" style="' . $style . '">
-                    <div id="front-page-notice-image-no-image" style="background-image:url(' . $image . ');">
-                        <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+        switch ($layout) {
+            case 'image':
+                echo '
+                    <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
+                        <div id="front-page-notice-image-container" class="wp-block-column">
+                            <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+                                <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
+                            </a>
+                        </div>
+                    </div>
+                ';
+                break;
+            case 'text':
+                echo '
+                    <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
+                        <div id="front-page-notice-text" class="wp-block-column">
                             <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
                             <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
                             <div id="front-page-notice-content">' . $content . '</div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        ';
-        } else {
-            echo '
-            <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
-                <div id="front-page-notice-body" class="wp-block-column">
-                    <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
-                    <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
-                    <div id="front-page-notice-content">' . $content . '</div>
-                </div>
-            </div>
-            ';
+                ';
+                break;
+            case 'image_text':
+                echo '
+                    <div id="front-page-notice-container" class="wp-block-columns">
+                            <div id="front-page-notice-image-container" class="wp-block-column">
+                                <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+                                    <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
+                                </a>
+                            </div>
+                            <div id="front-page-notice-text" class="wp-block-column" style="' . $style . '">
+                                <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
+                                <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
+                                <div id="front-page-notice-content">' . $content . '</div>
+                            </div>
+                        </div>
+                ';
+                break;
         }
 
     }, $notice_priority, 0);

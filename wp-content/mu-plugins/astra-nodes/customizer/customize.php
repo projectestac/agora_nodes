@@ -543,6 +543,26 @@ function nodes_customize_register($wp_customize) {
             'priority' => 1,
         ]));
 
+    // Front page notice: Layout.
+    $wp_customize->add_setting('astra_nodes_options[front_page_notice_layout]', [
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_customizer_front_page_notice_layout', [
+        'label' => __('Show'),
+        'section' => 'astra_nodes_customizer_front_page_notice',
+        'settings' => 'astra_nodes_options[front_page_notice_layout]',
+        'type' => 'radio',
+        'choices' => [
+            'image' => __('Image', 'astra-nodes'),
+            'text' => __('Text', 'astra-nodes'),
+            'image_text' => __('Image and text', 'astra-nodes'),
+        ],
+        'priority' => 2,
+    ]);
+
     // Front page notice: Image.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_image]', [
         'default' => '',
@@ -555,7 +575,7 @@ function nodes_customize_register($wp_customize) {
             'label' => '',
             'section' => 'astra_nodes_customizer_front_page_notice',
             'settings' => 'astra_nodes_options[front_page_notice_image]',
-            'priority' => 2,
+            'priority' => 3,
         ]));
 
     // Front page notice: Background color.
@@ -570,7 +590,7 @@ function nodes_customize_register($wp_customize) {
             'label' => __('Background color', 'astra-nodes'),
             'section' => 'astra_nodes_customizer_front_page_notice',
             'settings' => 'astra_nodes_options[front_page_notice_background_color]',
-            'priority' => 3,
+            'priority' => 4,
         ]));
 
     // Front page notice: Link.
@@ -581,10 +601,10 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('front_page_notice_url', [
-        'label' => __('URL', 'astra-nodes'),
+        'label' => __('Image URL', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_url]',
-        'priority' => 4,
+        'priority' => 5,
         'type' => 'text',
         'input_attrs' => [
             'placeholder' => __('https://', 'astra-nodes'),
@@ -602,7 +622,7 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Open in new tab', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_open_in_new_tab]',
-        'priority' => 5,
+        'priority' => 6,
         'type' => 'checkbox',
     ]);
 
@@ -615,11 +635,11 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('front_page_notice_pre_title', [
-        'label' => __('Text preceding the title', 'astra-nodes'),
+        'label' => __('Text preceding the title', 'astra-nodes') . ' (' . __('optional', 'astra-nodes') . ')',
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_pre_title]',
         'type' => 'text',
-        'priority' => 6,
+        'priority' => 7,
     ]);
 
     // Front page notice: Title.
@@ -631,11 +651,11 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('front_page_notice_title', [
-        'label' => __('Title', 'astra-nodes'),
+        'label' => __('Title', 'astra-nodes') . ' (' . __('optional', 'astra-nodes') . ')',
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_title]',
         'type' => 'text',
-        'priority' => 7,
+        'priority' => 8,
     ]);
 
     // Front page notice: Content.
@@ -647,11 +667,11 @@ function nodes_customize_register($wp_customize) {
     ]);
 
     $wp_customize->add_control('front_page_notice_content', [
-        'label' => __('Content', 'astra-nodes'),
+        'label' => __('Content', 'astra-nodes') . ' (' . __('optional', 'astra-nodes') . ')',
         'section' => 'astra_nodes_customizer_front_page_notice',
         'settings' => 'astra_nodes_options[front_page_notice_content]',
         'type' => 'textarea',
-        'priority' => 8,
+        'priority' => 9,
     ]);
 
 
