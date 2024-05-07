@@ -4,6 +4,16 @@ textarea {
     border-radius: 30px;
 }
 
+.box-selected {
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.box-unselected {
+    border: 1px solid #cccccc;
+    box-shadow: none;
+}
+
 /* Universal Icon Picker */
 
 .customize-control {
@@ -143,7 +153,8 @@ textarea {
     right: 0;
 }
 
-/* Customizer: Layout section */
+/* Layout section */
+
 .layout-control {
     width: 100%;
     display: inline-grid;
@@ -165,5 +176,19 @@ textarea {
 }
 
 .astra-nodes-layout-item input {
+    display: none;
+}
+
+/* Logo selector */
+
+.logo-control {
+    margin-top: 10px;
+}
+
+.astra-nodes-logo-select-option {
+    margin: 10px;
+}
+
+.astra-nodes-logo-select-item input {
     display: none;
 }

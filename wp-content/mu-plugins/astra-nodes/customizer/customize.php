@@ -35,13 +35,22 @@ add_action('customize_register', 'nodes_customize_register');
 
 function nodes_customize_register($wp_customize) {
 
-    // Header section.
-    $wp_customize->add_section('astra_nodes_customizer_header', [
+    // Panel to group all header settings.
+
+    $wp_customize->add_panel('astra_nodes_customizer_header', [
         'title' => __('Header', 'astra-nodes'),
+        'description' => __('Customization of the site header', 'astra-nodes'),
         'priority' => 1,
     ]);
 
-    // Header section: Custom logo.
+    // Header section: Logos.
+    $wp_customize->add_section('astra_nodes_customizer_header_logo', [
+        'title' => __('Logos', 'astra-nodes'),
+        'panel' => 'astra_nodes_customizer_header',
+        'priority' => 1,
+    ]);
+
+    // Site Logo.
     $wp_customize->add_setting('astra_nodes_options[custom_logo]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -51,17 +60,47 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
-            $wp_customize, 'astra_nodes_customizer_header_logo', [
+            $wp_customize, 'astra_nodes_customizer_header_logo_image', [
                 'label' => __('Header logo', 'astra-nodes'),
-                'section' => 'astra_nodes_customizer_header',
-                'description' => 'Recomanacions: 300 x 200 px i menys de 200 kB',
+                'section' => 'astra_nodes_customizer_header_logo',
+                'description' => __('Recommendations: 300 x 200 px and less than 200 kB', 'astra-nodes'),
                 'settings' => 'astra_nodes_options[custom_logo]',
                 'priority' => 1,
             ]
         )
     );
 
-    // Header section: Text preceding the blog name.
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Logo_Control.php';
+
+    // Organism logo.
+    $wp_customize->add_setting('astra_nodes_options[organism_logo]', [
+        'default' => 'department',
+        'type' => 'theme_mod',
+        'capability' => 'manage_options',
+        'transport' => 'postMessage',
+    ]);
+
+    $wp_customize->add_control(
+        new WP_Customize_Logo_Control($wp_customize, 'astra_nodes_customizer_header_organism_logo', [
+            'label' => __('Organism logo', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_logo',
+            'settings' => 'astra_nodes_options[organism_logo]',
+            'priority' => 2,
+            'type' => 'radio',
+            'choices' => [
+                'department' => __('Department of Education', 'astra-nodes'),
+                'ceb' => __('CEB', 'astra-nodes'),
+            ],
+        ]));
+
+    // Blog name section.
+    $wp_customize->add_section('astra_nodes_customizer_header', [
+        'title' => __('Site name', 'astra-nodes'),
+        'panel' => 'astra_nodes_customizer_header',
+        'priority' => 2,
+    ]);
+
+    // Blog name section: Text preceding the blog name.
     $wp_customize->add_setting('astra_nodes_options[pre_blog_name]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -73,7 +112,7 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Text preceding the blog name', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
         'settings' => 'astra_nodes_options[pre_blog_name]',
-        'priority' => 2,
+        'priority' => 1,
     ]);
 
     // Header section: Blog name.
@@ -88,7 +127,7 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Blog name', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
         'settings' => 'blogname',
-        'priority' => 3,
+        'priority' => 2,
     ]);
 
     // Header section: Text following the blog name.
@@ -103,7 +142,7 @@ function nodes_customize_register($wp_customize) {
         'label' => __('Blog description', 'astra-nodes'),
         'section' => 'astra_nodes_customizer_header',
         'settings' => 'blogdescription',
-        'priority' => 4,
+        'priority' => 3,
     ]);
 
     // Header section: Postal address.
@@ -203,7 +242,8 @@ function nodes_customize_register($wp_customize) {
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Raw_HTML_Control.php';
 
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
-        'title' => __('Header Buttons', 'astra-nodes'),
+        'title' => __('Buttons', 'astra-nodes'),
+        'panel' => 'astra_nodes_customizer_header',
         'priority' => 2,
     ]);
 
