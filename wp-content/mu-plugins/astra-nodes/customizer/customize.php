@@ -43,14 +43,14 @@ function nodes_customize_register($wp_customize) {
         'priority' => 1,
     ]);
 
-    // Header section: Logos.
+    // Header panel: Logos section.
     $wp_customize->add_section('astra_nodes_customizer_header_logo', [
         'title' => __('Logos', 'astra-nodes'),
         'panel' => 'astra_nodes_customizer_header',
         'priority' => 1,
     ]);
 
-    // Site Logo.
+    // Header panel: Logos section: Site Logo.
     $wp_customize->add_setting('astra_nodes_options[custom_logo]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -72,7 +72,7 @@ function nodes_customize_register($wp_customize) {
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Logo_Control.php';
 
-    // Organism logo.
+    // Header panel: Logos section: Organism logo.
     $wp_customize->add_setting('astra_nodes_options[organism_logo]', [
         'default' => 'department',
         'type' => 'theme_mod',
@@ -93,14 +93,14 @@ function nodes_customize_register($wp_customize) {
             ],
         ]));
 
-    // Blog name section.
-    $wp_customize->add_section('astra_nodes_customizer_header', [
+    // Header panel: Blog name section.
+    $wp_customize->add_section('astra_nodes_customizer_header_blog_name', [
         'title' => __('Site name', 'astra-nodes'),
         'panel' => 'astra_nodes_customizer_header',
         'priority' => 2,
     ]);
 
-    // Blog name section: Text preceding the blog name.
+    // Header panel: Blog name section: Text preceding the blog name.
     $wp_customize->add_setting('astra_nodes_options[pre_blog_name]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -110,12 +110,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_pre_blog_name', [
         'label' => __('Text preceding the blog name', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_blog_name',
         'settings' => 'astra_nodes_options[pre_blog_name]',
         'priority' => 1,
     ]);
 
-    // Header section: Blog name.
+    // Header panel: Blog name section: Blog name.
     $wp_customize->add_setting('blogname', [
         'default' => '',
         'type' => 'option',
@@ -125,12 +125,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_blog_name', [
         'label' => __('Blog name', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_blog_name',
         'settings' => 'blogname',
         'priority' => 2,
     ]);
 
-    // Header section: Text following the blog name.
+    // Header panel: Blog name section: Text following the blog name.
     $wp_customize->add_setting('blogdescription', [
         'default' => '',
         'type' => 'option',
@@ -140,12 +140,19 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_blog_description', [
         'label' => __('Blog description', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_blog_name',
         'settings' => 'blogdescription',
         'priority' => 3,
     ]);
 
-    // Header section: Postal address.
+    // Header panel: Contact information section.
+    $wp_customize->add_section('astra_nodes_customizer_header_contact', [
+        'title' => __('Contact information', 'astra-nodes'),
+        'panel' => 'astra_nodes_customizer_header',
+        'priority' => 3,
+    ]);
+
+    // Header panel: Contact information section: Postal address.
     $wp_customize->add_setting('astra_nodes_options[postal_address]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -155,12 +162,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_postal_address', [
         'label' => __('Postal address', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[postal_address]',
-        'priority' => 5,
+        'priority' => 1,
     ]);
 
-    // Header section: Postal code and city.
+    // Header panel: Contact information section: Postal code and city.
     $wp_customize->add_setting('astra_nodes_options[postal_code_city]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -170,12 +177,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_postal_code_city', [
         'label' => __('Postal code and city', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[postal_code_city]',
-        'priority' => 6,
+        'priority' => 2,
     ]);
 
-    // Header section: Phone number.
+    // Header panel: Contact information section: Phone number.
     $wp_customize->add_setting('astra_nodes_options[phone_number]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -185,12 +192,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_phone_number', [
         'label' => __('Phone number', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[phone_number]',
-        'priority' => 8,
+        'priority' => 3,
     ]);
 
-    // Header section: Link to the map.
+    // Header panel: Contact information section: Link to the map.
     $wp_customize->add_setting('astra_nodes_options[link_to_map]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -200,12 +207,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_link_to_map', [
         'label' => __('Map', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[link_to_map]',
-        'priority' => 9,
+        'priority' => 4,
     ]);
 
-    // Header section: Link to the contact page.
+    // Header panel: Contact information section: Link to the contact page.
     $wp_customize->add_setting('astra_nodes_options[contact_page]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -215,12 +222,12 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_link_to_contact_page', [
         'label' => __('Contact', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[contact_page]',
-        'priority' => 10,
+        'priority' => 5,
     ]);
 
-    // Header section: Email address.
+    // Header panel: Contact information section: Email address.
     $wp_customize->add_setting('astra_nodes_options[email_address]', [
         'default' => '',
         'type' => 'theme_mod',
@@ -230,13 +237,13 @@ function nodes_customize_register($wp_customize) {
 
     $wp_customize->add_control('astra_nodes_customizer_header_email', [
         'label' => __('Email', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header',
+        'section' => 'astra_nodes_customizer_header_contact',
         'settings' => 'astra_nodes_options[email_address]',
-        'priority' => 11,
+        'priority' => 6,
     ]);
 
 
-    // Header section: Buttons area.
+    // Header panel: Buttons section.
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Font_Icon_Picker_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Raw_HTML_Control.php';
@@ -244,12 +251,12 @@ function nodes_customize_register($wp_customize) {
     $wp_customize->add_section('astra_nodes_customizer_header_buttons', [
         'title' => __('Buttons', 'astra-nodes'),
         'panel' => 'astra_nodes_customizer_header',
-        'priority' => 2,
+        'priority' => 4,
     ]);
 
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
 
-        // Buttons area: Add the Icon title text, the preview and the button to change the icon.
+        // Header panel: Buttons section: Add the Icon title text, the preview and the button to change the icon.
         $wp_customize->add_setting('icon_preview_' . $i, [
             'default' => '',
             'type' => 'theme_mod',
@@ -270,7 +277,7 @@ function nodes_customize_register($wp_customize) {
                     ',
             ]));
 
-        // Buttons area: Field to receive the selected icon value.
+        // Header panel: Buttons section: Field to receive the selected icon value.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_classes]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -290,7 +297,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Buttons area: Text for the link.
+        // Header panel: Buttons section: Text for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_text]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -308,7 +315,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Buttons area: URL for the link.
+        // Header panel: Buttons section: URL for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_link]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -326,7 +333,7 @@ function nodes_customize_register($wp_customize) {
             ],
         ]);
 
-        // Buttons area: Open the link in a new tab.
+        // Header panel: Buttons section: Open the link in a new tab.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_open_in_new_tab]', [
             'default' => '',
             'type' => 'theme_mod',
@@ -341,7 +348,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'checkbox',
         ]);
 
-        // Buttons area: Add the javascript code to load the icon picker.
+        // Header panel: Buttons section: Add the javascript code to load the icon picker.
         $wp_customize->add_setting('header_buttons_script_' . $i, [
             'default' => '',
             'type' => 'theme_mod',
@@ -359,7 +366,7 @@ function nodes_customize_register($wp_customize) {
 
     }
 
-    // Buttons area: Add the javascript code to translate the text of the icon picker.
+    // Header panel: Buttons section: Add the javascript code to translate the text of the icon picker.
     $wp_customize->add_setting('translation_script', [
         'default' => '',
         'type' => 'theme_mod',
