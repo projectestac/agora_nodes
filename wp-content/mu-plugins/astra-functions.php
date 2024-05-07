@@ -394,13 +394,21 @@ add_action('astra_html_before', function () {
         $news_priority = 30;
     }
 
+    if ($front_page_layout === 'wp_default_no_sidebar') {
+        add_filter('astra_page_layout', function () {
+            return 'no-sidebar';
+        });
+    }
+
     // Front page: Show the cards if they are enabled.
     add_action($action, function () {
 
         global $astra_nodes_options;
 
         // Check if the layout is WordPress default or if it is not front page.
-        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' ||
+            $astra_nodes_options['front_page_layout'] === 'wp_default_no_sidebar' ||
+            !is_front_page()) {
             return;
         }
 
@@ -451,7 +459,9 @@ add_action('astra_html_before', function () {
         global $astra_nodes_options;
 
         // Check if the layout is WordPress default or if it is not front page.
-        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' ||
+            $astra_nodes_options['front_page_layout'] === 'wp_default_no_sidebar' ||
+            !is_front_page()) {
             return;
         }
 
@@ -524,7 +534,9 @@ add_action('astra_html_before', function () {
         }
 
         // Check if the layout is WordPress default or if it is not front page.
-        if ($astra_nodes_options['front_page_layout'] === 'wp_default' || !is_front_page()) {
+        if ($astra_nodes_options['front_page_layout'] === 'wp_default' ||
+            $astra_nodes_options['front_page_layout'] === 'wp_default_no_sidebar' ||
+            !is_front_page()) {
             return;
         }
 
