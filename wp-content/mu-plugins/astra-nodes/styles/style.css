@@ -11,11 +11,6 @@ div.sidebar-main li:hover {
     background-color: #f2f2f2;
 }
 
-#wpadminbar #dept-educacio-logo {
-    height: 36px !important;
-    margin: 0 !important;
-}
-
 /* Admin bar color */
 #wpadminbar #adminbarsearch::before,
 #wpadminbar .ab-icon::before,
@@ -39,6 +34,12 @@ div.sidebar-main li:hover {
 }
 
 /* Header */
+
+img.custom-logo {
+    max-width: 266px;
+    max-height: 143px;
+}
+
 #ast-desktop-header > div.ast-below-header-wrap > div.ast-below-header-bar.ast-below-header.site-header-focus-item {
     width: calc(100% - 2 * 20px);
     margin: 5px 20px;
