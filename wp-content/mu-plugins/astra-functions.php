@@ -65,112 +65,117 @@ add_action('wp_before_admin_bar_render', function () {
 // Admin bar: Add Departament d'Educació logo in the first position and menu with XTEC resources.
 add_action('admin_bar_menu', function ($wp_admin_bar) {
 
-    $wp_admin_bar->add_node([
-        'id' => 'dept-educacio-logo-wrapper',
-        'parent' => '',
-        'title' => '<img id="logo-dept-educacio" alt="Logo Educació" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_gene.png' . '">',
-        'href' => 'https://educacio.gencat.cat/ca/inici/',
-        'meta' => [
-            'tabindex' => -1,
+    global $astra_nodes_options;
+
+    $logo = $astra_nodes_options['organism_logo'] ?? 'department';
+
+    if ($logo === 'ceb') {
+        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.png';
+        $logo_url = 'https://www.edubcn.cat/ca/';
+    } else {
+        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_gene.png';
+        $logo_url = 'https://educacio.gencat.cat/ca/inici/';
+    }
+
+    $data = [
+        [
+            'parent' => false,
+            'id' => 'logo-educacio-wrapper',
+            'href' => $logo_url,
+            'title' => '<img id="logo-educacio" alt="' . __('Logo organism', 'astra-nodes') . '" src="' . $logo_image . '">',
+            'meta' => [
+                'target' => '_blank',
+            ],
         ],
-    ]);
+        [
+            'parent' => false,
+            'id' => 'resources_xtec',
+            'title' => '<img id="logo-xtec" alt="Logo XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.png' . '">',
+            'href' => 'https://xtec.gencat.cat/ca/inici',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'xtec',
+            'title' => 'XTEC',
+            'href' => 'https://xtec.gencat.cat/ca/inici',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'edu365',
+            'title' => 'Edu365',
+            'href' => 'https://www.edu365.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'digital',
+            'title' => 'Digital',
+            'href' => 'https://projectes.xtec.cat/digital/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'nus',
+            'title' => 'Nus (Xarxa docent)',
+            'href' => 'https://comunitat.edigital.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'alexandria',
+            'title' => 'Alexandria',
+            'href' => 'https://alexandria.xtec.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'arc',
+            'title' => 'ARC',
+            'href' => 'https://apliense.xtec.cat/arc/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'merli',
+            'title' => 'Merlí',
+            'href' => 'https://merli.xtec.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'jclic',
+            'title' => 'jClic',
+            'href' => 'https://clic.xtec.cat/legacy/ca/index.html',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'linkat',
+            'title' => 'Linkat',
+            'href' => 'http://linkat.xtec.cat/portal/index.php',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'odissea',
+            'title' => 'Odissea',
+            'href' => 'https://odissea.xtec.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'agora',
+            'title' => 'Àgora',
+            'href' => 'https://educaciodigital.cat/',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'sinapsi',
+            'title' => 'Sinapsi',
+            'href' => 'https://sinapsi.xtec.cat',
+        ],
+        [
+            'parent' => 'resources_xtec',
+            'id' => 'dossier',
+            'title' => 'Dossier',
+            'href' => 'https://dossier.xtec.cat/',
+        ],
+    ];
 
-    $wp_admin_bar->add_node([
-        'id' => 'recursosXTEC',
-        'title' => '<img id="logo-xtec" alt="Logotip XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.png' . '">',
-        'parent' => false,
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'xtec',
-        'title' => 'XTEC',
-        'href' => 'https://xtec.gencat.cat/ca/inici',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'edu365',
-        'href' => 'https://www.edu365.cat/',
-        'title' => 'Edu365',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'digital',
-        'href' => 'https://projectes.xtec.cat/digital/',
-        'title' => 'Digital',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'nus',
-        'href' => 'https://comunitat.edigital.cat/',
-        'title' => 'Nus (Xarxa docent)',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'alexandria',
-        'title' => 'Alexandria',
-        'href' => 'https://alexandria.xtec.cat/',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'arc',
-        'title' => 'ARC',
-        'href' => 'https://apliense.xtec.cat/arc/',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'merli',
-        'title' => 'Merlí',
-        'href' => 'https://merli.xtec.cat/',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'jclic',
-        'title' => 'jClic',
-        'href' => 'https://clic.xtec.cat/legacy/ca/index.html',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'linkat',
-        'title' => 'Linkat',
-        'href' => 'http://linkat.xtec.cat/portal/index.php',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'odissea',
-        'title' => 'Odissea',
-        'href' => 'https://odissea.xtec.cat/',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'agora',
-        'title' => 'Àgora',
-        'href' => 'https://educaciodigital.cat/',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'sinapsi',
-        'href' => 'https://sinapsi.xtec.cat',
-        'title' => 'Sinapsi',
-        'parent' => 'recursosXTEC',
-    ]);
-
-    $wp_admin_bar->add_node([
-        'id' => 'dossier',
-        'href' => 'https://dossier.xtec.cat/',
-        'title' => 'Dossier',
-        'parent' => 'recursosXTEC',
-    ]);
+    foreach ($data as $datum) {
+        $wp_admin_bar->add_node($datum);
+    }
 
     if (!is_user_logged_in()) {
         $wp_admin_bar->add_node([
@@ -363,13 +368,14 @@ add_action('astra_masthead_bottom', function () {
 
 });
 
-// Front page layout: The layout is hooked to the first Astra action available. When this file is loaded,
-// the layout cannot be set because the decision vary if it is a preview or not, so it is postponed to the
-// first action available. 
+// Front page: layout, cards, notice and news.
 add_action('astra_html_before', function () {
 
     global $astra_nodes_options;
 
+    // Front page: The layout is hooked to the first Astra action available. When this file is loaded, the
+    // layout cannot be set because the decision vary if it is a preview or not, so it is postponed to the
+    // first action available. 
     $front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
 
     // Default layout is 'sidebar_news'.

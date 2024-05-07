@@ -10,7 +10,7 @@
     wp.customize('astra_nodes_options[custom_logo]', function (value) {
         value.bind(function (url) {
             $('.site-logo-img a.custom-logo-link').html(
-                '<img width="266" height="143" src="' + url + '" class="custom-logo" alt="" decoding="async">'
+                '<img class="custom-logo" src="' + url + '" alt="" decoding="async">'
             );
         });
     });
