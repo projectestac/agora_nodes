@@ -2,6 +2,20 @@
 
 // Add JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
 add_action('customize_preview_init', function () {
+    $data = [
+        'logo_image_ceb' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.png',
+        'logo_url_ceb' => 'https://www.edubcn.cat/ca/',
+        'logo_image_department' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.png',
+        'logo_url_department' => 'https://educacio.gencat.cat/ca/inici/',
+    ];
+    wp_register_script(
+        'astra-nodes-customizer',
+        plugins_url('/js/theme-customizer.js', __FILE__),
+        ['jquery', 'customize-preview'],
+        '',
+        true
+    );
+    wp_localize_script('astra-nodes-customizer', 'astra_nodes', $data);
     wp_enqueue_script(
         'astra-nodes-customizer',
         plugins_url('/js/theme-customizer.js', __FILE__),
@@ -302,6 +316,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_text', [
@@ -320,6 +335,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_link', [
@@ -338,6 +354,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_open_in_new_tab', [

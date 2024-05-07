@@ -6,6 +6,22 @@
  */
 (function ($) {
 
+    // Admin bar logo.
+    wp.customize('astra_nodes_options[organism_logo]', function (value) {
+        value.bind(function (code) {
+            // astra_nodes is defined in customize.php.
+            if (code === 'ceb') {
+                var image = astra_nodes.logo_image_ceb;
+                var url = astra_nodes.logo_url_ceb;
+            } else {
+                var image = astra_nodes.logo_image_department;
+                var url = astra_nodes.logo_url_department;
+            }
+            $('#logo-educacio').attr('src', image);
+            $('#wp-admin-bar-logo-educacio-wrapper a.ab-item').attr('href', url);
+        });
+    });
+
     // Header logo.
     wp.customize('astra_nodes_options[custom_logo]', function (value) {
         value.bind(function (url) {
@@ -66,12 +82,38 @@
         });
     });
 
-    // Front page button 1.
-    wp.customize('astra_nodes_options[header_icon_1_classes]', function (value) {
-        value.bind(function (text) {
-            $('#header-button-1').attr('class', text + ' astra-nodes-header-icon');
+    // Header buttons.
+    for (let i = 1; i <= 6; i++) {
+
+        wp.customize('astra_nodes_options[header_icon_' + i + '_classes]', function (value) {
+            value.bind(function (classes) {
+                $('#header-button-' + i).attr('class', classes + ' astra-nodes-header-icon');
+            });
         });
-    });
+
+        wp.customize('astra_nodes_options[header_icon_' + i + '_text]', function (value) {
+            value.bind(function (text) {
+                $('.header-button-link-' + i).html(text);
+            });
+        });
+
+        wp.customize('astra_nodes_options[header_icon_' + i + '_link]', function (value) {
+            value.bind(function (url) {
+                $('.header-button-link-' + i).attr('href', url);
+            });
+        });
+
+        wp.customize('astra_nodes_options[header_icon_' + i + '_open_in_new_tab]', function (value) {
+            value.bind(function (target) {
+                if (target) {
+                    $('.header-button-link-' + i).attr('target', '_blank');
+                } else {
+                    $('.header-button-link-' + i).attr('target', '_self');
+                }
+            });
+        });
+
+    }
 
     // Front page notice: Image.
     wp.customize('astra_nodes_options[front_page_notice_image]', function (value) {
