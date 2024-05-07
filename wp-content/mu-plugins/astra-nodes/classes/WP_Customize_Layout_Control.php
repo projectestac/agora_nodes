@@ -13,17 +13,17 @@ class WP_Customize_Layout_Control extends WP_Customize_Control {
 
         $i = 0;
         foreach ($this->choices as $value => $label) {
-            $border = ($value === $current_value) ? '2px solid #000000;' : '1px solid #cccccc;';
+            $select_class = ($value === $current_value) ? 'box-selected' : 'box-unselected';
             echo '<label for="' . $value . '">';
-            echo '<div class="astra-nodes-layout-container" style="border:' . $border . '">';
+            echo '<div class="astra-nodes-layout-container ' . $select_class . '">';
             echo '<span class="astra-nodes-layout-item">'
-            . $label
-            . '<input type="radio" id="' . $value . '" name="layout" value="' . $value . '"';
+                . $label
+                . '<input type="radio" id="' . $value . '" name="layout" value="' . $value . '"';
             $this->link();
             checked($current_value, $value);
             echo '>';
             echo '<hr>';
-            echo '<img src="'.WPMU_PLUGIN_URL.'/astra-nodes/images/layout_selector/layout_'.$i.'.png" alt="layout_'.$i.'.png">';
+            echo '<img src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/layout_' . $i . '.png" alt="layout_' . $i . '.png">';
             echo '</span>';
             echo '</div>';
             echo '</label>';
@@ -39,8 +39,8 @@ class WP_Customize_Layout_Control extends WP_Customize_Control {
         wp_add_inline_script('astra-nodes-layout-js', "
             jQuery(document).ready(function() {
                 jQuery('.astra-nodes-layout-container').on('click', function() {
-                    jQuery('.astra-nodes-layout-container').css('border', '1px solid #cccccc');
-                    jQuery(this).css('border', '2px solid #000000');
+                    jQuery('.astra-nodes-layout-container').addClass('box-unselected').removeClass('box-selected');
+                    jQuery(this).addClass('box-selected').removeClass('box-unselected');
                 });
             });
         ");
