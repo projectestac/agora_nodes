@@ -448,6 +448,77 @@ function nodes_customize_register($wp_customize) {
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Toggle_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Separator_Control.php';
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Custom_Palette_Control.php';
+
+    if (is_xtec_super_admin()) {
+
+        $custom_palette = get_option('astra-color-palettes')['palettes']['Personalitzada'];
+
+        // Palettes: Separator.
+        $wp_customize->add_setting('astra-color-palettes[separator]', [
+            'default' => '',
+            'type' => 'theme_mod',
+        ]);
+
+        $wp_customize->add_control(
+            new WP_Customize_Separator_Control(
+                $wp_customize, 'astra-color-palettes-separator', [
+                'label' => '',
+                'section' => 'astra_nodes_customizer_themes',
+                'settings' => 'astra-color-palettes[separator]',
+                'priority' => 2,
+            ])
+        );
+
+        // Custom palette.
+        $wp_customize->add_setting('astra-color-palettes-personalitzada', [
+            'default' => '',
+            'type' => 'option',
+            'capability' => 'edit_theme_options',
+        ]);
+
+        $wp_customize->add_control(
+            new WP_Customize_Custom_Palette_Control($wp_customize, 'astra_nodes_palettes_custom', [
+                'label' => __('Custom', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_themes',
+                'settings' => 'astra-color-palettes-personalitzada',
+                'priority' => 3,
+            ])
+        );
+
+        // Color picker #1.
+        $wp_customize->add_setting('astra-color-palettes[palettes][Personalitzada][0]', [
+            'default' => $custom_palette[0],
+            'type' => 'option',
+            'capability' => 'edit_theme_options',
+        ]);
+
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control($wp_customize, 'astra_nodes_palettes_custom_0', [
+                'label' => __('Primary color', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_themes',
+                'settings' => 'astra-color-palettes[palettes][Personalitzada][0]',
+                'priority' => 4,
+            ])
+        );
+
+        // Color picker #2.
+        $wp_customize->add_setting('astra-color-palettes[palettes][Personalitzada][1]', [
+            'default' => $custom_palette[1],
+            'type' => 'option',
+            'capability' => 'edit_theme_options',
+        ]);
+
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control($wp_customize, 'astra_nodes_palettes_custom_1', [
+                'label' => __('Secondary color', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_themes',
+                'settings' => 'astra-color-palettes[palettes][Personalitzada][1]',
+                'priority' => 5,
+            ])
+        );
+
+    }
 
     // Panel to group all front page settings.
 

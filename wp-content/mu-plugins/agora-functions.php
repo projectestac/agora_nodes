@@ -2275,6 +2275,17 @@ function get_default_palettes(): array {
                 7 => '',
                 8 => '',
             ],
+            'Personalitzada' => [
+                0 => '#00688B',
+                1 => '#B03BBA',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
         ],
         'flag' => true,
     ];

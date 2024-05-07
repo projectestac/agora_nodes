@@ -1,6 +1,6 @@
 <?php
 
-class WP_Customize_Palette_Control extends WP_Customize_Control {
+class WP_Customize_Custom_Palette_Control extends WP_Customize_Control {
 
     public function __construct($manager, $id, $args = []) {
         parent::__construct($manager, $id, $args);
@@ -8,14 +8,16 @@ class WP_Customize_Palette_Control extends WP_Customize_Control {
 
     public function render_content(): void {
 
-        $key_to_remove = 'Personalitzada';
+        $key_to_preserve = 'Personalitzada';
 
         $astra_color_palettes = get_option('astra-color-palettes');
         $palettes = $astra_color_palettes['palettes'];
         $currentPalette = $astra_color_palettes['currentPalette'];
 
-        if (array_key_exists($key_to_remove, $palettes)) {
-            unset($palettes[$key_to_remove]);
+        foreach ($palettes as $name => $palette) {
+            if ($name !== $key_to_preserve) {
+                unset($palettes[$name]);
+            }
         }
 
         echo '<div class="palette-control">';
@@ -24,7 +26,7 @@ class WP_Customize_Palette_Control extends WP_Customize_Control {
         foreach ($palettes as $name => $palette) {
             $select_class = ($name === $currentPalette) ? 'box-selected' : 'box-unselected';
             echo '<label for="' . $name . '">';
-            echo '<div class="astra-nodes-palette-container ' . $select_class . '"">';
+            echo '<div class="astra-nodes-palette-container ' . $select_class . '">';
             echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[0] . ';"></div>';
             echo '<div class="astra-nodes-palette-item" style="background-color:' . $palette[1] . ';"></div>';
             echo '<span class="astra-nodes-palette-footer">'
@@ -39,18 +41,4 @@ class WP_Customize_Palette_Control extends WP_Customize_Control {
         echo '</div>';
 
     }
-
-    public function enqueue(): void {
-        wp_register_script('astra-nodes-js-palette', '', ['jquery'], '', true);
-        wp_enqueue_script('astra-nodes-js-palette');
-        wp_add_inline_script('astra-nodes-js-palette', "
-            jQuery(document).ready(function() {
-                jQuery('.astra-nodes-palette-container').on('click', function() {
-                    jQuery('.astra-nodes-palette-container').addClass('box-unselected').removeClass('box-selected');
-                    jQuery(this).addClass('box-selected').removeClass('box-unselected');
-                });
-            });
-        ");
-    }
-
 }
