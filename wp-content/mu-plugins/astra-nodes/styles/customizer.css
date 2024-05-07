@@ -166,6 +166,7 @@ textarea {
 .astra-nodes-layout-container {
     width: 130px;
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .astra-nodes-layout-item {

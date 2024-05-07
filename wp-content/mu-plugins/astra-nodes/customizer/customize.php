@@ -744,6 +744,7 @@ function nodes_customize_register($wp_customize) {
                 'sidebar_boxes' => __('Sidebar and boxes', 'astra-nodes'),
                 'sidebar_news' => __('Sidebar and news', 'astra-nodes'),
                 'wp_default' => __('WordPress default', 'astra-nodes'),
+                'wp_default_no_sidebar' => __('WordPress default - No sidebar', 'astra-nodes'),
             ],
         ]));
 
