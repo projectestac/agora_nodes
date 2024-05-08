@@ -242,7 +242,8 @@ add_action('customize_save_after', function ($wp_customize) {
 
 });
 
-// Customizer: Update the register in wp_options that makes possible to change the color palette in the preview.
+// Customizer: Update the register in wp_options that makes possible to change the color palette
+// in the preview. Also, update the global $astra_nodes_options to update the preview.
 add_action('customize_preview_init', function ($wp_customize) {
 
     global $astra_nodes_options;
@@ -252,11 +253,26 @@ add_action('customize_preview_init', function ($wp_customize) {
     $astra_settings = get_option('astra-settings');
     $astra_settings['global-color-palette']['palette'] = $astra_color_palettes['palettes'][$palette];
 
-    // Update the layout only for this page load.
+    update_option('astra-settings', $astra_settings);
+
+    // Parameters that require a refresh to update the preview.
     $layout = $wp_customize->get_setting('astra_nodes_options[front_page_layout]')->value();
     $astra_nodes_options['front_page_layout'] = $layout;
 
-    update_option('astra-settings', $astra_settings);
+    $notice_enable = $wp_customize->get_setting('astra_nodes_options[front_page_notice_enable]')->value();
+    $astra_nodes_options['front_page_notice_enable'] = $notice_enable;
+
+    $cards_enable = $wp_customize->get_setting('astra_nodes_options[front_page_cards_enable]')->value();
+    $astra_nodes_options['front_page_cards_enable'] = $cards_enable;
+
+    $news_enable = $wp_customize->get_setting('astra_nodes_options[front_page_news_enable]')->value();
+    $astra_nodes_options['front_page_news_enable'] = $news_enable;
+
+    $news_category = $wp_customize->get_setting('astra_nodes_options[front_page_news_category]')->value();
+    $astra_nodes_options['front_page_news_category'] = $news_category;
+
+    $news_num_posts = $wp_customize->get_setting('astra_nodes_options[front_page_news_num_posts]')->value();
+    $astra_nodes_options['front_page_news_num_posts'] = $news_num_posts;
 
 });
 
