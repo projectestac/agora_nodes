@@ -78,7 +78,7 @@ function get_front_page_slider($astra_nodes_options): string {
     $data_labels = '[' . implode(',', $data_labels_array) . ']';
 
     $slider = '<!-- wp:getwid/media-text-slider {"slideCount":' . $params['slideCount'] . ',"minHeight":"' . $params['minHeight'] . 'px","sliderAutoplay":' . $params['autoplay'] . ',"sliderArrows":"none","sliderDots":"inside"} -->
-    <div class="wp-block-getwid-media-text-slider wp-block-getwid-media-text-slider--current-slide-1 ' . $params['class_arrows'] . ' ' . $params['class_dots'] . '"
+    <div id="slider-height-container" class="wp-block-getwid-media-text-slider wp-block-getwid-media-text-slider--current-slide-1 ' . $params['class_arrows'] . ' ' . $params['class_dots'] . '"
          data-labels="' . $data_labels . '"
          data-animation="fadeIn" data-duration="1500ms" data-delay="0ms">
         <div class="wp-block-getwid-media-text-slider__slides-wrapper">
@@ -91,9 +91,9 @@ function get_front_page_slider($astra_nodes_options): string {
                 <div style="height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide__content">
                     <!-- wp:getwid/media-text-slider-slide-content {"mediaId":' . $params['image_' . $i . '_id'] . ',"mediaType":"image","innerParent":{"attributes":{"minHeight":"' . $params['minHeight'] . 'px","overlayOpacity":"30","imageSize":"full"}}} -->
                     <div class="wp-block-getwid-media-text-slider-slide-content">
-                        <a href="' . $params['url_' . $i] . '" target="_blank">
+                        <a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '" target="_blank">
                             <figure class="wp-block-getwid-media-text-slider-slide-content__media">
-                                <img src="' . $params['image_' . $i] . '" alt="" class="wp-block-getwid-media-text-slider-slide-content__image wp-image-' . $params['image_' . $i . '_id'] . '"/>
+                                <img id="slider-image-' . $i . '" src="' . $params['image_' . $i] . '" alt="" class="wp-block-getwid-media-text-slider-slide-content__image wp-image-' . $params['image_' . $i . '_id'] . '"/>
                                 <div class="wp-block-getwid-media-text-slider-slide-content__media-overlay" style="opacity:0.3">
                                 </div>
                             </figure>
@@ -101,10 +101,10 @@ function get_front_page_slider($astra_nodes_options): string {
                         <div class="wp-block-getwid-media-text-slider-slide-content__content">
                             <div class="wp-block-getwid-media-text-slider-slide-content__content-wrapper">
                                 <!-- wp:heading {"placeholder":"' . __('Heading', 'astra-nodes') . '"} -->
-                                <h2 class="wp-block-heading">' . $params['heading_' . $i] . '</h2>
+                                <h2 id="slider-heading-' . $i . '" class="wp-block-heading">' . $params['heading_' . $i] . '</h2>
                                 <!-- /wp:heading -->
                                 <!-- wp:paragraph {"placeholder":"' . __('Text', 'astra-nodes') . '"} -->
-                                <p>' . $params['text_' . $i] . '</p>
+                                <p id="slider-text-' . $i . '">' . $params['text_' . $i] . '</p>
                                 <!-- /wp:paragraph -->
                             </div>
                         </div>

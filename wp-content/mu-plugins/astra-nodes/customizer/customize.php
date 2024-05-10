@@ -573,6 +573,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'theme_mod',
             'capability' => 'manage_options',
             'default' => '',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_title', [
@@ -591,6 +592,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'theme_mod',
             'capability' => 'manage_options',
             'default' => '',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control(
@@ -610,6 +612,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'astra_nodes_customizer_front_page_card_' . $i . '_color', [
@@ -624,6 +627,7 @@ function nodes_customize_register($wp_customize) {
             'type' => 'theme_mod',
             'capability' => 'manage_options',
             'default' => '',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_url', [
@@ -642,6 +646,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_card_' . $i . '_open_in_new_tab', [
@@ -703,6 +708,7 @@ function nodes_customize_register($wp_customize) {
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control(
@@ -718,6 +724,7 @@ function nodes_customize_register($wp_customize) {
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control(
@@ -733,6 +740,7 @@ function nodes_customize_register($wp_customize) {
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('front_page_notice_url', [
@@ -751,6 +759,7 @@ function nodes_customize_register($wp_customize) {
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('front_page_notice_open_in_new_tab', [
@@ -896,6 +905,7 @@ function nodes_customize_register($wp_customize) {
         'default' => 500,
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+        'transport' => 'postMessage',
     ]);
 
     $wp_customize->add_control('astra_nodes_customizer_front_page_slider_min_height', [
@@ -988,6 +998,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control(
@@ -1007,6 +1018,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_slider_link_' . $i, [
@@ -1025,6 +1037,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_slider_open_in_new_tab_' . $i, [
@@ -1040,6 +1053,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_slider_heading_' . $i, [
@@ -1058,6 +1072,7 @@ function nodes_customize_register($wp_customize) {
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'manage_options',
+            'transport' => 'postMessage',
         ]);
 
         $wp_customize->add_control('astra_nodes_customizer_front_page_slider_text_' . $i, [
