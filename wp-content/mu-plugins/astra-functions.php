@@ -450,14 +450,14 @@ add_action('astra_html_before', function () {
             $card_background = !empty($card_color) ? 'background-color: ' . $card_color . ' !important' : ''; // Important to override Astra's default color.
 
             echo '
-            <div class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
+            <div id="card-color-' . $i . '" class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
                  style="' . $card_background . '">
                 <div class="astra-nodes-card-title">
-                    <h3 style="color:' . $card_color . '">' . $card_title . '</h3>
+                    <h3 id="card-title-' . $i . '" style="color:' . $card_color . '">' . $card_title . '</h3>
                 </div>
                 <div class="astra-nodes-card-body">
-                     <a href="' . $card_url . '" ' . $card_target . '>
-                        <img class="astra-nodes-card-image" decoding="async" src="' . $card_image . '" alt="">
+                     <a id="card-link-' . $i . '" href="' . $card_url . '" ' . $card_target . '>
+                        <img id="card-image-' . $i . '" class="astra-nodes-card-image" decoding="async" src="' . $card_image . '" alt="">
                      </a>
                 </div>
             </div>
@@ -502,7 +502,7 @@ add_action('astra_html_before', function () {
                 echo '
                     <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
                         <div id="front-page-notice-image-container" class="wp-block-column">
-                            <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+                            <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
                                 <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
                             </a>
                         </div>
@@ -524,7 +524,7 @@ add_action('astra_html_before', function () {
                 echo '
                     <div id="front-page-notice-container" class="wp-block-columns">
                             <div id="front-page-notice-image-container" class="wp-block-column">
-                                <a href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
+                                <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
                                     <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
                                 </a>
                             </div>
