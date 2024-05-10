@@ -115,10 +115,78 @@
 
     }
 
+    // Front page cards
+    for (let i = 1; i <= 4; i++) {
+
+        // Title
+        wp.customize('astra_nodes_options[front_page_card_' + i + '_title]', function (value) {
+            value.bind(function (text) {
+                $('#card-title-' + i).html(text);
+            });
+        });
+
+        // Image
+        wp.customize('astra_nodes_options[front_page_card_' + i + '_image]', function (value) {
+            value.bind(function (url) {
+                $('#card-image-' + i).attr('src', url);
+            });
+        });
+
+        // Color pick
+        wp.customize('astra_nodes_options[front_page_card_' + i + '_color]', function (value) {
+            value.bind(function (color) {
+                $('#card-color-' + i).attr('style', 'background-color:' + color + ' !important');
+            });
+        });
+
+        // Link
+        wp.customize('astra_nodes_options[front_page_card_' + i + '_url]', function (value) {
+            value.bind(function (url) {
+                $('#card-link-' + i).attr('href', url);
+            });
+        });
+
+        // New tab
+        wp.customize('astra_nodes_options[front_page_card_' + i + '_open_in_new_tab]', function (value) {
+            value.bind(function (checked) {
+                if (checked) {
+                    $('#card-link-' + i).attr('target', '_blank');
+                } else {
+                    $('#card-link-' + i).removeAttr('target');
+                }
+            });
+        });
+    }
+
     // Front page notice: Image.
     wp.customize('astra_nodes_options[front_page_notice_image]', function (value) {
         value.bind(function (url) {
             $('#front-page-notice-image').attr('src', url);
+        });
+    });
+
+    // Front page notice: Color.
+    wp.customize('astra_nodes_options[front_page_notice_background_color]', function (value) {
+        value.bind(function (color) {
+            $('#front-page-notice-text').attr('style', 'background-color:' + color);
+        });
+    });
+
+    // Front page notice: URL.
+    wp.customize('astra_nodes_options[front_page_notice_url]', function (value) {
+        value.bind(function (url) {
+            $('#notice-img-url').attr('href', url);
+        });
+    });
+
+    // Front page notice: New Tab.
+    wp.customize('astra_nodes_options[front_page_notice_open_in_new_tab]', function (value) {
+        value.bind(function (checked) {
+            if (checked) {
+                $('#notice-img-url').attr('target', '_blank');
+            } else {
+                $('#notice-img-url').removeAttr('target');
+            }
         });
     });
 
@@ -142,5 +210,61 @@
             $('#front-page-notice-content').html(text);
         });
     });
+
+    // Front page slider: Height
+    wp.customize('astra_nodes_options[front_page_slider_min_height]', function (value) {
+        value.bind(function (height) {
+            $('#slider-height-container').css('min-height', height + 'px');
+            // Recalculate slide height individually
+            for (let i = 1; i <= 5; i++) {
+                $('.slide-' + i).css('height', height + 'px');
+                $('.slide-' + i).css('min-height', height + 'px');
+                $('#slider-image-' + i).css('height', height + 'px');
+            }
+        });
+    });
+
+    // Front page slider
+    for (let i = 1; i <= 5; i++) {
+
+        // Image
+        wp.customize('astra_nodes_options[front_page_slider_image_' + i + ']', function (value) {
+            value.bind(function (url) {
+                $('#slider-image-' + i).attr('src', url);
+            });
+        });
+
+        // URL
+        wp.customize('astra_nodes_options[front_page_slider_link_' + i + ']', function (value) {
+            value.bind(function (url) {
+                $('#slider-link-' + i).attr('href', url);
+            });
+        });
+
+        // New tab
+        wp.customize('astra_nodes_options[front_page_slider_open_in_new_tab_' + i + ']', function (value) {
+            value.bind(function (checked) {
+                if (checked) {
+                    $('#slider-link-' + i).attr('target', '_blank');
+                } else {
+                    $('#slider-link-' + i).removeAttr('target');
+                }
+            });
+        });
+
+        // Heading
+        wp.customize('astra_nodes_options[front_page_slider_heading_' + i + ']', function (value) {
+            value.bind(function (text) {
+                $('#slider-heading-' + i).html(text);
+            });
+        });
+
+        // Text
+        wp.customize('astra_nodes_options[front_page_slider_text_' + i + ']', function (value) {
+            value.bind(function (text) {
+                $('#slider-text-' + i).html(text);
+            });
+        });
+    }
 
 })(jQuery);
