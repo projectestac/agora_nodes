@@ -86,15 +86,24 @@ h1#blog-name {
     font-size: 16pt;
 }
 
-/* Contact information in the header */
+/* Contact information in the header and in the footer */
 
-#contact-info-1-wrapper {
+header #contact-info-1-wrapper {
     text-align: right;
     line-height: 1.1;
 }
 
-#contact-info-2-wrapper {
+header #contact-info-2-wrapper {
     text-align: right;
+}
+
+footer #contact-info-1-wrapper {
+    text-align: left;
+    line-height: 1.1;
+}
+
+footer #contact-info-2-wrapper {
+    text-align: left;
 }
 
 #contact-info-link-to-map,

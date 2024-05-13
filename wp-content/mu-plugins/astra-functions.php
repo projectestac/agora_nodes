@@ -293,7 +293,12 @@ add_action('astra_get_option_header-html-3', function () {
 });
 
 // Header: Content of the area that shows the contact information (html-1).
-add_action('astra_get_option_header-html-1', function () {
+add_action('astra_get_option_header-html-1', 'astra_nodes_contact_information');
+
+// Footer: Content of the area that shows the contact information (html-1).
+add_action('astra_get_option_footer-html-1', 'astra_nodes_contact_information');
+
+function astra_nodes_contact_information(): string {
 
     global $astra_nodes_options;
 
@@ -329,7 +334,7 @@ add_action('astra_get_option_header-html-1', function () {
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
 
-});
+}
 
 // Header: Content of the buttons area (html-2).
 add_action('astra_get_option_header-html-2', function () {
