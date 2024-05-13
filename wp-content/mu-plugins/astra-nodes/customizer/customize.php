@@ -950,9 +950,8 @@ function nodes_customize_register($wp_customize) {
         'priority' => 4,
         'type' => 'select',
         'choices' => [
-            'inside' => __('Inside', 'astra-nodes'),
-            'outside' => __('Outside', 'astra-nodes'),
-            'none' => __('None', 'astra-nodes'),
+            'yes' => __('Yes'),
+            'no' => __('No'),
         ],
     ]);
 
@@ -970,9 +969,8 @@ function nodes_customize_register($wp_customize) {
         'priority' => 5,
         'type' => 'select',
         'choices' => [
-            'inside' => __('Inside', 'astra-nodes'),
-            'outside' => __('Outside', 'astra-nodes'),
-            'none' => __('None', 'astra-nodes'),
+            'yes' => __('Yes'),
+            'no' => __('No'),
         ],
     ]);
 
