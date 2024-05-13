@@ -591,23 +591,32 @@ $pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
 if ($pages_sidebar === 'menu') {
     add_action('astra_sidebars_before', function () {
         // is_front_page() and is_page() are not defined when this file is loaded, so they must be called using hooks.
-        if (is_front_page() || !is_page()) {
+        if (!is_category() && (is_front_page() || !is_page())) {
             return;
         }
+
         unregister_sidebar('sidebar-1');
-        add_action('wp_enqueue_scripts', function () {
-            wp_enqueue_script('jquery');
-        });
-        include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
+
+        if (is_category()) {
+            astra_get_sidebar('sidebar-nodes-categories');
+        } else {
+            add_action('wp_enqueue_scripts', function () {
+                wp_enqueue_script('jquery');
+            });
+            include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
+        }
     });
 }
 
 if ($pages_sidebar === 'widgets') {
     add_action('astra_sidebars_before', function () {
-        if (is_front_page() || !is_page()) {
+        if (!is_category() && (is_front_page() || !is_page())) {
             return;
         }
-        astra_get_sidebar('primary_menu');
+        if (is_category()) {
+            unregister_sidebar('sidebar-1');
+            astra_get_sidebar('sidebar-nodes-categories');
+        }
     });
 }
 
@@ -619,6 +628,13 @@ if ($pages_sidebar === 'none') {
         add_filter('astra_page_layout', function () {
             return 'no-sidebar';
         });
+    });
+
+    add_action('astra_sidebars_before', function () {
+        if (is_category()) {
+            unregister_sidebar('sidebar-1');
+            astra_get_sidebar('sidebar-nodes-categories');
+        }
     });
 }
 
@@ -680,6 +696,21 @@ add_action('widgets_init', function () {
     unregister_sidebar('advanced-footer-widget-4');
 
 }, 11);
+
+// Sidebar: Create a sidebar for the categories pages.
+add_action('widgets_init', function () {
+
+    register_sidebar([
+        'name' => __('Categories', 'astra-nodes'),
+        'id' => 'sidebar-nodes-categories',
+        'description' => __('Add widgets to the categories pages', 'astra-nodes'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
+
+}, 1);
 
 // Menus: Remove all the menus not used in the theme.
 add_action('init', function () {
