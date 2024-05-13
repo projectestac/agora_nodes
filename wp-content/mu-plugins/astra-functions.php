@@ -268,6 +268,9 @@ add_action('customize_preview_init', function ($wp_customize) {
     $news_enable = $wp_customize->get_setting('astra_nodes_options[front_page_news_enable]')->value();
     $astra_nodes_options['front_page_news_enable'] = $news_enable;
 
+    $slider_enable = $wp_customize->get_setting('astra_nodes_options[front_page_slider_enable]')->value();
+    $astra_nodes_options['front_page_slider_enable'] = $slider_enable;
+
     $news_category = $wp_customize->get_setting('astra_nodes_options[front_page_news_category]')->value();
     $astra_nodes_options['front_page_news_category'] = $news_category;
 
