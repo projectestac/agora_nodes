@@ -268,12 +268,29 @@ add_action('customize_preview_init', function ($wp_customize) {
     $news_enable = $wp_customize->get_setting('astra_nodes_options[front_page_news_enable]')->value();
     $astra_nodes_options['front_page_news_enable'] = $news_enable;
 
+    $slider_autoplay = $wp_customize->get_setting('astra_nodes_options[front_page_slider_autoplay]')->value();
+    $astra_nodes_options['front_page_slider_autoplay'] = $slider_autoplay;
+
+    $slider_enable = $wp_customize->get_setting('astra_nodes_options[front_page_slider_enable]')->value();
+    $astra_nodes_options['front_page_slider_enable'] = $slider_enable;
+
+    $slider_arrows = $wp_customize->get_setting('astra_nodes_options[front_page_slider_arrows]')->value();
+    $astra_nodes_options['front_page_slider_arrows'] = $slider_arrows;
+
+    $slider_dots = $wp_customize->get_setting('astra_nodes_options[front_page_slider_dots]')->value();
+    $astra_nodes_options['front_page_slider_dots'] = $slider_dots;
+
     $news_category = $wp_customize->get_setting('astra_nodes_options[front_page_news_category]')->value();
     $astra_nodes_options['front_page_news_category'] = $news_category;
 
     $news_num_posts = $wp_customize->get_setting('astra_nodes_options[front_page_news_num_posts]')->value();
     $astra_nodes_options['front_page_news_num_posts'] = $news_num_posts;
 
+    $notice_layout = $wp_customize->get_setting('astra_nodes_options[front_page_notice_layout]')->value();
+    $astra_nodes_options['front_page_notice_layout'] = $notice_layout;
+
+    $pages_sidebar = $wp_customize->get_setting('astra_nodes_options[pages_sidebar]')->value();
+    $astra_nodes_options['pages_sidebar'] = $pages_sidebar;
 });
 
 // Header: Content of the central area (html-3), which includes the name of the client.
