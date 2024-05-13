@@ -5,8 +5,8 @@ function extract_slider_params($astra_nodes_options): array {
     $params = [
         'minHeight' => $astra_nodes_options['front_page_slider_min_height'] ?? 200,
         'autoplay' => $astra_nodes_options['front_page_slider_autoplay'] ? 'true' : 'false',
-        'arrows' => $astra_nodes_options['front_page_slider_arrows'] ?? 'inside',
-        'dots' => $astra_nodes_options['front_page_slider_dots'] ?? 'inside',
+        'arrows' => $astra_nodes_options['front_page_slider_arrows'] ?? 'yes',
+        'dots' => $astra_nodes_options['front_page_slider_dots'] ?? 'yes',
     ];
 
     // Minimum height.
@@ -15,13 +15,10 @@ function extract_slider_params($astra_nodes_options): array {
     }
 
     switch ($params['arrows']) {
-        case 'inside':
+        case 'yes':
             $params['class_arrows'] = 'has-arrows-inside';
             break;
-        case 'outside':
-            $params['class_arrows'] = 'has-arrows-outside';
-            break;
-        case 'none':
+        case 'no':
             $params['class_arrows'] = 'has-arrows-none';
             break;
         default:
@@ -29,13 +26,10 @@ function extract_slider_params($astra_nodes_options): array {
     }
 
     switch ($params['dots']) {
-        case 'inside':
+        case 'yes':
             $params['class_dots'] = 'has-dots-inside';
             break;
-        case 'outside':
-            $params['class_dots'] = 'has-dots-outside';
-            break;
-        case 'none':
+        case 'no':
             $params['class_dots'] = 'has-dots-none';
             break;
         default:
