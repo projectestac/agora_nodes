@@ -620,11 +620,11 @@ add_action('astra_sidebars_before', function () {
 
         astra_get_sidebar('sidebar-frontpage');
         unregister_sidebar('sidebar-1');
-        unregister_sidebar('category');
+        unregister_sidebar('categories');
 
     } elseif (is_category()) { // Blog pages.
 
-        astra_get_sidebar('category');
+        astra_get_sidebar('categories');
         unregister_sidebar('sidebar-1');
         unregister_sidebar('sidebar-frontpage');
 
@@ -644,7 +644,7 @@ add_action('astra_sidebars_before', function () {
         } elseif ($pages_sidebar === 'widgets') {
 
             unregister_sidebar('sidebar-frontpage');
-            unregister_sidebar('category');
+            unregister_sidebar('categories');
 
         }
 
@@ -716,7 +716,7 @@ add_action('widgets_init', function () {
 
     register_sidebar([
         'name' => __('Categories', 'astra-nodes'),
-        'id' => 'category',
+        'id' => 'categories',
         'description' => __('Add widgets to the categories pages', 'astra-nodes'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
