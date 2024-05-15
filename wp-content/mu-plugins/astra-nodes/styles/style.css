@@ -502,11 +502,15 @@ div#content {
     font-size: 18px;
 }
 
-.wp-block-getwid-media-text-slider-slide-content__content {
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content {
     aspect-ratio: 4 / 1;
 }
 
-.wp-block-getwid-media-text-slider-slide-content__media-overlay {
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content-wrapper {
+    margin-top: 16%;
+}
+
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__media-overlay {
     opacity: 0 !important;
 }
 

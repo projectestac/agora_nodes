@@ -589,59 +589,68 @@ add_action('astra_content_before', function () {
     }
 });
 
-// Side menu: To remove the sidebar is necessary to use an early hook, but to change the contents in the sidebar, we need to use a
-// later hook. So depending on the configuration, different actions are used.
-$pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
+// Sidebar: Specific case for the pages when there is no sidebar.
+add_action('astra_head_top', function () {
 
-if ($pages_sidebar === 'menu') {
-    add_action('astra_sidebars_before', function () {
-        // is_front_page() and is_page() are not defined when this file is loaded, so they must be called using hooks.
-        if (!is_category() && (is_front_page() || !is_page())) {
+    global $astra_nodes_options;
+
+    $pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
+    $is_buddypress_active = is_plugin_active('buddypress/bp-loader.php');
+
+    if ($pages_sidebar === 'none') {
+
+        if (is_front_page() || !is_page() || ($is_buddypress_active && is_buddypress())) {
             return;
         }
 
-        unregister_sidebar('sidebar-1');
+        add_filter('astra_page_layout', function () {
+            return 'no-sidebar';
+        });
 
-        if (is_category()) {
-            astra_get_sidebar('sidebar-nodes-categories');
-        } else {
+    }
+
+});
+
+// Sidebar: Choose the sidebar to show.
+add_action('astra_sidebars_before', function () {
+
+    $is_buddypress_active = is_plugin_active('buddypress/bp-loader.php');
+
+    if (is_front_page()) {
+
+        astra_get_sidebar('sidebar-frontpage');
+        unregister_sidebar('sidebar-1');
+        unregister_sidebar('category');
+
+    } elseif (is_category()) { // Blog pages.
+
+        astra_get_sidebar('category');
+        unregister_sidebar('sidebar-1');
+        unregister_sidebar('sidebar-frontpage');
+
+    } elseif ($is_buddypress_active && !is_buddypress()) { // All other pages.
+
+        global $astra_nodes_options;
+        $pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
+
+        if ($pages_sidebar === 'menu') {
+
+            unregister_sidebar('sidebar-1');
             add_action('wp_enqueue_scripts', function () {
                 wp_enqueue_script('jquery');
             });
             include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/accordion.php';
-        }
-    });
-}
 
-if ($pages_sidebar === 'widgets') {
-    add_action('astra_sidebars_before', function () {
-        if (!is_category() && (is_front_page() || !is_page())) {
-            return;
-        }
-        if (is_category()) {
-            unregister_sidebar('sidebar-1');
-            astra_get_sidebar('sidebar-nodes-categories');
-        }
-    });
-}
+        } elseif ($pages_sidebar === 'widgets') {
 
-if ($pages_sidebar === 'none') {
-    add_action('astra_head_top', function () {
-        if (is_front_page() || !is_page()) {
-            return;
-        }
-        add_filter('astra_page_layout', function () {
-            return 'no-sidebar';
-        });
-    });
+            unregister_sidebar('sidebar-frontpage');
+            unregister_sidebar('category');
 
-    add_action('astra_sidebars_before', function () {
-        if (is_category()) {
-            unregister_sidebar('sidebar-1');
-            astra_get_sidebar('sidebar-nodes-categories');
         }
-    });
-}
+
+    }
+
+});
 
 // Footer: Add the legal notice in the footer.
 add_action('astra_footer_after', function () {
@@ -707,8 +716,18 @@ add_action('widgets_init', function () {
 
     register_sidebar([
         'name' => __('Categories', 'astra-nodes'),
-        'id' => 'sidebar-nodes-categories',
+        'id' => 'category',
         'description' => __('Add widgets to the categories pages', 'astra-nodes'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
+
+    register_sidebar([
+        'name' => __('Front page', 'astra-nodes'),
+        'id' => 'sidebar-frontpage',
+        'description' => __('Add widgets to the front page', 'astra-nodes'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',
