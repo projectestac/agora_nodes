@@ -1829,13 +1829,17 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 });
 
 add_action('switch_theme', function ($new_theme) {
+
     if ($new_theme === 'Astra') {
         initialize_theme_mod();
         initialize_palettes();
     }
-}, 10, 1);
 
-function initialize_theme_mod() {
+    import_wigdets($new_theme);
+
+    }, 10, 1);
+
+function initialize_theme_mod(): void {
     $default_values = default_theme_mod();
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
@@ -1946,7 +1950,7 @@ function default_theme_mod(): array {
 
 }
 
-function initialize_palettes() {
+function initialize_palettes(): void {
 
     $default_palettes = get_default_palettes();
     $default_palettes['currentPalette'] = get_reactor_palette();
@@ -2289,5 +2293,37 @@ function get_default_palettes(): array {
         ],
         'flag' => true,
     ];
+
+}
+
+/**
+ * Import widgets from the old theme to the new one.
+ * Relation between widgets from the Nodes 1 sidebars and the Nodes 2 sidebars:
+ *   - sidebar => sidebar-1
+ *   - sidebar-2 => sidebar-1
+ *   - sidebar-frontpage => sidebar-frontpage
+ *   - sidebar-frontpage-2 => sidebar-frontpage
+ *   - categoria => categories
+ *   - sidebar-footer => footer-widget-1
+ */
+function import_wigdets($new_theme = ''): void {
+
+    if (empty($new_theme)) {
+        return;
+    }
+
+    $sidebars_widgets = get_option('sidebars_widgets');
+
+    if ($new_theme === 'Astra') {
+        $sidebars_widgets['categories'] = $sidebars_widgets['categoria'];
+        $sidebars_widgets['sidebar-1'] = $sidebars_widgets['sidebar'];
+        unset($sidebars_widgets['categoria'], $sidebars_widgets['sidebar']);
+    } else {
+        $sidebars_widgets['categoria'] = $sidebars_widgets['categories'];
+        $sidebars_widgets['sidebar'] = $sidebars_widgets['sidebar-1'];
+        unset($sidebars_widgets['categories'], $sidebars_widgets['sidebar-1']);
+    }
+
+    update_option('sidebars_widgets', $sidebars_widgets);
 
 }
