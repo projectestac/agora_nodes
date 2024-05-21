@@ -23,7 +23,7 @@ global $astra_nodes_options;
 $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
 // Load translations.
-load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages');
+load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages/');
 
 // Load styles to customize Astra theme.
 add_action('wp_enqueue_scripts', function () {
