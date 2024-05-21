@@ -280,7 +280,6 @@ function nodes_customize_register($wp_customize) {
         $wp_customize->add_control(
             new WP_Customize_Raw_HTML_Control($wp_customize, 'icon_preview_' . $i, [
                 'id' => 'icon_preview_' . $i,
-                'label' => __('Header Button HTML', 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'priority' => 1,
                 'content' => '
@@ -374,7 +373,6 @@ function nodes_customize_register($wp_customize) {
 
         $wp_customize->add_control(
             new WP_Customize_Font_Icon_Picker_Control($wp_customize, 'header_buttons_script_' . $i, [
-                'label' => __('Header Button HTML', 'astra-nodes'),
                 'section' => 'astra_nodes_customizer_header_buttons',
                 'settings' => 'header_buttons_script_' . $i,
                 'priority' => 1,
@@ -391,34 +389,34 @@ function nodes_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_control(new WP_Customize_Raw_HTML_Control($wp_customize, 'translation_script', [
-        'label' => __('Header Button HTML', 'astra-nodes'),
-        'section' => 'astra_nodes_customizer_header_buttons',
-        'priority' => 2,
-        'content' =>
-            '<script>
-            // Translate the text of the icon picker.
-            var elements =
-                [
-                    {"selector" : ".uip-insert-icon-button", "text" : "' . __('Insert', 'astra-nodes') . '", "type" : "textContent"},
-                    {"selector" : ".uip-modal--icon-search > input", "text" : "' . __('Filter by name', 'astra-nodes') . '", "type" : "placeholder"}
-                ];
+    $wp_customize->add_control(
+        new WP_Customize_Raw_HTML_Control($wp_customize, 'translation_script', [
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'priority' => 2,
+            'content' =>
+                '<script>
+                    // Translate the text of the icon picker.
+                    var elements =
+                        [
+                            {"selector" : ".uip-insert-icon-button", "text" : "' . __('Insert', 'astra-nodes') . '", "type" : "textContent"},
+                            {"selector" : ".uip-modal--icon-search > input", "text" : "' . __('Filter by name', 'astra-nodes') . '", "type" : "placeholder"}
+                        ];
 
-            // Wait for the modal to be loaded and then translate the text.
-            const intervalId = setInterval(() => {
-                const modalContent = document.querySelector(".uip-modal--content");
-                if (modalContent) {
-                    elements.forEach((element) => {
-                        const el = modalContent.querySelector(element.selector);
-                        if (el) {
-                            el[element.type] = element.text;
+                    // Wait for the modal to be loaded and then translate the text.
+                    const intervalId = setInterval(() => {
+                        const modalContent = document.querySelector(".uip-modal--content");
+                        if (modalContent) {
+                            elements.forEach((element) => {
+                                const el = modalContent.querySelector(element.selector);
+                                if (el) {
+                                    el[element.type] = element.text;
+                                }
+                            });
+                            clearInterval(intervalId);
                         }
-                    });
-                    clearInterval(intervalId);
-                }
-            }, 100);
-        </script>',
-    ]));
+                    }, 100);
+                </script>',
+        ]));
 
 
     // Theme colors.
