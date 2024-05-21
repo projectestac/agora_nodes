@@ -66,6 +66,20 @@
         });
     });
 
+    // Map
+    wp.customize('astra_nodes_options[link_to_map]', function (value) {
+        value.bind(function (url) {
+            $('#contact-info-link-to-map').attr('href', url);
+        });
+    });
+
+    // Contact
+    wp.customize('astra_nodes_options[contact_page]', function (value) {
+        value.bind(function (url) {
+            $('#contact-info-page-url').attr('href', url);
+        });
+    });
+
     // Email address.
     wp.customize('astra_nodes_options[email_address]', function (value) {
         value.bind(function (text) {
