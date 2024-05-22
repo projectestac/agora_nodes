@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.3.x\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2024-05-21 15:01+0200\n"
+"PO-Revision-Date: 2024-05-22 15:33+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -26854,7 +26854,7 @@ msgstr "Una pàgina estàtica"
 #: wp-includes/class-wp-customize-manager.php:5651
 #: wp-admin/options-reading.php:97
 msgid "Your latest posts"
-msgstr "Les darrers articles"
+msgstr "Els darrers articles"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-manager.php:5647
