@@ -1844,7 +1844,7 @@ add_action('switch_theme', function ($new_theme) {
 
     import_wigdets($new_theme);
 
-    }, 10, 1);
+}, 10, 1);
 
 /**
  * Create default values for the element 'astra_nodes_options' in the 'theme_mods_astra'
@@ -1853,6 +1853,7 @@ add_action('switch_theme', function ($new_theme) {
  * @return void
  */
 function initialize_theme_mod(): void {
+
     $default_values = default_theme_mod();
     $astra_nodes_options = get_theme_mod('astra_nodes_options');
 
@@ -1865,7 +1866,9 @@ function initialize_theme_mod(): void {
             }
         }
     }
+
     set_theme_mod('astra_nodes_options', $astra_nodes_options);
+
 }
 
 /**
@@ -1876,96 +1879,170 @@ function initialize_theme_mod(): void {
  */
 function default_theme_mod(): array {
 
+    $reactor_options = get_option('reactor_options');
+    migrate_favicon($reactor_options['favicon_image']);
+    $logo = migrate_logo($reactor_options['logo_image']);
+
+    $origin_icons = get_option('my_option_name');
+    $organism_logo = stripos($reactor_options['cpCentre'], 'barcelona') ? 'ceb' : 'departament';
+
+    $icons = array_filter($origin_icons, static function ($key) {
+        return strpos($key, 'icon') === 0;
+    }, ARRAY_FILTER_USE_KEY);
+
+    $icons = convert_header_icons($icons);
+
     return [
-        'custom_logo' => '',
+        'custom_logo' => $logo ?? 0,
         'pre_blog_name' => '',
-        'postal_address' => '',
-        'postal_code_city' => '',
-        'phone_number' => '',
-        'link_to_map' => '',
-        'contact_page' => '',
+        'postal_address' => $reactor_options['direccioCentre'] ?? '',
+        'postal_code_city' => $reactor_options['cpCentre'] ?? '',
+        'phone_number' => $reactor_options['telCentre'] ?? '',
+        'link_to_map' => $reactor_options['googleMaps'] ?? '',
+        'contact_page' => $reactor_options['emailCentre'] ?? '',
         'email_address' => '',
-        'header_icon_1_classes' => '',
-        'header_icon_1_text' => '',
-        'header_icon_1_link' => '',
-        'header_icon_1_open_in_new_tab' => false,
-        'header_icon_2_classes' => '',
-        'header_icon_2_text' => '',
-        'header_icon_2_link' => '',
-        'header_icon_2_open_in_new_tab' => false,
+        'header_icon_1_classes' => $icons['icon1'] ?? '',
+        'header_icon_1_text' => $origin_icons['title_icon1'] ?? __('Icon', 'astra-nodes') . ' 1',
+        'header_icon_1_link' => $origin_icons['link_icon1'] ?? '',
+        'header_icon_1_open_in_new_tab' => true,
+        'header_icon_2_classes' => $icons['icon2'] ?? '',
+        'header_icon_2_text' => $origin_icons['title_icon2'] ?? __('Icon', 'astra-nodes') . ' 2',
+        'header_icon_2_link' => $origin_icons['link_icon2'] ?? '',
+        'header_icon_2_open_in_new_tab' => true,
         'header_icon_3_classes' => '',
         'header_icon_3_text' => '',
         'header_icon_3_link' => '',
-        'header_icon_3_open_in_new_tab' => false,
-        'header_icon_4_classes' => '',
-        'header_icon_4_text' => '',
-        'header_icon_4_link' => '',
-        'header_icon_4_open_in_new_tab' => false,
-        'header_icon_5_classes' => '',
-        'header_icon_5_text' => '',
-        'header_icon_5_link' => '',
-        'header_icon_5_open_in_new_tab' => false,
+        'header_icon_3_open_in_new_tab' => true,
+        'header_icon_4_classes' => $icons['icon4'] ?? '',
+        'header_icon_4_text' => $origin_icons['title_icon4'] ?? __('Icon', 'astra-nodes') . ' 4',
+        'header_icon_4_link' => $origin_icons['link_icon4'] ?? '',
+        'header_icon_4_open_in_new_tab' => true,
+        'header_icon_5_classes' => $icons['icon5'] ?? '',
+        'header_icon_5_text' => $origin_icons['title_icon5'] ?? __('Icon', 'astra-nodes') . ' 5',
+        'header_icon_5_link' => $origin_icons['link_icon5'] ?? '',
+        'header_icon_5_open_in_new_tab' => true,
         'header_icon_6_classes' => '',
         'header_icon_6_text' => '',
         'header_icon_6_link' => '',
-        'header_icon_6_open_in_new_tab' => false,
+        'header_icon_6_open_in_new_tab' => true,
         'front_page_notice_enable' => true,
+        'front_page_notice_layout' => 'text',
         'front_page_notice_image' => '',
         'front_page_notice_url' => '',
-        'front_page_notice_open_in_new_tab' => false,
+        'front_page_notice_open_in_new_tab' => true,
         'front_page_notice_background_color' => '',
-        'front_page_notice_pre_title' => '',
-        'front_page_notice_title' => '',
-        'front_page_notice_content' => '',
+        'front_page_notice_pre_title' => __('Notice previous title text', 'astra-nodes'),
+        'front_page_notice_title' => __('Notice title', 'astra-nodes'),
+        'front_page_notice_content' => __('Notice content', 'astra-nodes'),
         'front_page_cards_enable' => true,
-        'front_page_card_1_title' => '',
+        'front_page_card_1_title' => __('Card') . ' 1',
         'front_page_card_1_image' => '',
         'front_page_card_1_url' => '',
-        'front_page_card_2_title' => '',
+        'front_page_card_2_title' => __('Card') . ' 2',
         'front_page_card_2_image' => '',
         'front_page_card_2_url' => '',
-        'front_page_card_3_title' => '',
+        'front_page_card_3_title' => __('Card') . ' 3',
         'front_page_card_3_image' => '',
         'front_page_card_3_url' => '',
-        'front_page_card_4_title' => '',
+        'front_page_card_4_title' => __('Card') . ' 4',
         'front_page_card_4_image' => '',
         'front_page_card_4_url' => '',
         'front_page_slider_enable' => true,
-        'front_page_slider_arrows' => 'inside',
-        'front_page_slider_dots' => 'inside',
+        'front_page_slider_arrows' => 'yes',
+        'front_page_slider_dots' => 'yes',
         'front_page_slider_min_height' => 500,
         'front_page_slider_autoplay' => true,
         'front_page_slider_image_1' => '',
         'front_page_slider_link_1' => '',
-        'front_page_slider_open_in_new_tab_1' => false,
-        'front_page_slider_heading_1' => '',
-        'front_page_slider_text_1' => '',
+        'front_page_slider_open_in_new_tab_1' => true,
+        'front_page_slider_heading_1' => __('Slider heading') . ' 1',
+        'front_page_slider_text_1' => __('Slider text') . ' 1',
         'front_page_slider_image_2' => '',
         'front_page_slider_link_2' => '',
-        'front_page_slider_open_in_new_tab_2' => false,
-        'front_page_slider_heading_2' => '',
-        'front_page_slider_text_2' => '',
+        'front_page_slider_open_in_new_tab_2' => true,
+        'front_page_slider_heading_2' => __('Slider heading') . ' 2',
+        'front_page_slider_text_2' => __('Slider text') . ' 2',
         'front_page_slider_image_3' => '',
         'front_page_slider_link_3' => '',
-        'front_page_slider_open_in_new_tab_3' => false,
-        'front_page_slider_heading_3' => '',
-        'front_page_slider_text_3' => '',
+        'front_page_slider_open_in_new_tab_3' => true,
+        'front_page_slider_heading_3' => __('Slider heading') . ' 3',
+        'front_page_slider_text_3' => __('Slider text') . ' 3',
         'front_page_slider_image_4' => '',
         'front_page_slider_link_4' => '',
-        'front_page_slider_open_in_new_tab_4' => false,
-        'front_page_slider_heading_4' => '',
-        'front_page_slider_text_4' => '',
+        'front_page_slider_open_in_new_tab_4' => true,
+        'front_page_slider_heading_4' => __('Slider heading') . ' 4',
+        'front_page_slider_text_4' => __('Slider text') . ' 4',
         'front_page_slider_image_5' => '',
         'front_page_slider_link_5' => '',
-        'front_page_slider_open_in_new_tab_5' => false,
-        'front_page_slider_heading_5' => '',
-        'front_page_slider_text_5' => '',
+        'front_page_slider_open_in_new_tab_5' => true,
+        'front_page_slider_heading_5' => __('Slider heading') . ' 5',
+        'front_page_slider_text_5' => __('Slider text') . ' 5',
         'front_page_news_enable' => true,
         'front_page_news_number' => 20,
         'front_page_news_category' => 29,
         'front_page_layout' => 'sidebar_boxes',
         'pages_sidebar' => 'menu',
+        'organism_logo' => $organism_logo,
     ];
+
+}
+
+function migrate_favicon($image_url): void {
+
+    $reactor_favicon_url = $image_url;
+    $reactor_favicon_id = attachment_url_to_postid($reactor_favicon_url);
+
+    update_option('site_icon', $reactor_favicon_id);
+
+}
+
+function migrate_logo($image_url): int {
+
+    $reactor_logo_url = $image_url;
+    $reactor_logo_id = attachment_url_to_postid($reactor_logo_url);
+
+    set_theme_mod('custom_logo', $reactor_logo_id);
+
+    if (function_exists('astra_update_option')) {
+        astra_update_option('custom_logo', $reactor_logo_id);
+    }
+
+    return $reactor_logo_id;
+
+}
+
+function convert_header_icons($icons): array {
+
+    $conversion_map = [
+        'dashicons-format-gallery' => 'fa-regular fa-images',
+        'dashicons-groups' => 'fa-solid fa-people-group',
+        'dashicons-search' => 'fa-solid fa-magnifying-glass',
+        'dashicons-carrot' => 'fa-solid fa-carrot',
+        'dashicons-format-chat' => 'fa-regular fa-comments',
+        'dashicons-menu' => 'fa-solid fa-bars',
+        'dashicons-clock' => 'fa-regular fa-clock',
+        'dashicons-welcome-learn-more' => 'fa-solid fa-graduation-cap',
+        'dashicons-calendar' => 'fa-regular fa-calendar-days',
+        'dashicons-admin-home' => 'fa-solid fa-house',
+        'dashicons-portfolio' => 'fa-solid fa-briefcase',
+        'dashicons-admin-users' => 'fa-solid fa-users',
+        'dashicons-book' => 'fa-solid fa-book',
+        'dashicons-welcome-write-blog' => 'fa-regular fa-pen-to-square',
+        'dashicons-cloud' => 'fa-solid fa-cloud',
+        'dashicons-location' => 'fa-solid fa-location-dot',
+    ];
+
+    $converted_icons = [];
+
+    foreach ($icons as $key => $value) {
+        if (isset($conversion_map['dashicons-' . $value])) {
+            $converted_icons[$key] = $conversion_map['dashicons-' . $value];
+        } else {
+            $converted_icons[$key] = '';
+        }
+    }
+
+    return $converted_icons;
 
 }
 
