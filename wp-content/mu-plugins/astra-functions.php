@@ -353,15 +353,10 @@ function astra_nodes_contact_information(): string {
 
 }
 
-// Header: Content of the buttons area (html-2).
-add_action('astra_get_option_header-html-2', function () {
+function astra_nodes_header_buttons(): string {
 
     global $astra_nodes_options;
-
-    $content = '
-            <div class="detail-container">
-                <div class="grid-container">
-    ';
+    $content = '';
 
     // Loop through the 6 buttons.
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
@@ -380,10 +375,31 @@ add_action('astra_get_option_header-html-2', function () {
             ';
     }
 
-    $content .= '</div></div>';
-
     // Remove all the "\n" characters.
-    return str_replace("\n", '', $content);
+    return str_replace("\n", '', $content);;
+
+}
+
+// Header: Content of the buttons area (mobile).
+add_action('astra_nodes_mobile_under_header', function () {
+
+    // For some unknown reason, an echo is required here instead of returning the content.
+    echo '
+            <div class="detail-container mobile">
+                <div class="grid-container">' . astra_nodes_header_buttons() . '</div>
+            </div>
+            ';
+
+});
+
+// Header: Content of the buttons area (desktop, html-2).
+add_action('astra_get_option_header-html-2', function () {
+
+    return '
+            <div class="detail-container">
+                <div class="grid-container">' . astra_nodes_header_buttons() . '</div>
+            </div>
+            ';
 
 });
 
@@ -417,7 +433,7 @@ add_action('astra_html_before', function () {
     $front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
 
     // Default layout is 'sidebar_news'.
-    $action = 'astra_entry_after';
+    $action = 'astra_primary_content_bottom';
     $news_priority = 10;
     $notice_priority = 20;
     $cards_priority = 30;
@@ -563,7 +579,7 @@ add_action('astra_html_before', function () {
     }, $notice_priority, 0);
 
     // Front page: News configuration.
-    add_action('astra_entry_after', function () {
+    add_action('astra_primary_content_bottom', function () {
 
         global $astra_nodes_options;
 
