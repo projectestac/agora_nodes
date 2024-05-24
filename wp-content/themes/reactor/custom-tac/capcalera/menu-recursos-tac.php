@@ -75,7 +75,7 @@ function add_recursos($wp_admin_bar) {
     $args = [
         'id' => 'jclic',
         'title' => 'jClic',
-        'href' => 'https://clic.xtec.cat/legacy/ca/index.html',
+        'href' => 'https://projectes.xtec.cat/clic/',
         'parent' => 'recursosXTEC',
     ];
 
