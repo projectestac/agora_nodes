@@ -705,79 +705,7 @@ function xtec_mail_direction_into_header_icons( $options, $icon_number ){
     return $result;
 }
 
-
-/**
- * 2020.02.10 @jmeler: TinyMCE on BuddyPress
-*/
-
-function besocial_buddypress_activity_allowed_tags() {
-    return array(
-        // Iframes
-        'iframe'          => array(
-            'src'             => array(),
-            'height'          => array(),
-            'width'           => array(),
-            'frameborder'     => array(),
-            'allowfullscreen' => array(),
-        ),
-		'span' => array(
-			'class' => array()
-		),
-	    'a' => array(
-			'href' => array(),
-			'target' => array(),
-			'class' => array(),
-			'id' => array(),
-			'rel'=> array()
-		),
-	   'strong' => array(),
-	   'img'=> array(	
-		   'src' => array(),
-		   'alt' => array(),
-	       'class' =>  array(),
-	       'width' => array(),
-	       'height' => array(),
-	       'class'  => array(),
-		   'id'    => array(),
-		   'title' => array()
-	   )
-    );
-}
-	 
-add_filter( 'bp_activity_allowed_tags', 'besocial_buddypress_activity_allowed_tags' );
-
-function tinymce_custom( $in ) {
-
-	if (!empty($in['selector']) && ($in['selector'] === '#whats-new')) {
-		$in['menubar'] = false;
-		$in['toolbar'] = '';
-		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard gifmaster_new ';
-		$in['toolbar2'] = '';
-		$in['statusbar'] = true;
-	}
-	return $in;
-}
-
-add_filter( 'tiny_mce_before_init', 'tinymce_custom');
-add_filter( 'bp_is_activity_embeds_active', '__return_true' );
-
 // Enqueue scripts for gif-master
 if (function_exists('gifm_reg_admin_scripts')) {
     add_action('wp_enqueue_scripts', 'gifm_reg_admin_scripts');
 }
-
-function bpfr_whats_new_tiny_editor() {
-    // Adding tinymce tools
-    $editor_id = 'whats-new';
-    $settings = [
-        'textarea_name' => $editor_id,
-        'media_buttons' => true,
-        'drag_drop_upload' => true,
-        'quicktags' => false,
-    ];
-
-    // Get the editor
-    wp_editor('', $editor_id, $settings);
-}
-
-add_action('whats_new_textarea', 'bpfr_whats_new_tiny_editor');
