@@ -57,9 +57,13 @@ add_action('show_admin_bar', '__return_true');
 
 // Admin bar: Remove WordPress logo and search box.
 add_action('wp_before_admin_bar_render', function () {
+
     global $wp_admin_bar;
+
     $wp_admin_bar->remove_node('wp-logo');
     $wp_admin_bar->remove_node('search');
+    $wp_admin_bar->remove_node('bp-login'); // In case buddypress is active.
+
 });
 
 // Admin bar: Add Departament d'Educació logo in the first position and menu with XTEC resources.
