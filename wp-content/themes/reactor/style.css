@@ -812,10 +812,6 @@ li.feed {
     list-style-type: none;
 }
 
-#groups-list .activity {
-    display: none !important;
-}
-
 .widget_bp_groups_widget #groups-list {
     margin-left: 0;
 }
@@ -837,6 +833,14 @@ li.feed {
 
 #buddypress div#object-nav.item-list-tabs ul li {
     border-bottom: 1px solid #CCCCCC !important;
+}
+
+#whats-new {
+    height: 10em !important;
+}
+
+#whats-new-options {
+    display: block !important;
 }
 
 .widget_bp_core_members_widget .vcard div.item-title,
