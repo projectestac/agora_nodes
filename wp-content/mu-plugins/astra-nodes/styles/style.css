@@ -431,7 +431,7 @@ h2:has(span#blog-description) {
 
 .slick-slide {
     background: white;
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
 }
 
 .slick-next:before,
