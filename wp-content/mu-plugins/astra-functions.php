@@ -495,7 +495,7 @@ add_action('astra_html_before', function () {
             <div id="card-color-' . $i . '" class="wp-block-column has-ast-global-color-0-background-color has-background is-layout-flow front-page-card"
                  style="' . $card_background . '">
                 <div class="astra-nodes-card-title">
-                    <h3 id="card-title-' . $i . '" style="color:' . $card_color . '">' . $card_title . '</h3>
+                    <h2 id="card-title-' . $i . '" style="color:' . $card_color . '">' . $card_title . '</h2>
                 </div>
                 <div class="astra-nodes-card-body">
                      <a id="card-link-' . $i . '" href="' . $card_url . '" ' . $card_target . '>
