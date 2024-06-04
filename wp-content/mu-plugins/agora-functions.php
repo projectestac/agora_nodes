@@ -1840,6 +1840,12 @@ add_action('switch_theme', function ($new_theme) {
         initialize_theme_mod();
         initialize_palettes();
         initialize_astra_settings();
+
+        // Remove the welcome panel from the dashboard. This call hides the panel immediately after
+        // the theme is activated. Otherwise, the panel shows up at least once.
+        add_action('admin_init', function () {
+            remove_action('welcome_panel', 'wp_welcome_panel');
+        }, 1);
     }
 
 }, 10, 1);
@@ -1856,15 +1862,16 @@ add_action('switch_theme', function ($new_theme) {
  */
 
 /**
- * Add the new sidebars that doesn't exist in the current theme.
+ * Add the new sidebars that doesn't exist in the current theme to make possible
+ * to move the widgets to them.
  */
 add_filter('nodes_switch_theme_add_sidebars', function ($sidebars) {
 
-    if (in_array('categories', $sidebars, true)) {
+    if (in_array('sidebar', $sidebars, true)) {
         // Moving to Astra theme.
-        $sidebars[] = 'sidebar-1';
-        $sidebars[] = 'footer-widget-1';
-        $sidebars[] = 'categories';
+        $sidebars[] = ['sidebar-1'];
+        $sidebars[] = ['footer-widget-1'];
+        $sidebars[] = ['categories'];
     }
 
     return $sidebars;
@@ -1881,14 +1888,14 @@ add_filter('nodes_switch_theme_add_sidebars_widgets', function ($new_sidebars_wi
 
         // Moving to Astra theme (Reactor doesn't have 'sidebar-1').
         $new_sidebars_widgets['sidebar-1'] = array_merge(
-            $existing_sidebars_widgets['sidebar'],
-            $existing_sidebars_widgets['sidebar-2']
+            $existing_sidebars_widgets['sidebar'] ?? [],
+            $existing_sidebars_widgets['sidebar-2'] ?? []
         );
-        $new_sidebars_widgets['footer-widget-1'] = $existing_sidebars_widgets['sidebar-footer'];
-        $new_sidebars_widgets['categories'] = $existing_sidebars_widgets['categoria'];
+        $new_sidebars_widgets['footer-widget-1'] = $existing_sidebars_widgets['sidebar-footer'] ?? [];
+        $new_sidebars_widgets['categories'] = $existing_sidebars_widgets['categoria'] ?? [];
         $new_sidebars_widgets['sidebar-frontpage'] = array_merge(
-            $new_sidebars_widgets['sidebar-frontpage'],
-            $existing_sidebars_widgets['sidebar-frontpage-2']
+            $existing_sidebars_widgets['sidebar-frontpage'] ?? [],
+            $existing_sidebars_widgets['sidebar-frontpage-2'] ?? []
         );
 
         unset(
@@ -1898,6 +1905,15 @@ add_filter('nodes_switch_theme_add_sidebars_widgets', function ($new_sidebars_wi
             $existing_sidebars_widgets['sidebar-2'],
             $existing_sidebars_widgets['sidebar-frontpage-2']
         );
+
+    } else {
+
+        // For any reason, sidebar "categories" has already been moved to $new_sidebars_widgets, so it
+        // is only necessary to move the sidebar name.
+        $new_sidebars_widgets['sidebar'] = $existing_sidebars_widgets['sidebar-1'] ?? [];
+        $new_sidebars_widgets['categoria'] = $new_sidebars_widgets['categories'] ?? [];
+
+        unset($existing_sidebars_widgets['sidebar-1'], $new_sidebars_widgets['categories']);
 
     }
 
