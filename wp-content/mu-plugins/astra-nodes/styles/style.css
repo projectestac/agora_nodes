@@ -1174,3 +1174,8 @@ ul.bbp-topics, .bbp-topic-form {
 }
 
 /* End of styles for BuddyPress and bbpress */
+
+/* Style for socialmedia plugin */
+.fa-2-5x {
+    font-size: 2.5em !important;
+}
