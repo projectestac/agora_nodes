@@ -1958,6 +1958,23 @@ function initialize_theme_mod(): void {
 function default_theme_mod(): array {
 
     $reactor_options = get_option('reactor_options');
+    $carousel_id = $reactor_options['carrusel'];
+
+    if ($carousel_id) {
+        $post_meta = get_post_meta($carousel_id);
+        $slides = maybe_unserialize($post_meta['slides'][0]);
+
+        $filtered_slides = array_filter($slides, static function ($slide) {
+            return $slide['type'] === 'attachment';
+        });
+
+        $processed_slides = array_slice($filtered_slides, 0, 5);
+
+        foreach ($processed_slides as &$slide) {
+            $slide['image_url'] = wp_get_attachment_url($slide['postId']);
+        }
+    }
+
     migrate_favicon($reactor_options['favicon_image']);
     $logo = migrate_logo($reactor_options['logo_image']);
 
@@ -2030,31 +2047,31 @@ function default_theme_mod(): array {
         'front_page_slider_dots' => 'yes',
         'front_page_slider_min_height' => 500,
         'front_page_slider_autoplay' => true,
-        'front_page_slider_image_1' => '',
-        'front_page_slider_link_1' => '',
+        'front_page_slider_image_1' => $processed_slides[0]['image_url'] ?? '',
+        'front_page_slider_link_1' => $processed_slides[0]['url'] ?? '',
         'front_page_slider_open_in_new_tab_1' => true,
-        'front_page_slider_heading_1' => __('Slider heading') . ' 1',
-        'front_page_slider_text_1' => __('Slider text') . ' 1',
-        'front_page_slider_image_2' => '',
-        'front_page_slider_link_2' => '',
+        'front_page_slider_heading_1' => $processed_slides[0]['title'] ?? '',
+        'front_page_slider_text_1' => $processed_slides[0]['description'] ?? '',
+        'front_page_slider_image_2' => $processed_slides[1]['image_url'] ?? '',
+        'front_page_slider_link_2' => $processed_slides[1]['url'] ?? '',
         'front_page_slider_open_in_new_tab_2' => true,
-        'front_page_slider_heading_2' => __('Slider heading') . ' 2',
-        'front_page_slider_text_2' => __('Slider text') . ' 2',
-        'front_page_slider_image_3' => '',
-        'front_page_slider_link_3' => '',
+        'front_page_slider_heading_2' => $processed_slides[1]['title'] ?? '',
+        'front_page_slider_text_2' => $processed_slides[1]['description'] ?? '',
+        'front_page_slider_image_3' => $processed_slides[2]['image_url'] ?? '',
+        'front_page_slider_link_3' => $processed_slides[2]['url'] ?? '',
         'front_page_slider_open_in_new_tab_3' => true,
-        'front_page_slider_heading_3' => __('Slider heading') . ' 3',
-        'front_page_slider_text_3' => __('Slider text') . ' 3',
-        'front_page_slider_image_4' => '',
-        'front_page_slider_link_4' => '',
+        'front_page_slider_heading_3' => $processed_slides[2]['title'] ?? '',
+        'front_page_slider_text_3' => $processed_slides[2]['description'] ?? '',
+        'front_page_slider_image_4' => $processed_slides[3]['image_url'] ?? '',
+        'front_page_slider_link_4' => $processed_slides[3]['url'] ?? '',
         'front_page_slider_open_in_new_tab_4' => true,
-        'front_page_slider_heading_4' => __('Slider heading') . ' 4',
-        'front_page_slider_text_4' => __('Slider text') . ' 4',
-        'front_page_slider_image_5' => '',
-        'front_page_slider_link_5' => '',
+        'front_page_slider_heading_4' => $processed_slides[3]['title'] ?? '',
+        'front_page_slider_text_4' => $processed_slides[3]['description'] ?? '',
+        'front_page_slider_image_5' => $processed_slides[4]['image_url'] ?? '',
+        'front_page_slider_link_5' => $processed_slides[4]['url'] ?? '',
         'front_page_slider_open_in_new_tab_5' => true,
-        'front_page_slider_heading_5' => __('Slider heading') . ' 5',
-        'front_page_slider_text_5' => __('Slider text') . ' 5',
+        'front_page_slider_heading_5' => $processed_slides[4]['title'] ?? '',
+        'front_page_slider_text_5' => $processed_slides[4]['description'] ?? '',
         'front_page_news_enable' => true,
         'front_page_news_number' => 20,
         'front_page_news_category' => 29,
