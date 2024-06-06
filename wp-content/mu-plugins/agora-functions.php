@@ -2157,14 +2157,22 @@ function initialize_palettes(): void {
     $palettes = get_option('astra-color-palettes');
 
     if (!$palettes || !isset($palettes['palettes'])) {
+
         $default_palettes['currentPalette'] = get_reactor_palette();
         $palettes = $default_palettes;
+
+        $astra_settings = get_option('astra-settings');
+        $astra_settings['global-color-palette']['palette'] = $palettes['palettes'][$default_palettes['currentPalette']];
+        update_option('astra-settings', $astra_settings);
+
     } else {
+
         foreach ($default_palettes['palettes'] as $key => $value) {
             if (!array_key_exists($key, $palettes['palettes'])) {
                 $palettes['palettes'][$key] = $value;
             }
         }
+
     }
 
     update_option('astra-color-palettes', $palettes);
