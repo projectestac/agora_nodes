@@ -1867,7 +1867,7 @@ add_action('switch_theme', function ($new_theme) {
  */
 add_filter('nodes_switch_theme_add_sidebars', function ($sidebars) {
 
-    if (in_array('sidebar', $sidebars, true)) {
+    if (in_array('categoria', $sidebars, true)) {
         // Moving to Astra theme.
         $sidebars[] = ['sidebar-1'];
         $sidebars[] = ['footer-widget-1'];
@@ -1903,6 +1903,7 @@ add_filter('nodes_switch_theme_add_sidebars_widgets', function ($new_sidebars_wi
             $existing_sidebars_widgets['sidebar-footer'],
             $existing_sidebars_widgets['categoria'],
             $existing_sidebars_widgets['sidebar-2'],
+            $existing_sidebars_widgets['sidebar-frontpage'],
             $existing_sidebars_widgets['sidebar-frontpage-2']
         );
 

@@ -665,7 +665,12 @@ add_action('astra_sidebars_before', function () {
         unregister_sidebar('sidebar-1');
         unregister_sidebar('sidebar-frontpage');
 
-    } elseif ($is_buddypress_active && !is_buddypress()) { // All other pages.
+    } elseif (($is_buddypress_active && is_buddypress()) || !is_page()) { // Buddypress or posts.
+
+        unregister_sidebar('sidebar-frontpage');
+        unregister_sidebar('categories');
+
+    } else { // All other cases, including pages.
 
         global $astra_nodes_options;
         $pages_sidebar = $astra_nodes_options['pages_sidebar'] ?? 'menu';
@@ -684,7 +689,6 @@ add_action('astra_sidebars_before', function () {
             unregister_sidebar('categories');
 
         }
-
     }
 
 });
