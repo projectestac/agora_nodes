@@ -551,6 +551,7 @@ div#content {
     padding: 16px var(--wp--preset--spacing--60);
 }
 
+.ast-page-builder-template.archive.ast-left-sidebar .ast-row article,
 .ast-single-post.ast-page-builder-template .site-main > article,
 .woocommerce.ast-page-builder-template .site-main {
     padding-top: 0;
@@ -558,8 +559,19 @@ div#content {
     padding-right: 20px;
 }
 
+.ast-single-post.ast-page-builder-template .site-main > article {
+    margin-left: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 30px;
+}
+
 .ast-page-builder-template .entry-header {
     margin-top: 0;
+}
+
+.ast-page-builder-template .ast-archive-description {
+    margin: 0 auto 1em 2em;
 }
 
 div.ast-breadcrumbs-wrapper {
@@ -785,14 +797,11 @@ body.archive .ast-archive-description {
     border-radius: 10px;
 }
 
-.slick-next:before, .slick-prev:before {
+.slick-prev:before,
+.slick-next:before {
     padding: 8px 18px;
     color: var(--ast-global-color-0) !important;
     background-color: white !important;
-}
-
-.wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev {
-    left: 0;
 }
 
 #front-page-notice-title {
@@ -818,19 +827,8 @@ aside input {
     width: 100% !important;
 }
 
-.ast-single-post.ast-page-builder-template .site-main > article {
-    padding-right: 0;
-}
-
 .trail-items li::after {
     font-size: 20px !important;
-}
-
-.ast-single-post.ast-page-builder-template .site-main > article {
-    margin-left: 20px;
-    background-color: white;
-    padding: 30px !important;
-    border-radius: 30px;
 }
 
 div.sidebar-main li.current-menu-item {
