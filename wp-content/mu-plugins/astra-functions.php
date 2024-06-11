@@ -799,11 +799,13 @@ add_action('init', function () {
 
 }, 11);
 
-// Admin: Remove Astra menu from the admin panel and block access.
+// Admin: Remove Astra menu and Buddypress from the admin panel and block access.
 add_action('admin_menu', function () {
 
     if (!is_xtec_super_admin()) {
         remove_menu_page('astra');
+        remove_menu_page('bp-activity');
+        remove_menu_page('bp-groups');
 
         global $pagenow;
         if ($pagenow === 'admin.php' && isset($_GET['page']) && $_GET['page'] === 'astra') {
@@ -812,4 +814,11 @@ add_action('admin_menu', function () {
         }
     }
 
+}, 11);
+
+// Unregister Buddypress post type to disable functionality.
+add_action('init', function () {
+    if (!is_xtec_super_admin()) {
+        unregister_post_type('bp-email');
+    }
 }, 11);
