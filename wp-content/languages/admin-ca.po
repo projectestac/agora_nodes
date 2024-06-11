@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.3.x - Administration\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-11-03 11:40+0100\n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"PO-Revision-Date: 2024-05-21 15:00+0200\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: wp-admin/js/widgets.js:706
 msgid "Widget has been added to the selected sidebar"
@@ -3169,7 +3169,7 @@ msgstr "https://wordpress.org/documentation/article/update-services/"
 #. translators: %s: Documentation URL.
 #: wp-admin/options-writing.php:227
 msgid "When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see the <a href=\"%s\">Update Services</a> documentation article. Separate multiple service URLs with line breaks."
-msgstr "Quan publiqueu una article nou, el WordPress ho notifica automàticament als següents serveis d'actualització. Per a més informació, consulteu l'article de documentació sobre <a href=\"%s\">serveis d'actualització</a> (en anglès). Separeu els múltiples URLs de serveis amb salts de línia."
+msgstr "Quan publiqueu un article nou, el WordPress ho notifica automàticament als següents serveis d'actualització. Per a més informació, consulteu l'article de documentació sobre <a href=\"%s\">serveis d'actualització</a> (en anglès). Separeu els múltiples URLs de serveis amb salts de línia."
 
 #: wp-admin/options-writing.php:190
 msgid "Default Mail Category"
@@ -4322,7 +4322,7 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/appearance-menus-s
 
 #: wp-admin/nav-menus.php:676
 msgid "To add a new menu instead of assigning an existing one, <strong>click the &#8217;Use new menu&#8217; link</strong>. Your new menu will be automatically assigned to that theme location"
-msgstr "Per afegir un menú nou en lloc d'assignar un ja existent, <strong>feu clic a l'enllaç &#8217;Utilitza un menú nou&#8217;</strong>. El menú nou s'assignarà automàticament a aquesta ubicació del tema."
+msgstr "Per afegir un menú nou en lloc d'assignar un ja existent, <strong>feu clic a l'enllaç &#8217;Utilitza un menú nou&#8217;</strong>. El menú nou s'assignarà automàticament a aquesta ubicació del tema"
 
 #: wp-admin/nav-menus.php:675
 msgid "To edit a menu currently assigned to a theme location, <strong>click the adjacent &#8217;Edit&#8217; link</strong>"
@@ -4723,7 +4723,7 @@ msgstr "<strong>Arrossegueu i deixeu anar</strong> els fitxers en l'àrea d'aqu�
 
 #: wp-admin/media-new.php:51
 msgid "You can upload media files here without creating a post first. This allows you to upload files to use with posts and pages later and/or to get a web link for a particular file that you can share. There are three options for uploading files:"
-msgstr "Podeu penjar mèdia aquí sense crear primer una article. Això us permet penjar els fitxers que utilitzareu als articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
+msgstr "Podeu penjar mèdia aquí sense crear primer un article. Això us permet penjar els fitxers que utilitzareu als articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
 
 #: wp-admin/media-new.php:43
 msgid "Upload New Media"
@@ -5071,7 +5071,7 @@ msgstr "<strong>Esdeveniments i notícies del WordPress</strong> &mdash; futurs 
 
 #: wp-admin/index.php:92
 msgid "<strong>Quick Draft</strong> &mdash; Allows you to create a new post and save it as a draft. Also displays links to the 3 most recent draft posts you've started."
-msgstr "<strong>Esborrany ràpid</strong> &mdash; Us permet crear una article nova i desar-la com a esborrany. També mostra enllaços als darrers 3 esborranys d'articles que heu iniciat."
+msgstr "<strong>Esborrany ràpid</strong> &mdash; Us permet crear un article nou i desar-lo com a esborrany. També mostra enllaços als darrers tres esborranys més recents."
 
 #: wp-admin/index.php:89
 msgid "<strong>Activity</strong> &mdash; Shows the upcoming scheduled posts, recently published posts, and the most recent comments on your posts and allows you to moderate them."
@@ -5306,7 +5306,7 @@ msgstr "Hola! Sóc un missatger amb bicicleta de dia, aspirant a actor de nit i 
 #. translators: First page content.
 #: wp-admin/includes/upgrade.php:290
 msgid "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:"
-msgstr "Aquest és una pàgina d'exemple. És diferent d'una article del blog perquè es mantindrà en un lloc i apareixerà a la navegació del lloc (a la majoria de temes). Molta gent comença amb la pàgina «Quant a», que els presenta als potencials visitants del lloc web. Podria dir alguna cosa així:"
+msgstr "Aquest és una pàgina d'exemple. És diferent d'un article del blog perquè es mantindrà en un lloc i apareixerà a la navegació del lloc (a la majoria de temes). Molta gent comença amb la pàgina «Quant a», que els presenta als potencials visitants del lloc web. Podria dir alguna cosa així:"
 
 #: wp-admin/includes/upgrade.php:266 wp-admin/user-edit.php:600
 msgid "https://en.gravatar.com/"
@@ -7346,7 +7346,7 @@ msgstr "https://wordpress.org/documentation/article/assign-custom-fields/"
 #. translators: %s: Documentation URL.
 #: wp-admin/includes/meta-boxes.php:833
 msgid "Custom fields can be used to add extra metadata to a post that you can <a href=\"%s\">use in your theme</a>."
-msgstr "Els camps personalitzats es poden utilitzar per afegir metadades a una article, les quals poden <a href=\"%s\">ser usades pel tema</a>."
+msgstr "Els camps personalitzats es poden utilitzar per afegir metadades a un article, les quals poden <a href=\"%s\">ser usades pel tema</a>."
 
 #: wp-admin/includes/meta-boxes.php:797
 msgid "https://wordpress.org/documentation/article/introduction-to-blogging/#comments"
@@ -9818,7 +9818,7 @@ msgstr "No s'ha pogut accedir al sistema de fitxers"
 #. translators: %s: wp-content/upgrade-temp-backup
 #: wp-admin/includes/class-wp-site-health.php:1997
 msgid "The %s directory used to improve the stability of plugin and theme updates is writable."
-msgstr "El directori %s que s'utilitza per millorar l'estabilitat de les actualitzacions de les extensions i els temes té permisos d'escriptura:"
+msgstr "El directori %s que s'utilitza per millorar l'estabilitat de les actualitzacions de les extensions i els temes té permisos d'escriptura."
 
 #: wp-admin/includes/class-wp-site-health.php:1989
 msgid "Plugin and theme temporary backup directory is writable"
@@ -10073,7 +10073,7 @@ msgstr "El suport per a utf8mb4 del WordPress necessita la versió %s de MySQL o
 
 #: wp-admin/includes/class-wp-site-health.php:1321
 msgid "utf8mb4 requires a MySQL update"
-msgstr "El conjunt de caràcters utf8mb4 necessita una actualització de MySQL "
+msgstr "El conjunt de caràcters utf8mb4 necessita una actualització de MySQL"
 
 #: wp-admin/includes/class-wp-site-health.php:1311
 msgid "UTF8MB4 is the character set WordPress prefers for database storage because it safely supports the widest set of characters and encodings, including Emoji, enabling better support for non-English languages."
@@ -14649,7 +14649,7 @@ msgstr "Heu d'entrar per contestar un comentari."
 
 #: wp-admin/includes/ajax-actions.php:1326
 msgid "You cannot reply to a comment on a draft post."
-msgstr "No podeu respondre a un comentari d'una article que és un esborrany."
+msgstr "No podeu respondre a un comentari d'un article que és un esborrany."
 
 #. translators: %d: Comment ID.
 #: wp-admin/includes/ajax-actions.php:990
@@ -15212,7 +15212,7 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/posts-screen/\">Do
 
 #: wp-admin/edit.php:291
 msgid "When using Bulk Edit, you can change the metadata (categories, author, etc.) for all selected posts at once. To remove a post from the grouping, just click the x next to its name in the Bulk Edit area that appears."
-msgstr "Quan useu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a tots els articles seleccionats d'una vegada. Per suprimir una article del grup, simplement feu clic a la x que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
+msgstr "Quan useu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a tots els articles seleccionats d'una vegada. Per suprimir un article del grup, simplement feu clic a la x que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
 
 #: wp-admin/edit.php:290
 msgid "You can also edit or move multiple posts to the Trash at once. Select the posts you want to act on using the checkboxes, then select the action you want to take from the Bulk actions menu and click Apply."
@@ -15598,11 +15598,11 @@ msgstr "<strong>%s</strong> - Això permet associar una imatge amb l'article sen
 
 #: wp-admin/edit-form-advanced.php:380
 msgid "<strong>Format</strong> &mdash; Post Formats designate how your theme will display a specific post. For example, you could have a <em>standard</em> blog post with a title and paragraphs, or a short <em>aside</em> that omits the title and contains a short text blurb. Your theme could enable all or some of 10 possible formats. <a href=\"https://wordpress.org/documentation/article/post-formats/#supported-formats\">Learn more about each post format</a>."
-msgstr "<strong>Format</strong> &mdash; els formats d'article designen com el tema mostrarà una article específica. Per exemple, podríeu tenir una article de blog <em>estàndard</em> amb un títol i paràgrafs, o una curta <em>anotació</em> que omet el títol i conté un text breu. El tema podria activar tots o alguns dels 10 possibles formats. <a href=\"https://wordpress.org/documentation/article/post-formats/#supported-formats\">Més informació sobre cada tipus de format d'article</a>. (en anglès)"
+msgstr "<strong>Format</strong> &mdash; els formats d'article designen com el tema mostrarà un article específic. Per exemple, podríeu tenir un article de blog <em>estàndard</em> amb un títol i paràgrafs, o una curta <em>anotació</em> que omet el títol i conté un text breu. El tema podria activar tots o alguns dels 10 possibles formats. <a href=\"https://wordpress.org/documentation/article/post-formats/#supported-formats\">Més informació sobre cada tipus de format d'article</a>. (en anglès)"
 
 #: wp-admin/edit-form-advanced.php:376
 msgid "<strong>Publish</strong> &mdash; You can set the terms of publishing your post in the Publish box. For Status, Visibility, and Publish (immediately), click on the Edit link to reveal more options. Visibility includes options for password-protecting a post or making it stay at the top of your blog indefinitely (sticky). The Password protected option allows you to set an arbitrary password for each post. The Private option hides the post from everyone except editors and administrators. Publish (immediately) allows you to set a future or past date and time, so you can schedule a post to be published in the future or backdate a post."
-msgstr "<strong>Publicar</strong> &mdash; Podeu definir les condicions de publicació dels articles des del quadre Publica. Per canviar-ne l'estat, la visibilitat i publicar-la (immediatament), feu clic a l'enllaç Edita per veure més opcions. La visibilitat inclou opcions per definir una contrasenya d'accés que protegeixi l'article o per fixar-la a la portada del blog indefinidament. L'opció de protegir-la amb contrasenya us permet definir-ne una d'arbitrària per a cada article. Si feu l'article Privada, ningú la podrà veure excepte els editors i administradors. Publicar-la (immediatament) us permet definir una data i hora futures o passades, de tal manera que podeu planificar la publicació d'una article o antedatar-la."
+msgstr "<strong>Publicar</strong> &mdash; Podeu definir les condicions de publicació dels articles des del quadre Publica. Per canviar-ne l'estat, la visibilitat i publicar-la (immediatament), feu clic a l'enllaç Edita per veure més opcions. La visibilitat inclou opcions per definir una contrasenya d'accés que protegeixi l'article o per fixar-la a la portada del blog indefinidament. L'opció de protegir-la amb contrasenya us permet definir-ne una d'arbitrària per a cada article. Si feu l'article Privada, ningú la podrà veure excepte els editors i administradors. Publicar-la (immediatament) us permet definir una data i hora futures o passades, de tal manera que podeu planificar la publicació d'un article o antedatar-la."
 
 #: wp-admin/edit-form-advanced.php:374
 msgid "Several boxes on this screen contain settings for how your content will be published, including:"
@@ -15654,7 +15654,7 @@ msgstr "Quant a les pàgines"
 
 #: wp-admin/edit-form-advanced.php:324
 msgid "Creating a Page is very similar to creating a Post, and the screens can be customized in the same way using drag and drop, the Screen Options tab, and expanding/collapsing boxes as you choose. This screen also has the distraction-free writing space, available in both the Visual and Text modes via the Fullscreen buttons. The Page editor mostly works the same as the Post editor, but there are some Page-specific features in the Page Attributes box."
-msgstr "Crear una pàgina és molt similar a crear una article, i les pantalles es poden personalitzar de la mateixa forma, arrossegant i deixant anar, amb la pestanya de les opcions de pantalla, o bé ampliant i reduint les caixes que trieu. Aquesta pantalla també té l'espai d'escriptura lliure de distraccions, disponible en els modes d'edició visual i text gràcies als botons de pantalla completa. L'editor de pàgines quasi funciona igual que el d'articles, però hi ha algunes característiques específiques de les pàgines a la caixa atributs de la pàgina."
+msgstr "Crear una pàgina és molt similar a crear un article, i les pantalles es poden personalitzar de la mateixa forma, arrossegant i deixant anar, amb la pestanya de les opcions de pantalla, o bé ampliant i reduint les caixes que trieu. Aquesta pantalla també té l'espai d'escriptura lliure de distraccions, disponible en els modes d'edició visual i text gràcies als botons de pantalla completa. L'editor de pàgines quasi funciona igual que el d'articles, però hi ha algunes característiques específiques de les pàgines a la caixa atributs de la pàgina."
 
 #: wp-admin/edit-form-advanced.php:323 wp-admin/edit.php:307
 msgid "Pages are similar to posts in that they have a title, body text, and associated metadata, but they are different in that they are not part of the chronological blog stream, kind of like permanent posts. Pages are not categorized or tagged, but can have a hierarchy. You can nest pages under other pages by making one the &#8220;Parent&#8221; of the other, creating a group of pages."
