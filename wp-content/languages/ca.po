@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.3.x\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2024-01-15 12:25+0100\n"
-"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"PO-Revision-Date: 2024-05-29 11:17+0200\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -932,7 +932,7 @@ msgstr "Mostra una llista de els articles més recents."
 #: wp-includes/blocks/latest-posts/block.json
 msgctxt "block title"
 msgid "Latest Posts"
-msgstr "Darreres articles"
+msgstr "Darrers articles"
 
 #: wp-includes/blocks/latest-comments/block.json
 msgctxt "block keyword"
@@ -24160,7 +24160,7 @@ msgstr "Afegeix una nova pàgina"
 
 #: wp-includes/class-wp-post-type.php:835
 msgid "Add New Post"
-msgstr "Afegeix una article nou"
+msgstr "Afegeix un article nou"
 
 #: wp-includes/class-wp-post-type.php:834
 msgctxt "page"
@@ -26854,7 +26854,7 @@ msgstr "Una pàgina estàtica"
 #: wp-includes/class-wp-customize-manager.php:5651
 #: wp-admin/options-reading.php:97
 msgid "Your latest posts"
-msgstr "Les darrers articles"
+msgstr "Els darrers articles"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-manager.php:5647
