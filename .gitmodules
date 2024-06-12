@@ -37,9 +37,6 @@
 [submodule "wp-content/plugins/email-subscribers"]
 	path = wp-content/plugins/email-subscribers
 	url = https://github.com/projectestac/wordpress-email-subscribers.git
-[submodule "wp-content/plugins/google-analyticator"]
-	path = wp-content/plugins/google-analyticator
-	url = https://github.com/projectestac/wordpress-google-analyticator
 [submodule "wp-content/plugins/google-calendar-events"]
 	path = wp-content/plugins/google-calendar-events
 	url = https://github.com/projectestac/wordpress-gce.git
