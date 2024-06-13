@@ -87,12 +87,14 @@ function nodes_customize_register($wp_customize) {
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Logo_Control.php';
 
     // Header panel: Logos section: Organism logo.
-    $wp_customize->add_setting('astra_nodes_options[organism_logo]', [
-        'default' => 'department',
-        'type' => 'theme_mod',
-        'capability' => 'manage_options',
-        'transport' => 'postMessage',
-    ]);
+    if (is_xtec_super_admin()) {
+        $wp_customize->add_setting('astra_nodes_options[organism_logo]', [
+            'default' => 'department',
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'transport' => 'postMessage',
+        ]);
+    }
 
     $wp_customize->add_control(
         new WP_Customize_Logo_Control($wp_customize, 'astra_nodes_customizer_header_organism_logo', [
@@ -890,13 +892,15 @@ function nodes_customize_register($wp_customize) {
         'capability' => 'manage_options',
     ]);
 
-    $wp_customize->add_control(
-        new WP_Customize_Toggle_Control($wp_customize, 'astra_nodes_customizer_front_page_slider_enable', [
-            'label' => __('Show the slider', 'astra-nodes'),
-            'section' => 'astra_nodes_customizer_front_page_slider',
-            'settings' => 'astra_nodes_options[front_page_slider_enable]',
-            'priority' => 1,
-        ]));
+    if (is_xtec_super_admin()) {
+        $wp_customize->add_control(
+            new WP_Customize_Toggle_Control($wp_customize, 'astra_nodes_customizer_front_page_slider_enable', [
+                'label' => __('Show the slider', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_front_page_slider',
+                'settings' => 'astra_nodes_options[front_page_slider_enable]',
+                'priority' => 1,
+            ]));
+    }
 
     // Front page slider: Minimum height of the images.
     $wp_customize->add_setting('astra_nodes_options[front_page_slider_min_height]', [
