@@ -605,7 +605,8 @@ add_action('astra_html_before', function () {
 
         include_once WPMU_PLUGIN_DIR . '/astra-nodes/includes/front_page_news.php';
 
-        $blocks = parse_blocks(get_front_page_news($astra_nodes_options));
+        $category_link = get_category_link($astra_nodes_options['front_page_news_category']);
+        $blocks = parse_blocks(get_front_page_news($astra_nodes_options, $category_link));
 
         echo '<div id="front-page-news-carousel-container">';
 
