@@ -8,6 +8,7 @@
  */
 
 load_muplugin_textdomain('agora-functions', '/languages');
+
 /**
  * Load agora-functions javascript file
  */
@@ -1988,6 +1989,10 @@ function default_theme_mod(): array {
 
     $icons = convert_header_icons($icons);
 
+    $image_cards = register_image_in_media_library();
+
+    // Translation note: When action switch_theme is triggered, the text domain is not loaded. That's why the
+    // texts are in catalan.
     return [
         'custom_logo' => $logo ?? 0,
         'pre_blog_name' => '',
@@ -1997,51 +2002,53 @@ function default_theme_mod(): array {
         'link_to_map' => $reactor_options['googleMaps'] ?? '',
         'contact_page' => $reactor_options['emailCentre'] ?? '',
         'email_address' => '',
-        'header_icon_1_classes' => $icons['icon11'] ?? '',
-        'header_icon_1_text' => $origin_icons['title_icon11'] ?? __('Icon', 'astra-nodes') . ' 1',
-        'header_icon_1_link' => $origin_icons['link_icon11'] ?? '',
+        'header_icon_1_classes' => $icons['icon11'] ?? $icons['icon1'] ?? '',
+        'header_icon_1_text' => $origin_icons['title_icon11'] ?? $origin_icons['title_icon1'] ?? 'Icona 1',
+        'header_icon_1_link' => $origin_icons['link_icon11'] ?? $origin_icons['link_icon1'] ?? '',
         'header_icon_1_open_in_new_tab' => true,
-        'header_icon_2_classes' => $icons['icon12'] ?? '',
-        'header_icon_2_text' => $origin_icons['title_icon12'] ?? __('Icon', 'astra-nodes') . ' 2',
-        'header_icon_2_link' => $origin_icons['link_icon12'] ?? '',
+        'header_icon_2_classes' => $icons['icon12'] ?? $icons['icon2'] ?? '',
+        'header_icon_2_text' => $origin_icons['title_icon12'] ?? $origin_icons['title_icon2'] ?? 'Icona 2',
+        'header_icon_2_link' => $origin_icons['link_icon12'] ?? $origin_icons['link_icon2'] ?? '',
         'header_icon_2_open_in_new_tab' => true,
-        'header_icon_3_classes' => '',
-        'header_icon_3_text' => '',
-        'header_icon_3_link' => '',
+        'header_icon_3_classes' => $icons['icon3'] ?? '',
+        'header_icon_3_text' => $origin_icons['title_icon3'] ?? '',
+        'header_icon_3_link' => $origin_icons['link_icon3'] ?? '',
         'header_icon_3_open_in_new_tab' => true,
-        'header_icon_4_classes' => $icons['icon21'] ?? '',
-        'header_icon_4_text' => $origin_icons['title_icon21'] ?? __('Icon', 'astra-nodes') . ' 4',
-        'header_icon_4_link' => $origin_icons['link_icon21'] ?? '',
+        'header_icon_4_classes' => $icons['icon21'] ?? $icons['icon4'] ?? '',
+        'header_icon_4_text' => $origin_icons['title_icon21'] ?? $origin_icons['title_icon4'] ?? 'Icona 4',
+        'header_icon_4_link' => $origin_icons['link_icon21'] ?? $origin_icons['link_icon4'] ?? '',
         'header_icon_4_open_in_new_tab' => true,
-        'header_icon_5_classes' => $icons['icon22'] ?? '',
-        'header_icon_5_text' => $origin_icons['title_icon22'] ?? __('Icon', 'astra-nodes') . ' 5',
-        'header_icon_5_link' => $origin_icons['link_icon22'] ?? '',
+        'header_icon_5_classes' => $icons['icon22'] ?? $icons['icon5'] ?? '',
+        'header_icon_5_text' => $origin_icons['title_icon22'] ?? $origin_icons['title_icon5'] ?? 'Icona 5',
+        'header_icon_5_link' => $origin_icons['link_icon22'] ?? $origin_icons['link_icon5'] ?? '',
         'header_icon_5_open_in_new_tab' => true,
         'header_icon_6_classes' => '',
         'header_icon_6_text' => '',
         'header_icon_6_link' => '',
         'header_icon_6_open_in_new_tab' => true,
         'front_page_notice_enable' => true,
-        'front_page_notice_layout' => 'text',
-        'front_page_notice_image' => '',
+        'front_page_notice_layout' => 'image_text',
+        'front_page_notice_image' => $image_cards[4] ?? '',
         'front_page_notice_url' => '',
         'front_page_notice_open_in_new_tab' => true,
         'front_page_notice_background_color' => '',
-        'front_page_notice_pre_title' => __('Notice previous title text', 'astra-nodes'),
-        'front_page_notice_title' => __('Notice title', 'astra-nodes'),
-        'front_page_notice_content' => __('Notice content', 'astra-nodes'),
+        'front_page_notice_pre_title' => 'Informació de servei',
+        'front_page_notice_title' => 'Carta d\'inici de curs i calendari 23-24',
+        'front_page_notice_content' => 'Benvolgudes famílies us facilitem la Carta d\'inici de curs per a totes les famílies de l\'escola.
+                                        <br/><br/>Carta d\'inici de curs per a famílies d\'educació infantil.<br/>Carta d\'inici de curs per a
+                                        famílies de primària.<br/>Calendari en PDF.',
         'front_page_cards_enable' => true,
-        'front_page_card_1_title' => __('Card') . ' 1',
-        'front_page_card_1_image' => '',
+        'front_page_card_1_title' => 'Biblioteca',
+        'front_page_card_1_image' => $image_cards[0] ?? '',
         'front_page_card_1_url' => '',
-        'front_page_card_2_title' => __('Card') . ' 2',
-        'front_page_card_2_image' => '',
+        'front_page_card_2_title' => 'Menjador',
+        'front_page_card_2_image' => $image_cards[1] ?? '',
         'front_page_card_2_url' => '',
-        'front_page_card_3_title' => __('Card') . ' 3',
-        'front_page_card_3_image' => '',
+        'front_page_card_3_title' => 'AFA',
+        'front_page_card_3_image' => $image_cards[2] ?? '',
         'front_page_card_3_url' => '',
-        'front_page_card_4_title' => __('Card') . ' 4',
-        'front_page_card_4_image' => '',
+        'front_page_card_4_title' => 'Esports',
+        'front_page_card_4_image' => $image_cards[3] ?? '',
         'front_page_card_4_url' => '',
         'front_page_slider_enable' => true,
         'front_page_slider_arrows' => 'yes',
@@ -2139,6 +2146,94 @@ function convert_header_icons($icons): array {
     }
 
     return $converted_icons;
+
+}
+
+/**
+ * Registers images in the media library.
+ *
+ * @return array An array of uploaded images with their URLs.
+ */
+function register_image_in_media_library(): array {
+
+    $image_directory = 'wp-content/mu-plugins/astra-nodes/images/';
+    $image_files = [
+        'card_demo_0.jpg',
+        'card_demo_1.jpg',
+        'card_demo_2.jpg',
+        'card_demo_3.jpg',
+        'news_demo.jpg',
+    ];
+
+    $uploaded_images = [];
+
+    foreach ($image_files as $image_file) {
+
+        $image_path = ABSPATH . $image_directory . $image_file;
+
+        if (!file_exists($image_path)) {
+            continue;
+        }
+
+        // Check if the image already exists in the media library
+        $existing_attachment = get_posts([
+            'name' => sanitize_title($image_file),
+            'post_type' => 'attachment',
+            'post_mime_type' => 'image/jpeg',
+            'post_status' => 'inherit',
+            'posts_per_page' => 1,
+        ]);
+
+        if (empty($existing_attachment)) {
+
+            // When action switch_theme is triggered, the function wp_get_current_user() is not available.
+            if (!function_exists('wp_get_current_user')) {
+                include_once ABSPATH . 'wp-includes/pluggable.php';
+            }
+
+            $image_data = file_get_contents($image_path);
+            $upload = wp_upload_bits($image_file, null, $image_data);
+
+            if (!$upload['error']) {
+
+                $file_path = $upload['file'];
+                $file_url = $upload['url'];
+                $file_type = wp_check_filetype($file_path);
+
+                $attachment = [
+                    'guid' => $file_url,
+                    'post_mime_type' => $file_type['type'],
+                    'post_name' => sanitize_file_name($image_file),
+                    'post_title' => sanitize_file_name($image_file),
+                    'post_content' => '',
+                    'post_status' => 'inherit',
+                ];
+
+                $attach_id = wp_insert_attachment($attachment, $file_path);
+
+                if (!is_wp_error($attach_id)) {
+
+                    // When action switch_theme is triggered, the function wp_generate_attachment_metadata() is not available.
+                    if (!function_exists('wp_generate_attachment_metadata')) {
+                        include_once ABSPATH . 'wp-admin/includes/image.php';
+                    }
+
+                    $attach_data = wp_generate_attachment_metadata($attach_id, $file_path);
+                    wp_update_attachment_metadata($attach_id, $attach_data);
+                    $uploaded_images[] = wp_get_attachment_url($attach_id);
+
+                }
+
+            }
+        } else {
+
+            $attach_id = $existing_attachment[0]->ID;
+            $uploaded_images[] = wp_get_attachment_url($attach_id);
+
+        }
+    }
+
+    return $uploaded_images;
 
 }
 
