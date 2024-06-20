@@ -1989,6 +1989,7 @@ function default_theme_mod(): array {
 
     $icons = convert_header_icons($icons);
 
+    $title_cards = get_cards_titles();
     $image_cards = register_image_in_media_library();
 
     // Translation note: When action switch_theme is triggered, the text domain is not loaded. That's why the
@@ -2033,21 +2034,21 @@ function default_theme_mod(): array {
         'front_page_notice_open_in_new_tab' => true,
         'front_page_notice_background_color' => '',
         'front_page_notice_pre_title' => 'Informació de servei',
-        'front_page_notice_title' => 'Carta d\'inici de curs i calendari 23-24',
+        'front_page_notice_title' => 'Carta d\'inici de curs i calendari 24-25',
         'front_page_notice_content' => 'Benvolgudes famílies us facilitem la Carta d\'inici de curs per a totes les famílies de l\'escola.
                                         <br/><br/>Carta d\'inici de curs per a famílies d\'educació infantil.<br/>Carta d\'inici de curs per a
                                         famílies de primària.<br/>Calendari en PDF.',
         'front_page_cards_enable' => true,
-        'front_page_card_1_title' => 'Biblioteca',
+        'front_page_card_1_title' => $title_cards[0],
         'front_page_card_1_image' => $image_cards[0] ?? '',
         'front_page_card_1_url' => '',
-        'front_page_card_2_title' => 'Menjador',
+        'front_page_card_2_title' => $title_cards[1],
         'front_page_card_2_image' => $image_cards[1] ?? '',
         'front_page_card_2_url' => '',
-        'front_page_card_3_title' => 'AFA',
+        'front_page_card_3_title' => $title_cards[2],
         'front_page_card_3_image' => $image_cards[2] ?? '',
         'front_page_card_3_url' => '',
-        'front_page_card_4_title' => 'Esports',
+        'front_page_card_4_title' => $title_cards[3],
         'front_page_card_4_image' => $image_cards[3] ?? '',
         'front_page_card_4_url' => '',
         'front_page_slider_enable' => true,
@@ -2146,6 +2147,52 @@ function convert_header_icons($icons): array {
     }
 
     return $converted_icons;
+
+}
+
+/**
+ * Get the default text that will be shown in the title area of the cards, according to the type of school.
+ *
+ * @return array
+ */
+function get_cards_titles(): array {
+
+    switch (SCHOOL_TYPE) {
+
+        case '1': // Escola.
+        case '11': // ZER.
+        case '14': // Llar d'infants.
+            $titles = [
+                0 => 'Petits',
+                1 => 'Mitjans',
+                2 => 'Grans',
+                3 => 'Serveis',
+            ];
+            break;
+
+        case '2': // Institut.
+        case '3': // Institut-Escola.
+        case '9': // Centre concertat.
+            $titles = [
+                0 => 'ESO',
+                1 => 'Batxillerat',
+                2 => 'FP',
+                3 => 'Serveis',
+            ];
+            break;
+
+        default:
+            $titles = [
+                0 => 'Biblioteca',
+                1 => 'Menjador',
+                2 => 'Famílies',
+                3 => 'Serveis',
+            ];
+            break;
+
+    }
+
+    return $titles;
 
 }
 
