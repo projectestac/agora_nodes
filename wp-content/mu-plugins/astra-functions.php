@@ -34,9 +34,69 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
-// Welcome panel: Remove the box in the dashboard.
+// Welcome panel: Remove the default welcome panel and add a custom one.
 add_action('admin_init', function () {
     remove_action('welcome_panel', 'wp_welcome_panel');
+    add_action('welcome_panel', function () {
+        ?>
+        <div class="welcome-panel-content">
+            <div class="welcome-panel-header">
+                <h2><?php _e('Welcome to Nodes!', 'astra-nodes'); ?></h2>
+                <p><?php _e('Web platform for the schools in Catalonia', 'astra-nodes'); ?> </p>
+            </div>
+            <div class="welcome-panel-column-container">
+                <div class="welcome-panel-column">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true" focusable="false">
+                        <rect width="48" height="48" rx="4" fill="#1E1E1E"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M32.0668 17.0854L28.8221 13.9454L18.2008 24.671L16.8983 29.0827L21.4257 27.8309L32.0668 17.0854ZM16 32.75H24V31.25H16V32.75Z"
+                              fill="white"/>
+                    </svg>
+                    <div class="welcome-panel-column-content">
+                        <h3><?php _e('Documentation and videotutorials', 'astra-nodes'); ?></h3>
+                        <p><?php _e('All related information can be found in Digital website', 'astra-nodes'); ?></p>
+                        <a href="<?= esc_url('https://projectes.xtec.cat/digital/serveis-digitals/nodes/') ?>" target="_blank">
+                            <?= __('Go to Digital', 'astra-nodes') ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="welcome-panel-column">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true" focusable="false">
+                        <rect width="48" height="48" rx="4" fill="#1E1E1E"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M18 16h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2zm12 1.5H18a.5.5 0 0 0-.5.5v3h13v-3a.5.5 0 0 0-.5-.5zm.5 5H22v8h8a.5.5 0 0 0 .5-.5v-7.5zm-10 0h-3V30a.5.5 0 0 0 .5.5h2.5v-8z"
+                              fill="#fff"/>
+                    </svg>
+                    <div class="welcome-panel-column-content">
+                        <h3><?php _e('Custom support', 'astra-nodes'); ?></h3>
+                        <p><?php _e('Any doubts? Trouble with any configuration?', 'astra-nodes'); ?></p>
+                        <a href="<?= esc_url('https://educaciodigital.cat/moodle/moodle/mod/forum/view.php?id=1721') ?>" target="_blank">
+                            <?= __('Go to the forum', 'astra-nodes') ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="welcome-panel-column">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true" focusable="false">
+                        <rect width="48" height="48" rx="4" fill="#1E1E1E"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M31 24a7 7 0 0 1-7 7V17a7 7 0 0 1 7 7zm-7-8a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="#fff"/>
+                    </svg>
+                    <div class="welcome-panel-column-content">
+                        <h3><?php _e('Teachers\' network', 'astra-nodes'); ?></h3>
+                        <p><?php _e('Website administrators can get support in the teacher\'s network', 'astra-nodes'); ?></p>
+                        <a href="<?= esc_url('https://comunitat.edigital.cat/tag/nodes') ?>" target="_blank">
+                            <?= __('Go to the teacher\'s network', 'astra-nodes') ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    });
+
 });
 
 // Dashboard: Remove some boxes in the dashboard.

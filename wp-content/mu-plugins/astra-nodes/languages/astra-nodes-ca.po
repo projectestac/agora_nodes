@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AstraFunctions 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
-"POT-Creation-Date: 2024-06-18T19:11:14+02:00\n"
-"PO-Revision-Date: 2024-06-18 19:11+0200\n"
+"POT-Creation-Date: 2024-06-25T18:01:45+02:00\n"
+"PO-Revision-Date: 2024-06-25 18:07+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -36,39 +36,83 @@ msgstr "Personalitzacions pel tema Astra"
 msgid "Departament d'Educació - Generalitat de Catalunya"
 msgstr "Departament d'Educació - Generalitat de Catalunya"
 
+#: astra-functions.php:44
+msgid "Welcome to Nodes!"
+msgstr "Benvingut a Nodes"
+
+#: astra-functions.php:45
+msgid "Web platform for the schools in Catalonia"
+msgstr "Plataforma web dels centres educatius de Catalunya"
+
+#: astra-functions.php:57
+msgid "Documentation and videotutorials"
+msgstr "Documentació i videotutorials"
+
+#: astra-functions.php:58
+msgid "All related information can be found in Digital website"
+msgstr "Pots trobar tota la informació relacionada amb Nodes en la web Digital: documentació, videotutorials, consells de disseny i comunicació, novetats, etc."
+
+#: astra-functions.php:60
+msgid "Go to Digital"
+msgstr "Ves a Digital, apartat Nodes"
+
+#: astra-functions.php:73
+msgid "Custom support"
+msgstr "Suport personalitzat"
+
+#: astra-functions.php:74
+msgid "Any doubts? Trouble with any configuration?"
+msgstr "Teniu dubtes? Alguna configuració es resisteix? No apareix un element al web? Nodes inclou persones de suport (no bots) que responen ràpidament les consultes."
+
+#: astra-functions.php:76
+msgid "Go to the forum"
+msgstr "Ves al fòrum de suport"
+
+#: astra-functions.php:88
+msgid "Teachers' network"
+msgstr "Xarxa docent"
+
 #: astra-functions.php:89
+msgid "Website administrators can get support in the teacher's network"
+msgstr "Els administradors de Nodes parlen a la xarxa docent Nus sobre múltiples aspectes de Nodes, comparteixen maneres d'organitzar les pàgines i els menús, etc."
+
+#: astra-functions.php:91
+msgid "Go to the teacher's network"
+msgstr "Ves a la xarxa docent Nus, etiqueta Nodes"
+
+#: astra-functions.php:149
 msgid "Logo organism"
 msgstr "Logotip de l'organisme"
 
-#: astra-functions.php:348 astra-nodes/customizer/customize.php:235
+#: astra-functions.php:409 astra-nodes/customizer/customize.php:235
 msgid "Map"
 msgstr "Mapa"
 
-#: astra-functions.php:350 astra-nodes/customizer/customize.php:250
+#: astra-functions.php:411 astra-nodes/customizer/customize.php:250
 msgid "Contact"
 msgstr "Contacte"
 
-#: astra-functions.php:368
+#: astra-functions.php:429
 msgid "Item"
 msgstr "Element"
 
-#: astra-functions.php:549 astra-functions.php:571
+#: astra-functions.php:610 astra-functions.php:632
 msgid "Image of the notice"
 msgstr "Imatge de l'avís"
 
-#: astra-functions.php:761
+#: astra-functions.php:822
 msgid "Categories"
 msgstr "Categories"
 
-#: astra-functions.php:763
+#: astra-functions.php:824
 msgid "Add widgets to the categories pages"
 msgstr "Afegeix ginys a les pàgines de categories"
 
-#: astra-functions.php:771
+#: astra-functions.php:832
 msgid "Front page"
 msgstr "Pàgina inicial"
 
-#: astra-functions.php:773
+#: astra-functions.php:834
 msgid "Add widgets to the front page"
 msgstr "Afegeix ginys a la pàgina inicial"
 

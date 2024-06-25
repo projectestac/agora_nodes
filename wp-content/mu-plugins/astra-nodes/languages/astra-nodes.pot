@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-18T19:11:14+02:00\n"
+"POT-Creation-Date: 2024-06-25T18:01:45+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: astra-nodes\n"
@@ -34,42 +34,86 @@ msgstr ""
 msgid "Departament d'Educació - Generalitat de Catalunya"
 msgstr ""
 
+#: astra-functions.php:44
+msgid "Welcome to Nodes!"
+msgstr ""
+
+#: astra-functions.php:45
+msgid "Web platform for the schools in Catalonia"
+msgstr ""
+
+#: astra-functions.php:57
+msgid "Documentation and videotutorials"
+msgstr ""
+
+#: astra-functions.php:58
+msgid "All related information can be found in Digital website"
+msgstr ""
+
+#: astra-functions.php:60
+msgid "Go to Digital"
+msgstr ""
+
+#: astra-functions.php:73
+msgid "Custom support"
+msgstr ""
+
+#: astra-functions.php:74
+msgid "Any doubts? Trouble with any configuration?"
+msgstr ""
+
+#: astra-functions.php:76
+msgid "Go to the forum"
+msgstr ""
+
+#: astra-functions.php:88
+msgid "Teachers' network"
+msgstr ""
+
 #: astra-functions.php:89
+msgid "Website administrators can get support in the teacher's network"
+msgstr ""
+
+#: astra-functions.php:91
+msgid "Go to the teacher's network"
+msgstr ""
+
+#: astra-functions.php:149
 msgid "Logo organism"
 msgstr ""
 
-#: astra-functions.php:348
+#: astra-functions.php:409
 #: astra-nodes/customizer/customize.php:235
 msgid "Map"
 msgstr ""
 
-#: astra-functions.php:350
+#: astra-functions.php:411
 #: astra-nodes/customizer/customize.php:250
 msgid "Contact"
 msgstr ""
 
-#: astra-functions.php:368
+#: astra-functions.php:429
 msgid "Item"
 msgstr ""
 
-#: astra-functions.php:549
-#: astra-functions.php:571
+#: astra-functions.php:610
+#: astra-functions.php:632
 msgid "Image of the notice"
 msgstr ""
 
-#: astra-functions.php:761
+#: astra-functions.php:822
 msgid "Categories"
 msgstr ""
 
-#: astra-functions.php:763
+#: astra-functions.php:824
 msgid "Add widgets to the categories pages"
 msgstr ""
 
-#: astra-functions.php:771
+#: astra-functions.php:832
 msgid "Front page"
 msgstr ""
 
-#: astra-functions.php:773
+#: astra-functions.php:834
 msgid "Add widgets to the front page"
 msgstr ""
 
