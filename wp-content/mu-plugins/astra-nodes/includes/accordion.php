@@ -2,12 +2,22 @@
 
 <ul class="accordion">
     <?php
+
+    $current_page_id = get_the_ID();
+    $current_page = get_post($current_page_id);
+    $parent_id = $current_page->post_parent ? $current_page->post_parent : $current_page_id;
+
+    while ($current_page->post_parent) {
+        $current_page = get_post($current_page->post_parent);
+    }
+    $top_level_parent = $current_page->ID;
+
     $pages = get_pages([
         'post_type' => 'page',
     ]);
 
     foreach ($pages as $page) {
-        if ($page->post_parent === 0) {
+        if ($page->post_parent === 0 && $page->ID === $top_level_parent) {
             echo '<li>';
             if (count(get_pages(['child_of' => $page->ID])) > 0) {
                 echo '<a href="#" class="accordion-toggle">' . $page->post_title . ' <i class="fa-solid fa-angle-down"></i></a>';
