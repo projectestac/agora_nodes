@@ -3,9 +3,9 @@
 // Add JavaScript's handlers to make Theme Customizer preview reload changes asynchronously.
 add_action('customize_preview_init', function () {
     $data = [
-        'logo_image_ceb' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.png',
+        'logo_image_ceb' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.svg',
         'logo_url_ceb' => 'https://www.edubcn.cat/ca/',
-        'logo_image_department' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.png',
+        'logo_image_department' => WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.svg',
         'logo_url_department' => 'https://educacio.gencat.cat/ca/inici/',
     ];
     wp_register_script(

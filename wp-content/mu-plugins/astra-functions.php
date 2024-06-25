@@ -74,10 +74,10 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     $logo = $astra_nodes_options['organism_logo'] ?? 'department';
 
     if ($logo === 'ceb') {
-        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.png';
+        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.svg';
         $logo_url = 'https://www.edubcn.cat/ca/';
     } else {
-        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.png';
+        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.svg';
         $logo_url = 'https://educacio.gencat.cat/ca/inici/';
     }
 
@@ -94,7 +94,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         [
             'parent' => false,
             'id' => 'resources_xtec',
-            'title' => '<img id="logo-xtec" alt="Logo XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.png' . '">',
+            'title' => '<img id="logo-xtec" alt="Logo XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.svg' . '">',
             'href' => 'https://xtec.gencat.cat/ca/inici',
         ],
         [
@@ -338,6 +338,7 @@ function astra_nodes_contact_information(): string {
             <div id="contact-info-1-wrapper">
                 <div id="postal-address">' . $postal_address . '</div>
                 <div id="postal-code-city">' . $postal_code_city . '</div>
+                <div id="school-code">' . SCHOOL_CODE . '</div>
                 <div id="email-address-wrapper">
                     <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
                 </div>
@@ -543,7 +544,7 @@ add_action('astra_html_before', function () {
         switch ($layout) {
             case 'image':
                 echo '
-                    <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
+                    <div id="front-page-notice-container" class="wp-block-columns front-page-notice-image" style="' . $style . '">
                         <div id="front-page-notice-image-container" class="wp-block-column">
                             <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
                                 <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
@@ -554,7 +555,7 @@ add_action('astra_html_before', function () {
                 break;
             case 'text':
                 echo '
-                    <div id="front-page-notice-container" class="wp-block-columns" style="' . $style . '">
+                    <div id="front-page-notice-container" class="wp-block-columns front-page-notice-text" style="' . $style . '">
                         <div id="front-page-notice-text" class="wp-block-column">
                             <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
                             <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
@@ -565,7 +566,7 @@ add_action('astra_html_before', function () {
                 break;
             case 'image_text':
                 echo '
-                    <div id="front-page-notice-container" class="wp-block-columns">
+                    <div id="front-page-notice-container" class="wp-block-columns front-page-notice-image-text">
                             <div id="front-page-notice-image-container" class="wp-block-column">
                                 <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
                                     <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
