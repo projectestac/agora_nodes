@@ -2699,3 +2699,15 @@ function get_default_astra_settings(): array {
     );
 
 }
+
+/**
+ * Add SVG support to WordPress Media
+ */
+add_filter('upload_mimes', function ($file_types) {
+
+    $new_filetypes = [];
+    $new_filetypes['svg'] = 'image/svg+xml';
+
+    return array_merge($file_types, $new_filetypes);
+
+});
