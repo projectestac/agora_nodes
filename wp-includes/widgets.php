@@ -1412,6 +1412,11 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 	// Map locations with the same slug.
 	$existing_sidebars = array_keys( $existing_sidebars_widgets );
 
+    // XTEC ************ AFEGIT - Add filter to configure new sidebars in theme switch.
+    // 2024.06.04 @aginard
+    $existing_sidebars = apply_filters('nodes_switch_theme_add_sidebars', $existing_sidebars);
+    // ************ FI
+
 	foreach ( $wp_registered_sidebars as $sidebar => $name ) {
 		if ( in_array( $sidebar, $existing_sidebars, true ) ) {
 			$new_sidebars_widgets[ $sidebar ] = $existing_sidebars_widgets[ $sidebar ];
@@ -1420,6 +1425,12 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 			$new_sidebars_widgets[ $sidebar ] = array();
 		}
 	}
+
+    // XTEC ************ AFEGIT - Add filter to configure new sidebars in theme switch.
+    // 2024.06.04 @aginard
+    [$new_sidebars_widgets, $existing_sidebars_widgets] =
+        apply_filters('nodes_switch_theme_add_sidebars_widgets', $new_sidebars_widgets, $existing_sidebars_widgets);
+    // ************ FI
 
 	// If there are more sidebars, try to map them.
 	if ( ! empty( $existing_sidebars_widgets ) ) {
