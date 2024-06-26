@@ -8,6 +8,7 @@
  */
 
 load_muplugin_textdomain('agora-functions', '/languages');
+
 /**
  * Load agora-functions javascript file
  */
@@ -1826,4 +1827,887 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         }
         </style>';
     }
+});
+
+/**
+ * Do all the necessary actions when there is a theme change. Ensure that the
+ * records required by Nodes are created and initialized.
+ *
+ * @param string $new_theme The name of theme that is being activated.
+ */
+add_action('switch_theme', function ($new_theme) {
+
+    if ($new_theme === 'Astra') {
+        initialize_theme_mod();
+        initialize_palettes();
+        initialize_astra_settings();
+
+        // Remove the welcome panel from the dashboard. This call hides the panel immediately after
+        // the theme is activated. Otherwise, the panel shows up at least once.
+        add_action('admin_init', function () {
+            remove_action('welcome_panel', 'wp_welcome_panel');
+        }, 1);
+    }
+
+}, 10, 1);
+
+/*
+ * The following two filters import widgets from the old theme to the new one.
+ * Relation between widgets from the Nodes 1 sidebars and the Nodes 2 sidebars:
+ *   - categoria (Nodes 1) => categories (Nodes 2)
+ *   - sidebar (Nodes 1) => sidebar-1 (Nodes 2)
+ *   - sidebar-2 (Nodes 1) => sidebar-1 (Nodes 2)
+ *   - sidebar-frontpage (Nodes 1) => sidebar-frontpage (Nodes 2)
+ *   - sidebar-frontpage-2 (Nodes 1) => sidebar-frontpage (Nodes 2)
+ *   - sidebar-footer (Nodes 1) => footer-widget-1 (Nodes 2)
+ */
+
+/**
+ * Add the new sidebars that doesn't exist in the current theme to make possible
+ * to move the widgets to them.
+ */
+add_filter('nodes_switch_theme_add_sidebars', function ($sidebars) {
+
+    if (in_array('categoria', $sidebars, true)) {
+        // Moving to Astra theme.
+        $sidebars[] = ['sidebar-1'];
+        $sidebars[] = ['footer-widget-1'];
+        $sidebars[] = ['categories'];
+    }
+
+    return $sidebars;
+
+}, 10, 1);
+
+/**
+ * Move the widgets from the old sidebars to the new ones. Important: The widgets themselves are not moved,
+ * what is moved is the configuration of the widgets in the sidebars.
+ */
+add_filter('nodes_switch_theme_add_sidebars_widgets', function ($new_sidebars_widgets, $existing_sidebars_widgets) {
+
+    if (isset($new_sidebars_widgets['sidebar-1'])) {
+
+        // Moving to Astra theme (Reactor doesn't have 'sidebar-1').
+        $new_sidebars_widgets['sidebar-1'] = array_merge(
+            $existing_sidebars_widgets['sidebar'] ?? [],
+            $existing_sidebars_widgets['sidebar-2'] ?? []
+        );
+        $new_sidebars_widgets['footer-widget-1'] = $existing_sidebars_widgets['sidebar-footer'] ?? [];
+        $new_sidebars_widgets['categories'] = $existing_sidebars_widgets['categoria'] ?? [];
+        $new_sidebars_widgets['sidebar-frontpage'] = array_merge(
+            $existing_sidebars_widgets['sidebar-frontpage'] ?? [],
+            $existing_sidebars_widgets['sidebar-frontpage-2'] ?? []
+        );
+
+        unset(
+            $existing_sidebars_widgets['sidebar'],
+            $existing_sidebars_widgets['sidebar-footer'],
+            $existing_sidebars_widgets['categoria'],
+            $existing_sidebars_widgets['sidebar-2'],
+            $existing_sidebars_widgets['sidebar-frontpage'],
+            $existing_sidebars_widgets['sidebar-frontpage-2']
+        );
+
+    } else {
+
+        // For any reason, sidebar "categories" has already been moved to $new_sidebars_widgets, so it
+        // is only necessary to move the sidebar name.
+        $new_sidebars_widgets['sidebar'] = $existing_sidebars_widgets['sidebar-1'] ?? [];
+        $new_sidebars_widgets['categoria'] = $new_sidebars_widgets['categories'] ?? [];
+
+        unset($existing_sidebars_widgets['sidebar-1'], $new_sidebars_widgets['categories']);
+
+    }
+
+    return [
+        $new_sidebars_widgets,
+        $existing_sidebars_widgets,
+    ];
+
+}, 10, 2);
+
+/**
+ * Create default values for the element 'astra_nodes_options' in the 'theme_mods_astra'
+ * record of the table wp_options.
+ *
+ * @return void
+ */
+function initialize_theme_mod(): void {
+
+    $default_values = default_theme_mod();
+    $astra_nodes_options = get_theme_mod('astra_nodes_options');
+
+    if (empty($astra_nodes_options)) {
+        $astra_nodes_options = $default_values;
+    } else {
+        foreach ($default_values as $key => $value) {
+            if (!array_key_exists($key, $astra_nodes_options)) {
+                $astra_nodes_options[$key] = $value;
+            }
+        }
+    }
+
+    set_theme_mod('astra_nodes_options', $astra_nodes_options);
+
+}
+
+/**
+ * Definition of the default values for the 'astra_nodes_options' element in the
+ * 'theme_mods_astra' record.
+ *
+ * @return array
+ */
+function default_theme_mod(): array {
+
+    $reactor_options = get_option('reactor_options');
+    $carousel_id = $reactor_options['carrusel'];
+
+    if ($carousel_id) {
+        $post_meta = get_post_meta($carousel_id);
+        $slides = maybe_unserialize($post_meta['slides'][0]);
+
+        $filtered_slides = array_filter($slides, static function ($slide) {
+            return $slide['type'] === 'attachment';
+        });
+
+        $processed_slides = array_slice($filtered_slides, 0, 5);
+
+        foreach ($processed_slides as &$slide) {
+            $slide['image_url'] = wp_get_attachment_url($slide['postId']);
+        }
+    }
+
+    migrate_favicon($reactor_options['favicon_image']);
+    $logo = migrate_logo($reactor_options['logo_image']);
+
+    $origin_icons = get_option('my_option_name');
+    $organism_logo = stripos($reactor_options['cpCentre'], 'barcelona') ? 'ceb' : 'departament';
+
+    $icons = array_filter($origin_icons, static function ($key) {
+        return strpos($key, 'icon') === 0;
+    }, ARRAY_FILTER_USE_KEY);
+
+    $icons = convert_header_icons($icons);
+
+    $title_cards = get_cards_titles();
+    $image_cards = register_image_in_media_library();
+
+    // Translation note: When action switch_theme is triggered, the text domain is not loaded. That's why the
+    // texts are in catalan.
+    return [
+        'custom_logo' => $logo ?? 0,
+        'pre_blog_name' => '',
+        'postal_address' => $reactor_options['direccioCentre'] ?? '',
+        'postal_code_city' => $reactor_options['cpCentre'] ?? '',
+        'phone_number' => $reactor_options['telCentre'] ?? '',
+        'link_to_map' => $reactor_options['googleMaps'] ?? '',
+        'contact_page' => $reactor_options['emailCentre'] ?? '',
+        'email_address' => '',
+        'header_icon_1_classes' => $icons['icon11'] ?? $icons['icon1'] ?? '',
+        'header_icon_1_text' => $origin_icons['title_icon11'] ?? $origin_icons['title_icon1'] ?? 'Icona 1',
+        'header_icon_1_link' => $origin_icons['link_icon11'] ?? $origin_icons['link_icon1'] ?? '',
+        'header_icon_1_open_in_new_tab' => true,
+        'header_icon_2_classes' => $icons['icon12'] ?? $icons['icon2'] ?? '',
+        'header_icon_2_text' => $origin_icons['title_icon12'] ?? $origin_icons['title_icon2'] ?? 'Icona 2',
+        'header_icon_2_link' => $origin_icons['link_icon12'] ?? $origin_icons['link_icon2'] ?? '',
+        'header_icon_2_open_in_new_tab' => true,
+        'header_icon_3_classes' => $icons['icon3'] ?? '',
+        'header_icon_3_text' => $origin_icons['title_icon3'] ?? '',
+        'header_icon_3_link' => $origin_icons['link_icon3'] ?? '',
+        'header_icon_3_open_in_new_tab' => true,
+        'header_icon_4_classes' => $icons['icon21'] ?? $icons['icon4'] ?? '',
+        'header_icon_4_text' => $origin_icons['title_icon21'] ?? $origin_icons['title_icon4'] ?? 'Icona 4',
+        'header_icon_4_link' => $origin_icons['link_icon21'] ?? $origin_icons['link_icon4'] ?? '',
+        'header_icon_4_open_in_new_tab' => true,
+        'header_icon_5_classes' => $icons['icon22'] ?? $icons['icon5'] ?? '',
+        'header_icon_5_text' => $origin_icons['title_icon22'] ?? $origin_icons['title_icon5'] ?? 'Icona 5',
+        'header_icon_5_link' => $origin_icons['link_icon22'] ?? $origin_icons['link_icon5'] ?? '',
+        'header_icon_5_open_in_new_tab' => true,
+        'header_icon_6_classes' => '',
+        'header_icon_6_text' => '',
+        'header_icon_6_link' => '',
+        'header_icon_6_open_in_new_tab' => true,
+        'front_page_notice_enable' => true,
+        'front_page_notice_layout' => 'image_text',
+        'front_page_notice_image' => $image_cards[4] ?? '',
+        'front_page_notice_url' => '',
+        'front_page_notice_open_in_new_tab' => true,
+        'front_page_notice_background_color' => '',
+        'front_page_notice_pre_title' => 'Informació de servei',
+        'front_page_notice_title' => 'Carta d\'inici de curs i calendari 24-25',
+        'front_page_notice_content' => 'Benvolgudes famílies us facilitem la Carta d\'inici de curs per a totes les famílies de l\'escola.
+                                        <br/><br/>Carta d\'inici de curs per a famílies d\'educació infantil.<br/>Carta d\'inici de curs per a
+                                        famílies de primària.<br/>Calendari en PDF.',
+        'front_page_cards_enable' => true,
+        'front_page_card_1_title' => $title_cards[0],
+        'front_page_card_1_image' => $image_cards[0] ?? '',
+        'front_page_card_1_url' => '',
+        'front_page_card_2_title' => $title_cards[1],
+        'front_page_card_2_image' => $image_cards[1] ?? '',
+        'front_page_card_2_url' => '',
+        'front_page_card_3_title' => $title_cards[2],
+        'front_page_card_3_image' => $image_cards[2] ?? '',
+        'front_page_card_3_url' => '',
+        'front_page_card_4_title' => $title_cards[3],
+        'front_page_card_4_image' => $image_cards[3] ?? '',
+        'front_page_card_4_url' => '',
+        'front_page_slider_enable' => true,
+        'front_page_slider_arrows' => 'yes',
+        'front_page_slider_dots' => 'yes',
+        'front_page_slider_min_height' => 500,
+        'front_page_slider_autoplay' => true,
+        'front_page_slider_image_1' => $processed_slides[0]['image_url'] ?? '',
+        'front_page_slider_link_1' => $processed_slides[0]['url'] ?? '',
+        'front_page_slider_open_in_new_tab_1' => true,
+        'front_page_slider_heading_1' => $processed_slides[0]['title'] ?? '',
+        'front_page_slider_text_1' => $processed_slides[0]['description'] ?? '',
+        'front_page_slider_image_2' => $processed_slides[1]['image_url'] ?? '',
+        'front_page_slider_link_2' => $processed_slides[1]['url'] ?? '',
+        'front_page_slider_open_in_new_tab_2' => true,
+        'front_page_slider_heading_2' => $processed_slides[1]['title'] ?? '',
+        'front_page_slider_text_2' => $processed_slides[1]['description'] ?? '',
+        'front_page_slider_image_3' => $processed_slides[2]['image_url'] ?? '',
+        'front_page_slider_link_3' => $processed_slides[2]['url'] ?? '',
+        'front_page_slider_open_in_new_tab_3' => true,
+        'front_page_slider_heading_3' => $processed_slides[2]['title'] ?? '',
+        'front_page_slider_text_3' => $processed_slides[2]['description'] ?? '',
+        'front_page_slider_image_4' => $processed_slides[3]['image_url'] ?? '',
+        'front_page_slider_link_4' => $processed_slides[3]['url'] ?? '',
+        'front_page_slider_open_in_new_tab_4' => true,
+        'front_page_slider_heading_4' => $processed_slides[3]['title'] ?? '',
+        'front_page_slider_text_4' => $processed_slides[3]['description'] ?? '',
+        'front_page_slider_image_5' => $processed_slides[4]['image_url'] ?? '',
+        'front_page_slider_link_5' => $processed_slides[4]['url'] ?? '',
+        'front_page_slider_open_in_new_tab_5' => true,
+        'front_page_slider_heading_5' => $processed_slides[4]['title'] ?? '',
+        'front_page_slider_text_5' => $processed_slides[4]['description'] ?? '',
+        'front_page_news_enable' => true,
+        'front_page_news_number' => 20,
+        'front_page_news_category' => 29,
+        'front_page_layout' => 'sidebar_boxes',
+        'pages_sidebar' => 'menu',
+        'organism_logo' => $organism_logo,
+    ];
+
+}
+
+function migrate_favicon($image_url): void {
+
+    $reactor_favicon_url = $image_url;
+    $reactor_favicon_id = attachment_url_to_postid($reactor_favicon_url);
+
+    update_option('site_icon', $reactor_favicon_id);
+
+}
+
+function migrate_logo($image_url): int {
+
+    $reactor_logo_url = $image_url;
+    $reactor_logo_id = attachment_url_to_postid($reactor_logo_url);
+
+    set_theme_mod('custom_logo', $reactor_logo_id);
+
+    if (function_exists('astra_update_option')) {
+        astra_update_option('custom_logo', $reactor_logo_id);
+    }
+
+    return $reactor_logo_id;
+
+}
+
+function convert_header_icons($icons): array {
+
+    $conversion_map = [
+        'dashicons-format-gallery' => 'fa-regular fa-images',
+        'dashicons-groups' => 'fa-solid fa-people-group',
+        'dashicons-search' => 'fa-solid fa-magnifying-glass',
+        'dashicons-carrot' => 'fa-solid fa-carrot',
+        'dashicons-format-chat' => 'fa-regular fa-comments',
+        'dashicons-menu' => 'fa-solid fa-bars',
+        'dashicons-clock' => 'fa-regular fa-clock',
+        'dashicons-welcome-learn-more' => 'fa-solid fa-graduation-cap',
+        'dashicons-calendar' => 'fa-regular fa-calendar-days',
+        'dashicons-admin-home' => 'fa-solid fa-house',
+        'dashicons-portfolio' => 'fa-solid fa-briefcase',
+        'dashicons-admin-users' => 'fa-solid fa-users',
+        'dashicons-book' => 'fa-solid fa-book',
+        'dashicons-welcome-write-blog' => 'fa-regular fa-pen-to-square',
+        'dashicons-cloud' => 'fa-solid fa-cloud',
+        'dashicons-location' => 'fa-solid fa-location-dot',
+    ];
+
+    $converted_icons = [];
+
+    foreach ($icons as $key => $value) {
+        if (isset($conversion_map['dashicons-' . $value])) {
+            $converted_icons[$key] = $conversion_map['dashicons-' . $value];
+        } else {
+            $converted_icons[$key] = '';
+        }
+    }
+
+    return $converted_icons;
+
+}
+
+/**
+ * Get the default text that will be shown in the title area of the cards, according to the type of school.
+ *
+ * @return array
+ */
+function get_cards_titles(): array {
+
+    switch (SCHOOL_TYPE) {
+
+        case '1': // Escola.
+        case '11': // ZER.
+        case '14': // Llar d'infants.
+            $titles = [
+                0 => 'Petits',
+                1 => 'Mitjans',
+                2 => 'Grans',
+                3 => 'Serveis',
+            ];
+            break;
+
+        case '2': // Institut.
+        case '3': // Institut-Escola.
+        case '9': // Centre concertat.
+            $titles = [
+                0 => 'ESO',
+                1 => 'Batxillerat',
+                2 => 'FP',
+                3 => 'Serveis',
+            ];
+            break;
+
+        default:
+            $titles = [
+                0 => 'Biblioteca',
+                1 => 'Menjador',
+                2 => 'Famílies',
+                3 => 'Serveis',
+            ];
+            break;
+
+    }
+
+    return $titles;
+
+}
+
+/**
+ * Registers images in the media library.
+ *
+ * @return array An array of uploaded images with their URLs.
+ */
+function register_image_in_media_library(): array {
+
+    $image_directory = 'wp-content/mu-plugins/astra-nodes/images/';
+    $image_files = [
+        'card_demo_0.jpg',
+        'card_demo_1.jpg',
+        'card_demo_2.jpg',
+        'card_demo_3.jpg',
+        'news_demo.jpg',
+    ];
+
+    $uploaded_images = [];
+
+    foreach ($image_files as $image_file) {
+
+        $image_path = ABSPATH . $image_directory . $image_file;
+
+        if (!file_exists($image_path)) {
+            continue;
+        }
+
+        // Check if the image already exists in the media library
+        $existing_attachment = get_posts([
+            'name' => sanitize_title($image_file),
+            'post_type' => 'attachment',
+            'post_mime_type' => 'image/jpeg',
+            'post_status' => 'inherit',
+            'posts_per_page' => 1,
+        ]);
+
+        if (empty($existing_attachment)) {
+
+            // When action switch_theme is triggered, the function wp_get_current_user() is not available.
+            if (!function_exists('wp_get_current_user')) {
+                include_once ABSPATH . 'wp-includes/pluggable.php';
+            }
+
+            $image_data = file_get_contents($image_path);
+            $upload = wp_upload_bits($image_file, null, $image_data);
+
+            if (!$upload['error']) {
+
+                $file_path = $upload['file'];
+                $file_url = $upload['url'];
+                $file_type = wp_check_filetype($file_path);
+
+                $attachment = [
+                    'guid' => $file_url,
+                    'post_mime_type' => $file_type['type'],
+                    'post_name' => sanitize_file_name($image_file),
+                    'post_title' => sanitize_file_name($image_file),
+                    'post_content' => '',
+                    'post_status' => 'inherit',
+                ];
+
+                $attach_id = wp_insert_attachment($attachment, $file_path);
+
+                if (!is_wp_error($attach_id)) {
+
+                    // When action switch_theme is triggered, the function wp_generate_attachment_metadata() is not available.
+                    if (!function_exists('wp_generate_attachment_metadata')) {
+                        include_once ABSPATH . 'wp-admin/includes/image.php';
+                    }
+
+                    $attach_data = wp_generate_attachment_metadata($attach_id, $file_path);
+                    wp_update_attachment_metadata($attach_id, $attach_data);
+                    $uploaded_images[] = wp_get_attachment_url($attach_id);
+
+                }
+
+            }
+        } else {
+
+            $attach_id = $existing_attachment[0]->ID;
+            $uploaded_images[] = wp_get_attachment_url($attach_id);
+
+        }
+    }
+
+    return $uploaded_images;
+
+}
+
+/**
+ * Ensure the record 'astra-color-palettes' in the table wp_options is set and has
+ * contents. If it does not exist, it is created with the default values. Otherwise,
+ * any missing values are added.
+ *
+ * In case the record 'astra-color-palettes' does not exist, pick the current
+ * palette from the theme reactor configuration.
+ *
+ * @return void
+ */
+function initialize_palettes(): void {
+
+    $default_palettes = get_default_palettes();
+    $palettes = get_option('astra-color-palettes');
+
+    if (!$palettes || !isset($palettes['palettes'])) {
+
+        $default_palettes['currentPalette'] = get_reactor_palette();
+        $palettes = $default_palettes;
+
+        $astra_settings = get_option('astra-settings');
+        $astra_settings['global-color-palette']['palette'] = $palettes['palettes'][$default_palettes['currentPalette']];
+        update_option('astra-settings', $astra_settings);
+
+    } else {
+
+        foreach ($default_palettes['palettes'] as $key => $value) {
+            if (!array_key_exists($key, $palettes['palettes'])) {
+                $palettes['palettes'][$key] = $value;
+            }
+        }
+
+    }
+
+    update_option('astra-color-palettes', $palettes);
+
+}
+
+/**
+ * Get the current palette from the configuration of the theme reactor.
+ *
+ * @return string
+ */
+function get_reactor_palette(): string {
+
+    $reactor_options = get_option('reactor_options');
+
+    // Take the value from the theme reactor configuration.
+    if (!empty($reactor_options['paleta_colors'])) {
+        $palette = $reactor_options['paleta_colors'];
+
+        include_once get_theme_root() . '/reactor/custom-tac/colors_nodes.php';
+        global $colors_nodes;
+
+        return $colors_nodes[$palette]['nom'];
+    }
+
+    // Safe default value in case no configuration is found.
+    return 'Blau clar i blau fosc';
+
+}
+
+/**
+ * Define the default palettes for the theme. Generates the content for the
+ * record 'astra-color-palettes' in the table wp_options.
+ *
+ * @return array
+ */
+function get_default_palettes(): array {
+
+    return [
+        'palettes' => [
+            'Vermell i blau' => [
+                0 => '#ff3257', // Primary
+                1 => '#4c86a6', // Secondary
+                2 => '', // Tertiary
+                3 => '', // Link
+                4 => '', // Calendar
+                5 => '', // Icon22
+                6 => '', // Footer
+                7 => '',
+                8 => '',
+            ],
+            'Blau clar i blau fosc' => [
+                0 => '#0eb1ff',
+                1 => '#087eb6',
+                2 => '#00688B',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i blau' => [
+                0 => '#FFA00C',
+                1 => '#3C7C80',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i lila' => [
+                0 => '#ffa00c',
+                1 => '#B03BBA',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '#B03BBA',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i verd' => [
+                0 => '#fea200',
+                1 => '#0f6333',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Groc i vermell' => [
+                0 => '#FCB535',
+                1 => '#E04B35',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd i blau' => [
+                0 => '#92AE01',
+                1 => '#0988A9',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Rosa i gris' => [
+                0 => '#ff3257',
+                1 => '#6c6c6c',
+                2 => '',
+                3 => '#ff3257',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Roses' => [
+                0 => '#FF2189',
+                1 => '#A41159',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Sienna' => [
+                0 => '#CA5F5F',
+                1 => '#763333',
+                2 => '',
+                3 => '',
+                4 => '#CA5F5F',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronges' => [
+                0 => '#FF4C00',
+                1 => '#C42300',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i gris' => [
+                0 => '#FF4C00',
+                1 => '#7D7D7D',
+                2 => '',
+                3 => '#FF4C00',
+                4 => '#FF4C00',
+                5 => '#7D7D7D',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i verd' => [
+                0 => '#ff5a26',
+                1 => '#1fa799',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Turqueses' => [
+                0 => '#40C3C4',
+                1 => '#2F5D5D',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd i marró' => [
+                0 => '#00B36B',
+                1 => '#752800',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Rosa i verd' => [
+                0 => '#fc3b56',
+                1 => '#2ca698',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd clar i verd fosc' => [
+                0 => '#55CD00',
+                1 => '#418000',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Vermell i taronja' => [
+                0 => '#ff2a2a',
+                1 => '#ff5a26',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Vermell i verd' => [
+                0 => '#ff2a2a',
+                1 => '#00854e',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Xocolata' => [
+                0 => '#521A09',
+                1 => '#923917',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i blau' => [
+                0 => '#ff5a26',
+                1 => '#087eb6',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Verd clar i lila' => [
+                0 => '#92AE01',
+                1 => '#5E3A73',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Bordeus' => [
+                0 => '#B5196E',
+                1 => '#770E4B',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Taronja i oliva' => [
+                0 => '#EA6A00',
+                1 => '#768703',
+                2 => '',
+                3 => '#6A7A00',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Lila i vermell' => [
+                0 => '#9068be',
+                1 => '#e62739',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Blau fosc i taronja' => [
+                0 => '#3A5863',
+                1 => '#D86E3E',
+                2 => '',
+                3 => '#D85E27',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+            'Personalitzada' => [
+                0 => '#00688B',
+                1 => '#B03BBA',
+                2 => '',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+            ],
+        ],
+        'flag' => true,
+    ];
+
+}
+
+/**
+ * Ensure the record 'astra-settings' in the table wp_options is set and contains
+ * the configuration for Nodes. If it does not exist, it is created with default
+ * values. Otherwise, any missing values are added.
+ *
+ * @return void
+ */
+function initialize_astra_settings(): void {
+
+    $astra_settings = get_option('astra-settings', false);
+
+    if (false === $astra_settings || !is_array($astra_settings)) {
+        $astra_settings = get_default_astra_settings();
+    } else {
+        $default_settings = get_default_astra_settings();
+        foreach ($default_settings as $key => $value) {
+            if (!array_key_exists($key, $astra_settings)) {
+                $astra_settings[$key] = $value;
+            }
+        }
+    }
+
+    update_option('astra-settings', $astra_settings);
+
+}
+
+/**
+ * Definition of the default values for the 'astra-settings' record. These values generate
+ * the Nodes configuration.
+ *
+ * @return array
+ */
+function get_default_astra_settings(): array {
+
+    return unserialize(
+        'a:164:{s:50:"ast-callback-notice-header-transparent-header-logo";s:0:"";s:55:"ast-callback-notice-header-transparent-header-logo-link";s:0:"";s:22:"ast-header-retina-logo";s:0:"";s:18:"mobile-header-logo";s:0:"";s:51:"ast-callback-notice-header-transparent-meta-enabled";s:0:"";s:55:"ast-callback-notice-header-transparent-header-meta-link";s:0:"";s:23:"transparent-header-logo";s:0:"";s:30:"transparent-header-retina-logo";s:0:"";s:22:"is_theme_queue_running";b:0;s:24:"astra-addon-auto-version";s:5:"4.1.5";s:28:"is_astra_addon_queue_running";b:0;s:18:"theme-auto-version";s:6:"4.6.12";s:20:"header-desktop-items";a:5:{s:5:"popup";a:1:{s:13:"popup_content";a:1:{i:0;s:11:"mobile-menu";}}s:5:"above";a:5:{s:10:"above_left";a:0:{}s:17:"above_left_center";a:0:{}s:12:"above_center";a:0:{}s:18:"above_right_center";a:0:{}s:11:"above_right";a:0:{}}s:7:"primary";a:5:{s:12:"primary_left";a:2:{i:0;s:4:"logo";i:1;s:6:"html-3";}s:19:"primary_left_center";a:0:{}s:14:"primary_center";a:0:{}s:20:"primary_right_center";a:0:{}s:13:"primary_right";a:2:{i:0;s:6:"html-1";i:1;s:6:"html-2";}}s:5:"below";a:5:{s:10:"below_left";a:1:{i:0;s:6:"menu-1";}s:17:"below_left_center";a:0:{}s:12:"below_center";a:0:{}s:18:"below_right_center";a:0:{}s:11:"below_right";a:1:{i:0;s:6:"search";}}s:4:"flag";b:0;}s:11:"custom_logo";i:8244;s:13:"header-html-1";s:0:"";s:13:"header-html-3";s:0:"";s:37:"site-layout-outside-bg-obj-responsive";a:3:{s:7:"desktop";a:11:{s:16:"background-color";s:25:"var(--ast-global-color-4)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:5:"color";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"tablet";a:11:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:0:"";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:11:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:0:"";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:25:"content-bg-obj-responsive";a:3:{s:7:"desktop";a:11:{s:16:"background-color";s:25:"var(--ast-global-color-5)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:5:"color";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"tablet";a:11:{s:16:"background-color";s:25:"var(--ast-global-color-5)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:5:"color";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:11:{s:16:"background-color";s:25:"var(--ast-global-color-5)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:15:"background-type";s:5:"color";s:16:"background-media";s:0:"";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:19:"site-content-layout";s:12:"page-builder";s:16:"body-font-family";s:18:"\'Lato\', sans-serif";s:17:"body-font-variant";s:3:"400";s:14:"font-size-body";a:6:{s:7:"desktop";i:18;s:6:"tablet";i:17;s:6:"mobile";i:17;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:20:"headings-font-family";s:21:"\'Poppins\', sans-serif";s:21:"headings-font-variant";s:3:"600";s:12:"font-size-h1";a:6:{s:7:"desktop";i:36;s:6:"tablet";i:36;s:6:"mobile";i:32;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:12:"font-size-h2";a:6:{s:7:"desktop";i:40;s:6:"tablet";i:30;s:6:"mobile";i:26;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:12:"font-size-h3";a:6:{s:7:"desktop";i:26;s:6:"tablet";i:25;s:6:"mobile";i:22;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:12:"font-size-h4";a:6:{s:7:"desktop";i:24;s:6:"tablet";i:20;s:6:"mobile";i:18;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:12:"font-size-h5";a:6:{s:7:"desktop";i:20;s:6:"tablet";i:17;s:6:"mobile";i:15;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:12:"font-size-h6";a:6:{s:7:"desktop";i:17;s:6:"tablet";i:15;s:6:"mobile";i:13;s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:20:"theme-button-padding";a:6:{s:7:"desktop";a:4:{s:3:"top";i:10;s:5:"right";i:20;s:6:"bottom";i:10;s:4:"left";i:20;}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:37:"theme-button-border-group-border-size";a:4:{s:3:"top";i:0;s:5:"right";i:0;s:6:"bottom";i:0;s:4:"left";i:0;}s:20:"button-radius-fields";a:6:{s:7:"desktop";a:4:{s:3:"top";i:30;s:5:"right";i:30;s:6:"bottom";i:30;s:4:"left";i:30;}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:11:"site-layout";s:21:"ast-full-width-layout";s:9:"blog-grid";s:1:"4";s:13:"blog-date-box";b:1;s:19:"blog-date-box-style";s:6:"circle";s:15:"blog-pagination";s:8:"infinite";s:26:"single-page-content-layout";s:7:"default";s:26:"single-page-sidebar-layout";s:12:"left-sidebar";s:32:"ast-header-responsive-logo-width";a:3:{s:7:"desktop";i:200;s:6:"tablet";s:0:"";s:6:"mobile";s:0:"";}s:12:"wp-blocks-ui";s:7:"comfort";s:20:"title_tagline-margin";a:6:{s:7:"desktop";a:4:{s:3:"top";s:1:"0";s:5:"right";s:1:"0";s:6:"bottom";s:1:"0";s:4:"left";s:1:"0";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:26:"header-menu1-submenu-width";i:399;s:18:"site-content-width";i:1200;s:15:"ast-author-info";b:0;s:20:"global-color-palette";a:2:{s:7:"palette";a:9:{i:0;s:7:"#b2cca7";i:1;s:7:"#3c4c51";i:2;s:0:"";i:3;s:7:"#00A68B";i:4;s:0:"";i:5;s:0:"";i:6;s:0:"";i:7;s:0:"";i:8;s:0:"";}s:4:"flag";b:0;}s:29:"global-color-palette[palette]";a:9:{i:0;s:7:"#92AE01";i:1;s:7:"#0988A9";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:6;s:0:"";i:7;s:0:"";i:8;s:0:"";}s:59:"astra-sidebar-widgets-header-widget-1-visibility-responsive";a:3:{s:7:"desktop";i:1;s:6:"tablet";i:1;s:6:"mobile";i:1;}s:28:"hbb-header-bg-obj-responsive";a:3:{s:7:"desktop";a:10:{s:16:"background-color";s:7:"#ffffff";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";s:15:"background-type";s:5:"color";}s:6:"tablet";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:28:"hba-header-bg-obj-responsive";a:3:{s:7:"desktop";a:10:{s:16:"background-color";s:7:"#ffffff";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";s:15:"background-type";s:5:"color";}s:6:"tablet";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:10:"blog-width";s:7:"default";s:19:"blog-post-structure";a:5:{i:0;s:5:"title";i:1;s:10:"title-meta";i:2;s:5:"image";i:3;s:7:"excerpt";i:4;s:9:"read-more";}s:9:"blog-meta";a:4:{i:0;s:8:"category";i:1;s:6:"author";i:2;s:4:"date";i:3;s:3:"tag";}s:21:"blog-meta-date-format";s:5:"d/m/Y";s:27:"archive-post-sidebar-layout";s:12:"left-sidebar";s:22:"ast-archive-post-title";b:1;s:26:"single-post-sidebar-layout";s:12:"left-sidebar";s:20:"enable-related-posts";b:0;s:19:"site-sidebar-layout";s:10:"no-sidebar";s:18:"site-sidebar-width";i:30;s:20:"footer-desktop-items";a:10:{s:5:"above";a:6:{s:7:"above_1";a:0:{}s:7:"above_2";a:0:{}s:7:"above_3";a:0:{}s:7:"above_4";a:0:{}s:7:"above_5";a:0:{}s:7:"above_6";a:0:{}}s:7:"primary";a:6:{s:9:"primary_1";a:1:{i:0;s:6:"html-1";}s:9:"primary_2";a:1:{i:0;s:8:"widget-1";}s:9:"primary_3";a:1:{i:0;s:8:"widget-2";}s:9:"primary_4";a:0:{}s:9:"primary_5";a:0:{}s:9:"primary_6";a:0:{}}s:5:"below";a:6:{s:7:"below_1";a:0:{}s:7:"below_2";a:0:{}s:7:"below_3";a:0:{}s:7:"below_4";a:0:{}s:7:"below_5";a:0:{}s:7:"below_6";a:0:{}}s:5:"popup";a:1:{s:13:"popup_content";a:0:{}}s:4:"flag";b:0;s:5:"group";s:36:"astra-settings[footer-desktop-items]";s:4:"rows";a:3:{i:0;s:5:"above";i:1;s:7:"primary";i:2;s:5:"below";}s:5:"zones";a:3:{s:5:"above";a:6:{s:7:"above_1";s:15:"Above Section 1";s:7:"above_2";s:15:"Above Section 2";s:7:"above_3";s:15:"Above Section 3";s:7:"above_4";s:15:"Above Section 4";s:7:"above_5";s:15:"Above Section 5";s:7:"above_6";s:15:"Above Section 6";}s:7:"primary";a:6:{s:9:"primary_1";s:17:"Primary Section 1";s:9:"primary_2";s:17:"Primary Section 2";s:9:"primary_3";s:17:"Primary Section 3";s:9:"primary_4";s:17:"Primary Section 4";s:9:"primary_5";s:17:"Primary Section 5";s:9:"primary_6";s:17:"Primary Section 6";}s:5:"below";a:6:{s:7:"below_1";s:15:"Below Section 1";s:7:"below_2";s:15:"Below Section 2";s:7:"below_3";s:15:"Below Section 3";s:7:"below_4";s:15:"Below Section 4";s:7:"below_5";s:15:"Below Section 5";s:7:"below_6";s:15:"Below Section 6";}}s:7:"layouts";a:3:{s:5:"above";a:2:{s:6:"column";s:1:"2";s:6:"layout";a:3:{s:7:"desktop";s:7:"2-equal";s:6:"tablet";s:7:"2-equal";s:6:"mobile";s:4:"full";}}s:7:"primary";a:2:{s:6:"column";i:3;s:6:"layout";a:4:{s:6:"mobile";s:4:"full";s:6:"tablet";s:7:"3-equal";s:7:"desktop";s:7:"3-cwide";s:4:"flag";b:1;}}s:5:"below";a:2:{s:6:"column";s:1:"1";s:6:"layout";a:4:{s:7:"desktop";s:4:"full";s:6:"tablet";s:4:"full";s:6:"mobile";s:4:"full";s:4:"flag";b:0;}}}s:6:"status";a:3:{s:5:"above";b:1;s:7:"primary";b:1;s:5:"below";b:1;}}s:13:"footer-html-1";s:0:"";s:13:"footer-html-2";s:0:"";s:17:"hbb-footer-column";s:1:"1";s:17:"hbb-footer-layout";a:4:{s:7:"desktop";s:4:"full";s:6:"tablet";s:4:"full";s:6:"mobile";s:4:"full";s:4:"flag";b:0;}s:23:"hbb-footer-layout-width";s:4:"full";s:17:"hbb-footer-height";i:50;s:9:"hbb-stack";a:3:{s:7:"desktop";s:5:"stack";s:6:"tablet";s:5:"stack";s:6:"mobile";s:5:"stack";}s:28:"hbb-footer-bg-obj-responsive";a:3:{s:7:"desktop";a:10:{s:16:"background-color";s:25:"var(--ast-global-color-5)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";s:15:"background-type";s:5:"color";}s:6:"tablet";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:19:"breadcrumb-position";s:4:"none";s:29:"breadcrumb-separator-selector";s:5:"\\003E";s:29:"hbb-footer-vertical-alignment";s:10:"flex-start";s:18:"breadcrumb-spacing";a:6:{s:7:"desktop";a:4:{s:3:"top";s:1:"0";s:5:"right";s:1:"0";s:6:"bottom";s:1:"0";s:4:"left";s:2:"13";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:20:"breadcrumb-alignment";s:4:"left";s:22:"cloned-component-track";a:13:{s:13:"header-button";i:2;s:13:"footer-button";i:2;s:11:"header-html";i:3;s:11:"footer-html";i:2;s:11:"header-menu";i:3;s:13:"header-widget";i:4;s:13:"footer-widget";i:6;s:19:"header-social-icons";i:1;s:19:"footer-social-icons";i:1;s:14:"header-divider";i:3;s:14:"footer-divider";i:3;s:13:"removed-items";a:0:{}s:4:"flag";b:0;}s:21:"ast-single-page-title";b:1;s:16:"hb-footer-layout";a:4:{s:7:"desktop";s:7:"3-cwide";s:6:"tablet";s:7:"3-equal";s:6:"mobile";s:4:"full";s:4:"flag";b:0;}s:27:"hb-footer-bg-obj-responsive";a:3:{s:7:"desktop";a:10:{s:16:"background-color";s:7:"#f9f9f9";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";s:15:"background-type";s:5:"color";}s:6:"tablet";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:23:"footer-html-2-alignment";a:3:{s:7:"desktop";s:6:"center";s:6:"tablet";s:6:"center";s:6:"mobile";s:6:"center";}s:25:"footer-widget-alignment-1";a:3:{s:7:"desktop";s:6:"center";s:6:"tablet";s:0:"";s:6:"mobile";s:0:"";}s:25:"footer-widget-alignment-2";a:3:{s:7:"desktop";s:5:"right";s:6:"tablet";s:0:"";s:6:"mobile";s:0:"";}s:22:"hb-footer-layout-width";s:4:"full";s:27:"list-block-vertical-spacing";b:0;s:18:"add-hr-styling-css";b:0;s:32:"astra-site-svg-logo-equal-height";b:0;s:23:"ast-site-content-layout";s:20:"full-width-container";s:18:"site-content-style";s:7:"unboxed";s:18:"site-sidebar-style";s:7:"unboxed";s:30:"single-page-ast-content-layout";s:7:"default";s:25:"single-page-content-style";s:5:"boxed";s:25:"single-page-sidebar-style";s:7:"default";s:25:"fullwidth_sidebar_support";b:0;s:23:"v4-2-0-update-migration";b:1;s:29:"v4-2-2-core-form-btns-styling";b:0;s:22:"v4-4-0-backward-option";b:0;s:30:"secondary-button-radius-fields";a:6:{s:7:"desktop";a:4:{s:3:"top";i:30;s:5:"right";i:30;s:6:"bottom";i:30;s:4:"left";i:30;}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:65:"ast-dynamic-single-forum-article-featured-image-position-layout-1";s:4:"none";s:65:"ast-dynamic-single-forum-article-featured-image-position-layout-2";s:4:"none";s:58:"ast-dynamic-single-forum-article-featured-image-ratio-type";s:7:"default";s:65:"ast-dynamic-single-topic-article-featured-image-position-layout-1";s:4:"none";s:65:"ast-dynamic-single-topic-article-featured-image-position-layout-2";s:4:"none";s:58:"ast-dynamic-single-topic-article-featured-image-ratio-type";s:7:"default";s:65:"ast-dynamic-single-reply-article-featured-image-position-layout-1";s:4:"none";s:65:"ast-dynamic-single-reply-article-featured-image-position-layout-2";s:4:"none";s:58:"ast-dynamic-single-reply-article-featured-image-ratio-type";s:7:"default";s:64:"ast-dynamic-single-post-article-featured-image-position-layout-1";s:4:"none";s:64:"ast-dynamic-single-post-article-featured-image-position-layout-2";s:4:"none";s:57:"ast-dynamic-single-post-article-featured-image-ratio-type";s:7:"default";s:64:"ast-dynamic-single-page-article-featured-image-position-layout-1";s:4:"none";s:64:"ast-dynamic-single-page-article-featured-image-position-layout-2";s:4:"none";s:57:"ast-dynamic-single-page-article-featured-image-ratio-type";s:7:"default";s:22:"v4-5-0-backward-option";b:0;s:26:"scndry-btn-default-padding";b:0;s:22:"v4-6-0-backward-option";b:0;s:39:"ast-sub-section-author-box-border-width";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:40:"ast-sub-section-author-box-border-radius";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:39:"ast-sub-section-author-box-border-color";s:0:"";s:28:"single-content-images-shadow";b:0;s:21:"ast-font-style-update";b:0;s:22:"v4-6-2-backward-option";b:0;s:33:"ast-dynamic-single-page-structure";a:1:{i:0;s:29:"ast-dynamic-single-page-title";}s:20:"btn-stylings-upgrade";b:0;s:24:"elementor-headings-style";b:0;s:33:"elementor-container-padding-style";b:0;s:14:"font-extras-h1";a:2:{s:11:"line-height";s:3:"1.4";s:16:"line-height-unit";s:2:"em";}s:14:"font-extras-h2";a:2:{s:11:"line-height";s:3:"1.3";s:16:"line-height-unit";s:2:"em";}s:14:"font-extras-h3";a:2:{s:11:"line-height";s:3:"1.3";s:16:"line-height-unit";s:2:"em";}s:14:"font-extras-h4";a:2:{s:11:"line-height";s:3:"1.2";s:16:"line-height-unit";s:2:"em";}s:14:"font-extras-h5";a:2:{s:11:"line-height";s:3:"1.2";s:16:"line-height-unit";s:2:"em";}s:14:"font-extras-h6";a:2:{s:11:"line-height";s:4:"1.25";s:16:"line-height-unit";s:2:"em";}s:34:"global-headings-line-height-update";b:1;s:37:"single_posts_pages_heading_clear_none";b:0;s:21:"elementor-btn-styling";b:0;s:52:"remove_single_posts_navigation_mobile_device_padding";b:1;s:27:"hb-header-bg-obj-responsive";a:3:{s:7:"desktop";a:10:{s:16:"background-color";s:7:"#fffefe";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";s:15:"background-type";s:5:"color";}s:6:"tablet";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}s:6:"mobile";a:9:{s:16:"background-color";s:0:"";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:4:"auto";s:21:"background-attachment";s:6:"scroll";s:12:"overlay-type";s:0:"";s:13:"overlay-color";s:0:"";s:16:"overlay-gradient";s:0:"";}}s:18:"hb-header-main-sep";i:0;s:38:"section-primary-header-builder-padding";a:6:{s:7:"desktop";a:4:{s:3:"top";s:1:"0";s:5:"right";s:1:"0";s:6:"bottom";s:1:"0";s:4:"left";s:1:"0";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:37:"section-primary-header-builder-margin";a:6:{s:7:"desktop";a:4:{s:3:"top";s:2:"16";s:5:"right";s:2:"16";s:6:"bottom";s:2:"16";s:4:"left";s:2:"16";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:20:"hbb-header-separator";i:0;s:36:"section-below-header-builder-padding";a:6:{s:7:"desktop";a:4:{s:3:"top";s:1:"0";s:5:"right";s:0:"";s:6:"bottom";s:1:"0";s:4:"left";s:0:"";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:35:"section-below-header-builder-margin";a:6:{s:7:"desktop";a:4:{s:3:"top";s:1:"0";s:5:"right";s:2:"16";s:6:"bottom";s:0:"";s:4:"left";s:2:"16";}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:16:"body-font-weight";s:7:"inherit";s:16:"body-font-extras";a:6:{s:11:"line-height";s:4:"1.55";s:16:"line-height-unit";s:2:"em";s:14:"letter-spacing";s:0:"";s:19:"letter-spacing-unit";s:2:"px";s:14:"text-transform";s:0:"";s:15:"text-decoration";s:0:"";}s:14:"font-family-h1";s:21:"\'Poppins\', sans-serif";s:14:"font-weight-h1";s:3:"600";s:27:"header-menu1-submenu-border";a:4:{s:3:"top";s:1:"0";s:6:"bottom";i:0;s:4:"left";i:0;s:5:"right";i:0;}s:40:"header-menu1-submenu-container-animation";s:10:"slide-down";s:13:"header-html-2";s:0:"";s:24:"header-search-icon-space";a:3:{s:7:"desktop";i:28;s:6:"tablet";i:18;s:6:"mobile";i:18;}s:19:"header-search-width";a:3:{s:7:"desktop";i:600;s:6:"tablet";s:0:"";s:6:"mobile";s:0:"";}s:29:"header-search-box-placeholder";s:5:"Cerca";s:22:"header-search-box-type";s:11:"full-screen";s:19:"button-preset-style";s:9:"button_03";s:29:"secondary-button-preset-style";s:9:"button_03";s:30:"secondary-theme-button-padding";a:6:{s:7:"desktop";a:4:{s:3:"top";i:10;s:5:"right";i:20;s:6:"bottom";i:10;s:4:"left";i:20;}s:6:"tablet";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:6:"mobile";a:4:{s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";}s:12:"desktop-unit";s:2:"px";s:11:"tablet-unit";s:2:"px";s:11:"mobile-unit";s:2:"px";}s:47:"secondary-theme-button-border-group-border-size";a:4:{s:3:"top";i:0;s:5:"right";i:0;s:6:"bottom";i:0;s:4:"left";i:0;}s:14:"font-family-h2";s:21:"\'Poppins\', sans-serif";s:14:"font-weight-h2";s:3:"600";s:11:"blog-layout";s:13:"blog-layout-4";s:26:"archive-post-content-style";s:5:"boxed";s:33:"header-menu1-menu-hover-animation";s:4:"zoom";s:32:"header-menu1-submenu-item-border";b:1;s:16:"hb-footer-column";s:1:"3";}',
+        ['allowed_classes' => true]
+    );
+
+}
+
+/**
+ * Add SVG support to WordPress Media
+ */
+add_filter('upload_mimes', function ($file_types) {
+
+    $new_filetypes = [];
+    $new_filetypes['svg'] = 'image/svg+xml';
+
+    return array_merge($file_types, $new_filetypes);
+
 });
