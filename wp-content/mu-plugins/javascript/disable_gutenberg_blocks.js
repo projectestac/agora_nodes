@@ -18,6 +18,7 @@
         wp.blocks.unregisterBlockType('getwid/mailchimp-field-first-name');
         wp.blocks.unregisterBlockType('getwid/mailchimp-field-last-name');
         wp.blocks.unregisterBlockType('getwid/map');
+        wp.blocks.unregisterBlockType('getwid/ai-text');
         wp.blocks.unregisterBlockVariation('core/embed', 'cloudup');
         wp.blocks.unregisterBlockVariation('core/embed', 'crowdsignal');
         wp.blocks.unregisterBlockVariation('core/embed', 'imgur');
