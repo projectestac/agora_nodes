@@ -115,3 +115,6 @@
 [submodule "wp-content/plugins/enllacos-educatius"]
 	path = wp-content/plugins/enllacos-educatius
 	url = https://github.com/projectestac/wordpress-enllacos-educatius.git
+[submodule "wp-content/plugins/nodes-theme-switcher"]
+	path = wp-content/plugins/nodes-theme-switcher
+	url = https://github.com/projectestac/wordpress-nodes-theme-switcher.git
