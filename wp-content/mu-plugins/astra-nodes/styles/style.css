@@ -145,6 +145,7 @@ footer #contact-info-2-wrapper {
     justify-content: center;
     color: white;
     min-width: 90px !important;
+    align-items: center;
 }
 
 .grid-item-3 {
@@ -271,6 +272,8 @@ div.ast-breadcrumbs-wrapper {
     font-weight: normal;
     color: white;
     font-size: 28px;
+    text-align: center;
+    line-height: 1;
 }
 
 .front-page-card img {
@@ -301,10 +304,10 @@ div.ast-breadcrumbs-wrapper {
 }
 
 #front-page-notice-image {
-    border-radius: 30px;
     height: 350px;
     width: 100%;
     object-fit: cover;
+    border-radius: 30px 0 0 30px;
 }
 
 #front-page-notice-text {
@@ -815,10 +818,6 @@ body.archive .ast-archive-description {
     align-content: center;
 }
 
-#front-page-notice-image {
-    border-radius: 30px 0 0 30px;
-}
-
 .home-page .addtoany_share_save_container.addtoany_content.addtoany_content_bottom {
     display: none
 }
@@ -1185,4 +1184,201 @@ ul.bbp-topics, .bbp-topic-form {
 /* Style for socialmedia plugin */
 .fa-2-5x {
     font-size: 2.5em !important;
+}
+
+
+.grid-item a {
+    max-width: 85px;
+    line-height: 1rem;
+    margin-top: 10px;
+}
+
+.gt_float_switcher {
+    border-radius: 40px !important;
+}
+
+#front-page-news-carousel-container {
+    margin-top: 15px;
+}
+
+#front-page-notice-container {
+    margin: 0 37px 30px;
+    min-height: 350px !important;
+    height: auto;
+}
+
+#gt_float_wrapper {
+    bottom: 70px !important;
+}
+
+.gt_float_switcher img {
+    display: none !important
+}
+
+.slick-dots li button:before {
+    font-size: 15px;
+}
+
+#front-page-notice-image {
+    height: -webkit-fill-available;
+}
+
+#front-page-notice-text {
+    border-radius: 0 30px 30px 0;
+}
+
+div.sidebar-main {
+    margin-top: 15px;
+}
+
+.home-page div#content {
+    margin-right: 0;
+}
+
+img#logo-educacio {
+    height: 30px;
+}
+
+img#logo-xtec {
+    height: 20px;
+}
+
+.ast-search-box.full-screen {
+    background: rgb(242 242 242);
+}
+
+.ast-search-box.full-screen .ast-search-wrapper .large-search-text {
+    color: #323232;
+}
+
+.ast-search-box.full-screen .search-submit,
+.ast-search-box.header-cover .search-submit {
+    color: #6c6c6c;
+}
+
+.ast-search-box.full-screen #close {
+    color: #323232;
+}
+
+.ast-search-box.full-screen .search-field,
+.ast-search-box.header-cover .search-field {
+    color: #6c6c6c;
+}
+
+.icon-close svg {
+    width: 28px;
+    height: 28px;
+}
+
+#wpadminbar #wp-admin-bar-user-actions.ab-submenu .ab-item {
+    color: grey !important
+}
+
+@media screen and (max-width: 782px) {
+
+    html {
+        margin-top: 0px !important;
+    }
+
+    html .logged-in #wpadminbar {
+        padding: 6px 16px 10px 16px !important;
+    }
+
+    #wpadminbar .quicklinks ul#wp-admin-bar-root-default {
+        display: grid;
+        border-collapse: collapse;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #wp-admin-bar-logo-educacio-wrapper {
+        grid-area: 1 / 1 / 2 / 3 !important;
+    }
+
+    #wp-admin-bar-resources_xtec {
+        grid-area: 1 / 3 / 2 / 5 !important;
+    }
+
+    #wp-admin-bar-site-name {
+        grid-area: 2 / 1 / 3 / 2 !important;
+    }
+
+    #wp-admin-bar-customize {
+        grid-area: 2 / 2 / 3 / 3 !important;
+    }
+
+    #wp-admin-bar-comments {
+        grid-area: 2 / 3 / 3 / 4 !important;
+    }
+
+    #wp-admin-bar-new-content {
+        grid-area: 2 / 4 / 3 / 5 !important;
+    }
+
+    #wp-admin-bar-edit {
+        grid-area: 2 / 5 / 3 / 6 !important;
+    }
+
+    .ast-header-break-point #ast-mobile-header {
+        margin-top: 82px !important;
+    }
+
+    #wpadminbar ul#wp-admin-bar-root-default > li {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    header .custom-logo-link img {
+        max-width: 100px;
+    }
+
+    #wpadminbar.mobile .quicklinks .ab-icon:before, #wpadminbar.mobile .quicklinks .ab-item:before {
+        color: #848484;
+    }
+
+    #wpadminbar .quicklinks ul#wp-admin-bar-top-secondary {
+        display: unset !important;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+    }
+
+    .pojo-a11y-toolbar-toggle {
+        display: none;
+    }
+
+    #wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+        width: 97vw !important;
+        right: 0 !important;
+        min-width: auto !important;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    #wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+        width: 97vw !important;
+        right: 0 !important;
+        left: unset !important;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+
+    body {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1600px;
+    }
+
+    #wpadminbar {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        left: auto;
+    }
+
 }
