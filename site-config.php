@@ -21,6 +21,7 @@ define('DB_HOST', $school_info['dbhost_nodes']);
 define('UPLOADS', 'wp-content/uploads/' . $agora['nodes']['userprefix'] . $school_info['id_nodes']);
 define('ENVIRONMENT', $agora['server']['enviroment']);
 define('SCHOOL_CODE', $school_info['code']);
+define('SCHOOL_TYPE', $school_info['type']);
 
 // Check for subdomain
 if (!empty($school_info['url_type']) && ($school_info['url_type'] === 'subdomain') && !empty($school_info['url_host'])) {
