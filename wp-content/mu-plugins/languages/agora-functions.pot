@@ -1,0 +1,226 @@
+# Copyright (C) 2024 Departament d'Educació - Generalitat de Catalunya
+# This file is distributed under the same license as the AstraFunctions plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: AstraFunctions 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-18T20:06:48+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: agora-functions\n"
+
+#. Plugin Name of the plugin
+#: astra-functions.php
+msgid "AstraFunctions"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: astra-functions.php
+msgid "https://github.com/projectestac/agora_nodes"
+msgstr ""
+
+#. Description of the plugin
+#: astra-functions.php
+msgid "Customizations for Astra theme"
+msgstr ""
+
+#. Author of the plugin
+#: astra-functions.php
+msgid "Departament d'Educació - Generalitat de Catalunya"
+msgstr ""
+
+#: agora-functions.php:42
+msgid "My Articles"
+msgstr ""
+
+#: agora-functions.php:64
+msgid "Published"
+msgstr ""
+
+#: agora-functions.php:75
+msgid "Pending Review"
+msgstr ""
+
+#: agora-functions.php:86
+msgid "Drafts"
+msgstr ""
+
+#: agora-functions.php:191
+msgid "Categories"
+msgstr ""
+
+#: agora-functions.php:198
+msgid "Comments"
+msgstr ""
+
+#: agora-functions.php:210
+msgid "Article not found"
+msgstr ""
+
+#: agora-functions.php:287
+msgid "You have exceeded your disk quota limit"
+msgstr ""
+
+#: agora-functions.php:321
+msgid "The page you were trying to delete is protected."
+msgstr ""
+
+#: agora-functions.php:339
+msgid "The page name you were trying to create is protected."
+msgstr ""
+
+#: agora-functions.php:340
+msgid "Page name is required."
+msgstr ""
+
+#: agora-functions.php:419
+msgid "Articles by row"
+msgstr ""
+
+#: agora-functions.php:422
+msgid "Articles to be displayed per row on category page (between 1 and 4)"
+msgstr ""
+
+#: agora-functions.php:429
+msgid "Image"
+msgstr ""
+
+#: agora-functions.php:441
+msgid "Current header image"
+msgstr ""
+
+#: agora-functions.php:446
+msgid "Upload image"
+msgstr ""
+
+#: agora-functions.php:447
+msgid "Provide an image for the category"
+msgstr ""
+
+#: agora-functions.php:450
+msgid "Remove image"
+msgstr ""
+
+#: agora-functions.php:669
+msgid "Home page configuration"
+msgstr ""
+
+#: agora-functions.php:684
+msgid "Posts to home page"
+msgstr ""
+
+#: agora-functions.php:735
+msgid "Allow to registry users direct post into home page"
+msgstr ""
+
+#: agora-functions.php:752
+msgid "Teacher"
+msgstr ""
+
+#: agora-functions.php:771
+#: agora-functions.php:806
+#: agora-functions.php:836
+#: agora-functions.php:868
+msgid "Select name to teacher's node"
+msgstr ""
+
+#: agora-functions.php:877
+msgid "Node that containing all user's with teacher's role"
+msgstr ""
+
+#: agora-functions.php:878
+msgid "New members of this group, if they have Contributor role will be automatically promoted to the role teachers. This will have access to the reservations of spaces and equipment. This change does not affect users who already belong to the node, or those who have other roles."
+msgstr ""
+
+#: agora-functions.php:887
+msgid "Teacher's group"
+msgstr ""
+
+#: agora-functions.php:917
+#: agora-functions.php:919
+msgid "Exporter schedule"
+msgstr ""
+
+#: agora-functions.php:918
+msgid "From a Google Spreadsheet, this tool allows you to export to web format schedules for each group, teacher, subject or classroom. The generated code can easily insert to any page to Nodes and paste the code in the text tab."
+msgstr ""
+
+#: agora-functions.php:920
+msgid "Link to exporter schedule"
+msgstr ""
+
+#: agora-functions.php:921
+msgid "Developed by: Felix Tejero"
+msgstr ""
+
+#: agora-functions.php:933
+#: agora-functions.php:935
+msgid "Calendar manager"
+msgstr ""
+
+#: agora-functions.php:934
+msgid "From a Google Spreadsheet, this tool allows you to upgrade the course calendars with one click. However, if you add new events to the calendar, joining the spreadsheet."
+msgstr ""
+
+#: agora-functions.php:936
+msgid "Link to calendar manager"
+msgstr ""
+
+#: agora-functions.php:937
+msgid "Developed by: Pepi Garrote"
+msgstr ""
+
+#: agora-functions.php:1346
+#: agora-functions.php:1366
+msgid "Report to administrators"
+msgstr ""
+
+#: agora-functions.php:1367
+msgid "Report this"
+msgstr ""
+
+#: agora-functions.php:1391
+msgid "Reports"
+msgstr ""
+
+#: agora-functions.php:1392
+msgid "Report"
+msgstr ""
+
+#: agora-functions.php:1456
+msgid "posted on"
+msgstr ""
+
+#: agora-functions.php:1460
+#: agora-functions.php:1492
+msgid "See it in its context"
+msgstr ""
+
+#: agora-functions.php:1475
+msgid "Notified to admins"
+msgstr ""
+
+#: agora-functions.php:1480
+msgid "Activity report in social network"
+msgstr ""
+
+#: agora-functions.php:1482
+msgid "The user <strong>%1$s (%2$s)</strong> has reported the following content published by <strong>%3$s (%4$s)</strong>:"
+msgstr ""
+
+#: agora-functions.php:1493
+msgid "Go to the report admin"
+msgstr ""
+
+#: agora-functions.php:1495
+msgid "P.S.: This is an automatic notification. Please do not reply"
+msgstr ""
+
+#: agora-functions.php:1514
+msgid "Content"
+msgstr ""
