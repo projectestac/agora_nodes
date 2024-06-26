@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal icon picker</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <button id="uip-select-btn" class="demo-btn demo-btn-lg btn-hover-effect btn-hover-effect--effect-4 demo-bg-1 text-white" title="Open the Icon Library">Fes clic per obrir la biblioteca d'icones</button>
+            <button id="uip-reset-btn" class="demo-btn demo-btn-lg btn-hover-effect btn-hover-effect--effect-4 demo-bg-danger text-white" title="Reset">Restableix</button>
+        </div>
+
+        <div class="demo-output hidden" id="output">
+            <pre><code class="demo-output-json" id="output-json"></code></pre>
+            <div class="demo-output-icon" id="output-icon"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/universal-icon-picker.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+        const uip = new UniversalIconPicker('#uip-select-btn', {
+            iconLibraries: [
+            'happy-icons.min.json',
+            'font-awesome.min.json'
+            ],
+            iconLibrariesCss: [
+            'happy-icons.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
+            ],
+            resetSelector: '#uip-reset-btn',
+            onSelect: function(jsonIconData) {
+                console.log(jsonIconData);
+                document.getElementById('output-json').innerHTML = JSON.stringify(jsonIconData, null, 4);
+                document.getElementById('output-icon').innerHTML = jsonIconData.iconHtml;
+                document.getElementById('output').classList.remove('hidden');
+            },
+            onReset: function() {
+                document.getElementById('output-json').innerHTML = '';
+                document.getElementById('output-icon').innerHTML = '';
+                document.getElementById('output').classList.add('hidden');
+            }
+            });
+        });
+    </script>
+</body>
+
+</html>
