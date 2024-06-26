@@ -118,3 +118,6 @@
 [submodule "wp-content/plugins/nodes-theme-switcher"]
 	path = wp-content/plugins/nodes-theme-switcher
 	url = https://github.com/projectestac/wordpress-nodes-theme-switcher.git
+[submodule "wp-content/plugins/pojo-accessibility"]
+	path = wp-content/plugins/pojo-accessibility
+	url = https://github.com/projectestac/wordpress-pojo-accessibility.git
