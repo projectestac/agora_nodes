@@ -1,0 +1,426 @@
+# Copyright (C) 2024 Departament d'Educació - Generalitat de Catalunya
+# This file is distributed under the same license as the AstraFunctions plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: AstraFunctions 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-25T18:01:45+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: astra-nodes\n"
+
+#. Plugin Name of the plugin
+#: astra-functions.php
+msgid "AstraFunctions"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: astra-functions.php
+msgid "https://github.com/projectestac/agora_nodes"
+msgstr ""
+
+#. Description of the plugin
+#: astra-functions.php
+msgid "Customizations for Astra theme"
+msgstr ""
+
+#. Author of the plugin
+#: astra-functions.php
+msgid "Departament d'Educació - Generalitat de Catalunya"
+msgstr ""
+
+#: astra-functions.php:44
+msgid "Welcome to Nodes!"
+msgstr ""
+
+#: astra-functions.php:45
+msgid "Web platform for the schools in Catalonia"
+msgstr ""
+
+#: astra-functions.php:57
+msgid "Documentation and videotutorials"
+msgstr ""
+
+#: astra-functions.php:58
+msgid "All related information can be found in Digital website"
+msgstr ""
+
+#: astra-functions.php:60
+msgid "Go to Digital"
+msgstr ""
+
+#: astra-functions.php:73
+msgid "Custom support"
+msgstr ""
+
+#: astra-functions.php:74
+msgid "Any doubts? Trouble with any configuration?"
+msgstr ""
+
+#: astra-functions.php:76
+msgid "Go to the forum"
+msgstr ""
+
+#: astra-functions.php:88
+msgid "Teachers' network"
+msgstr ""
+
+#: astra-functions.php:89
+msgid "Website administrators can get support in the teacher's network"
+msgstr ""
+
+#: astra-functions.php:91
+msgid "Go to the teacher's network"
+msgstr ""
+
+#: astra-functions.php:149
+msgid "Logo organism"
+msgstr ""
+
+#: astra-functions.php:409
+#: astra-nodes/customizer/customize.php:235
+msgid "Map"
+msgstr ""
+
+#: astra-functions.php:411
+#: astra-nodes/customizer/customize.php:250
+msgid "Contact"
+msgstr ""
+
+#: astra-functions.php:429
+msgid "Item"
+msgstr ""
+
+#: astra-functions.php:610
+#: astra-functions.php:632
+msgid "Image of the notice"
+msgstr ""
+
+#: astra-functions.php:822
+msgid "Categories"
+msgstr ""
+
+#: astra-functions.php:824
+msgid "Add widgets to the categories pages"
+msgstr ""
+
+#: astra-functions.php:832
+msgid "Front page"
+msgstr ""
+
+#: astra-functions.php:834
+msgid "Add widgets to the front page"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:64
+msgid "Header"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:65
+msgid "Customization of the site header"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:71
+msgid "Logos"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:87
+msgid "Header logo"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:89
+msgid "Recommendations: 300 x 200 px and less than 200 kB"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:109
+msgid "Organism logo"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:115
+msgid "Department of Education"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:116
+msgid "CEB"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:124
+msgid "Site name"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:138
+msgid "Text preceding the blog name"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:153
+msgid "Blog name"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:168
+msgid "Blog description"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:176
+msgid "Contact information"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:190
+msgid "Postal address"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:205
+msgid "Postal code and city"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:220
+msgid "Phone number"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:265
+msgid "Email"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:274
+msgid "Buttons"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:295
+msgid "Icon "
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:319
+msgid "Choose an icon"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:339
+msgid "Icon text"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:358
+#: astra-nodes/customizer/customize.php:708
+#: astra-nodes/customizer/customize.php:925
+#: astra-nodes/customizer/customize.php:1047
+msgid "https://"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:371
+#: astra-nodes/customizer/customize.php:721
+#: astra-nodes/customizer/customize.php:938
+#: astra-nodes/customizer/customize.php:1060
+msgid "Open in new tab"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:416
+msgid "Insert"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:417
+msgid "Filter by name"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:442
+#: astra-nodes/customizer/customize.php:456
+msgid "Theme Colors"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:496
+msgid "Custom"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:514
+msgid "Primary color"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:532
+msgid "Secondary color"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:546
+msgid "Front Page"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:547
+msgid "Customization of the front page"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:555
+msgid "Slider"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:571
+msgid "Show the slider"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:589
+msgid "Height of the slider"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:609
+msgid "Play automatically"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:624
+msgid "Show arrows"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:643
+msgid "Show dots"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:684
+#: astra-nodes/customizer/customize.php:987
+msgid "Image"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:702
+msgid "Link"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:737
+#: astra-nodes/customizer/customize.php:743
+#: astra-nodes/includes/front_page_slider.php:97
+msgid "Heading"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:756
+#: astra-nodes/customizer/customize.php:762
+#: astra-nodes/customizer/customize.php:988
+#: astra-nodes/includes/front_page_slider.php:100
+msgid "Text"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:772
+msgid "Layout"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:788
+msgid "Front Page Layout"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:794
+#: astra-nodes/customizer/customize.php:808
+msgid "Cards"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:795
+msgid "Sidebar and cards"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:796
+msgid "Sidebar and news"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:797
+msgid "WordPress default"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:798
+msgid "WordPress default - No sidebar"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:823
+msgid "Show the cards"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:859
+msgid "Card"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:865
+msgid "Card title"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:901
+msgid "Color"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:919
+msgid "URL"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:951
+msgid "Notice"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:966
+msgid "Show the notice"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:989
+msgid "Image and text"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1024
+msgid "Background color"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1041
+msgid "Image URL"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1076
+msgid "Text preceding the title"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1076
+#: astra-nodes/customizer/customize.php:1092
+#: astra-nodes/customizer/customize.php:1108
+msgid "optional"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1092
+msgid "Title"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1108
+msgid "Content"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1119
+msgid "News"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1134
+msgid "Show the news"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1162
+msgid "Category"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1178
+msgid "Number of posts"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1194
+msgid "Pages"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1205
+msgid "Sidebar type"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1210
+msgid "Menu of pages"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1211
+msgid "Widgets"
+msgstr ""
+
+#: astra-nodes/customizer/customize.php:1212
+msgid "No sidebar"
+msgstr ""
+
+#: astra-nodes/includes/front_page_news.php:19
+msgid "All the news"
+msgstr ""
+
+#: astra-nodes/includes/front_page_slider.php:69
+msgid "Slide"
+msgstr ""
