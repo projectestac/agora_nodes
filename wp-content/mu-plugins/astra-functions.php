@@ -64,6 +64,11 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
+// Load styles for the admin area.
+add_action('admin_enqueue_scripts', function () {
+    wp_enqueue_style('astra-functions-admin', plugins_url('/astra-nodes/styles/admin-style.css', __FILE__));
+});
+
 // Welcome panel: Remove the default welcome panel and add a custom one.
 add_action('admin_init', function () {
 
