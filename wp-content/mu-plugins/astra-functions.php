@@ -7,8 +7,38 @@ Version: 1.0
 Author: Departament d'Educació - Generalitat de Catalunya
 */
 
-// Only load if Astra theme is active.
-if (wp_get_theme()->name !== 'Astra') {
+// Options | General: Added parameter to force the use of the original Astra theme. Must be set
+// before checking whether the theme is Astra. Otherwise, the option will not be available when
+// the theme is not Astra.
+add_filter('admin_init', function () {
+
+    register_setting('general', 'astra_nodes_use_vanilla_astra', ['type' => 'boolean']);
+
+    // Add a new section to a settings page.
+    add_settings_section(
+        'use_vanilla_astra_section',
+        __('Astra Nodes', 'astra-nodes'),
+        static function () { },
+        'general'
+    );
+
+    // Add a new field to the previous section.
+    add_settings_field(
+        'use_vanilla_astra',
+        '<label for="use_vanilla_astra">' . __('Use vanilla Astra', 'astra-nodes') . '</label>',
+        static function () {
+            $value = (boolean)get_option('astra_nodes_use_vanilla_astra', 0);
+            $checked = $value ? 'checked="checked"' : '';
+            echo '<input type="checkbox" id="astra_nodes_use_vanilla_astra" name="astra_nodes_use_vanilla_astra" ' . $checked . ' />';
+        },
+        'general',
+        'use_vanilla_astra_section'
+    );
+
+});
+
+// Only load Astra Nodes if Astra theme is active and the option to use vanilla Astra is not set.
+if (wp_get_theme()->name !== 'Astra' || get_option('astra_nodes_use_vanilla_astra')) {
     return;
 }
 
@@ -36,12 +66,13 @@ add_action('wp_enqueue_scripts', function () {
 
 // Welcome panel: Remove the default welcome panel and add a custom one.
 add_action('admin_init', function () {
+
     remove_action('welcome_panel', 'wp_welcome_panel');
     add_action('welcome_panel', function () {
         ?>
         <div class="welcome-panel-content">
             <div class="welcome-panel-header">
-                <h2><?php _e('Welcome to Nodes!', 'astra-nodes'); ?></h2>
+                <h2><?php _e('Welcome to Nodes', 'astra-nodes'); ?></h2>
                 <p><?php _e('Web platform for the schools in Catalonia', 'astra-nodes'); ?> </p>
             </div>
             <div class="welcome-panel-column-container">
@@ -55,7 +86,7 @@ add_action('admin_init', function () {
                     </svg>
                     <div class="welcome-panel-column-content">
                         <h3><?php _e('Documentation and videotutorials', 'astra-nodes'); ?></h3>
-                        <p><?php _e('All related information can be found in Digital website', 'astra-nodes'); ?></p>
+                        <p><?php _e('All related information can be found in Digital website.', 'astra-nodes'); ?></p>
                         <a href="<?= esc_url('https://projectes.xtec.cat/digital/serveis-digitals/nodes/') ?>" target="_blank">
                             <?= __('Go to Digital', 'astra-nodes') ?>
                         </a>
@@ -71,7 +102,7 @@ add_action('admin_init', function () {
                     </svg>
                     <div class="welcome-panel-column-content">
                         <h3><?php _e('Custom support', 'astra-nodes'); ?></h3>
-                        <p><?php _e('Any doubts? Trouble with any configuration?', 'astra-nodes'); ?></p>
+                        <p><?php _e('Any doubts? Trouble with any configuration? You can ask in the forum.', 'astra-nodes'); ?></p>
                         <a href="<?= esc_url('https://educaciodigital.cat/moodle/moodle/mod/forum/view.php?id=1721') ?>" target="_blank">
                             <?= __('Go to the forum', 'astra-nodes') ?>
                         </a>
@@ -86,7 +117,7 @@ add_action('admin_init', function () {
                     </svg>
                     <div class="welcome-panel-column-content">
                         <h3><?php _e('Teachers\' network', 'astra-nodes'); ?></h3>
-                        <p><?php _e('Website administrators can get support in the teacher\'s network', 'astra-nodes'); ?></p>
+                        <p><?php _e('Website administrators can get support in the teacher\'s network.', 'astra-nodes'); ?></p>
                         <a href="<?= esc_url('https://comunitat.edigital.cat/tag/nodes') ?>" target="_blank">
                             <?= __('Go to the teacher\'s network', 'astra-nodes') ?>
                         </a>
@@ -276,16 +307,12 @@ add_action('astra_customizer_sections', function ($configurations) {
 
 });
 
-// Customizer: Remove all header and footer sections.
-add_action('astra_header_builder_sections', 'nodes_remove_customizer_header_footer_sections');
-//add_action('astra_footer_builder_sections', 'nodes_remove_customizer_header_footer_sections');
+// Customizer: Remove all header sections.
+add_action('astra_header_builder_sections', function ($configurations): array {
 
-function nodes_remove_customizer_header_footer_sections($configurations): array {
-    if (is_xtec_super_admin()) {
-        return $configurations;
-    }
-    return [];
-}
+    return is_xtec_super_admin() ? $configurations : [];
+
+});
 
 // Customizer: Update logo and other information when saving.
 add_action('customize_save_after', function ($wp_customize) {
@@ -355,6 +382,7 @@ add_action('customize_preview_init', function ($wp_customize) {
 
     $pages_sidebar = $wp_customize->get_setting('astra_nodes_options[pages_sidebar]')->value();
     $astra_nodes_options['pages_sidebar'] = $pages_sidebar;
+
 });
 
 // Header: Content of the central area (html-3), which includes the name of the client.
@@ -684,9 +712,11 @@ add_action('astra_html_before', function () {
 
 // Breadcrumb: Add the breadcrumb on top of the content on all pages except the front page.
 add_action('astra_content_before', function () {
+
     if (!is_front_page()) {
         echo astra_get_breadcrumb();
     }
+
 });
 
 // Sidebar: Specific case for the pages when there is no sidebar.
@@ -881,7 +911,9 @@ add_action('admin_menu', function () {
 
 // Unregister Buddypress post type to disable functionality.
 add_action('init', function () {
+
     if (!is_xtec_super_admin()) {
         unregister_post_type('bp-email');
     }
+
 }, 11);
