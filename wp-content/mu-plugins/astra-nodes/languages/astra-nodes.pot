@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-25T18:01:45+02:00\n"
+"POT-Creation-Date: 2024-06-27T18:55:36+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: astra-nodes\n"
@@ -34,86 +34,94 @@ msgstr ""
 msgid "Departament d'Educació - Generalitat de Catalunya"
 msgstr ""
 
-#: astra-functions.php:44
-msgid "Welcome to Nodes!"
+#: astra-functions.php:20
+msgid "Astra Nodes"
 msgstr ""
 
-#: astra-functions.php:45
-msgid "Web platform for the schools in Catalonia"
+#: astra-functions.php:28
+msgid "Use vanilla Astra"
 msgstr ""
 
-#: astra-functions.php:57
-msgid "Documentation and videotutorials"
-msgstr ""
-
-#: astra-functions.php:58
-msgid "All related information can be found in Digital website"
-msgstr ""
-
-#: astra-functions.php:60
-msgid "Go to Digital"
-msgstr ""
-
-#: astra-functions.php:73
-msgid "Custom support"
-msgstr ""
-
-#: astra-functions.php:74
-msgid "Any doubts? Trouble with any configuration?"
+#: astra-functions.php:75
+msgid "Welcome to Nodes"
 msgstr ""
 
 #: astra-functions.php:76
-msgid "Go to the forum"
+msgid "Web platform for the schools in Catalonia"
 msgstr ""
 
 #: astra-functions.php:88
-msgid "Teachers' network"
+msgid "Documentation and videotutorials"
 msgstr ""
 
 #: astra-functions.php:89
-msgid "Website administrators can get support in the teacher's network"
+msgid "All related information can be found in Digital website."
 msgstr ""
 
 #: astra-functions.php:91
+msgid "Go to Digital"
+msgstr ""
+
+#: astra-functions.php:104
+msgid "Custom support"
+msgstr ""
+
+#: astra-functions.php:105
+msgid "Any doubts? Trouble with any configuration? You can ask in the forum."
+msgstr ""
+
+#: astra-functions.php:107
+msgid "Go to the forum"
+msgstr ""
+
+#: astra-functions.php:119
+msgid "Teachers' network"
+msgstr ""
+
+#: astra-functions.php:120
+msgid "Website administrators can get support in the teacher's network."
+msgstr ""
+
+#: astra-functions.php:122
 msgid "Go to the teacher's network"
 msgstr ""
 
-#: astra-functions.php:149
+#: astra-functions.php:180
 msgid "Logo organism"
 msgstr ""
 
-#: astra-functions.php:409
+#: astra-functions.php:437
 #: astra-nodes/customizer/customize.php:235
 msgid "Map"
 msgstr ""
 
-#: astra-functions.php:411
+#: astra-functions.php:439
 #: astra-nodes/customizer/customize.php:250
 msgid "Contact"
 msgstr ""
 
-#: astra-functions.php:429
+#: astra-functions.php:457
 msgid "Item"
 msgstr ""
 
-#: astra-functions.php:610
-#: astra-functions.php:632
+#: astra-functions.php:638
+#: astra-functions.php:660
 msgid "Image of the notice"
 msgstr ""
 
-#: astra-functions.php:822
+#: astra-functions.php:852
 msgid "Categories"
 msgstr ""
 
-#: astra-functions.php:824
+#: astra-functions.php:854
 msgid "Add widgets to the categories pages"
 msgstr ""
 
-#: astra-functions.php:832
+#: astra-functions.php:862
 msgid "Front page"
 msgstr ""
 
-#: astra-functions.php:834
+#: astra-functions.php:864
 msgid "Add widgets to the front page"
 msgstr ""
 
