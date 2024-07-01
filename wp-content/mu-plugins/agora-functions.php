@@ -2746,3 +2746,27 @@ add_action('admin_menu', function() {
 add_filter('pre_option_show_on_front', function () {
     return 'page';
 });
+
+// Admin: Remove Koko Analytics from dashboard menu.
+add_action('admin_menu', function () {
+    remove_submenu_page('index.php', 'koko-analytics');
+}, 11);
+
+// Admin: Add Koko Analytics to Options menu.
+add_action('admin_menu', function () {
+
+    add_options_page(
+        __('Koko Analytics', 'koko-analytics'),
+        __('Koko Analytics', 'koko-analytics'),
+        'manage_options',
+        'koko-analytics',
+        static function () {
+            if (class_exists('KokoAnalytics\Admin')) {
+                $admin = new KokoAnalytics\Admin();
+                $admin->show_dashboard_page();
+            }
+        },
+        5
+    );
+
+});
