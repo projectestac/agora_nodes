@@ -689,6 +689,12 @@ span[itemprop="name"] {
     border-radius: 30px;
 }
 
+/* All cards must have the same height */
+.archive .ast-article-post .ast-article-inner,
+.blog .ast-article-post .ast-article-inner {
+    height: 100%;
+}
+
 div.sidebar-main ul.accordion li {
     padding: 10px 0;
 }
