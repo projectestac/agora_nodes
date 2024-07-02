@@ -1,0 +1,23 @@
+/* Login screen */
+
+body #login h1 {
+    line-height: 1em;
+}
+
+body.login #login h1 a {
+    display: none;
+}
+
+body.login #login_logo {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+body.login #login_logo img {
+    max-width: 200px;
+    margin-bottom: 1em;
+}
+
+body.login .wp-social-login-widget {
+    text-align: center;
+}
