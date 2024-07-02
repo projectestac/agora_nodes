@@ -422,17 +422,6 @@ add_action('admin_menu', 'rebuild_bp_menus_step_1', 1); // Priority 1 is importa
 add_action('admin_menu', 'rebuild_bp_menus_step_2'); // Default priority (10) is important!
 add_action('admin_menu', 'rebuild_bbpress_menus');
 
-/**
- * Move WP Telegram main menu option to an option 'Options General'.
- *
- * @return void
- */
-function rebuild_wptelegram_menu(): void {
-    remove_menu_page('wptelegram');
-    add_submenu_page('options-general.php', __('WP Telegram', 'wptelegram'), __('WP Telegram', 'wptelegram'), 'manage_options', 'wptelegram');
-}
-
-add_action('admin_menu', 'rebuild_wptelegram_menu');
 
 // Unregister bp-mail post type to disable functionality
 function unregister_bp_mail () {
