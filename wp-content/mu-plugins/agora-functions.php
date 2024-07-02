@@ -2717,9 +2717,10 @@ add_filter('upload_mimes', function ($file_types) {
  *   https://wordpress.org/support/topic/astra-theme-issue-3/
  */
 add_filter('get_the_archive_description', function ($description) {
-        if (!is_post_type_archive('bp_doc')) {
-            return $description;
-        }
-        return 'Docs directory';
+
+    if (!is_post_type_archive('bp_doc')) {
+        return $description;
     }
-);
+    return 'Docs directory';
+
+});
