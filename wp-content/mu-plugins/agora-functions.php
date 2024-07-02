@@ -2736,3 +2736,13 @@ add_action('admin_menu', function() {
     add_submenu_page('options-general.php', __('WP Telegram', 'wptelegram'), __('WP Telegram', 'wptelegram'), 'manage_options', 'wptelegram');
 
 }, 99);
+
+/**
+ * Force the configuration of the front page to use always a page, so the option of using the
+ * latest posts is disallowed.
+ *
+ * @author Xavi Meler
+ */
+add_filter('pre_option_show_on_front', function () {
+    return 'page';
+});
