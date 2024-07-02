@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 Plugin Name: AstraFunctions
 Plugin URI: https://github.com/projectestac/agora_nodes
 Description: Customizations for Astra theme
@@ -62,6 +62,11 @@ add_action('wp_enqueue_scripts', function () {
     if (is_plugin_active('getwid/getwid.php')) {
         wp_enqueue_script('slick', getwid_get_plugin_url('vendors/slick/slick/slick.min.js'), ['jquery'], '1.9.0', true);
     }
+});
+
+// Load styles for the login page.
+add_action('login_enqueue_scripts', function () {
+    wp_enqueue_style('astra-functions-login', plugins_url('/astra-nodes/styles/login-style.css', __FILE__));
 });
 
 // Load styles for the admin area.
@@ -922,3 +927,40 @@ add_action('init', function () {
     }
 
 }, 11);
+
+function show_logo() {
+
+    global $astra_nodes_options;
+
+    echo '
+        <div id="login_logo">
+            <img src="' . $astra_nodes_options['custom_logo'] . '">
+            <h1>' . get_option('blogname') . '</h1>
+        </div>
+        ';
+
+}
+
+// Login: Show logo.
+add_filter('login_message', 'show_logo', 10);
+
+// Login: If WordPress Social Login is active, show the widget in the login form (if it configured). It is important to
+//        check if the plugin is active to avoid the potential fatal error when the function is called.
+include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+if (is_plugin_active('wordpress-social-login/wp-social-login.php')) {
+
+    add_filter('login_message', 'wsl_render_auth_widget_in_wp_login_form', 20);
+
+    // Remove WP Social Login widget from the login and registration pages.
+    add_action('plugins_loaded', function () {
+
+        // Remove the WP Social Login widget from the login page.
+        remove_action('login_form', 'wsl_render_auth_widget_in_wp_login_form');
+
+        // Remove the WP Social Login widget from the registration page.
+        remove_action('register_form', 'wsl_render_auth_widget_in_wp_login_form');
+
+    });
+
+}
