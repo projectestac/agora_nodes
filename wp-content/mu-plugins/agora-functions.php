@@ -2724,3 +2724,15 @@ add_filter('get_the_archive_description', function ($description) {
     return 'Docs directory';
 
 });
+
+/**
+ * Move WP Telegram main menu option to an option in Options | General.
+ *
+ * @return void
+ */
+add_action('admin_menu', function() {
+
+    remove_menu_page('wptelegram');
+    add_submenu_page('options-general.php', __('WP Telegram', 'wptelegram'), __('WP Telegram', 'wptelegram'), 'manage_options', 'wptelegram');
+
+}, 99);
