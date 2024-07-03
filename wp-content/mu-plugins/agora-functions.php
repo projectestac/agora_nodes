@@ -1847,6 +1847,12 @@ add_action('switch_theme', function ($new_theme) {
         add_action('admin_init', function () {
             remove_action('welcome_panel', 'wp_welcome_panel');
         }, 1);
+    } else {
+        global $wpdb;
+        $table = $wpdb->prefix . 'options';
+        $col = 'option_name';
+        $sql = $wpdb->prepare("DELETE FROM $table WHERE $col LIKE %s", '%astra%');
+        $wpdb->query($sql);
     }
 
 }, 10, 1);
