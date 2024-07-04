@@ -1,10 +1,16 @@
-/*
+
 img#logo-educacio {
-    height: 30px;
+    padding-top: 6px;
+    height: 20px;
     background-color: white;
 }
 
 img#logo-xtec {
-    height: 20px;
+    padding-top: 9px;
+    height: 15px;
 }
-*/
+
+/* Editor Gutenberg */
+.interface-interface-skeleton__body {
+    padding: 0 25px 0 25px;
+}
