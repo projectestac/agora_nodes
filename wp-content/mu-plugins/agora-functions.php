@@ -532,9 +532,7 @@ add_action ( 'edited_category', 'save_extra_category_fields');
 function get_category_image (){
     $categoria = get_query_var('cat');
     $cat_meta = get_option("category_$categoria");
-    $image = $cat_meta ['image'];
-
-    return $image;
+    return $cat_meta['image'] ?? '';
 }
 
 /**
