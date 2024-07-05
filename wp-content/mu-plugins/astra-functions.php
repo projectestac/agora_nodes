@@ -37,8 +37,13 @@ add_filter('admin_init', function () {
 
 });
 
-// Only load Astra Nodes if Astra theme is active and the option to use vanilla Astra is not set.
-if (wp_get_theme()->name !== 'Astra' || get_option('astra_nodes_use_vanilla_astra')) {
+// Only load Astra Nodes if Astra theme is active.
+if (wp_get_theme()->name !== 'Astra') {
+    return;
+}
+
+// Only load Astra Nodes if the option to use vanilla Astra is not set.
+if (get_option('astra_nodes_use_vanilla_astra')) {
     return;
 }
 
@@ -928,7 +933,8 @@ add_action('init', function () {
 
 }, 11);
 
-function show_logo() {
+// Login: Show logo.
+add_filter('login_message', function () {
 
     global $astra_nodes_options;
 
@@ -939,10 +945,7 @@ function show_logo() {
         </div>
         ';
 
-}
-
-// Login: Show logo.
-add_filter('login_message', 'show_logo', 10);
+}, 10);
 
 // Login: If WordPress Social Login is active, show the widget in the login form (if it configured). It is important to
 //        check if the plugin is active to avoid the potential fatal error when the function is called.
