@@ -1,46 +1,79 @@
 <!-- Display the table of links to the pages -->
 
+<?php
+function get_top_level_parent($page_id) {
+
+    $parent_id = wp_get_post_parent_id($page_id);
+    return $parent_id ? get_top_level_parent($parent_id) : $page_id;
+
+}
+
+function render_page($page, $skip_print = false): void {
+
+    $children = get_pages([
+        'parent' => $page->ID,
+        'sort_column' => 'menu_order',
+        'sort_order' => 'ASC',
+    ]);
+
+    if (count($children) > 0) {
+        if (!$skip_print) {
+            echo '<li>';
+            echo '<a href="' . get_permalink($page->ID) . '" class="accordion-toggle parent">' . $page->post_title . ' <i class="fa-solid fa-angle-down"></i></a>';
+            echo '<ul class="submenu">';
+        }
+        foreach ($children as $child) {
+            render_page($child);
+        }
+        if (!$skip_print) {
+            echo '</ul>';
+            echo '</li>';
+        }
+    } else if (!$skip_print) {
+        echo '<li>';
+        echo '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+        echo '</li>';
+    }
+
+}
+
+?>
+
 <ul class="accordion">
+
     <?php
+    $current_page_id = get_the_ID();
+    $top_level_parent = get_top_level_parent($current_page_id);
+
     $pages = get_pages([
         'post_type' => 'page',
+        'parent' => 0,
+        'sort_column' => 'menu_order',
+        'sort_order' => 'ASC',
     ]);
 
     foreach ($pages as $page) {
-        if ($page->post_parent === 0) {
-            echo '<li>';
-            if (count(get_pages(['child_of' => $page->ID])) > 0) {
-                echo '<a href="#" class="accordion-toggle">' . $page->post_title . ' <i class="fa-solid fa-angle-down"></i></a>';
-                echo '<ul class="submenu">';
-                $args = [
-                    'post_type' => 'page',
-                    'post_status' => 'publish',
-                    'post_parent' => $page->ID,
-                ];
-                $child_pages = get_posts($args);
-                foreach ($child_pages as $child_page) {
-                    echo '<li><a href="' . get_permalink($child_page->ID) . '">' . $child_page->post_title . '</a></li>';
-                }
-                echo '</ul>';
-            } else {
-                echo '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-            }
-            echo '</li>';
+        if ($page->ID === $top_level_parent) {
+            render_page($page, true);
         }
     }
+
     ?>
+
 </ul>
 
 <script>
-    jQuery(document).ready(function () {
-        jQuery('.accordion-toggle').click(function (e) {
-            e.preventDefault();
-            jQuery(this).parent().siblings().find('> .submenu').slideUp();
-            jQuery(this).parent().siblings().find('> .accordion-toggle').removeClass('active');
-            jQuery(this).toggleClass('active').next('.submenu').slideToggle();
 
-            // Change arrow direction
-            jQuery(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+    jQuery(document).ready(function () {
+        jQuery('.accordion-toggle i').click(function (e) {
+            e.preventDefault();
+            let icon = jQuery(this);
+            let accordionToggle = icon.closest('.accordion-toggle');
+
+            accordionToggle.parent().siblings().find('> .submenu').slideUp();
+            accordionToggle.parent().siblings().find('> .accordion-toggle').removeClass('active');
+            icon.toggleClass('fa-angle-down fa-angle-up');
+            accordionToggle.toggleClass('active').next('.submenu').slideToggle();
         });
 
         // Close submenus by default
@@ -53,9 +86,17 @@
                 jQuery(this).parent().addClass('current-menu-item');
                 console.log(jQuery(this).closest('.submenu').prev());
                 jQuery(this).closest('.submenu').prev().find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+
+                // Open all parent submenus
+                jQuery(this).parents('.submenu').each(function () {
+                    jQuery(this).show();
+                    jQuery(this).prev().find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+                    jQuery(this).prev().addClass('active');
+                });
             }
         });
     });
+
 </script>
 
 <style>
@@ -89,16 +130,16 @@
         background-color: #f4f4f4;
     }
 
-    .accordion li a .angle {
+    .accordion li a .fa-angle-up {
         position: absolute;
         top: 50%;
         right: 10px;
-        transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-50%) rotate(0deg);
         width: 15px;
         height: 15px;
     }
 
-    .accordion li a.active .angle {
+    .accordion li a.active .fa-angle-down {
         transform: translateY(-50%) rotate(0deg);
     }
 
@@ -119,7 +160,7 @@
         padding-left: 40px;
         color: gray;
         font-size: 90%;
-     }
+    }
 
     .accordion li:last-of-type {
         border-bottom: 0 solid #DBDBDB;
@@ -182,4 +223,5 @@
     .accordion li ul li {
         border-bottom: 1px solid #e3e3e3;
     }
+
 </style>
