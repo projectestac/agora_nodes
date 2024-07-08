@@ -2768,3 +2768,23 @@ add_action('admin_menu', function () {
     );
 
 });
+
+// Gutenberg: Change default configuration.
+add_filter('block_editor_settings_all', function ($settings) {
+
+    // Disable the Openverse Media Category.
+    $settings['enableOpenverseMediaCategory'] = false;
+
+    // Don't create tabs in the block inspector.
+    $settings['blockInspectorTabs'] = ['default' => false];
+
+    return $settings;
+
+});
+
+// Gutenberg: Disable the block directory (a new way for block editor users to discover, test and
+//            install new blocks on their website).
+remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets');
+
+// Gutenberg: Disable the remote block patterns. This reduces drastically the number block patterns.
+//add_filter('should_load_remote_block_patterns', '__return_false');
