@@ -2295,28 +2295,42 @@ function register_image_in_media_library(): array {
 function initialize_palettes(): void {
 
     $default_palettes = get_default_palettes();
-    $palettes = get_option('astra-color-palettes');
+    $astra_color_palettes = get_option('astra-color-palettes');
+    $palettes = [];
 
-    if (!$palettes || !isset($palettes['palettes'])) {
+    if (empty($astra_color_palettes) || !isset($astra_color_palettes['palettes'])) {
 
         $default_palettes['currentPalette'] = get_reactor_palette();
         $palettes = $default_palettes;
 
         $astra_settings = get_option('astra-settings');
-        $astra_settings['global-color-palette']['palette'] = $palettes['palettes'][$default_palettes['currentPalette']];
-        update_option('astra-settings', $astra_settings);
+
+        if (is_array($astra_settings)) {
+            $astra_settings['global-color-palette']['palette'] = $palettes['palettes'][$default_palettes['currentPalette']];
+            update_option('astra-settings', $astra_settings);
+        } else {
+            add_option('astra-settings', [
+                    'global-color-palette' => [
+                            'palette' => $palettes['palettes'][$default_palettes['currentPalette']]
+                    ]
+            ]);
+        }
 
     } else {
 
         foreach ($default_palettes['palettes'] as $key => $value) {
-            if (!array_key_exists($key, $palettes['palettes'])) {
+            if (!array_key_exists($key, $astra_color_palettes['palettes'])) {
                 $palettes['palettes'][$key] = $value;
             }
         }
 
     }
 
-    update_option('astra-color-palettes', $palettes);
+    if ($astra_color_palettes !== false) {
+        update_option('astra-color-palettes', $palettes);
+    } else {
+        add_option('astra-color-palettes', $palettes);
+    }
 
 }
 
@@ -2667,6 +2681,7 @@ function get_default_palettes(): array {
 function initialize_astra_settings(): void {
 
     $astra_settings = get_option('astra-settings', false);
+    $astra_settings_db = $astra_settings;
 
     if (false === $astra_settings || !is_array($astra_settings)) {
         $astra_settings = get_default_astra_settings();
@@ -2679,7 +2694,11 @@ function initialize_astra_settings(): void {
         }
     }
 
-    update_option('astra-settings', $astra_settings);
+    if ($astra_settings_db) {
+        update_option('astra-settings', $astra_settings);
+    } else {
+        add_option('astra-settings', $astra_settings);
+    }
 
 }
 
