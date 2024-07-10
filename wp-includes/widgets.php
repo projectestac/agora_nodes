@@ -1412,11 +1412,6 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 	// Map locations with the same slug.
 	$existing_sidebars = array_keys( $existing_sidebars_widgets );
 
-    // XTEC ************ AFEGIT - Add filter to configure new sidebars in theme switch.
-    // 2024.06.04 @aginard
-    $existing_sidebars = apply_filters('nodes_switch_theme_add_sidebars', $existing_sidebars);
-    // ************ FI
-
 	foreach ( $wp_registered_sidebars as $sidebar => $name ) {
 		if ( in_array( $sidebar, $existing_sidebars, true ) ) {
 			$new_sidebars_widgets[ $sidebar ] = $existing_sidebars_widgets[ $sidebar ];
@@ -1426,12 +1421,6 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 		}
 	}
 
-    // XTEC ************ AFEGIT - Add filter to configure new sidebars in theme switch.
-    // 2024.06.04 @aginard
-    [$new_sidebars_widgets, $existing_sidebars_widgets] =
-        apply_filters('nodes_switch_theme_add_sidebars_widgets', $new_sidebars_widgets, $existing_sidebars_widgets);
-    // ************ FI
-
 	// If there are more sidebars, try to map them.
 	if ( ! empty( $existing_sidebars_widgets ) ) {
 
@@ -1440,10 +1429,32 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 		 * from within the same group, make an educated guess and map it.
 		 */
 		$common_slug_groups = array(
+
+            // XTEC ************ MODIFICAT - Set the relationship between the old and new sidebars.
+            // 2024.07.10 @aginard
+            /*
+             * Relationship between widgets from the Nodes 1 sidebars and the Nodes 2 sidebars:
+             *  - categoria (Nodes 1) => categories (Nodes 2)
+             *  - sidebar (Nodes 1) => sidebar-1 (Nodes 2)
+             *  - sidebar-2 (Nodes 1) => sidebar-1 (Nodes 2)
+             *  - sidebar-frontpage (Nodes 1) => sidebar-frontpage (Nodes 2)
+             *  - sidebar-frontpage-2 (Nodes 1) => sidebar-frontpage (Nodes 2)
+             *  - sidebar-footer (Nodes 1) => footer-widget-1 (Nodes 2)
+             *  - sidebar-footer (Nodes 1) => footer-widget-2 (Nodes 2)
+             */
+            array( 'sidebar', 'sidebar-1', 'sidebar-2' ),
+            array( 'categoria', 'categories' ),
+            array( 'sidebar-frontpage', 'sidebar-frontpage-2' ),
+            array( 'sidebar-footer', 'footer-widget-1', 'footer-widget-2' ),
+            // ************ ORIGINAL
+            /*
 			array( 'sidebar', 'primary', 'main', 'right' ),
 			array( 'second', 'left' ),
 			array( 'sidebar-2', 'footer', 'bottom' ),
 			array( 'header', 'top' ),
+            */
+            // ************ FI
+
 		);
 
 		// Go through each group...
@@ -1456,7 +1467,16 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 				foreach ( $wp_registered_sidebars as $new_sidebar => $args ) {
 
 					// ...actually match!
+
+                    // XTEC ************ MODIFICAT - Change the concept "similar" by "equal" when comparing widget sidebars.
+                    // 2024.07.10 @aginard
+                    if ($slug !== $new_sidebar) {
+                    // ************ ORIGINAL
+                    /*
 					if ( false === stripos( $new_sidebar, $slug ) && false === stripos( $slug, $new_sidebar ) ) {
+                    */
+                    // ************ FI
+
 						continue;
 					}
 
@@ -1467,7 +1487,16 @@ function wp_map_sidebars_widgets( $existing_sidebars_widgets ) {
 						foreach ( $slug_group as $slug ) {
 
 							// ... have a match as well.
+
+                            // XTEC ************ MODIFICAT - Change the concept "similar" by "equal" when comparing widget sidebars.
+                            // 2024.07.10 @aginard
+                            if ($sidebar !== $slug) {
+                            // ************ ORIGINAL
+                            /*
 							if ( false === stripos( $sidebar, $slug ) && false === stripos( $slug, $sidebar ) ) {
+                            */
+                            // ************ FI
+
 								continue;
 							}
 
