@@ -2668,18 +2668,6 @@ add_filter('get_the_archive_description', function ($description) {
 });
 
 /**
- * Move WP Telegram main menu option to an option in Options | General.
- *
- * @return void
- */
-add_action('admin_menu', function() {
-
-    remove_menu_page('wptelegram');
-    add_submenu_page('options-general.php', __('WP Telegram', 'wptelegram'), __('WP Telegram', 'wptelegram'), 'manage_options', 'wptelegram');
-
-}, 99);
-
-/**
  * Force the configuration of the front page to use always a page, so the option of using the
  * latest posts is disallowed.
  *
@@ -2732,3 +2720,134 @@ remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_
 
 // Gutenberg: Disable the remote block patterns. This reduces drastically the number block patterns.
 //add_filter('should_load_remote_block_patterns', '__return_false');
+
+/**
+ * Static page to display some plugin's important links
+ *
+ * @author J. Alejandro Escobar
+ */
+add_action('admin_menu', 'plugin_links');
+add_action('admin_menu', 'remove_plugin_menus', 999);
+
+function plugin_links(): void {
+
+    include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+    add_menu_page(
+        __('Plugins'),
+        __('Plugins'),
+        'manage_options',
+        'xtec-plugins-options',
+        'plugin_options_page',
+        '',
+        65
+    );
+
+}
+
+function plugin_options_page(): void {
+
+    $plugins = [
+        [
+            'title' => 'H5P',
+            'description' => 'Permet inserir contingut interactiu atractiu.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/h5p-integrat/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=h5p_settings',
+                'Llista de H5P creats' => 'options-general.php?page=h5p',
+                'Resultats' => 'options-general.php?page=h5p_results',
+                'Afegeix nou' => 'options-general.php?page=h5p_new',
+            ],
+            'plugin_file' => 'h5p/h5p.php',
+        ],
+        [
+            'title' => 'WP Telegram',
+            'description' => 'Aquesta extensió permet enviar publicacions a Telegram quan es publica un article o pàgina nova.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/canal-de-telegram/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=wptelegram',
+            ],
+            'plugin_file' => 'wordpress-telegram/wptelegram.php',
+        ],
+        [
+            'title' => 'Gtranslate',
+            'description' => 'Permet incorporar un selector d\'idioma per fer la traducció automàtica del web a una gran quantitat d\'idiomes.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/g-translate/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=gtranslate_options',
+            ],
+            'plugin_file' => 'gtranslate/gtranslate.php',
+        ],
+        [
+            'title' => 'Getwid',
+            'description' => 'Permet configurar blocs extra com Instagram, que podeu inserir a pàgines i articles.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/editor-gutenberg/bloc-instagram/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=getwid',
+            ],
+            'plugin_file' => 'getwid/getwid.php',
+        ],
+        [
+            'title' => 'WP Social Login',
+            'description' => 'Permet habilitar l\'accés dels usuaris mitjançant Google o Moodle. També permet restringir els accessos.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/wp-social-login/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=wordpress-social-login',
+            ],
+            'plugin_file' => 'wordpress-social-login/wp-social-login.php',
+        ],
+        [
+            'title' => 'AddToAny',
+            'description' => 'Afegeix botons als articles i pàgines per facilitar la compartició dels continguts a les xarxes socials.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/add-to-any/',
+            'links' => [
+                'Configuració' => 'options-general.php?page=addtoany',
+            ],
+            'plugin_file' => 'add-to-any/add-to-any.php',
+        ],
+    ];
+
+    echo '<div class="wrap" style="display:flex; flex-wrap:wrap;">';
+
+    foreach ($plugins as $plugin) {
+        if (is_plugin_active($plugin['plugin_file'])) {
+            echo '<div style="width: 250px; height: auto; min-height: 200px; padding: 15px; margin: 10px; box-sizing: border-box; border: 1px solid #dddddd; border-radius: 5px;">';
+            echo '<h3 style="height: 25px;">' . esc_html($plugin['title']) . '</h3>';
+            echo '<p style="margin-bottom: 20px;">' . esc_html($plugin['description']) . '</p>';
+            echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url($plugin['more_info']) . '">' . esc_html(__('More information', 'agora-functions')) . '</a></p>';
+            foreach ($plugin['links'] as $link_text => $link_url) {
+                echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url(admin_url($link_url)) . '">' . esc_html($link_text) . '</a></p>';
+            }
+            echo '</div>';
+        }
+    }
+
+    echo '</div>';
+
+}
+
+function remove_plugin_menus(): void {
+
+    // Remove H5P options.
+    remove_submenu_page('options-general.php', 'h5p');
+    remove_submenu_page('options-general.php', 'h5p_settings');
+    remove_submenu_page('options-general.php', 'h5p_new');
+    remove_submenu_page('options-general.php', 'h5p_libraries');
+    remove_submenu_page('options-general.php', 'h5p_results');
+
+    // Remove WP Telegram menu.
+    remove_menu_page('wptelegram');
+
+    // Remove Gtranslate option.
+    remove_submenu_page('options-general.php', 'gtranslate_options');
+
+    // Remove Getwid option.
+    remove_submenu_page('options-general.php', 'getwid');
+
+    // Remove WP Social Login option.
+    remove_submenu_page('options-general.php', 'wordpress-social-login');
+
+    // Remove AddToAny option.
+    remove_submenu_page('options-general.php', 'addtoany');
+
+}
