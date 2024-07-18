@@ -14,3 +14,8 @@ img#logo-xtec {
 .interface-interface-skeleton__body {
     padding: 0 25px 0 25px;
 }
+
+input,
+textarea {
+    border-radius: 5px !important;
+}
