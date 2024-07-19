@@ -489,19 +489,6 @@ h2:has(span#blog-description) {
     left: -20px;
 }
 
-.wp-block-getwid-content-slider.has-arrows-inside .slick-next:before,
-.wp-block-getwid-content-slider.has-arrows-inside .slick-prev:before,
-.wp-block-getwid-images-slider.has-arrows-inside .slick-next:before,
-.wp-block-getwid-images-slider.has-arrows-inside .slick-prev:before,
-.wp-block-getwid-media-text-slider.has-arrows-inside .slick-next:before,
-.wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev:before,
-.wp-block-getwid-post-carousel.has-arrows-inside .slick-next:before,
-.wp-block-getwid-post-carousel.has-arrows-inside .slick-prev:before,
-.wp-block-getwid-post-slider.has-arrows-inside .slick-next:before,
-.wp-block-getwid-post-slider.has-arrows-inside .slick-prev:before {
-    color: #666;
-}
-
 .ast-breadcrumbs {
     margin-left: 16px;
     margin-right: 16px;
@@ -630,7 +617,7 @@ div.ast-breadcrumbs-wrapper {
     background-color: var(--ast-global-color-1);
     border-radius: 25px;
     font-size: 30px;
-    padding: 8px 14px;
+    padding: 8px 18px;
     color: white !important;
     text-align: center;
     text-shadow: none;
@@ -642,7 +629,7 @@ div.ast-breadcrumbs-wrapper {
     background-color: var(--ast-global-color-1);
     border-radius: 25px;
     font-size: 30px;
-    padding: 8px 14px;
+    padding: 8px 18px;
     color: white !important;
     text-align: center;
     text-shadow: none;
