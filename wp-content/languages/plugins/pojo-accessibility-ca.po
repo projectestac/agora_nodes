@@ -2,46 +2,30 @@
 # This file is distributed under the same license as the Plugins - One Click Accessibility - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - One Click Accessibility - Stable (latest "
-"release)\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2024-06-27 19:28+0200\n"
-"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
-"Language-Team: \n"
-"Language: ca\n"
+"PO-Revision-Date: 2024-07-09 07:48:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - One Click Accessibility - Stable (latest release)\n"
 
 #: includes/pojo-a11y-settings.php:310
 msgid "Skip to Content Element ID"
 msgstr "Omet a l'ID de l'element de contingut"
 
 #. Author URI of the plugin
-msgid ""
-"https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=author-"
-"uri&utm_medium=wp-dash"
-msgstr ""
-"https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=author-"
-"uri&utm_medium=wp-dash"
+msgid "https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+msgstr "https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
 
 #. Description of the plugin
-msgid ""
-"The One Click Accessibility toolbar is the fastest plugin to help you make "
-"your WordPress website more accessible."
-msgstr ""
-"La barra d'eines d'accessibilitat d'un sol clic és l'extensió més ràpida per "
-"ajudar-vos a fer el vostre lloc web WordPress més accessible."
+msgid "The One Click Accessibility toolbar is the fastest plugin to help you make your WordPress website more accessible."
+msgstr "La barra d'eines d'accessibilitat d'un sol clic és l'extensió més ràpida per ajudar-vos a fer el vostre lloc web WordPress més accessible."
 
 #. Plugin URI of the plugin
-msgid ""
-"https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=plugin-"
-"uri&utm_medium=wp-dash"
-msgstr ""
-"https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=plugin-"
-"uri&utm_medium=wp-dash"
+msgid "https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+msgstr "https://wpaccessibility.io/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
 
 #: includes/pojo-a11y-settings.php:591
 msgid "Customize Toolbar"
@@ -74,9 +58,7 @@ msgstr "Definiu quant de temps es recordaran els paràmetres de la barra d'eines
 
 #: includes/pojo-a11y-settings.php:332
 msgid "This option will add <code>role=\"link\"</code> to all links on the page."
-msgstr ""
-"Aquesta opció afegirà <code>role=\"link\"</code> a tots els enllaços de la "
-"pàgina."
+msgstr "Aquesta opció afegirà <code>role=\"link\"</code> a tots els enllaços de la pàgina."
 
 #: includes/pojo-a11y-settings.php:300
 msgid "Add skip to content link when using keyboard."
@@ -88,17 +70,11 @@ msgstr "Barra d'eines d'accessibilitat"
 
 #: includes/pojo-a11y-customizer.php:164
 msgid "Additional Toolbar settings can be configured at the %s page."
-msgstr ""
-"La configuració addicional de la barra d'eines es pot configurar a la pàgina "
-"%s."
+msgstr "La configuració addicional de la barra d'eines es pot configurar a la pàgina %s."
 
 #: includes/pojo-a11y-customizer.php:163
-msgid ""
-"Use the control below to customize the appearance and layout of the "
-"Accessibility Toolbar"
-msgstr ""
-"Utilitzeu el control de sota per personalitzar l'aparença i la disposició de "
-"la barra d'eines d'accessibilitat"
+msgid "Use the control below to customize the appearance and layout of the Accessibility Toolbar"
+msgstr "Utilitzeu el control de sota per personalitzar l'aparença i la disposició de la barra d'eines d'accessibilitat"
 
 #: includes/pojo-a11y-customizer.php:154
 msgid "Set Focus outline color"
@@ -130,8 +106,7 @@ msgstr "Fons actiu"
 
 #: includes/pojo-a11y-customizer.php:88
 msgid "Set Toolbar toggle button icon color"
-msgstr ""
-"Estableix el color de la icona del botó de commutació de la barra d'eines"
+msgstr "Estableix el color de la icona del botó de commutació de la barra d'eines"
 
 #: includes/pojo-a11y-customizer.php:78
 msgid "Set Toolbar toggle button background color"
@@ -163,8 +138,7 @@ msgstr "Desplaçament des de dalt (mòbil)"
 
 #: includes/pojo-a11y-customizer.php:42
 msgid "Set Toolbar top offset (Desktop)"
-msgstr ""
-"Estableix el desplaçament de la part superior de la barra d'eines (escriptori)"
+msgstr "Estableix el desplaçament de la part superior de la barra d'eines (escriptori)"
 
 #: includes/pojo-a11y-customizer.php:39
 msgid "Offset from Top (Desktop)"
@@ -203,11 +177,8 @@ msgstr "Accessibilitat d'un sol clic"
 
 #. translators: 1: One Click Accessibility, 2: Link to plugin review
 #: includes/pojo-a11y-admin-ui.php:156
-msgid ""
-"Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
-msgstr ""
-"Gaudiu de %1$s? Si us plau, deixeu-nos una valoració %2$s. Agraïm molt el "
-"vostre suport!"
+msgid "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
+msgstr "Gaudiu de %1$s? Si us plau, deixeu-nos una valoració %2$s. Agraïm molt el vostre suport!"
 
 #: includes/pojo-a11y-admin-ui.php:131
 msgid "Install Now For Free!"
@@ -218,13 +189,8 @@ msgid "Learn more about Elementor"
 msgstr "Més informació sobre Elementor"
 
 #: includes/pojo-a11y-admin-ui.php:126
-msgid ""
-"Create high-end, pixel perfect websites at record speeds. Any theme, any page, "
-"any design. The most advanced frontend drag & drop page builder."
-msgstr ""
-"Crea llocs web d'alta gamma i perfectes per a píxels a velocitats rècord. "
-"Qualsevol tema, qualsevol pàgina, qualsevol disseny. El gestor de pàgines "
-"arrossegar i deixar anar més avançat del frontal."
+msgid "Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design. The most advanced frontend drag & drop page builder."
+msgstr "Crea llocs web d'alta gamma i perfectes per a píxels a velocitats rècord. Qualsevol tema, qualsevol pàgina, qualsevol disseny. El gestor de pàgines arrossegar i deixar anar més avançat del frontal."
 
 #: includes/pojo-a11y-admin-ui.php:125
 msgid "Do You Like One Click Accessibility? You'll Love Elementor!"
@@ -267,12 +233,8 @@ msgid "Remember user for"
 msgstr "Recorda l'usuari per"
 
 #: includes/pojo-a11y-settings.php:343
-msgid ""
-"Consistent accessibility throughout your site visit. Site remembers you and "
-"stays accessible."
-msgstr ""
-"Accessibilitat coherent durant tota la visita al lloc. El lloc us recordarà i "
-"es mantindrà accessible."
+msgid "Consistent accessibility throughout your site visit. Site remembers you and stays accessible."
+msgstr "Accessibilitat coherent durant tota la visita al lloc. El lloc us recordarà i es mantindrà accessible."
 
 #: includes/pojo-a11y-settings.php:342
 msgid "Sitewide Accessibility"
@@ -287,12 +249,8 @@ msgid "Accessibility Settings"
 msgstr "Configuració d'accessibilitat"
 
 #: includes/pojo-a11y-settings.php:274
-msgid ""
-"For style settings of accessibility tools go to > Customize > <a "
-"href=\"%s\">Accessibility</a>."
-msgstr ""
-"Per a la configuració de l'estil de les eines d'accessibilitat, aneu a "
-"Personalitza > <a href=\"%s\">Accessibilitat</a>."
+msgid "For style settings of accessibility tools go to > Customize > <a href=\"%s\">Accessibility</a>."
+msgstr "Per a la configuració de l'estil de les eines d'accessibilitat, aneu a Personalitza > <a href=\"%s\">Accessibilitat</a>."
 
 #: includes/pojo-a11y-settings.php:273
 msgid "Style Settings"
@@ -307,11 +265,8 @@ msgid "Add landmark roles to all links"
 msgstr "Afegeix rols de referència a tots els enllaços"
 
 #: includes/pojo-a11y-settings.php:320
-msgid ""
-"This option will reset all your target links to open in the same window or tab."
-msgstr ""
-"Aquesta opció restablirà tots els enllaços de destinació per a obrir-los a la "
-"mateixa finestra o pestanya."
+msgid "This option will reset all your target links to open in the same window or tab."
+msgstr "Aquesta opció restablirà tots els enllaços de destinació per a obrir-los a la mateixa finestra o pestanya."
 
 #: includes/pojo-a11y-settings.php:318
 msgid "Remove target attribute from links"
@@ -335,9 +290,7 @@ msgstr "Configuració de la barra d'eines"
 
 #: includes/pojo-a11y-settings.php:257
 msgid "Link for feedback page in your website. Leave blank to disable."
-msgstr ""
-"Enllaç per a la pàgina de comentaris del vostre lloc web. Deixeu-ho en blanc "
-"per a inhabilitar-ho."
+msgstr "Enllaç per a la pàgina de comentaris del vostre lloc web. Deixeu-ho en blanc per a inhabilitar-ho."
 
 #: includes/pojo-a11y-settings.php:254
 msgid "Feedback Link"
@@ -353,9 +306,7 @@ msgstr "Títol de la retroacció"
 
 #: includes/pojo-a11y-settings.php:239
 msgid "Link for help page in your website. Leave blank to disable."
-msgstr ""
-"Enllaç per a la pàgina d'ajuda del vostre lloc web. Deixeu-ho en blanc per a "
-"inhabilitar-ho."
+msgstr "Enllaç per a la pàgina d'ajuda del vostre lloc web. Deixeu-ho en blanc per a inhabilitar-ho."
 
 #: includes/pojo-a11y-settings.php:236
 msgid "Help Link"
@@ -371,9 +322,7 @@ msgstr "Títol de l'ajuda"
 
 #: includes/pojo-a11y-settings.php:221
 msgid "Link for sitemap page in your website. Leave blank to disable."
-msgstr ""
-"Enllaç per a la pàgina del mapa del lloc web. Deixeu-ho en blanc per a "
-"inhabilitar-ho."
+msgstr "Enllaç per a la pàgina del mapa del lloc web. Deixeu-ho en blanc per a inhabilitar-ho."
 
 #: includes/pojo-a11y-settings.php:218
 msgid "Sitemap Link"
