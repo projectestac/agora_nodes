@@ -307,6 +307,7 @@ div.ast-breadcrumbs-wrapper {
     margin: 0 37px 30px;
     min-height: 350px !important;
     height: auto;
+    background-color: #ffffff;
 }
 
 #front-page-notice-container a {
@@ -325,19 +326,23 @@ div.ast-breadcrumbs-wrapper {
     height: 350px;
     width: 100%;
     object-fit: cover;
+    border-radius: 30px;
+}
+
+.front-page-notice-image-text #front-page-notice-image {
     border-radius: 30px 0 0 30px;
 }
 
 #front-page-notice-text {
-    background-color: #ffffff;
-    border-radius: 30px;
     flex: 2;
-    flex-direction: column;
     text-align: justify;
-    justify-content: center;
     min-height: 300px;
-    padding: 50px;
-    margin-left: 50px;
+    max-height: 350px;
+    padding: 40px;
+    margin-left: 0;
+    align-content: center;
+    border-radius: 0 30px 30px 0;
+    overflow: auto;
 }
 
 #front-page-notice-pre-title {
@@ -814,13 +819,6 @@ body.archive .ast-archive-description {
     text-align: left;
 }
 
-#front-page-notice-text {
-    padding: 40px;
-    margin-left: 0;
-    justify-content: center;
-    align-content: center;
-}
-
 .home-page .addtoany_share_save_container.addtoany_content.addtoany_content_bottom {
     display: none
 }
@@ -922,10 +920,6 @@ div.sidebar-main li:hover {
         display: flex;
         height: auto !important;
         margin: 16px 0 16px 16px;
-        border-radius: 30px;
-    }
-
-    #front-page-notice-image {
         border-radius: 30px;
     }
 
@@ -1211,14 +1205,6 @@ ul.bbp-topics, .bbp-topic-form {
 
 .slick-dots li button:before {
     font-size: 15px;
-}
-
-#front-page-notice-image {
-    height: -webkit-fill-available;
-}
-
-#front-page-notice-text {
-    border-radius: 0 30px 30px 0;
 }
 
 div.sidebar-main {
