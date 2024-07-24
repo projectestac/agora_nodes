@@ -1808,7 +1808,7 @@ function nodes_remove_theme_support(): void {
     remove_theme_support('widgets-block-editor');
 }
 
-// Check if plugin is inactive & not logged in
+// Admin menu: Add Buddypress custom login link if plugin is active and not logged in.
 add_action('admin_bar_menu', function ($wp_admin_bar) {
     if (!is_plugin_active('buddypress/bp-loader.php') && !is_user_logged_in()) {
         $wp_admin_bar->add_node([
@@ -1826,6 +1826,8 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         </style>';
     }
 });
+
+/* Theme migration stuff begins here */
 
 /**
  * Do all the necessary actions when there is a theme change. Ensure that the
@@ -1846,6 +1848,13 @@ add_action('switch_theme', function ($new_theme) {
             remove_action('welcome_panel', 'wp_welcome_panel');
         }, 1);
     }
+
+    // When action switch_theme is triggered, the function get_user_by() is not available.
+    if (!function_exists('get_user_by')) {
+        include_once ABSPATH . 'wp-includes/pluggable.php';
+    }
+
+    update_admin_colors($new_theme);
 
 }, 10, 1);
 
@@ -2641,6 +2650,33 @@ function get_default_astra_settings(): array {
     );
 
 }
+
+/**
+ * Change the color scheme of all users on a theme change. Color scheme is different for xtecadmin
+ * and the other users. The general case is having a grey theme for Astra and black for the others.
+ *
+ * @param string $new_theme
+ * @return void
+ */
+function update_admin_colors(string $new_theme): void {
+
+    $color_scheme_users = ($new_theme === 'Astra') ? 'light' : 'fresh';
+    $color_scheme_super_admin = 'sunrise';
+
+    $users = get_users();
+
+    foreach ($users as $user) {
+        var_dump($user->data->user_login);
+        if ($user->data->user_login === get_xtecadmin_username()) {
+            update_user_meta($user->ID, 'admin_color', $color_scheme_super_admin);
+        } else {
+            update_user_meta($user->ID, 'admin_color', $color_scheme_users);
+        }
+    }
+
+}
+
+/* Theme migration stuff ends here */
 
 /**
  * Add SVG support to WordPress Media
