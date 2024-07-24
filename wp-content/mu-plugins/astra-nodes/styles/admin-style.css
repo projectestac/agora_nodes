@@ -11,8 +11,8 @@ img#logo-xtec {
 }
 
 /* Editor Gutenberg */
-.interface-interface-skeleton__body {
-    padding: 0 25px 0 25px;
+.interface-interface-skeleton__content {
+    margin: 0 5em 0 5em;
 }
 
 input,
