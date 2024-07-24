@@ -2886,4 +2886,8 @@ function remove_plugin_menus(): void {
     // Remove AddToAny option.
     remove_submenu_page('options-general.php', 'addtoany');
 
+    // Remove One Click Accessibility option.
+    if (!is_xtec_super_admin()) {
+        remove_menu_page('accessibility-settings');
+    }
 }
