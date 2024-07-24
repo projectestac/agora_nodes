@@ -437,11 +437,24 @@ function astra_nodes_contact_information(): string {
     // Contact is a mailto link if contact_page is empty.
     $contact_page_url = $contact_page !== '' ? $contact_page : 'mailto:' . $email_address;
 
+    // If the school code seems to be real, show it. Otherwise, don't show anything.
+    $school_code = SCHOOL_CODE;
+    $prefixes = ['08', '17', '25', '43'];
+    $begins_with = static function ($school_code, $prefixes) {
+        foreach ($prefixes as $prefix) {
+            if (str_starts_with($school_code, $prefix)) {
+                return true;
+            }
+        }
+        return false;
+    };
+    $code = $begins_with($school_code, $prefixes) ? SCHOOL_CODE : '';
+
     $content = '
             <div id="contact-info-1-wrapper">
                 <div id="postal-address">' . $postal_address . '</div>
                 <div id="postal-code-city">' . $postal_code_city . '</div>
-                <div id="school-code">' . SCHOOL_CODE . '</div>
+                <div id="school-code">' . $code . '</div>
                 <div id="email-address-wrapper">
                     <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
                 </div>
