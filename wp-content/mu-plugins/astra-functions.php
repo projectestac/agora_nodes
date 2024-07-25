@@ -950,10 +950,12 @@ add_action('init', function () {
 add_filter('login_message', function () {
 
     global $astra_nodes_options;
+    $logo_id = $astra_nodes_options['custom_logo'];
+    $logo_url = wp_get_attachment_url($logo_id);
 
     echo '
         <div id="login_logo">
-            <img src="' . $astra_nodes_options['custom_logo'] . '">
+            <img src="' . $logo_url . '">
             <h1>' . get_option('blogname') . '</h1>
         </div>
         ';
