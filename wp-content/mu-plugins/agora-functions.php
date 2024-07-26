@@ -2666,7 +2666,6 @@ function update_admin_colors(string $new_theme): void {
     $users = get_users();
 
     foreach ($users as $user) {
-        var_dump($user->data->user_login);
         if ($user->data->user_login === get_xtecadmin_username()) {
             update_user_meta($user->ID, 'admin_color', $color_scheme_super_admin);
         } else {
