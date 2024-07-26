@@ -19,3 +19,18 @@ input,
 textarea {
     border-radius: 5px !important;
 }
+
+.astra-nodes-layout-container {
+    padding-bottom: 0 !important;
+}
+
+.astra-nodes-layout-container .astra-nodes-customizer-layout-images {
+    padding: 10px 0;
+}
+
+.astra-nodes-layout-container .astra-nodes-layout-item .layout-title {
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
