@@ -1475,6 +1475,10 @@ div#buddypress {
     margin-top: 0 !important;
 }
 
+.ast-page-builder-template article header.entry-header {
+    margin-top: 0 !important;
+}
+
 .post-type-archive-bp_doc .page-title {
     margin-bottom: 0.5em !important;
 }
