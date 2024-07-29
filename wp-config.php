@@ -118,6 +118,9 @@ const CONCATENATE_SCRIPTS = true;
 const COMPRESS_SCRIPTS = true;
 const COMPRESS_CSS = true;
 
+const WP_MEMORY_LIMIT = '128M';
+const WP_MAX_MEMORY_LIMIT = '256M';
+
 // Param for Astra templates
 const FS_METHOD = 'direct';
 
