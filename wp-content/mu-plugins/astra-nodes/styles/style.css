@@ -1449,11 +1449,6 @@ img#logo-xtec {
     font-family: Arial, sans-serif !important;
 }
 
-.simcal-default-calendar-grid .simcal-today.simcal-day > div {
-    border: 2px solid var(--ast-global-color-0) !important;
-    border-radius: 5px;
-}
-
 .post-type-archive-bp_doc .ast-blog-layout-4-grid .ast-article-post {
     width: 100% !important;
     padding-right: 0;
@@ -1508,14 +1503,29 @@ div#buddypress {
     margin-top: 15px !important;
 }
 
+.simcal-default-calendar-grid .simcal-today.simcal-day > div {
+    border: 2px solid var(--ast-global-color-0) !important;
+    border-radius: 5px;
+}
+
 .simcal-today span.simcal-day-label.simcal-day-number {
     background-color: var(--ast-global-color-0) !important;
     font-weight: 600;
 }
 
 .simcal-day-has-events {
-    background-color: var(--ast-global-color-0) !important;
+    background-color: inherit !important;
     font-weight: 600;
+}
+
+.simcal-day-has-events > div > span.simcal-day-number {
+    color: #000000 !important;
+    background-color: #0000001a !important;
+    font-weight: 200;
+}
+
+.simcal-day-has-events > div > span > b {
+    color: var(--ast-global-color-0) !important;
 }
 
 .simcal-default-calendar-grid .simcal-day-has-events.simcal-day > div {
