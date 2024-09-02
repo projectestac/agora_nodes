@@ -2937,3 +2937,69 @@ add_filter('logout_redirect', function () {
     return get_home_url();
 });
 // End of fix for CVE-2024-38474.
+
+add_filter('admin_init', function () {
+
+    register_setting('general', 'notify_admin_on_pending_submission', ['type' => 'boolean']);
+
+    // Add a new section to a settings page.
+    add_settings_section(
+        'notification_settings_section',
+        __('Notification Settings', 'astra-nodes'),
+        static function () { },
+        'general'
+    );
+
+    // Add a new field to the previous section.
+    add_settings_field(
+        'notify_admin_on_pending_submission',
+        '<label for="notify_admin_on_pending_submission">' . __('Notifies administrators about post creation pending validation', 'astra-nodes') . '</label>',
+        static function () {
+            $value = (bool)get_option('notify_admin_on_pending_submission', 1);
+            $checked = $value ? 'checked="checked"' : '';
+            echo '<input type="checkbox" id="notify_admin_on_pending_submission" name="notify_admin_on_pending_submission" ' . $checked . ' />';
+        },
+        'general',
+        'notification_settings_section'
+    );
+
+});
+
+add_action('transition_post_status', function ($new_status, $old_status, $post) {
+
+    // If the post type is 'calendar_booking', don't send email.
+    if ($post->post_type === 'calendar_booking') {
+        return;
+    }
+
+    if ($new_status === 'pending' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
+
+        // Notify Admin that Contributor has written a post
+        $admins = get_option('admin_email');
+        $edit_link = get_edit_post_link($post->ID, '');
+        $preview_link = get_permalink($post->ID) . '&preview=true';
+        $username = get_userdata($post->post_author);
+        $subject = 'Nou article pendent: "' . $post->post_title . '"';
+
+        $message = 'Un nou article per revisar.';
+        $message .= "\r\n\r\n";
+        $message .= "Autor/a: $username->user_login\r\n";
+        $message .= "Títol: $post->post_title";
+        $message .= "\r\n\r\n";
+        $message .= "Edita: $edit_link\r\n";
+        $message .= "Visualitza: $preview_link";
+
+        wp_mail($admins, $subject, $message);
+
+    } elseif ($old_status === 'pending' && $new_status === 'publish' && user_can($post->post_author, 'edit_posts') && !user_can($post->post_author, 'publish_posts')) {
+
+        // Notify Contributor that Admin has published their post
+        $username = get_userdata($post->post_author);
+        $url = get_permalink($post->ID);
+        $subject = 'El vostre article ha estat publicat: ' . $post->post_title;
+        $message = '"' . $post->post_title . '"' . " ha estat aprovat i publicat. \r\n\n" . $url;
+
+        wp_mail($username->user_email, $subject, $message);
+
+    }
+}, 10, 3);
