@@ -298,6 +298,19 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
 });
 
+// Customizer: Remove the button to change the theme to all users except xtecadmin.
+add_action('customize_controls_print_styles', function () {
+    if (!is_xtec_super_admin()) {
+        echo '
+            <style>
+                .change-theme {
+                    display: none !important;
+                }
+            </style>
+            ';
+    }
+});
+
 // Customizer: Remove Astra sections in customizer.
 add_action('astra_customizer_sections', function ($configurations) {
 
