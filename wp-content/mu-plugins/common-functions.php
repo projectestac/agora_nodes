@@ -16,3 +16,14 @@ function xtec_enqueue_style() {
 }
 
 add_action('wp_enqueue_scripts', 'xtec_enqueue_style');
+
+function hide_theme_button_change() {
+    if (!is_xtec_super_admin()) {
+        echo '<style>
+            .change-theme {
+                display: none !important;
+            }
+        </style>';
+    }
+}
+add_action('customize_controls_print_styles', 'hide_theme_button_change');
