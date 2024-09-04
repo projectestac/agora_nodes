@@ -2890,3 +2890,11 @@ function remove_plugin_menus(): void {
         remove_menu_page('accessibility-settings');
     }
 }
+
+// On plugin xtec-booking, remove meta boxes from the page to create a new calendar.
+add_action('do_meta_boxes', function () {
+
+    remove_meta_box('astra_settings_meta_box', 'calendar', 'side');
+    remove_meta_box('postcustom', 'calendar', 'normal');
+
+});
