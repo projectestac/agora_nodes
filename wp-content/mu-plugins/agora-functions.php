@@ -2898,3 +2898,20 @@ add_action('do_meta_boxes', function () {
     remove_meta_box('postcustom', 'calendar', 'normal');
 
 });
+
+// Fix for error caused by Apache when fixing CVE-2024-38474. In case of WordPress fix the error,
+// this code can be removed.
+add_action('admin_bar_menu', function ($wp_admin_bar) {
+    if (is_user_logged_in()) {
+        $logout_node = $wp_admin_bar->get_node('logout');
+        if ($logout_node) {
+            $logout_node->href = wp_logout_url('#');
+            $wp_admin_bar->add_node($logout_node);
+        }
+    }
+});
+
+add_filter('logout_redirect', function () {
+    return get_home_url();
+});
+// End of fix for CVE-2024-38474.
