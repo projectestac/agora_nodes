@@ -32,3 +32,8 @@ function hide_screen_options_on_calendar_create() {
     add_filter('screen_options_show_screen', '__return_false');
 }
 add_action('admin_head', 'hide_screen_options_on_calendar_create');
+
+function hide_custom_fields() {
+    remove_meta_box('postcustom', 'calendar', 'normal');
+}
+add_action('admin_menu', 'hide_custom_fields');
