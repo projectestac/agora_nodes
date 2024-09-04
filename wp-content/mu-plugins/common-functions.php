@@ -27,3 +27,8 @@ function hide_theme_button_change() {
     }
 }
 add_action('customize_controls_print_styles', 'hide_theme_button_change');
+
+function hide_screen_options_on_calendar_create() {
+    add_filter('screen_options_show_screen', '__return_false');
+}
+add_action('admin_head', 'hide_screen_options_on_calendar_create');
