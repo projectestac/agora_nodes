@@ -47,7 +47,7 @@ add_action('customize_controls_print_styles', function () {
 // Register Customizer settings.
 add_action('customize_register', 'nodes_customize_register');
 
-function nodes_customize_register($wp_customize) {
+function nodes_customize_register($wp_customize): void {
 
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Custom_Palette_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Font_Icon_Picker_Control.php';
@@ -57,6 +57,7 @@ function nodes_customize_register($wp_customize) {
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Raw_HTML_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Separator_Control.php';
     include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_Toggle_Control.php';
+    include_once WPMU_PLUGIN_DIR . '/astra-nodes/classes/WP_Customize_TinyMCE_Control.php';
 
     // Panel to group all header settings.
 
@@ -1104,13 +1105,17 @@ function nodes_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_control('front_page_notice_content', [
-        'label' => __('Content', 'astra-nodes') . ' (' . __('optional', 'astra-nodes') . ')',
-        'section' => 'astra_nodes_customizer_front_page_notice',
-        'settings' => 'astra_nodes_options[front_page_notice_content]',
-        'type' => 'textarea',
-        'priority' => 9,
-    ]);
+    $wp_customize->add_control(
+        new WP_Customize_TinyMCE_Control(
+            $wp_customize, 'front_page_notice_content', [
+                'label' => __('Content', 'astra-nodes') . ' (' . __('optional', 'astra-nodes') . ')',
+                'section' => 'astra_nodes_customizer_front_page_notice',
+                'settings' => 'astra_nodes_options[front_page_notice_content]',
+                'type' => 'textarea',
+                'priority' => 9,
+            ]
+        )
+    );
 
 
     // Front page news.
