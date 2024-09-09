@@ -308,16 +308,19 @@ add_action('astra_customizer_sections', function ($configurations) {
 
     // Remove all the sections added by Astra theme and by plugins (custom post-types) in customizer.
     return array_filter($configurations, static function ($configuration) {
-        return $configuration['name'] !== 'panel-global'
-            && $configuration['name'] !== 'section-breadcrumb'
-            && $configuration['name'] !== 'section-blog-group'
-            && $configuration['name'] !== 'section-blog'
-            && $configuration['name'] !== 'section-blog-single'
-            && $configuration['name'] !== 'section-page-dynamic-group'
-            && $configuration['name'] !== 'section-single-page'
-            && $configuration['name'] !== 'section-sidebars'
-            && $configuration['name'] !== 'ast-section-search-page'
-            && !str_starts_with($configuration['section'] ?? '', 'section-posttype-');
+        if (isset($configuration['name'])) {
+            return $configuration['name'] !== 'panel-global'
+                && $configuration['name'] !== 'section-breadcrumb'
+                && $configuration['name'] !== 'section-blog-group'
+                && $configuration['name'] !== 'section-blog'
+                && $configuration['name'] !== 'section-blog-single'
+                && $configuration['name'] !== 'section-page-dynamic-group'
+                && $configuration['name'] !== 'section-single-page'
+                && $configuration['name'] !== 'section-sidebars'
+                && $configuration['name'] !== 'ast-section-search-page'
+                && !str_starts_with($configuration['section'] ?? '', 'section-posttype-');
+        }
+        return false;
     });
 
 });
