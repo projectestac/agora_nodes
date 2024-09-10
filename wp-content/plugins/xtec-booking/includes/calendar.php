@@ -168,8 +168,8 @@ function xtec_booking_get_events( $resourceID = false ){
                         continue;
                     }
 
-					$startDateTime = mktime( $timeStart[0],$timeStart[1],0,$dateStart[1],$dateStart[0],$dateStart[2] );
-					$endDateTime = mktime( $timeEnd[0],$timeEnd[1],0,$dateEnd[1],$dateEnd[0],$dateEnd[2] );
+                    $startDateTime = mktime((int)$timeStart[0], (int)$timeStart[1], 0, (int)$dateStart[1], (int)$dateStart[0], (int)$dateStart[2]);
+                    $endDateTime = mktime((int)$timeEnd[0], (int)$timeEnd[1], 0, (int)$dateEnd[1], (int)$dateEnd[0], (int)$dateEnd[2]);
 
 					$description = strip_tags( $post->post_content );
 					if ( strlen( $description ) > 0 ){
@@ -206,7 +206,7 @@ function xtec_booking_get_events( $resourceID = false ){
 					$iteration = 0; // Set a limit to the number of iterations to avoid too-big-loops when viewing the calendar
 					while (( $startDateTime <= $endDateTime ) && ( $iteration++ < LOOP_LIMIT )) {
 
-						$startEndDateTime = mktime( $timeEnd[0],$timeEnd[1],0,$dateStart[1],$day,$dateStart[2] );
+                        $startEndDateTime = mktime((int)$timeEnd[0], (int)$timeEnd[1],0, (int)$dateStart[1], (int)$day, (int)$dateStart[2] );
 
 						$nDay = date( 'D',$startDateTime );
 						$addEvent = false;
@@ -246,7 +246,7 @@ function xtec_booking_get_events( $resourceID = false ){
 						}
 
 						$day++;
-						$startDateTime = mktime( $timeStart[0],$timeStart[1],0,$dateStart[1],$day,$dateStart[2] );
+                        $startDateTime = mktime((int)$timeStart[0], (int)$timeStart[1], 0, (int)$dateStart[1], (int)$day, (int)$dateStart[2]);
 
 					}
 				}
