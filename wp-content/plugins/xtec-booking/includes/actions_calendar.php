@@ -18,8 +18,8 @@ function check_avalailable_dates( $data,$post_id ){
 		$result = $wpdb->get_results("SELECT * FROM wp_postmeta WHERE post_id != ".$post_id." AND post_id IN (SELECT post_id FROM wp_postmeta WHERE meta_value = ".$data['_xtec-booking-resource'].") AND meta_key = '_xtec-booking-data'");
 
 		// TIMESTAMP DATES NEW BOOKING
-		$dataStart = mktime(0,0,0, substr($data['_xtec-booking-start-date'],3,2), substr($data['_xtec-booking-start-date'],0,2), substr($data['_xtec-booking-start-date'],6,4));
-		$dataFinish = mktime(0,0,0, substr($data['_xtec-booking-finish-date'],3,2), substr($data['_xtec-booking-finish-date'],0,2), substr($data['_xtec-booking-finish-date'],6,4));
+		$dataStart = mktime(0,0,0, (int)substr($data['_xtec-booking-start-date'],3,2), (int)substr($data['_xtec-booking-start-date'],0,2), (int)substr($data['_xtec-booking-start-date'],6,4));
+		$dataFinish = mktime(0,0,0, (int)substr($data['_xtec-booking-finish-date'],3,2), (int)substr($data['_xtec-booking-finish-date'],0,2), (int)substr($data['_xtec-booking-finish-date'],6,4));
 
 		foreach ($result as $key ) {
 
@@ -32,8 +32,8 @@ function check_avalailable_dates( $data,$post_id ){
 			$meta_value = unserialize($key->meta_value);
 
 			// CONVERT TO TIMESTAMP DATES OLD BOOKINGS
-			$meta_valueStart = mktime(0,0,0, substr($meta_value['_xtec-booking-start-date'],3,2), substr($meta_value['_xtec-booking-start-date'],0,2), substr($meta_value['_xtec-booking-start-date'],6,4));
-			$meta_valueFinish = mktime(0,0,0, substr($meta_value['_xtec-booking-finish-date'],3,2), substr($meta_value['_xtec-booking-finish-date'],0,2), substr($meta_value['_xtec-booking-finish-date'],6,4));
+			$meta_valueStart = mktime(0,0,0, (int)substr($meta_value['_xtec-booking-start-date'],3,2), (int)substr($meta_value['_xtec-booking-start-date'],0,2), (int)substr($meta_value['_xtec-booking-start-date'],6,4));
+			$meta_valueFinish = mktime(0,0,0, (int)substr($meta_value['_xtec-booking-finish-date'],3,2), (int)substr($meta_value['_xtec-booking-finish-date'],0,2), (int)substr($meta_value['_xtec-booking-finish-date'],6,4));
 
 			// CHECK AVAILABLE DATES
 			if ( ( $dataStart >= $meta_valueStart && $dataStart <= $meta_valueFinish ) || ( $dataFinish >= $meta_valueStart && $dataFinish <= $meta_valueFinish ) ||  ( $dataStart <= $meta_valueStart && $dataFinish >= $meta_valueFinish ) ){
