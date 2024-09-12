@@ -2891,11 +2891,15 @@ function remove_plugin_menus(): void {
     }
 }
 
-// On plugin xtec-booking, remove meta boxes from the page to create a new calendar.
+// Remove some meta boxes in the new post_type pages.
 add_action('do_meta_boxes', function () {
 
-    remove_meta_box('astra_settings_meta_box', 'calendar', 'side');
-    remove_meta_box('postcustom', 'calendar', 'normal');
+    // Remove meta box with the Astra settings on the right side of the page. The second parameter is an
+    // array with the post types where the meta box will be removed.
+    remove_meta_box('astra_settings_meta_box', ['calendar', 'nodes_incidencies', 'nodes_inventari'], 'side');
+
+    // Remove meta box with custom fields in the center of the page.
+    remove_meta_box('postcustom', ['calendar', 'nodes_incidencies', 'nodes_inventari', 'bp-email'], 'normal');
 
 });
 
