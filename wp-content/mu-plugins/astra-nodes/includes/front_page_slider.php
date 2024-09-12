@@ -87,11 +87,25 @@ function get_front_page_slider($astra_nodes_options): string {
                     <div class="wp-block-getwid-media-text-slider-slide-content">
                         <a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '" target="_blank">
                             <figure class="wp-block-getwid-media-text-slider-slide-content__media">
+                    ';
+
+        // The image is optional. If there is no image, the image tag will not be rendered to avoid broken image links.
+        if (!empty($params['image_' . $i])) {
+            $slider .= '
                                 <img id="slider-image-' . $i . '" src="' . $params['image_' . $i] . '" alt="" class="wp-block-getwid-media-text-slider-slide-content__image wp-image-' . $params['image_' . $i . '_id'] . '"/>
+                       ';
+        }
+
+        $slider .= '
                                 <div class="wp-block-getwid-media-text-slider-slide-content__media-overlay" style="opacity:0.3">
                                 </div>
                             </figure>
                         </a>
+                    ';
+
+        // The text over the image is optional. If there is no text, the text container will not be rendered.
+        if (!empty($params['heading_' . $i]) || !empty($params['text_' . $i])) {
+            $slider .= '
                         <div class="wp-block-getwid-media-text-slider-slide-content__content">
                             <div class="wp-block-getwid-media-text-slider-slide-content__content-wrapper">
                                 <!-- wp:heading {"placeholder":"' . __('Heading', 'astra-nodes') . '"} -->
@@ -102,6 +116,10 @@ function get_front_page_slider($astra_nodes_options): string {
                                 <!-- /wp:paragraph -->
                             </div>
                         </div>
+                    ';
+        }
+
+        $slider .= '
                     </div>
                     <!-- /wp:getwid/media-text-slider-slide-content -->
                 </div>
