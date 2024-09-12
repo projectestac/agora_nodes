@@ -201,7 +201,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
             'parent' => false,
             'id' => 'resources_xtec',
             'title' => '<img id="logo-xtec" alt="Logo XTEC" src="' . WPMU_PLUGIN_URL . '/astra-nodes/images/logo_xtec.svg' . '">',
-            'href' => 'https://xtec.gencat.cat/ca/inici',
+            'href' => '',
         ],
         [
             'parent' => 'resources_xtec',
@@ -468,18 +468,27 @@ function astra_nodes_contact_information(): string {
 
     $content = '
             <div id="contact-info-1-wrapper">
-                <div id="postal-address">' . $postal_address . '</div>
-                <div id="postal-code-city">' . $postal_code_city . '</div>
-                <div id="school-code">' . $code . '</div>
-                <div id="email-address-wrapper">
-                    <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
-                </div>
-                <div id="phone-number">' . $phone_number . '</div>
+                <ol class="fa-ul">
+                    <li id="postal-address">
+                        <span class="fa-li"><i class="fa-solid fa-location-dot"></i></span>
+                        <a id="contact-info-link-to-map" href="' . $link_to_map . '" target="_blank">' . $postal_address . '<br />
+                        <span id="postal-code-city">' . $postal_code_city . '</span>
+                    </a>
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fa-solid fa-barcode"></i></span>' . $code . '
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fa-solid fa-envelope"></i></span>
+                        <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fa-solid fa-mobile-screen-button"></i></span>' . $phone_number . '
+                    </li>
+                </ol>
             </div>
             <div id="contact-info-2-wrapper">
                 <strong>
-                    <a id="contact-info-link-to-map" href="' . $link_to_map . '" target="_blank">' . __('Map', 'astra-nodes') . '</a>
-                    |
                     <a id="contact-info-page-url" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes') . '</a>
                 </strong>
             </div>
@@ -497,6 +506,7 @@ function astra_nodes_header_buttons(): string {
 
     // Loop through the 6 buttons.
     for ($i = 1; $i <= NUM_BUTTONS_IN_HEADER; $i++) {
+
         $classes_icon = $astra_nodes_options['header_icon_' . $i . '_classes'] ?? 'fa-solid fa-graduation-cap';
         $text_icon = $astra_nodes_options['header_icon_' . $i . '_text'] ?? __('Item', 'astra-nodes') . ' ' . $i;
         $link_icon = $astra_nodes_options['header_icon_' . $i . '_link'] ?? '';
@@ -504,17 +514,16 @@ function astra_nodes_header_buttons(): string {
 
         // Add the button to the content.
         $content .= '
-            <div class="grid-item grid-item-' . $i . '">
+            <a class="grid-item grid-item-' . $i . '" href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>
                 <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
-                <a class="header-button-link-' . $i . ' astra-nodes-header-icon-link"
-                   href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>' . mb_strtolower($text_icon) . 
-                '</a>
-            </div>
+                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link">' . mb_strtolower($text_icon) . '</span>
+            </a>
             ';
+
     }
 
     // Remove all the "\n" characters.
-    return str_replace("\n", '', $content);;
+    return str_replace("\n", '', $content);
 
 }
 
