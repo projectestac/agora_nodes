@@ -89,12 +89,13 @@ h1#blog-name {
 /* Contact information in the header and in the footer */
 
 header #contact-info-1-wrapper {
-    text-align: right;
+    text-align: left;
     line-height: 1.1;
 }
 
 header #contact-info-2-wrapper {
-    text-align: right;
+    text-align: left;
+    margin-top: 5px;
 }
 
 footer #contact-info-1-wrapper {
@@ -109,6 +110,10 @@ footer #contact-info-2-wrapper {
 #contact-info-link-to-map,
 #contact-info-page-url {
     color: var(--ast-global-color-1);
+}
+
+a#contact-info-link-to-map {
+    color: var(--ast-global-color-0);
 }
 
 /* Header buttons */
@@ -413,6 +418,8 @@ div.sidebar-main {
     background-color: #fff !important;
     padding: 32px;
     border-radius: 30px !important;
+    margin-top: 0 !important;
+    overflow: auto;
 }
 
 .ast-header-search .ast-search-menu-icon.slide-search .search-form,
@@ -439,6 +446,10 @@ h2:has(span#blog-description) {
     margin: 0;
     padding: 0 0 0 0;
     line-height: 1.5rem;
+}
+
+#slider-height-container .wp-block-getwid-media-text-slider__slides-wrapper .wp-block-getwid-media-text-slider-slide-content__media {
+    background-image: linear-gradient(to right, var(--ast-global-color-1), var(--ast-global-color-0));
 }
 
 .getwid-post-carousel__post-title {
@@ -491,7 +502,7 @@ h2:has(span#blog-description) {
 .wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev,
 .wp-block-getwid-post-carousel.has-arrows-inside .slick-prev,
 .wp-block-getwid-post-slider.has-arrows-inside .slick-prev {
-    left: -20px;
+    left: -25px;
 }
 
 .ast-breadcrumbs {
@@ -648,11 +659,11 @@ div.ast-breadcrumbs-wrapper {
     filter: brightness(0.9);
 }
 
-.grid-item:hover a,
+.grid-item:hover span,
 .grid-item:hover i,
-.grid-item a:hover,
+.grid-item span:hover,
 .grid-item i:hover,
-.grid-item a:hover,
+.grid-item span:hover,
 .grid-item i:hover {
     opacity: 1 !important;
 }
@@ -1371,10 +1382,6 @@ ul.bbp-topics, .bbp-topic-form {
     font-size: 15px;
 }
 
-div.sidebar-main {
-    margin-top: 15px;
-}
-
 .home-page div#content {
     margin-right: 0;
 }
@@ -1611,10 +1618,6 @@ footer.site-footer {
     margin-right: 20px;
 }
 
-div.sidebar-main {
-    margin-top: 0 !important;
-}
-
 .ast-page-builder-template .site .site-content #primary {
     margin-right: 20px !important;
 }
@@ -1699,3 +1702,84 @@ div.sidebar-main .accordion a:hover {
     transform: none !important;
 }
 
+.xtec-stats {
+    border: 1px solid #ddd;
+    border-radius: 35px;
+    text-align: center;
+}
+
+section.widget_xtec_stats_widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 30px 0 0 30px;
+}
+
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content-wrapper {
+    margin-top: 0;
+    max-width: 50%;
+    display: inline-block;
+    flex-direction: column;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--ast-global-color-0);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content-wrapper h2 {
+    color: var(--ast-global-color-1);
+    font-size: 1.65rem;
+    padding-bottom: 0.3rem;
+}
+
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content-wrapper p {
+    color: #000;
+    font-size: 1.25rem
+}
+
+.wp-block-getwid-media-text-slider-slide__content {
+    padding: 0;
+}
+
+#astra-nodes-header-block .wp-block-getwid-media-text-slider-slide-content__content {
+    aspect-ratio: unset;
+}
+
+.wp-block-getwid-media-text-slider-slide__content {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.fa-ul li {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+ol.fa-ul {
+    margin: 0 !important;
+}
+
+a.grid-item:hover span {
+    color: white !important;
+}
+
+#astra-nodes-header-block {
+    margin: -93px -5px 20px -4px;
+}
+
+.fa-ul li {
+    padding-bottom: 5px;
+    padding-top: 2px;
+    color: var(--ast-global-color-0) !important;
+}
+
+.fa-li {
+    color: var(--ast-global-color-1);
+}
