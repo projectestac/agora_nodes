@@ -475,9 +475,17 @@ function astra_nodes_contact_information(): string {
                         <span id="postal-code-city">' . $postal_code_city . '</span>
                     </a>
                     </li>
+                    ';
+
+    if (!empty($code)) {
+        $content .= '
                     <li>
                         <span class="fa-li"><i class="fa-solid fa-barcode"></i></span>' . $code . '
                     </li>
+                    ';
+    }
+
+    $content .= '
                     <li>
                         <span class="fa-li"><i class="fa-solid fa-envelope"></i></span>
                         <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
