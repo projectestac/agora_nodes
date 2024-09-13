@@ -587,6 +587,11 @@ add_action('astra_html_before', function () {
     // first action available. 
     $front_page_layout = $astra_nodes_options['front_page_layout'] ?? 'boxes';
 
+    add_filter('body_class', function ($classes) use ($front_page_layout) {
+        $classes[] = 'astra-nodes-' . $front_page_layout;
+        return $classes;
+    });
+
     // Default layout is 'sidebar_news'.
     $action = 'astra_primary_content_bottom';
     $news_priority = 10;
