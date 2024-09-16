@@ -655,7 +655,19 @@ add_action('astra_html_before', function () {
                 </div>
                 <div class="astra-nodes-card-body">
                      <a id="card-link-' . $i . '" href="' . $card_url . '" ' . $card_target . '>
+                     ';
+
+            if (!empty($card_image)) {
+                echo '
                         <img id="card-image-' . $i . '" class="astra-nodes-card-image" decoding="async" src="' . $card_image . '" alt="">
+                     ';
+            } else {
+                echo '
+                        <div class="astra-nodes-card-body-empty"></div>
+                     ';
+            }
+
+            echo '
                      </a>
                 </div>
             </div>

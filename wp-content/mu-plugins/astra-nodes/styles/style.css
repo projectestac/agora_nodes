@@ -283,7 +283,8 @@ div.ast-breadcrumbs-wrapper {
     align-items: center;
 }
 
-.front-page-card > .astra-nodes-card-body {
+.front-page-card > .astra-nodes-card-body,
+.front-page-card > .astra-nodes-card-body > a > .astra-nodes-card-body-empty {
     min-height: 200px;
     margin: 0;
     flex: 1;
