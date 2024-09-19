@@ -1924,6 +1924,9 @@ function default_theme_mod(): array {
     $title_cards = get_cards_titles();
     $image_cards = register_image_in_media_library();
 
+    // Category of the front page.
+    $category_id = get_cat_ID('Portada');
+
     // Translation note: When action switch_theme is triggered, the text domain is not loaded. That's why the
     // texts are in catalan.
     return [
@@ -2015,7 +2018,7 @@ function default_theme_mod(): array {
         'front_page_slider_text_5' => $processed_slides[4]['description'] ?? '',
         'front_page_news_enable' => true,
         'front_page_news_number' => 20,
-        'front_page_news_category' => 29,
+        'front_page_news_category' => $category_id,
         'front_page_layout' => 'sidebar_boxes',
         'pages_sidebar' => 'menu',
         'organism_logo' => $organism_logo,
