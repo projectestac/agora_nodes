@@ -485,14 +485,24 @@ function astra_nodes_contact_information(): string {
                     ';
     }
 
-    $content .= '
+    if (!empty($email_address)) {
+        $content .= '
                     <li>
                         <span class="fa-li"><i class="fa-solid fa-envelope"></i></span>
                         <a id="email-address" href="mailto:' . $email_address . '">' . $email_address . '</a>
                     </li>
+                    ';
+    }
+
+    if (!empty($phone_number)) {
+        $content .= '
                     <li>
                         <span class="fa-li"><i class="fa-solid fa-mobile-screen-button"></i></span>' . $phone_number . '
                     </li>
+                    ';
+    }
+
+    $content .= '
                 </ol>
             </div>
             <div id="contact-info-2-wrapper">
