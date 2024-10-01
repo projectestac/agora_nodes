@@ -1506,6 +1506,28 @@ select.gt_selector {
     width: 352px !important;
 }
 
+/* Custom styles for block 'Column' */
+.caixa-link {
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 10px -5px #000000;
+    box-shadow: 1px 1px 8px -6px #000000;
+    background-color: white;
+    padding: 1.5em;
+    opacity: 0.9;
+}
+
+.caixa-link a {
+    text-decoration: none !important;
+}
+
+.caixa-link:hover {
+    border: 5px solid #1E6770;
+    cursor: pointer;
+    padding: 20px;
+}
+
 @media screen and (min-width: 922px) {
     .ast-container {
         max-width: 100%;
