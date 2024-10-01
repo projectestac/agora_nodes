@@ -39,4 +39,24 @@ jQuery( document ).ready( function() {
         return false;
 
     });
+
+    // Controls the behavior of the "caixa-link" class, intended to be used in the "column" block.
+    jQuery('.caixa-link').on('click', function () {
+
+        // Get the path of the URL.
+        let url_nodes = window.location.href.split('/');
+        let search_str = url_nodes[2] + '/' + url_nodes[3];
+
+        // Search the path in the id of the element (the id is expected to be a URL).
+        let same_site = jQuery(this).attr('id').indexOf(search_str);
+
+        // Open the link in the same tab if the id contains the path of the current page.
+        if (same_site !== -1) {
+            window.location.href = jQuery(this).attr('id');
+        } else {
+            window.open(jQuery(this).attr('id'), '_blank');
+        }
+
+    });
+
 });
