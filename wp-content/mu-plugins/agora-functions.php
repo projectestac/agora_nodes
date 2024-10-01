@@ -2313,8 +2313,8 @@ function get_default_palettes(): array {
     return [
         'palettes' => [
             'Vermell i blau' => [
-                0 => '#FF3257', // Primary
-                1 => '#4C86A6', // Secondary
+                0 => '#ff3257', // Primary
+                1 => '#4c86a6', // Secondary
                 2 => '', // Tertiary
                 3 => '', // Link
                 4 => '', // Calendar
@@ -2324,8 +2324,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Blau clar i blau fosc' => [
-                0 => '#0EB1FF',
-                1 => '#087EB6',
+                0 => '#0eb1ff',
+                1 => '#087eb6',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2335,7 +2335,7 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Groc i blau' => [
-                0 => '#FFA00C',
+                0 => '#e78d00',
                 1 => '#3C7C80',
                 2 => '',
                 3 => '',
@@ -2346,7 +2346,7 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Groc i lila' => [
-                0 => '#FFA00C',
+                0 => '#e78d00',
                 1 => '#B03BBA',
                 2 => '',
                 3 => '',
@@ -2357,8 +2357,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Groc i verd' => [
-                0 => '#FEA200',
-                1 => '#0F6333',
+                0 => '#da8c02',
+                1 => '#0f6333',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2368,7 +2368,7 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Groc i vermell' => [
-                0 => '#FCB535',
+                0 => '#e78d00',
                 1 => '#E04B35',
                 2 => '',
                 3 => '',
@@ -2379,7 +2379,7 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Verd i blau' => [
-                0 => '#92AE01',
+                0 => '#8aa500',
                 1 => '#0988A9',
                 2 => '',
                 3 => '',
@@ -2390,8 +2390,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Rosa i gris' => [
-                0 => '#FF3257',
-                1 => '#6C6C6C',
+                0 => '#ff3257',
+                1 => '#6c6c6c',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2445,8 +2445,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Taronja i verd' => [
-                0 => '#FF5A26',
-                1 => '#1FA799',
+                0 => '#ff5a26',
+                1 => '#1fa799',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2478,8 +2478,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Rosa i verd' => [
-                0 => '#FC3B56',
-                1 => '#2CA698',
+                0 => '#fc3b56',
+                1 => '#2ca698',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2489,8 +2489,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Verd clar i verd fosc' => [
-                0 => '#55CD00',
-                1 => '#418000',
+                0 => '#46a701',
+                1 => '#2f5c00',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2500,8 +2500,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Vermell i taronja' => [
-                0 => '#FF2A2A',
-                1 => '#FF5A26',
+                0 => '#c61d1d',
+                1 => '#e57500',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2511,8 +2511,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Vermell i verd' => [
-                0 => '#ff2A2A',
-                1 => '#00854E',
+                0 => '#ff2a2a',
+                1 => '#00854e',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2533,8 +2533,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Taronja i blau' => [
-                0 => '#FF5A26',
-                1 => '#087EB6',
+                0 => '#ff5a26',
+                1 => '#087eb6',
                 2 => '',
                 3 => '',
                 4 => '',
@@ -2544,7 +2544,7 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Verd clar i lila' => [
-                0 => '#92AE01',
+                0 => '#8aa500',
                 1 => '#5E3A73',
                 2 => '',
                 3 => '',
@@ -2577,8 +2577,8 @@ function get_default_palettes(): array {
                 8 => '',
             ],
             'Lila i vermell' => [
-                0 => '#9068BE',
-                1 => '#E62739',
+                0 => '#9068be',
+                1 => '#e62739',
                 2 => '',
                 3 => '',
                 4 => '',
