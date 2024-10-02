@@ -303,7 +303,7 @@ add_action('customize_controls_print_styles', function () {
     if (!is_xtec_super_admin()) {
         echo '
             <style>
-                .change-theme {
+                h3.accordion-section-title .change-theme {
                     display: none !important;
                 }
             </style>
