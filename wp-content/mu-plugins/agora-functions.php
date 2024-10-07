@@ -2873,12 +2873,8 @@ function plugin_options_page(): void {
 
 function remove_plugin_menus(): void {
 
-    // Remove H5P options.
-    remove_submenu_page('options-general.php', 'h5p');
-    remove_submenu_page('options-general.php', 'h5p_settings');
-    remove_submenu_page('options-general.php', 'h5p_new');
-    remove_submenu_page('options-general.php', 'h5p_libraries');
-    remove_submenu_page('options-general.php', 'h5p_results');
+    // Remove H5P options. Just remove the main menu, the submenus will stay in order to allow the pages to be accessed.
+    remove_menu_page('h5p');
 
     // Remove WP Telegram menu.
     remove_menu_page('wptelegram');
@@ -2899,6 +2895,7 @@ function remove_plugin_menus(): void {
     if (!is_xtec_super_admin()) {
         remove_menu_page('accessibility-settings');
     }
+
 }
 
 // Remove some meta boxes in the new post_type pages.
