@@ -2,20 +2,22 @@
 # This file is distributed under the same license as the WordPress - 6.5.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-28 07:46:44+0000\n"
+"Project-Id-Version: WordPress - 6.5.x - Development\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2024-10-07 13:29+0200\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.1\n"
-"Language: ca\n"
-"Project-Id-Version: WordPress - 6.5.x - Development\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. translators: Use this to specify the proper Google Font name and variants to
 #. load that is supported by your language. Do not translate. Set to 'off' to
 #. disable loading.
 #: wp-includes/script-loader.php:1648
-#, gp-priority: high
 msgctxt "Google Font Name and Variants"
 msgid "Noto Serif:400,400i,700,700i"
 msgstr "Noto Serif:400,400i,700,700i"
@@ -23,7 +25,6 @@ msgstr "Noto Serif:400,400i,700,700i"
 #. translators: If comment number in your language requires declension,
 #. translate this to 'on'. Do not translate into your own language.
 #: wp-includes/comment-template.php:967
-#, gp-priority: high
 msgctxt "Comment number declension: on or off"
 msgid "off"
 msgstr "off"
@@ -32,14 +33,12 @@ msgstr "off"
 #. https://www.w3.org/International/articles/language-tags/ for reference. Do
 #. not translate into your own language.
 #: wp-includes/general-template.php:879
-#, gp-priority: high
 msgid "html_lang_attribute"
 msgstr "ca"
 
 #. translators: If months in your language require a genitive case, translate
 #. this to 'on'. Do not translate into your own language.
 #: wp-includes/functions.php:346
-#, gp-priority: high
 msgctxt "decline months names: on or off"
 msgid "off"
 msgstr "off"
@@ -53,7 +52,6 @@ msgstr "off"
 #: wp-includes/js/dist/block-library.js:43135
 #: wp-includes/js/dist/edit-site.js:22099 wp-includes/js/dist/editor.js:14082
 #: wp-includes/js/dist/editor.js:14119
-#, gp-priority: high
 msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr "words"
@@ -62,7 +60,6 @@ msgstr "words"
 #: wp-includes/widgets/class-wp-widget-meta.php:91 wp-login.php:125
 #: wp-admin/admin-footer.php:38 wp-admin/includes/upgrade.php:258
 #: wp-admin/maint/repair.php:24 wp-admin/upgrade.php:69
-#, gp-priority: high
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
@@ -70,7 +67,6 @@ msgstr "https://wordpress.org/"
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
 #: wp-includes/script-loader.php:1558
-#, gp-priority: high
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -83,7 +79,6 @@ msgstr "on"
 #. https://www.php.net/manual/datetime.format.php
 #: wp-includes/class-wp-locale.php:401 wp-includes/script-loader.php:160
 #: wp-includes/script-loader.php:475 wp-admin/includes/schema.php:439
-#, gp-priority: high
 msgid "F j, Y g:i a"
 msgstr "j \\d\\e F \\d\\e Y G:i"
 
@@ -108,42 +103,36 @@ msgstr "j \\d\\e F \\d\\e Y G:i"
 #: wp-admin/includes/dashboard.php:678 wp-admin/includes/media.php:1704
 #: wp-admin/includes/schema.php:435 wp-admin/options-general.php:435
 #: wp-admin/options-general.php:466 wp-admin/update-core.php:1113
-#, gp-priority: high
 msgid "F j, Y"
 msgstr "j \\d\\e F \\d\\e Y"
 
 #. translators: 'rtl' or 'ltr'. This sets the text direction for WordPress.
 #: wp-includes/class-wp-locale.php:248 wp-includes/script-loader.php:327
 #: wp-includes/js/dist/i18n.js:1398
-#, gp-priority: high
 msgctxt "text direction"
 msgid "ltr"
 msgstr "ltr"
 
 #. translators: Closing curly single quote.
 #: wp-includes/formatting.php:99
-#, gp-priority: high
 msgctxt "closing curly single quote"
 msgid "&#8217;"
 msgstr "&#8217;"
 
 #. translators: Opening curly single quote.
 #: wp-includes/formatting.php:97
-#, gp-priority: high
 msgctxt "opening curly single quote"
 msgid "&#8216;"
 msgstr "&#8216;"
 
 #. translators: Closing curly double quote.
 #: wp-includes/formatting.php:86
-#, gp-priority: high
 msgctxt "closing curly double quote"
 msgid "&#8221;"
 msgstr "&#8221;"
 
 #. translators: Opening curly double quote.
 #: wp-includes/formatting.php:84 wp-includes/formatting.php:5707
-#, gp-priority: high
 msgctxt "opening curly double quote"
 msgid "&#8220;"
 msgstr "&#8220;"
@@ -151,128 +140,107 @@ msgstr "&#8220;"
 #. translators: $thousands_sep argument for https://www.php.net/number_format,
 #. default is ','
 #: wp-includes/class-wp-locale.php:228
-#, gp-priority: high
 msgid "number_format_thousands_sep"
 msgstr "."
 
 #. translators: $dec_point argument for https://www.php.net/number_format,
 #. default is '.'
 #: wp-includes/class-wp-locale.php:236
-#, gp-priority: high
 msgid "number_format_decimal_point"
 msgstr ","
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:154
-#, gp-priority: high
 msgid "Saturday"
 msgstr "Dissabte"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:153
-#, gp-priority: high
 msgid "Friday"
 msgstr "Divendres"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:152
-#, gp-priority: high
 msgid "Thursday"
 msgstr "Dijous"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:151
-#, gp-priority: high
 msgid "Wednesday"
 msgstr "Dimecres"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:150
-#, gp-priority: high
 msgid "Tuesday"
 msgstr "Dimarts"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:149
-#, gp-priority: high
 msgid "Monday"
 msgstr "Dilluns"
 
 #. translators: Weekday.
 #: wp-includes/class-wp-locale.php:148
-#, gp-priority: high
 msgid "Sunday"
 msgstr "Diumenge"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:186 wp-includes/js/dist/components.js:57356
-#, gp-priority: high
 msgid "December"
 msgstr "desembre"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:185 wp-includes/js/dist/components.js:57353
-#, gp-priority: high
 msgid "November"
 msgstr "novembre"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:184 wp-includes/js/dist/components.js:57350
-#, gp-priority: high
 msgid "October"
 msgstr "octubre"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:183 wp-includes/js/dist/components.js:57347
-#, gp-priority: high
 msgid "September"
 msgstr "setembre"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:182 wp-includes/js/dist/components.js:57344
-#, gp-priority: high
 msgid "August"
 msgstr "agost"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:181 wp-includes/js/dist/components.js:57341
-#, gp-priority: high
 msgid "July"
 msgstr "juliol"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:180 wp-includes/js/dist/components.js:57338
-#, gp-priority: high
 msgid "June"
 msgstr "juny"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:179 wp-includes/js/dist/components.js:57335
-#, gp-priority: high
 msgid "May"
 msgstr "maig"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:178 wp-includes/js/dist/components.js:57332
-#, gp-priority: high
 msgid "April"
 msgstr "abril"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:177 wp-includes/js/dist/components.js:57329
-#, gp-priority: high
 msgid "March"
 msgstr "març"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:176 wp-includes/js/dist/components.js:57326
-#, gp-priority: high
 msgid "February"
 msgstr "febrer"
 
 #. translators: Month name.
 #: wp-includes/class-wp-locale.php:175 wp-includes/js/dist/components.js:57323
-#, gp-priority: high
 msgid "January"
 msgstr "gener"
 
@@ -283,7 +251,6 @@ msgstr "gener"
 #: wp-includes/js/dist/edit-site.js:17642
 #: wp-includes/js/dist/edit-site.js:18858 wp-includes/js/dist/editor.js:16651
 #: wp-admin/includes/upgrade.php:158
-#, gp-priority: high
 msgid "Uncategorized"
 msgstr "Sense categoria"
 
@@ -760,7 +727,7 @@ msgstr "Les articles de la matriu de dependències han de ser cadenes o matrius 
 
 #: wp-includes/class-wp-script-modules.php:70
 msgid "Missing required id key in entry among dependencies array."
-msgstr "Falta la clau d'identificació requerida a l'article de la matriu de dependències."
+msgstr "Falta la clau d'identificació requerida a l'entrada de la matriu de dependències."
 
 #: wp-includes/class-wp-plugin-dependencies.php:531
 msgid "All required plugins are installed and activated."
@@ -910,7 +877,7 @@ msgstr "Sobreescriptures de patró"
 #: wp-includes/blocks/post-date/block.json
 msgctxt "block description"
 msgid "Display the publish date for an entry such as a post or page."
-msgstr "Mostra la data de publicació d'un article, com ara un article o una pàgina."
+msgstr "Mostra la data de publicació d'un article o una pàgina."
 
 #: wp-includes/blocks/post-date/block.json
 msgctxt "block title"
@@ -1274,7 +1241,7 @@ msgstr "Notes al peu de pàgina"
 #. translators: %s: The user email address.
 #: wp-signup.php:708 wp-signup.php:866
 msgid "Check your inbox at %s and click on the given link."
-msgstr "Comproveu la bústia d'article a %s i feu clic a l'enllaç indicat."
+msgstr "Comproveu la bústia d'entrada a %s i feu clic a l'enllaç indicat."
 
 #. translators: %s: Directory name.
 #: wp-includes/update.php:1132 wp-admin/includes/class-wp-upgrader.php:193
@@ -1588,7 +1555,7 @@ msgstr "Mostra un article individual al vostre lloc web tret que s'hagi aplicat 
 
 #: wp-includes/block-template-utils.php:124
 msgid "Displays any single entry, such as a post or a page. This template will serve as a fallback when a more specific template (e.g. Single Post, Page, or Attachment) cannot be found."
-msgstr "Mostra qualsevol article individual, com ara un article o una pàgina. Aquesta plantilla servirà com a alternativa quan no es trobi una plantilla més específica (p. ex. Entrada individual, pàgina o adjunt)."
+msgstr "Mostra qualsevol entrada individual, com ara un article o una pàgina. Aquesta plantilla servirà com a alternativa quan no es trobi una plantilla més específica (p. ex. Entrada individual, pàgina o adjunt)."
 
 #: wp-includes/block-template-utils.php:120
 msgid "Displays your site's homepage, whether it is set to display latest posts or a static page. The Front Page template takes precedence over all templates."
@@ -1749,7 +1716,7 @@ msgstr "Els arguments no es poden preparar com a identificador i valor. S'han tr
 #: wp-includes/class-wp-list-util.php:174
 #: wp-includes/class-wp-list-util.php:205
 msgid "Values for the input array must be either objects or arrays."
-msgstr "Els valors de la matriu d'article han de ser objectes o matrius."
+msgstr "Els valors de la matriu d'entrada han de ser objectes o matrius."
 
 #: wp-includes/class-wp-image-editor-imagick.php:577
 msgid "The image already has the requested size."
@@ -2706,7 +2673,7 @@ msgstr "Pàgina següent"
 #: wp-includes/blocks/post-navigation-link/block.json
 msgctxt "block description"
 msgid "Displays the next or previous post link that is adjacent to the current post."
-msgstr "Mostra l'enllaç a la article anterior o següent que és adjacent a l'article actual."
+msgstr "Mostra l'enllaç a l'article anterior o posterior que és adjacent a l'article actual."
 
 #: wp-includes/blocks/post-navigation-link/block.json
 msgctxt "block title"
@@ -3546,7 +3513,7 @@ msgstr "Un identificador alfanumèric únic de l'article per al seu tipus."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2277
 msgid "The date the post was last modified, as GMT."
-msgstr "La data en què l'article es va modificar per última vegada, com a GMT."
+msgstr "La data en què l'article es va modificar per última vegada, com ara GMT."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2270
 msgid "The date the post was last modified, in the site's timezone."
@@ -6716,7 +6683,7 @@ msgstr "Petit"
 #. translators: 1: Post status, 2: Capability name.
 #: wp-includes/capabilities.php:344
 msgid "The post status %1$s is not registered, so it may not be reliable to check the capability %2$s against a post with that status."
-msgstr "L'estat d'article %1$s no està registrat, motiu pel qual no és fiable comprovar la capacitat %2$s contra un article amb aquest estat."
+msgstr "L'estat de l'article %1$s no està registrat, motiu pel qual no és fiable comprovar la capacitat %2$s contra un article amb aquest estat."
 
 #. translators: %s: Comment link.
 #: wp-includes/comment-template.php:1034 wp-admin/comment.php:218
@@ -8833,7 +8800,7 @@ msgstr "Utilitzeu el giny HTML personalitzat per afegir codi HTML arbitrari a le
 #. translators: %s: New email address.
 #: wp-includes/user.php:3770
 msgid "Your email address has not been updated yet. Please check your inbox at %s for a confirmation email."
-msgstr "L'adreça electrònica encara no s'ha actualitzat. Reviseu la safata d'article a %s per veure si heu rebut un correu electrònic de confirmació."
+msgstr "L'adreça electrònica encara no s'ha actualitzat. Reviseu la safata d'entrada a %s per veure si heu rebut un correu electrònic de confirmació."
 
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
@@ -9933,7 +9900,7 @@ msgstr "Totes les característiques, suportades pel tipus d'article."
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:85
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:107
 msgid "The password for the parent post of the comment (if the post is password protected)."
-msgstr "Contrasenya per a l'article pare del comentari (si l'article està protegida per contrasenya)."
+msgstr "Contrasenya per a l'article pare del comentari (si l'article està protegit amb contrasenya)."
 
 #: wp-includes/class-wp-post-type.php:983
 msgctxt "page"
@@ -10298,7 +10265,7 @@ msgstr "Llegenda de l'adjunt."
 
 #: wp-includes/option.php:2575
 msgid "Default post category."
-msgstr "Category d'article predeterminada."
+msgstr "Categoria d'article predeterminada."
 
 #: wp-includes/option.php:2465
 msgid "Site tagline."
@@ -11037,7 +11004,7 @@ msgstr "Una contrasenya per protegir l'accés al contingut i l'extracte."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2546
 msgid "Whether or not the post should be treated as sticky."
-msgstr "Si l'article s'hauria de considerar o no com a fixada."
+msgstr "Si l'article s'hauria de considerar o no com a fixat."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2530
 msgid "The format for the post."
@@ -11147,15 +11114,15 @@ msgstr "Identificador del pare de l'article no vàlid."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1337
 msgid "A password protected post can not be set to sticky."
-msgstr "Una article protegida per contrasenya no es pot fixar."
+msgstr "Un article protegit amb contrasenya no es pot fixar."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1326
 msgid "A sticky post can not be password protected."
-msgstr "Una article fixada no es pot protegir amb contrasenya."
+msgstr "Un article fixat no es pot protegir amb contrasenya."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1318
 msgid "A post can not be sticky and have a password."
-msgstr "Una article no es pot fixar i tindre contrasenya."
+msgstr "Un article no es pot fixar i tenir contrasenya."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1061
 msgid "The post has already been deleted."
@@ -11193,7 +11160,7 @@ msgstr "Heu de definir un terme de cerca per a ordernar per rellevància."
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1681
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:102
 msgid "The password for the post if it is password protected."
-msgstr "La contrasenya per a l'article si està protegida per una."
+msgstr "La contrasenya per a l'article si està protegit per una."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php:351
 msgid "Human-readable labels for the taxonomy for various contexts."
@@ -11372,7 +11339,7 @@ msgstr "URL de l'objecte."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2231
 msgid "The date the post was published, as GMT."
-msgstr "La data en què l'article es va publicar, com a GMT."
+msgstr "La data en què l'article es va publicar, com ara GMT."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2434
 msgid "HTML content for the post, transformed for display."
@@ -12291,7 +12258,7 @@ msgstr "Les rutes han de ser dins d'un espai de noms amb el nom i versió de l'e
 
 #: wp-includes/post.php:1857
 msgid "Unregistering a built-in post type is not allowed"
-msgstr "No es permet anul·lar el registre d'un tipus d'article integrada"
+msgstr "No es permet anul·lar el registre d'un tipus d'article del nucli"
 
 #: wp-includes/post.php:708
 msgctxt "post status"
@@ -16136,7 +16103,7 @@ msgstr "S'han passat un nombre insuficient d'arguments a aquest mètode XML-RPC.
 
 #: wp-includes/class-wp-xmlrpc-server.php:1383
 msgid "Sorry, you cannot stick a private post."
-msgstr "No podeu fixar un article privada."
+msgstr "No podeu fixar un article privat."
 
 #: wp-includes/class-wp-xmlrpc-server.php:5940
 msgid "Sorry, you are not allowed to publish this page."
@@ -16532,12 +16499,12 @@ msgstr "No teniu permisos per crear articles com a aquest usuari."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1487
 msgid "Sorry, you are not allowed to create password protected posts in this post type."
-msgstr "No teniu permisos per crear articles protegides amb contrasenya en aquest tipus d'article."
+msgstr "No teniu permisos per crear articles protegits amb contrasenya en aquest tipus d'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1470
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1447
 msgid "Sorry, you are not allowed to create private posts in this post type."
-msgstr "No teniu permisos per crear articles privades en aquest tipus d'article."
+msgstr "No teniu permisos per crear articles privats en aquest tipus d'article."
 
 #. translators: See https://www.php.net/manual/datetime.format.php
 #: wp-includes/general-template.php:1223 wp-includes/general-template.php:1714
@@ -16591,13 +16558,13 @@ msgstr "%1$s és el vostre lloc web nou.  <a href=\"%2$s\">Entreu</a> com a &#82
 #. password URL.
 #: wp-activate.php:161
 msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
-msgstr "El lloc web %1$s s'ha activat. Podeu entrar al web fent servir el nom d'usuari &#8220;%2$s&#8221; que heu triat.  Reviseu a la safata d'article del vostre compte de correu a %3$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%4$s\">reiniciar la contrasenya</a>."
+msgstr "El lloc web %1$s s'ha activat. Podeu entrar al web fent servir el nom d'usuari &#8220;%2$s&#8221; que heu triat.  Reviseu a la safata d'entrada del vostre compte de correu a %3$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%4$s\">reiniciar la contrasenya</a>."
 
 #. translators: 1: Login URL, 2: Username, 3: User email address, 4: Lost
 #. password URL.
 #: wp-activate.php:152
 msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
-msgstr "El compte s'ha activat. Ara podeu <a href=\"%1$s\">iniciar la sessió</a> fent servir el nom d'usuari &#8220;%2$s&#8221; que heu triat. Comproveu la safata d'article del compte de correu %3$s per aconseguir la contrasenya i les instruccions per entrar. Si no rebeu aquest correu electrònic, comproveu la paperera o la carpeta de brossa. Si així i tot, encara no rebeu un correu electrònic en una hora, podeu <a href=\"%4$s\">reinicialitzar la contrasenya</a>."
+msgstr "El compte s'ha activat. Ara podeu <a href=\"%1$s\">iniciar la sessió</a> fent servir el nom d'usuari &#8220;%2$s&#8221; que heu triat. Comproveu la safata d'entrada del compte de correu %3$s per aconseguir la contrasenya i les instruccions per entrar. Si no rebeu aquest correu electrònic, comproveu la paperera o la carpeta de brossa. Si així i tot, encara no rebeu un correu electrònic en una hora, podeu <a href=\"%4$s\">reinicialitzar la contrasenya</a>."
 
 #. translators: %s: Database repair URL.
 #: wp-includes/functions.php:1835
@@ -17172,7 +17139,7 @@ msgstr "Una resposta"
 
 #: wp-includes/theme-compat/comments.php:24
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Aquesta article està protegida amb contrasenya. Introduïu-la per veure'n els comentaris."
+msgstr "Aquesta article està protegit amb contrasenya. Introduïu-la per veure'n els comentaris."
 
 #: wp-includes/class-wp-taxonomy.php:631
 msgid "Choose from the most used tags"
@@ -18090,7 +18057,7 @@ msgstr "Error de seguretat."
 
 #: wp-includes/script-loader.php:999
 msgid "IO error."
-msgstr "Error d'article/sortida."
+msgstr "Error d'entrada/sortida."
 
 #: wp-includes/script-loader.php:994 wp-admin/includes/ajax-actions.php:2548
 msgid "Upload failed."
@@ -18292,7 +18259,7 @@ msgstr "Pàgina següent"
 
 #: wp-includes/post-template.php:422
 msgid "There is no excerpt because this is a protected post."
-msgstr "No hi ha extracte perquè és un article protegida."
+msgstr "No hi ha extracte perquè és un article protegit."
 
 #. translators: %s: Private post title.
 #: wp-includes/post-template.php:147
@@ -18421,7 +18388,7 @@ msgstr "El codi d'activació no és vàlid."
 
 #: wp-includes/ms-functions.php:558
 msgid "That email address has already been used. Please check your inbox for an activation email. It will become available in a couple of days if you do nothing."
-msgstr "Ja s'ha usat aquesta adreça electrònica. Comproveu si us ha arribat un correu electrònic d'activació a la safata d'article. Estarà disponible en un parell de dies si no feu res."
+msgstr "Ja s'ha usat aquesta adreça electrònica. Comproveu si us ha arribat un correu electrònic d'activació a la safata d'entrada. Estarà disponible en un parell de dies si no feu res."
 
 #: wp-includes/ms-functions.php:547
 msgid "That username is currently reserved but may be available in a couple of days."
@@ -18481,7 +18448,7 @@ msgstr "Comentaris més recents &raquo;"
 
 #: wp-includes/deprecated.php:2699
 msgid "Last Post"
-msgstr "Darrera article"
+msgstr "Darrer article"
 
 #: wp-includes/link-template.php:2057 wp-includes/link-template.php:2333
 msgid "Next Post"
@@ -19592,7 +19559,7 @@ msgstr "Tema"
 
 #: wp-includes/deprecated.php:2699 wp-admin/network/settings.php:346
 msgid "First Post"
-msgstr "Primera article"
+msgstr "Primer article"
 
 #. translators: accessibility text for the settings landmark region.
 #: wp-includes/admin-bar.php:650 wp-includes/js/dist/block-editor.js:61246
