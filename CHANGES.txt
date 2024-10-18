@@ -4,6 +4,17 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 24.10.22
+---------------------------------------------------------------------------------------
+- Nodes 2: Changed images for card and notice demo
+- langs: Corrected some catalan strings
+- buddypress: Recovered TinyMCE in wall
+- google-calendar-events: Fixed bug due to old unnecessary patch
+- H5P: agora-functions: Fixed access to H5P activities
+- H5P: Fixed access to admin pages
+- script_replace_url: Added field for Nodes 2
+
+
 Changes 24.09.26
 ---------------------------------------------------------------------------------------
 - Nodes 2: Contact information: Show school code, email and phone only if they are set
