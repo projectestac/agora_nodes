@@ -2799,9 +2799,9 @@ function plugin_options_page(): void {
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/h5p-integrat/',
             'links' => [
                 'Configuració' => 'options-general.php?page=h5p_settings',
-                'Llista de H5P creats' => 'options-general.php?page=h5p',
-                'Resultats' => 'options-general.php?page=h5p_results',
-                'Afegeix nou' => 'options-general.php?page=h5p_new',
+                'Llista de H5P creats' => 'admin.php?page=h5p',
+                'Resultats' => 'admin.php?page=h5p_results',
+                'Afegeix nou' => 'admin.php?page=h5p_new',
             ],
             'plugin_file' => 'h5p/h5p.php',
         ],
