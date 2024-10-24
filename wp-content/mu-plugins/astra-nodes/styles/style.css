@@ -88,6 +88,20 @@ header #contact-info-2-wrapper {
     margin-top: 5px;
 }
 
+#ast-desktop-header a.grid-item {
+    width: 90px;
+    height: 90px;
+}
+
+#ast-desktop-header a.grid-item span.astra-nodes-header-icon-link {
+    line-height: 1;
+    margin-top: 8px;
+}
+
+#ast-mobile-header a.grid-item {
+    overflow: hidden;
+}
+
 footer #contact-info-1-wrapper {
     text-align: left;
     line-height: 1.1;
