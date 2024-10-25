@@ -888,6 +888,7 @@ add_action('astra_footer_after', function () {
                                     <p id="astra-nodes-copyright">
                                         <a target="_blank" href="https://web.gencat.cat/ca/ajuda/avis_legal/">Avís legal</a> |
                                         <a target="_blank" href="https://agora.xtec.cat/nodes/">Sobre el web</a> |
+                                        <a target="_blank" href="https://projectes.xtec.cat/digital/politica-de-galetes/">Política de galetes</a> |
                                         <span class="copyright">© ' . date("Y") . ' Generalitat de Catalunya | </span>
                                         <span class="site-source">Fet amb el <a target="_blank" href="https://wordpress.org">WordPress</a></span>
                                     </p>
