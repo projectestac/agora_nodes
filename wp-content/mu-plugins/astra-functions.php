@@ -507,7 +507,7 @@ function astra_nodes_contact_information(): string {
             </div>
             <div id="contact-info-2-wrapper">
                 <strong>
-                    <a id="contact-info-page-url" href="' . $contact_page_url . '" target="_blank">' . __('Contact', 'astra-nodes') . '</a>
+                    <a id="contact-info-page-url" href="' . $contact_page_url . '">' . __('Contact', 'astra-nodes') . '</a>
                 </strong>
             </div>
         ';
