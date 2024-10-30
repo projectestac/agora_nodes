@@ -362,6 +362,8 @@ add_action('customize_save_after', function ($wp_customize) {
     update_option('blogname', $wp_customize->get_setting('blogname')->value());
     update_option('blogdescription', $wp_customize->get_setting('blogdescription')->value());
 
+    // Set the site logo
+    update_option('site_logo', $logo);
 });
 
 // Customizer: Update the register in wp_options that makes possible to change the color palette
