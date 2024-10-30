@@ -357,6 +357,7 @@ add_action('customize_save_after', function ($wp_customize) {
     // Set the custom logo to the value of the 'astra_nodes_options[custom_logo]' setting.
     set_theme_mod('custom_logo', $logo_id);
     astra_update_option('custom_logo', $logo_id);
+    update_option('site_logo', $logo_id);
 
     // Set the blog name and description.
     update_option('blogname', $wp_customize->get_setting('blogname')->value());
