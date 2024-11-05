@@ -1650,6 +1650,17 @@ function xtec_configure_mailer($phpmailer) {
 }
 add_action('phpmailer_init', 'xtec_configure_mailer');
 
+add_filter('wp_mail_content_type', function () {
+    // Set email content type to HTML.
+    return 'text/html';
+});
+
+add_filter('wp_mail', function ($args) {
+    // Preserve HTML tags.
+    $args['message'] = wpautop($args['message']);
+    return $args;
+});
+
 /**
  * Modify default cache time of 12 hours down to 1 hour for all feeds
  *
