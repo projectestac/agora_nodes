@@ -535,7 +535,7 @@ function astra_nodes_header_buttons(): string {
         $content .= '
             <a class="grid-item grid-item-' . $i . '" href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>
                 <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
-                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link">' . mb_strtolower($text_icon) . '</span>
+                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link">' . $text_icon . '</span>
             </a>
             ';
 
