@@ -1438,6 +1438,7 @@ body.astra-nodes-sidebar_news .site-main {
 
 #front-page-notice-image {
     min-height: 350px;
+    max-height: 350px;
     height: 100%;
 }
 
