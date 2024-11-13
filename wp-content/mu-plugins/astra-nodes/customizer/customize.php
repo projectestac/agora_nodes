@@ -1019,16 +1019,18 @@ function nodes_customize_register($wp_customize): void {
         'transport' => 'postMessage',
     ]);
 
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize, 'front_page_notice_background_color', [
-                'label' => __('Background color', 'astra-nodes'),
-                'section' => 'astra_nodes_customizer_front_page_notice',
-                'settings' => 'astra_nodes_options[front_page_notice_background_color]',
-                'priority' => 4,
-            ]
-        )
-    );
+    if (is_xtec_super_admin()) {
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                $wp_customize, 'front_page_notice_background_color', [
+                    'label' => __('Background color', 'astra-nodes'),
+                    'section' => 'astra_nodes_customizer_front_page_notice',
+                    'settings' => 'astra_nodes_options[front_page_notice_background_color]',
+                    'priority' => 4,
+                ]
+            )
+        );
+    }
 
     // Front page notice: Link.
     $wp_customize->add_setting('astra_nodes_options[front_page_notice_url]', [
