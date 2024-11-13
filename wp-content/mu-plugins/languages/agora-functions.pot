@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-19T12:51:08+02:00\n"
+"POT-Creation-Date: 2024-11-13T12:29:56+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: agora-functions\n"
@@ -225,6 +225,14 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: agora-functions.php:2817
+#: agora-functions.php:2873
 msgid "More information"
+msgstr ""
+
+#: agora-functions.php:2948
+msgid "Notification Settings"
+msgstr ""
+
+#: agora-functions.php:2957
+msgid "Notifies administrators the creation of posts pending of validation"
 msgstr ""

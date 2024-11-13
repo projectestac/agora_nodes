@@ -2945,7 +2945,7 @@ add_filter('admin_init', function () {
     // Add a new section to a settings page.
     add_settings_section(
         'notification_settings_section',
-        __('Notification Settings', 'astra-nodes'),
+        __('Notification Settings', 'agora-functions'),
         static function () { },
         'general'
     );
@@ -2953,7 +2953,9 @@ add_filter('admin_init', function () {
     // Add a new field to the previous section.
     add_settings_field(
         'notify_admin_on_pending_submission',
-        '<label for="notify_admin_on_pending_submission">' . __('Notifies administrators about post creation pending validation', 'astra-nodes') . '</label>',
+        '<label for="notify_admin_on_pending_submission">' .
+            __('Notifies administrators the creation of posts pending of validation', 'agora-functions') .
+        '</label>',
         static function () {
             $value = (bool)get_option('notify_admin_on_pending_submission', 1);
             $checked = $value ? 'checked="checked"' : '';
