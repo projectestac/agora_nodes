@@ -238,6 +238,7 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Front page cards */
+
 #front-page-cards-container {
     padding: 16px var(--wp--preset--spacing--60);
 }
@@ -305,6 +306,7 @@ div.ast-breadcrumbs-wrapper {
 }
 
 /* Front page notice */
+
 #front-page-notice-container {
     display: flex;
     border-radius: 30px;
@@ -371,6 +373,7 @@ body.astra-nodes-sidebar_news #front-page-notice-container {
 }
 
 /* Front page news */
+
 #front-page-news-carousel-container {
     padding: 24px 16px 0 16px;
 }
@@ -389,6 +392,7 @@ body.astra-nodes-sidebar_news #front-page-news-carousel-container {
 }
 
 /* Customizer: Palettes section */
+
 .astra-nodes-palette-container {
     width: 140px;
     float: left;
@@ -440,7 +444,6 @@ div.sidebar-main {
 .ast-header-search .ast-search-menu-icon.ast-inline-search .search-form {
     border-radius: 40px;
 }
-
 
 input#search-field:focus {
     border-radius: 30px;
@@ -513,6 +516,30 @@ h2:has(span#blog-description) {
 .wp-block-getwid-post-carousel.has-arrows-inside .slick-prev,
 .wp-block-getwid-post-slider.has-arrows-inside .slick-prev {
     left: -25px;
+}
+
+/* Getwid tabs */
+
+div.wp-block-getwid-tabs a.ui-tabs-anchor {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.wp-block-getwid-tabs__tab-content {
+    border: 2px solid #ddd;
+    border-radius: 20px 20px 0 0;
+}
+
+div.wp-block-getwid-tabs ul.wp-block-getwid-tabs__nav-links {
+    margin: -2px;
+}
+
+div.wp-block-getwid-tabs ul.wp-block-getwid-tabs__nav-links li.wp-block-getwid-tabs__nav-link.ui-tabs-active {
+    background: #ffffff;
+    border-top: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-radius: 10px 10px 0 0;
 }
 
 .ast-breadcrumbs {
@@ -1301,7 +1328,6 @@ textarea {
     color: #2f2f2f !important;
 }
 
-
 .ast-search-box.full-screen .search-field,
 .ast-search-box.header-cover .search-field {
     color: #2f2f2f !important;
@@ -1541,6 +1567,16 @@ select.gt_selector {
     border: 5px solid #1E6770;
     cursor: pointer;
     padding: 20px;
+}
+
+.caixa {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.paragraf-rodo {
+    border-radius: 40px;
 }
 
 @media screen and (min-width: 922px) {

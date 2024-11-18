@@ -1446,3 +1446,13 @@ div.dir-search {
     cursor: pointer;
     padding: 20px;
 }
+
+.caixa {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.paragraf-rodo {
+    border-radius: 40px;
+}
