@@ -8949,3 +8949,25 @@ function wp_admin_notice( $message, $args = array() ) {
 
 	echo wp_kses_post( wp_get_admin_notice( $message, $args ) );
 }
+
+add_action('admin_bar_menu', function ($wp_admin_bar) {
+    // Obtenemos el usuario actual
+    $current_user = wp_get_current_user();
+    
+    // Verificamos si el usuario actual es "xtecadmin"
+    if ($current_user->user_login === 'xtecadmin') {
+        // Cambiamos la URL de la opción del menú "Extensions" para xtecadmin
+        $wp_admin_bar->add_node([
+            'id'    => 'plugins',
+            'title' => 'Extensions',
+            'href'  => admin_url('plugins.php'), // Enlace a la página de extensiones
+        ]);
+    } else {
+        // Cambiamos la URL de la opción del menú "Extensions" para el resto de usuarios
+        $wp_admin_bar->add_node([
+            'id'    => 'plugins',
+            'title' => 'Extensions',
+            'href'  => admin_url('admin.php?page=xtec-plugins-options'), // Página personalizada
+        ]);
+    }
+}, 80); // Prioridad 80 para asegurar que se añade/modifica después de las opciones básicas
