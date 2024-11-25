@@ -2792,7 +2792,7 @@ function plugin_links(): void {
     add_menu_page(
         __('Plugins'),
         __('Plugins'),
-        'manage_options',
+        'publish_posts', // Role author
         'xtec-plugins-options',
         'plugin_options_page',
         '',
@@ -2808,74 +2808,94 @@ function plugin_options_page(): void {
             'title' => 'H5P',
             'description' => 'Permet inserir contingut interactiu atractiu.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/h5p-integrat/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=h5p_settings',
+            ],
+            'links' => [
                 'Llista de H5P creats' => 'admin.php?page=h5p',
                 'Resultats' => 'admin.php?page=h5p_results',
                 'Afegeix nou' => 'admin.php?page=h5p_new',
             ],
             'plugin_file' => 'h5p/h5p.php',
+            'capability' => 'publish_posts', // Role author.
         ],
         [
             'title' => 'WP Telegram',
             'description' => 'Aquesta extensió permet enviar publicacions a Telegram quan es publica un article o pàgina nova.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/canal-de-telegram/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=wptelegram',
             ],
             'plugin_file' => 'wordpress-telegram/wptelegram.php',
+            'capability' => 'manage_options', // Role administrator.
         ],
         [
             'title' => 'Gtranslate',
             'description' => 'Permet incorporar un selector d\'idioma per fer la traducció automàtica del web a una gran quantitat d\'idiomes.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/g-translate/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=gtranslate_options',
             ],
             'plugin_file' => 'gtranslate/gtranslate.php',
+            'capability' => 'manage_options', // Role administrator.
         ],
         [
             'title' => 'Getwid',
             'description' => 'Permet configurar blocs extra com Instagram, que podeu inserir a pàgines i articles.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/editor-gutenberg/bloc-instagram/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=getwid',
             ],
             'plugin_file' => 'getwid/getwid.php',
+            'capability' => 'manage_options', // Role administrator.
         ],
         [
             'title' => 'WP Social Login',
             'description' => 'Permet habilitar l\'accés dels usuaris mitjançant Google o Moodle. També permet restringir els accessos.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/wp-social-login/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=wordpress-social-login',
             ],
             'plugin_file' => 'wordpress-social-login/wp-social-login.php',
+            'capability' => 'manage_options', // Role administrator.
         ],
         [
             'title' => 'AddToAny',
             'description' => 'Afegeix botons als articles i pàgines per facilitar la compartició dels continguts a les xarxes socials.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/add-to-any/',
-            'links' => [
+            'links_admin' => [
                 'Configuració' => 'options-general.php?page=addtoany',
             ],
             'plugin_file' => 'add-to-any/add-to-any.php',
+            'capability' => 'manage_options', // Role administrator.
         ],
     ];
 
     echo '<div class="wrap" style="display:flex; flex-wrap:wrap;">';
 
     foreach ($plugins as $plugin) {
-        if (is_plugin_active($plugin['plugin_file'])) {
+
+        if (is_plugin_active($plugin['plugin_file']) && current_user_can($plugin['capability'])) {
             echo '<div style="width: 250px; height: auto; min-height: 200px; padding: 15px; margin: 10px; box-sizing: border-box; border: 1px solid #dddddd; border-radius: 5px;">';
             echo '<h3 style="height: 25px;">' . esc_html($plugin['title']) . '</h3>';
             echo '<p style="margin-bottom: 20px;">' . esc_html($plugin['description']) . '</p>';
             echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url($plugin['more_info']) . '">' . esc_html(__('More information', 'agora-functions')) . '</a></p>';
-            foreach ($plugin['links'] as $link_text => $link_url) {
-                echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url(admin_url($link_url)) . '">' . esc_html($link_text) . '</a></p>';
+
+            if (isset($plugin['links_admin']) && current_user_can('manage_options')) {
+                foreach ($plugin['links_admin'] as $link_text => $link_url) {
+                    echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url(admin_url($link_url)) . '">' . esc_html($link_text) . '</a></p>';
+                }
             }
+
+            if (isset($plugin['links'])) {
+                foreach ($plugin['links'] as $link_text => $link_url) {
+                    echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url(admin_url($link_url)) . '">' . esc_html($link_text) . '</a></p>';
+                }
+            }
+
             echo '</div>';
         }
+
     }
 
     echo '</div>';
