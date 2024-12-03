@@ -8949,3 +8949,83 @@ function wp_admin_notice( $message, $args = array() ) {
 
 	echo wp_kses_post( wp_get_admin_notice( $message, $args ) );
 }
+
+add_action('admin_bar_menu', 'customize_admin_bar_menu', 999);
+
+function customize_admin_bar_menu($wp_admin_bar) {
+    $current_user = wp_get_current_user();
+
+	// Asegurar que el menú está vacío antes de añadir elementos
+	$children = $wp_admin_bar->get_nodes();
+
+    foreach ($children as $node) {
+        if (isset($node->parent) && $node->parent === 'site-name') {
+            $wp_admin_bar->remove_node($node->id);
+        }
+    }
+
+	// Añadir elementos al menú
+    if (in_array('administrator', $current_user->roles)) {
+        $wp_admin_bar->add_node(array(
+            'id'    => 'dashboard',
+            'title' => 'Tauler',
+            'href'  => admin_url(),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-post',
+            'title' => 'Article',
+            'href'  => admin_url('post-new.php'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-media',
+            'title' => 'Mèdia',
+            'href'  => admin_url('media-new.php'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-page',
+            'title' => 'Pàgina',
+            'href'  => admin_url('post-new.php?post_type=page'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'menus',
+            'title' => 'Menús',
+            'href'  => admin_url('nav-menus.php'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-user',
+            'title' => 'Usuari',
+            'href'  => admin_url('user-new.php'),
+			'parent' => 'site-name'
+        ));
+    } elseif (array_intersect($current_user->roles, array('editor', 'author', 'contributor'))) {
+        $wp_admin_bar->add_node(array(
+            'id'    => 'dashboard',
+            'title' => 'Tauler',
+            'href'  => admin_url(),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-post',
+            'title' => 'Article',
+            'href'  => admin_url('post-new.php'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-media',
+            'title' => 'Mèdia',
+            'href'  => admin_url('media-new.php'),
+			'parent' => 'site-name'
+        ));
+        $wp_admin_bar->add_node(array(
+            'id'    => 'new-page',
+            'title' => 'Pàgina',
+            'href'  => admin_url('post-new.php?post_type=page'),
+			'parent' => 'site-name'
+        ));
+    }
+}
