@@ -1044,3 +1044,19 @@ if (is_plugin_active('wordpress-social-login/wp-social-login.php')) {
     });
 
 }
+
+// Menus: Mobile menu must copy main menu. Regular admin users have access only to the main menu.
+add_action('after_setup_theme', function () {
+
+    // Get all the menu locations.
+    $menu_locations = get_theme_mod('nav_menu_locations');
+
+    // Check that the primary location exists.
+    if (isset($menu_locations['primary'])) {
+        // Copy the primary menu to the mobile and the secondary menus.
+        $menu_locations['mobile_menu'] = $menu_locations['primary'];
+        // Update the value.
+        set_theme_mod('nav_menu_locations', $menu_locations);
+    }
+
+});
