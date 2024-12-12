@@ -1,0 +1,196 @@
+# Translation of Plugins - Author Category - Stable Readme (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Author Category - Stable Readme (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - Author Category - Stable Readme (latest release)\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2024-12-12 09:55+0100\n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.3\n"
+
+#. Short description.
+msgid "simple lightweight plugin limit authors to post just in one category."
+msgstr "un connector lleuger simple que limita els autors a publicar només en una categoria."
+
+#. Name.
+msgid "Author category"
+msgstr "Autor de categoria"
+
+#. Found in faq paragraph.
+msgid ""
+"Simply login as the admin user and under each user &gt;&gt; profile select the category for that user."
+msgstr ""
+"Simplement inicieu sessió com a usuari administrador i sota cada usuari &gt;&gt; perfil seleccioneu la "
+"categoria per a aquest usuari."
+
+#. Found in faq paragraph.
+msgid ""
+"Simply use the <a href=\"http://wordpress.org/tags/author-category?forum_id=10\">Support Forum</a> and "
+"thanks a head for doing that."
+msgstr ""
+"Simplement utilitzeu el <a href=\"http://wordpress.org/tags/author-category?forumid=10\">Fòrum de "
+"suport</a> i gràcies a un cap per fer-ho."
+
+#. Found in faq header.
+msgid "How To Use"
+msgstr "Com utilitzar"
+
+#. Found in faq header.
+msgid "I have Found a Bug, Now what?"
+msgstr "He trobat un error, ara què?"
+
+#. Found in installation list item.
+msgid "Done!"
+msgstr "Fet!"
+
+#. Found in installation list item.
+msgid "Then activate the Plugin from Plugins page."
+msgstr "A continuació, activeu el connector des de la pàgina Connectors."
+
+#. Found in installation list item.
+msgid ""
+"Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress "
+"installation."
+msgstr ""
+"Extreu el fitxer zip i simplement deixeu anar el contingut al directori wp-content/plugins/ de la "
+"vostra instal·lació del WordPress."
+
+#. Found in description paragraph.
+msgid "Also check out my <a href=\"http://en.bainternet.info/category/plugins\">other plugins</a>"
+msgstr ""
+"Fes un cop d'ull als meus <a href=\"http://en.bainternet.info/category/plugins\">altres connectors</a>"
+
+#. Found in description paragraph.
+msgid "Any feedback or suggestions are welcome."
+msgstr "Qualsevol comentari o suggeriment és benvingut."
+
+#. Found in description paragraph.
+msgid "French traslation (since 0.8) thanks to jyd44"
+msgstr "Traducció al francès (des de 0.8) gràcies a jyd44"
+
+#. Found in description paragraph.
+msgid "<strong>Main Features:</strong>"
+msgstr "<strong>Característiques principals:</strong>"
+
+#. Found in description paragraph.
+msgid ""
+"This Plugin allows you to select specific category per user and all of that users posts will be posted "
+"in that category only."
+msgstr ""
+"Aquest connector us permet seleccionar una categoria específica per usuari i totes les entrades "
+"d'usuaris es publicaran només en aquesta categoria."
+
+#. Found in description list item.
+msgid "multiple categories per user.(new)"
+msgstr "múltiples categories per usuari.(nou)"
+
+#. Found in description list item.
+msgid "Option to clear selection.(new)"
+msgstr "Opció per a netejar la selecció.(nou)"
+
+#. Found in description list item.
+msgid "Removed categories from quick edit for selected users."
+msgstr "S'han eliminat les categories de l'edició ràpida per als usuaris seleccionats."
+
+#. Found in description list item.
+msgid "Removes category metabox for selected users."
+msgstr "Elimina la metacaixa de categoria per als usuaris seleccionats."
+
+#. Found in description list item.
+msgid ""
+"Only users with a specified category will be limited to that category, other will still have full "
+"control."
+msgstr ""
+"Només els usuaris amb una categoria especificada estaran limitats a aquesta categoria, la resta "
+"tindran un control complet."
+
+#. Found in description list item.
+msgid "Only admin can set categories for users."
+msgstr "Només l'administrador pot establir categories per als usuaris."
+
+#. Screenshot description.
+msgid "Author category metabox."
+msgstr "Metacaixa d'autor de categoria."
+
+#. Screenshot description.
+msgid "User category selection under user profile."
+msgstr "Selecció de categories d'usuaris sota el perfil d'usuari."
+
+#. Found in changelog paragraph.
+msgid "initial release"
+msgstr "llançament inicial"
+
+#. Found in changelog paragraph.
+msgid "Fixed admin profile update issue."
+msgstr "S'ha esmenat el problema d'actualització del perfil d'administrador."
+
+#. Found in changelog paragraph.
+msgid ""
+"added plugin links,\n"
+"added XMLRPC and Quickpress support\n"
+"changed category save function from save_post to default input_tax field.\n"
+"added a function to overwrite default category option per user."
+msgstr ""
+"s'han afegit els enllaços del connector,\n"
+"s'ha afegit el suport XMLRPC i Quickpress\n"
+"s'ha canviat la funció de desament de categoria des de savepost al camp inputtax per defecte.\n"
+"s'ha afegit una funció per sobreescriure l'opció de categoria predeterminada per usuari."
+
+#. Found in changelog paragraph.
+msgid ""
+"Added support for multiple categories per user.\n"
+"added option to remove user selected category."
+msgstr ""
+"S'ha afegit suport per a múltiples categories per usuari.\n"
+"s'ha afegit l'opció per eliminar la categoria seleccionada per a l'usuari."
+
+#. Found in changelog paragraph.
+msgid "Added post by mail category limitation."
+msgstr "S'ha afegit l'entrada per la limitació de la categoria del correu."
+
+#. Found in changelog paragraph.
+msgid ""
+"Fixed xmlrpc posting issue.\n"
+"Added an option panel to allow configuration of multiple categories.\n"
+"added An action hook <code>in_author_category_metabox</code>"
+msgstr ""
+"S'ha esmenat el problema de publicació de xmlrpc.\n"
+"S'ha afegit un plafó d'opcions per a permetre la configuració de múltiples categories.\n"
+"s'ha afegit un ganxo d'acció <code>inauthorcategorymetabox</code>"
+
+#. Found in changelog paragraph.
+msgid ""
+"updated simple panel version.\n"
+"added textdomain to plugin and to option panel.\n"
+"wrapped checkboxes with labels\n"
+"categoires are now ordered by name."
+msgstr ""
+"s'ha actualitzat la versió del plafó simple.\n"
+"s'ha afegit textdomain al connector i al plafó d'opcions.\n"
+"caselles de selecció ajustades amb etiquetes\n"
+"Les categoires ara s'ordenen pel nom."
+
+#. Found in changelog paragraph.
+msgid ""
+"Added POT file for translations.\n"
+"Added french translation.\n"
+"Fixed translation loading to an earlest time to allow panel translation."
+msgstr ""
+"S'ha afegit el fitxer POT per a les traduccions.\n"
+"S'ha afegit la traducció al francès.\n"
+"S'ha esmenat la càrrega de la traducció a un temps més primerenc per a permetre la traducció del plafó."
+
+msgid "Author category settings"
+msgstr "Configuració de l'autor de la categoria"
+
+msgid "Check none by default"
+msgstr "Per defecte, no en comprova cap"
+
+msgid "When using multiple categories they are all checked by default, check this box to disable that."
+msgstr "Quan s'utilitzen múltiples categories, totes estan marcades per defecte, marqueu aquesta casella per desactivar-ho."
