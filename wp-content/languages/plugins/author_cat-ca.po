@@ -186,11 +186,74 @@ msgstr ""
 "S'ha afegit la traducció al francès.\n"
 "S'ha esmenat la càrrega de la traducció a un temps més primerenc per a permetre la traducció del plafó."
 
-msgid "Author category settings"
-msgstr "Configuració de l'autor de la categoria"
-
 msgid "Check none by default"
 msgstr "Per defecte, no en comprova cap"
 
 msgid "When using multiple categories they are all checked by default, check this box to disable that."
 msgstr "Quan s'utilitzen múltiples categories, totes estan marcades per defecte, marqueu aquesta casella per desactivar-ho."
+
+msgid "Save changes"
+msgstr "Desa els canvis"
+
+msgid "Credits"
+msgstr "Crèdits"
+
+msgid "Latest From Bainternet"
+msgstr "Últimes notícies de Bainternet"
+
+msgid "Author category settings"
+msgstr "Configuració de categories d'autor"
+
+msgid "Want to help make this plugin even better? All donations are used to improve and support, so donate $20, $50 or $100 now!"
+msgstr "Vols ajudar a millorar aquest complement? Totes les donacions es fan servir per millorar i donar suport, així que dona 20 $, 50 $ o 100 $ ara!"
+
+msgid "Or you could:"
+msgstr "O podries:"
+
+msgid "Rate the plugin 5★ on WordPress.org"
+msgstr "Valora el complement amb 5★ a WordPress.org"
+
+msgid "Blog about it & link to the plugin page"
+msgstr "Escriu un blog sobre això i enllaça a la pàgina del complement"
+
+msgid "Author Category settings"
+msgstr "Configuració de categories d'autor"
+
+msgid "Author Category"
+msgstr "Categoria d'autor"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Select a category to limit an author to post just in that category (use Crtl to select more then one)."
+msgstr "Selecciona una categoria per limitar un autor a publicar només en aquesta categoria (utilitza Crtl per seleccionar més d'una)."
+
+msgid "Clear Category"
+msgstr "Netejar la categoria"
+
+msgid "Check if you want to clear the limitation for this user."
+msgstr "Marqueu si voleu netejar la limitació per a aquest usuari."
+
+msgid "this will be posted in: <strong>%s</strong> Category"
+msgstr "això es publicarà a: <strong>%s</strong> Categoria"
+
+msgid "Make Sure you select only the categories you want: <strong>"
+msgstr "Assegureu-vos de seleccionar només les categories que voleu: <strong>"
+
+msgid "Other Plugins by this author"
+msgstr "Altres plugins d'aquest autor"
+
+msgid "Plugin Support"
+msgstr "Suport del plugin"
+
+msgid "Donate"
+msgstr "Feu una donació"
+
+msgid "select a category"
+msgstr "selecciona una categoria"
+
+msgid "Sorry, but you cannot access this page directly."
+msgstr "Ho sentim, però no podeu accedir a aquesta pàgina directament."
+
+msgid "Make Sure you select only the categories you want:"
+msgstr "Assegureu-vos de seleccionar només les categories que voleu:"
