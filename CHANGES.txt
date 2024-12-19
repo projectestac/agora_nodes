@@ -4,6 +4,13 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 24.12.23
+---------------------------------------------------------------------------------------
+- agora-functions: Show links to H5P to role author in custom extensions page
+- Customized wp_admin_bar for all roles
+- Menus: Mobile menu copies main menu
+
+
 Changes 24.11.19
 ---------------------------------------------------------------------------------------
 - Nodes 2: Added CSS styles
