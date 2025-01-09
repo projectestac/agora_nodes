@@ -967,8 +967,13 @@ add_action('init', function () {
         return;
     }
 
+    // Disable the mobile menu in the admin pages. This is necessary to hide the dropdown menu in the
+    // menu configuration page and, at the same time, keep it registered in the user interface.
+    if (is_admin()) {
+        unregister_nav_menu('mobile_menu');
+    }
+
     unregister_nav_menu('secondary_menu');
-    unregister_nav_menu('mobile_menu');
     unregister_nav_menu('menu_3');
     unregister_nav_menu('menu_4');
     unregister_nav_menu('menu_5');
