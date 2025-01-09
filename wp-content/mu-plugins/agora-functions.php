@@ -3033,7 +3033,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
     global $current_user;
 
-    // Remove the default elements from the menu.
+    // Remove the default elements from the menu 'site-name'.
     $children = $wp_admin_bar->get_nodes();
 
     foreach ($children as $node) {
@@ -3042,11 +3042,19 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         }
     }
 
-    // Add the custom elements to the menu.
-    if (in_array('administrator', $current_user->roles)) {
+    // In the admin pages, set the link to the homepage, and the user pages, to the dashboard.
+    if (is_admin()) {
 
-        // Administrators' menu.
-        // The prefix with a letter (a_, b_, c_, ...) is used to order the elements in the menu.
+        // The prefix with a letter (a_, b_, c_...) is used to order the elements in the menu.
+        $wp_admin_bar->add_node([
+            'id' => 'a_dashboard',
+            'title' => __('Go to homepage', 'agora-functions'),
+            'href' => home_url(),
+            'parent' => 'site-name',
+        ]);
+
+    } else {
+
         $wp_admin_bar->add_node([
             'id' => 'a_dashboard',
             'title' => __('Dashboard'),
@@ -3054,6 +3062,12 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
             'parent' => 'site-name',
         ]);
 
+    }
+
+    // Add the custom elements to the menu 'site-name'.
+    if (in_array('administrator', $current_user->roles)) {
+
+        // User xtecadmin has a link to the plugin admin page.
         if (is_xtecadmin()) {
             $wp_admin_bar->add_node([
                 'id' => 'b_plugins',
@@ -3065,22 +3079,22 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
         $wp_admin_bar->add_node([
             'id' => 'c_new-post',
-            'title' => __('Post'),
-            'href' => admin_url('post-new.php'),
+            'title' => __('Posts'),
+            'href' => admin_url('edit.php'),
             'parent' => 'site-name',
         ]);
 
         $wp_admin_bar->add_node([
             'id' => 'd_new-media',
             'title' => __('Media'),
-            'href' => admin_url('media-new.php'),
+            'href' => admin_url('upload.php'),
             'parent' => 'site-name',
         ]);
 
         $wp_admin_bar->add_node([
             'id' => 'e_new-page',
-            'title' => _x('Page', 'post type singular name'),
-            'href' => admin_url('post-new.php?post_type=page'),
+            'title' => __('Pages'),
+            'href' => admin_url('edit.php?post_type=page'),
             'parent' => 'site-name',
         ]);
 
@@ -3093,8 +3107,8 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
         $wp_admin_bar->add_node([
             'id' => 'g_new-user',
-            'title' => __('User'),
-            'href' => admin_url('user-new.php'),
+            'title' => __('Users'),
+            'href' => admin_url('users.php'),
             'parent' => 'site-name',
         ]);
 
@@ -3104,23 +3118,16 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         if (array_intersect($current_user->roles, ['editor', 'author', 'contributor', 'xtec_teacher'])) {
 
             $wp_admin_bar->add_node([
-                'id' => 'a_dashboard',
-                'title' => __('Dashboard'),
-                'href' => admin_url(),
+                'id' => 'c_new-post',
+                'title' => __('Posts'),
+                'href' => admin_url('edit.php'),
                 'parent' => 'site-name',
             ]);
 
             $wp_admin_bar->add_node([
-                'id' => 'b_new-post',
-                'title' => __('Post'),
-                'href' => admin_url('post-new.php'),
-                'parent' => 'site-name',
-            ]);
-
-            $wp_admin_bar->add_node([
-                'id' => 'c_new-media',
+                'id' => 'd_new-media',
                 'title' => __('Media'),
-                'href' => admin_url('media-new.php'),
+                'href' => admin_url('upload.php'),
                 'parent' => 'site-name',
             ]);
 
@@ -3130,13 +3137,40 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         if (array_intersect($current_user->roles, ['editor'])) {
 
             $wp_admin_bar->add_node([
-                'id' => 'd_new-page',
-                'title' => _x('Page', 'post type singular name'),
-                'href' => admin_url('post-new.php?post_type=page'),
+                'id' => 'e_new-page',
+                'title' => __('Pages'),
+                'href' => admin_url('edit.php?post_type=page'),
                 'parent' => 'site-name',
             ]);
 
         }
     }
 
-}, 999);
+    // Now, customize menu 'new-content'.
+    if (!is_admin()) {
+
+        // Remove all the elements from the menu 'new-content' except the ones in the array $keep_ids.
+        $keep_ids = ['new-post', 'new-media', 'new-page', 'new-user'];
+        $all_nodes = $wp_admin_bar->get_nodes();
+
+        foreach ($all_nodes as $node) {
+            if ($node->parent === 'new-content' && !in_array($node->id, $keep_ids, true)) {
+                $wp_admin_bar->remove_node($node->id);
+            }
+        }
+
+        // Extra option for administrators.
+        if (in_array('administrator', $current_user->roles)) {
+
+             $wp_admin_bar->add_node([
+                'id' => 'a_new-menu',
+                'title' => __('Menú'),
+                'href' => admin_url('nav-menus.php?action=edit&menu=0'),
+                'parent' => 'new-content',
+            ]);
+
+        }
+
+    }
+
+}, 9999);
