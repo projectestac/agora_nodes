@@ -1690,7 +1690,7 @@ function extensions_widget_dashboard() {
         echo '
             <h3><span class="dashicons dashicons-laptop"></span> Gestor d\'incidències</h3>
             <p>Permet que docents, alumnat i PAS puguin notificar les incidències informàtiques en un sistema senzill i centralitzat. 
-            <a target="_blank" href="https://projectes.xtec.cat/coordinaciodigital/gestio-equips-serveis/gestio-incidencies/ri/">Més informació</a>.</p> 
+            <a target="_blank" href="https://projectes.xtec.cat/digital/serveis-digitals/nodes/gestor-incidencies-informatiques/">Més informació</a>.</p>
             <form action="' . admin_url('admin-post.php') . '" method="post">
             ';
 
@@ -1717,7 +1717,7 @@ function extensions_widget_dashboard() {
         echo '
             <h3><span class="dashicons dashicons-list-view"></span> Gestor d\'inventari digital</h3>
             <p>Permet crear un inventari dels equips i dispositius digitals del centre (excepte equips del PEDC, que es gestionen a INDIC). 
-            <a target="_blank" href="https://projectes.xtec.cat/coordinaciodigital/gestio-equips-serveis/maquinari/inventari-digital/">Més informació</a>.</p>
+            <a target="_blank" href="https://projectes.xtec.cat/digital/serveis-digitals/nodes/gestor-inventari-digital/">Més informació</a>.</p>
             <form action="' . admin_url('admin-post.php') . '" method="post">
             ';
 
