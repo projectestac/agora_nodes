@@ -159,7 +159,19 @@ function render_page($page, $skip_print = false): void {
     .accordion li ul li ul li a {
         padding-left: 40px;
         color: gray;
+        font-size: 95%;
+    }
+
+    .accordion li ul li ul li ul li a {
+        padding-left: 60px;
+        color: gray;
         font-size: 90%;
+    }
+
+    .accordion li ul li ul li ul li ul li a {
+        padding-left: 80px;
+        color: gray;
+        font-size: 85%;
     }
 
     .accordion li:last-of-type {
