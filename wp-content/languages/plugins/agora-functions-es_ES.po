@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
-"POT-Creation-Date: 2024-11-13T12:29:56+01:00\n"
-"PO-Revision-Date: 2024-11-13 12:48+0100\n"
+"POT-Creation-Date: 2025-01-21T12:07:14+01:00\n"
+"PO-Revision-Date: 2025-01-21 12:22+0100\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -16,9 +16,8 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: astra-functions.php
-#, fuzzy
 msgid "AstraFunctions"
-msgstr "Funciones comunas"
+msgstr "Funciones comunes"
 
 #. Plugin URI of the plugin
 #: astra-functions.php
@@ -129,7 +128,7 @@ msgstr "Profesor"
 #: agora-functions.php:769 agora-functions.php:804 agora-functions.php:834
 #: agora-functions.php:866
 msgid "Select name to teacher's node"
-msgstr "Seleccione el nombre al nodo del maestro"
+msgstr "Seleccione el nombre del nodo de profesores"
 
 #: agora-functions.php:875
 msgid "Node that containing all user's with teacher's role"
@@ -248,19 +247,23 @@ msgstr "PD: Esta es una notificación automática. Por favor, no responda"
 msgid "Content"
 msgstr "Contenido"
 
-#: agora-functions.php:2873
+#: agora-functions.php:2882
 msgid "More information"
 msgstr "Más información"
 
-#: agora-functions.php:2948
+#: agora-functions.php:2968
 msgid "Notification Settings"
 msgstr "Parámetros de la notificación"
 
-#: agora-functions.php:2957
+#: agora-functions.php:2977
 msgid "Notifies administrators the creation of posts pending of validation"
 msgstr ""
 "Notifica por correo electrónico a los administradores la creación de "
 "contenido pendiente de validación"
+
+#: agora-functions.php:3051
+msgid "Go to homepage"
+msgstr "Ve a la web"
 
 #~ msgid ">"
 #~ msgstr ">"
