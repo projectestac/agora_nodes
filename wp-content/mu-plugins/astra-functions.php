@@ -912,12 +912,6 @@ add_action('widgets_init', function () {
 
     unregister_sidebar('ast-widgets');
     unregister_sidebar('header-widget');
-    unregister_sidebar('footer-widget-5');
-    unregister_sidebar('footer-widget-6');
-    unregister_sidebar('footer-widget-7');
-    unregister_sidebar('footer-widget-8');
-    unregister_sidebar('footer-widget-9');
-    unregister_sidebar('footer-widget-10');
     unregister_sidebar('header-widget-1');
     unregister_sidebar('header-widget-2');
     unregister_sidebar('header-widget-3');
