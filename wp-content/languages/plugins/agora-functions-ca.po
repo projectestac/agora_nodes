@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nodes 4.7.x\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
-"POT-Creation-Date: 2024-11-13T12:29:56+01:00\n"
-"PO-Revision-Date: 2024-11-13 12:45+0100\n"
+"POT-Creation-Date: 2025-01-21T12:07:14+01:00\n"
+"PO-Revision-Date: 2025-01-21 12:18+0100\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -258,19 +258,23 @@ msgstr ""
 msgid "Content"
 msgstr "Contingut"
 
-#: agora-functions.php:2873
+#: agora-functions.php:2882
 msgid "More information"
 msgstr "Més informació"
 
-#: agora-functions.php:2948
+#: agora-functions.php:2968
 msgid "Notification Settings"
 msgstr "Paràmetres de la notificació"
 
-#: agora-functions.php:2957
+#: agora-functions.php:2977
 msgid "Notifies administrators the creation of posts pending of validation"
 msgstr ""
 "Notifica per correu electrònic als administradors la creació de contingut "
 "pendent de validació"
+
+#: agora-functions.php:3051
+msgid "Go to homepage"
+msgstr "Ves al web"
 
 #~ msgid "Icon"
 #~ msgstr "Icona"
