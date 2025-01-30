@@ -1,15 +1,15 @@
-# Translation of WordPress - 6.4.x - Administration - Network Admin in Basque
-# This file is distributed under the same license as the WordPress - 6.4.x - Administration - Network Admin package.
+# Translation of WordPress - 6.5.x - Administration - Network Admin in Basque
+# This file is distributed under the same license as the WordPress - 6.5.x - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-28 11:53:18+0000\n"
+"PO-Revision-Date: 2024-04-21 10:05:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.0.1\n"
 "Language: eu_ES\n"
-"Project-Id-Version: WordPress - 6.4.x - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 6.5.x - Administration - Network Admin\n"
 
 #: wp-admin/network/users.php:269
 msgid "Users deleted."
@@ -1328,6 +1328,11 @@ msgstr "Artxibatu"
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:783
 msgid "Unarchive"
 msgstr "Kendu artxibotik"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:759
+msgctxt "site"
+msgid "Activate"
+msgstr "Aktibatu"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:650
 msgid "Main"

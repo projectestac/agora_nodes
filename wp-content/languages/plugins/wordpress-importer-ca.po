@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - WordPress Importer - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-17 19:20:08+0000\n"
+"PO-Revision-Date: 2024-08-28 06:32:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0-beta.2\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: ca\n"
 "Project-Id-Version: Plugins - WordPress Importer - Stable (latest release)\n"
 
@@ -95,7 +95,7 @@ msgstr "El servidor remot no respon"
 
 #: class-wp-import.php:1031
 msgid "Invalid file type"
-msgstr "Tipus de fitxer invàlid"
+msgstr "Tipus de fitxer no vàlid"
 
 #: class-wp-import.php:1013
 msgid "Fetching attachments is not enabled"
