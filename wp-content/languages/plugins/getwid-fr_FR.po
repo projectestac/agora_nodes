@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-07-07 11:47:34+0000\n"
+"PO-Revision-Date: 2025-01-10 16:59:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgstr "Général"
 msgid "Template Library"
 msgstr "Bibliothèque de modèles"
 
-#: includes/blocks/mailchimp.php:318
+#: includes/blocks/mailchimp.php:324
 msgid "Email is required."
 msgstr "L’e-mail est obligatoire."
 
@@ -272,11 +272,11 @@ msgstr "Barre de progression"
 msgid "Media & Text Slider"
 msgstr "Diaporama de média & texte"
 
-#: includes/blocks/mailchimp.php:378
+#: includes/blocks/mailchimp.php:384
 msgid "Thank you for joining our mailing list."
 msgstr "Merci de vous joindre à notre liste de diffusion."
 
-#: includes/blocks/mailchimp.php:322
+#: includes/blocks/mailchimp.php:328
 msgid "An invalid Mailchimp list was provided."
 msgstr "Une liste Mailchimp invalide a été fournie."
 

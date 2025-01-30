@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-01-08 22:06:20+0000\n"
+"PO-Revision-Date: 2024-12-25 17:50:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,11 +22,6 @@ msgstr "Amplada per defecte de l'àrea de contingut al bloc Secció. Deixeu-ho b
 #: includes/blocks/content-slider.php:52 assets/js/editor.blocks.js:23
 msgid "Content Slider"
 msgstr "Carrusel de contingut"
-
-#: includes/templates/recent-posts/post.php:92
-#: includes/templates/template-parts/post-comments.php:27
-msgid "No comments"
-msgstr "Sense comentaris"
 
 #. translators: %d is a comments count
 #: includes/templates/recent-posts/post.php:90
@@ -340,15 +335,15 @@ msgstr "Carrusel de correus"
 msgid "Person"
 msgstr "Persona"
 
-#: includes/blocks/mailchimp.php:378
+#: includes/blocks/mailchimp.php:384
 msgid "Thank you for joining our mailing list."
 msgstr "Gràcies per unir-vos a la nostra llista de correu."
 
-#: includes/blocks/mailchimp.php:322
+#: includes/blocks/mailchimp.php:328
 msgid "An invalid Mailchimp list was provided."
 msgstr "S'ha proporcionat una llista de Mailchimp no vàlida."
 
-#: includes/blocks/mailchimp.php:318
+#: includes/blocks/mailchimp.php:324
 msgid "Email is required."
 msgstr "El correu electrònic és obligatori."
 
@@ -575,3 +570,8 @@ msgstr "Carrusel d'imatges"
 #: includes/blocks/social-links.php:27 assets/js/editor.blocks.js:23
 msgid "Social Links"
 msgstr "Enllaços a les xarxes socials"
+
+#: includes/templates/recent-posts/post.php:92
+#: includes/templates/template-parts/post-comments.php:27
+msgid "No comments"
+msgstr "No hi ha comentaris"
