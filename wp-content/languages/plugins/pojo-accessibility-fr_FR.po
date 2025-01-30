@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - One Click Accessibility - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-09-03 11:17:17+0000\n"
+"PO-Revision-Date: 2025-01-10 15:26:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/4.0.0-alpha.7\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - One Click Accessibility - Stable (latest release)\n"
 
@@ -382,7 +382,7 @@ msgstr "Titre niveau de gris"
 
 #: includes/pojo-a11y-settings.php:90 includes/pojo-a11y-settings.php:105
 msgid "Grayscale"
-msgstr "Niveau de gris"
+msgstr "Niveaux de gris"
 
 #: includes/pojo-a11y-settings.php:82 includes/pojo-a11y-settings.php:85
 msgid "Decrease Text"
