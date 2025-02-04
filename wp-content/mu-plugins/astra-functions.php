@@ -12,6 +12,11 @@ Author: Departament d'Educació - Generalitat de Catalunya
 // the theme is not Astra.
 add_filter('admin_init', function () {
 
+    // Only xtecadmin can set this option.
+    if (!is_xtec_super_admin()) {
+        return;
+    }
+
     register_setting('general', 'astra_nodes_use_vanilla_astra', ['type' => 'boolean']);
 
     // Add a new section to a settings page.
