@@ -175,12 +175,12 @@ a#contact-info-link-to-map {
     background-color: var(--ast-global-color-0);
 }
 
-.grid-item-1 a,
+.grid-item-1 span,
 .grid-item-1 i,
-.grid-item-5 a,
+.grid-item-5 span,
 .grid-item-5 i {
     color: var(--ast-global-color-0);
-    filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+    filter: invert(0) grayscale(1) brightness(4) contrast(9000);
     mix-blend-mode: luminosity;
     opacity: 0.85;
 }
@@ -190,12 +190,12 @@ a#contact-info-link-to-map {
     background-color: color-mix(in srgb, var(--ast-global-color-1) 50%, var(--ast-global-color-0) 50%);
 }
 
-.grid-item-2 a,
+.grid-item-2 span,
 .grid-item-2 i,
-.grid-item-6 a,
+.grid-item-6 span,
 .grid-item-6 i {
     color: color-mix(in srgb, var(--ast-global-color-1) 50%, var(--ast-global-color-0) 50%);
-    filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+    filter: invert(0) grayscale(1) brightness(4) contrast(9000);
     mix-blend-mode: luminosity;
     opacity: 0.85;
 }
@@ -205,12 +205,12 @@ a#contact-info-link-to-map {
     background-color: var(--ast-global-color-1);
 }
 
-.grid-item-3 a,
+.grid-item-3 span,
 .grid-item-3 i,
-.grid-item-4 a,
+.grid-item-4 span,
 .grid-item-4 i {
     color: var(--ast-global-color-1);
-    filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+    filter: invert(0) grayscale(1) brightness(4) contrast(9000);
     mix-blend-mode: luminosity;
     opacity: 0.85;
 }
@@ -1412,6 +1412,7 @@ ol.fa-ul {
     margin: 0 !important;
 }
 
+a.grid-item:hover i,
 a.grid-item:hover span {
     color: white !important;
 }
