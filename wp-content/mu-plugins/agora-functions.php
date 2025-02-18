@@ -1852,6 +1852,7 @@ add_action('switch_theme', function ($new_theme) {
         initialize_theme_mod();
         initialize_palettes();
         initialize_astra_settings();
+        configure_page_on_front();
 
         // Remove the welcome panel from the dashboard. This call hides the panel immediately after
         // the theme is activated. Otherwise, the panel shows up at least once.
@@ -2654,6 +2655,35 @@ function initialize_astra_settings(): void {
     } else {
         add_option('astra-settings', $astra_settings);
     }
+
+}
+
+/**
+ * Ensure the record 'page_on_front' in the table wp_options has the correct value.
+ */
+function configure_page_on_front(): void {
+
+    // Retrieve the value of reactor_options['frontpage_page'].
+    $reactor_options = get_option('reactor_options');
+    $frontpage_page = isset($reactor_options['frontpage_page']) ? (int)$reactor_options['frontpage_page'] : 0;
+
+    if ($frontpage_page !== 0) {
+        // If the value is different from zero, save it in page_on_front and exit.
+        update_option('page_on_front', $frontpage_page);
+        return;
+    }
+
+    // Otherwise, retrieve the current value of page_on_front.
+    $current_page_on_front = (int)get_option('page_on_front');
+
+    if ($current_page_on_front !== 0) {
+        // No changes are needed.
+        return;
+    }
+
+    // If both values are 0, something is wrong. In this case, set the value 9. This is the ID
+    // of the default page 'Inici' of Nodes 1.
+    update_option('page_on_front', 9);
 
 }
 
