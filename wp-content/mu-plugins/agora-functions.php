@@ -1853,6 +1853,7 @@ add_action('switch_theme', function ($new_theme) {
         initialize_palettes();
         initialize_astra_settings();
         configure_page_on_front();
+        activate_blog_pro();
 
         // Remove the welcome panel from the dashboard. This call hides the panel immediately after
         // the theme is activated. Otherwise, the panel shows up at least once.
@@ -2723,6 +2724,41 @@ function update_admin_colors(string $new_theme): void {
             update_user_meta($user->ID, 'admin_color', $color_scheme_users);
         }
     }
+
+}
+
+/**
+ * Activate and configurate the Blog Pro module of Astra theme.
+ *
+ * @return void
+ */
+function activate_blog_pro(): void {
+
+    // Update register in wp_options: _astra_ext_enabled_extensions
+    $option_name = '_astra_ext_enabled_extensions';
+    $enabled_extensions = maybe_unserialize(get_option($option_name, []));
+
+    if (!is_array($enabled_extensions)) {
+        $enabled_extensions = [];
+    }
+
+    $enabled_extensions['blog-pro'] = 'blog-pro';
+    update_option($option_name, $enabled_extensions);
+
+    // Update register in wp_options: astra-settings
+    $astra_settings_name = 'astra-settings';
+    $astra_settings = maybe_unserialize(get_option($astra_settings_name, []));
+
+    if (!is_array($astra_settings)) {
+        $astra_settings = [];
+    }
+
+    $astra_settings['blog-reveal-effect'] = true;
+    $astra_settings['blog-featured-image-padding'] = true;
+    $astra_settings['blog-grid'] = 2;
+    $astra_settings['blog-pagination'] = 'number';
+
+    update_option($astra_settings_name, $astra_settings);
 
 }
 
