@@ -79,13 +79,23 @@ function get_front_page_slider($astra_nodes_options): string {
             <div class="wp-block-getwid-media-text-slider__content" data-slide-autoplay="' . $params['autoplay'] . '" data-slide-pause-on-hover="true" data-slide-autoplay-speed="5000" data-slide-speed="1000" data-infinite="true">';
 
     for ($i = 1; $i <= $params['slideCount']; $i++) {
+
+        // If the slide has no link, use a span instead of an anchor tag.
+        if (empty($params['url_' . $i])) {
+            $anchor_open = '<span id="slider-link-' . $i . '">';
+            $anchor_close = '</span>';
+        } else {
+            $anchor_open = '<a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '" target="_blank">';
+            $anchor_close = '</a>';
+        }
+
         $slider .= '
             <!-- wp:getwid/media-text-slider-slide {"slideId":' . $i . ',"outerParent":{"attributes":{"minHeight":"' . $params['minHeight'] . 'px","overlayOpacity":"30","imageSize":"full"}}} -->
             <div style="height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide wp-block-getwid-media-text-slider-slide__content-wrapper slide-' . $i . '">
                 <div style="height:' . $params['minHeight'] . 'px" class="wp-block-getwid-media-text-slider-slide__content">
                     <!-- wp:getwid/media-text-slider-slide-content {"mediaId":' . $params['image_' . $i . '_id'] . ',"mediaType":"image","innerParent":{"attributes":{"minHeight":"' . $params['minHeight'] . 'px","overlayOpacity":"30","imageSize":"full"}}} -->
-                    <div class="wp-block-getwid-media-text-slider-slide-content">
-                        <a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '" target="_blank">
+                    <div class="wp-block-getwid-media-text-slider-slide-content">' .
+                        $anchor_open . '
                             <figure class="wp-block-getwid-media-text-slider-slide-content__media">
                     ';
 
@@ -99,9 +109,8 @@ function get_front_page_slider($astra_nodes_options): string {
         $slider .= '
                                 <div class="wp-block-getwid-media-text-slider-slide-content__media-overlay" style="opacity:0.3">
                                 </div>
-                            </figure>
-                        </a>
-                    ';
+                            </figure>' .
+                        $anchor_close;
 
         // The text over the image is optional. If there is no text, the text container will not be rendered.
         if (!empty($params['heading_' . $i]) || !empty($params['text_' . $i])) {
