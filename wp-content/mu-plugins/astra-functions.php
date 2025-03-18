@@ -723,14 +723,24 @@ add_action('astra_html_before', function () {
 
         $style = !empty($background_color) ? 'background-color: ' . $background_color : '';
 
+        // If the notice has no link, use a span instead of an anchor tag.
+        if (empty($url)) {
+            $anchor_open = '<span id="notice-img-url">';
+            $anchor_close = '</span>';
+        } else {
+            $anchor_open = '<a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>';
+            $anchor_close = '</a>';
+        }
+
+
         switch ($layout) {
             case 'image':
                 echo '
                     <div id="front-page-notice-container" class="wp-block-columns front-page-notice-image" style="' . $style . '">
-                        <div id="front-page-notice-image-container" class="wp-block-column">
-                            <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
-                                <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
-                            </a>
+                        <div id="front-page-notice-image-container" class="wp-block-column">' .
+                            $anchor_open . '
+                                <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />' .
+                            $anchor_close . '
                         </div>
                     </div>
                 ';
@@ -740,7 +750,9 @@ add_action('astra_html_before', function () {
                     <div id="front-page-notice-container" class="wp-block-columns front-page-notice-text" style="' . $style . '">
                         <div id="front-page-notice-text" class="wp-block-column">
                             <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
-                            <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
+                                <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' .
+                                    $anchor_open . $title . $anchor_close . '
+                                </h2>
                             <div id="front-page-notice-content">' . $content . '</div>
                         </div>
                     </div>
@@ -749,14 +761,16 @@ add_action('astra_html_before', function () {
             case 'image_text':
                 echo '
                     <div id="front-page-notice-container" class="wp-block-columns front-page-notice-image-text">
-                            <div id="front-page-notice-image-container" class="wp-block-column">
-                                <a id="notice-img-url" href="' . $url . '" ' . ($open_in_new_tab ? 'target="_blank"' : '') . '>
-                                    <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />
-                                </a>
+                            <div id="front-page-notice-image-container" class="wp-block-column">' .
+                                $anchor_open . '
+                                    <img id="front-page-notice-image" src="' . $image . '" alt="' . __('Image of the notice', 'astra-nodes') . '" />' .
+                                $anchor_close . '
                             </div>
                             <div id="front-page-notice-text" class="wp-block-column" style="' . $style . '">
                                 <div id="front-page-notice-pre-title" class="has-ast-global-color-0-color">' . $pre_title . '</div>
-                                <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' . $title . '</h2>
+                                <h2 id="front-page-notice-title" class="has-ast-global-color-1-color">' .
+                                    $anchor_open . $title . $anchor_close . '
+                                </h2>
                                 <div id="front-page-notice-content">' . $content . '</div>
                             </div>
                         </div>
