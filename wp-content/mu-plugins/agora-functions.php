@@ -3240,3 +3240,37 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     }
 
 }, 9999);
+
+function handle_menu_dynamics() {
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all menu items that have sub-menus
+        const menuItems = document.querySelectorAll('.sidebar-main .menu-item-has-children');
+        
+        menuItems.forEach(function(menuItem) {
+            // Find the link and the existing SVG icon
+            const link = menuItem.querySelector('a');
+            const arrow = menuItem.querySelector('.ast-arrow-svg');
+            
+            if (link && arrow) {
+                // Add the click event
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const subMenu = menuItem.querySelector('.sub-menu');
+                    const isVisible = subMenu.style.display === 'block';
+                    
+                    // Toggle the display of the sub-menu
+                    subMenu.style.display = isVisible ? 'none' : 'block';
+                    
+                    // Rotate the icon
+                    arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                    arrow.style.transition = 'transform 0.3s ease';
+                });
+            }
+        });
+    });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'handle_menu_dynamics');

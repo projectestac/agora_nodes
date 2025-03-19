@@ -2072,3 +2072,35 @@ select.gt_selector {
     }
 
 }
+
+/* Giny Menú de navegació */
+
+aside.widget_nav_menu h2.widget-title {
+    display: none;
+}
+
+aside.widget_nav_menu nav .sub-menu svg.ast-arrow-svg {
+    display: none;
+}
+
+aside.widget_nav_menu nav ul li {
+    border-bottom: 1px solid #DBDBDB;
+    line-height: 1em;
+    padding-bottom: 0.6em !important;
+    padding-top: 0.6em;
+}
+
+aside.widget_nav_menu nav ul li a {
+    color: var(--ast-global-color-1);
+    font-family: sans-serif;
+}
+
+aside.widget_nav_menu .sub-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+aside.widget_nav_menu .sub-menu > li:last-child {
+    border-bottom: none;
+}
