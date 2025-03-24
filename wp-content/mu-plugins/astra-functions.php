@@ -1030,13 +1030,21 @@ add_action('init', function () {
 add_filter('login_message', function () {
 
     global $astra_nodes_options;
+
     $logo_id = $astra_nodes_options['custom_logo'];
     $logo_url = wp_get_attachment_url($logo_id);
+    $blog_name = get_option('blogname');
+
+    if (empty($logo_url)) {
+        $img = '';
+    } else {
+        $img = '<img src="' . $logo_url . '" alt="' . $blog_name . '">';
+    }
 
     echo '
         <div id="login_logo">
-            <img src="' . $logo_url . '">
-            <h1>' . get_option('blogname') . '</h1>
+            ' . $img . '
+            <h1>' . $blog_name . '</h1>
         </div>
         ';
 
