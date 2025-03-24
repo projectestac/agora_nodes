@@ -68,6 +68,7 @@ img.custom-logo {
 h1#blog-name {
     color: var(--ast-global-color-0);
     line-height: 1;
+    font-size: 36px !important;
 }
 
 /* Text in the header under the blog name */
@@ -1578,6 +1579,31 @@ select.gt_selector {
 
 .paragraf-rodo {
     border-radius: 40px;
+}
+
+/* Header's font sizes */
+h1 {
+    font-size: 2em !important;
+}
+
+h2 {
+    font-size: 1.7em !important;
+}
+
+h3 {
+    font-size: 1.5em !important;
+}
+
+h4 {
+    font-size: 1.3em !important;
+}
+
+h5 {
+    font-size: 1.1em !important;
+}
+
+h6 {
+    font-size: 1em !important;
 }
 
 @media screen and (min-width: 922px) {
