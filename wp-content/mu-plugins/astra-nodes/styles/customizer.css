@@ -193,3 +193,8 @@ textarea {
 .astra-nodes-logo-select-item input {
     display: none;
 }
+
+/* Font size for the titles in customizer */
+#customize-controls h3 {
+    font-size: 14px !important;
+}
