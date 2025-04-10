@@ -1086,3 +1086,8 @@ add_action('after_setup_theme', function () {
     }
 
 });
+
+// Add custom CSS to adjust the margin of article.post.type-post > div > header.entry-header.
+add_action('wp_enqueue_scripts', function () {
+    wp_add_inline_style('astra-functions', 'article.post.type-post > div > header.entry-header { margin-left: 0; }');
+});
