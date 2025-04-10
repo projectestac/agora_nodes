@@ -1610,7 +1610,6 @@ h6 {
     font-size: 1em !important;
 }
 
-
 /* Widget "Navigation Menu" */
 aside.widget_nav_menu h2.widget-title {
     display: none;
@@ -1640,6 +1639,12 @@ aside.widget_nav_menu .sub-menu {
 
 aside.widget_nav_menu .sub-menu > li:last-child {
     border-bottom: none;
+}
+
+/* Remove the left margin in the post title on single post view when Astra is configured to not show
+   the side bar only in that specific post */
+article.post.type-post > div > header.entry-header {
+    margin-left: 0;
 }
 
 @media screen and (min-width: 922px) {
