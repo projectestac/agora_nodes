@@ -1135,3 +1135,35 @@ add_action('wp_footer', function () {
     </script>
     <?php
 });
+
+// Front page slider: Copy the links of the slides to the divs that show the text over the slides.
+add_action('wp_footer', function () {
+    if (is_front_page()) {
+        ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const sliders = document.querySelectorAll(".wp-block-getwid-media-text-slider-slide-content");
+
+                sliders.forEach(slider => {
+                    const contentDiv = slider.querySelector(".wp-block-getwid-media-text-slider-slide-content__content");
+                    const link = slider.querySelector("a[id^='slider-link']");
+
+                    if (contentDiv && link) {
+                        // Change the cursor to "pointer" (hand) to indicate it's clickable.
+                        contentDiv.style.cursor = "pointer";
+
+                        // Add a click event to the div.
+                        contentDiv.addEventListener("click", function () {
+                            const href = link.getAttribute("href");
+                            if (href) {
+                                // Open the link in a new tab
+                                window.open(href, "_blank");
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        <?php
+    }
+});
