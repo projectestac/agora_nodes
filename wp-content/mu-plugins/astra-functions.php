@@ -1086,3 +1086,18 @@ add_action('after_setup_theme', function () {
     }
 
 });
+
+// Post and page edit: Hide the Astra sections "Disable Elements" and "Advanced settings" for all users but xtecadmin.
+add_action('admin_enqueue_scripts', function () {
+    // In admin pages, if the user is not xtecadmin, add an inline style to hide Astra sections.
+    if (is_admin() && is_user_logged_in() && !is_xtec_super_admin()) {
+        wp_register_style('astra-admin-style', false);
+        wp_enqueue_style('astra-admin-style');
+        wp_add_inline_style('astra-admin-style', '
+            div.components-panel > div#astra_settings_meta_box > div.components-panel__body:last-of-type,
+            div.components-panel > div#astra_settings_meta_box > div.components-panel__body:nth-last-of-type(2) {
+                display: none;
+            }
+        ');
+    }
+});
