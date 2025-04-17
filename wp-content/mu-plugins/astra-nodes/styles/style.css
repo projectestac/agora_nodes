@@ -1667,10 +1667,39 @@ figure.wp-lightbox-container > img:first-child {
     }
 }
 
+@media (min-width: 782px) and (max-width: 921px) {
+    .grid-item #header-button-1, .grid-item #header-button-2, .grid-item #header-button-3, .grid-item #header-button-4, .grid-item #header-button-5, .grid-item #header-button-6 {
+        font-size: 7.5vw;
+    }
+
+    div.detail-container.mobile {
+        width: 100%;
+    }
+
+    div.grid-container {
+        padding: 15px;
+    }
+
+    .grid-container .grid-item:first-child {
+        border-top-left-radius: 30px;
+    }
+
+    .grid-container .grid-item:last-child {
+        border-bottom-right-radius: 30px !important;
+    }
+
+    .grid-container .grid-item:nth-child(4) {
+        border-bottom-left-radius: 30px;
+    }
+}
+
 @media screen and (max-width: 921px) {
+    div#wpadminbar {
+        position: absolute;
+    }
 
     .home #primary {
-        margin-top: 80px !important;
+        margin-top: 20px !important;
     }
 
     div#content {
@@ -1991,7 +2020,7 @@ figure.wp-lightbox-container > img:first-child {
     }
 
     html .logged-in #wpadminbar {
-        padding: 6px 16px 10px 16px !important;
+        padding: 0px 16px 10px 16px !important;
     }
 
     #wpadminbar .quicklinks ul#wp-admin-bar-root-default {
