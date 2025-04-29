@@ -127,6 +127,17 @@
             });
         });
 
+        wp.customize('astra_nodes_options[header_icon_' + i + '_small_text]', function (value) {
+            value.bind(function (isSmall) {
+                const span = $('.header-button-link-' + i);
+                if (isSmall) {
+                    span.css('font-size', 'smaller');
+                } else {
+                    span.css('font-size', '');
+                }
+            });
+        });
+
     }
 
     // Front page cards
