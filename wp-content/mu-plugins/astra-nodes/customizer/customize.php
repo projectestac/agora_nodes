@@ -341,6 +341,22 @@ function nodes_customize_register($wp_customize): void {
             ],
         ]);
 
+        // Header panel: Buttons section: Checkbox for smaller text.
+        $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_small_text]', [
+            'default' => false,
+            'type' => 'theme_mod',
+            'capability' => 'manage_options',
+            'transport' => 'postMessage',
+        ]);
+
+        $wp_customize->add_control('astra_nodes_customizer_header_icon_' . $i . '_small_text', [
+            'label' => __('Show the text smaller', 'astra-nodes'),
+            'section' => 'astra_nodes_customizer_header_buttons',
+            'settings' => 'astra_nodes_options[header_icon_' . $i . '_small_text]',
+            'priority' => 1,
+            'type' => 'checkbox',
+        ]);
+
         // Header panel: Buttons section: URL for the link.
         $wp_customize->add_setting('astra_nodes_options[header_icon_' . $i . '_link]', [
             'default' => '',
