@@ -535,15 +535,18 @@ function astra_nodes_header_buttons(): string {
         $text_icon = $astra_nodes_options['header_icon_' . $i . '_text'] ?? __('Item', 'astra-nodes') . ' ' . $i;
         $link_icon = $astra_nodes_options['header_icon_' . $i . '_link'] ?? '';
         $open_in_new_tab = $astra_nodes_options['header_icon_' . $i . '_open_in_new_tab'] ?? false;
+        $small_text = $astra_nodes_options['header_icon_' . $i . '_small_text'] ?? false;
 
-        // Add the button to the content.
+        // Add inline CSS to reduce font size if the "small text" option is enabled
+        $style_attr = $small_text ? ' style="font-size: smaller;"' : '';
+
+        // Build the button HTML
         $content .= '
             <a class="grid-item grid-item-' . $i . '" href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>
                 <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
-                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link">' . $text_icon . '</span>
+                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link"' . $style_attr . '>' . $text_icon . '</span>
             </a>
             ';
-
     }
 
     // Remove all the "\n" characters.
