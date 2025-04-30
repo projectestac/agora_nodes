@@ -2,422 +2,1088 @@
 # This file is distributed under the same license as the Plugins - Translate WordPress with GTranslate - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-11-17 08:27:05+0000\n"
+"PO-Revision-Date: 2025-03-11 06:39:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/4.0.0-alpha.7\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Translate WordPress with GTranslate - Stable (latest release)\n"
 
-#: gtranslate.php:2021
+#: gtranslate.php:1457
+msgid "We try to help everyone as time permits."
+msgstr "Nous essayons d’aider tout le monde dans la mesure du temps disponible."
+
+#: gtranslate.php:1456
+msgid "WordPress Forum Support"
+msgstr "Forum de support  WordPress"
+
+#: gtranslate.php:1454
+msgid "Forum Support (free)"
+msgstr "Forum de support (gratuit)"
+
+#: gtranslate.php:1449
+msgid "Live Chat (for paid plans and pre-sales questions)"
+msgstr "Discussion en direct (offres payantes et questions de prévente)"
+
+#: gtranslate.php:1382
+msgid "Wrapper selector CSS can be used to render the language selector inside matching elements."
+msgstr "Le sélecteur de conteneur CSS peut être utilisé pour afficher le sélecteur de langue à l’intérieur des éléments correspondants."
+
+#: gtranslate.php:1381
+msgid "Language codes for lang attribute are case sensitive. The full list can be found on <a href=\"https://gtranslate.io/supported-languages\" target=\"_blank\" rel=\"noreferrer\">https://gtranslate.io/supported-languages</a>"
+msgstr "Les codes de langue pour l’attribut lang sont sensibles à la casse. La liste complète est disponible sur <a href=\"https://gtranslate.io/supported-languages\" target=\"_blank\" rel=\"noreferrer\">https://gtranslate.io/supported-languages</a>"
+
+#: gtranslate.php:1381
+msgid "Valid values for widget_look attribute are <b>flags</b>, <b>flags_code</b>, <b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
+msgstr "Les valeurs valides pour l’attribut widget_look sont <b>flags</b>, <b>flags_code</b>, <b>flags_name</b>, <b>lang_codes</b>, <b>lang_names</b>."
+
+#: gtranslate.php:1381
+msgid "It is mainly used to easily place individual language links inside menu items. For example you can create a menu item with URL = #, Navigation Label = Spanish and Description = <code>[gt-link lang=\"es\" label=\"Spanish\" widget_look=\"flags_name\"]</code> and a single menu item will appear to change the language to Spanish."
+msgstr "Il est principalement utilisé pour placer facilement des liens de langue individuels à l’intérieur des éléments de menu. Par exemple, vous pouvez créer un élément de menu avec URL = #, libellé = Espagnol et description = <code>[gt-link lang=\"es\" label=\"Espagnol\" widget_look=\"flags_name\"]</code> et un seul élément de menu apparaîtra pour changer la langue en espagnol."
+
+#: gtranslate.php:1381
+msgid "<code>[gt-link lang=\"en\" label=\"English\" widget_look=\"flags_name\"]</code> shortcode can be used to render individual language links."
+msgstr "Le code court <code>[gt-link lang=\"en\" label=\"English\" widget_look=\"flags_name\"]</code> peut être utilisé pour afficher des liens de langue individuels."
+
+#: gtranslate.php:1380
+msgid "You can use additional widget_look attribute to place a specific selector, for example <code>[gtranslate widget_look=\"popup\"]</code>. Valid values are <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, <b>dropdown</b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, <b>flags_code</b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
+msgstr "Vous pouvez utiliser un attribut widget_look supplémentaire pour placer un sélecteur spécifique, par exemple <code>[gtranslate widget_look=\"popup\"]</code>. Les valeurs valides sont <b>float</b>, <b>dropdown_with_flags</b>, <b>popup</b>, <b>dropdown</b>, <b>flags</b>, <b>flags_dropdown</b>, <b>flags_name</b>, <b>flags_code</b>, <b>lang_names</b>, <b>lang_codes</b>, <b>globe</b>."
+
+#: gtranslate.php:1380
+msgid "In theme files you can call <code>echo do_shortcode('[gtranslate]');</code> in PHP context."
+msgstr "Dans les fichiers de thème, vous pouvez appeler <code>echo do_shortcode('[gtranslate]');</code> dans le contexte PHP."
+
+#: gtranslate.php:1380
+msgid "You can use <code>[gtranslate]</code> inside posts, menu items or anywhere else."
+msgstr "Vous pouvez utiliser le code court <code>[gtranslate]</code> dans les publications, les éléments de menu ou n’importe où ailleurs."
+
+#: gtranslate.php:1380
+msgid "<code>[gtranslate]</code> shortcode can be used anywhere on your website."
+msgstr "Le code court <code>[gtranslate]</code> peut être utilisé n’importe où sur votre site."
+
+#: gtranslate.php:1379
+msgid "You can use GTranslate Widget in any pre-defined widget locations."
+msgstr "Vous pouvez utiliser le widget GTranslate dans n’importe quel emplacement prédéfini de widget."
+
+#: gtranslate.php:1377
+msgid "Show floating language selector option is the easiest and suitable for most websites."
+msgstr "L’option Afficher le sélecteur de langue flottant est la plus simple et la plus adaptée à la plupart des sites."
+
+#: gtranslate.php:1374
+msgid "Language selector positioning tips"
+msgstr "Astuces de positionnement du sélecteur de langue"
+
+#: gtranslate.php:1349
+msgid "Globe color"
+msgstr "Couleur globale"
+
+#: gtranslate.php:1220
+msgid "Hide current language:"
+msgstr "Masquer la langue actuelle :"
+
+#: gtranslate.php:1216
+msgid "Custom CSS"
+msgstr "CSS personnalisé"
+
+#: gtranslate.php:1164
+msgid "Globe size"
+msgstr "Taille globale"
+
+#: gtranslate.php:1130 gtranslate.php:1139
+msgid "Bottom"
+msgstr "En bas"
+
+#: gtranslate.php:1129 gtranslate.php:1138
+msgid "Top"
+msgstr "En haut"
+
+#: gtranslate.php:1128
+msgid "Right"
+msgstr "À droite"
+
+#: gtranslate.php:1127
+msgid "Left"
+msgstr "À gauche"
+
+#: gtranslate.php:1124 gtranslate.php:1135
+msgid "Open direction"
+msgstr "Direction de l’ouverture"
+
+#: gtranslate.php:1120
+msgid "If you are not using this option make sure it is empty or has the default value to not have additional unused code on your front-end. Default value for Wrapper Selector is <code>.gtranslate_wrapper</code>"
+msgstr "Si vous n’utilisez pas cette option, assurez-vous qu’elle est vide ou qu’elle a la valeur par défaut pour ne pas avoir de code inutilisé supplémentaire sur le site en ligne. La valeur par défaut du sélecteur du conteneur est <code>.gtranslate_wrapper</code>"
+
+#: gtranslate.php:1120
+msgid "If you want the language selector to appear inside a particular HTML element on your page then this option is for you. You simply need to write a CSS selector to point to that HTML element and GTranslate will appear inside of it."
+msgstr "Si vous voulez que le sélecteur de langue apparaisse à l’intérieur d’un élément HTML particulier de votre page, cette option est faite pour vous. Il vous suffit de saisir un sélecteur CSS pour pointer vers cet élément HTML et GTranslate apparaîtra à l’intérieur de celui-ci."
+
+#: gtranslate.php:1120
+msgid "Wrapper selector CSS"
+msgstr "Sélecteur CSS du conteneur"
+
+#: gtranslate.php:1108
+msgid "Show floating language selector option is the easiest and suitable for most websites. It is best for <b>Float</b>, <b>Nice dropdown with flags</b>, <b>Popup</b>, <b>Globe</b> widget looks."
+msgstr "L’option Afficher le sélecteur de langue flottant est la plus simple et la plus adaptée à la plupart des sites. Elle est idéale pour les widgets <b>flottants</b>, les <b>menus déroulants</b> avec des drapeaux, les <b>fenêtres surgissantes</b> et les widgets <b>globaux</b>."
+
+#: gtranslate.php:1096
+msgid "Other looks most likely will require additional CSS rules to match your theme design."
+msgstr "D’autres compositions nécessiteront probablement des règles CSS supplémentaires pour correspondre au design de votre thème."
+
+#: gtranslate.php:1096 gtranslate.php:1378
+msgid "Show in menu option is best for <b>Flags</b>, <b>Flags with language name</b>, <b>Flags with language code</b>, <b>Language names</b>, <b>Language codes</b> widget looks."
+msgstr "L’option Afficher dans le menu est idéale pour les widgets <b>Drapeaux</b>, <b>Drapeaux avec nom de langue</b>, <b>Drapeaux avec code de langue</b>, <b>Noms de langue</b> et <b>Codes de langue</b>."
+
+#: gtranslate.php:1092
+msgid "Select language label"
+msgstr "Libellé de choix de la langue"
+
+#: gtranslate.php:1088
+msgid "Enable CDN"
+msgstr "Activer le CDN"
+
+#: gtranslate.php:1080
+msgid "Native language names"
+msgstr "Nom de la langue native"
+
+#: gtranslate.php:926
+msgid "Float"
+msgstr "Flottant"
+
+#: gtranslate.php:2031
 msgid "Edit config.php"
 msgstr "Modifier config.php"
 
-#: gtranslate.php:2019
+#: gtranslate.php:2029
 msgid "Translation debug mode is ON."
 msgstr "Mode de débogage de traduction activé."
 
-#: gtranslate.php:2007 gtranslate.php:2022
+#: gtranslate.php:2017 gtranslate.php:2032
 msgid "View debug.txt"
 msgstr "Voir debug.txt"
 
-#: gtranslate.php:2005 gtranslate.php:2020
+#: gtranslate.php:2015 gtranslate.php:2030
 msgid "Please note that sensitive information can be written into gtranslate/url_addon/debug.txt file, which can be accessed publicly. It is your responsibility to deny public access to it and clean debug information after you are done."
 msgstr "Notez que des informations sensibles peuvent être écrites dans le fichier gtranslate/url_addon/debug.txt, accessible publiquement. Il est de votre responsabilité d’en refuser l’accès au public et de nettoyer les informations de débogage une fois que vous avez terminé."
 
-#: gtranslate.php:2004
+#: gtranslate.php:2014
 msgid "Email translation debug mode is ON."
 msgstr "Mode de débogage de traduction des e-mails activé."
 
 #. Description of the plugin
+#: gtranslate.php
 msgid "Translate your website and make it multilingual. For support visit <a href=\"https://wordpress.org/support/plugin/gtranslate\">GTranslate Support Forum</a>."
 msgstr "Traduisez votre site et rendez-le multilingue. Pour obtenir de l’aide, visitez le <a href=\"https://wordpress.org/support/plugin/gtranslate\">forum de support GTranslate</a>."
 
-#: gtranslate.php:1145
+#: gtranslate.php:1155
 msgid "Flag style"
 msgstr "Style de drapeau"
 
-#: gtranslate.php:1427
+#: gtranslate.php:1437
 msgid "Detect browser language"
 msgstr "Détecter la langue du navigateur"
 
-#: gtranslate.php:1051
-msgid "Synchronizing..."
-msgstr "Synchronisation..."
-
-#: gtranslate.php:1268
-msgid "Domain"
-msgstr "Domaine"
-
-#: gtranslate.php:1050
-msgid "Custom domains"
-msgstr "Domaines personnalisés"
-
-#: gtranslate.php:1267
-msgid "Language"
-msgstr "Langue"
-
-#: gtranslate.php:1281
+#: gtranslate.php:1291
 msgid "Synchronize custom domains with GTranslate dashboard: https://my.gtranslate.io"
 msgstr "Synchronisez les domaines personnalisés avec le tableau de bord GTranslate : https://my.gtranslate.io"
 
-#: gtranslate.php:1066
+#: gtranslate.php:1278
+msgid "Domain"
+msgstr "Domaine"
+
+#: gtranslate.php:1277
+msgid "Language"
+msgstr "Langue"
+
+#: gtranslate.php:1061
+msgid "Synchronizing..."
+msgstr "Synchronisation..."
+
+#: gtranslate.php:1060
+msgid "Custom domains"
+msgstr "Domaines personnalisés"
+
+#: gtranslate.php:1076
 msgid "Debug Email Translation"
 msgstr "Déboguer la traduction des e-mails"
 
-#: gtranslate.php:1300
-msgid "Switcher border color"
-msgstr "Couleur de bordure du sélecteur"
+#: gtranslate.php:1221
+msgid "Monochrome flags:"
+msgstr "Drapeaux monochromes :"
 
-#: gtranslate.php:1317
-msgid "Dropdown text color"
-msgstr "Couleur du texte déroulant"
-
-#: gtranslate.php:1325
+#: gtranslate.php:1335
 msgid "Dropdown background color"
 msgstr "Couleur d’arrière-plan du menu déroulant"
 
-#: gtranslate.php:1321
+#: gtranslate.php:1331
 msgid "Dropdown hover color"
 msgstr "Couleur au survol des liens du menu déroulant"
 
-#: gtranslate.php:1312
+#: gtranslate.php:1327
+msgid "Dropdown text color"
+msgstr "Couleur du texte déroulant"
+
+#: gtranslate.php:1322
 msgid "Switcher background hover color"
 msgstr "Couleur d’arrière-plan au survol du commutateur"
 
-#: gtranslate.php:1288 gtranslate.php:1335
-msgid "Color options"
-msgstr "Options de couleur"
-
-#: gtranslate.php:1308
+#: gtranslate.php:1318
 msgid "Switcher background shadow color"
 msgstr "Couleur de l’ombre d’arrière-plan du commutateur"
 
-#: gtranslate.php:1304
+#: gtranslate.php:1314
 msgid "Switcher background color"
 msgstr "Couleur d’arrière-plan du commutateur"
 
-#: gtranslate.php:1296
+#: gtranslate.php:1310
+msgid "Switcher border color"
+msgstr "Couleur de bordure du sélecteur"
+
+#: gtranslate.php:1306
 msgid "Switcher arrow color"
 msgstr "Couleur de la flèche du commutateur"
 
-#: gtranslate.php:1292
+#: gtranslate.php:1302
 msgid "Switcher text color"
 msgstr "Couleur du texte du commutateur"
 
-#: gtranslate.php:1417
+#: gtranslate.php:1298 gtranslate.php:1345
+msgid "Color options"
+msgstr "Options de couleur"
+
+#: gtranslate.php:1427
 msgid "Blog"
 msgstr "Blog"
 
-#: gtranslate.php:1416
+#: gtranslate.php:1426
 msgid "How-tos"
 msgstr "Mode d’emploi"
 
-#: gtranslate.php:1397 gtranslate.php:1426
+#: gtranslate.php:1407 gtranslate.php:1436
 msgid "Website Translation Quote"
 msgstr "Devis de traduction de site"
 
-#: gtranslate.php:1387
+#: gtranslate.php:1397
 msgid "Automatic translation post-editing service and professional translations"
 msgstr "Service de post-édition de traduction automatique et traductions professionnelles"
 
-#: gtranslate.php:1062
+#: gtranslate.php:1072
 msgid "Enable WooCommerce Email Translation"
 msgstr "Activer la traduction des e-mails WooCommerce"
-
-#: gtranslate.php:71 gtranslate.php:2006
-msgid "GTranslate Settings"
-msgstr "Réglages GTranslate"
 
 #: gtranslate.php:71
 msgid "Please go to <a href=\""
 msgstr "Veuillez aller à <a href=\""
 
-#: gtranslate.php:1424
+#: gtranslate.php:71 gtranslate.php:2016
+msgid "GTranslate Settings"
+msgstr "Réglages GTranslate"
+
+#: gtranslate.php:1434
 msgid "User dashboard"
 msgstr "Tableau de bord du compte"
 
-#: gtranslate.php:1058
+#: gtranslate.php:1068
 msgid "Add hreflang tags"
 msgstr "Ajouter les balises hreflang"
 
-#: gtranslate.php:1962
+#: gtranslate.php:1972
 msgid "Deactivate %s plugin"
 msgstr "Désactiver l’extension %s"
 
-#: gtranslate.php:1961
+#: gtranslate.php:1971
 msgid "%s plugin causes conflicts with GTranslate."
 msgstr "L’extension %s provoque des conflits avec GTranslate."
 
-#: gtranslate.php:1960
+#: gtranslate.php:1970
 msgid "Please deactivate %s plugin"
 msgstr "Veuillez désactiver l’extension %s"
 
-#: gtranslate.php:1074
+#: gtranslate.php:1084
 msgid "Auto switch to browser language"
 msgstr "Basculer automatiquement sur la langue du navigateur"
 
 #. Author of the plugin
+#: gtranslate.php
 msgid "Translate AI Multilingual Solutions"
 msgstr "Solutions d’IA de traduction multilingue"
 
-#: gtranslate.php:1397
+#: gtranslate.php:1407
 msgid "Try Now (15 days free)"
 msgstr "Essayer maintenant (15 jours gratuits)"
 
-#: gtranslate.php:1442
+#: gtranslate.php:1452
 msgid "We are here to make your experience with GTranslate more convenient."
 msgstr "Nous sommes là pour rendre votre expérience avec GTranslate plus pratique."
 
-#: gtranslate.php:1394
+#: gtranslate.php:1404
 msgid "Priority Live Chat support"
 msgstr "Support prioritaire par discussion en direct"
 
-#: gtranslate.php:1392
-msgid "Increased international traffic and AdSense revenue"
-msgstr "Augmentation du trafic international et des revenus AdSense"
-
-#: gtranslate.php:1393
+#: gtranslate.php:1403
 msgid "Works in China"
 msgstr "Fonctionne en Chine"
 
-#: gtranslate.php:1380
-msgid "Paid version advantages"
-msgstr "Avantages de la version payante"
+#: gtranslate.php:1402
+msgid "Increased international traffic and AdSense revenue"
+msgstr "Augmentation du trafic international et des revenus AdSense"
 
-#: gtranslate.php:1043 gtranslate.php:1047
-msgid "for paid plans only"
-msgstr "pour les forfaits payants uniquement"
-
-#: gtranslate.php:1383
-msgid "Search engine indexing"
-msgstr "Indexation des moteurs de recherche"
-
-#: gtranslate.php:1388
-msgid "Meta data translation (keywords, page description, etc...)"
-msgstr "Traduction de métadonnées (mots-clés, description de page, etc...)"
-
-#: gtranslate.php:1390
+#: gtranslate.php:1400
 msgid "Language hosting (custom domain like example.fr, example.es)"
 msgstr "Langue de l’hébergeur (domaine comme example.fr, example.es)"
 
-#: gtranslate.php:918
+#: gtranslate.php:1398
+msgid "Meta data translation (keywords, page description, etc...)"
+msgstr "Traduction de métadonnées (mots-clés, description de page, etc...)"
+
+#: gtranslate.php:1393
+msgid "Search engine indexing"
+msgstr "Indexation des moteurs de recherche"
+
+#: gtranslate.php:1390
+msgid "Paid version advantages"
+msgstr "Avantages de la version payante"
+
+#: gtranslate.php:1053 gtranslate.php:1057
+msgid "for paid plans only"
+msgstr "pour les forfaits payants uniquement"
+
+#: gtranslate.php:1255
+msgid "Love GTranslate? Give us 5 stars on WordPress.org :)"
+msgstr "Vous aimez GTranslate ? Donnez-nous un avis 5 étoiles sur WordPress.org :)"
+
+#: gtranslate.php:928
 msgid "Popup"
 msgstr "Fenêtre surgissante"
 
-#: gtranslate.php:1415
-msgid "Videos"
-msgstr "Vidéos"
-
-#: gtranslate.php:1404
-msgid "Useful links"
-msgstr "Liens utiles"
-
-#: gtranslate.php:1428
-msgid "Reviews"
-msgstr "Avis"
-
-#: gtranslate.php:1425
-msgid "Compare plans"
-msgstr "Comparer les forfaits"
-
-#: gtranslate.php:2034
+#: gtranslate.php:2044
 msgid "You can have <b>neural machine translations</b> which are human level by upgrading your GTranslate."
 msgstr "Vous pouvez avoir des <b>traductions automatiques neuronales</b> qui sont au niveau humain en mettant à niveau votre GTranslate."
 
-#: gtranslate.php:1731
+#: gtranslate.php:1741
 msgid "Title:"
 msgstr "Titre :"
 
-#: gtranslate.php:1418
-msgid "About GTranslate team"
-msgstr "À propos de l’équipe GTranslate"
-
-#: gtranslate.php:1712
+#: gtranslate.php:1722
 msgid "GTranslate language switcher"
 msgstr "Commutateur de langue GTranslate"
 
-#: gtranslate.php:1385
+#: gtranslate.php:1438
+msgid "Reviews"
+msgstr "Avis"
+
+#: gtranslate.php:1428
+msgid "About GTranslate team"
+msgstr "À propos de l’équipe GTranslate"
+
+#: gtranslate.php:1435
+msgid "Compare plans"
+msgstr "Comparer les forfaits"
+
+#: gtranslate.php:1425
+msgid "Videos"
+msgstr "Vidéos"
+
+#: gtranslate.php:1414
+msgid "Useful links"
+msgstr "Liens utiles"
+
+#: gtranslate.php:1395
 msgid "Human level neural translations"
 msgstr "Traductions neuronales au niveau humain"
 
-#: gtranslate.php:1389
+#: gtranslate.php:1399
 msgid "URL/slug translation"
 msgstr "Traduction des URL/ slugs"
 
-#: gtranslate.php:1356
+#: gtranslate.php:1366
 msgid "Colombia flag"
 msgstr "Colombie"
 
-#: gtranslate.php:1355
+#: gtranslate.php:1365
 msgid "Argentina flag"
 msgstr "Argentine"
 
-#: gtranslate.php:1357
+#: gtranslate.php:1367
 msgid "Quebec flag"
 msgstr "Quebec"
 
-#: gtranslate.php:1352
+#: gtranslate.php:1362
 msgid "Canada flag"
 msgstr "Canada"
 
-#: gtranslate.php:922
-msgid "Flags with language name"
-msgstr "Drapeaux avec le nom de la langue"
-
-#: gtranslate.php:923
-msgid "Flags with language code"
-msgstr "Drapeaux avec le code de la langue"
-
-#: gtranslate.php:925
+#: gtranslate.php:935
 msgid "Language codes"
 msgstr "Codes des langues"
 
-#: gtranslate.php:924
+#: gtranslate.php:934
 msgid "Language names"
 msgstr "Noms des langues"
 
-#: gtranslate.php:1575
+#: gtranslate.php:933
+msgid "Flags with language code"
+msgstr "Drapeaux avec le code de la langue"
+
+#: gtranslate.php:932
+msgid "Flags with language name"
+msgstr "Drapeaux avec le nom de la langue"
+
+#: gtranslate.php:1585
 msgid "Cannot update gtranslate/url_addon/config.php file. Make sure to update it manually and set correct $main_lang."
 msgstr "Impossible de mettre à jour le fichier gtranslate/url_addon/config.php. Assurez-vous de mettre à jour manuellement et définissez correctement $main_lang."
 
-#: gtranslate.php:1564
+#: gtranslate.php:1574
 msgid "Please add the following rules to the top of your .htaccess file"
 msgstr "Veuillez ajouter les règles suivantes en haut de votre fichier .htaccess"
 
-#: gtranslate.php:1086
-msgid "Show in menu"
-msgstr "Afficher dans le menu"
-
-#: gtranslate.php:1089
+#: gtranslate.php:1099
 msgid "None"
 msgstr "Ne pas afficher"
 
-#: gtranslate.php:1397 gtranslate.php:1419
-msgid "FAQ"
-msgstr "FAQ"
+#: gtranslate.php:1096
+msgid "Show in menu"
+msgstr "Afficher dans le menu"
 
-#: gtranslate.php:1557
+#: gtranslate.php:1567
 msgid ".htaccess file updated"
 msgstr "Fichier .htaccess mis à jour"
 
-#: gtranslate.php:1054
+#: gtranslate.php:1407 gtranslate.php:1429
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gtranslate.php:1064
 msgid "Enable URL Translation"
 msgstr "Activer la traduction d’URL"
 
-#: gtranslate.php:1098
-msgid "Show floating language selector"
-msgstr "Afficher le sélecteur de langue flottant"
-
-#: gtranslate.php:1101
-msgid "No"
-msgstr "Non"
-
-#: gtranslate.php:1102
-msgid "Bottom left"
-msgstr "En bas à gauche"
-
-#: gtranslate.php:1105
-msgid "Top right"
-msgstr "En haut à droite"
-
-#: gtranslate.php:1104
-msgid "Top left"
-msgstr "En haut à gauche"
-
-#: gtranslate.php:1103
+#: gtranslate.php:1113
 msgid "Bottom right"
 msgstr "En bas à droite"
 
+#: gtranslate.php:1112
+msgid "Bottom left"
+msgstr "En bas à gauche"
+
+#: gtranslate.php:1115
+msgid "Top right"
+msgstr "En haut à droite"
+
+#: gtranslate.php:1114
+msgid "Top left"
+msgstr "En haut à gauche"
+
+#: gtranslate.php:1111
+msgid "No"
+msgstr "Non"
+
+#: gtranslate.php:1108
+msgid "Show floating language selector"
+msgstr "Afficher le sélecteur de langue flottant"
+
 #. Author URI of the plugin
+#: gtranslate.php
 msgid "https://gtranslate.io"
 msgstr "https://gtranslate.io"
 
 #. Plugin URI of the plugin
+#: gtranslate.php
 msgid "https://gtranslate.io/?xyz=998"
 msgstr "https://gtranslate.io/?xyz=998"
 
 #. Plugin Name of the plugin
-#: gtranslate.php:1712
+#: gtranslate.php gtranslate.php:1722
 msgid "GTranslate"
 msgstr "GTranslate"
 
-#: gtranslate.php:1397
+#: gtranslate.php:1407
 msgid "Live Chat"
 msgstr "Chat en direct"
 
-#: gtranslate.php:2035 gtranslate.php:2045 gtranslate.php:2055
-#: gtranslate.php:2065 gtranslate.php:2075
+#: gtranslate.php:2084
+msgid "You can <b>edit translations</b> by upgrading your GTranslate."
+msgstr "Vous pouvez <b>modifier les traductions</b> en mettant à niveau votre GTranslate."
+
+#: gtranslate.php:2074
+msgid "You can <b>increase</b> your <b>AdSense revenue</b> by upgrading your GTranslate."
+msgstr "Vous pouvez <b>augmenter</b> vos <b>revenus publicitaires</b> en mettant à niveau votre GTranslate."
+
+#: gtranslate.php:2064
+msgid "You can have your <b>translated pages indexed</b> in search engines by upgrading your GTranslate."
+msgstr "Vous pouvez faire indexer vos <b>pages traduites</b> dans les moteurs de recherche en mettant à niveau votre GTranslate."
+
+#: gtranslate.php:2045 gtranslate.php:2055 gtranslate.php:2065
+#: gtranslate.php:2075 gtranslate.php:2085
 msgid "Learn more"
 msgstr "En savoir plus"
 
-#: gtranslate.php:1990 gtranslate.php:2036 gtranslate.php:2046
-#: gtranslate.php:2056 gtranslate.php:2066 gtranslate.php:2076
+#: gtranslate.php:2054
+msgid "You can <b>increase</b> your international <b>traffic</b> by upgrading your GTranslate."
+msgstr "Vous pouvez <b>augmenter</b> votre <b>trafic</b> international en mettant à niveau votre GTranslate."
+
+#: gtranslate.php:2043 gtranslate.php:2053 gtranslate.php:2063
+#: gtranslate.php:2073 gtranslate.php:2083
+msgid "Did you know?"
+msgstr "Le saviez-vous ?"
+
+#: gtranslate.php:2000 gtranslate.php:2046 gtranslate.php:2056
+#: gtranslate.php:2066 gtranslate.php:2076 gtranslate.php:2086
 msgid "Maybe later"
 msgstr "Peut-être plus tard"
 
-#: gtranslate.php:1991 gtranslate.php:2037 gtranslate.php:2047
-#: gtranslate.php:2057 gtranslate.php:2067 gtranslate.php:2077
+#: gtranslate.php:1999
+msgid "I have already left a review"
+msgstr "J’ai déjà publié un avis"
+
+#: gtranslate.php:1998
+msgid "Sure! I would love to!"
+msgstr "Bien sûr ! J’adorerais !"
+
+#: gtranslate.php:1997
+msgid "We hope you have enjoyed using GTranslate! Would you mind taking a few minutes to write a review on WordPress.org? <br>Just writing a simple <b>'thank you'</b> will make us happy!"
+msgstr "Nous espérons que vous avez appréciez GTranslate ! Pourriez-vous prendre quelques minutes pour écrire un avis sur WordPress.org ? <br>Un simple <b>merci</b> nous rendra heureux !"
+
+#: gtranslate.php:1996
+msgid "Please Leave a Review"
+msgstr "Merci de laisser votre avis"
+
+#: gtranslate.php:2001 gtranslate.php:2047 gtranslate.php:2057
+#: gtranslate.php:2067 gtranslate.php:2077 gtranslate.php:2087
 msgid "Never show again"
 msgstr "Ne plus afficher"
 
-#: gtranslate.php:1542
+#: gtranslate.php:1552
 msgid "Changes Saved"
 msgstr "Changements sauvegardés"
 
-#: gtranslate.php:1386
+#: gtranslate.php:1401
+msgid "Seamless updates"
+msgstr "Mises à jour transparentes"
+
+#: gtranslate.php:1273
+msgid "Language hosting"
+msgstr "Langue de l’hébergeur"
+
+#: gtranslate.php:1396
 msgid "Edit translations manually"
 msgstr "Modifier les traductions manuellement"
 
-#: gtranslate.php:1254
+#: gtranslate.php:1394
+msgid "Search engine friendly (SEF) URLs"
+msgstr "URL conviviales pour les moteurs de recherche (SEF)"
+
+#: gtranslate.php:1264
 msgid "Widget preview"
 msgstr "Prévisualisation du Widget"
 
-#: gtranslate.php:1243
+#: gtranslate.php:1253
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: gtranslate.php:1349
-msgid "Alternative flags"
-msgstr "Autres drapeaux"
+#: gtranslate.php:1194
+msgid "Languages"
+msgstr "Langues"
 
-#: gtranslate.php:1164 gtranslate.php:1184
-msgid "Uncheck All"
-msgstr "Décocher tout"
+#: gtranslate.php:1190
+msgid "Line break after flags"
+msgstr "Saut de ligne après les drapeaux"
 
-#: gtranslate.php:1164 gtranslate.php:1184
-msgid "Check All"
-msgstr "Cocher tout"
-
-#: gtranslate.php:1164
-msgid "Flag languages"
-msgstr "Drapeaux des langues"
-
-#: gtranslate.php:1351
-msgid "USA flag"
-msgstr "USA"
-
-#: gtranslate.php:1353
-msgid "Brazil flag"
-msgstr "Brésil"
-
-#: gtranslate.php:1354
+#: gtranslate.php:1364
 msgid "Mexico flag"
 msgstr "Mexique"
 
-#: gtranslate.php:1134
+#: gtranslate.php:1363
+msgid "Brazil flag"
+msgstr "Brésil"
+
+#: gtranslate.php:1361
+msgid "USA flag"
+msgstr "USA"
+
+#: gtranslate.php:1359
+msgid "Alternative flags"
+msgstr "Autres drapeaux"
+
+#: gtranslate.php:1174 gtranslate.php:1194
+msgid "Uncheck All"
+msgstr "Décocher tout"
+
+#: gtranslate.php:1174 gtranslate.php:1194
+msgid "Check All"
+msgstr "Cocher tout"
+
+#: gtranslate.php:1174
+msgid "Flag languages"
+msgstr "Drapeaux des langues"
+
+#: gtranslate.php:1144
 msgid "Flag size"
 msgstr "Taille du drapeau"
 
-#: gtranslate.php:1032
+#: gtranslate.php:1056
+msgid "Sub-domain URL structure"
+msgstr "Structure d’URL de sous-domaine"
+
+#: gtranslate.php:1052
+msgid "Sub-directory URL structure"
+msgstr "Structure d’URL de sous-répertoire"
+
+#: gtranslate.php:1047
+msgid "Zulu"
+msgstr "Zoulou"
+
+#: gtranslate.php:1046
+msgid "Yoruba"
+msgstr "Yoruba"
+
+#: gtranslate.php:1045
+msgid "Yiddish"
+msgstr "Yiddish"
+
+#: gtranslate.php:1044
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: gtranslate.php:1043
+msgid "Welsh"
+msgstr "Gallois"
+
+#: gtranslate.php:1042
 msgid "Vietnamese"
 msgstr "Vietnamien"
 
-#: gtranslate.php:1029
+#: gtranslate.php:1041
+msgid "Uzbek"
+msgstr "Ouzbek"
+
+#: gtranslate.php:1040
+msgid "Urdu"
+msgstr "Ourdou"
+
+#: gtranslate.php:1039
 msgid "Ukrainian"
 msgstr "Ukrainien"
+
+#: gtranslate.php:1038
+msgid "Turkish"
+msgstr "Turc"
+
+#: gtranslate.php:1037
+msgid "Thai"
+msgstr "Thaïlandais"
+
+#: gtranslate.php:1036
+msgid "Telugu"
+msgstr "Telugu"
+
+#: gtranslate.php:1035
+msgid "Tamil"
+msgstr "Tamil"
+
+#: gtranslate.php:1034
+msgid "Tajik"
+msgstr "Tadjik"
+
+#: gtranslate.php:1033
+msgid "Swedish"
+msgstr "Suédois"
+
+#: gtranslate.php:1032
+msgid "Swahili"
+msgstr "Swahili"
+
+#: gtranslate.php:1031
+msgid "Sundanese"
+msgstr "Soudanais"
+
+#: gtranslate.php:1030 gtranslate.php:1364 gtranslate.php:1365
+#: gtranslate.php:1366
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: gtranslate.php:1029
+msgid "Somali"
+msgstr "Somalien"
+
+#: gtranslate.php:1028
+msgid "Slovenian"
+msgstr "Slovène"
+
+#: gtranslate.php:1027
+msgid "Slovak"
+msgstr "Slovaque"
+
+#: gtranslate.php:1026
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#: gtranslate.php:1025
+msgid "Sindhi"
+msgstr "Sindhi"
+
+#: gtranslate.php:1024
+msgid "Shona"
+msgstr "Shona"
+
+#: gtranslate.php:1023
+msgid "Sesotho"
+msgstr "Sesotho"
+
+#: gtranslate.php:1022
+msgid "Serbian"
+msgstr "Serbe"
+
+#: gtranslate.php:1021
+msgid "Scottish Gaelic"
+msgstr "Gaélique Ecossais"
+
+#: gtranslate.php:1020
+msgid "Samoan"
+msgstr "Samoan"
+
+#: gtranslate.php:1019
+msgid "Russian"
+msgstr "Russe"
+
+#: gtranslate.php:1018
+msgid "Romanian"
+msgstr "Roumain"
+
+#: gtranslate.php:1017
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#: gtranslate.php:1016 gtranslate.php:1363
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: gtranslate.php:1015
+msgid "Polish"
+msgstr "Polonais"
+
+#: gtranslate.php:1014
+msgid "Persian"
+msgstr "Persan"
+
+#: gtranslate.php:1013
+msgid "Pashto"
+msgstr "Pashto"
+
+#: gtranslate.php:1012
+msgid "Norwegian"
+msgstr "Norvégien"
+
+#: gtranslate.php:1011
+msgid "Nepali"
+msgstr "Népalais"
+
+#: gtranslate.php:1010
+msgid "Myanmar (Burmese)"
+msgstr "Myanmar (Burmese)"
+
+#: gtranslate.php:1009
+msgid "Mongolian"
+msgstr "Mongolie"
+
+#: gtranslate.php:1008
+msgid "Marathi"
+msgstr "Marathi"
+
+#: gtranslate.php:1007
+msgid "Maori"
+msgstr "Maori"
+
+#: gtranslate.php:1006
+msgid "Maltese"
+msgstr "Maltais"
+
+#: gtranslate.php:1005
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: gtranslate.php:1004
+msgid "Malay"
+msgstr "Malais"
+
+#: gtranslate.php:1003
+msgid "Malagasy"
+msgstr "Malgache"
+
+#: gtranslate.php:1002
+msgid "Macedonian"
+msgstr "Macédonien"
+
+#: gtranslate.php:1001
+msgid "Luxembourgish"
+msgstr "Luxembourgeois"
+
+#: gtranslate.php:1000
+msgid "Lithuanian"
+msgstr "Lituanien"
+
+#: gtranslate.php:999
+msgid "Latvian"
+msgstr "Letton"
+
+#: gtranslate.php:998
+msgid "Latin"
+msgstr "Latin"
+
+#: gtranslate.php:997
+msgid "Lao"
+msgstr "Lao"
+
+#: gtranslate.php:996
+msgid "Kyrgyz"
+msgstr "Kyrgyz"
+
+#: gtranslate.php:995
+msgid "Kurdish (Kurmanji)"
+msgstr "Kurde (Kurmanji)"
+
+#: gtranslate.php:994
+msgid "Korean"
+msgstr "Coréen"
+
+#: gtranslate.php:993
+msgid "Khmer"
+msgstr "Khmer"
+
+#: gtranslate.php:992
+msgid "Kazakh"
+msgstr "Kazakh"
+
+#: gtranslate.php:991
+msgid "Kannada"
+msgstr "Kannada"
+
+#: gtranslate.php:990
+msgid "Javanese"
+msgstr "Javanais"
+
+#: gtranslate.php:989
+msgid "Japanese"
+msgstr "Japonais"
+
+#: gtranslate.php:988
+msgid "Italian"
+msgstr "Italien"
+
+#: gtranslate.php:987
+msgid "Irish"
+msgstr "Irlandais"
+
+#: gtranslate.php:986
+msgid "Indonesian"
+msgstr "Indonésien"
+
+#: gtranslate.php:985
+msgid "Igbo"
+msgstr "Igbo"
+
+#: gtranslate.php:984
+msgid "Icelandic"
+msgstr "Islandais"
+
+#: gtranslate.php:983
+msgid "Hungarian"
+msgstr "Hongrois"
+
+#: gtranslate.php:982
+msgid "Hmong"
+msgstr "Hmong"
+
+#: gtranslate.php:981
+msgid "Hindi"
+msgstr "Hindi"
+
+#: gtranslate.php:980
+msgid "Hebrew"
+msgstr "Hébreu"
+
+#: gtranslate.php:979
+msgid "Hawaiian"
+msgstr "Hawaïen"
+
+#: gtranslate.php:978
+msgid "Hausa"
+msgstr "Hausa"
+
+#: gtranslate.php:977
+msgid "Haitian Creole"
+msgstr "Créole Haïtien"
+
+#: gtranslate.php:976
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: gtranslate.php:975
+msgid "Greek"
+msgstr "Grec"
+
+#: gtranslate.php:974
+msgid "German"
+msgstr "Allemand"
+
+#: gtranslate.php:973
+msgid "Georgian"
+msgstr "Georgian"
+
+#: gtranslate.php:972
+msgid "Galician"
+msgstr "Galicien"
+
+#: gtranslate.php:971
+msgid "Frisian"
+msgstr "Frise"
+
+#: gtranslate.php:970 gtranslate.php:1367
+msgid "French"
+msgstr "Français"
+
+#: gtranslate.php:969
+msgid "Finnish"
+msgstr "Finnois"
+
+#: gtranslate.php:968
+msgid "Filipino"
+msgstr "Philippin"
+
+#: gtranslate.php:967
+msgid "Estonian"
+msgstr "Estonien"
+
+#: gtranslate.php:966
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: gtranslate.php:965 gtranslate.php:1361 gtranslate.php:1362
+msgid "English"
+msgstr "Anglais"
+
+#: gtranslate.php:964
+msgid "Dutch"
+msgstr "Néerlandais"
+
+#: gtranslate.php:963
+msgid "Danish"
+msgstr "Dannois"
+
+#: gtranslate.php:962
+msgid "Czech"
+msgstr "Tchèque"
+
+#: gtranslate.php:961
+msgid "Croatian"
+msgstr "Croate"
+
+#: gtranslate.php:960
+msgid "Corsican"
+msgstr "Corse"
+
+#: gtranslate.php:959
+msgid "Chinese (Traditional)"
+msgstr "Chinois (Traditionnel)"
+
+#: gtranslate.php:958
+msgid "Chinese (Simplified)"
+msgstr "Chinois (Simplifié)"
+
+#: gtranslate.php:957
+msgid "Chichewa"
+msgstr "Chichewa"
+
+#: gtranslate.php:956
+msgid "Cebuano"
+msgstr "Cebuano"
+
+#: gtranslate.php:955
+msgid "Catalan"
+msgstr "Catalan"
+
+#: gtranslate.php:954
+msgid "Bulgarian"
+msgstr "Bulgare"
+
+#: gtranslate.php:953
+msgid "Bosnian"
+msgstr "Bosnien"
+
+#: gtranslate.php:952
+msgid "Bengali"
+msgstr "Bengali"
+
+#: gtranslate.php:951
+msgid "Belarusian"
+msgstr "Biélorusse"
+
+#: gtranslate.php:950
+msgid "Basque"
+msgstr "Basque"
+
+#: gtranslate.php:949
+msgid "Azerbaijani"
+msgstr "Azerbaïdjan"
+
+#: gtranslate.php:948
+msgid "Armenian"
+msgstr "Arménien"
+
+#: gtranslate.php:947
+msgid "Arabic"
+msgstr "Arabe"
+
+#: gtranslate.php:946
+msgid "Amharic"
+msgstr "Amharic"
+
+#: gtranslate.php:945
+msgid "Albanian"
+msgstr "Albanais"
+
+#: gtranslate.php:944
+msgid "Afrikaans"
+msgstr "Africain"
+
+#: gtranslate.php:941
+msgid "Translate from"
+msgstr "Traduire depuis"
+
+#: gtranslate.php:936
+msgid "Globe"
+msgstr "Monde"
+
+#: gtranslate.php:930
+msgid "Flags"
+msgstr "Drapeaux"
+
+#: gtranslate.php:929
+msgid "Dropdown"
+msgstr "Liste déroulante"
+
+#: gtranslate.php:927
+msgid "Nice dropdown with flags"
+msgstr "Liste déroulante avec drapeaux"
+
+#: gtranslate.php:931
+msgid "Flags and dropdown"
+msgstr "Drapeaux et liste déroulante"
+
+#: gtranslate.php:923
+msgid "Widget look"
+msgstr "Apparence du Widget"
+
+#: gtranslate.php:919
+msgid "Widget options"
+msgstr "Options du Widget"
+
+#: gtranslate.php:386
+msgid "GTranslate - your window to the world"
+msgstr "GTranslate - votre ouverture vers le monde"
+
+#: gtranslate.php:378
+msgid "GTranslate Options"
+msgstr "Options GTranslate"
 
 #: gtranslate.php:70
 msgid "Title"
@@ -427,516 +1093,6 @@ msgstr "Titre"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: gtranslate.php:937
-msgid "Arabic"
-msgstr "Arabe"
-
-#: gtranslate.php:934
-msgid "Afrikaans"
-msgstr "Africain"
-
-#: gtranslate.php:931
-msgid "Translate from"
-msgstr "Traduire depuis"
-
-#: gtranslate.php:920
-msgid "Flags"
-msgstr "Drapeaux"
-
-#: gtranslate.php:368
-msgid "GTranslate Options"
-msgstr "Options GTranslate"
-
-#: gtranslate.php:953
-msgid "Danish"
-msgstr "Dannois"
-
-#: gtranslate.php:945
-msgid "Catalan"
-msgstr "Catalan"
-
-#: gtranslate.php:944
-msgid "Bulgarian"
-msgstr "Bulgare"
-
-#: gtranslate.php:940
-msgid "Basque"
-msgstr "Basque"
-
-#: gtranslate.php:950
-msgid "Corsican"
-msgstr "Corse"
-
-#: gtranslate.php:949
-msgid "Chinese (Traditional)"
-msgstr "Chinois (Traditionnel)"
-
-#: gtranslate.php:948
-msgid "Chinese (Simplified)"
-msgstr "Chinois (Simplifié)"
-
-#: gtranslate.php:964
-msgid "German"
-msgstr "Allemand"
-
-#: gtranslate.php:960 gtranslate.php:1357
-msgid "French"
-msgstr "Français"
-
-#: gtranslate.php:955 gtranslate.php:1351 gtranslate.php:1352
-msgid "English"
-msgstr "Anglais"
-
-#: gtranslate.php:954
-msgid "Dutch"
-msgstr "Néerlandais"
-
-#: gtranslate.php:956
-msgid "Esperanto"
-msgstr "Esperanto"
-
-#: gtranslate.php:957
-msgid "Estonian"
-msgstr "Estonien"
-
-#: gtranslate.php:2074
-msgid "You can <b>edit translations</b> by upgrading your GTranslate."
-msgstr "Vous pouvez <b>modifier les traductions</b> en mettant à niveau votre GTranslate."
-
-#: gtranslate.php:2064
-msgid "You can <b>increase</b> your <b>AdSense revenue</b> by upgrading your GTranslate."
-msgstr "Vous pouvez <b>augmenter</b> vos <b>revenus publicitaires</b> en mettant à niveau votre GTranslate."
-
-#: gtranslate.php:1986
-msgid "Please Leave a Review"
-msgstr "Merci de laisser votre avis"
-
-#: gtranslate.php:1184
-msgid "Languages"
-msgstr "Langues"
-
-#: gtranslate.php:1031
-msgid "Uzbek"
-msgstr "Ouzbek"
-
-#: gtranslate.php:1033
-msgid "Welsh"
-msgstr "Gallois"
-
-#: gtranslate.php:1037
-msgid "Zulu"
-msgstr "Zoulou"
-
-#: gtranslate.php:1036
-msgid "Yoruba"
-msgstr "Yoruba"
-
-#: gtranslate.php:1035
-msgid "Yiddish"
-msgstr "Yiddish"
-
-#: gtranslate.php:1034
-msgid "Xhosa"
-msgstr "Xhosa"
-
-#: gtranslate.php:1030
-msgid "Urdu"
-msgstr "Ourdou"
-
-#: gtranslate.php:1028
-msgid "Turkish"
-msgstr "Turc"
-
-#: gtranslate.php:1027
-msgid "Thai"
-msgstr "Thaïlandais"
-
-#: gtranslate.php:1025
-msgid "Tamil"
-msgstr "Tamil"
-
-#: gtranslate.php:1026
-msgid "Telugu"
-msgstr "Telugu"
-
-#: gtranslate.php:1024
-msgid "Tajik"
-msgstr "Tadjik"
-
-#: gtranslate.php:1023
-msgid "Swedish"
-msgstr "Suédois"
-
-#: gtranslate.php:1020 gtranslate.php:1354 gtranslate.php:1355
-#: gtranslate.php:1356
-msgid "Spanish"
-msgstr "Espagnol"
-
-#: gtranslate.php:1018
-msgid "Slovenian"
-msgstr "Slovène"
-
-#: gtranslate.php:1017
-msgid "Slovak"
-msgstr "Slovaque"
-
-#: gtranslate.php:1019
-msgid "Somali"
-msgstr "Somalien"
-
-#: gtranslate.php:1022
-msgid "Swahili"
-msgstr "Swahili"
-
-#: gtranslate.php:1016
-msgid "Sinhala"
-msgstr "Sinhala"
-
-#: gtranslate.php:1009
-msgid "Russian"
-msgstr "Russe"
-
-#: gtranslate.php:1008
-msgid "Romanian"
-msgstr "Roumain"
-
-#: gtranslate.php:1006 gtranslate.php:1353
-msgid "Portuguese"
-msgstr "Portugais"
-
-#: gtranslate.php:1005
-msgid "Polish"
-msgstr "Polonais"
-
-#: gtranslate.php:1004
-msgid "Persian"
-msgstr "Persan"
-
-#: gtranslate.php:1003
-msgid "Pashto"
-msgstr "Pashto"
-
-#: gtranslate.php:1002
-msgid "Norwegian"
-msgstr "Norvégien"
-
-#: gtranslate.php:1001
-msgid "Nepali"
-msgstr "Népalais"
-
-#: gtranslate.php:1007
-msgid "Punjabi"
-msgstr "Punjabi"
-
-#: gtranslate.php:1015
-msgid "Sindhi"
-msgstr "Sindhi"
-
-#: gtranslate.php:1014
-msgid "Shona"
-msgstr "Shona"
-
-#: gtranslate.php:1013
-msgid "Sesotho"
-msgstr "Sesotho"
-
-#: gtranslate.php:1012
-msgid "Serbian"
-msgstr "Serbe"
-
-#: gtranslate.php:1011
-msgid "Scottish Gaelic"
-msgstr "Gaélique Ecossais"
-
-#: gtranslate.php:1010
-msgid "Samoan"
-msgstr "Samoan"
-
-#: gtranslate.php:999
-msgid "Mongolian"
-msgstr "Mongolie"
-
-#: gtranslate.php:998
-msgid "Marathi"
-msgstr "Marathi"
-
-#: gtranslate.php:997
-msgid "Maori"
-msgstr "Maori"
-
-#: gtranslate.php:996
-msgid "Maltese"
-msgstr "Maltais"
-
-#: gtranslate.php:995
-msgid "Malayalam"
-msgstr "Malayalam"
-
-#: gtranslate.php:994
-msgid "Malay"
-msgstr "Malais"
-
-#: gtranslate.php:993
-msgid "Malagasy"
-msgstr "Malgache"
-
-#: gtranslate.php:992
-msgid "Macedonian"
-msgstr "Macédonien"
-
-#: gtranslate.php:991
-msgid "Luxembourgish"
-msgstr "Luxembourgeois"
-
-#: gtranslate.php:990
-msgid "Lithuanian"
-msgstr "Lituanien"
-
-#: gtranslate.php:989
-msgid "Latvian"
-msgstr "Letton"
-
-#: gtranslate.php:988
-msgid "Latin"
-msgstr "Latin"
-
-#: gtranslate.php:987
-msgid "Lao"
-msgstr "Lao"
-
-#: gtranslate.php:986
-msgid "Kyrgyz"
-msgstr "Kyrgyz"
-
-#: gtranslate.php:1000
-msgid "Myanmar (Burmese)"
-msgstr "Myanmar (Burmese)"
-
-#: gtranslate.php:985
-msgid "Kurdish (Kurmanji)"
-msgstr "Kurde (Kurmanji)"
-
-#: gtranslate.php:984
-msgid "Korean"
-msgstr "Coréen"
-
-#: gtranslate.php:983
-msgid "Khmer"
-msgstr "Khmer"
-
-#: gtranslate.php:982
-msgid "Kazakh"
-msgstr "Kazakh"
-
-#: gtranslate.php:981
-msgid "Kannada"
-msgstr "Kannada"
-
-#: gtranslate.php:980
-msgid "Javanese"
-msgstr "Javanais"
-
-#: gtranslate.php:979
-msgid "Japanese"
-msgstr "Japonais"
-
-#: gtranslate.php:978
-msgid "Italian"
-msgstr "Italien"
-
-#: gtranslate.php:977
-msgid "Irish"
-msgstr "Irlandais"
-
-#: gtranslate.php:976
-msgid "Indonesian"
-msgstr "Indonésien"
-
-#: gtranslate.php:975
-msgid "Igbo"
-msgstr "Igbo"
-
-#: gtranslate.php:973
-msgid "Hungarian"
-msgstr "Hongrois"
-
-#: gtranslate.php:972
-msgid "Hmong"
-msgstr "Hmong"
-
-#: gtranslate.php:971
-msgid "Hindi"
-msgstr "Hindi"
-
-#: gtranslate.php:970
-msgid "Hebrew"
-msgstr "Hébreu"
-
-#: gtranslate.php:968
-msgid "Hausa"
-msgstr "Hausa"
-
-#: gtranslate.php:967
-msgid "Haitian Creole"
-msgstr "Créole Haïtien"
-
-#: gtranslate.php:966
-msgid "Gujarati"
-msgstr "Gujarati"
-
-#: gtranslate.php:965
-msgid "Greek"
-msgstr "Grec"
-
-#: gtranslate.php:963
-msgid "Georgian"
-msgstr "Georgian"
-
-#: gtranslate.php:962
-msgid "Galician"
-msgstr "Galicien"
-
-#: gtranslate.php:952
-msgid "Czech"
-msgstr "Tchèque"
-
-#: gtranslate.php:951
-msgid "Croatian"
-msgstr "Croate"
-
-#: gtranslate.php:943
-msgid "Bosnian"
-msgstr "Bosnien"
-
-#: gtranslate.php:942
-msgid "Bengali"
-msgstr "Bengali"
-
-#: gtranslate.php:941
-msgid "Belarusian"
-msgstr "Biélorusse"
-
-#: gtranslate.php:946
-msgid "Cebuano"
-msgstr "Cebuano"
-
-#: gtranslate.php:947
-msgid "Chichewa"
-msgstr "Chichewa"
-
-#: gtranslate.php:939
-msgid "Azerbaijani"
-msgstr "Azerbaïdjan"
-
-#: gtranslate.php:938
-msgid "Armenian"
-msgstr "Arménien"
-
-#: gtranslate.php:936
-msgid "Amharic"
-msgstr "Amharic"
-
-#: gtranslate.php:935
-msgid "Albanian"
-msgstr "Albanais"
-
-#: gtranslate.php:926
-msgid "Globe"
-msgstr "Monde"
-
-#: gtranslate.php:919
-msgid "Dropdown"
-msgstr "Liste déroulante"
-
-#: gtranslate.php:917
-msgid "Nice dropdown with flags"
-msgstr "Liste déroulante avec drapeaux"
-
-#: gtranslate.php:921
-msgid "Flags and dropdown"
-msgstr "Drapeaux et liste déroulante"
-
-#: gtranslate.php:909
-msgid "Widget options"
-msgstr "Options du Widget"
-
-#: gtranslate.php:913
-msgid "Widget look"
-msgstr "Apparence du Widget"
-
-#: gtranslate.php:376
-msgid "GTranslate - your window to the world"
-msgstr "GTranslate - votre ouverture vers le monde"
-
 #: gtranslate.php:50
 msgid "Website Translator"
 msgstr "Traducteur de site web"
-
-#: gtranslate.php:974
-msgid "Icelandic"
-msgstr "Islandais"
-
-#: gtranslate.php:959
-msgid "Finnish"
-msgstr "Finnois"
-
-#: gtranslate.php:2044
-msgid "You can <b>increase</b> your international <b>traffic</b> by upgrading your GTranslate."
-msgstr "Vous pouvez <b>augmenter</b> votre <b>trafic</b> international en mettant à niveau votre GTranslate."
-
-#: gtranslate.php:969
-msgid "Hawaiian"
-msgstr "Hawaïen"
-
-#: gtranslate.php:961
-msgid "Frisian"
-msgstr "Frise"
-
-#: gtranslate.php:958
-msgid "Filipino"
-msgstr "Philippin"
-
-#: gtranslate.php:1180
-msgid "Line break after flags"
-msgstr "Saut de ligne après les drapeaux"
-
-#: gtranslate.php:1046
-msgid "Sub-domain URL structure"
-msgstr "Structure d’URL de sous-domaine"
-
-#: gtranslate.php:1042
-msgid "Sub-directory URL structure"
-msgstr "Structure d’URL de sous-répertoire"
-
-#: gtranslate.php:1391
-msgid "Seamless updates"
-msgstr "Mises à jour transparentes"
-
-#: gtranslate.php:1384
-msgid "Search engine friendly (SEF) URLs"
-msgstr "URL conviviales pour les moteurs de recherche (SEF)"
-
-#: gtranslate.php:1987
-msgid "We hope you have enjoyed using GTranslate! Would you mind taking a few minutes to write a review on WordPress.org? <br>Just writing a simple <b>'thank you'</b> will make us happy!"
-msgstr "Nous espérons que vous avez appréciez GTranslate ! Pourriez-vous prendre quelques minutes pour écrire un avis sur WordPress.org ? <br>Un simple <b>merci</b> nous rendra heureux !"
-
-#: gtranslate.php:1989
-msgid "I have already left a review"
-msgstr "J’ai déjà publié un avis"
-
-#: gtranslate.php:1988
-msgid "Sure! I would love to!"
-msgstr "Bien sûr ! J’adorerais !"
-
-#: gtranslate.php:2033 gtranslate.php:2043 gtranslate.php:2053
-#: gtranslate.php:2063 gtranslate.php:2073
-msgid "Did you know?"
-msgstr "Le saviez-vous ?"
-
-#: gtranslate.php:1263
-msgid "Language hosting"
-msgstr "Langue de l’hébergeur"
-
-#: gtranslate.php:2054
-msgid "You can have your <b>translated pages indexed</b> in search engines by upgrading your GTranslate."
-msgstr "Vous pouvez faire indexer vos <b>pages traduites</b> dans les moteurs de recherche en mettant à niveau votre GTranslate."
