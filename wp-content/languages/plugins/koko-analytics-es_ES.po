@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Koko Analytics - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-05-30 07:59:37+0000\n"
+"PO-Revision-Date: 2024-10-24 08:53:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,254 +11,245 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - Koko Analytics - Stable (latest release)\n"
 
-#: src/views/settings-page.php:139
-msgid "Use the button below to erase all of your current analytics data. You may have to clear your browser's cache afterwards for the effect to be evident."
-msgstr "Utiliza el botón de abajo para borrar todos sus actuales datos analíticos. Es posible que después tengas que borrar la caché del navegador para que el efecto sea evidente."
-
-#: src/views/settings-page.php:129
+#: src/views/settings-page.php:145
 msgid "Data"
 msgstr "Datos"
 
-#: src/views/settings-page.php:143
+#: src/views/settings-page.php:198
 msgid "Reset Statistics"
 msgstr "Restablecer estadísticas"
 
-#: src/views/settings-page.php:140
+#: src/views/settings-page.php:195
 msgid "Are you sure you want to reset all of your statistics? This can not be undone."
 msgstr "¿Estás seguro de que quieres restablecer todas tus estadísticas? Esto no se puede deshacer."
 
-#: src/views/dashboard-page.php:38
+#: src/views/dashboard-page.php:59
 msgid "Custom"
 msgstr "Personalizado"
 
-#: src/views/settings-page.php:111
+#: src/views/settings-page.php:127
 msgid "Performance"
 msgstr "Rendimiento"
 
-#: src/views/settings-page.php:113
+#: src/views/settings-page.php:129
 msgid "The plugin is currently using an optimized tracking endpoint. Great!"
 msgstr "El plugin está usando en este momento una variable de seguimiento optimizada. ¡Genial!"
 
-#: src/views/settings-page.php:123
+#: src/views/settings-page.php:139
 msgid "Please note that this is entirely optional and only recommended for high-traffic websites."
 msgstr "Por favor, ten en cuenta que esto es completamente opcional y solo recomendado para webs con un tráfico elevado."
 
-#: src/views/dashboard-page.php:118
+#: src/views/dashboard-page.php:178 src/views/dashboard-page.php:220
 msgid "A visitor represents the number of sessions during which a page was viewed one or more times."
 msgstr "Un visitante representa el número de sesiones durante las que una página ha sido vista una o más veces."
 
-#: src/views/dashboard-page.php:119
+#: src/views/dashboard-page.php:179 src/views/dashboard-page.php:221
 msgid "A pageview is defined as a view of a page on your site. If a user clicks reload after reaching the page, this is counted as an additional pageview. If a visitor navigates to a different page and then returns to the original page, a second pageview is recorded as well."
 msgstr "Una vista de página se define como una vista de una página de tu sitio. Si un usuario hace clic en recargar después de llegar a la página, esto se cuenta como una vista de página adicional. Si un visitante navega a una página diferente y, después, vuelve a la página original, entonces también se registra una segunda vista de página."
 
-#: src/class-admin.php:110
+#: src/class-admin-page.php:45
 msgid "Koko Analytics is unable to write to the <code>%s</code> directory. Please update the file permissions so that your web server can write to it."
 msgstr "Koko Analytics no puede escribir en el directorio <code>%s </code>. Por favor, actualiza los permisos del archivo para que tu servidor web pueda escribir en él."
 
-#: src/views/settings-page.php:87
+#: src/views/settings-page.php:99
 msgid "Default date period"
 msgstr "Período de fecha por defecto"
 
-#: src/views/settings-page.php:95
+#: src/views/settings-page.php:108
 msgid "The default date period to show when opening the analytics dashboard."
 msgstr "El período de fecha por defecto a mostrar al abrir el escritorio de análisis."
 
-#: src/views/settings-page.php:46
+#: src/views/settings-page.php:58
 msgid "Use CTRL to select multiple options."
 msgstr "Usa CTRL para seleccionar varias opciones."
 
-#: src/views/dashboard-page.php:84 src/views/dashboard-page.php:98
+#: src/views/dashboard-page.php:118 src/views/dashboard-page.php:145
 msgid "more than previous period"
 msgstr "más que el periodo anterior"
 
-#: src/views/dashboard-page.php:85 src/views/dashboard-page.php:99
+#: src/views/dashboard-page.php:121 src/views/dashboard-page.php:148
 msgid "less than previous period"
 msgstr "menos que el periodo anterior"
 
-#: src/class-dashboard.php:90
+#: src/class-dashboard.php:116
 msgid "Last 28 days"
 msgstr "Últimos 28 días"
 
-#: src/class-dashboard.php:86
+#: src/class-dashboard.php:112
 msgid "Yesterday"
 msgstr "Ayer"
 
-#: src/class-admin.php:97
+#: src/class-admin-page.php:32
 msgid "There seems to be an issue with your site's WP Cron configuration that prevents Koko Analytics from automatically processing your statistics."
 msgstr "Parece que hay un problema con la configuración de WP-Cron en tu sitio que impide a Koko Analytics procesar automáticamente tus estadísticas."
 
-#: src/class-admin.php:99
+#: src/class-admin-page.php:34
 msgid "If you're not sure what this is about, please ask your webhost to look into this."
 msgstr "Si no estás seguro de qué se trata, por favor, pide a tu proveedor de alojamiento que lo revise."
 
-#: src/class-widget-most-viewed-posts.php:109
+#: src/class-widget-most-viewed-posts.php:116
 msgid "Number of days to use statistics for:"
 msgstr "Número de días para usar las estadísticas:"
 
-#. translators: %1$s links to the WordPress.org plugin review page, %2$s links
-#. to the admin page for creating a new post
-#: src/class-admin.php:140
-msgid "If you enjoy using Koko Analytics, please <a href=\"%1$s\">review the plugin on WordPress.org</a> or <a href=\"%2$s\">write about it on your blog</a> to help out."
-msgstr "Si disfrutas del uso de Koko Analytics, por favor, <a href=\"%1$s\">valora el plugin en WordPress.org</a> o <a href=\"%2$s\">escribe sobre de él en tu blog </a> para ayudar."
-
-#: src/views/dashboard-page.php:106
+#: src/views/dashboard-page.php:156
 msgid "pageviews in the last hour"
 msgstr "páginas vistas en la última hora"
 
-#: src/views/dashboard-page.php:103
+#: src/views/dashboard-page.php:153
 msgid "Realtime pageviews"
 msgstr "Vistas de páginas en tiempo real"
 
-#: src/class-dashboard.php:85
+#: src/class-dashboard.php:111
 msgid "Today"
 msgstr "Hoy"
 
-#: src/views/settings-page.php:70 src/views/settings-page.php:80
+#: src/views/dashboard-page.php:78
+msgid "Submit"
+msgstr "Enviar"
+
+#: src/views/settings-page.php:82 src/views/settings-page.php:92
 msgid "No"
 msgstr "No"
 
-#: src/views/settings-page.php:69 src/views/settings-page.php:79
+#: src/views/settings-page.php:81 src/views/settings-page.php:91
 msgid "Yes"
 msgstr "Sí"
 
-#: src/views/settings-page.php:68
+#: src/views/settings-page.php:80
 msgid "Use cookie to determine unique visitors and pageviews?"
 msgstr "¿Usar cookies para determinar los visitantes únicos y las páginas vistas?"
 
-#: src/views/settings-page.php:73
+#: src/views/settings-page.php:85
 msgid "Set to \"no\" if you do not want to use a cookie. Without the use of a cookie, Koko Analytics can not reliably detect returning visitors."
 msgstr "Establécelo en «no» si no quieres usar una cookie. Sin el uso de una cookie, Koko Analytics no puede detectar de forma fiable a los visitantes recurrentes."
 
-#: src/views/settings-page.php:99
+#: src/class-chart-view.php:38 src/views/settings-page.php:112
 msgid "months"
 msgstr "meses"
 
-#: src/views/settings-page.php:45
+#: src/views/settings-page.php:57
 msgid "Visits and pageviews from any of the selected user roles will be ignored."
 msgstr "Las visitas y páginas vistas por los usuarios con alguno de los perfiles seleccionados serán ignoradas."
 
-#: src/views/settings-page.php:100
+#: src/views/settings-page.php:113
 msgid "Statistics older than the number of months configured here will automatically be deleted. Set to 0 to disable."
 msgstr "Las estadísticas más antiguas que el número de meses configurado aquí serán automáticamente borradas. Introducir 0 para desactivarlo."
 
-#: src/views/settings-page.php:130
+#: src/views/settings-page.php:146
 msgid "Database size:"
 msgstr "Tamaño de la base de datos:"
 
-#: src/views/settings-page.php:98
+#: src/views/settings-page.php:111
 msgid "Automatically delete data older than how many months?"
 msgstr "¿Borrar automáticamente los datos anteriores a cuántos meses?"
 
-#: src/class-shortcode-most-viewed-posts.php:43
+#: src/class-shortcode-most-viewed-posts.php:38
 msgid "(no title)"
 msgstr "(sin título)"
 
-#: src/class-widget-most-viewed-posts.php:93
+#: src/class-widget-most-viewed-posts.php:99
 msgid "Title:"
 msgstr "Título:"
 
-#: src/views/dashboard-widget.php:84
+#: src/views/dashboard-widget.php:72
 msgid "View all statistics"
 msgstr "Ver todas las estadísticas"
 
-#: src/views/nav.php:20
+#: src/views/nav.php:21
 msgid "Stats"
 msgstr "Estadísticas"
 
-#: src/class-admin.php:154 src/views/nav.php:25
+#: src/class-admin.php:60 src/views/nav.php:26
 msgid "Settings"
 msgstr "Ajustes"
 
-#: src/views/dashboard-page.php:33 src/views/dashboard-page.php:125
-#: src/views/dashboard-page.php:140
+#: src/external-strings.php:21 src/views/dashboard-page.php:207
+#: src/views/dashboard-page.php:248
 msgid "Next"
 msgstr "Siguiente"
 
-#: src/views/dashboard-page.php:31 src/views/dashboard-page.php:124
-#: src/views/dashboard-page.php:139
+#: src/external-strings.php:18 src/views/dashboard-page.php:204
+#: src/views/dashboard-page.php:245
 msgid "Previous"
 msgstr "Anterior"
 
-#: src/class-widget-most-viewed-posts.php:120
+#: src/class-widget-most-viewed-posts.php:127
 msgid "Display post date?"
 msgstr "¿Mostrar la fecha de la entrada?"
 
-#: src/class-widget-most-viewed-posts.php:114
+#: src/class-widget-most-viewed-posts.php:121
 msgid "Number of posts to show:"
 msgstr "Número de entradas a mostrar:"
 
-#: src/class-widget-most-viewed-posts.php:98
+#: src/class-widget-most-viewed-posts.php:104
 msgid "Post type:"
 msgstr "Tipo de contenido:"
 
-#: src/class-widget-most-viewed-posts.php:22
 #: src/class-widget-most-viewed-posts.php:29
+#: src/class-widget-most-viewed-posts.php:35
 msgid "Most viewed posts"
 msgstr "Entradas más vistas"
 
-#: src/class-widget-most-viewed-posts.php:19
-msgid "Your site&#8217;s most viewed posts, as counted by Koko Analytics."
-msgstr "Las entradas más vistas de tu sitio, según el recuento de Koko Analytics."
-
-#: src/views/dashboard-widget.php:26
+#: src/views/dashboard-widget.php:30
 msgid "Showing site visits over last 14 days"
 msgstr "Mostrando las visitas del sitio de los últimos 14 días"
 
-#: src/class-aggregator.php:31
+#: koko-analytics.php:64 migrations/1.6.3-schedule-aggregate-event.php:10
 msgid "Every minute"
 msgstr "Cada minuto"
 
-#: src/class-dashboard-widget.php:37 src/class-dashboard.php:71
-#: src/views/dashboard-page.php:118 src/views/dashboard-page.php:133
+#: src/class-chart-view.php:75 src/views/dashboard-page.php:178
+#: src/views/dashboard-page.php:220
 msgid "Visitors"
 msgstr "Visitantes"
 
-#: src/views/dashboard-page.php:89
+#: src/views/dashboard-page.php:131
 msgid "Total pageviews"
 msgstr "Páginas vistas en total"
 
-#: src/views/dashboard-page.php:75
+#: src/views/dashboard-page.php:104
 msgid "Total visitors"
 msgstr "Visitantes totales"
 
-#: src/class-dashboard.php:93
+#: src/class-dashboard.php:119
 msgid "This year"
 msgstr "Este año"
 
-#: src/class-dashboard.php:91
+#: src/class-dashboard.php:117
 msgid "This month"
 msgstr "Este mes"
 
-#: src/class-dashboard.php:87
+#: src/class-dashboard.php:113
 msgid "This week"
 msgstr "Esta semana"
 
-#: src/views/dashboard-page.php:132
+#: src/views/dashboard-page.php:219
 msgid "Referrers"
 msgstr "Referentes"
 
-#: src/class-dashboard-widget.php:38 src/class-dashboard.php:72
-#: src/views/dashboard-page.php:119 src/views/dashboard-page.php:134
+#: src/class-chart-view.php:79 src/external-strings.php:162
+#: src/external-strings.php:171 src/views/dashboard-page.php:179
+#: src/views/dashboard-page.php:221
 msgid "Pageviews"
 msgstr "Vistas de página"
 
-#: src/views/dashboard-page.php:117
+#: src/views/dashboard-page.php:177
 msgid "Pages"
 msgstr "Páginas"
 
-#: src/class-dashboard.php:94
+#: src/class-dashboard.php:120
 msgid "Last year"
 msgstr "Año pasado"
 
-#: src/class-dashboard.php:92
+#: src/class-dashboard.php:118
 msgid "Last month"
 msgstr "Mes pasado"
 
-#: src/class-dashboard.php:88
+#: src/class-dashboard.php:114
 msgid "Last week"
 msgstr "Semana pasada"
 
-#: src/views/dashboard-page.php:36
+#: src/views/dashboard-page.php:57
 msgid "Date range"
 msgstr "Rango de fechas"
 
@@ -268,11 +259,11 @@ msgid "ibericode"
 msgstr "ibericode"
 
 #. Plugin Name of the plugin
-#: koko-analytics.php src/class-admin.php:33
+#: koko-analytics.php src/class-admin.php:46
 msgid "Koko Analytics"
 msgstr "Koko Analytics"
 
-#: src/views/settings-page.php:36
+#: src/views/settings-page.php:44
 msgid "Exclude pageviews from these user roles"
 msgstr "Excluir las vistas de páginas de estos perfiles de usuario"
 
@@ -281,7 +272,7 @@ msgstr "Excluir las vistas de páginas de estos perfiles de usuario"
 msgid "Privacy-friendly analytics for your WordPress site."
 msgstr "Analíticas, respetuosas con la privacidad, para tu sitio WordPress."
 
-#: src/class-admin.php:33 src/functions.php:249
+#: src/class-admin-bar.php:25 src/class-admin.php:46
 msgid "Analytics"
 msgstr "Analíticas"
 
