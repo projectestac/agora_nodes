@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - One Click Accessibility - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-01-10 15:26:18+0000\n"
+"PO-Revision-Date: 2025-02-06 13:47:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -298,7 +298,7 @@ msgstr "Lien retour d’expérience"
 
 #: includes/pojo-a11y-settings.php:249
 msgid "Feedback"
-msgstr "Retour d’expérience"
+msgstr "Retour"
 
 #: includes/pojo-a11y-settings.php:246
 msgid "Feedback Title"
