@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-01-10 16:59:18+0000\n"
+"PO-Revision-Date: 2025-03-17 10:25:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -492,3 +492,7 @@ msgstr "La demande est invalide ou mal formée."
 #: includes/blocks/contact-form.php:326
 msgid "The secret parameter is invalid or malformed."
 msgstr "Le paramètre secret est invalide ou mal formé."
+
+#: includes/blocks/post-slider.php:177 assets/js/editor.blocks.js:23
+msgid "Post Slider"
+msgstr "Diaporama de publication"
