@@ -936,6 +936,10 @@ li.feed {
     display: none;
 }
 
+body.buddypress div#primary main#main article {
+    width: 100% !important;
+}
+
 #buddypress div#object-nav.item-list-tabs ul li.current {
     border-top: 1px solid #CCCCCC;
     border-left: 1px solid #CCCCCC;
