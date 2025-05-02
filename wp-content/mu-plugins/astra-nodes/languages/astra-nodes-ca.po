@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AstraFunctions 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
-"POT-Creation-Date: 2024-06-27T18:55:36+02:00\n"
-"PO-Revision-Date: 2024-06-27 18:59+0200\n"
+"POT-Creation-Date: 2025-05-02T13:44:15+02:00\n"
+"PO-Revision-Date: 2025-05-02 13:48+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -36,399 +36,402 @@ msgstr "Personalitzacions pel tema Astra"
 msgid "Departament d'Educació - Generalitat de Catalunya"
 msgstr "Departament d'Educació - Generalitat de Catalunya"
 
-#: astra-functions.php:20
+#: astra-functions.php:25
 msgid "Astra Nodes"
 msgstr "Astra Nodes"
 
-#: astra-functions.php:28
+#: astra-functions.php:33
 msgid "Use vanilla Astra"
 msgstr "Utilitza l'Astra original"
 
-#: astra-functions.php:75
+#: astra-functions.php:95
 msgid "Welcome to Nodes"
 msgstr "Benvinguts a Nodes"
 
-#: astra-functions.php:76
+#: astra-functions.php:96
 msgid "Web platform for the schools in Catalonia"
 msgstr "Plataforma web dels centres educatius de Catalunya"
 
-#: astra-functions.php:88
+#: astra-functions.php:108
 msgid "Documentation and videotutorials"
 msgstr "Documentació i videotutorials"
 
-#: astra-functions.php:89
+#: astra-functions.php:109
 msgid "All related information can be found in Digital website."
 msgstr ""
 "Podeu trobar tota la informació relacionada amb Nodes a la web Digital: "
 "documentació, videotutorials, consells de disseny i comunicació, novetats, "
 "etc."
 
-#: astra-functions.php:91
+#: astra-functions.php:111
 msgid "Go to Digital"
 msgstr "Ves a Digital, apartat Nodes"
 
-#: astra-functions.php:104
+#: astra-functions.php:124
 msgid "Custom support"
 msgstr "Suport personalitzat"
 
-#: astra-functions.php:105
+#: astra-functions.php:125
 msgid "Any doubts? Trouble with any configuration? You can ask in the forum."
 msgstr ""
-"Teniu dubtes? Alguna configuració es resisteix? No apareix algun element "
-"al web? Nodes inclou persones de suport que responen ràpidament les "
-"consultes."
+"Teniu dubtes? Alguna configuració es resisteix? No apareix algun element al "
+"web? Nodes inclou persones de suport que responen ràpidament les consultes."
 
-#: astra-functions.php:107
+#: astra-functions.php:127
 msgid "Go to the forum"
 msgstr "Ves al fòrum de suport"
 
-#: astra-functions.php:119
+#: astra-functions.php:139
 msgid "Teachers' network"
 msgstr "Xarxa docent"
 
-#: astra-functions.php:120
+#: astra-functions.php:140
 msgid "Website administrators can get support in the teacher's network."
 msgstr ""
 "A la xarxa docent Nus es parla sobre múltiples aspectes de Nodes, es "
 "comparteixen maneres d'organitzar les pàgines i els menús, etc."
 
-#: astra-functions.php:122
+#: astra-functions.php:142
 msgid "Go to the teacher's network"
 msgstr "Ves a la xarxa docent Nus, etiqueta Nodes"
 
-#: astra-functions.php:180
+#: astra-functions.php:200
 msgid "Logo organism"
 msgstr "Logotip de l'organisme"
 
-#: astra-functions.php:437 astra-nodes/customizer/customize.php:235
-msgid "Map"
-msgstr "Mapa"
-
-#: astra-functions.php:439 astra-nodes/customizer/customize.php:250
+#: astra-functions.php:516 astra-nodes/customizer/customize.php:251
 msgid "Contact"
 msgstr "Contacte"
 
-#: astra-functions.php:457
+#: astra-functions.php:535
 msgid "Item"
 msgstr "Element"
 
-#: astra-functions.php:638 astra-functions.php:660
+#: astra-functions.php:745 astra-functions.php:769
 msgid "Image of the notice"
 msgstr "Imatge de l'avís"
 
-#: astra-functions.php:852
+#: astra-functions.php:958
 msgid "Categories"
 msgstr "Categories"
 
-#: astra-functions.php:854
+#: astra-functions.php:960
 msgid "Add widgets to the categories pages"
 msgstr "Afegeix ginys a les pàgines de categories"
 
-#: astra-functions.php:862
+#: astra-functions.php:968
 msgid "Front page"
 msgstr "Pàgina inicial"
 
-#: astra-functions.php:864
+#: astra-functions.php:970
 msgid "Add widgets to the front page"
 msgstr "Afegeix ginys a la pàgina inicial"
 
-#: astra-nodes/customizer/customize.php:64
+#: astra-nodes/customizer/customize.php:65
 msgid "Header"
 msgstr "Capçalera"
 
-#: astra-nodes/customizer/customize.php:65
+#: astra-nodes/customizer/customize.php:66
 msgid "Customization of the site header"
 msgstr "Personalització de la capçalera del lloc web"
 
-#: astra-nodes/customizer/customize.php:71
+#: astra-nodes/customizer/customize.php:72
 msgid "Logos"
 msgstr "Logotips"
 
-#: astra-nodes/customizer/customize.php:87
+#: astra-nodes/customizer/customize.php:88
 msgid "Header logo"
 msgstr "Logotip de la capçalera"
 
-#: astra-nodes/customizer/customize.php:89
+#: astra-nodes/customizer/customize.php:90
 msgid "Recommendations: 300 x 200 px and less than 200 kB"
 msgstr "Recomanacions: 300 x 200 píxels i menys de 200 kB"
 
-#: astra-nodes/customizer/customize.php:109
+#: astra-nodes/customizer/customize.php:110
 msgid "Organism logo"
 msgstr "Logotip de l'organisme"
 
-#: astra-nodes/customizer/customize.php:115
+#: astra-nodes/customizer/customize.php:116
 msgid "Department of Education"
 msgstr "Departament d'Educació"
 
-#: astra-nodes/customizer/customize.php:116
+#: astra-nodes/customizer/customize.php:117
 msgid "CEB"
 msgstr "CEB"
 
-#: astra-nodes/customizer/customize.php:124
+#: astra-nodes/customizer/customize.php:125
 msgid "Site name"
 msgstr "Nom del lloc"
 
-#: astra-nodes/customizer/customize.php:138
+#: astra-nodes/customizer/customize.php:139
 msgid "Text preceding the blog name"
 msgstr "Text que precedeix el nom del lloc"
 
-#: astra-nodes/customizer/customize.php:153
+#: astra-nodes/customizer/customize.php:154
 msgid "Blog name"
 msgstr "Nom del lloc"
 
-#: astra-nodes/customizer/customize.php:168
+#: astra-nodes/customizer/customize.php:169
 msgid "Blog description"
 msgstr "Descripció del lloc"
 
-#: astra-nodes/customizer/customize.php:176
+#: astra-nodes/customizer/customize.php:177
 msgid "Contact information"
 msgstr "Informació de contacte"
 
-#: astra-nodes/customizer/customize.php:190
+#: astra-nodes/customizer/customize.php:191
 msgid "Postal address"
 msgstr "Adreça postal"
 
-#: astra-nodes/customizer/customize.php:205
+#: astra-nodes/customizer/customize.php:206
 msgid "Postal code and city"
 msgstr "Codi postal i localitat"
 
-#: astra-nodes/customizer/customize.php:220
+#: astra-nodes/customizer/customize.php:221
 msgid "Phone number"
 msgstr "Número de telèfon"
 
-#: astra-nodes/customizer/customize.php:265
+#: astra-nodes/customizer/customize.php:236
+msgid "Map"
+msgstr "Mapa"
+
+#: astra-nodes/customizer/customize.php:266
 msgid "Email"
 msgstr "Adreça de correu electrònic"
 
-#: astra-nodes/customizer/customize.php:274
+#: astra-nodes/customizer/customize.php:275
 msgid "Buttons"
 msgstr "Botons"
 
-#: astra-nodes/customizer/customize.php:295
+#: astra-nodes/customizer/customize.php:296
 msgid "Icon "
 msgstr "Icona "
 
-#: astra-nodes/customizer/customize.php:319
+#: astra-nodes/customizer/customize.php:320
 msgid "Choose an icon"
 msgstr "Tria una icona"
 
-#: astra-nodes/customizer/customize.php:339
+#: astra-nodes/customizer/customize.php:340
 msgid "Icon text"
 msgstr "Text de la icona"
 
-#: astra-nodes/customizer/customize.php:358
-#: astra-nodes/customizer/customize.php:708
-#: astra-nodes/customizer/customize.php:925
-#: astra-nodes/customizer/customize.php:1047
+#: astra-nodes/customizer/customize.php:353
+msgid "Show the text smaller"
+msgstr "Mostra el text més petit"
+
+#: astra-nodes/customizer/customize.php:375
+#: astra-nodes/customizer/customize.php:725
+#: astra-nodes/customizer/customize.php:942
+#: astra-nodes/customizer/customize.php:1066
 msgid "https://"
 msgstr "https://"
 
-#: astra-nodes/customizer/customize.php:371
-#: astra-nodes/customizer/customize.php:721
-#: astra-nodes/customizer/customize.php:938
-#: astra-nodes/customizer/customize.php:1060
+#: astra-nodes/customizer/customize.php:388
+#: astra-nodes/customizer/customize.php:738
+#: astra-nodes/customizer/customize.php:955
+#: astra-nodes/customizer/customize.php:1079
 msgid "Open in new tab"
 msgstr "Obre en una pestanya nova"
 
-#: astra-nodes/customizer/customize.php:416
+#: astra-nodes/customizer/customize.php:433
 msgid "Insert"
 msgstr "Insereix"
 
-#: astra-nodes/customizer/customize.php:417
+#: astra-nodes/customizer/customize.php:434
 msgid "Filter by name"
 msgstr "Filtra per nom"
 
-#: astra-nodes/customizer/customize.php:442
-#: astra-nodes/customizer/customize.php:456
+#: astra-nodes/customizer/customize.php:459
+#: astra-nodes/customizer/customize.php:473
 msgid "Theme Colors"
 msgstr "Colors del tema"
 
-#: astra-nodes/customizer/customize.php:496
+#: astra-nodes/customizer/customize.php:513
 msgid "Custom"
 msgstr "Personalitzat"
 
-#: astra-nodes/customizer/customize.php:514
+#: astra-nodes/customizer/customize.php:531
 msgid "Primary color"
 msgstr "Color primari"
 
-#: astra-nodes/customizer/customize.php:532
+#: astra-nodes/customizer/customize.php:549
 msgid "Secondary color"
 msgstr "Color secundari"
 
-#: astra-nodes/customizer/customize.php:546
+#: astra-nodes/customizer/customize.php:563
 msgid "Front Page"
 msgstr "Pàgina inicial"
 
-#: astra-nodes/customizer/customize.php:547
+#: astra-nodes/customizer/customize.php:564
 msgid "Customization of the front page"
 msgstr "Personalització de la pàgina inicial"
 
-#: astra-nodes/customizer/customize.php:555
+#: astra-nodes/customizer/customize.php:572
 msgid "Slider"
 msgstr "Carrusel"
 
-#: astra-nodes/customizer/customize.php:571
+#: astra-nodes/customizer/customize.php:588
 msgid "Show the slider"
 msgstr "Mostra el carrusel"
 
-#: astra-nodes/customizer/customize.php:589
+#: astra-nodes/customizer/customize.php:606
 msgid "Height of the slider"
 msgstr "Alçada del carrusel"
 
-#: astra-nodes/customizer/customize.php:609
+#: astra-nodes/customizer/customize.php:626
 msgid "Play automatically"
 msgstr "Reprodueix automàticament"
 
-#: astra-nodes/customizer/customize.php:624
+#: astra-nodes/customizer/customize.php:641
 msgid "Show arrows"
 msgstr "Mostra les fletxes"
 
-#: astra-nodes/customizer/customize.php:643
+#: astra-nodes/customizer/customize.php:660
 msgid "Show dots"
 msgstr "Mostra els punts"
 
-#: astra-nodes/customizer/customize.php:684
-#: astra-nodes/customizer/customize.php:987
+#: astra-nodes/customizer/customize.php:701
+#: astra-nodes/customizer/customize.php:1004
 msgid "Image"
 msgstr "Imatge"
 
-#: astra-nodes/customizer/customize.php:702
+#: astra-nodes/customizer/customize.php:719
 msgid "Link"
 msgstr "Enllaç"
 
-#: astra-nodes/customizer/customize.php:737
-#: astra-nodes/customizer/customize.php:743
-#: astra-nodes/includes/front_page_slider.php:97
+#: astra-nodes/customizer/customize.php:754
+#: astra-nodes/customizer/customize.php:760
+#: astra-nodes/includes/front_page_slider.php:120
 msgid "Heading"
 msgstr "Encapçalament"
 
-#: astra-nodes/customizer/customize.php:756
-#: astra-nodes/customizer/customize.php:762
-#: astra-nodes/customizer/customize.php:988
-#: astra-nodes/includes/front_page_slider.php:100
+#: astra-nodes/customizer/customize.php:773
+#: astra-nodes/customizer/customize.php:779
+#: astra-nodes/customizer/customize.php:1005
+#: astra-nodes/includes/front_page_slider.php:123
 msgid "Text"
 msgstr "Text"
 
-#: astra-nodes/customizer/customize.php:772
+#: astra-nodes/customizer/customize.php:789
 msgid "Layout"
 msgstr "Disposició"
 
-#: astra-nodes/customizer/customize.php:788
+#: astra-nodes/customizer/customize.php:805
 msgid "Front Page Layout"
 msgstr "Disposició de la pàgina inicial"
 
-#: astra-nodes/customizer/customize.php:794
-#: astra-nodes/customizer/customize.php:808
+#: astra-nodes/customizer/customize.php:811
+#: astra-nodes/customizer/customize.php:825
 msgid "Cards"
 msgstr "Targetes"
 
-#: astra-nodes/customizer/customize.php:795
+#: astra-nodes/customizer/customize.php:812
 msgid "Sidebar and cards"
 msgstr "Barra lateral i targetes"
 
-#: astra-nodes/customizer/customize.php:796
+#: astra-nodes/customizer/customize.php:813
 msgid "Sidebar and news"
 msgstr "Barra lateral i notícies"
 
-#: astra-nodes/customizer/customize.php:797
+#: astra-nodes/customizer/customize.php:814
 msgid "WordPress default"
 msgstr "Sense esquema amb barra lateral"
 
-#: astra-nodes/customizer/customize.php:798
+#: astra-nodes/customizer/customize.php:815
 msgid "WordPress default - No sidebar"
 msgstr "Sense esquema i sense barra lateral"
 
-#: astra-nodes/customizer/customize.php:823
+#: astra-nodes/customizer/customize.php:840
 msgid "Show the cards"
 msgstr "Mostra les targetes"
 
-#: astra-nodes/customizer/customize.php:859
+#: astra-nodes/customizer/customize.php:876
 msgid "Card"
 msgstr "Targeta"
 
-#: astra-nodes/customizer/customize.php:865
+#: astra-nodes/customizer/customize.php:882
 msgid "Card title"
 msgstr "Títol de la targeta"
 
-#: astra-nodes/customizer/customize.php:901
+#: astra-nodes/customizer/customize.php:918
 msgid "Color"
 msgstr "Color"
 
-#: astra-nodes/customizer/customize.php:919
+#: astra-nodes/customizer/customize.php:936
 msgid "URL"
 msgstr "URL"
 
-#: astra-nodes/customizer/customize.php:951
+#: astra-nodes/customizer/customize.php:968
 msgid "Notice"
 msgstr "Avís"
 
-#: astra-nodes/customizer/customize.php:966
+#: astra-nodes/customizer/customize.php:983
 msgid "Show the notice"
 msgstr "Mostra l'avís"
 
-#: astra-nodes/customizer/customize.php:989
+#: astra-nodes/customizer/customize.php:1006
 msgid "Image and text"
 msgstr "Imatge i text"
 
-#: astra-nodes/customizer/customize.php:1024
+#: astra-nodes/customizer/customize.php:1042
 msgid "Background color"
 msgstr "Color de fons"
 
-#: astra-nodes/customizer/customize.php:1041
+#: astra-nodes/customizer/customize.php:1060
 msgid "Image URL"
 msgstr "URL de la imatge"
 
-#: astra-nodes/customizer/customize.php:1076
+#: astra-nodes/customizer/customize.php:1095
 msgid "Text preceding the title"
 msgstr "Text que precedeix el títol"
 
-#: astra-nodes/customizer/customize.php:1076
-#: astra-nodes/customizer/customize.php:1092
-#: astra-nodes/customizer/customize.php:1108
+#: astra-nodes/customizer/customize.php:1095
+#: astra-nodes/customizer/customize.php:1111
+#: astra-nodes/customizer/customize.php:1129
 msgid "optional"
 msgstr "opcional"
 
-#: astra-nodes/customizer/customize.php:1092
+#: astra-nodes/customizer/customize.php:1111
 msgid "Title"
 msgstr "Títol"
 
-#: astra-nodes/customizer/customize.php:1108
+#: astra-nodes/customizer/customize.php:1129
 msgid "Content"
 msgstr "Contingut"
 
-#: astra-nodes/customizer/customize.php:1119
+#: astra-nodes/customizer/customize.php:1142
 msgid "News"
 msgstr "Notícies"
 
-#: astra-nodes/customizer/customize.php:1134
+#: astra-nodes/customizer/customize.php:1157
 msgid "Show the news"
 msgstr "Mostra les notícies"
 
-#: astra-nodes/customizer/customize.php:1162
+#: astra-nodes/customizer/customize.php:1185
 msgid "Category"
 msgstr "Categoria"
 
-#: astra-nodes/customizer/customize.php:1178
+#: astra-nodes/customizer/customize.php:1201
 msgid "Number of posts"
 msgstr "Nombre d'articles"
 
-#: astra-nodes/customizer/customize.php:1194
+#: astra-nodes/customizer/customize.php:1217
 msgid "Pages"
 msgstr "Pàgines"
 
-#: astra-nodes/customizer/customize.php:1205
+#: astra-nodes/customizer/customize.php:1228
 msgid "Sidebar type"
 msgstr "Tipus de barra lateral"
 
-#: astra-nodes/customizer/customize.php:1210
+#: astra-nodes/customizer/customize.php:1233
 msgid "Menu of pages"
 msgstr "Menú de pàgines"
 
-#: astra-nodes/customizer/customize.php:1211
+#: astra-nodes/customizer/customize.php:1234
 msgid "Widgets"
 msgstr "Ginys"
 
-#: astra-nodes/customizer/customize.php:1212
+#: astra-nodes/customizer/customize.php:1235
 msgid "No sidebar"
 msgstr "Sense barra lateral"
 
