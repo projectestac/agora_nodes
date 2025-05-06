@@ -121,3 +121,6 @@
 [submodule "wp-content/plugins/pojo-accessibility"]
 	path = wp-content/plugins/pojo-accessibility
 	url = https://github.com/projectestac/wordpress-pojo-accessibility.git
+[submodule "wp-content/plugins/bp-classic"]
+	path = wp-content/plugins/bp-classic
+	url = https://github.com/projectestac/wordpress-bp-classic.git
