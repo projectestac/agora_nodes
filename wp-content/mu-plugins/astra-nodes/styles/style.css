@@ -936,7 +936,8 @@ li.feed {
     display: none;
 }
 
-body.buddypress div#primary main#main article {
+body.buddypress div#primary main#main article,
+body.buddypress div#primary main#main div.entry-content {
     width: 100% !important;
 }
 
