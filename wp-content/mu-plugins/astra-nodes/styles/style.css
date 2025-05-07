@@ -1648,6 +1648,11 @@ article.post.type-post > div > header.entry-header {
     margin-left: 0;
 }
 
+/* Fix for image width in block image when link is configured to expand on clic */
+figure.wp-lightbox-container > img:first-child {
+    max-width: 100% !important;
+}
+
 @media screen and (min-width: 922px) {
     .ast-container {
         max-width: 100%;
