@@ -2871,6 +2871,18 @@ function plugin_options_page(): void {
             'plugin_file' => 'add-to-any/add-to-any.php',
             'capability' => 'manage_options', // Role administrator.
         ],
+        [
+            'title' => 'Accessibilitat',
+            'description' => 'Plugin que millora l\'accessibilitat del lloc web.',
+            'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/pojo-accessibility/',
+            'links_admin' => [
+                'Configuració' => 'admin.php?page=accessibility-settings',
+                'Barra d’eines' => 'admin.php?page=accessibility-toolbar',
+                'Personalitza' => 'customize.php?autofocus[section]=accessibility',
+            ],
+            'plugin_file' => 'pojo-accessibility/pojo-accessibility.php',
+            'capability' => 'manage_options', // Role administrator.
+        ],        
     ];
 
     echo '<div class="wrap" style="display:flex; flex-wrap:wrap;">';
@@ -2924,10 +2936,8 @@ function remove_plugin_menus(): void {
     // Remove AddToAny option.
     remove_submenu_page('options-general.php', 'addtoany');
 
-    // Remove One Click Accessibility option.
-    if (!is_xtec_super_admin()) {
-        remove_menu_page('accessibility-settings');
-    }
+    // Remove Accessibilitat option.
+    remove_menu_page('accessibility-settings');
 
 }
 
