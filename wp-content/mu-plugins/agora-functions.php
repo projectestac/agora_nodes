@@ -2909,6 +2909,17 @@ function plugin_options_page(): void {
             'plugin_file' => 'add-to-any/add-to-any.php',
             'capability' => 'manage_options', // Role administrator.
         ],
+        [
+            'title' => 'Accessibilitat',
+            'description' => 'Afegeix opcions d\'accessibilitat al lloc web.',
+            'links_admin' => [
+                'Configuració' => 'admin.php?page=accessibility-settings',
+                'Barra d’eines' => 'admin.php?page=accessibility-toolbar',
+                'Personalitza' => 'customize.php?autofocus[section]=accessibility',
+            ],
+            'plugin_file' => 'pojo-accessibility/pojo-accessibility.php',
+            'capability' => 'manage_options', // Role administrator.
+        ],
     ];
 
     echo '<div class="wrap" style="display:flex; flex-wrap:wrap;">';
@@ -2919,7 +2930,10 @@ function plugin_options_page(): void {
             echo '<div style="width: 250px; height: auto; min-height: 200px; padding: 15px; margin: 10px; box-sizing: border-box; border: 1px solid #dddddd; border-radius: 5px;">';
             echo '<h3 style="height: 25px;">' . esc_html($plugin['title']) . '</h3>';
             echo '<p style="margin-bottom: 20px;">' . esc_html($plugin['description']) . '</p>';
-            echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url($plugin['more_info']) . '">' . esc_html(__('More information', 'agora-functions')) . '</a></p>';
+
+            if (!empty($plugin['more_info'])) {
+                echo '<p style="margin: 3px 0 3px 0;"><a href="' . esc_url($plugin['more_info']) . '">' . esc_html(__('More information', 'agora-functions')) . '</a></p>';
+            }
 
             if (isset($plugin['links_admin']) && current_user_can('manage_options')) {
                 foreach ($plugin['links_admin'] as $link_text => $link_url) {
@@ -2962,10 +2976,8 @@ function remove_plugin_menus(): void {
     // Remove AddToAny option.
     remove_submenu_page('options-general.php', 'addtoany');
 
-    // Remove One Click Accessibility option.
-    if (!is_xtec_super_admin()) {
-        remove_menu_page('accessibility-settings');
-    }
+    // Remove Accessibilitat option.
+    remove_menu_page('accessibility-settings');
 
 }
 
