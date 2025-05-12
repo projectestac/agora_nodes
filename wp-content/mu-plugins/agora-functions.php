@@ -2740,8 +2740,13 @@ add_action('admin_menu', function () {
     remove_submenu_page('index.php', 'koko-analytics');
 }, 11);
 
-// Admin: Add Koko Analytics to Options menu.
+// Admin: Add Koko Analytics to the Options menu.
 add_action('admin_menu', function () {
+
+    // Check if the koko-analytics plugin is active.
+    if (!is_plugin_active('koko-analytics/koko-analytics.php')) {
+        return;
+    }
 
     add_options_page(
         __('Koko Analytics', 'koko-analytics'),
@@ -2749,13 +2754,46 @@ add_action('admin_menu', function () {
         'manage_options',
         'koko-analytics',
         static function () {
-            if (class_exists('KokoAnalytics\Admin')) {
-                $admin = new KokoAnalytics\Admin();
-                $admin->show_dashboard_page();
+
+            if (class_exists(KokoAnalytics\Admin_Page::class)) {
+                $admin_page = new KokoAnalytics\Admin_Page();
+                $admin_page::show_page();
+
+                wp_enqueue_style(
+                        'koko-analytics-dashboard',
+                        plugins_url('assets/dist/css/dashboard.css', KOKO_ANALYTICS_PLUGIN_FILE),
+                        [],
+                        KOKO_ANALYTICS_VERSION
+                );
+
+                wp_enqueue_script(
+                        'koko-analytics-dashboard',
+                        plugins_url('assets/dist/js/dashboard.js', KOKO_ANALYTICS_PLUGIN_FILE),
+                        [],
+                        KOKO_ANALYTICS_VERSION,
+                        ['strategy' => 'defer']
+                );
+
             }
         },
         5
     );
+
+});
+
+// Admin: Koko Analytics: Hide the sidebar in settings to all users except xtecadmin.
+add_action('admin_enqueue_scripts', function () {
+
+    // In admin pages, if the user is not xtecadmin, add an inline style to hide the sidebar.
+    if (is_admin() && is_user_logged_in() && !is_xtecadmin()) {
+        wp_register_style('koko-nodes-custom-style', false);
+        wp_enqueue_style('koko-nodes-custom-style');
+        wp_add_inline_style('koko-nodes-custom-style', '
+            div.ka-admin-wrap > div.ka-admin-sidebar {
+                display: none;
+            }
+        ');
+    }
 
 });
 
