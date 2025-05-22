@@ -2,12 +2,26 @@
 /* Prevent logged out users from accessing bp pages */
 function bphelp_pbpp_redirect() {
 global $bp;
+
 //IMPORTANT: Do not alter the following line. 
 $bphelp_my_redirect_slug = get_option( 'bphelp-my-redirect-slug', 'register' );
 
-// XTEC ************ MODIFICAT - Removed deprecated function
-// 2019.07.16 @nacho
-if ( bp_is_activity_component() || bp_is_groups_component() || bbp_is_single_forum() || bbp_is_single_topic() || bp_is_forums_component() || bp_is_blogs_component() || bp_is_members_component() || bp_is_profile_component() ) {
+// XTEC ************ MODIFICAT - Removed deprecated function + Added checks to avoid errors if bbPress is not active
+// 2025.05.22 @corentin.robin
+
+    $is_bbp_single_forum = function_exists('bbp_is_single_forum') && bbp_is_single_forum();
+    $is_bbp_single_topic = function_exists('bbp_is_single_topic') && bbp_is_single_topic();
+
+    if (
+        bp_is_activity_component() ||
+        bp_is_groups_component() ||
+        $is_bbp_single_forum ||
+        $is_bbp_single_topic ||
+        bp_is_forums_component() ||
+        bp_is_blogs_component() ||
+        bp_is_members_component() ||
+        bp_is_profile_component()
+    ) {
 
 //************ ORIGINAL
 /*
