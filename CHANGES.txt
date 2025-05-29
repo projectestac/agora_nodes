@@ -4,6 +4,15 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 25.06.02
+---------------------------------------------------------------------------------------
+- buddypress: Only show notifications in user menu to xtecadmin
+- getwid: Upgraded plugin
+- pods: plugin downgraded
+- private-bp-pages: Fixed error when bbpress is not active
+- Removed customized box to configure comments in editor view
+
+
 Changes 25.05.19
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 6.7.2
