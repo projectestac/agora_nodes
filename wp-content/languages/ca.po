@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.7.x\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-05-06 19:04+0200\n"
+"PO-Revision-Date: 2025-06-04 14:21+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -662,7 +662,7 @@ msgstr "Plantilla de l'article"
 #: wp-includes/blocks/post-navigation-link/block.json
 msgctxt "block description"
 msgid "Displays the next or previous post link that is adjacent to the current post."
-msgstr "Mostra l'enllaç a la article anterior o següent que és adjacent a l'article actual."
+msgstr "Mostra l'enllaç a l'article anterior o següent que és adjacent a l'article actual."
 
 #: wp-includes/blocks/post-navigation-link/block.json
 msgctxt "block title"
@@ -4324,7 +4324,7 @@ msgstr "Els comentaris estan tancats."
 
 #: wp-includes/theme-compat/comments.php:24
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Aquesta article està protegida amb contrasenya. Introduïu-la per veure'n els comentaris."
+msgstr "Aquest article està protegit amb contrasenya. Introduïu-la per veure'n els comentaris."
 
 #. translators: %s: Template name.
 #: wp-includes/theme-compat/comments.php:15
@@ -6527,7 +6527,7 @@ msgstr "Limita el conjunt de resultats a elements fixats."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3030
 msgid "Limit result set to posts assigned one or more statuses."
-msgstr "Limita el conjunt de resultats a articles assignades a un o més estats."
+msgstr "Limita el conjunt de resultats a articles assignats a un o més estats."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3021
 msgid "Limit result set to posts with one or more specific slugs."
@@ -6555,7 +6555,7 @@ msgstr "Limita la resposta a les articles modificades abans d'una data determina
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2913
 msgid "Limit response to posts published before a given ISO8601 compliant date."
-msgstr "Limita la resposta a articles publicades abans d'una data en l'estàndard ISO8601."
+msgstr "Limita la resposta a articles publicats abans d'una data en l'estàndard ISO8601."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2903
 msgid "Ensure result set excludes posts assigned to specific authors."
@@ -6563,7 +6563,7 @@ msgstr "Assegureu-vos que el conjunt de resultats exclou articles assignades a a
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2895
 msgid "Limit result set to posts assigned to specific authors."
-msgstr "Limita el conjunt de resultats a articles assignades a autors específics."
+msgstr "Limita el conjunt de resultats a articles assignats a autors específics."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2888
 msgid "Limit response to posts modified after a given ISO8601 compliant date."
@@ -6571,7 +6571,7 @@ msgstr "Limita la resposta a les articles modificades després d'una data determ
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2882
 msgid "Limit response to posts published after a given ISO8601 compliant date."
-msgstr "Limita la resposta a articles publicades després d'una data en l'estàndard ISO8601."
+msgstr "Limita la resposta a articles publicats després d'una data en l'estàndard ISO8601."
 
 #. translators: %s: Taxonomy name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2827
@@ -6766,15 +6766,15 @@ msgstr "Identificador del mèdia destacat no vàlid."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1403
 msgid "A password protected post can not be set to sticky."
-msgstr "Una article protegida per contrasenya no es pot fixar."
+msgstr "Un article protegit per contrasenya no es pot fixar."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1392
 msgid "A sticky post can not be password protected."
-msgstr "Una article fixada no es pot protegir amb contrasenya."
+msgstr "Un article fixat no es pot protegir amb contrasenya."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1384
 msgid "A post can not be sticky and have a password."
-msgstr "Una article no es pot fixar i tindre contrasenya."
+msgstr "Un article no es pot fixar i tenir contrasenya."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1127
 msgid "The post has already been deleted."
@@ -6783,7 +6783,7 @@ msgstr "L'article ja s'ha suprimit."
 #. translators: %s: force=true
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1118
 msgid "The post does not support trashing. Set '%s' to delete."
-msgstr "L'article no es pot moure a la paperera. Establiu «%s» per suprimir-la."
+msgstr "L'article no es pot moure a la paperera. Establiu «%s» per suprimir-lo."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:878
 msgid "Sorry, you are not allowed to update posts as this user."
@@ -9844,7 +9844,7 @@ msgstr "Pàgines:"
 
 #: wp-includes/post-template.php:424
 msgid "There is no excerpt because this is a protected post."
-msgstr "No hi ha extracte perquè és un article protegida."
+msgstr "No hi ha extracte perquè és un article protegit."
 
 #: wp-includes/post-template.php:311
 msgid "(more&hellip;)"
@@ -13191,11 +13191,11 @@ msgstr "Segur que voleu fer això?"
 
 #: wp-includes/deprecated.php:2699
 msgid "Last Post"
-msgstr "Darrera article"
+msgstr "Darrer article"
 
 #: wp-includes/deprecated.php:2699 wp-admin/network/settings.php:346
 msgid "First Post"
-msgstr "Primera article"
+msgstr "Primer article"
 
 #: wp-includes/deprecated.php:1874 wp-includes/post-template.php:1646
 msgid "Missing Attachment"
@@ -20276,7 +20276,7 @@ msgstr "Selecciona %s"
 
 #: wp-includes/blocks/calendar.php:27
 msgid "The calendar block is hidden because there are no published posts."
-msgstr "El bloc de calendari està amagat perquè no hi ha articles publicades."
+msgstr "El bloc de calendari està amagat perquè no hi ha articles publicats."
 
 #. translators: Visible only in the front end, this warning takes the place of
 #. a faulty block.

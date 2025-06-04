@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress - 6.7.x - Administration\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-05-06 19:10+0200\n"
+"PO-Revision-Date: 2025-06-04 14:20+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -316,7 +316,7 @@ msgstr "<strong>Envia per reinicialitzar la contrasenya</strong> envia a l'usuar
 
 #: wp-admin/users.php:63
 msgid "<strong>View</strong> takes you to a public author archive which lists all the posts published by the user."
-msgstr "<strong>Visualitza</strong> us porta a un arxiu d'autor públic que enumera totes els articles publicades per l'usuari."
+msgstr "<strong>Visualitza</strong> us porta a un arxiu d'autor públic que enumera tots els articles publicats per l'usuari."
 
 #: wp-admin/users.php:60
 msgid "<strong>Delete</strong> brings you to the Delete Users screen for confirmation, where you can permanently remove a user from your site and delete their content. You can also delete multiple users at once by using bulk actions."
@@ -336,7 +336,7 @@ msgstr "En passar el cursor per sobre una fila a la llista d'usuaris es mostrara
 
 #: wp-admin/users.php:48
 msgid "You can view all posts made by a user by clicking on the number under the Posts column."
-msgstr "Podeu veure totes els articles fetes per un usuari en fer clic en el número que hi ha a la part inferior de la columna d'articles."
+msgstr "Podeu veure tots els articles fets per un usuari en fer clic en el número que hi ha a la part inferior de la columna d'articles."
 
 #: wp-admin/users.php:47
 msgid "You can filter the list of users by User Role using the text links above the users list to show All, Administrator, Editor, Author, Contributor, or Subscriber. The default view is to show all users. Unused User Roles are not listed."
@@ -442,7 +442,7 @@ msgstr "Els administradors tenen accés a totes les característiques d'administ
 
 #: wp-admin/user-new.php:302
 msgid "Editors can publish posts, manage posts as well as manage other people&#8217;s posts, etc."
-msgstr "Els editors poden publicar articles, gestionar tant articles pròpies com d'altres usuaris, etcètera."
+msgstr "Els editors poden publicar articles, gestionar tant articles propis com d'altres usuaris, etcètera."
 
 #: wp-admin/user-new.php:301
 msgid "Authors can publish and manage their own posts, and are able to upload files."
@@ -797,7 +797,7 @@ msgstr "Podeu finalitzar la sessió d'altres dispositius, com ara telèfon o un 
 
 #: wp-admin/user-edit.php:63
 msgid "Your username cannot be changed, but you can use other fields to enter your real name or a nickname, and change which name to display on your posts."
-msgstr "El nom d'usuari no es pot canviar, però podeu fer servir altres camps per escriure el nom real o un àlies i canviar quin nom voleu que aparegui a les articles."
+msgstr "El nom d'usuari no es pot canviar, però podeu fer servir altres camps per escriure el nom real o un àlies i canviar quin nom voleu que aparegui als articles."
 
 #: wp-admin/user-edit.php:62
 msgid "You can select the language you wish to use while using the WordPress administration screen without affecting the language site visitors see."
@@ -2650,7 +2650,7 @@ msgstr "Quan publiqueu un article nou, el WordPress ho notifica automàticament 
 
 #: wp-admin/options-writing.php:190
 msgid "Default Mail Category"
-msgstr "Categoria per defecte de les articles fetes per correu electrònic"
+msgstr "Categoria per defecte dels articles fets per correu electrònic"
 
 #: wp-admin/options-writing.php:170
 msgid "Login Name"
@@ -2704,7 +2704,7 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/settings-writing-s
 
 #: wp-admin/options-writing.php:46
 msgid "If desired, WordPress will automatically alert various services of your new posts."
-msgstr "Si voleu, el WordPress avisarà automàticament a diversos serveis que hi ha articles noves."
+msgstr "Si voleu, el WordPress avisarà automàticament a diversos serveis que hi ha article nous."
 
 #: wp-admin/options-writing.php:45 wp-admin/options-writing.php:219
 msgid "Update Services"
@@ -2815,7 +2815,7 @@ msgstr "Podeu també controlar el contingut que es mostra als canals RSS, incloe
 #. translators: %s: URL to create a new page.
 #: wp-admin/options-reading.php:29
 msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two <a href=\"%s\">Pages</a>. One will become the homepage, and the other will be where your posts are displayed."
-msgstr "Podeu triar què voleu que es mostri a la pàgina principal del lloc. Poden ser articles en ordre cronològic invers (blog clàssic), o una pàgina estàtica o fixa. Per mostrar una pàgina estàtica, primer cal que creeu dues <a href=\"%s\">pàgines</a>. Una serà la pàgina principal, i l'altra serà on es mostraran les articles."
+msgstr "Podeu triar què voleu que es mostri a la pàgina principal del lloc. Poden ser articles en ordre cronològic invers (blog clàssic), o una pàgina estàtica o fixa. Per mostrar una pàgina estàtica, primer cal que creeu dues <a href=\"%s\">pàgines</a>. Una serà la pàgina principal, i l'altra serà on es mostraran els articles."
 
 #: wp-admin/options-reading.php:26
 msgid "This screen contains the settings that affect the display of your content."
@@ -3010,7 +3010,7 @@ msgstr "Estructura personalitzada"
 #. translators: %s: %postname%
 #: wp-admin/options-permalink.php:322
 msgid "Select the permalink structure for your website. Including the %s tag makes links easy to understand, and can help your posts rank higher in search engines."
-msgstr "Seleccioneu l'estructura dels enllaços permanents del vostre lloc web. Incloure l'etiqueta %s fa que els enllaços siguin fàcils d'entendre i pot ajudar a que les vostres articles es posicionin millor als cercadors."
+msgstr "Seleccioneu l'estructura dels enllaços permanents del vostre lloc web. Incloure l'etiqueta %s fa que els enllaços siguin fàcils d'entendre i pot ajudar a que els vostres articles es posicionin millor als cercadors."
 
 #: wp-admin/options-permalink.php:317
 msgid "Common Settings"
@@ -3150,7 +3150,7 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/settings-permalink
 
 #: wp-admin/options-permalink.php:54
 msgid "The Optional fields let you customize the &#8220;category&#8221; and &#8220;tag&#8221; base names that will appear in archive URLs. For example, the page listing all posts in the &#8220;Uncategorized&#8221; category could be <code>/topics/uncategorized</code> instead of <code>/category/uncategorized</code>."
-msgstr "Els camps opcionals us permeten personalitzar els noms base &#8220;categoria&#8221; i &#8220;etiqueta&#8221; que apareixeran als URL d'arxiu. Per exemple, la pàgina que mostra totes els articles de la categoria &#8220;General&#8221; podria ser <code>/temes/general</code> en lloc de <code>/categoria/general</code>."
+msgstr "Els camps opcionals us permeten personalitzar els noms base &#8220;categoria&#8221; i &#8220;etiqueta&#8221; que apareixeran als URL d'arxiu. Per exemple, la pàgina que mostra tots els articles de la categoria &#8220;General&#8221; podria ser <code>/temes/general</code> en lloc de <code>/categoria/general</code>."
 
 #: wp-admin/options-permalink.php:53
 msgid "Custom Structures"
@@ -3636,7 +3636,7 @@ msgstr "Tanca els comentaris quan l'article tingui quants dies d'antiguitat"
 
 #: wp-admin/options-discussion.php:89
 msgid "Automatically close comments on old posts"
-msgstr "Tanca automàticament els comentaris a les articles antigues"
+msgstr "Tanca automàticament els comentaris als articles antics"
 
 #: wp-admin/options-discussion.php:84
 msgid "(Signup has been disabled. Only members of this site can comment.)"
@@ -3657,15 +3657,15 @@ msgstr "Altres opcions de comentaris"
 
 #: wp-admin/options-discussion.php:66
 msgid "Individual posts may override these settings. Changes here will only be applied to new posts."
-msgstr "Les articles individuals poden sobreescriure aquests paràmetres. Els canvis fets aquí nomes s'aplicaran a les articles noves."
+msgstr "Els articles individuals poden sobreescriure aquests paràmetres. Els canvis fets aquí nomes s'aplicaran als articles nous."
 
 #: wp-admin/options-discussion.php:64
 msgid "Allow people to submit comments on new posts"
-msgstr "Permet a la gent enviar comentaris a les articles noves"
+msgstr "Permet a la gent enviar comentaris als articles nous"
 
 #: wp-admin/options-discussion.php:60
 msgid "Allow link notifications from other blogs (pingbacks and trackbacks) on new posts"
-msgstr "Permet notificacions d'enllaços d'altres blogs (retroenllaços i retropings) a les articles noves"
+msgstr "Permet notificacions d'enllaços d'altres blogs (retroenllaços i retropings) als articles nous"
 
 #: wp-admin/options-discussion.php:56
 msgid "Attempt to notify any blogs linked to from the post"
@@ -3674,7 +3674,7 @@ msgstr "Prova de notificar els blogs enllaçats des de l'article"
 #. translators: Hidden accessibility text.
 #: wp-admin/options-discussion.php:47 wp-admin/options-discussion.php:51
 msgid "Default post settings"
-msgstr "Paràmetres per defecte de les articles"
+msgstr "Paràmetres per defecte dels articles"
 
 #: wp-admin/options-discussion.php:32
 msgid "<a href=\"https://wordpress.org/documentation/article/settings-discussion-screen/\">Documentation on Discussion Settings</a>"
@@ -3689,7 +3689,7 @@ msgstr "Heu de fer clic al botó Desa els canvis de la part inferior de la panta
 
 #: wp-admin/options-discussion.php:25
 msgid "This screen provides many options for controlling the management and display of comments and links to your posts/pages. So many, in fact, they will not all fit here! :) Use the documentation links to get information on what each discussion setting does."
-msgstr "Aquesta pantalla us proporciona moltes opcions per controlar la gestió i visualització dels comentaris i els enllaços a les articles/pàgines. Tantes, de fet, que no caben totes aquí! :) Utilitzeu els enllaços de la documentació per obtenir informació sobre què fa cada paràmetre de debat."
+msgstr "Aquesta pantalla us proporciona moltes opcions per controlar la gestió i visualització dels comentaris i els enllaços als articles/pàgines. Tantes, de fet, que no caben totes aquí! :) Utilitzeu els enllaços de la documentació per obtenir informació sobre què fa cada paràmetre de debat."
 
 #: wp-admin/options-discussion.php:12 wp-admin/options-general.php:16
 #: wp-admin/options-media.php:13 wp-admin/options-permalink.php:13
@@ -4238,7 +4238,7 @@ msgstr "<strong>Arrossegueu i deixeu anar</strong> els fitxers en l'àrea d'aqu�
 
 #: wp-admin/media-new.php:51
 msgid "You can upload media files here without creating a post first. This allows you to upload files to use with posts and pages later and/or to get a web link for a particular file that you can share. There are three options for uploading files:"
-msgstr "Podeu pujar mèdia aquí sense crear primer un article. Això us permet pujar els fitxers que utilitzareu en les articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a pujar fitxers:"
+msgstr "Podeu pujar mèdia aquí sense crear primer un article. Això us permet pujar els fitxers que utilitzareu en els articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a pujar fitxers:"
 
 #: wp-admin/media-new.php:43
 msgid "Upload New Media"
@@ -4392,7 +4392,7 @@ msgstr "Podeu personalitzar la visualització d'aquesta pantalla amb la pestanya
 
 #: wp-admin/link-manager.php:64
 msgid "Links may be separated into Link Categories; these are different than the categories used on your posts."
-msgstr "Els enllaços es poden separar en categories d'enllaços; aquestes són diferents de les categories usades en les articles."
+msgstr "Els enllaços es poden separar en categories d'enllaços; aquestes són diferents de les categories usades en els articles."
 
 #. translators: %s: URL to Widgets screen.
 #: wp-admin/link-manager.php:61
@@ -4586,7 +4586,7 @@ msgstr "<strong>Esborrany ràpid</strong> &mdash; Us permet crear un article nov
 
 #: wp-admin/index.php:89
 msgid "<strong>Activity</strong> &mdash; Shows the upcoming scheduled posts, recently published posts, and the most recent comments on your posts and allows you to moderate them."
-msgstr "<strong>Activitat</strong> - Mostra les articles planificades, les articles publicades recentment, i la majoria de comentaris recents de les articles i us permet moderar-los."
+msgstr "<strong>Activitat</strong> - Mostra els articles planificats, els articles publicats recentment, i la majoria de comentaris recents dels articles i us permet moderar-los."
 
 #: wp-admin/index.php:86
 msgid "<strong>At a Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of WordPress you are using."
@@ -5334,7 +5334,7 @@ msgstr "Cerca temes per paraula clau."
 
 #: wp-admin/includes/template.php:2799 wp-admin/includes/template.php:2818
 msgid "You are currently editing the page that shows your latest posts."
-msgstr "Esteu editant actualment la pàgina que mostra les darreres articles."
+msgstr "Esteu editant actualment la pàgina que mostra els darrers articles."
 
 #. translators: Hidden accessibility text. %s: The rating.
 #: wp-admin/includes/template.php:2774
@@ -5547,7 +5547,7 @@ msgstr "No heu introduït cap nom de categoria."
 #. translators: First post content. %s: Site link.
 #: wp-admin/includes/schema.php:1268 wp-admin/includes/upgrade.php:211
 msgid "Welcome to %s. This is your first post. Edit or delete it, then start writing!"
-msgstr "Us donem la benvinguda a %s. Aquest és el primer article. Editeu-la o suprimiu-la, i després comenceu a publicar!"
+msgstr "Us donem la benvinguda a %s. Aquest és el primer article. Editeu-lo o suprimiu-lo, i després comenceu a publicar!"
 
 #: wp-admin/includes/schema.php:1255
 msgid "My Network"
@@ -6858,7 +6858,7 @@ msgstr "https://wordpress.org/documentation/article/assign-custom-fields/"
 #. translators: %s: Documentation URL.
 #: wp-admin/includes/meta-boxes.php:832
 msgid "Custom fields can be used to add extra metadata to a post that you can <a href=\"%s\">use in your theme</a>."
-msgstr "Els camps personalitzats es poden utilitzar per afegir metadades a un article, les quals poden <a href=\"%s\">ser usades pel tema</a>."
+msgstr "Els camps personalitzats es poden utilitzar per afegir metadades a un article, els quals poden <a href=\"%s\">ser usades pel tema</a>."
 
 #: wp-admin/includes/meta-boxes.php:796
 msgid "https://wordpress.org/documentation/article/introduction-to-blogging/#comments"
@@ -7255,7 +7255,7 @@ msgstr "Des de l'ordinador"
 
 #: wp-admin/includes/import.php:224
 msgid "Import posts, pages, comments, custom fields, categories, and tags from a WordPress export file."
-msgstr "Importa les articles, les pàgines, els comentaris, els camps personalitzats, les categories i les etiquetes des d'un fitxer d'exportació del WordPress."
+msgstr "Importa els articles, les pàgines, els comentaris, els camps personalitzats, les categories i les etiquetes des d'un fitxer d'exportació del WordPress."
 
 #: wp-admin/includes/import.php:218
 msgid "Import posts &amp; media from Tumblr using their API."
@@ -7279,7 +7279,7 @@ msgstr "Movable Type i TypePad"
 
 #: wp-admin/includes/import.php:200
 msgid "Import posts from LiveJournal using their API."
-msgstr "Importa les articles des del LiveJournal fent servir la seva API."
+msgstr "Importa els articles des del LiveJournal fent servir la seva API."
 
 #: wp-admin/includes/import.php:199
 msgid "LiveJournal"
@@ -7295,7 +7295,7 @@ msgstr "Convertidor de categories i etiquetes"
 
 #: wp-admin/includes/import.php:188
 msgid "Import posts, comments, and users from a Blogger blog."
-msgstr "Importa les articles, els comentaris i els usuaris des d'un blog del Blogger."
+msgstr "Importa els articles, els comentaris i els usuaris des d'un blog del Blogger."
 
 #: wp-admin/includes/import.php:187
 msgid "Blogger"
@@ -8541,7 +8541,7 @@ msgstr "Desconegut"
 #. translators: %s: Author's display name.
 #: wp-admin/includes/class-wp-users-list-table.php:497
 msgid "View posts by %s"
-msgstr "Mostra les articles de %s"
+msgstr "Mostra els articles de %s"
 
 #: wp-admin/includes/class-wp-users-list-table.php:455
 #: wp-admin/user-edit.php:476
@@ -9229,7 +9229,7 @@ msgstr "L'API REST ha trobat un error"
 
 #: wp-admin/includes/class-wp-site-health.php:2132
 msgid "The REST API is one way that WordPress and other applications communicate with the server. For example, the block editor screen relies on the REST API to display and save your posts and pages."
-msgstr "L'API REST és una manera que té el WordPress i altres aplicacions de comunicar-se amb el servidor. Per exemple, la pantalla de l'editor de blocs es basa en l'API REST per mostrar i desar les articles i les pàgines."
+msgstr "L'API REST és una manera que té el WordPress i altres aplicacions de comunicar-se amb el servidor. Per exemple, la pantalla de l'editor de blocs es basa en l'API REST per mostrar i desar els articles i les pàgines."
 
 #: wp-admin/includes/class-wp-site-health.php:2124
 msgid "The REST API is available"
@@ -9409,7 +9409,7 @@ msgstr "S'estan fent les actualitzacions en segon pla"
 #. translators: %s: The name of the late cron event.
 #: wp-admin/includes/class-wp-site-health.php:1685
 msgid "The scheduled event, %s, is late to run. Your site still works, but this may indicate that scheduling posts or automated updates may not work as intended."
-msgstr "L'esdeveniment planificat, %s, s'ha retardat en la seva execució. El lloc encara funciona, però això pot indicar que les articles planificades o les actualitzacions automatitzades poden no funcionar com es pretén."
+msgstr "L'esdeveniment planificat, %s, s'ha retardat en la seva execució. El lloc encara funciona, però això pot indicar que els articles planificats o les actualitzacions automatitzades poden no funcionar com es pretén."
 
 #: wp-admin/includes/class-wp-site-health.php:1679
 msgid "A scheduled event is late"
@@ -9418,7 +9418,7 @@ msgstr "Un esdeveniment programat s'ha retardat"
 #. translators: %s: The name of the failed cron event.
 #: wp-admin/includes/class-wp-site-health.php:1672
 msgid "The scheduled event, %s, failed to run. Your site still works, but this may indicate that scheduling posts or automated updates may not work as intended."
-msgstr "No s'ha pogut executar l'esdeveniment planificat %s. El lloc encara funciona, però això pot indicat que les articles planificades o les actualitzacions automàtiques poden no funcionar com s'espera."
+msgstr "No s'ha pogut executar l'esdeveniment planificat %s. El lloc encara funciona, però això pot indicat que els articles planificats o les actualitzacions automàtiques poden no funcionar com s'espera."
 
 #: wp-admin/includes/class-wp-site-health.php:1666
 msgid "A scheduled event has failed"
@@ -9435,7 +9435,7 @@ msgstr "No s'han pogut comprovar els esdeveniments planificats"
 
 #: wp-admin/includes/class-wp-site-health.php:1642
 msgid "Scheduled events are what periodically looks for updates to plugins, themes and WordPress itself. It is also what makes sure scheduled posts are published on time. It may also be used by various plugins to make sure that planned actions are executed."
-msgstr "Els esdeveniments planificats són els que periòdicament cerquen actualitzacions de les extensions, dels temes i del mateix WordPress. Són també els que s'asseguren de què les articles planificades es publiquen a hora. També poden usar-se per diverses extensions per assegurar-se que les accions planificades s'executen."
+msgstr "Els esdeveniments planificats són els que periòdicament cerquen actualitzacions de les extensions, dels temes i del mateix WordPress. Són també els que s'asseguren de què els articles planificats es publiquen a hora. També poden usar-se per diverses extensions per assegurar-se que les accions planificades s'executen."
 
 #: wp-admin/includes/class-wp-site-health.php:1634
 msgid "Scheduled events are running"
@@ -10321,7 +10321,7 @@ msgstr "Si deixeu un comentari, el comentari i les seves dades meta es retenen i
 #. translators: Privacy policy tutorial.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:580
 msgid "In this section you should explain how long you retain personal data collected or processed by the website. While it is your responsibility to come up with the schedule of how long you keep each dataset for and why you keep it, that information does need to be listed here. For example, you may want to say that you keep contact form entries for six months, analytics records for a year, and customer purchase records for ten years."
-msgstr "En aquesta secció hauríeu d'explicar quant de temps conserveu les dades personals recollides o tractades pel lloc web. Tot i que és responsabilitat vostra elaborar el calendari de quant de temps conserveu cada conjunt de dades i per què el conserveu, aquesta informació s'ha d'enumerar aquí. Per exemple, és possible que vulgueu dir que conserveu les articles del formulari de contacte durant sis mesos, els registres d'anàlisi durant un any i els registres de les compres dels clients durant deu anys."
+msgstr "En aquesta secció hauríeu d'explicar quant de temps conserveu les dades personals recollides o tractades pel lloc web. Tot i que és responsabilitat vostra elaborar el calendari de quant de temps conserveu cada conjunt de dades i per què el conserveu, aquesta informació s'ha d'enumerar aquí. Per exemple, és possible que vulgueu dir que conserveu els articles del formulari de contacte durant sis mesos, els registres d'anàlisi durant un any i els registres de les compres dels clients durant deu anys."
 
 #. translators: Default privacy policy heading.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:576
@@ -11225,7 +11225,7 @@ msgstr "Desvincula de &#8220;%s&#8221;"
 
 #: wp-admin/includes/class-wp-media-list-table.php:590
 msgid "(Private post)"
-msgstr "(Article privada)"
+msgstr "(Article privat)"
 
 #: wp-admin/includes/class-wp-media-list-table.php:540
 #: wp-admin/includes/class-wp-posts-list-table.php:1197
@@ -14406,7 +14406,7 @@ msgstr "Categories:"
 
 #: wp-admin/export.php:191
 msgid "This will contain all of your posts, pages, comments, custom fields, terms, navigation menus, and custom posts."
-msgstr "Aquest contindrà totes els articles, pàgines, comentaris, camps personalitzats, termes, menús de navegació i articles personalitzades."
+msgstr "Aquest contindrà tots els articles, pàgines, comentaris, camps personalitzats, termes, menús de navegació i articles personalitzats."
 
 #: wp-admin/export.php:190
 msgid "All content"
@@ -14427,7 +14427,7 @@ msgstr "Una vegada deseu el fitxer baixat, podeu usar la funció Importa en altr
 
 #: wp-admin/export.php:177
 msgid "This format, which is called WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags."
-msgstr "Aquest format, que s'anomena WordPress eXtended RSS o bé WXR, contindrà les articles, pàgines, comentaris, camps personalitzats, categories i etiquetes."
+msgstr "Aquest format, que s'anomena WordPress eXtended RSS o bé WXR, contindrà els articles, pàgines, comentaris, camps personalitzats, categories i etiquetes."
 
 #: wp-admin/export.php:176
 msgid "When you click the button below WordPress will create an XML file for you to save to your computer."
@@ -14443,7 +14443,7 @@ msgstr "Una vegada generat, el fitxer WXR es pot importar a un altre lloc web de
 
 #: wp-admin/export.php:52
 msgid "You can export a file of your site&#8217;s content in order to import it into another installation or platform. The export file will be an XML file format called WXR. Posts, pages, comments, custom fields, categories, and tags can be included. You can choose for the WXR file to include only certain posts or pages by setting the dropdown filters to limit the export by category, author, date range by month, or publishing status."
-msgstr "Podeu exportar un fitxer amb el contingut del vostre lloc web per a importar-lo a altra instal·lació o plataforma. El fitxer exportat serà un fitxer XML amb el format anomenat WXR. S'inclouran les articles, les pàgines, els comentaris, els camps personalitzats, les categories, i les etiquetes. Podeu triar el fitxer WXR per incloure solament certes articles o pàgines si configureu els filtres que limiten la categoria a exportar, l'autor, el rang de dates per mesos, o l'estat de publicació."
+msgstr "Podeu exportar un fitxer amb el contingut del vostre lloc web per a importar-lo a altra instal·lació o plataforma. El fitxer exportat serà un fitxer XML amb el format anomenat WXR. S'inclouran els articles, les pàgines, els comentaris, els camps personalitzats, les categories, i les etiquetes. Podeu triar el fitxer WXR per incloure solament certs articles o pàgines si configureu els filtres que limiten la categoria a exportar, l'autor, el rang de dates per mesos, o l'estat de publicació."
 
 #: wp-admin/export.php:20 wp-admin/menu.php:365
 msgid "Export"
@@ -14732,7 +14732,7 @@ msgstr[1] "%s articles s'han mogut a la paperera."
 msgid "%s post permanently deleted."
 msgid_plural "%s posts permanently deleted."
 msgstr[0] "S'ha suprimit l'article %s permanentment."
-msgstr[1] "S'han suprimit les articles %s permanentment."
+msgstr[1] "S'han suprimit els articles %s permanentment."
 
 #. translators: %s: Number of posts.
 #: wp-admin/edit.php:362
@@ -14762,7 +14762,7 @@ msgstr "Podeu realitzar també el mateix tipus d'accions, incloent-hi reduir la 
 
 #: wp-admin/edit.php:319
 msgid "Managing pages is very similar to managing posts, and the screens can be customized in the same way."
-msgstr "Gestionar les pàgines és molt similar a gestionar les articles, i les pantalles es poden personalitzar de la mateixa manera."
+msgstr "Gestionar les pàgines és molt similar a gestionar els articles, i les pantalles es poden personalitzar de la mateixa manera."
 
 #: wp-admin/edit.php:317
 msgid "Managing Pages"
@@ -14776,11 +14776,11 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/posts-screen/\">Do
 #. remove.
 #: wp-admin/edit.php:293
 msgid "When using Bulk Edit, you can change the metadata (categories, author, etc.) for all selected posts at once. To remove a post from the grouping, just click the %s<span class=\"screen-reader-text\">remove</span> button next to its name in the Bulk Edit area that appears."
-msgstr "Quan utilitzeu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a totes els articles seleccionades d'una vegada. Per suprimir un article del grup, simplement feu clic al botó %s<span class=\"screen-reader-text\">suprimeix</span> que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
+msgstr "Quan utilitzeu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a tots els articles seleccionats d'una vegada. Per suprimir un article del grup, simplement feu clic al botó %s<span class=\"screen-reader-text\">suprimeix</span> que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
 
 #: wp-admin/edit.php:290
 msgid "You can also edit or move multiple posts to the Trash at once. Select the posts you want to act on using the checkboxes, then select the action you want to take from the Bulk actions menu and click Apply."
-msgstr "Podeu també editar o moure moltes articles a la paperera d'una vegada. Seleccioneu les articles sobre les quals voleu actuar en fer servir les caselles de verificació, aleshores seleccioneu l'acció que voleu fer del menú d'accions en massa i feu clic a «Aplica»."
+msgstr "Podeu també editar o moure molts articles a la paperera d'una vegada. Seleccioneu els articles sobre les quals voleu actuar en fer servir les caselles de verificació, aleshores seleccioneu l'acció que voleu fer del menú d'accions en massa i feu clic a «Aplica»."
 
 #: wp-admin/edit.php:288 wp-admin/includes/class-wp-list-table.php:607
 msgid "Bulk actions"
@@ -14804,7 +14804,7 @@ msgstr "<strong>Edita</strong> us portarà a la pantalla d'edició de l'article.
 
 #: wp-admin/edit.php:276
 msgid "Hovering over a row in the posts list will display action links that allow you to manage your post. You can perform the following actions:"
-msgstr "En passar el cursor per sobre una fila a la llista d'articles es mostraran els enllaços d'accions que us permeten gestionar les articles. Podeu realitzar les accions següents:"
+msgstr "En passar el cursor per sobre una fila a la llista d'articles es mostraran els enllaços d'accions que us permeten gestionar els articles. Podeu realitzar les accions següents:"
 
 #: wp-admin/edit.php:274 wp-admin/upload.php:378 wp-admin/users.php:74
 msgid "Available Actions"
@@ -14812,19 +14812,19 @@ msgstr "Accions disponibles"
 
 #: wp-admin/edit.php:267
 msgid "You can refine the list to show only posts in a specific category or from a specific month by using the dropdown menus above the posts list. Click the Filter button after making your selection. You also can refine the list by clicking on the post author, category or tag in the posts list."
-msgstr "Podeu refinar la llista per a mostrar solament les articles d'una categoria específica o d'un mes específic en utilitzar els menús desplegables que hi ha a sobre de la llista d'articles. Feu clic al botó Filtre per a fer la selecció. També podeu refinar la llista en fer clic en l'autor de l'article, la categoria o etiqueta en la llista d'articles."
+msgstr "Podeu refinar la llista per a mostrar solament els articles d'una categoria específica o d'un mes específic en utilitzar els menús desplegables que hi ha a sobre de la llista d'articles. Feu clic al botó Filtre per a fer la selecció. També podeu refinar la llista en fer clic en l'autor de l'article, la categoria o etiqueta en la llista d'articles."
 
 #: wp-admin/edit.php:266
 msgid "You can view posts in a simple title list or with an excerpt using the Screen Options tab."
-msgstr "Podeu visualitzar les articles com una simple llista de títols o amb els seus extractes utilitzant la pestanya «opcions de pantalla»."
+msgstr "Podeu visualitzar els articles com una simple llista de títols o amb els seus extractes utilitzant la pestanya «opcions de pantalla»."
 
 #: wp-admin/edit.php:265
 msgid "You can filter the list of posts by post status using the text links above the posts list to only show posts with that status. The default view is to show all posts."
-msgstr "Podeu filtrar la llista d'articles per l'estat de l'article en fer servir els enllaços de la part superior de la llista d'articles, i així mostrar solament les articles en aquest estat. La vista predeterminada és mostrar totes els articles."
+msgstr "Podeu filtrar la llista d'articles per l'estat de l'article en fer servir els enllaços de la part superior de la llista d'articles, i així mostrar solament els articles en aquest estat. La vista predeterminada és mostrar totes els articles."
 
 #: wp-admin/edit.php:264
 msgid "You can hide/display columns based on your needs and decide how many posts to list per screen using the Screen Options tab."
-msgstr "Podeu amagar/mostrar les columnes segons les necessitats i decidir quantes articles llistar per pantalla fent servir la pestanya Opcions de pantalla."
+msgstr "Podeu amagar/mostrar les columnes segons les necessitats i decidir quants articles llistar per pantalla fent servir la pestanya Opcions de pantalla."
 
 #: wp-admin/edit.php:262
 msgid "You can customize the display of this screen&#8217;s contents in a number of ways:"
@@ -14836,7 +14836,7 @@ msgstr "Contingut de la pantalla"
 
 #: wp-admin/edit.php:254
 msgid "This screen provides access to all of your posts. You can customize the display of this screen to suit your workflow."
-msgstr "Aquesta pantalla proporciona accés a totes els articles. Podeu personalitzar la visualització d'aquesta pantalla per adaptar-la al vostre flux de treball."
+msgstr "Aquesta pantalla proporciona accés a tots els articles. Podeu personalitzar la visualització d'aquesta pantalla per adaptar-la al vostre flux de treball."
 
 #: wp-admin/edit.php:185 wp-admin/post.php:326
 msgid "Error in deleting the item."
@@ -14871,7 +14871,7 @@ msgstr "Les categories es poden convertir de manera selectiva a etiquetes fent s
 #. translators: %s: Default category.
 #: wp-admin/edit-tags.php:632
 msgid "Deleting a category does not delete the posts in that category. Instead, posts that were only assigned to the deleted category are set to the default category %s. The default category cannot be deleted."
-msgstr "La supressió d'una categoria no suprimeix les articles d'aquesta categoria. Per contra, les articles que solament tenien la categoria que s'ha suprimit, seran assignades a la categoria per defecte %s."
+msgstr "La supressió d'una categoria no suprimeix els articles d'aquesta categoria. Per contra, els articles que solament tenien la categoria que s'ha suprimit, seran assignades a la categoria per defecte %s."
 
 #: wp-admin/edit-tags.php:312
 msgid "<a href=\"https://wordpress.org/documentation/article/posts-tags-screen/\">Documentation on Tags</a>"
@@ -14931,11 +14931,11 @@ msgstr "Podeu suprimir categories d'enllaços al menú desplegable de les accion
 
 #: wp-admin/edit-tags.php:259
 msgid "You can assign keywords to your posts using <strong>tags</strong>. Unlike categories, tags have no hierarchy, meaning there is no relationship from one tag to another."
-msgstr "Podeu assignar paraules clau a les articles fent servir les <strong>etiquetes</strong>. A diferència de les categories, les etiquetes no tenen jerarquia, que vol dir que no hi ha cap relació entre una etiqueta i una altra."
+msgstr "Podeu assignar paraules clau als articles fent servir les <strong>etiquetes</strong>. A diferència de les categories, les etiquetes no tenen jerarquia, que vol dir que no hi ha cap relació entre una etiqueta i una altra."
 
 #: wp-admin/edit-tags.php:257
 msgid "You can create groups of links by using Link Categories. Link Category names must be unique and Link Categories are separate from the categories you use for posts."
-msgstr "Podeu crear grups d'enllaços en usar les categories d'enllaços. Els noms de les categories d'enllaços han de ser únics i les categories d'enllaços són independents de les categories que feu servir a les articles."
+msgstr "Podeu crear grups d'enllaços en usar les categories d'enllaços. Els noms de les categories d'enllaços han de ser únics i les categories d'enllaços són independents de les categories que feu servir als articles."
 
 #. translators: %s: URL to Writing Settings screen.
 #: wp-admin/edit-tags.php:253
@@ -15168,7 +15168,7 @@ msgstr "<strong>Format</strong> &mdash; els formats d'article designen com el te
 
 #: wp-admin/edit-form-advanced.php:376
 msgid "<strong>Publish</strong> &mdash; You can set the terms of publishing your post in the Publish box. For Status, Visibility, and Publish (immediately), click on the Edit link to reveal more options. Visibility includes options for password-protecting a post or making it stay at the top of your blog indefinitely (sticky). The Password protected option allows you to set an arbitrary password for each post. The Private option hides the post from everyone except editors and administrators. Publish (immediately) allows you to set a future or past date and time, so you can schedule a post to be published in the future or backdate a post."
-msgstr "<strong>Publicar</strong> &mdash; Podeu definir les condicions de publicació de les articles des del quadre Publica. Per canviar-ne l'estat, la visibilitat i publicar-la (immediatament), feu clic a l'enllaç Edita per veure més opcions. La visibilitat inclou opcions per definir una contrasenya d'accés que protegeixi l'article o per fixar-la a la portada del blog indefinidament. L'opció de protegir-la amb contrasenya us permet definir-ne una d'arbitrària per a cada article. Si feu l'article Privat, ningú la podrà veure excepte els editors i administradors. Publicar-la (immediatament) us permet definir una data i hora futures o passades, de tal manera que podeu planificar la publicació d'un article o antedatar-la."
+msgstr "<strong>Publicar</strong> &mdash; Podeu definir les condicions de publicació dels articles des del quadre Publica. Per canviar-ne l'estat, la visibilitat i publicar-la (immediatament), feu clic a l'enllaç Edita per veure més opcions. La visibilitat inclou opcions per definir una contrasenya d'accés que protegeixi l'article o per fixar-la a la portada del blog indefinidament. L'opció de protegir-la amb contrasenya us permet definir-ne una d'arbitrària per a cada article. Si feu l'article privat, ningú la podrà veure excepte els editors i administradors. Publicar-la (immediatament) us permet definir una data i hora futures o passades, de tal manera que podeu planificar la publicació d'un article o antedatar-la."
 
 #: wp-admin/edit-form-advanced.php:374
 msgid "Several boxes on this screen contain settings for how your content will be published, including:"
@@ -15224,7 +15224,7 @@ msgstr "Crear una pàgina és molt similar a crear un article, i les pantalles e
 
 #: wp-admin/edit-form-advanced.php:323 wp-admin/edit.php:311
 msgid "Pages are similar to posts in that they have a title, body text, and associated metadata, but they are different in that they are not part of the chronological blog stream, kind of like permanent posts. Pages are not categorized or tagged, but can have a hierarchy. You can nest pages under other pages by making one the &#8220;Parent&#8221; of the other, creating a group of pages."
-msgstr "Les pàgines són similars a les articles perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del blog, són com articles permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una sigui &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
+msgstr "Les pàgines són similars als articles perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del blog, són com articles permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una sigui &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
 
 #: wp-admin/edit-form-advanced.php:319
 msgid "<a href=\"https://wordpress.org/documentation/article/write-posts-classic-editor/\">Documentation on Writing and Editing Posts</a>"
@@ -15491,7 +15491,7 @@ msgstr "Moderació dels comentaris"
 
 #: wp-admin/edit-comments.php:210
 msgid "You can manage comments made on your site similar to the way you manage posts and other content. This screen is customizable in the same ways as other management screens, and you can act on comments using the on-hover action links or the bulk actions."
-msgstr "Podeu gestionar els comentaris fets al lloc de manera similar a com gestioneu les articles i altre contingut. Aquesta pantalla es pot personalitzar de la mateixa manera a altres pantalles d'administració, i podeu actuar amb els comentaris fent servir els enllaços d'acció que es mostren en passar el cursor per sobre o en accions en massa."
+msgstr "Podeu gestionar els comentaris fets al lloc de manera similar a com gestioneu els articles i altre contingut. Aquesta pantalla es pot personalitzar de la mateixa manera a altres pantalles d'administració, i podeu actuar amb els comentaris fent servir els enllaços d'acció que es mostren en passar el cursor per sobre o en accions en massa."
 
 #. translators: %s: Comments count.
 #: wp-admin/edit-comments.php:194 wp-admin/js/edit-comments.js:196
