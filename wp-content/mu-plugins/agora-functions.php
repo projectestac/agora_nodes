@@ -2691,7 +2691,11 @@ function activate_blog_pro(): void {
 
     $astra_settings['blog-reveal-effect'] = true;
     $astra_settings['blog-featured-image-padding'] = true;
-    $astra_settings['blog-grid'] = 2;
+    $astra_settings['blog-grid-resp'] = [
+        'desktop' => '2',
+        'tablet' => '2',
+        'mobile' => '1',
+    ];
     $astra_settings['blog-pagination'] = 'number';
 
     update_option($astra_settings_name, $astra_settings);
