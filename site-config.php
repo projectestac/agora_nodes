@@ -47,5 +47,6 @@ if (isset($agora['isProjecte']) && !$agora['isProjecte']) {
     $agora['nodes']['plugins_to_remove'] = [
         'astra-sites',
         'wpforms-lite',
+        'advanced-custom-fields',
     ];
 }
