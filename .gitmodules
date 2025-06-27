@@ -124,3 +124,6 @@
 [submodule "wp-content/plugins/bp-classic"]
 	path = wp-content/plugins/bp-classic
 	url = https://github.com/projectestac/wordpress-bp-classic.git
+[submodule "wp-content/plugins/advanced-custom-fields"]
+	path = wp-content/plugins/advanced-custom-fields
+	url = https://github.com/projectestac/wordpress-advanced-custom-fields.git
