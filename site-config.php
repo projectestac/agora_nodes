@@ -1,16 +1,10 @@
 <?php
 
-require_once (dirname(__FILE__, 2) . '/config/dblib-mysql.php');
+global $agora, $school_info, $isAgora, $isBlocs, $diskPercentNodes;
 
-global $school_info;
+require_once $agora['server']['root'] . '/html/config/dblib-mysql.php';
+
 $centre = getSchoolInfo('Nodes');
-
-global $agora, $isAgora, $isBlocs, $diskPercentNodes;
-
-if (isset($school_info['status_nodes']) && ($school_info['status_nodes'] !== 'active')) {
-    header('Location: ' . WWWROOT . 'error.php?s=moodle&' . $school_info['status_nodes'] . '=' . $centre);
-    exit;
-}
 
 $isAgora = true;
 $isBlocs = false;
