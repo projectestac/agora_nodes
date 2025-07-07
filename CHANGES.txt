@@ -4,6 +4,16 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 25.07.07
+---------------------------------------------------------------------------------------
+- advanced-custom-fields: Added plugin
+- agora-functions: Configure articles per page on theme change
+- enllacos-educatius: Updated URL for epergam
+- langs: ca: Fixed concordance of articles, names and adjectives
+- site-config.php: Set plugin advanced-custom-fields only for type projecte
+- wpforms-lite: Fixed XTEC patch
+
+
 Changes 25.06.02
 ---------------------------------------------------------------------------------------
 - buddypress: Only show notifications in user menu to xtecadmin
