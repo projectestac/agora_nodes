@@ -887,6 +887,12 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	 * @return true|WP_Error
 	 */
 	private function write_image( $image, $filename ) {
+
+        // XTEC ************ AFEGIT - Allow import of very large sites.
+        // 2025.07.10 @aginard
+        set_time_limit(-1);
+        // ************ FI
+
 		if ( wp_is_stream( $filename ) ) {
 			/*
 			 * Due to reports of issues with streams with `Imagick::writeImageFile()` and `Imagick::writeImage()`, copies the blob instead.
