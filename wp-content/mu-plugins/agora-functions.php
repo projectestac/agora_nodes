@@ -1851,16 +1851,19 @@ function default_theme_mod(): array {
 
     if ($carousel_id) {
         $post_meta = get_post_meta($carousel_id);
-        $slides = maybe_unserialize($post_meta['slides'][0]);
 
-        $filtered_slides = array_filter($slides, static function ($slide) {
-            return $slide['type'] === 'attachment';
-        });
+        if (isset($post_meta['slides'][0])) {
+            $slides = maybe_unserialize($post_meta['slides'][0]);
 
-        $processed_slides = array_slice($filtered_slides, 0, 5);
+            $filtered_slides = array_filter($slides, static function ($slide) {
+                return $slide['type'] === 'attachment';
+            });
 
-        foreach ($processed_slides as &$slide) {
-            $slide['image_url'] = wp_get_attachment_url($slide['postId']);
+            $processed_slides = array_slice($filtered_slides, 0, 5);
+
+            foreach ($processed_slides as &$slide) {
+                $slide['image_url'] = wp_get_attachment_url($slide['postId']);
+            }
         }
     }
 
