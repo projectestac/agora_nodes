@@ -412,6 +412,12 @@ add_action('parse_query', 'remove_general_bbpress_options');
  * 2015.12.04 @author Xavier Meler & Nacho Abejaro
  */
 function extra_category_fields( $tag ) {    //check for existing featured ID
+
+    if ('Astra' === wp_get_theme()->get('Name')) {
+        // Astra theme does not support this feature
+        return;
+    }
+
     $t_id = $tag->term_id;
     $cat_meta = get_option( "category_$t_id");
     ?>
