@@ -1934,11 +1934,16 @@ figure.wp-lightbox-container > img:first-child {
     }
 
     .wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev {
-        left: 10px;
+        left: -6px;
     }
 
     .wp-block-getwid-media-text-slider.has-arrows-inside .slick-next {
-        right: 45px;
+        right: 18px;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        padding: 8px 14px;
+        font-size: 26px;
     }
 
     .wp-block-getwid-media-text-slider-slide-content__content-wrapper p {
