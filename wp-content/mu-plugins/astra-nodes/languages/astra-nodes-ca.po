@@ -274,6 +274,10 @@ msgstr "Carrusel"
 msgid "Show the slider"
 msgstr "Mostra el carrusel"
 
+#: astra-nodes/customizer/customize.php:607
+msgid "Show the slider on mobile"
+msgstr "Mostra el carrusel al mòbil"
+
 #: astra-nodes/customizer/customize.php:606
 msgid "Height of the slider"
 msgstr "Alçada del carrusel"
