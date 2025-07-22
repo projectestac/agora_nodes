@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AstraFunctions 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
 "POT-Creation-Date: 2025-05-02T13:44:15+02:00\n"
-"PO-Revision-Date: 2025-05-02 13:48+0200\n"
+"PO-Revision-Date: 2025-09-22 18:21+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -273,6 +273,18 @@ msgstr "Carrusel"
 #: astra-nodes/customizer/customize.php:588
 msgid "Show the slider"
 msgstr "Mostra el carrusel"
+
+#: astra-nodes/customizer/customize.php:607
+msgid "Show the slider on mobile"
+msgstr "Mostra el carrusel a la vista mòbil"
+
+#: astra-nodes/customizer/customize.php:631
+msgid "Show headings on mobile"
+msgstr "Mostra els encapçalaments a la vista mòbil"
+
+#: astra-nodes/customizer/customize.php:644
+msgid "Show texts on mobile"
+msgstr "Mostra els textos a la vista mòbil"
 
 #: astra-nodes/customizer/customize.php:606
 msgid "Height of the slider"

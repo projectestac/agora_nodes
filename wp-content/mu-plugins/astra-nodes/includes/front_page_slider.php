@@ -65,6 +65,13 @@ function get_front_page_slider($astra_nodes_options): string {
 
     $params = extract_slider_params($astra_nodes_options);
 
+    $options = get_option('astra_nodes_options');
+
+    // By default, the slider is shown on mobile.
+    $show_slider_on_mobile = $options['front_page_slider_mobile_enable'] ?? true;
+    $show_headings_on_mobile = $options['front_page_slider_mobile_show_headings'] ?? true;
+    $show_texts_on_mobile = $options['front_page_slider_mobile_show_texts'] ?? true;
+
     for ($i = 1, $data_labels_array = []; $i <= $params['slideCount']; $i++) {
         $data_labels_array[] = '&quot;' . __('Slide', 'astra-nodes') . ' ' . $i . '&quot;';
     }
@@ -141,6 +148,41 @@ function get_front_page_slider($astra_nodes_options): string {
             </div>
         </div>
         <!-- /wp:getwid/media-text-slider -->';
+
+    // If the slider is not shown on mobile, add a media query to hide it.
+    if (!$show_slider_on_mobile) {
+        $slider .=
+            '<style>
+            @media screen and (max-width: 921px) {
+                div#slider-height-container {
+                    display: none;
+                }
+            }
+         </style>';
+    } else {
+        // If the slider is shown on mobile, adjust the headings and texts for better visibility.
+        $style = '<style>@media screen and (max-width: 921px) {';
+
+        if (!$show_headings_on_mobile) {
+            $style .= '.wp-block-heading { display: none; }';
+        } else {
+            $style .= '.wp-block-heading { display: block; }';
+        }
+
+        if (!$show_texts_on_mobile) {
+            $style .= 'div.wp-block-getwid-media-text-slider-slide-content__content-wrapper p { display: none; }';
+        } else {
+            $style .= 'div.wp-block-getwid-media-text-slider-slide-content__content-wrapper p { display: block; }';
+        }
+
+        // If both headings and texts are hidden on mobile, hide the entire content wrapper.
+        if (!$show_headings_on_mobile && !$show_texts_on_mobile) {
+            $style .= 'div.wp-block-getwid-media-text-slider-slide-content__content { display: none; }';
+        }
+
+        $style .= '}</style>';
+        $slider .= $style;
+    }
 
     return $slider;
 

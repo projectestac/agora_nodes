@@ -1170,3 +1170,58 @@ add_action('wp_footer', function () {
         <?php
     }
 });
+
+// Front page slider: Truncate the text over the slides to 320 characters in mobile view.
+add_action('wp_footer', function () { 
+    ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.innerWidth < 922) {
+                const elements = document.querySelectorAll('p[id^="slider-text-"]');
+                elements.forEach(el => {
+                    let text = el.textContent.trim();
+                    if (text.length > 320) {
+                        el.textContent = text.substring(0, 320) + '…';
+                    }
+                });
+            }
+        });
+    </script>
+    <?php
+});
+
+// Script to hide/show the options "Show headings" and "Show texts" in the front page slider whether we are in mobile or not.
+add_action('customize_controls_print_footer_scripts', function () {
+    ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // We need to use an interval to check if the elements are loaded in the DOM.
+            // When DOMContentLoaded is fired, the elements are not yet available.
+            const interval = setInterval(function () {
+
+                const toggleCarousel = document.getElementById('astra_nodes_customizer_front_page_slider_mobile_enable');
+                const controlHeadings = document.getElementById('customize-control-astra_nodes_customizer_front_page_slider_mobile_show_headings');
+                const controlTexts = document.getElementById('customize-control-astra_nodes_customizer_front_page_slider_mobile_show_texts');
+
+                // Stop interval once elements are found
+                if (toggleCarousel && controlHeadings && controlTexts) {
+                    clearInterval(interval);
+
+                    // Function to update visibility
+                    function updateVisibility() {
+                        const isChecked = toggleCarousel.checked;
+                        controlHeadings.style.display = isChecked ? 'block' : 'none';
+                        controlTexts.style.display = isChecked ? 'block' : 'none';
+                    }
+
+                    // Run once on load
+                    updateVisibility();
+
+                    // Run on checkbox change
+                    toggleCarousel.addEventListener('change', updateVisibility);
+                }
+            }, 200); // Check every 200ms
+        });
+    </script>
+    <?php
+});
