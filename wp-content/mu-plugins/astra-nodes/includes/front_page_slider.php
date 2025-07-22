@@ -65,6 +65,8 @@ function get_front_page_slider($astra_nodes_options): string {
 
     $params = extract_slider_params($astra_nodes_options);
 
+    $show_slider_on_mobile = !empty(get_option('astra_nodes_options')['front_page_slider_mobile_enable']);
+
     for ($i = 1, $data_labels_array = []; $i <= $params['slideCount']; $i++) {
         $data_labels_array[] = '&quot;' . __('Slide', 'astra-nodes') . ' ' . $i . '&quot;';
     }
@@ -141,6 +143,18 @@ function get_front_page_slider($astra_nodes_options): string {
             </div>
         </div>
         <!-- /wp:getwid/media-text-slider -->';
+    
+    // If the slider is not shown on mobile, add a media query to hide it.
+    if(!$show_slider_on_mobile) {
+        $slider .=
+        '<style>
+            @media screen and (max-width: 921px) {
+                div#slider-height-container {
+                    display: none;
+                }
+            }
+         </style>';
+    }
 
     return $slider;
 
