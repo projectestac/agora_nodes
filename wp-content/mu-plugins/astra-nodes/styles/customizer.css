@@ -198,3 +198,9 @@ textarea {
 #customize-controls h3 {
     font-size: 14px !important;
 }
+
+/* Mobile slider controls visibility */
+li#customize-control-astra_nodes_customizer_front_page_slider_mobile_show_headings span.onoffswitch_label,
+li#customize-control-astra_nodes_customizer_front_page_slider_mobile_show_texts span.onoffswitch_label {
+    padding-left: 10px;
+}
