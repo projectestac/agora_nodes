@@ -1658,6 +1658,10 @@ figure.wp-lightbox-container > img:first-child {
         max-width: 100%;
         margin-left: 0
     }
+
+    img.astra-mobile-site-logo {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 921px) {
@@ -1698,10 +1702,6 @@ figure.wp-lightbox-container > img:first-child {
         position: absolute;
     }
 
-    .home #primary {
-        margin-top: 20px !important;
-    }
-
     div#content {
         margin-left: 0 !important;
         margin-right: 16px !important;
@@ -1716,7 +1716,7 @@ figure.wp-lightbox-container > img:first-child {
     }
 
     body.astra-nodes-boxes #front-page-cards-container {
-        padding: 78px 16px 0 16px;
+        padding: 16px 16px 0 16px;
     }
 
     #astra-nodes-header-block {
@@ -1725,10 +1725,6 @@ figure.wp-lightbox-container > img:first-child {
 
     #wpadminbar {
         padding: 10px 16px 10px 16px;
-    }
-
-    div#slider-height-container {
-        display: none;
     }
 
     .ast-site-title-wrap {
@@ -1923,6 +1919,40 @@ figure.wp-lightbox-container > img:first-child {
         right: 16px !important;
     }
 
+    /* Mobile styles for Carousel */
+
+    div#slider-height-container {
+        margin-top: 30px;
+    }
+
+    div#slider-height-container div.wp-block-getwid-media-text-slider-slide-content__content-wrapper {
+        max-width: 100% !important;
+    }
+
+    div#slider-height-container .slick-list.draggable {
+        border-radius: 30px !important;
+    }
+
+    .wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev {
+        left: -6px;
+    }
+
+    .wp-block-getwid-media-text-slider.has-arrows-inside .slick-next {
+        right: 18px;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        padding: 8px 14px;
+        font-size: 26px;
+    }
+
+    .wp-block-getwid-media-text-slider-slide-content__content-wrapper p {
+        font-size: 1rem !important;
+    }
+
+    .wp-block-getwid-media-text-slider-slide-content__content-wrapper h2 {
+        font-size: 1.2rem !important;
+    }
 }
 
 @media screen and (max-width: 782px) {
@@ -2174,4 +2204,19 @@ figure.wp-lightbox-container > img:first-child {
         margin-top: 17px;
     }
 
+}
+
+img.astra-mobile-site-logo {
+    width: 70px;
+    margin-right: 15px;
+}
+
+@media (max-width: 922px) {
+  p[id^="slider-text-"] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 320ch;
+    text-overflow: ellipsis;
+  }
 }
