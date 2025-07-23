@@ -128,7 +128,7 @@ function get_front_page_slider($astra_nodes_options): string {
                                 <h2 id="slider-heading-' . $i . '" class="wp-block-heading">' . $params['heading_' . $i] . '</h2>
                                 <!-- /wp:heading -->
                                 <!-- wp:paragraph {"placeholder":"' . __('Text', 'astra-nodes') . '"} -->
-                                <p id="slider-text-' . $i . '">' . $params['text_' . $i] . '</p>
+                                <p id="slider-text-' . $i . '">' .  esc_html(mb_strimwidth($params['text_' . $i], 0, 320, '...')) . '</p>
                                 <!-- /wp:paragraph -->
                             </div>
                         </div>
