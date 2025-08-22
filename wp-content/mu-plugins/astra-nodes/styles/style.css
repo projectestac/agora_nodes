@@ -1727,10 +1727,6 @@ figure.wp-lightbox-container > img:first-child {
         padding: 10px 16px 10px 16px;
     }
 
-    div#slider-height-container {
-        display: none;
-    }
-
     .ast-site-title-wrap {
         display: flex;
     }
@@ -1923,6 +1919,40 @@ figure.wp-lightbox-container > img:first-child {
         right: 16px !important;
     }
 
+    /* Mobile styles for Carousel */
+
+    div#slider-height-container {
+        margin-top: 30px;
+    }
+
+    div#slider-height-container div.wp-block-getwid-media-text-slider-slide-content__content-wrapper {
+        max-width: 100% !important;
+    }
+
+    div#slider-height-container .slick-list.draggable {
+        border-radius: 30px !important;
+    }
+
+    .wp-block-getwid-media-text-slider.has-arrows-inside .slick-prev {
+        left: -6px;
+    }
+
+    .wp-block-getwid-media-text-slider.has-arrows-inside .slick-next {
+        right: 18px;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        padding: 8px 14px;
+        font-size: 26px;
+    }
+
+    .wp-block-getwid-media-text-slider-slide-content__content-wrapper p {
+        font-size: 1rem !important;
+    }
+
+    .wp-block-getwid-media-text-slider-slide-content__content-wrapper h2 {
+        font-size: 1.2rem !important;
+    }
 }
 
 @media screen and (max-width: 782px) {

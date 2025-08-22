@@ -573,12 +573,29 @@ function nodes_customize_register($wp_customize): void {
         'panel' => 'astra_nodes_front_page',
         'priority' => 1,
     ]);
+    
 
     // Front page slider: Enable slider.
     $wp_customize->add_setting('astra_nodes_options[front_page_slider_enable]', [
         'default' => '',
         'type' => 'theme_mod',
         'capability' => 'manage_options',
+    ]);
+
+    $wp_customize->add_setting('astra_nodes_options[front_page_slider_mobile_enable]', [
+            'default'           => true,
+            'type'              => 'option',
+        ]
+    );
+
+    $wp_customize->add_setting('astra_nodes_options[front_page_slider_mobile_show_headings]', [
+        'default'   => true,
+        'type'      => 'option',
+    ]);
+
+    $wp_customize->add_setting('astra_nodes_options[front_page_slider_mobile_show_texts]', [
+        'default'   => true,
+        'type'      => 'option',
     ]);
 
     if (is_xtec_super_admin()) {
@@ -589,6 +606,45 @@ function nodes_customize_register($wp_customize): void {
                     'section' => 'astra_nodes_customizer_front_page_slider',
                     'settings' => 'astra_nodes_options[front_page_slider_enable]',
                     'priority' => 1,
+                ]
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Toggle_Control(
+                $wp_customize,
+                'astra_nodes_customizer_front_page_slider_mobile_enable',
+                [
+                    'label'    => __('Show the slider on mobile', 'astra-nodes'),
+                    'section'  => 'astra_nodes_customizer_front_page_slider',
+                    'settings' => 'astra_nodes_options[front_page_slider_mobile_enable]',
+                    'priority' => 2,
+                ]
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Toggle_Control(
+                $wp_customize,
+                'astra_nodes_customizer_front_page_slider_mobile_show_headings',
+                [
+                    'label'    => __('Show headings on mobile', 'astra-nodes'),
+                    'section'  => 'astra_nodes_customizer_front_page_slider',
+                    'settings' => 'astra_nodes_options[front_page_slider_mobile_show_headings]',
+                    'priority' => 2,
+                ]
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Toggle_Control(
+                $wp_customize,
+                'astra_nodes_customizer_front_page_slider_mobile_show_texts',
+                [
+                    'label'    => __('Show texts on mobile', 'astra-nodes'),
+                    'section'  => 'astra_nodes_customizer_front_page_slider',
+                    'settings' => 'astra_nodes_options[front_page_slider_mobile_show_texts]',
+                    'priority' => 2,
                 ]
             )
         );
