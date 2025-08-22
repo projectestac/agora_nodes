@@ -40,7 +40,8 @@ function extract_slider_params($astra_nodes_options): array {
 
         if (empty($astra_nodes_options['front_page_slider_image_' . $i]) &&
             empty($astra_nodes_options['front_page_slider_heading_' . $i]) &&
-            empty($astra_nodes_options['front_page_slider_text_' . $i])) {
+            empty($astra_nodes_options['front_page_slider_text_' . $i]) &&
+            empty($astra_nodes_options['front_page_slider_open_in_new_tab_' . $i])) {
             continue;
         }
 
@@ -52,6 +53,7 @@ function extract_slider_params($astra_nodes_options): array {
         $params['heading_' . $count] = $astra_nodes_options['front_page_slider_heading_' . $i] ?? '';
         $params['text_' . $count] = $astra_nodes_options['front_page_slider_text_' . $i] ?? '';
         $params['url_' . $count] = $astra_nodes_options['front_page_slider_link_' . $i] ?? '';
+        $params['open_in_new_tab_' . $count] = $astra_nodes_options['front_page_slider_open_in_new_tab_' . $i] ?? false;
 
     }
 
@@ -92,7 +94,8 @@ function get_front_page_slider($astra_nodes_options): string {
             $anchor_open = '<span id="slider-link-' . $i . '">';
             $anchor_close = '</span>';
         } else {
-            $anchor_open = '<a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '" target="_blank">';
+            $target = $params['open_in_new_tab_' . $i] == false ? '' : ' target="_blank"';
+            $anchor_open = '<a id="slider-link-' . $i . '" href="' . $params['url_' . $i] . '"' . $target . '>';
             $anchor_close = '</a>';
         }
 
