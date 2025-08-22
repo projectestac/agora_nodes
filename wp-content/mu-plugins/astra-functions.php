@@ -1194,9 +1194,13 @@ add_action('wp_footer', function () {
                         // Add a click event to the div.
                         contentDiv.addEventListener("click", function () {
                             const href = link.getAttribute("href");
+                            const target = link.getAttribute("target");
                             if (href) {
-                                // Open the link in a new tab
-                                window.open(href, "_blank");
+                                if (target === "_blank") {
+                                    window.open(href, "_blank");
+                                } else {
+                                    window.location.href = href;
+                                }
                             }
                         });
                     }
