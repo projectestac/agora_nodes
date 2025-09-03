@@ -1291,6 +1291,64 @@ function nodes_customize_register($wp_customize): void {
         ],
     ]);
 
+
+    // Categories configuration.
+
+    $wp_customize->add_section('astra_nodes_pages_settings_section', [
+        'title' => __('Categories', 'astra-nodes'),
+        'priority' => 5,
+        'description' => __('Configure the display of the categories (columns, posts per page and infinite scroll).', 'astra-nodes'),
+    ]);
+
+    // Number of columns in the categories.
+    $wp_customize->add_setting('astra_nodes_pages_columns', [
+        'default' => 2,
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_pages_columns_control', [
+        'label' => __('Number of columns', 'astra-nodes'),
+        'section' => 'astra_nodes_pages_settings_section',
+        'settings' => 'astra_nodes_pages_columns',
+        'type' => 'radio',
+        'choices' => [
+            2 => __('2 columns', 'astra-nodes'),
+            3 => __('3 columns', 'astra-nodes'),
+            4 => __('4 columns', 'astra-nodes'),
+        ],
+    ]);
+
+    // Number of posts per page.
+    $wp_customize->add_setting('astra_nodes_pages_posts_per_page', [
+        'default' => 10,
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_pages_posts_per_page_control', [
+        'label' => __('Posts per page', 'astra-nodes'),
+        'section' => 'astra_nodes_pages_settings_section',
+        'settings' => 'astra_nodes_pages_posts_per_page',
+        'type' => 'number',
+        'input_attrs' => [
+            'min' => 1,
+            'max' => 50,
+            'step' => 1,
+        ],
+    ]);
+
+    // Infinite scroll toggle.
+    $wp_customize->add_setting('astra_nodes_pages_infinite_scroll', [
+        'default' => false,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('astra_nodes_pages_infinite_scroll_control', [
+        'label' => __('Enable infinite scroll', 'astra-nodes'),
+        'section' => 'astra_nodes_pages_settings_section',
+        'settings' => 'astra_nodes_pages_infinite_scroll',
+        'type' => 'checkbox',
+    ]);
+
 }
 
 add_action('customize_register', function ($wp_customize) {

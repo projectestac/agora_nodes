@@ -368,20 +368,49 @@ add_action('customize_save_after', function ($wp_customize) {
     update_option('blogname', $wp_customize->get_setting('blogname')->value());
     update_option('blogdescription', $wp_customize->get_setting('blogdescription')->value());
 
-});
-
-// Customizer: Update the register in wp_options that makes possible to change the color palette
-// in the preview. Also, update the global $astra_nodes_options to update the preview.
-add_action('customize_preview_init', function ($wp_customize) {
-
-    global $astra_nodes_options;
-
+    // Update the colour palette in astra-settings option.
     $palette = $wp_customize->get_setting('astra-color-palettes[currentPalette]')->value();
     $astra_color_palettes = get_option('astra-color-palettes');
     $astra_settings = get_option('astra-settings');
     $astra_settings['global-color-palette']['palette'] = $astra_color_palettes['palettes'][$palette];
 
+    astra_update_option('astra-settings', $astra_settings);
     update_option('astra-settings', $astra_settings);
+
+});
+
+// Customizer: Update the register in wp_options that makes possible to change the colour palette
+// in the preview. Also, update the global $astra_nodes_options to update the preview.
+add_action('customize_preview_init', function ($wp_customize) {
+
+    // This filter updates the preview when changing some parameters in the customizer.
+    add_filter('option_astra-settings', function ($value) {
+
+        global $wp_customize;
+
+        if (!isset($wp_customize)) {
+            return $value;
+        }
+
+        $astra_settings = $value;
+
+        // Categories parameters.
+        $astra_settings['blog-post-per-page'] = $wp_customize->get_setting('astra_nodes_pages_posts_per_page')->value();
+        $astra_settings['blog-grid-resp']['desktop'] = $wp_customize->get_setting('astra_nodes_pages_columns')->value();
+        $astra_settings['blog-grid-resp']['tablet'] = $wp_customize->get_setting('astra_nodes_pages_columns')->value();
+        $astra_settings['blog-pagination'] = $wp_customize->get_setting('astra_nodes_pages_infinite_scroll')->value();
+        $astra_settings['blog-pagination'] = ($astra_settings['blog-pagination'] === false) ? 'number' : 'infinite';
+
+        // Colour palette.
+        $palette = $wp_customize->get_setting('astra-color-palettes[currentPalette]')->value();
+        $astra_color_palettes = get_option('astra-color-palettes');
+        $astra_settings['global-color-palette']['palette'] = $astra_color_palettes['palettes'][$palette];
+
+        return $astra_settings;
+
+    });
+
+    global $astra_nodes_options;
 
     // Parameters that require a refresh to update the preview.
     $layout = $wp_customize->get_setting('astra_nodes_options[front_page_layout]')->value();
@@ -1225,3 +1254,51 @@ add_action('customize_controls_print_footer_scripts', function () {
     </script>
     <?php
 });
+
+/**
+ * Sync Customizer category settings to Astra and WordPress options
+ */
+function sync_categories_settings_to_astra(): void
+{
+    global $astra_nodes_options;
+
+    // Get Astra settings from wp_options
+    $astra_settings_name = 'astra-settings';
+    $astra_settings = maybe_unserialize(get_option($astra_settings_name, []));
+
+    if (!is_array($astra_settings)) {
+        $astra_settings = [];
+    }
+
+    // 1. Columns for category archives
+    // Map the Customizer setting to Astra's 'blog-grid' (integer)
+    $astra_settings['blog-post-per-page'] = $astra_nodes_options['astra_nodes_pages_posts_per_page'] ?? 2;
+
+    // Handle responsive columns if needed
+    $astra_settings['blog-grid-resp'] = [
+            'desktop' => $astra_nodes_options['astra_nodes_pages_columns'] ?? 2,
+            'tablet' => $astra_nodes_options['astra_nodes_pages_columns'] ?? 2,
+            'mobile' => 1, // default mobile column
+    ];
+
+    // 2. Infinite scroll toggle
+    // Map Customizer checkbox to Astra's 'blog-pagination' key
+    $astra_settings['blog-pagination'] = 
+            ($astra_nodes_options['astra_nodes_pages_infinite_scroll'] === 'infinite') ? 'infinite' : 'number';
+
+    // 3. Posts per page
+    // WordPress native option 'posts_per_page'
+    $posts_per_page = $astra_nodes_options['astra_nodes_pages_posts_per_page'] ?? 10;
+    update_option('posts_per_page', absint($posts_per_page));
+
+    // Save updated Astra settings
+    astra_update_option($astra_settings_name, $astra_settings);
+    update_option($astra_settings_name, $astra_settings);
+
+}
+
+// Hook to save settings after Customizer save
+add_action('customize_save_after', 'sync_categories_settings_to_astra');
+
+// Optional: run once on theme activation to set defaults
+add_action('after_switch_theme', 'sync_categories_settings_to_astra');
