@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AstraFunctions 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
 "POT-Creation-Date: 2025-05-02T13:44:15+02:00\n"
-"PO-Revision-Date: 2025-09-22 18:21+0200\n"
+"PO-Revision-Date: 2025-09-23 10:29+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -59,9 +59,8 @@ msgstr "Documentació i videotutorials"
 #: astra-functions.php:109
 msgid "All related information can be found in Digital website."
 msgstr ""
-"Podeu trobar tota la informació relacionada amb Nodes a la web Digital: "
-"documentació, videotutorials, consells de disseny i comunicació, novetats, "
-"etc."
+"Podeu trobar tota la informació relacionada amb Nodes a la web Digital: documentació, videotutorials, "
+"consells de disseny i comunicació, novetats, etc."
 
 #: astra-functions.php:111
 msgid "Go to Digital"
@@ -74,8 +73,8 @@ msgstr "Suport personalitzat"
 #: astra-functions.php:125
 msgid "Any doubts? Trouble with any configuration? You can ask in the forum."
 msgstr ""
-"Teniu dubtes? Alguna configuració es resisteix? No apareix algun element al "
-"web? Nodes inclou persones de suport que responen ràpidament les consultes."
+"Teniu dubtes? Alguna configuració es resisteix? No apareix algun element al web? Nodes inclou persones de "
+"suport que responen ràpidament les consultes."
 
 #: astra-functions.php:127
 msgid "Go to the forum"
@@ -88,8 +87,8 @@ msgstr "Xarxa docent"
 #: astra-functions.php:140
 msgid "Website administrators can get support in the teacher's network."
 msgstr ""
-"A la xarxa docent Nus es parla sobre múltiples aspectes de Nodes, es "
-"comparteixen maneres d'organitzar les pàgines i els menús, etc."
+"A la xarxa docent Nus es parla sobre múltiples aspectes de Nodes, es comparteixen maneres d'organitzar les "
+"pàgines i els menús, etc."
 
 #: astra-functions.php:142
 msgid "Go to the teacher's network"
@@ -219,17 +218,13 @@ msgstr "Text de la icona"
 msgid "Show the text smaller"
 msgstr "Mostra el text més petit"
 
-#: astra-nodes/customizer/customize.php:375
-#: astra-nodes/customizer/customize.php:725
-#: astra-nodes/customizer/customize.php:942
-#: astra-nodes/customizer/customize.php:1066
+#: astra-nodes/customizer/customize.php:375 astra-nodes/customizer/customize.php:725
+#: astra-nodes/customizer/customize.php:942 astra-nodes/customizer/customize.php:1066
 msgid "https://"
 msgstr "https://"
 
-#: astra-nodes/customizer/customize.php:388
-#: astra-nodes/customizer/customize.php:738
-#: astra-nodes/customizer/customize.php:955
-#: astra-nodes/customizer/customize.php:1079
+#: astra-nodes/customizer/customize.php:388 astra-nodes/customizer/customize.php:738
+#: astra-nodes/customizer/customize.php:955 astra-nodes/customizer/customize.php:1079
 msgid "Open in new tab"
 msgstr "Obre en una pestanya nova"
 
@@ -241,8 +236,7 @@ msgstr "Insereix"
 msgid "Filter by name"
 msgstr "Filtra per nom"
 
-#: astra-nodes/customizer/customize.php:459
-#: astra-nodes/customizer/customize.php:473
+#: astra-nodes/customizer/customize.php:459 astra-nodes/customizer/customize.php:473
 msgid "Theme Colors"
 msgstr "Colors del tema"
 
@@ -302,8 +296,7 @@ msgstr "Mostra les fletxes"
 msgid "Show dots"
 msgstr "Mostra els punts"
 
-#: astra-nodes/customizer/customize.php:701
-#: astra-nodes/customizer/customize.php:1004
+#: astra-nodes/customizer/customize.php:701 astra-nodes/customizer/customize.php:1004
 msgid "Image"
 msgstr "Imatge"
 
@@ -311,16 +304,13 @@ msgstr "Imatge"
 msgid "Link"
 msgstr "Enllaç"
 
-#: astra-nodes/customizer/customize.php:754
-#: astra-nodes/customizer/customize.php:760
+#: astra-nodes/customizer/customize.php:754 astra-nodes/customizer/customize.php:760
 #: astra-nodes/includes/front_page_slider.php:120
 msgid "Heading"
 msgstr "Encapçalament"
 
-#: astra-nodes/customizer/customize.php:773
-#: astra-nodes/customizer/customize.php:779
-#: astra-nodes/customizer/customize.php:1005
-#: astra-nodes/includes/front_page_slider.php:123
+#: astra-nodes/customizer/customize.php:773 astra-nodes/customizer/customize.php:779
+#: astra-nodes/customizer/customize.php:1005 astra-nodes/includes/front_page_slider.php:123
 msgid "Text"
 msgstr "Text"
 
@@ -332,8 +322,7 @@ msgstr "Disposició"
 msgid "Front Page Layout"
 msgstr "Disposició de la pàgina inicial"
 
-#: astra-nodes/customizer/customize.php:811
-#: astra-nodes/customizer/customize.php:825
+#: astra-nodes/customizer/customize.php:811 astra-nodes/customizer/customize.php:825
 msgid "Cards"
 msgstr "Targetes"
 
@@ -397,8 +386,7 @@ msgstr "URL de la imatge"
 msgid "Text preceding the title"
 msgstr "Text que precedeix el títol"
 
-#: astra-nodes/customizer/customize.php:1095
-#: astra-nodes/customizer/customize.php:1111
+#: astra-nodes/customizer/customize.php:1095 astra-nodes/customizer/customize.php:1111
 #: astra-nodes/customizer/customize.php:1129
 msgid "optional"
 msgstr "opcional"
@@ -454,3 +442,25 @@ msgstr "Totes les notícies"
 #: astra-nodes/includes/front_page_slider.php:69
 msgid "Slide"
 msgstr "Diapositiva"
+
+#. Customizer pages settings section
+msgid "Configure the display of the categories (columns, posts per page and infinite scroll)."
+msgstr "Configura la visualització de les categories (columnes, articles per pàgina i desplaçament infinit)."
+
+msgid "Number of columns"
+msgstr "Nombre de columnes"
+
+msgid "2 columns"
+msgstr "Dues columnes"
+
+msgid "3 columns"
+msgstr "Tres columnes"
+
+msgid "4 columns"
+msgstr "Quatre columnes"
+
+msgid "Posts per page"
+msgstr "Articles per pàgina"
+
+msgid "Enable infinite scroll"
+msgstr "Activa el desplaçament infinit"
