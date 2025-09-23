@@ -2,14 +2,17 @@
 # This file is distributed under the same license as the Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-25 17:50:54+0000\n"
+"Project-Id-Version: Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2025-09-23 09:41+0200\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.1\n"
-"Language: ca\n"
-"Project-Id-Version: Plugins - Getwid &#8211; Gutenberg Blocks - Stable (latest release)\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: includes/rest-api.php:222
 msgid "Please provide a valid URL."
@@ -56,7 +59,7 @@ msgstr "Envia"
 
 #: includes/settings-page.php:489
 msgid "These settings may break some blocks in posts loaded via Ajax. These settings may not work together with optimization plugins."
-msgstr "Aquesta configuració pot trencar alguns blocs en entrades carregades mitjançant l'Ajax. És possible que aquests paràmetres no funcionin conjuntament amb els connectors d'optimització."
+msgstr "Aquesta configuració pot trencar alguns blocs en articles carregats mitjançant l'Ajax. És possible que aquests paràmetres no funcionin conjuntament amb els connectors d'optimització."
 
 #: includes/settings-page.php:485
 msgid "If this option is on, all CSS files of blocks will be moved to header for better theme compatibility. If your theme has custom styling for Getwid blocks, its styles will be applied first."
@@ -88,7 +91,7 @@ msgstr "Gestiona les plantilles de correu"
 
 #: includes/settings-page.php:444
 msgid "Post Templates are used for presenting posts in a certain format and style. You can change how a post looks by choosing a post template in the Custom Post Type and related blocks."
-msgstr "Les plantilles d'entrada s'utilitzen per presentar entrades en un determinat format i estil. Podeu canviar l'aparença d'una entrada escollint una plantilla d'entrada al Tipus d'entrada personalitzat i blocs relacionats."
+msgstr "Les plantilles d'articles s'utilitzen per presentar articles en un determinat format i estil. Podeu canviar l'aparença d'un article escollint una plantilla d'articles al Tipus d'article personalitzat i blocs relacionats."
 
 #: includes/settings-page.php:413
 msgid "Deselect All"
@@ -208,7 +211,7 @@ msgstr "Taxonomia"
 
 #: includes/rest-api.php:117
 msgid "Post Type"
-msgstr "Tipus d'entrada"
+msgstr "Tipus d'article"
 
 #: includes/rest-api.php:85
 msgid "Forbidden."
@@ -244,15 +247,15 @@ msgstr "Plantilla nova"
 
 #: includes/post-template-part.php:25 assets/js/editor.blocks.js:23
 msgid "Getwid Post Templates"
-msgstr "Plantilles d'entrades de Getwid"
+msgstr "Plantilles d'articles de Getwid"
 
 #: includes/post-template-part.php:24 assets/js/editor.blocks.js:6
 msgid "Post Template"
-msgstr "Plantilla de l'entrada"
+msgstr "Plantilla de l'article"
 
 #: includes/post-template-part.php:23 includes/settings-page.php:38
 msgid "Post Templates"
-msgstr "Plantilles d'entrades"
+msgstr "Plantilles d'articles"
 
 #. translators: %s is an error message
 #: includes/instagram-token-manager.php:113
@@ -278,11 +281,11 @@ msgstr "Video emergent"
 
 #: includes/blocks/toggle.php:28 assets/js/editor.blocks.js:23
 msgid "Toggle"
-msgstr "Commuta"
+msgstr "Acordió múltiple"
 
 #: includes/blocks/testimonial.php:23 assets/js/editor.blocks.js:23
 msgid "Testimonial"
-msgstr "Testimonial"
+msgstr "Testimoni"
 
 #: includes/blocks/template-parts/post-button.php:35
 #: includes/blocks/template-parts/post-link.php:29
@@ -313,7 +316,7 @@ msgstr "Secció"
 
 #: includes/blocks/recent-posts.php:94 assets/js/editor.blocks.js:23
 msgid "Recent Posts"
-msgstr "Entrades recents"
+msgstr "Articles recents"
 
 #: includes/blocks/progress-bar.php:31 assets/js/editor.blocks.js:23
 msgid "Progress Bar"
@@ -329,7 +332,7 @@ msgstr "Caixa de preus"
 
 #: includes/blocks/post-carousel.php:189 assets/js/editor.blocks.js:23
 msgid "Post Carousel"
-msgstr "Carrusel de correus"
+msgstr "Carrusel de pàgines i articles"
 
 #: includes/blocks/person.php:23 assets/js/editor.blocks.js:23
 msgid "Person"
@@ -383,15 +386,15 @@ msgstr "Instagram"
 
 #: includes/blocks/images-stack.php:23 assets/js/editor.blocks.js:23
 msgid "Image Stack Gallery"
-msgstr "Galeria de la Pila d'imatges"
+msgstr "Pila d'imatges"
 
 #: includes/blocks/image-hotspot.php:75 assets/js/editor.blocks.js:23
 msgid "Image Hotspot"
-msgstr "imatge amb punts calents"
+msgstr "Imatge amb punts calents"
 
 #: includes/blocks/image-box.php:35 assets/js/editor.blocks.js:23
 msgid "Image Box"
-msgstr "Quadre d'imatge"
+msgstr "Caixa d'imatge"
 
 #: includes/blocks/icon.php:35 assets/js/editor.blocks.js:23
 msgid "Icon"
@@ -417,11 +420,11 @@ msgstr "<"
 
 #: includes/blocks/custom-post-type.php:264
 msgid "Posts navigation"
-msgstr "Navegació d'entrades"
+msgstr "Navegació pels articles"
 
 #: includes/blocks/custom-post-type.php:121 assets/js/editor.blocks.js:23
 msgid "Custom Post Type"
-msgstr "Tipus d'entrada personalitzat"
+msgstr "Tipus d'article personalitzat"
 
 #: includes/blocks/counter.php:44 assets/js/editor.blocks.js:23
 msgid "Counter"
@@ -437,7 +440,7 @@ msgstr "Compte enrere"
 
 #: includes/blocks/content-timeline.php:23 assets/js/editor.blocks.js:23
 msgid "Content Timeline"
-msgstr "Línia temporal del contingut"
+msgstr "Línia de temps"
 
 #: includes/blocks/contact-form.php:338
 msgid "The response is no longer valid: either is too old or has been used previously."
@@ -520,7 +523,7 @@ msgstr "Blocs Getwid ACF"
 
 #: includes/blocks-manager.php:49 includes/blocks-manager.php:92
 msgid "Getwid Post Blocks"
-msgstr "Blocs d'entrada de Getwid"
+msgstr "Blocs d'articles de Getwid"
 
 #: includes/blocks-manager.php:37 includes/blocks-manager.php:80
 msgid "Getwid Blocks"
@@ -557,11 +560,11 @@ msgstr "Getwid"
 
 #: includes/blocks/post-slider.php:177 assets/js/editor.blocks.js:23
 msgid "Post Slider"
-msgstr "Carrusel d'entrades"
+msgstr "Carrusel d'articles"
 
 #: includes/blocks/media-text-slider.php:59 assets/js/editor.blocks.js:23
 msgid "Media & Text Slider"
-msgstr "Carrusel de text i de multimèdia"
+msgstr "Carrusel de text i mèdia"
 
 #: includes/blocks/images-slider.php:52 assets/js/editor.blocks.js:23
 msgid "Image Slider"
@@ -569,7 +572,7 @@ msgstr "Carrusel d'imatges"
 
 #: includes/blocks/social-links.php:27 assets/js/editor.blocks.js:23
 msgid "Social Links"
-msgstr "Enllaços a les xarxes socials"
+msgstr "Enllaços socials"
 
 #: includes/templates/recent-posts/post.php:92
 #: includes/templates/template-parts/post-comments.php:27
