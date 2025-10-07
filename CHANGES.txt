@@ -4,6 +4,18 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 25.10.07
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.7.4
+- Astra: Show logo in mobile view
+- astra-addon: Improvements to catalan translation
+- astra-addon: Added catalan translation
+- Customizer: Added options to configure posts per page and others in categories
+- Customizer: Added parameters for front page slider. Limit text length on mobile view. Improved CSS
+- Customizer: Improved the management of links in the main page slider to open in a new tab according to the user's settings
+- langs: Getwid: Updated catalan translations
+
+
 Changes 25.07.21
 ---------------------------------------------------------------------------------------
 - langs: Fixed concordance of articles, names and adjectives
