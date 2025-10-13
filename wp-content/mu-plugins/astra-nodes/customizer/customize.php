@@ -608,46 +608,46 @@ function nodes_customize_register($wp_customize): void {
                 ]
             )
         );
-
-        $wp_customize->add_control(
-            new WP_Customize_Toggle_Control(
-                $wp_customize,
-                'astra_nodes_customizer_front_page_slider_mobile_enable',
-                [
-                    'label'    => __('Show the slider on mobile', 'astra-nodes'),
-                    'section'  => 'astra_nodes_customizer_front_page_slider',
-                    'settings' => 'astra_nodes_options[front_page_slider_mobile_enable]',
-                    'priority' => 2,
-                ]
-            )
-        );
-
-        $wp_customize->add_control(
-            new WP_Customize_Toggle_Control(
-                $wp_customize,
-                'astra_nodes_customizer_front_page_slider_mobile_show_headings',
-                [
-                    'label'    => __('Show headings on mobile', 'astra-nodes'),
-                    'section'  => 'astra_nodes_customizer_front_page_slider',
-                    'settings' => 'astra_nodes_options[front_page_slider_mobile_show_headings]',
-                    'priority' => 2,
-                ]
-            )
-        );
-
-        $wp_customize->add_control(
-            new WP_Customize_Toggle_Control(
-                $wp_customize,
-                'astra_nodes_customizer_front_page_slider_mobile_show_texts',
-                [
-                    'label'    => __('Show texts on mobile', 'astra-nodes'),
-                    'section'  => 'astra_nodes_customizer_front_page_slider',
-                    'settings' => 'astra_nodes_options[front_page_slider_mobile_show_texts]',
-                    'priority' => 2,
-                ]
-            )
-        );
     }
+
+    $wp_customize->add_control(
+        new WP_Customize_Toggle_Control(
+            $wp_customize,
+            'astra_nodes_customizer_front_page_slider_mobile_enable',
+            [
+                'label' => __('Show the slider on mobile', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_front_page_slider',
+                'settings' => 'astra_nodes_options[front_page_slider_mobile_enable]',
+                'priority' => 2,
+            ]
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Toggle_Control(
+            $wp_customize,
+            'astra_nodes_customizer_front_page_slider_mobile_show_headings',
+            [
+                'label' => __('Show headings on mobile', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_front_page_slider',
+                'settings' => 'astra_nodes_options[front_page_slider_mobile_show_headings]',
+                'priority' => 2,
+            ]
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Toggle_Control(
+            $wp_customize,
+            'astra_nodes_customizer_front_page_slider_mobile_show_texts',
+            [
+                'label' => __('Show texts on mobile', 'astra-nodes'),
+                'section' => 'astra_nodes_customizer_front_page_slider',
+                'settings' => 'astra_nodes_options[front_page_slider_mobile_show_texts]',
+                'priority' => 2,
+            ]
+        )
+    );
 
     // Front page slider: Minimum height of the images.
     $wp_customize->add_setting('astra_nodes_options[front_page_slider_min_height]', [
