@@ -298,34 +298,58 @@ function quota_control($results) {
 add_action('remove_stats', 'remove_old_stats');
 
 /**
- *  Avoid delete this pages: Activitat, Membres, Nodes and Initial Page
- * @param int $post_id Post ID.
+ * Avoid delete this pages: Activitat, Membres, Nodes and Initial Page
+ *
+ * @param $post_ID
  */
-function restrict_post_deletion($post_ID){
-	$pagesList = array("Membres", "Pàgines d'inici", "Activitat", "Nodes");
-	$restricted_pages = array();
+function restrict_post_deletion($post_ID): void
+{
+    // Pages that can only be deleted by xtecadmin.
+    $pages_list = ['Membres', 'Pàgines d\'inici', 'Activitat', 'Activitat a tot el lloc web', 'Nodes'];
+    $restricted_pages = [];
 
     if (get_option('page_on_front')) {
-        // Avoid delete page_on_front because frontpage is not shown if it doesnt exist
-        array_push($restricted_pages, get_option('page_on_front'));
+        // Avoid delete page_on_front because frontpage is not shown if it doesn't exist
+        $restricted_pages[] = get_option('page_on_front');
     }
-	if (!is_xtec_super_admin()) {
-		foreach ($pagesList as $pageTitle){
-			$page = get_page_by_title($pageTitle);
-			if ($page->ID) {
-				array_push($restricted_pages, $page->ID);
-			}
-		}
 
-		if (in_array($post_ID, $restricted_pages)) {
-			$msg = __('The page you were trying to delete is protected.', 'agora-functions');
-			wp_die($msg);
-		}
-	}
+    // Get the IDs of the pages in the list
+    if (!is_xtec_super_admin()) {
+        foreach ($pages_list as $page) {
+            $query = new WP_Query([
+                    'post_type' => 'page',
+                    'title' => $page,
+                    'post_status' => 'all',
+                    'posts_per_page' => 1,
+                    'no_found_rows' => true,
+                    'ignore_sticky_posts' => true,
+                    'update_post_term_cache' => false,
+                    'update_post_meta_cache' => false,
+                    'orderby' => 'post_date ID',
+                    'order' => 'ASC',
+            ]);
 
+            if (!empty($query->posts[0]->ID)) {
+                $restricted_pages[] = $query->posts[0]->ID;
+            }
+        }
+
+        if (in_array($post_ID, $restricted_pages, true)) {
+            wp_die(__('The page you were trying to delete is protected.', 'agora-functions'));
+        }
+    }
 }
 add_action('wp_trash_post', 'restrict_post_deletion');
 add_action('before_delete_post', 'restrict_post_deletion');
+
+// Prevent sending to trash the page_on_front.
+add_filter('pre_trash_post', function ($null, $post) {
+    // Avoid delete page_on_front because frontpage is not shown if it doesn't exist.
+    $page_on_front = get_option('page_on_front');
+    if ($page_on_front && $post->ID === (int)$page_on_front) {
+        wp_die(__('The page you were trying to delete is protected.', 'agora-functions'));
+    }
+}, 10, 2);
 
 /**
  * Prevents the creation of restricted pages
