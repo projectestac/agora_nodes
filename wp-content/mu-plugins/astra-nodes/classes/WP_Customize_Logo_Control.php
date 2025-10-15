@@ -13,7 +13,7 @@ class WP_Customize_Logo_Control extends WP_Customize_Control {
         echo '<span class="customize-control-title">' . $this->label . '</span>';
 
         foreach ($this->choices as $value => $label) {
-            $image_name = ($value === 'department') ? 'logo_department.png' : 'logo_ceb.png';
+            $image_name = ($value === 'department') ? 'logo_defp_transparent.png' : 'logo_ceb.png';
             $select_class = ($value === $current_value) ? 'box-selected' : 'box-unselected';
             echo '<label for="' . $value . '">';
             echo '<div class="astra-nodes-logo-select-option ' . $select_class . '">';

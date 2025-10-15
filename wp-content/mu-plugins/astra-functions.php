@@ -188,7 +188,7 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
         $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_ceb.svg';
         $logo_url = 'https://www.edubcn.cat/ca/';
     } else {
-        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_department.svg';
+        $logo_image = WPMU_PLUGIN_URL . '/astra-nodes/images/logo_defp_transparent.png';
         $logo_url = 'https://educacio.gencat.cat/ca/inici/';
     }
 
