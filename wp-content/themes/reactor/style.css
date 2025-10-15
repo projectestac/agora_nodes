@@ -1061,6 +1061,10 @@ div.docs-info-header {
     display: none;
 }
 
+/* Logo size in front page */
+body #wpadminbar li#wp-admin-bar-gencat a img {
+    height: 25px;
+}
 
 body.login h1 {
     line-height: 1em;
