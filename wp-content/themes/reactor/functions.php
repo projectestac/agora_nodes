@@ -758,3 +758,16 @@ function bpfr_whats_new_tiny_editor() {
 }
 
 add_action('whats_new_textarea', 'bpfr_whats_new_tiny_editor');
+
+// Load a CSS rule only in the admin area (inline).
+add_action('admin_enqueue_scripts', function () {
+    // Register a "style handle" without URL (allows to add inline CSS).
+    wp_register_style('reactor-admin-inline', false);
+    wp_enqueue_style('reactor-admin-inline');
+    wp_add_inline_style('reactor-admin-inline', '
+        body #wpadminbar li#wp-admin-bar-gencat a img {
+            height: 25px;
+            padding-top: 2px;
+        }
+    ');
+});

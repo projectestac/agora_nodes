@@ -14,7 +14,7 @@ function add_logo($wp_admin_bar) {
     } else {
         $args = [
             'id' => 'gencat',
-            'title' => '<img alt="Logotip Generalitat" src="' . get_template_directory_uri() . '/custom-tac/imatges/logo_gene.png">',
+            'title' => '<img alt="Logotip Generalitat" src="' . get_template_directory_uri() . '/custom-tac/imatges/logo_defp_blanc.png">',
             'href' => 'https://www.gencat.cat/ensenyament/',
             'parent' => false,
         ];
