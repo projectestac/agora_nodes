@@ -311,9 +311,9 @@ class grup_classe_widget extends WP_Widget {
     private function display_subscription($args, $ig_forms): void
     {
         if (!empty($ig_forms)) {
+            echo '<br />';
             echo $args['before_title'] . __('Subscription', 'grup-classe') . $args['after_title'];
-            echo __('We will notice you', 'grup-classe') . '<br /><br />';
-            es_subbox($namefield = 'YES', $desc = '', $group = $ig_forms);
+            echo do_shortcode( '[email-subscribers-form id="' . $ig_forms . '"]' );
             echo '<br />';
         }
     }
@@ -322,6 +322,7 @@ class grup_classe_widget extends WP_Widget {
     private function display_links($args, $nav_menu): void
     {
         if (!empty($nav_menu)) {
+            echo '<br />';
             echo $args['before_title'] . __('Links', 'grup-classe') . $args['after_title'];
             the_widget('WP_Nav_Menu_Widget', 'nav_menu=' . $nav_menu);
             echo '<br />';
