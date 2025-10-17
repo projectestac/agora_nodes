@@ -2,7 +2,8 @@
 /**
  * Plugin Name: SocialMedia
  * Plugin URI: https://agora.xtec.cat/nodes/plugins/grup-classe
- * Description: Giny d'enllaços socials (facebook, twitter, youtube, vimeo, pinterest...). Facilita la incorporació d'enllaços habituals a les pàgines web dels centres educatius.
+ * Description: Giny d'enllaços socials (facebook, twitter, youtube, vimeo, pinterest...). Facilita
+ *              la incorporació d'enllaços habituals a les pàgines web dels centres educatius.
  * Version: 1.1
  * Author: Xavier Meler
  * Author URI: https://github.com/jmeler
@@ -11,7 +12,7 @@
 
 class SocialMedia_Widget extends WP_Widget {
 
-    public $socialmedia = [
+    public array $socialmedia = [
         'twitter' => ['nom' => 'X (Twitter)', 'url' => '', 'img' => 'fa-brands fa-square-x-twitter'],
         'facebook' => ['nom' => 'Facebook', 'url' => '', 'img' => 'fa-brands fa-square-facebook'],
         'google-plus' => ['nom' => 'Google Plus', 'url' => '', 'img' => 'fa-brands fa-square-google-plus'],
@@ -47,7 +48,8 @@ class SocialMedia_Widget extends WP_Widget {
     }
 
     // Back-end form of the Widget
-    public function form($instance) {
+    public function form($instance): void
+    {
         $title = $instance['title'] ?? 'Segueix-nos!';
         $mida = $instance['mida'] ?? 'fa-2x';
 
@@ -58,37 +60,24 @@ class SocialMedia_Widget extends WP_Widget {
         }
         ?>
         <p>
-            <label for="<?php
-            echo $this->get_field_id('title'); ?>">Títol:</label>
+            <label for="<?php echo $this->get_field_id('title'); ?>">Títol:</label>
             <input class="widefat"
-                   id="<?php
-                   echo $this->get_field_id('title'); ?>"
-                   name="<?php
-                   echo $this->get_field_name('title'); ?>"
+                   id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>"
                    type="text"
-                   value="<?php
-                   echo esc_attr($title); ?>"
-            >
+                   value="<?php echo esc_attr($title); ?>"
+            />
         </p>
 
         <p>
-            <label for="<?php
-            echo $this->get_field_id('mida'); ?>">Mida de les icones:</label>
+            <label for="<?php echo $this->get_field_id('mida'); ?>">Mida de les icones:</label>
             <br/>
-            <select id="<?php
-            echo $this->get_field_id('mida'); ?>"
-                    name="<?php
-                    echo $this->get_field_name('mida'); ?>"
+            <select id="<?php echo $this->get_field_id('mida'); ?>"
+                    name="<?php echo $this->get_field_name('mida'); ?>"
             >
-                <option value="fa-2x" <?php
-                echo($mida == 'fa-2x' ? 'selected' : ''); ?>>Petites
-                </option>
-                <option value="fa-2-5x" <?php
-                echo($mida == 'fa-2-5x' ? 'selected' : ''); ?>>Mitjanes
-                </option>
-                <option value="fa-3x" <?php
-                echo($mida == 'fa-3x' ? 'selected' : ''); ?>>Grans
-                </option>
+                <option value="fa-2x" <?php echo $mida === 'fa-2x' ? 'selected' : ''; ?>>Petites</option>
+                <option value="fa-2-5x" <?php echo $mida === 'fa-2-5x' ? 'selected' : ''; ?>>Mitjanes</option>
+                <option value="fa-3x" <?php echo $mida === 'fa-3x' ? 'selected' : ''; ?>>Grans</option>
             </select>
         </p>
 
@@ -98,42 +87,40 @@ class SocialMedia_Widget extends WP_Widget {
         <?php
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) { ?>
             <p>
-                <label for="<?php
-                echo $this->get_field_id($idSocialMedia); ?>">
-                    <?php
-                    echo esc_attr($nomSocialMedia['nom']); ?>
-                    <br/>
-                    <input class="widefat"
-                           id="<?php
-                           echo $this->get_field_id($idSocialMedia); ?>_url"
-                           name="<?php
-                           echo $this->get_field_name($idSocialMedia . "_url"); ?>"
-                           type="text"
-                           value="<?php
-                           echo esc_attr($nomSocialMedia['url']); ?>"
-                    />
+                <label for="<?php echo $this->get_field_id($idSocialMedia); ?>_url">
+                    <?php echo esc_attr($nomSocialMedia['nom']); ?>
                 </label>
+                <br/>
+                <input class="widefat"
+                       id="<?php echo $this->get_field_id($idSocialMedia); ?>_url"
+                       name="<?php echo $this->get_field_name($idSocialMedia . '_url'); ?>"
+                       type="text"
+                       value="<?php echo esc_attr($nomSocialMedia['url']); ?>"
+                />
             </p>
             <?php
         }
     }
 
-    // Sanitize and return the safe form values
-    public function update($new_instance, $old_instance) {
+    // Sanitize and return the safe form values.
+    public function update($new_instance, $old_instance): array
+    {
         $instance = [];
         $instance['title'] = (!empty($new_instance['title'])) ? sanitize_text_field($new_instance['title']) : '';
         $instance['mida'] = (!empty($new_instance['mida'])) ? sanitize_text_field($new_instance['mida']) : '';
 
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
-            $instance[$idSocialMedia . '_url'] = (!empty($new_instance[$idSocialMedia . '_url'])) ? sanitize_text_field($new_instance[$idSocialMedia . '_url']) : '';
+            $instance[$idSocialMedia . '_url'] =
+                (!empty($new_instance[$idSocialMedia . '_url'])) ?
+                    sanitize_text_field($new_instance[$idSocialMedia . '_url']) : '';
         }
 
         return $instance;
     }
 
     // Front-End Display of the Widget
-    public function widget($args, $instance) {
-
+    public function widget($args, $instance): void
+    {
         extract($args);
 
         echo $before_widget;
@@ -141,7 +128,7 @@ class SocialMedia_Widget extends WP_Widget {
         $title = $instance['title'];
         $mida = $instance['mida'];
 
-        // Display title
+        // Display title.
         if (!empty($title)) {
             echo $before_title . $title . $after_title;
         }
@@ -149,11 +136,13 @@ class SocialMedia_Widget extends WP_Widget {
         foreach ($this->socialmedia as $idSocialMedia => $nomSocialMedia) {
             if (!empty($instance[$idSocialMedia . '_url'])) {
                 if ($idSocialMedia === 'email') {
-                    echo "<a href=\"mailto:" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\">
+                    echo "<a href=\"mailto:" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" .
+                            esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\">
                             <i class=\"" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\"></i>
                           </a>";
                 } else {
-                    echo "<a href=\"" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" . esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\">
+                    echo "<a href=\"" . esc_attr($instance[$idSocialMedia . '_url']) . "\" title=\"" .
+                            esc_attr($this->socialmedia[$idSocialMedia]['nom']) . "\" target=\"_blank\">
                            <i class=\"" . $this->socialmedia[$idSocialMedia]['img'] . ' ' . $mida . "\"></i>
                          </a>";
                 }
@@ -164,7 +153,7 @@ class SocialMedia_Widget extends WP_Widget {
     }
 }
 
-// Register widget
+// Register widget.
 add_action('widgets_init', function () {
     register_widget('socialmedia_widget');
 });
