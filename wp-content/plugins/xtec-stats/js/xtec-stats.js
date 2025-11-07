@@ -3,23 +3,26 @@
 //Initialize select to change limits results
 function xtec_stats_change_select(data){
 
-	var option;
+	let option;
 
 	switch(data){
-		case 10:
+		case 25:
 			option = 0;
 			break;
-		case 25:
+		case 50:
 			option = 1;
 			break;
-		case 50:
+		case 100:
 			option = 2;
 			break;
-		case 100:
+		case 200:
 			option = 3;
 			break;
-		default:
+		case 300:
 			option = 4;
+			break;
+		default:
+			option = 0;
 			break;
 	}
 
@@ -40,7 +43,7 @@ function xtec_stats_change_placeholder(e,username,content){
 
 //
 function xtec_stats_change_arrow_direction(object){
-	var spanClass = jQuery(object).find('span').attr('class');
+	let spanClass = jQuery(object).find('span').attr('class');
 	if(spanClass != 'dashicons dashicons-arrow-down xtec-stats-no-show xtec-stats-arrow'){
 		if(spanClass == 'dashicons dashicons-arrow-down xtec-stats-arrow'){
 			jQuery(object).find('span').attr('class','dashicons dashicons-arrow-up xtec-stats-arrow');
@@ -80,11 +83,11 @@ jQuery(document).ready(function(e){
 	jQuery('input[name="search_type"]').on('change',function(e){
 
 		if(typeof xtec_stats_username === 'undefined'){
-			xtec_stats_username = 'username';
+			let xtec_stats_username = 'username';
 		}
 
 		if(typeof xtec_stats_content === 'undefined'){
-			xtec_stats_content = 'content';
+			let xtec_stats_content = 'content';
 		}
 
 		xtec_stats_change_placeholder(e,xtec_stats_username,xtec_stats_content);
