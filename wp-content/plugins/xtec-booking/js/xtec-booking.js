@@ -1,6 +1,6 @@
 function not_acces_day_template(booking){
 
-	var currentUrl = window.location.href;
+	let currentUrl = window.location.href;
 
 	if ( booking == 'booking' || currentUrl.search("post-new.php") > 0 ){
 
@@ -15,7 +15,7 @@ function not_acces_day_template(booking){
 function xtec_booking_name_days(){
 
 	if ( jQuery('div[class^="cal-cell1"]').length > 0 ){
-		i = 0;
+		let i = 0;
 		jQuery('div[class^="cal-cell1"]').each(function() {
 			if( i < 7 ){
 				jQuery(this).text(days[i]);
@@ -48,7 +48,7 @@ function get_booking_content(events){
 	    })
 	    .done( function( response ){
 
-	    	var request = JSON.parse( response );
+	    	let request = JSON.parse( response );
 
 	    	jQuery('#modalTitle').text(' '+request.title);
 	    	jQuery('#modalResource').text(' '+request.resource);
@@ -61,130 +61,160 @@ function get_booking_content(events){
 
 }
 
-function xtec_add_calendar(data, booking = false){
+function xtec_add_calendar(data, booking = false) {
 
-	if ( jQuery('#xtec_calendar').length > 0 ){
+    if (jQuery('#xtec_calendar').length === 0) return;
 
-		// Check language
-		lang_locale = locale.locale;
-		if ( lang_locale.search('_') != -1 ){
-			lang_locale = lang_locale.replace('_','-');
-		} else {
-			lang_locale = lang_locale + '-ES';
-		}
-		
-		var d = new Date();
-		dateNow =  d.getFullYear()+'-';
-		if ( d.getMonth()+1 > 9 ){ dateNow += (d.getMonth()+1)+'-'; } else { dateNow += '0'+(d.getMonth()+1)+'-'; }
-		if ( d.getDate() > 9 ){ dateNow += d.getDate(); } else { dateNow += '0'+d.getDate(); }
+    // Check language
+    const lang_locale = xtec_get_locale();
 
-		var options = {
-			first_day: 1,
-			events_source: data,
-			view: 'month',
-			tmpl_path: tmplsCalendar,
-			tmpl_cache: false,
-			day: dateNow,
-			language: lang_locale,
-			modal: "#events-modal",
-			modal_title: function(events) {
-				get_booking_content(events);
-			},
-			onAfterEventsLoad: function( events ) {
-				if ( ! events ) {
-					return;
-				}
-				var list = jQuery('#eventlist');
-				list.html('');
+    // Get today's date in YYYY-MM-DD format
+    const dateNow = xtec_get_today_date();
 
-				jQuery.each( events, function( key, val ) {
-					jQuery(document.createElement('li'))
-						.html('<a href="' + val.url + '">' + val.title + '</a>')
-						.appendTo(list);
-				});
-			},
-			onAfterViewLoad: function( view ) {
-				jQuery('.page-header h3').text( this.getTitle() );
-				jQuery('.btn-group button').removeClass( 'active' );
-				jQuery('button[data-calendar-view="' + view + '"]').addClass( 'active' );
-			},
-			onAfterModalHidden: function(events) {
-				xtec_booking_reset_modal();
-			},
-			classes: {
-				months: {
-					general: 'label'
-				}
-			}
-		};
+    const options = {
+        first_day: 1,
+        events_source: data,
+        view: 'month',
+        tmpl_path: tmplsCalendar,
+        tmpl_cache: false,
+        day: dateNow,
+        language: lang_locale,
+        modal: "#events-modal",
+        modal_title: get_booking_content,
+        onAfterEventsLoad: xtec_after_events_load,
+        onAfterViewLoad: xtec_after_view_load,
+        onAfterModalHidden: xtec_booking_reset_modal,
+        classes: {
+            months: {
+                general: 'label'
+            }
+        }
+    };
 
-		var calendar = jQuery("#xtec_calendar").calendar( options );
+    const calendar = jQuery("#xtec_calendar").calendar(options);
 
-		jQuery('input[id^="resource-"]').each(function() {
-			jQuery(this).removeAttr('disabled',true);
-		});
+    // Enable all resource inputs
+    jQuery('input[id^="resource-"]').prop('disabled', false);
 
-		jQuery("body").css("cursor", "default");
-		jQuery("#xtec_calendar_wait").addClass('display_div_wait');
+    jQuery("body").css("cursor", "default");
+    jQuery("#xtec_calendar_wait").addClass('display_div_wait');
 
-		jQuery('.btn-group button[data-calendar-nav]').each(function() {
-			var $this = jQuery(this);
-			$this.click(function() {
-				calendar.navigate($this.data('calendar-nav'));
-				not_acces_day_template(booking);
-			});
-		});
-
-		jQuery('.btn-group button[data-calendar-view]').each(function() {
-			var $this = jQuery(this);
-			$this.click(function() {
-				calendar.view($this.data('calendar-view'));
-				not_acces_day_template(booking);
-			});
-		});
-
-		jQuery('#first_day').change(function(){
-			var value = jQuery(this).val();
-			value = value.length ? parseInt(value) : null;
-			calendar.setOptions({first_day: value});
-			calendar.view();
-		});
-
-		jQuery('#language').change(function(){
-			calendar.setLanguage(jQuery(this).val());
-			calendar.view();
-		});
-
-		jQuery('#events-in-modal').change(function(){
-			var val = jQuery(this).is(':checked') ? jQuery(this).val() : null;
-			calendar.setOptions({modal: val});
-		});
-		jQuery('#format-12-hours').change(function(){
-			var val = jQuery(this).is(':checked') ? true : false;
-			calendar.setOptions({format12: val});
-			calendar.view();
-		});
-		jQuery('#show_wbn').change(function(){
-			var val = jQuery(this).is(':checked') ? true : false;
-			calendar.setOptions({display_week_numbers: val});
-			calendar.view();
-		});
-		jQuery('#show_wb').change(function(){
-			var val = jQuery(this).is(':checked') ? true : false;
-			calendar.setOptions({weekbox: vsal});
-			calendar.view();
-		});
-
-		not_acces_day_template(booking);
-
-	}
-
+    xtec_bind_calendar_navigation(calendar, booking);
+    xtec_bind_calendar_view(calendar, booking);
+    xtec_bind_calendar_controls(calendar);
+    not_acces_day_template(booking);
 }
 
+/**
+ * Format and return the locale string
+ */
+function xtec_get_locale() {
+    let lang_locale = locale.locale;
+    if (lang_locale.includes('_')) {
+        lang_locale = lang_locale.replace('_', '-');
+    } else {
+        lang_locale += '-ES';
+    }
+    return lang_locale;
+}
+
+/**
+ * Return today's date in YYYY-MM-DD format
+ */
+function xtec_get_today_date() {
+    const d = new Date();
+    const month = (d.getMonth() + 1).toString().padStart(2, '0');
+    const day = d.getDate().toString().padStart(2, '0');
+    return `${d.getFullYear()}-${month}-${day}`;
+}
+
+/**
+ * Populate event list after events load
+ */
+function xtec_after_events_load(events) {
+    if (!events) return;
+    const list = jQuery('#eventlist').empty();
+    jQuery.each(events, (key, val) => {
+        jQuery('<li>').html(`<a href="${val.url}">${val.title}</a>`).appendTo(list);
+    });
+}
+
+/**
+ * Update page header and active button after view load
+ */
+function xtec_after_view_load(view) {
+    jQuery('.page-header h3').text(this.getTitle());
+    jQuery('.btn-group button').removeClass('active');
+    jQuery(`button[data-calendar-view="${view}"]`).addClass('active');
+}
+
+/**
+ * Bind navigation buttons to calendar
+ */
+function xtec_bind_calendar_navigation(calendar, booking) {
+    jQuery('.btn-group button[data-calendar-nav]').each(function() {
+        const $this = jQuery(this);
+        $this.click(() => {
+            calendar.navigate($this.data('calendar-nav'));
+            not_acces_day_template(booking);
+        });
+    });
+}
+
+/**
+ * Bind view buttons to calendar
+ */
+function xtec_bind_calendar_view(calendar, booking) {
+    jQuery('.btn-group button[data-calendar-view]').each(function() {
+        const $this = jQuery(this);
+        $this.click(() => {
+            calendar.view($this.data('calendar-view'));
+            not_acces_day_template(booking);
+        });
+    });
+}
+
+/**
+ * Bind other calendar control elements
+ */
+function xtec_bind_calendar_controls(calendar) {
+    jQuery('#first_day').change(function() {
+        const value = jQuery(this).val().length ? parseInt(jQuery(this).val()) : null;
+        calendar.setOptions({ first_day: value });
+        calendar.view();
+    });
+
+    jQuery('#language').change(function() {
+        calendar.setLanguage(jQuery(this).val());
+        calendar.view();
+    });
+
+    jQuery('#events-in-modal').change(function() {
+        const val = jQuery(this).is(':checked') ? jQuery(this).val() : null;
+        calendar.setOptions({ modal: val });
+    });
+
+    jQuery('#format-12-hours').change(function() {
+        calendar.setOptions({ format12: jQuery(this).is(':checked') });
+        calendar.view();
+    });
+
+    jQuery('#show_wbn').change(function() {
+        calendar.setOptions({ display_week_numbers: jQuery(this).is(':checked') });
+        calendar.view();
+    });
+
+    jQuery('#show_wb').change(function() {
+        calendar.setOptions({ weekbox: vsal });
+        calendar.view();
+    });
+}
+
+
 function xtec_change_button(){
-	option = false;
+	let option = false;
 	jQuery('input[id^="resource-"]').each(function() {
-		select = jQuery(this).attr('checked');
+		let select = jQuery(this).attr('checked');
 		if( select ){
 			option = true;
 			return false;
@@ -216,7 +246,7 @@ function xtec_events( update = false, booking = false ){
 		    })
 		    .done( function( response ){
 
-		    	var request = JSON.parse( response );
+		    	let request = JSON.parse( response );
 
 		    	jQuery('#xtec_calendar').remove();
 		    	if ( booking == 'booking' ){
@@ -256,99 +286,72 @@ function xtec_events( update = false, booking = false ){
 	}
 }
 
-function checkDateBefore(){
-	var d = new Date();
-	var dateNow = new Date(d.getFullYear(),d.getMonth(),d.getDate());
+function checkDateBefore() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-	var StartDate = jQuery( '#xtec-booking-start-date' ).val();
-	var yearStart = parseInt(StartDate.substring(6,10));
-	var monthStart = parseInt(StartDate.substring(3,5));
-	var dayStart = parseInt(StartDate.substring(0,2));
+    // Helper function to parse date string "DD/MM/YYYY"
+    function parseDate(dateStr) {
+        const day = parseInt(dateStr.substring(0, 2));
+        const month = parseInt(dateStr.substring(3, 5)) - 1;
+        const year = parseInt(dateStr.substring(6, 10));
+        return { day, month, year };
+    }
 
-	var DaySelected = new Date(yearStart,monthStart-1,dayStart,0,0,0);
+    // Helper function to get Date object with optional time
+    function getDateTime(dateStr, timeStr = '') {
+        const { day, month, year } = parseDate(dateStr);
+        if (timeStr) {
+            const hour = parseInt(timeStr.substring(0, 2));
+            const minute = parseInt(timeStr.substring(3, 5));
+            return new Date(year, month, day, hour, minute, 0);
+        }
+        return new Date(year, month, day, 0, 0, 0);
+    }
 
-	if ( dateNow > DaySelected ){
-		jQuery('#xtec-booking-before-date').removeClass('display_message_date');
-		jQuery('#xtec-booking-start-date').addClass('border_info_date');
-	} else {
-		var dateNow = new Date();
-		var FinishTime = jQuery( '#xtec-booking-finish-time' ).val();
-		if (FinishTime != ''){
-			var hourFinish = parseInt(FinishTime.substring(0,2));
-			var minutesFinish = parseInt(FinishTime.substring(3,5));
-			var DaySelected = new Date(yearStart,monthStart-1,dayStart,hourFinish,minutesFinish,0);
-			if ( dateNow > DaySelected ){
-				jQuery('#xtec-booking-before-date').removeClass('display_message_date');
-				jQuery('#xtec-booking-start-date').addClass('border_info_date');
-			} else {
-				jQuery('#xtec-booking-before-date').addClass('display_message_date');
-				jQuery('#xtec-booking-start-date').removeClass('border_info_date');
-			}
-		} else {
-			jQuery('#xtec-booking-before-date').addClass('display_message_date');
-			jQuery('#xtec-booking-start-date').removeClass('border_info_date');
-		}
-	}
+    // Helper function to toggle error display
+    function toggleError(selector, condition) {
+        if (condition) {
+            jQuery(selector).removeClass('display_message_date');
+        } else {
+            jQuery(selector).addClass('display_message_date');
+        }
+    }
 
-	var d = new Date();
-	var dateNow = new Date(d.getFullYear(),d.getMonth(),d.getDate());
+    // Check start date
+    const startDateStr = jQuery('#xtec-booking-start-date').val();
+    const startTimeStr = jQuery('#xtec-booking-finish-time').val();
+    if (startDateStr) {
+        const startDate = getDateTime(startDateStr, startTimeStr);
+        const isValid = now <= startDate;
+        toggleError('#xtec-booking-before-date', isValid);
+        jQuery('#xtec-booking-start-date').toggleClass('border_info_date', !isValid);
+    }
 
-	var FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
-
-	if ( FinishDate != '' ){
-		var yearFinish = parseInt( FinishDate.substring(6,10) );
-		var monthFinish = parseInt( FinishDate.substring(3,5) );
-		var dayFinish = parseInt( FinishDate.substring(0,2) );
-
-		var DaySelected = new Date(yearFinish,monthFinish-1,dayFinish,0,0,0);
-
-		if(DaySelected != ''){
-			if ( dateNow > DaySelected ){
-				jQuery('#xtec-booking-before-date-finish').removeClass('display_message_date');
-				jQuery('#xtec-booking-finish-date').addClass('border_info_date');
-			} else {
-				if ( dateNow < DaySelected ){
-					jQuery('#xtec-booking-before-date-finish').addClass('display_message_date');
-					jQuery('#xtec-booking-finish-date').removeClass('border_info_date');
-				} else {
-					var dateNow = new Date();
-					var FinishTime = jQuery( '#xtec-booking-finish-time' ).val();
-					if (FinishTime != ''){
-						var hourFinish = parseInt(FinishTime.substring(0,2));
-						var minutesFinish = parseInt(FinishTime.substring(3,5));
-
-						var DaySelected = new Date(yearFinish,monthFinish-1,dayFinish,hourFinish,minutesFinish,0);
-
-						if ( dateNow > DaySelected ){
-							jQuery('#xtec-booking-before-date-finish').removeClass('display_message_date');
-							jQuery('#xtec-booking-finish-date').addClass('border_info_date');
-						} else {
-							jQuery('#xtec-booking-before-date-finish').addClass('display_message_date');
-							jQuery('#xtec-booking-finish-date').removeClass('border_info_date');
-						}
-					} else {
-						jQuery('#xtec-booking-before-date-finish').addClass('display_message_date');
-						jQuery('#xtec-booking-finish-date').removeClass('border_info_date');
-					}
-				}
-			}
-		}
-	}
+    // Check finish date
+    const finishDateStr = jQuery('#xtec-booking-finish-date').val();
+    if (finishDateStr) {
+        const finishDate = getDateTime(finishDateStr, startTimeStr);
+        const isFinishValid = now <= finishDate;
+        toggleError('#xtec-booking-before-date-finish', isFinishValid);
+        jQuery('#xtec-booking-finish-date').toggleClass('border_info_date', !isFinishValid);
+    }
 }
+
 
 function xtec_booking_check_dates(StartDate,FinishDate){
 
-	var yearStart = parseInt(StartDate.substring(6,10));
-	var yearFinish = parseInt(FinishDate.substring(6,10));
-	var monthStart = parseInt(StartDate.substring(3,5));
-	var monthFinish = parseInt(FinishDate.substring(3,5));
-	var dayStart = parseInt(StartDate.substring(0,2));
-	var dayFinish = parseInt(FinishDate.substring(0,2));
+	let yearStart = parseInt(StartDate.substring(6,10));
+	let yearFinish = parseInt(FinishDate.substring(6,10));
+	let monthStart = parseInt(StartDate.substring(3,5));
+	let monthFinish = parseInt(FinishDate.substring(3,5));
+	let dayStart = parseInt(StartDate.substring(0,2));
+	let dayFinish = parseInt(FinishDate.substring(0,2));
 
-	var mkStart = new Date(yearStart,monthStart,dayStart,0,0,0);
-	var mkEnd = new Date(yearFinish,monthFinish,dayFinish,0,0,0);
+	let mkStart = new Date(yearStart,monthStart,dayStart,0,0,0);
+	let mkEnd = new Date(yearFinish,monthFinish,dayFinish,0,0,0);
 
-	var DaySelected = new Date(yearStart,monthStart-1,dayStart,0,0,0);
+	let DaySelected = new Date(yearStart,monthStart-1,dayStart,0,0,0);
 
 	checkDateBefore();
 
@@ -376,14 +379,14 @@ function xtec_booking_check_dates(StartDate,FinishDate){
 }
 
 function xtec_booking_addDay(){
-	var StartDate = jQuery( '#xtec-booking-start-date' ).val();
-	var FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
+	let StartDate = jQuery( '#xtec-booking-start-date' ).val();
+	let FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
 
 	if( StartDate == FinishDate){
-		var yearFinish = parseInt( FinishDate.substring(6,10) );
-		var monthFinish = parseInt( FinishDate.substring(3,5) );
-		var dayFinish = parseInt( FinishDate.substring(0,2) );
-		var NewData = new Date( yearFinish,monthFinish,dayFinish+1,0,0,0 );
+		let yearFinish = parseInt( FinishDate.substring(6,10) );
+		let monthFinish = parseInt( FinishDate.substring(3,5) );
+		let dayFinish = parseInt( FinishDate.substring(0,2) );
+		let NewData = new Date( yearFinish,monthFinish,dayFinish+1,0,0,0 );
 		if ( NewData.getMonth() < 10 ){
 			if ( NewData.getDate() < 10 ){
 				FinishDate = '0'+NewData.getDate()+'-0'+NewData.getMonth()+'-'+NewData.getFullYear();
@@ -403,97 +406,54 @@ function xtec_booking_addDay(){
 	}
 }
 
-function xtec_booking_check_time(){
-	var StartTime = jQuery( '#xtec-booking-start-time' ).val();
-	var FinishTime = jQuery( '#xtec-booking-finish-time' ).val();
-	var hourStart = parseInt(StartTime.substring(0,2));
-	var minutesStart = parseInt(StartTime.substring(3,5));
-	var hourFinish = parseInt(FinishTime.substring(0,2));
-	var minutesFinish = parseInt(FinishTime.substring(3,5));
-	if( StartTime != '' && jQuery.isNumeric(hourStart) && jQuery.isNumeric(minutesStart) ){
-		if( FinishTime == '' || !jQuery.isNumeric(hourFinish) || !jQuery.isNumeric(minutesFinish) ){
-			if ( minutesStart < 10 ){
-				if ( hourStart == 9 ){
-					FinishTime = (hourStart+1) + ':0' + minutesStart;
-				} else if ( hourStart < 10 ){
-					FinishTime = '0' + (hourStart+1) + ':0' + minutesStart;
-				} else if ( hourStart == 23 ){
-					FinishTime = '00:0' + minutesStart;
-					xtec_booking_addDay();
-				} else {
-					FinishTime = (hourStart+1) + ':0' + minutesStart;
-				}
-			} else {
-				if ( hourStart == 9 ){
-					FinishTime = (hourStart+1) + ':' + minutesStart;
-				} else if ( hourStart < 10 ){
-					FinishTime = '0' + (hourStart+1) + ':' + minutesStart;
-				} else if ( hourStart == 23 ){
-					FinishTime = '00:' + minutesStart;
-					xtec_booking_addDay();
-				} else {
-					FinishTime = (hourStart+1) + ':' + minutesStart;
-				}
-			}
-			jQuery( '#xtec-booking-finish-time' ).removeAttr('disabled');
-			jQuery( '#xtec-booking-finish-time' ).val(FinishTime);
-			jQuery( '#xtec-booking-finish-time' ).focus();
-		} else if ( hourFinish < hourStart ){
-			if ( minutesStart < 10 ){
-				if ( hourStart == 9 ){
-					FinishTime = (hourStart+1) + ':0' + minutesStart;
-				} else if ( hourStart < 10 ){
-					FinishTime = '0' + (hourStart+1) + ':0' + minutesStart;
-				} else if ( hourStart == 23 ){
-					FinishTime = '00:0' + minutesStart;
-					xtec_booking_addDay();
-				} else {
-					FinishTime = (hourStart+1) + ':0' + minutesStart;
-				}
-			} else {
-				if ( hourStart == 9 ){
-					FinishTime = (hourStart+1) + ':' + minutesStart;
-				} else if ( hourStart < 10 ){
-					FinishTime = '0' + (hourStart+1) + ':' + minutesStart;
-				} else if ( hourStart == 23 ){
-					FinishTime = '00:' + minutesStart;
-					xtec_booking_addDay();
-				} else {
-					FinishTime = (hourStart+1) + ':' + minutesStart;
-				}
-			}
-			jQuery( '#xtec-booking-finish-time' ).val(FinishTime);
-			jQuery( '#xtec-booking-finish-time' ).focus();
-		} else if ( hourFinish == hourStart ){
-			if ( minutesFinish <= minutesStart ){
-				if ( minutesStart < 10 ){
-					if ( hourStart == 9 ){
-						FinishTime = (hourStart+1) + ':0' + minutesStart;
-					} else if ( hourStart < 10 ){
-						FinishTime = '0' + (hourStart+1) + ':0' + minutesStart;
-					} else if ( hourStart == 23 ){
-						FinishTime = '00:0'+minutesStart;
-						xtec_booking_addDay();
-					} else {
-						FinishTime = (hourStart+1)+':0'+minutesStart;
-					}
-				} else {
-					if ( hourStart == 9 ){
-						FinishTime = (hourStart+1) + ':' + minutesStart;
-					} else if ( hourStart < 10 ){
-						FinishTime = '0' + (hourStart+1) + ':' + minutesStart;
-					} else if ( hourStart == 23 ){
-						FinishTime = '00:'+minutesStart;
-						xtec_booking_addDay();
-					} else {
-						FinishTime = (hourStart+1)+':'+minutesStart;
-					}
-				}
-				jQuery( '#xtec-booking-finish-time' ).val(FinishTime);
-				jQuery( '#xtec-booking-finish-time' ).focus();
-			}
-		}
-	}
+function xtec_booking_check_time() {
+    const startInput = jQuery('#xtec-booking-start-time');
+    const finishInput = jQuery('#xtec-booking-finish-time');
+
+    const startTime = parseTime(startInput.val());
+    let finishTime = parseTime(finishInput.val());
+
+    if (!startTime) return;
+
+    if (!finishTime || isBeforeOrEqual(finishTime, startTime)) {
+        finishTime = computeFinishTime(startTime);
+        finishInput.removeAttr('disabled').val(formatTime(finishTime)).focus();
+    }
+
+    /**
+     * Parse "HH:MM" string into object {hour, minutes}
+     */
+    function parseTime(timeStr) {
+        if (!timeStr) return null;
+        const [h, m] = timeStr.split(':').map(Number);
+        return (Number.isInteger(h) && Number.isInteger(m)) ? { hour: h, minutes: m } : null;
+    }
+
+    /**
+     * Return true if timeA <= timeB
+     */
+    function isBeforeOrEqual(a, b) {
+        return a.hour < b.hour || (a.hour === b.hour && a.minutes <= b.minutes);
+    }
+
+    /**
+     * Compute default finish time (+1h)
+     * Wraps to 00:MM and adds a day if start is 23h
+     */
+    function computeFinishTime(start) {
+        const newHour = (start.hour + 1) % 24;
+        if (start.hour === 23) xtec_booking_addDay();
+        return { hour: newHour, minutes: start.minutes };
+    }
+
+    /**
+     * Format {hour, minutes} to "HH:MM"
+     */
+    function formatTime(t) {
+        const h = t.hour.toString().padStart(2, '0');
+        const m = t.minutes.toString().padStart(2, '0');
+        return `${h}:${m}`;
+    }
 }
 
 function add_wait_gif(){
@@ -503,259 +463,219 @@ function add_wait_gif(){
 
 function xtec_booking_add_message(){
 	jQuery('#xtec-booking-wait').remove();
-	var message = '<div id="message" class="notice notice-error"><p>'+message_resources+'</p></div>';
+	let message = '<div id="message" class="notice notice-error"><p>'+message_resources+'</p></div>';
 	jQuery(message).insertAfter('.wrap h1');
 }
 
-jQuery( document ).ready( function() {
+jQuery(document).ready(function ($) {
+    const $startDate   = $('#xtec-booking-start-date');
+    const $finishDate  = $('#xtec-booking-finish-date');
+    const $startTime   = $('#xtec-booking-start-time');
+    const $finishTime  = $('#xtec-booking-finish-time');
+    const currentUrl   = window.location.href;
 
-	if( jQuery('#xtec-booking-start-date').length > 0 ){
+    /** ---------------- Helpers ---------------- */
+    const disableFinishDate = () => $finishDate.val('').prop('disabled', true);
+    const enableFinishDate  = (value) => $finishDate.val(value).prop('disabled', false);
 
-		// Datetimepicker settings
-		jQuery.datetimepicker.setLocale('ca');
+    const isValidTime = (time) => {
+        if (!time) return false;
+        const hour    = parseInt(time.substring(0, 2), 10);
+        const minutes = parseInt(time.substring(3, 5), 10);
+        return $.isNumeric(hour) && $.isNumeric(minutes);
+    };
 
-		jQuery('#xtec-booking-start-date').datetimepicker({
-			timepicker:false,
-	 		format:'d-m-Y',
-	 		dayOfWeekStart: 1
-		});
+    /** ---------------- Init Pickers ---------------- */
+    function initPickers() {
+        if ($startDate.length === 0) return;
 
-		jQuery('#xtec-booking-finish-date').datetimepicker({
-			timepicker:false,
-	 		format:'d-m-Y',
-	 		dayOfWeekStart: 1
-		});
+        $.datetimepicker.setLocale('ca');
 
-		jQuery('#xtec-booking-start-time').datetimepicker({
-		  datepicker:false,
-		  format:'H:i',
-		  mask:true,
-		});
+        const initDatepicker = (el) =>
+            $(el).datetimepicker({ timepicker: false, format: 'd-m-Y', dayOfWeekStart: 1 });
 
-		jQuery('#xtec-booking-finish-time').datetimepicker({
-		  datepicker:false,
-		  format:'H:i',
-		  mask:true,
-		});
+        const initTimepicker = (el) =>
+            $(el).datetimepicker({ datepicker: false, format: 'H:i', mask: true });
 
-	}
+        [$startDate, $finishDate].forEach(initDatepicker);
+        [$startTime, $finishTime].forEach(initTimepicker);
+    }
 
-    // DATE
-	jQuery( '#xtec-booking-start-date' ).on( 'change' , function(e){
-		var StartDate = jQuery( e.target ).val();
-		var FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
-		if ( StartDate == '' ){
-			jQuery( '#xtec-booking-finish-date' ).val('');
-			jQuery( '#xtec-booking-finish-date' ).attr('disabled', 'disabled');
-		} else if ( FinishDate == '' ){
-			jQuery( '#xtec-booking-finish-date' ).val(StartDate);
-			jQuery( '#xtec-booking-finish-date' ).removeAttr('disabled');
-		} else {
-			xtec_booking_check_dates(StartDate,FinishDate);
-		}
-	});
+    /** ---------------- Date Handlers ---------------- */
+    function bindDateEvents() {
+        $startDate.on('change', function () {
+            const startDate  = $(this).val();
+            const finishDate = $finishDate.val();
 
-	jQuery( '#xtec-booking-finish-date' ).on( 'change' , function(e){
-		var FinishDate = jQuery(e.target).val();
-		var StartDate = jQuery( '#xtec-booking-start-date' ).val();
-		xtec_booking_check_dates(StartDate,FinishDate);
-	});
+            if (!startDate) return disableFinishDate();
+            if (!finishDate) return enableFinishDate(startDate);
+            xtec_booking_check_dates(startDate, finishDate);
+        });
 
-	// TIME
-	jQuery( '#xtec-booking-start-time' ).on( 'blur' , function(e){
-		var StartTime = jQuery( e.target ).val();
-		var hour = parseInt(StartTime.substring(0,2));
-		var minutes = parseInt(StartTime.substring(3,5));
-		var FinishTime = jQuery( '#xtec-booking-finish-time' ).val();
-		if ( StartTime == '' || !jQuery.isNumeric(hour) || !jQuery.isNumeric(minutes) ){
-			jQuery( '#xtec-booking-start-time' ).val('');
-			jQuery( '#xtec-booking-finish-time' ).val('');
-			jQuery( '#xtec-booking-finish-time' ).attr('disabled', 'disabled');
-		} else {
-			xtec_booking_check_time();
-		}
-	});
+        $finishDate.on('change', function () {
+            xtec_booking_check_dates($startDate.val(), $(this).val());
+        });
+    }
 
-	jQuery( '#xtec-booking-finish-time' ).on( 'blur' , function(e){
-		var FinishTime = jQuery( e.target ).val();
-		var hour = parseInt(FinishTime.substring(0,2));
-		var minutes = parseInt(FinishTime.substring(3,5));
-		var StartTime = jQuery( '#xtec-booking-start-time' ).val();
-		var StartDate = jQuery( '#xtec-booking-start-date' ).val();
-		var FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
-		checkDateBefore();
-		if( FinishTime == '' || !jQuery.isNumeric(hour) || !jQuery.isNumeric(minutes) ){
-			jQuery( '#xtec-booking-start-time' ).val(StartTime);
-		} else if ( StartDate == FinishDate ){
-			xtec_booking_check_time();
-		}
-	});
+    /** ---------------- Time Handlers ---------------- */
+    function bindTimeEvents() {
+        $startTime.on('blur', function () {
+            const startTime = $(this).val();
+            if (!isValidTime(startTime)) {
+                $startTime.val('');
+                disableFinishDate();
+            } else {
+                xtec_booking_check_time();
+            }
+        });
 
-	jQuery('#post').on('submit',function(e){
+        $finishTime.on('blur', function () {
+            const finishTime = $(this).val();
+            checkDateBefore();
+            if (!isValidTime(finishTime)) return $startTime.val($startTime.val());
+            if ($startDate.val() === $finishDate.val()) xtec_booking_check_time();
+        });
+    }
 
-		var StartDate = jQuery( '#xtec-booking-start-date' ).val();
-		var FinishDate = jQuery( '#xtec-booking-finish-date' ).val();
+    /** ---------------- Form Submit ---------------- */
+    function bindFormSubmit() {
+        $('#post').on('submit', function () {
+            const startDate  = $startDate.val();
+            const finishDate = $finishDate.val();
 
-		if ( StartDate != FinishDate ){
+            if (startDate === finishDate) return true;
 
-			var checked = false;
-			if ( jQuery('input[name=_xtec-booking-day-monday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-tuesday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-wednesday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-thursday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-friday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-saturday]').is(":checked") == true ){ checked = true; }
-			if ( jQuery('input[name=_xtec-booking-day-sunday]').is(":checked") == true ){ checked = true; }
+            const days = [
+                '_xtec-booking-day-monday',
+                '_xtec-booking-day-tuesday',
+                '_xtec-booking-day-wednesday',
+                '_xtec-booking-day-thursday',
+                '_xtec-booking-day-friday',
+                '_xtec-booking-day-saturday',
+                '_xtec-booking-day-sunday'
+            ];
 
-			if ( checked != false ){
-				jQuery('#error_message_days').addClass('xtec-booking-display-none');
-				return true;
-			} else {
-				jQuery('#error_message_days').removeClass('xtec-booking-display-none');
-				alert(dies_reserva);
-				jQuery('input[name=_xtec-booking-day-monday]').focus();
-				jQuery('#publish').removeClass('disabled');
-				jQuery('span[class*="spinner"]').removeClass('is-active');
-				return false;
-			}
+            const hasCheckedDay = days.some(name => $(`input[name=${name}]`).is(':checked'));
+            if (!hasCheckedDay) {
+                $('#error_message_days').removeClass('xtec-booking-display-none');
+                alert(dies_reserva);
+                $('input[name=_xtec-booking-day-monday]').focus();
+                $('#publish').removeClass('disabled');
+                $('span[class*="spinner"]').removeClass('is-active');
+                return false;
+            }
+            $('#error_message_days').addClass('xtec-booking-display-none');
+            return true;
+        });
+    }
 
-		} else {
+    /** ---------------- Resources ---------------- */
+    function handleResources() {
+        if (!currentUrl.includes("post_type=calendar_resources")) return;
 
-			return true;
+        $('span.trash').on("click", function (e) {
+            e.preventDefault();
+            add_wait_gif();
 
-		}
+            const href = e.target.href;
+            const post = href.split("post=")[1].split("&");
 
-	});
+            $.post(ajaxurl, { action: 'resource_booking', data: post }, function (response) {
+                if (response !== "true") xtec_booking_add_message();
+                else window.location.href = href;
+            });
+        });
 
-	dataEvents = xtec_events();
+        $('#bulk-action-selector-top option[value="trash"], #bulk-action-selector-bottom option[value="trash"]').remove();
+    }
 
-	xtec_add_calendar(dataEvents);
+    function handleResourceSelection() {
+        if ($('input[id^="resource-"]').length === 0) return;
 
-	var currentUrl = window.location.href;
+        $('input[id^="resource-"]').on("change", function () {
+            let selected = [];
 
-	if( currentUrl.search("post_type=calendar_resources") > 0 ){
+            $("body").css("cursor", "progress");
+            $("#xtec_calendar_wait").removeClass('display_div_wait');
 
-		jQuery('span.trash').on("click",function(e){
+            $('input[id^="resource-"]').each(function () {
+                $(this).prop('disabled', true);
+                if ($(this).prop('checked')) {
+                    selected.push($(this).attr('id').split('resource-')[1]);
+                }
+            });
 
-			e.preventDefault();
+            xtec_events(selected);
+        });
+    }
 
-			add_wait_gif();
+    /** ---------------- Bookings ---------------- */
+    function handleBookings() {
+        if (!currentUrl.includes("post_type=calendar_booking")) return;
 
-			var href = e.target.href;
-			var post = href.split("post=");
-			post = post[1].split("&");
+        $('#bulk-action-selector-top option[value="trash"], #bulk-action-selector-bottom option[value="trash"]')
+            .text(textSelectDelete);
 
-			jQuery.post(
-			    ajaxurl,
-			    {
-			        'action': 'resource_booking',
-			        'data':   post,
-			    },
-			    function(response){
-			        if(response != "true"){
-			        	xtec_booking_add_message();
-			        } else {
-			        	window.location.href = href;
-			        }
-			    }
-			);
-		});
+        $('#posts-filter').on('submit', function (e) {
+            const opt1 = $('#bulk-action-selector-top').val();
+            const opt2 = $('#bulk-action-selector-bottom').val();
+            if ((opt1 === 'trash' || opt2 === 'trash') && !confirm(confirmText)) e.preventDefault();
+        });
 
-		if( jQuery('#bulk-action-selector-top').length > 0 ){
-			jQuery('#bulk-action-selector-top option[value="trash"]').remove();
-			jQuery('#bulk-action-selector-bottom option[value="trash"]').remove();
-		}
-	}
+        $('span.trash').on("click", function (e) {
+            if (!confirm(confirmText)) e.preventDefault();
+        });
 
-	if( jQuery('input[id^="resource-"]').length > 0 ){
+        $('#bulk-action-selector-top option[value="edit"], #bulk-action-selector-bottom option[value="edit"]').remove();
+    }
 
-		jQuery('input[id^="resource-"]').on("change", function(e){
+    /** ---------------- Deletion Confirmation ---------------- */
+    function bindDeleteConfirmation() {
+        if ($('#delete-action').length > 0 && $startDate.length > 0) {
+            $('a[class*="submitdelete deletion"]').on('click', function (e) {
+                if (!confirm(confirmTextInd)) e.preventDefault();
+            });
+        }
+    }
 
-			var bookingEvents;
-			var selected = [];
-			var i = 0;
+    /** ---------------- Select/Unselect Resources ---------------- */
+    function bindSelectionToggle() {
+        $('#xtec_selection').on('click', function () {
+            const $btn   = $(this);
+            const action = $btn.attr('data-action');
 
-			jQuery("body").css("cursor", "progress");
-			jQuery("#xtec_calendar_wait").removeClass('display_div_wait');
+            $btn.prop('disabled', true);
 
-			jQuery('input[id^="resource-"]').each(function() {
-				jQuery(this).attr('disabled',true);
-				if( jQuery(this).prop('checked') == true ){
-					id = jQuery(this).attr('id');
-					id = id.split('resource-');
-					selected[i] = id[1];
-					i++;
-				}
-			});
+            const checkAll = (val) => $('[name^="resource-"]').prop('checked', val);
 
-			xtec_events(selected);
+            if (action === 'unselect') {
+                checkAll(false);
+                $btn.attr('data-action', 'select').val(selectResources);
+            } else {
+                checkAll(true);
+                $btn.attr('data-action', 'unselect').val(unselectResources);
+            }
 
-		});
+            $('[name^="resource-"]').first().trigger('change');
+        });
+    }
 
-	}
+    /** ---------------- Init ---------------- */
+    function init() {
+        initPickers();
+        bindDateEvents();
+        bindTimeEvents();
+        bindFormSubmit();
+        handleResources();
+        handleResourceSelection();
+        handleBookings();
+        bindDeleteConfirmation();
+        bindSelectionToggle();
 
-	if( currentUrl.search("post_type=calendar_booking") > 0 ){
-		jQuery('#bulk-action-selector-top option[value="trash"]').text(textSelectDelete);
-		jQuery('#bulk-action-selector-bottom option[value="trash"]').text(textSelectDelete);
+        // Calendar events
+        const dataEvents = xtec_events();
+        xtec_add_calendar(dataEvents);
+    }
 
-		jQuery('#posts-filter').on('submit',function(e){
-			var OptionSelect = jQuery('#bulk-action-selector-top').val();
-			var OptionSelect2 = jQuery('#bulk-action-selector-bottom').val();
-			if( OptionSelect == 'trash' || OptionSelect2 == 'trash' ){
-				var confirmRequest = confirm(confirmText);
-				if( confirmRequest == false ){
-					e.preventDefault();
-				}
-			}
-		});
-
-		jQuery('span.trash').on("click",function(e){
-			var confirmRequest = confirm(confirmText);
-			if( confirmRequest == false ){
-				e.preventDefault();
-			}
-		});
-
-		if( jQuery('#bulk-action-selector-top').length > 0 ){
-			jQuery('#bulk-action-selector-top option[value="edit"]').remove();
-			jQuery('#bulk-action-selector-bottom option[value="edit"]').remove();
-		}
-	}
-
-	if ( ( jQuery('#delete-action').length > 0 ) && ( jQuery('#xtec-booking-start-date').length > 0 ) ){
-		jQuery('a[class*="submitdelete deletion"]').on('click',function(e){
-			var confirmRequest = confirm(confirmTextInd);
-			if( confirmRequest == false ){
-				e.preventDefault();
-			}
-		});
-	}
-
-	// SELECT / UNSELECT RESOURCES
-	jQuery('#xtec_selection').on('click',function(){
-
-		jQuery('#xtec_selection').attr('disabled',true);
-		option = jQuery('#xtec_selection').attr('data-action');
-
-		if ( option == 'unselect' ){
-			jQuery('[name^="resource-"]').each(function(){
-				jQuery(this).attr('checked',false);
-			});
-			jQuery('#xtec_selection').attr('data-action','select');
-			jQuery('#xtec_selection').attr('value',selectResources);
-		} else {
-			jQuery('[name^="resource-"]').each(function(){
-				jQuery(this).attr('checked',true);
-			});
-			jQuery('#xtec_selection').attr('data-action','unselect');
-			jQuery('#xtec_selection').attr('value',unselectResources);
-		}
-
-		jQuery('[name^="resource-"]').each(function(){
-			jQuery(this).trigger('change');
-			return false;
-		});
-
-	});
-
+    init();
 });

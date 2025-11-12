@@ -12,7 +12,8 @@ function xtec_add_metabox_resource( $post ){
 		'priority' 	=> 'high'
 	);
 
-	add_meta_box( $metabox['id'],$metabox['title'],$metabox['callback'],$metabox['page'],$metabox['context'],$metabox['priority'] );
+	add_meta_box( $metabox['id'],$metabox['title'],$metabox['callback'],$metabox['page'],
+				  $metabox['context'],$metabox['priority'] );
 }
 
 // HTML TO METABOX STATUS

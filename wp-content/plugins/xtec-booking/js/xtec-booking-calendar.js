@@ -58,9 +58,9 @@ jQuery( document ).ready( function() {
 
 	//SHOW ONLY ACTIVE RESOURCE
 	if( jQuery('select[name^="_xtec-booking-resource"]').length > 0 ){
-		var selected;
-		var id = jQuery('select[name^="_xtec-booking-resource"]').val();
-		var resource = jQuery('select[name^="_xtec-booking-resource"] option:selected').text();
+		let selected;
+		let id = jQuery('select[name^="_xtec-booking-resource"]').val();
+		let resource = jQuery('select[name^="_xtec-booking-resource"] option:selected').text();
 
 		if ( id != '' ){
 			selected = id;
@@ -72,8 +72,8 @@ jQuery( document ).ready( function() {
 		}
 
 		jQuery('select[name^="_xtec-booking-resource"]').on('change',function(e){
-			var id = jQuery('select[name^="_xtec-booking-resource"]').val();
-			var resource = jQuery('select[name^="_xtec-booking-resource"] option:selected').text();
+			let id = jQuery('select[name^="_xtec-booking-resource"]').val();
+			let resource = jQuery('select[name^="_xtec-booking-resource"] option:selected').text();
 
 			if ( id != '' ){
 				selected = id;

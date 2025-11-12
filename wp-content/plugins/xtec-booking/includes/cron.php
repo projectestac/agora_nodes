@@ -14,23 +14,26 @@ function check_old_bookings() {
 	foreach ( $posts as $post ) {
 
 		$postmeta = get_post_meta( $post->ID );
-		$data = unserialize( $postmeta['_xtec-booking-data'][0] );
+		$data = unserialize( $postmeta[XTEC_BOOKING_DATA_KEY][0] );
 
 		$timeStart = explode( ':',$data['_xtec-booking-start-time'] );
 		$timeEnd = explode( ':',$data['_xtec-booking-finish-time'] );
 		$dateStart = explode( '-',$data['_xtec-booking-start-date'] );
 		$dateEnd = explode( '-',$data['_xtec-booking-finish-date'] );
 
-        $StartDateTimePastYear = mktime((int)$timeStart[0], (int)$timeStart[1], 0, ((int)$dateStart[1] + 1), (int)$dateStart[0], ((int)$dateStart[2] + 1));
-        $EndDateTimePastYear = mktime((int)$timeEnd[0], (int)$timeEnd[1], 0, (int)$dateEnd[1], (int)$dateEnd[0], ((int)$dateEnd[2] + 1));
+        $StartDateTimePastYear = mktime((int)$timeStart[0], (int)$timeStart[1], 0, ((int)$dateStart[1] + 1),
+										(int)$dateStart[0], ((int)$dateStart[2] + 1));
+        $EndDateTimePastYear = mktime((int)$timeEnd[0], (int)$timeEnd[1], 0, (int)$dateEnd[1],
+									  (int)$dateEnd[0], ((int)$dateEnd[2] + 1));
 
 		if( time() > $EndDateTimePastYear ){
-			delete_post_meta( $post->ID, '_xtec-booking-data' );
+			delete_post_meta( $post->ID, XTEC_BOOKING_DATA_KEY );
 			wp_delete_post( $post->ID );
 		} else if( time() > $StartDateTimePastYear ){
-            $StartDateTimePastYear = mktime((int)$timeStart[0], (int)$timeStart[1], 0, (int)$dateStart[1], (int)$dateStart[0], ((int)$dateStart[2] + 1));
+            $StartDateTimePastYear = mktime((int)$timeStart[0], (int)$timeStart[1], 0, (int)$dateStart[1],
+											(int)$dateStart[0], ((int)$dateStart[2] + 1));
 			$data['_xtec-booking-start-date'] = date('d-m-Y',$StartDateTimePastYear);
-			update_post_meta( $post->ID, '_xtec-booking-data', $data );
+			update_post_meta( $post->ID, XTEC_BOOKING_DATA_KEY, $data );
 		}
 	}
 }

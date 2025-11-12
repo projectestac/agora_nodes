@@ -1,122 +1,178 @@
 <?php
 
+const XTEC_BOOKING_DAY_MONDAY_KEY    = '_xtec-booking-day-monday';
+const XTEC_BOOKING_DAY_TUESDAY_KEY   = '_xtec-booking-day-tuesday';
+const XTEC_BOOKING_DAY_WEDNESDAY_KEY = '_xtec-booking-day-wednesday';
+const XTEC_BOOKING_DAY_THURSDAY_KEY  = '_xtec-booking-day-thursday';
+const XTEC_BOOKING_DAY_FRIDAY_KEY    = '_xtec-booking-day-friday';
+const XTEC_BOOKING_DAY_SATURDAY_KEY  = '_xtec-booking-day-saturday';
+const XTEC_BOOKING_DAY_SUNDAY_KEY    = '_xtec-booking-day-sunday';
+
 // Check available dates
-function check_avalailable_dates( $data,$post_id ){
+function check_available_dates($data, $post_id): bool
+{
+    if (xtec_should_skip_conflict_check()) {
+        return true;
+    }
 
-	if ( $_POST['visibility'] != 'public' || $_POST['post_status'] == 'draft' || $_POST['post_status'] == 'pending' ){
+    global $wpdb;
 
-		$available = true;
-		return $available;
+    $available = true;
+    $results = xtec_get_existing_bookings($wpdb, $post_id, $data['_xtec-booking-resource']);
 
-	} else {
+    $dataStart = xtec_parse_date_to_timestamp($data[XTEC_BOOKING_START_DATE_KEY]);
+    $dataFinish = xtec_parse_date_to_timestamp($data[XTEC_BOOKING_FINISH_DATE_KEY]);
 
-		global $wpdb;
+    foreach ($results as $row) {
+        $post = get_post($row->post_id);
+        if ($post->post_status !== 'publish') {
+            continue;
+        }
 
-		$available = true;
-		$conflictBookings = array();
+        $meta = unserialize($row->meta_value);
+        $metaStart = xtec_parse_date_to_timestamp($meta[XTEC_BOOKING_START_DATE_KEY]);
+        $metaFinish = xtec_parse_date_to_timestamp($meta[XTEC_BOOKING_FINISH_DATE_KEY]);
 
-		$result = $wpdb->get_results("SELECT * FROM wp_postmeta WHERE post_id != ".$post_id." AND post_id IN (SELECT post_id FROM wp_postmeta WHERE meta_value = ".$data['_xtec-booking-resource'].") AND meta_key = '_xtec-booking-data'");
+        if (!xtec_dates_overlap($dataStart, $dataFinish, $metaStart, $metaFinish)) {
+            continue;
+        }
 
-		// TIMESTAMP DATES NEW BOOKING
-		$dataStart = mktime(0,0,0, (int)substr($data['_xtec-booking-start-date'],3,2), (int)substr($data['_xtec-booking-start-date'],0,2), (int)substr($data['_xtec-booking-start-date'],6,4));
-		$dataFinish = mktime(0,0,0, (int)substr($data['_xtec-booking-finish-date'],3,2), (int)substr($data['_xtec-booking-finish-date'],0,2), (int)substr($data['_xtec-booking-finish-date'],6,4));
+        if (xtec_days_conflict($data, $meta, $dataStart, $dataFinish, $metaStart, $metaFinish)
+            && xtec_times_conflict($data, $meta)) {
+            $available = false;
+        }
+    }
 
-		foreach ($result as $key ) {
-
-			$visibilityPost = get_post($key->post_id);
-
-			if( $visibilityPost->post_status != 'publish' ){
-				continue;
-			}
-
-			$meta_value = unserialize($key->meta_value);
-
-			// CONVERT TO TIMESTAMP DATES OLD BOOKINGS
-			$meta_valueStart = mktime(0,0,0, (int)substr($meta_value['_xtec-booking-start-date'],3,2), (int)substr($meta_value['_xtec-booking-start-date'],0,2), (int)substr($meta_value['_xtec-booking-start-date'],6,4));
-			$meta_valueFinish = mktime(0,0,0, (int)substr($meta_value['_xtec-booking-finish-date'],3,2), (int)substr($meta_value['_xtec-booking-finish-date'],0,2), (int)substr($meta_value['_xtec-booking-finish-date'],6,4));
-
-			// CHECK AVAILABLE DATES
-			if ( ( $dataStart >= $meta_valueStart && $dataStart <= $meta_valueFinish ) || ( $dataFinish >= $meta_valueStart && $dataFinish <= $meta_valueFinish ) ||  ( $dataStart <= $meta_valueStart && $dataFinish >= $meta_valueFinish ) ){
-
-			 	$day = false;
-
-			 	// CHECK AVAILABLE DAYS
-			 	if ( ( $meta_valueStart == $dataStart ) && ( $meta_valueFinish == $dataFinish ) && ( $dataStart == $dataFinish ) ){
-
-			 		$day = true;
-
-			 	} else if ( $meta_valueStart == $meta_valueFinish ){
-
-			 		$checkDay = strtoupper( substr( date( 'D', $meta_valueStart ),0 ,2) );
-
-			 		switch ($checkDay) {
-			 			case 'MO': if ( $data['_xtec-booking-day-monday'] == 'true' ){ $day = true; } break;
-			 			case 'TU': if ( $data['_xtec-booking-day-tuesday'] == 'true' ){ $day = true; } break;
-			 			case 'WE': if ( $data['_xtec-booking-day-wednesday'] == 'true' ){ $day = true; } break;
-			 			case 'TH': if ( $data['_xtec-booking-day-thursday'] == 'true' ){ $day = true; } break;
-			 			case 'FR': if ( $data['_xtec-booking-day-friday'] == 'true' ){ $day = true; } break;
-			 			case 'SA': if ( $data['_xtec-booking-day-saturday'] == 'true' ){ $day = true; } break;
-			 			case 'SU': if ( $data['_xtec-booking-day-sunday'] == 'true' ){ $day = true; } break;
-			 		}
-
-			 	} else if ( $dataStart == $dataFinish ){
-
-			 		$checkDay = strtoupper( substr( date( 'D', $dataStart ),0 ,2) );
-
-			 		switch ($checkDay) {
-			 			case 'MO': if ( $meta_value['_xtec-booking-day-monday'] == 'true' ){ $day = true; } break;
-			 			case 'TU': if ( $meta_value['_xtec-booking-day-tuesday'] == 'true' ){ $day = true; } break;
-			 			case 'WE': if ( $meta_value['_xtec-booking-day-wednesday'] == 'true' ){ $day = true; } break;
-			 			case 'TH': if ( $meta_value['_xtec-booking-day-thursday'] == 'true' ){ $day = true; } break;
-			 			case 'FR': if ( $meta_value['_xtec-booking-day-friday'] == 'true' ){ $day = true; } break;
-			 			case 'SA': if ( $meta_value['_xtec-booking-day-saturday'] == 'true' ){ $day = true; } break;
-			 			case 'SU': if ( $meta_value['_xtec-booking-day-sunday'] == 'true' ){ $day = true; } break;
-			 		}
-
-			 	} else {
-
-			 		if ( $data['_xtec-booking-day-monday'] == $meta_value['_xtec-booking-day-monday'] && $meta_value['_xtec-booking-day-monday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-tuesday'] == $meta_value['_xtec-booking-day-tuesday'] && $meta_value['_xtec-booking-day-tuesday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-wednesday'] == $meta_value['_xtec-booking-day-wednesday'] && $meta_value['_xtec-booking-day-wednesday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-thursday'] == $meta_value['_xtec-booking-day-thursday'] && $meta_value['_xtec-booking-day-thursday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-friday'] == $meta_value['_xtec-booking-day-friday'] && $meta_value['_xtec-booking-day-friday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-saturday'] == $meta_value['_xtec-booking-day-saturday'] && $meta_value['_xtec-booking-day-saturday'] == 'true' ){ $day = true; }
-					if ( $data['_xtec-booking-day-sunday'] == $meta_value['_xtec-booking-day-sunday'] && $meta_value['_xtec-booking-day-sunday'] == 'true' ){ $day = true; }
-
-			 	}
-
-			 	// CHECK AVAILABLES HOURS
-			 	if ( $day == true ){
-
-			 		$dataStartTime = strtotime( $data['_xtec-booking-start-time'] );
-			 		$dataEndTime = strtotime( $data['_xtec-booking-finish-time'] );
-			 		$meta_valueStartTime = strtotime( $meta_value['_xtec-booking-start-time'] );
-			 		$meta_valueEndTime = strtotime( $meta_value['_xtec-booking-finish-time'] );
-
-					if ( $dataStartTime == $meta_valueStartTime ){
-
-						array_push( $conflictBookings,array( 'title' => $meta_value['post_title'] ) );
-
-						$available = false;
-
-					} else if ( ( $dataStartTime >= $meta_valueStartTime ) && ( $dataStartTime <= $meta_valueEndTime ) || ( $dataEndTime >= $meta_valueStartTime ) && ( $dataEndTime <= $meta_valueEndTime ) || ( $dataStartTime <= $meta_valueStartTime ) && ( $dataEndTime >= $meta_valueEndTime ) ){
-
-						if ( ( $dataEndTime != $meta_valueStartTime ) && ( $dataStartTime != $meta_valueEndTime ) ){
-
-							array_push( $conflictBookings, array( 'title' => $meta_value['post_title'] ) );
-
-							$available = false;
-
-						}
-					}
-				}
-			}
-		}
-
-		return $available;
-
-	}
+    return $available;
 }
+
+/**
+ * Skip check if booking is private, draft or pending.
+ */
+function xtec_should_skip_conflict_check(): bool {
+    return ($_POST['visibility'] !== 'public'
+        || $_POST['post_status'] === 'draft'
+        || $_POST['post_status'] === 'pending');
+}
+
+/**
+ * Query DB for bookings that share the same resource.
+ */
+function xtec_get_existing_bookings($wpdb, int $post_id, $resourceId) {
+    return $wpdb->get_results(
+        $wpdb->prepare(
+            "SELECT * FROM wp_postmeta 
+             WHERE post_id != %d
+               AND post_id IN (SELECT post_id FROM wp_postmeta WHERE meta_value = %d) 
+               AND meta_key = '_xtec-booking-data'",
+            $post_id,
+            $resourceId
+        )
+    );
+}
+
+/**
+ * Convert dd/mm/yyyy string to timestamp (00:00:00).
+ */
+function xtec_parse_date_to_timestamp(string $date): int {
+    return mktime(
+        0, 0, 0,
+        (int)substr($date, 3, 2),
+        (int)substr($date, 0, 2),
+        (int)substr($date, 6, 4)
+    );
+}
+
+/**
+ * Check if two date ranges overlap.
+ */
+function xtec_dates_overlap(int $start1, int $end1, int $start2, int $end2): bool {
+    return ($start1 <= $end2 && $end1 >= $start2);
+}
+
+/**
+ * Check if the days selection causes conflict.
+ */
+function xtec_days_conflict(array $data, array $meta, int $dataStart, int $dataFinish, int $metaStart, int $metaFinish): bool {
+    // Exact same single day
+    if ($metaStart === $dataStart && $metaFinish === $dataFinish && $dataStart === $dataFinish) {
+        return true;
+    }
+
+    // Old booking is a single day
+    if ($metaStart === $metaFinish) {
+        return xtec_day_matches($data, $metaStart);
+    }
+
+    // New booking is a single day
+    if ($dataStart === $dataFinish) {
+        return xtec_day_matches($meta, $dataStart);
+    }
+
+    // Multi-day ranges: check common day selections
+    return xtec_week_days_overlap($data, $meta);
+}
+
+/**
+ * Check if a timestamp corresponds to a selected day in booking data.
+ */
+function xtec_day_matches(array $bookingData, int $timestamp): bool {
+    $dayMap = [
+        'MO' => XTEC_BOOKING_DAY_MONDAY_KEY,
+        'TU' => XTEC_BOOKING_DAY_TUESDAY_KEY,
+        'WE' => XTEC_BOOKING_DAY_WEDNESDAY_KEY,
+        'TH' => XTEC_BOOKING_DAY_THURSDAY_KEY,
+        'FR' => XTEC_BOOKING_DAY_FRIDAY_KEY,
+        'SA' => XTEC_BOOKING_DAY_SATURDAY_KEY,
+        'SU' => XTEC_BOOKING_DAY_SUNDAY_KEY,
+    ];
+
+    $day = strtoupper(substr(date('D', $timestamp), 0, 2));
+    return !empty($bookingData[$dayMap[$day]]) && $bookingData[$dayMap[$day]] === 'true';
+}
+
+/**
+ * Compare week day selections between two bookings.
+ */
+function xtec_week_days_overlap(array $data, array $meta): bool {
+    $keys = [
+        XTEC_BOOKING_DAY_MONDAY_KEY,
+        XTEC_BOOKING_DAY_TUESDAY_KEY,
+        XTEC_BOOKING_DAY_WEDNESDAY_KEY,
+        XTEC_BOOKING_DAY_THURSDAY_KEY,
+        XTEC_BOOKING_DAY_FRIDAY_KEY,
+        XTEC_BOOKING_DAY_SATURDAY_KEY,
+        XTEC_BOOKING_DAY_SUNDAY_KEY,
+    ];
+
+    foreach ($keys as $key) {
+        if (!empty($data[$key]) && $data[$key] === $meta[$key] && $meta[$key] === 'true') {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Check if two time ranges conflict.
+ */
+function xtec_times_conflict(array $data, array $meta): bool {
+    $dataStart = strtotime($data[XTEC_BOOKING_START_TIME_KEY]);
+    $dataEnd   = strtotime($data[XTEC_BOOKING_FINISH_TIME_KEY]);
+    $metaStart = strtotime($meta[XTEC_BOOKING_START_TIME_KEY]);
+    $metaEnd   = strtotime($meta[XTEC_BOOKING_FINISH_TIME_KEY]);
+
+    if ($dataStart === $metaStart) {
+        return true;
+    }
+
+    return (
+        ($dataStart >= $metaStart && $dataStart <= $metaEnd) ||
+        ($dataEnd   >= $metaStart && $dataEnd   <= $metaEnd) ||
+        ($dataStart <= $metaStart && $dataEnd   >= $metaEnd)
+    ) && ($dataEnd !== $metaStart && $dataStart !== $metaEnd);
+}
+
 
 // CAPABILITIES TO ROLES
 function xtec_booking_active_plugin(){
