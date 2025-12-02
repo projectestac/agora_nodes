@@ -4,6 +4,12 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 25.12.03
+---------------------------------------------------------------------------------------
+- Adjusted sizes of logos
+- xtec-stats: Improvements to code quality
+
+
 Changes 25.10.22
 ---------------------------------------------------------------------------------------
 - Astra: Fixed double logo when using vanilla Astra
