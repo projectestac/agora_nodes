@@ -858,7 +858,7 @@ body.archive .ast-archive-description {
 }
 
 aside input {
-    width: 100% !important;
+    width: 100%;
 }
 
 div.sidebar-main li.current-menu-item {
@@ -1198,6 +1198,25 @@ header .custom-logo-link img {
 #secondary textarea {
     min-height: 60px;
 }
+
+/* email-subscribers - widget form - Begin */
+#secondary .sidebar-main .emaillist form.es_subscription_form {
+    margin: 0 0 40px 0;
+}
+#secondary .sidebar-main .emaillist form input[type="checkbox"] {
+    min-height: initial;
+    width: 20px;
+}
+#secondary .sidebar-main .emaillist form > div:nth-of-type(4) p {
+    margin-bottom: 0;
+}
+#secondary .sidebar-main .emaillist form > div:nth-of-type(4) table {
+    margin: 0;
+}
+#secondary .sidebar-main .emaillist form > div:nth-of-type(4) table td {
+    padding: 0 0 0 20px;
+}
+/* email-subscribers - widget form - End */
 
 .simcal-default-calendar-grid.simcal-default-calendar-light .simcal-day-void,
 .simcal-default-calendar-grid.simcal-default-calendar-light .simcal-day-void:hover {
