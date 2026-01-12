@@ -4,7 +4,13 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
-Changes 25.12.03
+Changes 26.01.13
+---------------------------------------------------------------------------------------
+- gtranslate: Upgraded plugin
+- Nodes 2: Added CSS for email-subscribers widget form
+
+
+Changes 25.12.18
 ---------------------------------------------------------------------------------------
 - Adjusted sizes of logos
 - xtec-stats: Improvements to code quality
