@@ -1298,3 +1298,13 @@ add_action('after_switch_theme', function () {
     update_option($astra_settings_name, $astra_settings);
 
 });
+
+// Astra: Add the suffix with the instance directory to the base path because Astra doesn't use constant UPLOADS.
+add_filter('astra_local_docs_base_path', function ($path) {
+    return $path . '/' . DB_NAME . '/';
+}, 1, 1);
+
+// Astra: Add the suffix with the instance directory to the base URL because Astra doesn't use constant UPLOADS.
+add_filter('astra_local_docs_base_url', function ($url) {
+    return $url . DB_NAME . '/';
+});
