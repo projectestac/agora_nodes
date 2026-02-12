@@ -89,17 +89,17 @@ header #contact-info-2-wrapper {
     margin-top: 5px;
 }
 
-#ast-desktop-header a.grid-item {
+#ast-desktop-header .grid-item {
     width: 90px;
     height: 90px;
 }
 
-#ast-desktop-header a.grid-item span.astra-nodes-header-icon-link {
+#ast-desktop-header .grid-item span.astra-nodes-header-icon-link {
     line-height: 1;
     margin-top: 8px;
 }
 
-#ast-mobile-header a.grid-item {
+#ast-mobile-header .grid-item {
     overflow: hidden;
 }
 
@@ -1438,8 +1438,8 @@ ol.fa-ul {
     margin: 0 !important;
 }
 
-a.grid-item:hover i,
-a.grid-item:hover span {
+.grid-item:hover i,
+.grid-item:hover span {
     color: white !important;
 }
 

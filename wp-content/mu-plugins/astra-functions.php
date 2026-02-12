@@ -577,12 +577,22 @@ function astra_nodes_header_buttons(): string {
         $style_attr = $small_text ? ' style="font-size: smaller;"' : '';
 
         // Build the button HTML
-        $content .= '
-            <a class="grid-item grid-item-' . $i . '" href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>
-                <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
-                <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link"' . $style_attr . '>' . $text_icon . '</span>
-            </a>
-            ';
+        if (empty($link_icon)) {
+            // If there is no link, use a span instead of an anchor tag and remove the href attribute.
+            $content .= '
+                <span class="grid-item grid-item-' . $i . '">
+                    <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
+                    <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link"' . $style_attr . '>' . $text_icon . '</span>
+                </span>
+                ';
+        } else {
+            $content .= '
+                <a class="grid-item grid-item-' . $i . '" href="' . $link_icon . '" ' . ($open_in_new_tab ? ' target="_blank"' : '') . '>
+                    <i id="header-button-' . $i . '" class="' . $classes_icon . ' astra-nodes-header-icon"></i>
+                    <span class="header-button-link-' . $i . ' astra-nodes-header-icon-link"' . $style_attr . '>' . $text_icon . '</span>
+                </a>
+                ';
+        }
     }
 
     // Remove all the "\n" characters.
