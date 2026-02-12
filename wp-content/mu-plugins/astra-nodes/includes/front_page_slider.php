@@ -14,34 +14,22 @@ function extract_slider_params($astra_nodes_options): array {
         $params['minHeight'] = 200;
     }
 
-    switch ($params['arrows']) {
-        case 'yes':
-            $params['class_arrows'] = 'has-arrows-inside';
-            break;
-        case 'no':
-            $params['class_arrows'] = 'has-arrows-none';
-            break;
-        default:
-            $params['class_arrows'] = 'has-arrows-inside';
-    }
+    $params['class_arrows'] = match ($params['arrows']) {
+        'no' => 'has-arrows-none',
+        default => 'has-arrows-inside',
+    };
 
-    switch ($params['dots']) {
-        case 'yes':
-            $params['class_dots'] = 'has-dots-inside';
-            break;
-        case 'no':
-            $params['class_dots'] = 'has-dots-none';
-            break;
-        default:
-            $params['class_dots'] = 'has-dots-inside';
-    }
+    $params['class_dots'] = match ($params['dots']) {
+        'no' => 'has-dots-none',
+        default => 'has-dots-inside',
+    };
 
     for ($i = 1, $count = 0; $i <= 5; $i++) {
 
         if (empty($astra_nodes_options['front_page_slider_image_' . $i]) &&
             empty($astra_nodes_options['front_page_slider_heading_' . $i]) &&
             empty($astra_nodes_options['front_page_slider_text_' . $i]) &&
-            empty($astra_nodes_options['front_page_slider_open_in_new_tab_' . $i])) {
+            empty($astra_nodes_options['front_page_slider_link_' . $i])) {
             continue;
         }
 
