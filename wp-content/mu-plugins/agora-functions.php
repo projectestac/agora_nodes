@@ -2880,6 +2880,46 @@ function plugin_links(): void {
 
 function plugin_options_page(): void {
 
+    // Plugin GTranslate particular case.
+    $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : '';
+
+    switch ($action) {
+        case 'activate_gtranslate':
+            if (current_user_can('manage_options') && !is_plugin_active('gtranslate/gtranslate.php')) {
+                activate_plugin('gtranslate/gtranslate.php');
+                echo '<div class="notice notice-success is-dismissible"><p>S\'ha activat l\'extensió GTranslate.</p></div>';
+            }
+            break;
+
+        case 'deactivate_gtranslate':
+            if (current_user_can('manage_options') && is_plugin_active('gtranslate/gtranslate.php')) {
+                deactivate_plugins('gtranslate/gtranslate.php');
+                echo '<div class="notice notice-success is-dismissible"><p>S\'ha desactivat l\'extensió GTranslate.</p></div>';
+            }
+            break;
+
+        case 'reset_gtranslate':
+            if (current_user_can('manage_options')) {
+                // "Reset" means to update register GTranslate in wp_options with the default value.
+                $default_value = 'a:39:{s:11:"pro_version";s:0:"";s:18:"enterprise_version";s:0:"";s:16:"wrapper_selector";s:19:".gtranslate_wrapper";s:14:"custom_domains";s:0:"";s:19:"custom_domains_data";s:0:"";s:15:"url_translation";s:0:"";s:17:"add_hreflang_tags";s:0:"";s:17:"email_translation";s:0:"";s:23:"email_translation_debug";s:0:"";s:12:"show_in_menu";s:0:"";s:26:"floating_language_selector";s:9:"top_right";s:21:"native_language_names";i:1;s:10:"enable_cdn";s:0:"";s:23:"detect_browser_language";s:0:"";s:12:"add_new_line";s:0:"";s:21:"select_language_label";s:8:"Tradueix";s:10:"custom_css";s:0:"";s:16:"default_language";s:2:"ca";s:11:"widget_look";s:8:"dropdown";s:9:"flag_size";i:24;s:10:"flag_style";s:2:"2d";s:10:"globe_size";i:60;s:11:"globe_color";s:7:"#66aaff";s:10:"incl_langs";a:8:{i:0;s:2:"ca";i:1;s:2:"es";i:2;s:2:"en";i:3;s:2:"ar";i:4;s:2:"de";i:5;s:2:"fr";i:6;s:5:"zh-CN";i:7;s:2:"ru";}s:11:"fincl_langs";a:4:{i:0;s:2:"es";i:1;s:2:"ar";i:2;s:2:"ca";i:3;s:2:"en";}s:9:"alt_flags";a:0:{}s:19:"switcher_text_color";s:4:"#666";s:20:"switcher_arrow_color";s:4:"#666";s:21:"switcher_border_color";s:4:"#ccc";s:25:"switcher_background_color";s:4:"#fff";s:32:"switcher_background_shadow_color";s:7:"#efefef";s:31:"switcher_background_hover_color";s:4:"#fff";s:19:"dropdown_text_color";s:4:"#000";s:20:"dropdown_hover_color";s:4:"#fff";s:25:"dropdown_background_color";s:4:"#eee";s:29:"float_switcher_open_direction";s:3:"top";s:23:"switcher_open_direction";s:3:"top";s:14:"language_codes";s:320:"af,sq,am,es,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,zh-CN,zh-TW,co,hr,cs,da,nl,en,eo,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,ha,haw,iw,hi,hmn,hu,is,ig,id,ga,it,ja,jw,kn,kk,km,ko,ku,ky,lo,la,lv,lt,lb,mk,mg,ms,ml,mt,mi,mr,mn,my,ne,no,ps,fa,pl,pt,pa,ro,ru,sm,gd,sr,st,sn,sd,si,sk,sl,so,su,sw,sv,tg,ta,te,th,tr,uk,ur,uz,vi,cy,xh,yi,yo,zu";s:15:"language_codes2";s:320:"af,sq,am,ca,es,en,ar,de,fr,it,pt,hy,az,eu,be,bn,bs,bg,ceb,ny,zh-CN,zh-TW,co,hr,cs,da,nl,eo,et,tl,fi,fy,gl,ka,el,gu,ht,ha,haw,iw,hi,hmn,hu,is,ig,id,ga,ja,jw,kn,kk,km,ko,ku,ky,lo,la,lv,lt,lb,mk,mg,ms,ml,mt,mi,mr,mn,my,ne,no,ps,fa,pl,pa,ro,ru,sm,gd,sr,st,sn,sd,si,sk,sl,so,su,sw,sv,tg,ta,te,th,tr,uk,ur,uz,vi,cy,xh,yi,yo,zu";}';
+                // update_option doesn't identify correctly that the string is serialized,
+                // so we need to unserialize it before updating the option.
+                update_option('GTranslate', unserialize($default_value, ['allowed_classes' => false]));
+                echo '<div class="notice notice-success is-dismissible"><p>S\'ha restablert la configuració de l\'extensió GTranslate.</p></div>';
+            }
+            break;
+    }
+
+    // Build admin links for GTranslate plugin depending on the state of the plugin (activated or deactivated).
+    if (!is_plugin_active('gtranslate/gtranslate.php')) {
+        $gtranslate_admin_links['Activa'] = 'admin.php?page=xtec-plugins-options&action=activate_gtranslate';
+    } elseif (is_plugin_active('gtranslate/gtranslate.php')) {
+        $gtranslate_admin_links['Configuració'] = 'options-general.php?page=gtranslate_options';
+        $gtranslate_admin_links['Desactiva'] = 'admin.php?page=xtec-plugins-options&action=deactivate_gtranslate';
+        $gtranslate_admin_links['Reinicia'] = 'admin.php?page=xtec-plugins-options&action=reset_gtranslate';
+    }
+    // End of GTranslate particular case.
+
     $plugins = [
         [
             'title' => 'H5P',
@@ -2907,12 +2947,10 @@ function plugin_options_page(): void {
             'capability' => 'manage_options', // Role administrator.
         ],
         [
-            'title' => 'Gtranslate',
+            'title' => 'GTranslate',
             'description' => 'Permet incorporar un selector d\'idioma per fer la traducció automàtica del web a una gran quantitat d\'idiomes.',
             'more_info' => 'https://projectes.xtec.cat/digital/serveis-digitals/nodes/g-translate/',
-            'links_admin' => [
-                'Configuració' => 'options-general.php?page=gtranslate_options',
-            ],
+            'links_admin' => $gtranslate_admin_links,
             'plugin_file' => 'gtranslate/gtranslate.php',
             'capability' => 'manage_options', // Role administrator.
         ],
@@ -2963,7 +3001,8 @@ function plugin_options_page(): void {
 
     foreach ($plugins as $plugin) {
 
-        if (is_plugin_active($plugin['plugin_file']) && current_user_can($plugin['capability'])) {
+        // Added condition for plugin GTranslate particular case.
+        if ((($plugin['title'] === 'GTranslate') || is_plugin_active($plugin['plugin_file'])) && current_user_can($plugin['capability'])) {
             echo '<div style="width: 250px; height: auto; min-height: 200px; padding: 15px; margin: 10px; box-sizing: border-box; border: 1px solid #dddddd; border-radius: 5px;">';
             echo '<h3 style="height: 25px;">' . esc_html($plugin['title']) . '</h3>';
             echo '<p style="margin-bottom: 20px;">' . esc_html($plugin['description']) . '</p>';
