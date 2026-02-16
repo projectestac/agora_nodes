@@ -955,11 +955,11 @@ add_action('astra_footer_after', function () {
                             <div class="ast-header-html inner-link-style-">
                                 <div class="ast-builder-html-element">
                                     <p id="astra-nodes-copyright">
-                                        <a target="_blank" href="https://web.gencat.cat/ca/ajuda/avis_legal/">Avís legal</a> |
+                                        <a target="_blank" href="https://xtec.gencat.cat/ca/avis-legal/">Avís legal</a> |
                                         <a target="_blank" href="https://agora.xtec.cat/nodes/">Sobre el web</a> |
                                         <a target="_blank" href="https://projectes.xtec.cat/digital/politica-de-galetes/">Política de galetes</a> |
-                                        <span class="copyright">© ' . date("Y") . ' Generalitat de Catalunya | </span>
-                                        <span class="site-source">Fet amb el <a target="_blank" href="https://wordpress.org">WordPress</a></span>
+                                        <span class="copyright">&copy; ' . date("Y") . ' Generalitat de Catalunya | </span>
+                                        <span class="site-source">Fet amb el <a target="_blank" href="https://wordpress.org/">WordPress</a></span>
                                     </p>
                                 </div>
                             </div>

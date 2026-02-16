@@ -70,10 +70,10 @@ function reactor_do_footer_content() { ?>
         <div class="row">
             <div class="<?php reactor_columns( 12 ); ?>">
                 <div style="text-align:center" id="colophon">
-                    <p> <a target="_blank" href="http://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/">Avís legal</a> |
-                    <a target="_blank" href="http://agora.xtec.cat/nodes/">Sobre el web</a> |
-                    <span class="copyright">&copy;<?php echo date_i18n('Y'); ?>  Generalitat de Catalunya | </span>
-                    <span class="site-source">Fet amb <a href=http://wordpress.org/>WordPress</a></span></p>
+                    <p> <a target="_blank" href="https://xtec.gencat.cat/ca/avis-legal/">Avís legal</a> |
+                    <a target="_blank" href="https://agora.xtec.cat/nodes/">Sobre el web</a> |
+                    <span class="copyright">&copy; <?php echo date_i18n('Y'); ?> Generalitat de Catalunya | </span>
+                    <span class="site-source">Fet amb <a href=https://wordpress.org/>WordPress</a></span></p>
                 </div><!-- #colophon -->
             </div><!-- .columns -->
         </div><!-- .row -->
