@@ -6,8 +6,8 @@ jQuery( document ).ready( function() {
 
 			add_wait_gif();
 
-			var href = e.target.href;
-			var post = href.split("post=");
+			let href = e.target.href;
+			let post = href.split("post=");
 			post = post[1].split("&");
 
 			jQuery.post(
