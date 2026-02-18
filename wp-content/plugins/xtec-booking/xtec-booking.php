@@ -133,7 +133,7 @@ function xtec_post_location_filter($location): string
 }
 
 // Filter to show message when booking is not allowed.
-add_filter('post_updated_messages', function ($messages) {
+add_filter('post_updated_messages', function () {
     if (isset($_GET['message']) && (int)$_GET['message'] === 99) {
         ?>
         <div id="message" class="notice notice-error is-dismissible xtec-red">
@@ -141,11 +141,7 @@ add_filter('post_updated_messages', function ($messages) {
                 _e('Booking not allowed. The resource is not allowed to data selected. Please, try other data.', 'xtec-booking'); ?></p>
         </div>
         <?php
-        return '';
     }
-
-    $messages['post'][99] = __('Booking not allowed. The resource is not allowed to data selected. Please, try other data.', 'xtec-booking');
-    return $messages;
 });
 
 // Save post meta for resources and bookings
