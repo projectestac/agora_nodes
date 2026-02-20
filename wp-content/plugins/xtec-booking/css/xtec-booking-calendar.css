@@ -43,6 +43,7 @@ span[data-cal-date] {
     height: 140px;
     background-color: #CCCCCC;
     padding-top: 40%;
+    text-align: center;
 }
 
 .select_resource {
