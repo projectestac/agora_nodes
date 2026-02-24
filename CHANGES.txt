@@ -4,6 +4,18 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 26.03.03
+---------------------------------------------------------------------------------------
+- Enllaços educatius: Updated URL for Internet Segura
+- Nodes 2: Added custom behaviour for admin options of GTranslate
+- Nodes 2: Added filters to configure cache path in Astra theme
+- Nodes 2: Front page slider: Slides with just a check for a blank page, don't show up
+- Nodes 2: Header buttons: Only use anchor tag when there is a link defined
+- Nodes 2: Updated legal notice link
+- Theme Reactor: Updated legal notice link
+- XTEC Booking: Updated code to meet SonarQube standards. Also some clean up
+
+
 Changes 26.01.27
 ---------------------------------------------------------------------------------------
 (No changes)
