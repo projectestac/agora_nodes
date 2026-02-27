@@ -15,11 +15,6 @@ include_once plugin_dir_path(__FILE__) . 'includes/calendar.php';
 include_once plugin_dir_path(__FILE__) . 'includes/actions_calendar.php';
 include_once plugin_dir_path(__FILE__) . 'includes/cron.php';
 
-const XTEC_RESOURCES_STATUS = '_xtec_resources_status';
-const XTEC_BOOKING_RESOURCE = '_xtec-booking-resource';
-const XTEC_BOOKING_START_TIME = '_xtec-booking-start-time';
-const XTEC_BOOKING_FINISH_TIME = '_xtec-booking-finish-time';
-
 // Load language file.
 add_action('init', function (): void {
     $plugin_rel_path = plugin_basename(__DIR__ . '/i18n');
