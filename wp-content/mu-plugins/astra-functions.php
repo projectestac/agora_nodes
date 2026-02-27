@@ -492,8 +492,14 @@ function astra_nodes_contact_information(): string {
     $link_to_map = $astra_nodes_options['link_to_map'] ?? '';
     $contact_page = $astra_nodes_options['contact_page'] ?? '';
 
-    // Contact is a mailto link if contact_page is empty.
-    $contact_page_url = $contact_page !== '' ? $contact_page : 'mailto:' . $email_address;
+    // The link to the contact page can be a web page, the email address or nothing.
+    if (!empty($contact_page)) {
+        $contact_page_url = $contact_page;
+    } elseif (!empty($email_address)) {
+        $contact_page_url = 'mailto:' . $email_address;
+    } else {
+        $contact_page_url = '';
+    }
 
     // If the school code seems to be real, show it. Otherwise, don't show anything.
     $school_code = SCHOOL_CODE;
@@ -545,14 +551,22 @@ function astra_nodes_contact_information(): string {
     }
 
     $content .= '
-                </ol>
-            </div>
-            <div id="contact-info-2-wrapper">
-                <strong>
-                    <a id="contact-info-page-url" href="' . $contact_page_url . '">' . __('Contact', 'astra-nodes') . '</a>
-                </strong>
-            </div>
-        ';
+                    </ol>
+                </div>
+                <div id="contact-info-2-wrapper">
+            ';
+
+    if (!empty($contact_page_url)) {
+        $content .= '
+                    <strong>
+                        <a id="contact-info-page-url" href="' . $contact_page_url . '">' . __('Contact', 'astra-nodes') . '</a>
+                    </strong>
+            ';
+    }
+
+    $content .= '
+                </div>
+            ';
 
     // Remove all the "\n" characters.
     return str_replace("\n", '', $content);
