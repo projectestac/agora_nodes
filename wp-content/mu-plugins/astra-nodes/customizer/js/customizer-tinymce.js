@@ -13,9 +13,16 @@
             },
             height: 200,
             menubar: false,
+
             plugins: 'lists',
             toolbar: 'undo redo | alignleft aligncenter alignright alignjustify | bold italic underline | bullist numlist',
-            branding: false
+
+            branding: false,
+
+            // Don't make changes to URLs.
+            convert_urls: false,
+            relative_urls: false,
+            remove_script_host: false
         });
     });
 })(jQuery);
