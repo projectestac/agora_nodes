@@ -1856,10 +1856,6 @@ figure.wp-lightbox-container > img:first-child {
         margin-bottom: 0;
     }
 
-    #front-page-notice-image {
-        border-radius: 30px 30px 0 0;
-    }
-
     #front-page-notice-text {
         border-radius: 0 0 30px 30px;
         margin-right: 16px;
@@ -1924,10 +1920,6 @@ figure.wp-lightbox-container > img:first-child {
         padding-right: 16px !important;
     }
 
-    .home.ast-page-builder-template.ast-left-sidebar #front-page-notice-image {
-        border-radius: 30px 30px 0 0;
-    }
-
     /* GTranslate */
     .gt_switcher_wrapper {
         top: 45px !important;
@@ -1976,6 +1968,10 @@ figure.wp-lightbox-container > img:first-child {
 }
 
 @media screen and (max-width: 782px) {
+
+    .home.ast-page-builder-template.ast-left-sidebar #front-page-notice-image {
+        border-radius: 30px 30px 0 0;
+    }
 
     #wpadminbar .quicklinks ul {
         text-align: left;
