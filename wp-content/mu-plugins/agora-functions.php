@@ -1806,12 +1806,6 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 
 /* Theme migration stuff begins here */
 
-/**
- * Do all the necessary actions when there is a theme change. Ensure that the
- * records required by Nodes are created and initialized.
- *
- * @param string $new_theme The name of theme that is being activated.
- */
 add_action('switch_theme', function ($new_theme) {
 
     if ($new_theme === 'Astra') {
@@ -1820,6 +1814,7 @@ add_action('switch_theme', function ($new_theme) {
         initialize_astra_settings();
         configure_page_on_front();
         activate_blog_pro();
+        activate_gutenberg();
 
         // Remove the welcome panel from the dashboard. This call hides the panel immediately after
         // the theme is activated. Otherwise, the panel shows up at least once.
@@ -2733,6 +2728,30 @@ function activate_blog_pro(): void {
 
     update_option($astra_settings_name, $astra_settings);
 
+}
+
+/**
+ * Activate Gutenberg editor unconditionally.
+ */
+function activate_gutenberg(): void
+{
+    define('OPTIONS_KEY', 'tadv_admin_settings');
+    define('TINYMCE_KEY', 'replace_block_editor');
+
+    $tadv_admin_settings = get_option(OPTIONS_KEY);
+
+    // Convert string separated by commas into an array.
+    $options_array = explode(',', $tadv_admin_settings['options']);
+
+    // Check if the key exists exactly in the array.
+    if (in_array(TINYMCE_KEY, $options_array)) {
+        // Remove the key from the array (array_diff removes all occurrences if there are more than one).
+        $options_array = array_diff($options_array, [TINYMCE_KEY]);
+        // Convert back to string separated by commas.
+        $tadv_admin_settings['options'] = implode(',', $options_array);
+        // Save the changes.
+        update_option(OPTIONS_KEY, $tadv_admin_settings);
+    }
 }
 
 /* Theme migration stuff ends here */
