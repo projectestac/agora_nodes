@@ -1,28 +1,40 @@
 (function ($) {
     wp.customize.bind('ready', function () {
-        tinymce.init({
-            selector: '.customize-control-tinymce',
-            setup: function (editor) {
-                editor.on('init', function () {
-                    console.log('TinyMCE Editor on customizer: initialized');
-                    editor.on('change', function () {
-                        editor.save();
-                        $(editor.getElement()).trigger('change');
-                    });
-                });
-            },
-            height: 200,
-            menubar: false,
 
-            plugins: 'lists',
-            toolbar: 'undo redo | alignleft aligncenter alignright alignjustify | bold italic underline | bullist numlist',
+        $('.customize-control-tinymce').each(function () {
+            const $textarea = $(this);
+            const editorId = $textarea.attr('id');
 
-            branding: false,
+            wp.editor.initialize(editorId, {
+                tinymce: {
+                    selector: 'textarea',
 
-            // Don't make changes to URLs.
-            convert_urls: false,
-            relative_urls: false,
-            remove_script_host: false
+                    convert_urls: false,
+                    relative_urls: false,
+                    remove_script_host: false,
+                    link_assume_external_targets: true,
+
+                    target_list: [
+                        {title: 'Finestra nova (_blank)', value: '_blank'},
+                        {title: 'La mateixa finestra', value: ''}
+                    ],
+
+                    height: 300,
+                    menubar: false,
+                    plugins: 'lists link',
+                    toolbar1: 'undo redo | alignleft aligncenter alignright alignjustify | bold italic underline | bullist numlist | link unlink',
+
+                    setup: function (editor) {
+                        editor.on('change keyup paste', function () {
+                            editor.save();
+                            $textarea.trigger('change');
+                        });
+                    }
+                },
+                // Activate tab for HTML code.
+                quicktags: true
+            });
         });
+
     });
 })(jQuery);
