@@ -1332,3 +1332,39 @@ add_filter('astra_local_docs_base_path', function ($path) {
 add_filter('astra_local_docs_base_url', function ($url) {
     return $url . DB_NAME . '/';
 });
+
+// Reorder the posts to show sticky posts first (step 1).
+add_action('pre_get_posts', function () {
+
+    // Get the IDs of all the sticky posts.
+    $sticky_posts = get_option('sticky_posts');
+
+    if (empty($sticky_posts)) {
+        return;
+    }
+
+    // As long as there are fixed posts, activate a temporary filter to modify the ORDER BY of this query.
+    add_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies', 10, 2);
+});
+
+// Reorder the posts to show sticky posts first (step 2).
+function astra_nodes_custom_orderby_stickies($orderby)
+{
+    // Remove the filter immediately so that it does not affect widgets or menus on the same page.
+    remove_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies');
+
+    global $wpdb;
+
+    $sticky_posts = get_option('sticky_posts');
+
+    if (empty($sticky_posts)) {
+        return $orderby;
+    }
+
+    // Clean up the IDs for security reasons (ensure they are numbers).
+    $sticky_ids = implode(',', array_map('intval', $sticky_posts));
+
+    // MySQL custom order by code: Use IF() to assign a "0" to fixed posts and a "1" to normal posts.
+    // Since 0s come before 1s, they will be placed at the beginning of everything globally.
+    return "IF({$wpdb->posts}.ID IN ({$sticky_ids}), 0, 1) ASC, " . $orderby;
+}
