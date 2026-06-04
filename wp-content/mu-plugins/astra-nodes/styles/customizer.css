@@ -204,3 +204,9 @@ li#customize-control-astra_nodes_customizer_front_page_slider_mobile_show_headin
 li#customize-control-astra_nodes_customizer_front_page_slider_mobile_show_texts span.onoffswitch_label {
     padding-left: 10px;
 }
+
+/* Front page content notice: Tiny editor: Force colors for icons of link and unlink */
+i.mce-ico.mce-i-link,
+i.mce-ico.mce-i-unlink {
+    color: #595959 !important;
+}
