@@ -2781,16 +2781,6 @@ add_filter('get_the_archive_description', function ($description) {
 
 });
 
-/**
- * Force the configuration of the front page to use always a page, so the option of using the
- * latest posts is disallowed.
- *
- * @author Xavi Meler
- */
-add_filter('pre_option_show_on_front', function () {
-    return 'page';
-});
-
 // Admin: Remove Koko Analytics from dashboard menu.
 add_action('admin_menu', function () {
     remove_submenu_page('index.php', 'koko-analytics');
