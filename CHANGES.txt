@@ -4,6 +4,23 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 26.06.22
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.7.5
+- Nodes 2: Added support for sticky posts
+- Nodes 2: Customizer: Front page notice: Added support for buttons of links in visual editor
+- Nodes 2: Customizer: Front page notice: Avoid visual editor change links
+- Nodes 2: Fixed incorrect filtering in posts
+- Nodes 2: Force activation of Gutenberg editor on change to Nodes 2
+- Nodes 2: Improved radius border in front page notice on small screens
+- Nodes 2: Removed restriction which prevented to configure lastest posts in home page
+- author-category: Full revamp of the code
+- enllacos-educatius: Changed epergam for Catàleg de biblioteca
+- gtranslate: Hide spinner when translation is in progress
+- wordpress-telegram: Upgraded plugin
+- XTEC lib: Removed no longer needed scripts
+
+
 Changes 26.03.03
 ---------------------------------------------------------------------------------------
 - Enllaços educatius: Updated URL for Internet Segura
