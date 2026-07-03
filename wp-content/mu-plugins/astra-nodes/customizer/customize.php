@@ -1312,6 +1312,7 @@ function nodes_customize_register($wp_customize): void {
         'settings' => 'astra_nodes_pages_columns',
         'type' => 'radio',
         'choices' => [
+            1 => __('1 column', 'astra-nodes'),
             2 => __('2 columns', 'astra-nodes'),
             3 => __('3 columns', 'astra-nodes'),
             4 => __('4 columns', 'astra-nodes'),

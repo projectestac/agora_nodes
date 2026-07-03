@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: AstraFunctions 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
 "POT-Creation-Date: 2025-05-02T13:44:15+02:00\n"
-"PO-Revision-Date: 2025-09-23 10:29+0200\n"
+"PO-Revision-Date: 2026-07-03 12:23+0200\n"
 "Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -449,6 +449,9 @@ msgstr "Configura la visualitzaci√≥ de les categories (columnes, articles per p√
 
 msgid "Number of columns"
 msgstr "Nombre de columnes"
+
+msgid "1 column"
+msgstr "Una columna"
 
 msgid "2 columns"
 msgstr "Dues columnes"
