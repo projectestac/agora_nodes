@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Translate WordPress with GTranslate - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-11-20 17:48:03+0000\n"
+"PO-Revision-Date: 2025-07-14 21:46:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,18 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Translate WordPress with GTranslate - Stable (latest release)\n"
+
+#: gtranslate.php:1438
+msgid "TranslateX - Translation API"
+msgstr "TranslateX - APPI de traducción"
+
+#: gtranslate.php:1130 gtranslate.php:1139
+msgid "Down"
+msgstr "Arriba"
+
+#: gtranslate.php:1129 gtranslate.php:1138
+msgid "Up"
+msgstr "Abajo"
 
 #: gtranslate.php:1457
 msgid "We try to help everyone as time permits."
@@ -90,14 +102,6 @@ msgstr "CSS personalizado"
 #: gtranslate.php:1164
 msgid "Globe size"
 msgstr "Tamaño del globo"
-
-#: gtranslate.php:1130 gtranslate.php:1139
-msgid "Bottom"
-msgstr "Inferior"
-
-#: gtranslate.php:1129 gtranslate.php:1138
-msgid "Top"
-msgstr "Arriba"
 
 #: gtranslate.php:1128
 msgid "Right"
@@ -368,10 +372,6 @@ msgstr "Título:"
 #: gtranslate.php:1722
 msgid "GTranslate language switcher"
 msgstr "Cambiar el idioma de GTranslate"
-
-#: gtranslate.php:1438
-msgid "Reviews"
-msgstr "Reseñas"
 
 #: gtranslate.php:1428
 msgid "About GTranslate team"
