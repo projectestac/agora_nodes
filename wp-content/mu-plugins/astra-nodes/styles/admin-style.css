@@ -34,3 +34,7 @@ textarea {
     justify-content: center;
     align-items: center;
 }
+
+#nav-menu-footer .major-publishing-actions .delete-action {
+    margin: auto;
+}
