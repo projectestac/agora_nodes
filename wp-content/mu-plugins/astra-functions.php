@@ -1339,8 +1339,11 @@ add_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies', 10, 2);
 
 function astra_nodes_custom_orderby_stickies($orderby, $query)
 {
-    // Only reorder the main query of the frontend, so that widgets, blocks and the admin lists keep their order.
-    if (is_admin() || !$query->is_main_query() || $query->get('ignore_sticky_posts')) {
+    // Only reorder the main query of the frontend and the secondary queries that explicitly request the sticky posts
+    // (i.e. the front page news carousel), so that widgets, blocks and the admin lists keep their order.
+    $requests_stickies = isset($query->query['ignore_sticky_posts']) && !$query->query['ignore_sticky_posts'];
+
+    if (is_admin() || (!$query->is_main_query() && !$requests_stickies) || $query->get('ignore_sticky_posts')) {
         return $orderby;
     }
 
