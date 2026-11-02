@@ -1333,38 +1333,33 @@ add_filter('astra_local_docs_base_url', function ($url) {
     return $url . DB_NAME . '/';
 });
 
-// Reorder the posts to show sticky posts first (step 1).
-add_action('pre_get_posts', function () {
+// Reorder the posts to show sticky posts first. The filter is permanent and checks the query it receives, so
+// nested queries run by other plugins during pre_get_posts (i.e. BuddyPress Docs) can't interfere with it.
+add_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies', 10, 2);
 
-    // Get the IDs of all the sticky posts.
-    $sticky_posts = get_option('sticky_posts');
-
-    if (empty($sticky_posts)) {
-        return;
+function astra_nodes_custom_orderby_stickies($orderby, $query)
+{
+    // Only reorder the main query of the frontend, so that widgets, blocks and the admin lists keep their order.
+    if (is_admin() || !$query->is_main_query() || $query->get('ignore_sticky_posts')) {
+        return $orderby;
     }
 
-    // As long as there are fixed posts, activate a temporary filter to modify the ORDER BY of this query.
-    add_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies', 10, 2);
-});
-
-// Reorder the posts to show sticky posts first (step 2).
-function astra_nodes_custom_orderby_stickies($orderby)
-{
-    // Remove the filter immediately so that it does not affect widgets or menus on the same page.
-    remove_filter('posts_orderby', 'astra_nodes_custom_orderby_stickies');
-
-    global $wpdb;
-
+    // Get the IDs of all the sticky posts.
     $sticky_posts = get_option('sticky_posts');
 
     if (empty($sticky_posts)) {
         return $orderby;
     }
 
+    global $wpdb;
+
     // Clean up the IDs for security reasons (ensure they are numbers).
     $sticky_ids = implode(',', array_map('intval', $sticky_posts));
 
     // MySQL custom order by code: Use IF() to assign a "0" to fixed posts and a "1" to normal posts.
     // Since 0s come before 1s, they will be placed at the beginning of everything globally.
-    return "IF({$wpdb->posts}.ID IN ({$sticky_ids}), 0, 1) ASC, " . $orderby;
+    $sticky_orderby = "IF({$wpdb->posts}.ID IN ({$sticky_ids}), 0, 1) ASC";
+
+    // The ORDER BY clause may be empty (i.e. 'orderby' => 'none'). Avoid a trailing comma in that case.
+    return trim($orderby) === '' ? $sticky_orderby : $sticky_orderby . ', ' . $orderby;
 }
