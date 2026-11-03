@@ -3320,3 +3320,35 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 add_filter('code_snippets_cap', static function ($cap) {
     return is_xtec_super_admin() ? $cap : 'do_not_allow';
 });
+
+/**
+ * Prevent unauthenticated user enumeration.
+ *  - REST API: remove /wp/v2/users and the whole BuddyPress namespace (/buddypress/v1: members
+ *    with user_login, activity, groups...) for anonymous requests. BuddyPress pages are already
+ *    private (plugin private-bp-pages), but its REST API was not. The REST cookie check has
+ *    already run when routes are resolved, so logged-in users (block editor, BP) keep them.
+ *  - ?author=N: return 404 to anonymous visitors instead of redirecting to /author/<slug>/.
+ *  - Sitemaps: remove the users provider.
+ */
+add_filter('rest_endpoints', static function ($endpoints) {
+    if (!is_user_logged_in()) {
+        foreach (array_keys($endpoints) as $route) {
+            if (str_starts_with($route, '/wp/v2/users') || str_starts_with($route, '/buddypress/v1')) {
+                unset($endpoints[$route]);
+            }
+        }
+    }
+    return $endpoints;
+});
+
+add_filter('request', static function ($query_vars) {
+    if (isset($_GET['author']) && !is_admin() && !is_user_logged_in()) {
+        unset($query_vars['author']);
+        $query_vars['error'] = '404';
+    }
+    return $query_vars;
+});
+
+add_filter('wp_sitemaps_add_provider', static function ($provider, $name) {
+    return ('users' === $name) ? false : $provider;
+}, 10, 2);
