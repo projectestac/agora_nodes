@@ -3311,3 +3311,12 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
     }
 
 }, 9999);
+
+/**
+ * Restrict Code Snippets to xtecadmin. Filtering the capability (instead of only hiding the
+ * menu) also blocks the REST API, the edit and import pages and any other entry point
+ * that checks code_snippets()->current_user_can(). Active snippets keep running.
+ */
+add_filter('code_snippets_cap', static function ($cap) {
+    return is_xtec_super_admin() ? $cap : 'do_not_allow';
+});
