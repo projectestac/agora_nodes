@@ -4,6 +4,16 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/agora_nodes
 
 
+Changes 26.11.03
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 6.7.11
+- Nodes 2: Fixed sticky posts for anonymous users when bp-docs is active
+- agora-functions: Prevent unauthenticated user enumeration
+- code-snippets: Improved restriction of access to regular administrators
+- Menus: Move link to delete the menu far away from the Save menu button
+- XTEC lib: cli.php: Added parameter to list actions
+
+
 Changes 26.09.29
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 6.7.8
