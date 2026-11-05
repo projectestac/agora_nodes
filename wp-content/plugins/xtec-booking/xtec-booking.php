@@ -3,8 +3,9 @@
  * Plugin Name: Booking Classrooms and resources
  * Plugin URI:
  * Description: Allow booking classrooms and diferents resources into bootstrap calendar
- * Version: 1.1
+ * Version: 1.2
  * Author: Xavier Nieto
+ * Author: Toni Ginard
  * Author URI:
  * Licence: GPLv2
  */
