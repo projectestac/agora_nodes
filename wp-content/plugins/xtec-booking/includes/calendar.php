@@ -133,8 +133,11 @@ function xtec_booking_get_events($resourceID = false)
         $startStr = $data[XTEC_BOOKING_START_DATE] . ' ' . $data[XTEC_BOOKING_START_TIME];
         $endStr = $data[XTEC_BOOKING_FINISH_DATE] . ' ' . $data[XTEC_BOOKING_FINISH_TIME];
 
-        $startDateTimeObj = DateTime::createFromFormat($format, $startStr);
-        $endDateTimeObj = DateTime::createFromFormat($format, $endStr);
+        // Dates and times are stored in the site's local time. WordPress forces PHP's default timezone to UTC, so the
+        // site timezone must be passed explicitly. Otherwise, the timestamps sent to the calendar are shifted.
+        $timezone = wp_timezone();
+        $startDateTimeObj = DateTime::createFromFormat($format, $startStr, $timezone);
+        $endDateTimeObj = DateTime::createFromFormat($format, $endStr, $timezone);
 
         if (!$startDateTimeObj || !$endDateTimeObj) {
             continue;
@@ -228,7 +231,7 @@ function xtec_booking_add_event(int|WP_Post $post, array|WP_Post|null $resource,
                                 mixed $data, int $startDateTime, int $startEndDateTime): array
 {
     $user = get_userdata($post->post_author);
-    $user = ($user->data->display_name === '') ? $user->data->display_name : $user->data->user_login;
+    $user = ($user->data->display_name !== '') ? $user->data->display_name : $user->data->user_login;
 
     $description = strip_tags($post->post_content);
     if (($description !== '') && strlen($description) > NUM_CHARACTERS) {

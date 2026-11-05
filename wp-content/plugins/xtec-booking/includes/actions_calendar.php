@@ -12,7 +12,14 @@ function check_available_dates($data, $post_id)
         $available = true;
 
         // Get all bookings of the same resource.
-        $bookings = $wpdb->get_results("SELECT * FROM wp_postmeta WHERE post_id != " . $post_id . " AND post_id IN (SELECT post_id FROM wp_postmeta WHERE meta_value = " . $data['_xtec-booking-resource'] . ") AND meta_key = '_xtec-booking-data'");
+        $bookings = $wpdb->get_results($wpdb->prepare(
+            "SELECT * FROM $wpdb->postmeta
+             WHERE post_id != %d
+               AND meta_key = '_xtec-booking-data'
+               AND post_id IN (SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_xtec-booking-resource' AND meta_value = %s)",
+            (int)$post_id,
+            (string)$data['_xtec-booking-resource']
+        ));
 
         // Data example: $data['_xtec-booking-start-date'] => string(10) "23-03-2026"
 
@@ -86,9 +93,11 @@ function check_availability(array $data, array $meta_value, int $day_start_new, 
         if (($day_start_old === $day_start_new) && ($day_end_old === $day_end_new) && ($day_start_new === $day_end_new)) {
             $day = true;
         } elseif ($day_start_old === $day_end_old) {
-            $day = check_day($data, $day_start_new);
+            // Check if the weekday of the old single-day booking is selected in the new booking.
+            $day = check_day($data, $day_start_old);
         } elseif ($day_start_new === $day_end_new) {
-            $day = check_day($meta_value, $day_start_old);
+            // Check if the weekday of the new single-day booking is selected in the old booking.
+            $day = check_day($meta_value, $day_start_new);
         } else {
             // If the new booking and the old one are not single day bookings, check if they have at least one day in common.
             $day = check_day_of_the_week($data, $meta_value);
