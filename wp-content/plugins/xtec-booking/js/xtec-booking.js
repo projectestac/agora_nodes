@@ -157,28 +157,22 @@ function xtec_add_calendar(data, booking = false) {
     not_acces_day_template(booking);
 }
 
+// Update the select/unselect all button according to the current state of the resource checkboxes: if any resource is
+// checked, the button unselects all of them; otherwise, it selects all of them.
 function xtec_change_button() {
-    let option = false;
-    jQuery('input[id^="resource-"]').each(function () {
-        let select = jQuery(this).attr('checked');
-        if (select) {
-            option = true;
-            return false;
-        }
-    });
+    // Use the property (current state), not the attribute 'checked' (initial state in the HTML).
+    const anyChecked = jQuery('input[id^="resource-"]:checked').length > 0;
 
     // The texts are only defined in the calendar page. In the booking page (calendar widget) they don't exist, and an
     // exception here would leave the calendar blocked behind the wait overlay.
     const txtSelect = typeof selectResources !== 'undefined' ? selectResources : '';
     const txtUnselect = typeof unselectResources !== 'undefined' ? unselectResources : '';
 
-    if (!option) {
-        jQuery('#xtec_selection').attr('data-action', 'select');
-        jQuery('#xtec_selection').attr('value', txtSelect);
-    } else {
-        jQuery('#xtec_selection').attr('data-action', 'unselect');
-        jQuery('#xtec_selection').attr('value', txtUnselect);
-    }
+    const action = anyChecked ? 'unselect' : 'select';
+
+    jQuery('#xtec_selection')
+        .attr('data-action', action)
+        .val(anyChecked ? txtUnselect : txtSelect);
 }
 
 function xtec_events(update = false, booking = false) {
@@ -610,12 +604,13 @@ function setupResourceSelection(txtSelect, txtUnselect) {
     // 2. Botó global de Seleccionar / Deseleccionar
     jQuery('#xtec_selection').on('click', function () {
         const $btn = jQuery(this);
-        const isUnselect = $btn.data('action') === 'unselect';
+        // Decide from the current state of the checkboxes, so the button is always consistent with them.
+        const isUnselect = jQuery('input[id^="resource-"]:checked').length > 0;
 
         $btn.prop('disabled', true);
-        jQuery('input[name^="resource-"]').prop('checked', !isUnselect);
+        jQuery('input[id^="resource-"]').prop('checked', !isUnselect);
 
-        $btn.data('action', isUnselect ? 'select' : 'unselect')
+        $btn.attr('data-action', isUnselect ? 'select' : 'unselect')
             .val(isUnselect ? txtSelect : txtUnselect);
 
         // Només fem trigger del primer per no saturar de peticions AJAX el calendari

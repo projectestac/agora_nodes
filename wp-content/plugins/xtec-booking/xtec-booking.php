@@ -11,7 +11,7 @@
  */
 
 // Version of the plugin's own JS and CSS files. Increase it whenever they change, so browsers don't use cached copies.
-const XTEC_BOOKING_ASSETS_VERSION = '1.2';
+const XTEC_BOOKING_ASSETS_VERSION = '1.3';
 
 include_once plugin_dir_path(__FILE__) . 'includes/resources.php';
 include_once plugin_dir_path(__FILE__) . 'includes/booking.php';

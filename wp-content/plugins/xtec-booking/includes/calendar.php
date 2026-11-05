@@ -149,8 +149,16 @@ function xtec_booking_get_event(int $eventID): ?string
     return json_encode($request);
 }
 
+/**
+ * Get the events of the calendar as JSON. $resourceID can be false (all resources), 'no-events' (no resource selected,
+ * so no events) or a list of resource IDs.
+ */
 function xtec_booking_get_events($resourceID = false)
 {
+    if ($resourceID === 'no-events') {
+        return json_encode([]);
+    }
+
     $events = [];
     $posts = get_posts([
         'post_type' => 'calendar_booking',
@@ -164,7 +172,7 @@ function xtec_booking_get_events($resourceID = false)
     $is_admin = in_array('administrator', $roles, true);
     $is_editor = in_array('editor', $roles, true);
 
-    $target_resources = ($resourceID !== false && $resourceID !== 'no-events') ? (array)$resourceID : [];
+    $target_resources = ($resourceID !== false) ? (array)$resourceID : [];
 
     foreach ($posts as $post) {
 
@@ -434,7 +442,7 @@ function xtec_display_calendar($data, $shortcode): string
 
         foreach ($posts as $post) {
 
-            xtec_display_calendar_process_post($post, $shortcode, $calendar);
+            $calendar = xtec_display_calendar_process_post($post, $shortcode, $calendar);
 
         }
     }
@@ -477,8 +485,9 @@ function xtec_display_calendar_process_post(mixed $post, $shortcode, string $cal
     $status = get_post_meta($post->ID, XTEC_RESOURCES_STATUS, true);
 
     $roles = wp_get_current_user();
+    // Resources restricted to admins are only listed to administrators and editors.
     if (($status === 'admin_users') &&
-        (!in_array('administrator', $roles->roles) || (!in_array('editor', $roles->roles)))) {
+        !in_array('administrator', $roles->roles, true) && !in_array('editor', $roles->roles, true)) {
         return $calendar;
     }
 
