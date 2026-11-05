@@ -2,12 +2,7 @@
 
 function xtec_add_metabox_booking(): void
 {
-    // DATETIME PICKER
-    wp_register_script('datetime-js', plugins_url() . '/xtec-booking/includes/vendor/datetimepicker/jquery.js', ['jquery'], '1.1', true);
-    wp_enqueue_script('datetime-js');
-    wp_register_script('datetimepicker-js', plugins_url() . '/xtec-booking/includes/vendor/datetimepicker/build/jquery.datetimepicker.full.min.js', ['jquery'], '1.1', true);
-    wp_enqueue_script('datetimepicker-js');
-    wp_enqueue_style('datetime-css', plugins_url() . '/xtec-booking/includes/vendor/datetimepicker/jquery.datetimepicker.css');
+    // The scripts and styles (date/time picker, calendar) are loaded in the admin_enqueue_scripts hook.
 
     $metabox = [
             'id' => 'xtec_booking_parameters',

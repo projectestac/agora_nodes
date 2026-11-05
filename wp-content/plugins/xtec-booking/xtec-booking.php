@@ -118,7 +118,9 @@ add_action('admin_menu', function (): void {
     $allowed_roles = ['administrator', 'editor', 'author', 'contributor', 'xtec_teacher'];
 
     if (array_intersect($allowed_roles, $user->roles)) {
-        add_submenu_page(
+        // Keep the hook suffix of the calendar page to load its scripts only there. It can't be hardcoded because it
+        // depends on the translated menu title of the post type.
+        $GLOBALS['xtec_booking_calendar_hook'] = add_submenu_page(
                 'edit.php?post_type=calendar_booking',
                 'Custom Post Type Admin',
                 __('Calendar', 'xtec-booking'),
@@ -255,46 +257,53 @@ add_filter('wp_insert_post_data', function ($data, $postarr) {
 
 }, 10, 2);
 
-// Load scripts and styles only in booking and resources pages.
-add_action('admin_head', function (): void {
-    global $post;
-    $current_url = $_SERVER['REQUEST_URI'];
+/**
+ * Load scripts and styles only in the screens of the plugin, each one with the files it needs:
+ *  - Calendar page: common files and calendar (with the Bootstrap CSS).
+ *  - New/edit booking: common files, date/time picker and calendar widget.
+ *  - New/edit resource: common files and the script to check the bookings before deleting the resource.
+ *  - Lists of bookings and resources: common files (checks before moving to trash).
+ */
+add_action('admin_enqueue_scripts', function (string $hook_suffix): void {
+    $screen = get_current_screen();
+    $screen_id = $screen->id ?? '';
 
-    $check_calendar_booking = strpos($current_url, 'post_type=calendar_booking&page=xtec-booking.php');
-    $check_xtec_booking = strpos($current_url, 'xtec-booking.php');
+    $is_calendar_page = !empty($GLOBALS['xtec_booking_calendar_hook']) && $hook_suffix === $GLOBALS['xtec_booking_calendar_hook'];
+    $is_booking_edit = ($screen_id === 'calendar_booking');
+    $is_resource_edit = ($screen_id === 'calendar_resources');
+    $is_list = in_array($screen_id, ['edit-calendar_booking', 'edit-calendar_resources'], true);
 
-    if (!empty($post) || $check_calendar_booking !== false || $check_xtec_booking !== false) {
+    if (!$is_calendar_page && !$is_booking_edit && !$is_resource_edit && !$is_list) {
+        return;
+    }
 
-        if (get_post_type($post) === 'calendar_booking' || get_post_type($post) === 'calendar_resources' ||
-                $check_calendar_booking !== false || $check_xtec_booking !== false) {
-            wp_register_script('xtec-booking-js', plugins_url() . '/xtec-booking/js/xtec-booking.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
+    $plugin_url = plugins_url() . '/xtec-booking';
 
-            // Get language WordPress.
-            $language_locale = ['locale' => get_locale()];
+    // Common files.
+    wp_register_script('xtec-booking-js', $plugin_url . '/js/xtec-booking.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
+    wp_localize_script('xtec-booking-js', 'locale', ['locale' => get_locale()]);
+    wp_localize_script('xtec-booking-js', 'xtecBookingAjax', ['nonce' => wp_create_nonce('xtec-booking')]);
+    wp_enqueue_script('xtec-booking-js');
+    wp_enqueue_style('style-xtec-booking', $plugin_url . '/css/xtec-booking.css', [], XTEC_BOOKING_ASSETS_VERSION);
 
-            // Add js variable with language
-            wp_localize_script('xtec-booking-js', 'locale', $language_locale);
+    // Texts used by the scripts.
+    add_action('admin_footer', 'xtec_booking_text_javascript');
 
-            // Nonce for the AJAX requests of the plugin.
-            wp_localize_script('xtec-booking-js', 'xtecBookingAjax', ['nonce' => wp_create_nonce('xtec-booking')]);
+    if ($is_resource_edit) {
+        wp_enqueue_script('xtec-booking-resources-js', $plugin_url . '/js/xtec-booking-resources.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
+    }
 
-            wp_enqueue_script('xtec-booking-js');
-            wp_enqueue_style('style-xtec-booking', plugins_url() . '/xtec-booking/css/xtec-booking.css', [], XTEC_BOOKING_ASSETS_VERSION);
+    if ($is_booking_edit) {
+        // Date/time picker. It is a jQuery plugin: it uses the jQuery of WordPress.
+        $datetimepicker_url = $plugin_url . '/includes/vendor/datetimepicker';
+        wp_enqueue_script('datetimepicker-js', $datetimepicker_url . '/build/jquery.datetimepicker.full.min.js', ['jquery'], '2.5.4', true);
+        wp_enqueue_style('datetime-css', $datetimepicker_url . '/jquery.datetimepicker.css', [], '2.5.4');
 
-            // Load javascript variables texts.
-            add_action('admin_footer', 'xtec_booking_text_javascript');
-        }
+        xtec_booking_calendar_libraries('booking');
+    }
 
-        if (get_post_type($post) === 'calendar_resources') {
-            wp_register_script('xtec-booking-resources-js', plugins_url() . '/xtec-booking/js/xtec-booking-resources.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
-            wp_enqueue_script('xtec-booking-resources-js');
-        }
-
-        if (isset($post->post_type) && $post->post_type === 'calendar_booking') {
-            xtec_booking_calendar_libraries('booking');
-        } elseif ($check_calendar_booking || $check_xtec_booking) {
-            xtec_booking_calendar_libraries();
-        }
+    if ($is_calendar_page) {
+        xtec_booking_calendar_libraries();
     }
 });
 
