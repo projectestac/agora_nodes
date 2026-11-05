@@ -24,13 +24,15 @@ function xtec_booking_show_calendar_page($shortcode = null)
 
 function xtec_booking_calendar_libraries($shortcode = false): void
 {
-    // BOOTSTRAP JS
-    wp_register_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
-    wp_enqueue_script('bootstrap-js');
+    // BOOTSTRAP 3.4.1, served from the plugin. The JS is a custom build with only the components used by the calendar
+    // (transition, tooltip, modal and collapse). See includes/vendor/bootstrap-3.4.1/README.md.
+    $bootstrap_url = plugins_url() . '/xtec-booking/includes/vendor/bootstrap-3.4.1';
+    wp_register_script('xtec-booking-bootstrap', $bootstrap_url . '/js/bootstrap-custom.js', ['jquery'], '3.4.1', true);
+    wp_enqueue_script('xtec-booking-bootstrap');
 
     if (is_null($shortcode) || $shortcode === false) {
         // BOOTSTRAP CSS
-        wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+        wp_enqueue_style('xtec-booking-bootstrap', $bootstrap_url . '/css/bootstrap.min.css', [], '3.4.1');
     } else {
         // CUSTOM JS AND CSS TO CALENDAR
         wp_register_script('booking-calendar-js', plugins_url() . '/xtec-booking/js/xtec-booking-calendar.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
@@ -45,7 +47,7 @@ function xtec_booking_calendar_libraries($shortcode = false): void
     wp_register_script(
         'calendar-js',
         plugins_url() . '/xtec-booking/includes/vendor/calendar/js/calendar.min.js',
-        ['jquery', 'underscore'],
+        ['jquery', 'underscore', 'xtec-booking-bootstrap'],
         '1.1',
         true
     );
