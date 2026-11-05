@@ -1,62 +1,58 @@
 <?php
 
-// Check available dates
-function check_available_dates($data, $post_id)
+/**
+ * Check if the resource of the booking is available in its dates and times. The caller decides when it must be
+ * checked (i.e. when the booking is going to be published).
+ */
+function check_available_dates(array $data, int $post_id): bool
 {
-    // If the booking is not public or is a draft or pending, it will be available without checking the dates.
-    if ($_POST['visibility'] !== 'public' || $_POST['post_status'] === 'draft' || $_POST['post_status'] === 'pending') {
-        $available = true;
-    } else {
+    global $wpdb;
+    $available = true;
 
-        global $wpdb;
-        $available = true;
+    // Get all bookings of the same resource.
+    $bookings = $wpdb->get_results($wpdb->prepare(
+        "SELECT * FROM $wpdb->postmeta
+         WHERE post_id != %d
+           AND meta_key = '_xtec-booking-data'
+           AND post_id IN (SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_xtec-booking-resource' AND meta_value = %s)",
+        (int)$post_id,
+        (string)$data['_xtec-booking-resource']
+    ));
 
-        // Get all bookings of the same resource.
-        $bookings = $wpdb->get_results($wpdb->prepare(
-            "SELECT * FROM $wpdb->postmeta
-             WHERE post_id != %d
-               AND meta_key = '_xtec-booking-data'
-               AND post_id IN (SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_xtec-booking-resource' AND meta_value = %s)",
-            (int)$post_id,
-            (string)$data['_xtec-booking-resource']
-        ));
+    // Data example: $data['_xtec-booking-start-date'] => string(10) "23-03-2026"
 
-        // Data example: $data['_xtec-booking-start-date'] => string(10) "23-03-2026"
+    // Get the timestamp of the start and finish dates of the new booking.
+    [$day_start_new, $day_end_new] = convert_days_to_timestamp($data['_xtec-booking-start-date'], $data['_xtec-booking-finish-date']);
 
-        // Get the timestamp of the start and finish dates of the new booking.
-        [$day_start_new, $day_end_new] = convert_days_to_timestamp($data['_xtec-booking-start-date'], $data['_xtec-booking-finish-date']);
+    // If the conversion fails, return there is no availability.
+    if (!is_int($day_start_new) || !is_int($day_end_new)) {
+        return false;
+    }
 
-        // If the conversion fails, return there is no availability.
-        if (!is_int($day_start_new) || !is_int($day_end_new)) {
-            return false;
+    foreach ($bookings as $booking) {
+
+        $visibilityPost = get_post($booking->post_id);
+        if ($visibilityPost->post_status !== 'publish') {
+            continue;
         }
 
-        foreach ($bookings as $booking) {
+        // Example of $booking->meta_value:
+        //  string(569) "a:14:{s:10:"post_title";s:22:"Reserva #3 (xtecadmin)";s:7:"content";s:3:"---";
+        //               s:22:"_xte-booking-resource";s:3:"718";s:24:"_xtec-booking-start-date";s:10:"18-02-2026";
+        //               s:25:"_xtec-booking-finish-date";s:10:"18-02-2026";s:24:"_xtec-booking-day-monday";b:0;
+        //               s:25:"_xtec-booking-day-tuesday";b:0;s:27:"_xtec-booking-day-wednesday";b:0;
+        //               s:26:"_xtec-booking-day-thursday";b:0;s:24:"_xtec-booking-day-friday";b:0;
+        //               s:26:"_xtec-booking-day-saturday";b:0;s:24:"_xtec-booking-day-sunday";b:0;
+        //               s:24:"_xtec-booking-start-time";s:5:"14:00";s:25:"_xtec-booking-finish-time";s:5:"15:00";}"
 
-            $visibilityPost = get_post($booking->post_id);
-            if ($visibilityPost->post_status !== 'publish') {
-                continue;
-            }
+        $meta_value = unserialize($booking->meta_value, ['allowed_classes' => false]);
 
-            // Example of $booking->meta_value:
-            //  string(569) "a:14:{s:10:"post_title";s:22:"Reserva #3 (xtecadmin)";s:7:"content";s:3:"---";
-            //               s:22:"_xte-booking-resource";s:3:"718";s:24:"_xtec-booking-start-date";s:10:"18-02-2026";
-            //               s:25:"_xtec-booking-finish-date";s:10:"18-02-2026";s:24:"_xtec-booking-day-monday";b:0;
-            //               s:25:"_xtec-booking-day-tuesday";b:0;s:27:"_xtec-booking-day-wednesday";b:0;
-            //               s:26:"_xtec-booking-day-thursday";b:0;s:24:"_xtec-booking-day-friday";b:0;
-            //               s:26:"_xtec-booking-day-saturday";b:0;s:24:"_xtec-booking-day-sunday";b:0;
-            //               s:24:"_xtec-booking-start-time";s:5:"14:00";s:25:"_xtec-booking-finish-time";s:5:"15:00";}"
+        // Check if there is the resource is available in the dates of the booking.
+        $available = check_availability($data, $meta_value, $day_start_new, $day_end_new);
 
-            $meta_value = unserialize($booking->meta_value, ['allowed_classes' => false]);
-
-            // Check if there is the resource is available in the dates of the booking.
-            $available = check_availability($data, $meta_value, $day_start_new, $day_end_new);
-
-            if (!$available) {
-                break;
-            }
+        if (!$available) {
+            break;
         }
-
     }
 
     return $available;

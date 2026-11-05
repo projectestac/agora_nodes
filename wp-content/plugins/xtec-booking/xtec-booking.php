@@ -9,6 +9,9 @@
  * Licence: GPLv2
  */
 
+// Version of the plugin's own JS and CSS files. Increase it whenever they change, so browsers don't use cached copies.
+const XTEC_BOOKING_ASSETS_VERSION = '1.2';
+
 include_once plugin_dir_path(__FILE__) . 'includes/resources.php';
 include_once plugin_dir_path(__FILE__) . 'includes/booking.php';
 include_once plugin_dir_path(__FILE__) . 'includes/calendar.php';
@@ -144,19 +147,70 @@ add_filter('post_updated_messages', function () {
     }
 });
 
-// Save post meta for resources and bookings
-add_filter('wp_insert_post_data', function ($data) {
-    if (isset($_POST[XTEC_RESOURCES_STATUS])) {
-        // Add field post meta - Status Resource
-        update_post_meta($_POST['post_ID'], XTEC_RESOURCES_STATUS, $_POST[XTEC_RESOURCES_STATUS]);
-        update_post_meta($_POST['post_ID'], '_xtec_resources_color', $_POST['_xtec_resources_color']);
+/**
+ * Return the value if it is a valid date in format dd-mm-yyyy, or an empty string otherwise.
+ */
+function xtec_booking_sanitize_date(mixed $value): string
+{
+    if (!is_string($value) || !preg_match('/^\d{2}-\d{2}-\d{4}$/', $value)) {
+        return '';
     }
 
-    if (isset($_POST[XTEC_BOOKING_RESOURCE])) {
+    $date = DateTime::createFromFormat('!d-m-Y', $value);
 
-        // start_time and finish_time must have correct values; if not, booking couldn't be published
-        if (empty($_POST[XTEC_BOOKING_START_TIME]) || ($_POST[XTEC_BOOKING_START_TIME] === '__:__') || empty($_POST[XTEC_BOOKING_FINISH_TIME])) {
-            $data['post_status'] = 'pending';
+    return ($date && $date->format('d-m-Y') === $value) ? $value : '';
+}
+
+/**
+ * Return the value if it is a valid time in format hh:mm (24h), or an empty string otherwise.
+ */
+function xtec_booking_sanitize_time(mixed $value): string
+{
+    return (is_string($value) && preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $value)) ? $value : '';
+}
+
+// Save post meta for resources and bookings
+add_filter('wp_insert_post_data', function ($data, $postarr) {
+    $post_id = (int)($postarr['ID'] ?? 0);
+    $post_type = $data['post_type'] ?? '';
+
+    // Only act when saving a resource or a booking that already exists (the edit form works on an auto-draft) and the
+    // current user is allowed to edit it. Any other call to wp_insert_post() must not touch the meta of any post.
+    if (!in_array($post_type, ['calendar_resources', 'calendar_booking'], true) || $post_id === 0 ||
+        !current_user_can('edit_post', $post_id)) {
+        return $data;
+    }
+
+    if ($post_type === 'calendar_resources' && isset($_POST[XTEC_RESOURCES_STATUS])) {
+        $allowed_status = ['all_users', 'inactive', 'admin_users'];
+        $allowed_colors = ['red', 'yellow', 'blue', 'black', 'green', 'purple', 'orange', 'pink', 'brown', 'light_blue'];
+
+        $status = sanitize_key(wp_unslash($_POST[XTEC_RESOURCES_STATUS]));
+        $color = sanitize_key(wp_unslash($_POST['_xtec_resources_color'] ?? ''));
+
+        update_post_meta($post_id, XTEC_RESOURCES_STATUS, in_array($status, $allowed_status, true) ? $status : 'all_users');
+        update_post_meta($post_id, '_xtec_resources_color', in_array($color, $allowed_colors, true) ? $color : 'blue');
+    }
+
+    if ($post_type === 'calendar_booking' && isset($_POST[XTEC_BOOKING_RESOURCE])) {
+
+        // Only store IDs of resources (an inactive one is kept, so the booking still shows it while it is pending).
+        $resource_id = absint(wp_unslash($_POST[XTEC_BOOKING_RESOURCE]));
+        if (get_post_type($resource_id) !== 'calendar_resources') {
+            $resource_id = 0;
+        }
+        $start_date = xtec_booking_sanitize_date(wp_unslash($_POST['_xtec-booking-start-date'] ?? ''));
+        $finish_date = xtec_booking_sanitize_date(wp_unslash($_POST['_xtec-booking-finish-date'] ?? ''));
+        $start_time = xtec_booking_sanitize_time(wp_unslash($_POST[XTEC_BOOKING_START_TIME] ?? ''));
+        $finish_time = xtec_booking_sanitize_time(wp_unslash($_POST[XTEC_BOOKING_FINISH_TIME] ?? ''));
+
+        // The resource must be one the user can book, and dates and times must be valid. If not, the booking can't be
+        // published. Invalid values are not stored.
+        if (!xtec_booking_user_can_book_resource($resource_id) ||
+            $start_date === '' || $finish_date === '' || $start_time === '' || $finish_time === '') {
+            if ($data['post_status'] === 'publish') {
+                $data['post_status'] = 'pending';
+            }
             add_filter('redirect_post_location', 'xtec_post_location_filter', 99, 2);
         }
 
@@ -169,11 +223,12 @@ add_filter('wp_insert_post_data', function ($data) {
         }
 
         $dataBooking = [
-                'post_title' => $_POST['post_title'] . ' ' . $user,
-                'content' => $_POST['post_content'],
-                XTEC_BOOKING_RESOURCE => $_POST[XTEC_BOOKING_RESOURCE],
-                '_xtec-booking-start-date' => $_POST['_xtec-booking-start-date'],
-                '_xtec-booking-finish-date' => $_POST['_xtec-booking-finish-date'],
+                // $data is already unslashed and filtered by WordPress (kses for users without unfiltered_html).
+                'post_title' => $data['post_title'] . ' ' . $user,
+                'content' => $data['post_content'],
+                XTEC_BOOKING_RESOURCE => (string)$resource_id,
+                '_xtec-booking-start-date' => $start_date,
+                '_xtec-booking-finish-date' => $finish_date,
                 '_xtec-booking-day-monday' => isset($_POST['_xtec-booking-day-monday']),
                 '_xtec-booking-day-tuesday' => isset($_POST['_xtec-booking-day-tuesday']),
                 '_xtec-booking-day-wednesday' => isset($_POST['_xtec-booking-day-wednesday']),
@@ -181,27 +236,23 @@ add_filter('wp_insert_post_data', function ($data) {
                 '_xtec-booking-day-friday' => isset($_POST['_xtec-booking-day-friday']),
                 '_xtec-booking-day-saturday' => isset($_POST['_xtec-booking-day-saturday']),
                 '_xtec-booking-day-sunday' => isset($_POST['_xtec-booking-day-sunday']),
-                XTEC_BOOKING_START_TIME => $_POST[XTEC_BOOKING_START_TIME],
-                XTEC_BOOKING_FINISH_TIME => $_POST[XTEC_BOOKING_FINISH_TIME],
+                XTEC_BOOKING_START_TIME => $start_time,
+                XTEC_BOOKING_FINISH_TIME => $finish_time,
         ];
 
-        // CHECK AVAILABLE
-        $calendarReq = check_available_dates($dataBooking, $_POST['post_ID']);
-
-        if (!$calendarReq) {
+        // Check availability whenever the booking is going to be published, regardless of the visibility.
+        if ($data['post_status'] === 'publish' && !check_available_dates($dataBooking, $post_id)) {
             $data['post_status'] = 'pending';
             add_filter('redirect_post_location', 'xtec_post_location_filter', 99, 2);
         }
 
-        $idBooking = $_POST['ID'];
-
-        update_post_meta($idBooking, XTEC_BOOKING_RESOURCE, $_POST[XTEC_BOOKING_RESOURCE]);
-        update_post_meta($idBooking, '_xtec-booking-data', $dataBooking);
+        update_post_meta($post_id, XTEC_BOOKING_RESOURCE, (string)$resource_id);
+        update_post_meta($post_id, '_xtec-booking-data', $dataBooking);
     }
 
     return $data;
 
-});
+}, 10, 2);
 
 // Load scripts and styles only in booking and resources pages.
 add_action('admin_head', function (): void {
@@ -215,7 +266,7 @@ add_action('admin_head', function (): void {
 
         if (get_post_type($post) === 'calendar_booking' || get_post_type($post) === 'calendar_resources' ||
                 $check_calendar_booking !== false || $check_xtec_booking !== false) {
-            wp_register_script('xtec-booking-js', plugins_url() . '/xtec-booking/js/xtec-booking.js', ['jquery'], '1.1', true);
+            wp_register_script('xtec-booking-js', plugins_url() . '/xtec-booking/js/xtec-booking.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
 
             // Get language WordPress.
             $language_locale = ['locale' => get_locale()];
@@ -223,15 +274,18 @@ add_action('admin_head', function (): void {
             // Add js variable with language
             wp_localize_script('xtec-booking-js', 'locale', $language_locale);
 
+            // Nonce for the AJAX requests of the plugin.
+            wp_localize_script('xtec-booking-js', 'xtecBookingAjax', ['nonce' => wp_create_nonce('xtec-booking')]);
+
             wp_enqueue_script('xtec-booking-js');
-            wp_enqueue_style('style-xtec-booking', plugins_url() . '/xtec-booking/css/xtec-booking.css');
+            wp_enqueue_style('style-xtec-booking', plugins_url() . '/xtec-booking/css/xtec-booking.css', [], XTEC_BOOKING_ASSETS_VERSION);
 
             // Load javascript variables texts.
             add_action('admin_footer', 'xtec_booking_text_javascript');
         }
 
         if (get_post_type($post) === 'calendar_resources') {
-            wp_register_script('xtec-booking-resources-js', plugins_url() . '/xtec-booking/js/xtec-booking-resources.js', ['jquery'], '1.1', true);
+            wp_register_script('xtec-booking-resources-js', plugins_url() . '/xtec-booking/js/xtec-booking-resources.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
             wp_enqueue_script('xtec-booking-resources-js');
         }
 
@@ -303,16 +357,16 @@ add_action('manage_posts_custom_column', function ($name) {
             $wpStatus = get_post_status($views);
 
             if ($status === 'inactive') {
-                echo $views->post_title . '&nbsp;&nbsp;&nbsp;&nbsp;<br><small style="color:red;font-size:10px"><strong>' . __('Not available resource', 'xtec-booking') . '</strong></small>';
+                echo esc_html($views->post_title) . '&nbsp;&nbsp;&nbsp;&nbsp;<br><small style="color:red;font-size:10px"><strong>' . __('Not available resource', 'xtec-booking') . '</strong></small>';
             } elseif ($wpStatus === 'private') {
                 $roles = wp_get_current_user();
                 if (!in_array('administrator', $roles->roles)) {
-                    echo $views->post_title . '&nbsp;&nbsp;&nbsp;&nbsp;<br><small style="color:red;font-size:10px"><strong>' . __('Only admin users', 'xtec-booking') . '</strong></small>';
+                    echo esc_html($views->post_title) . '&nbsp;&nbsp;&nbsp;&nbsp;<br><small style="color:red;font-size:10px"><strong>' . __('Only admin users', 'xtec-booking') . '</strong></small>';
                 } else {
-                    echo $views->post_title;
+                    echo esc_html($views->post_title);
                 }
             } else {
-                echo $views->post_title;
+                echo esc_html($views->post_title);
             }
             break;
 
@@ -326,7 +380,7 @@ add_action('manage_posts_custom_column', function ($name) {
             break;
 
         case 'description':
-            echo strip_tags($post->post_content);
+            echo esc_html(wp_strip_all_tags($post->post_content));
             break;
 
         default:
@@ -344,28 +398,52 @@ register_deactivation_hook(__FILE__, static function () {
     xtec_booking_deactive_plugin();
 });
 
-// AJAX FUNCTION TO CHECK BOOKINGS
-function resource_booking(): void
+/**
+ * Common checks for all the AJAX requests of the plugin: valid nonce and a user allowed to see the calendar. Only
+ * logged-in users can reach these functions, as they are not registered with wp_ajax_nopriv_*.
+ */
+function xtec_booking_ajax_check(): void
 {
-    if (isset($_REQUEST['data'])) {
+    check_ajax_referer('xtec-booking', 'nonce');
 
-        global $wpdb;
-
-        $postid = $_REQUEST['data'];
-        $result = $wpdb->get_results($wpdb->prepare("SELECT * FROM wp_postmeta WHERE meta_key = '" . XTEC_BOOKING_RESOURCE . "' AND meta_value = %d", $postid));
-
-        if (count($result) > 0) {
-            echo 'false';
-        } else {
-            echo 'true';
-        }
-
-        die();
+    if (!current_user_can('edit_posts')) {
+        wp_die('', '', ['response' => 403]);
     }
 }
 
+/**
+ * Get the first ID from the AJAX request parameter 'data', which can be a scalar or an array.
+ */
+function xtec_booking_ajax_get_id(): int
+{
+    $data = wp_unslash($_REQUEST['data'] ?? 0);
+
+    if (is_array($data)) {
+        $data = reset($data);
+    }
+
+    return absint($data);
+}
+
+// AJAX FUNCTION TO CHECK BOOKINGS
+function resource_booking(): void
+{
+    xtec_booking_ajax_check();
+
+    global $wpdb;
+
+    $count = (int)$wpdb->get_var($wpdb->prepare(
+        "SELECT COUNT(*) FROM $wpdb->postmeta WHERE meta_key = %s AND meta_value = %d",
+        XTEC_BOOKING_RESOURCE,
+        xtec_booking_ajax_get_id()
+    ));
+
+    echo ($count > 0) ? 'false' : 'true';
+
+    die();
+}
+
 add_action('wp_ajax_resource_booking', 'resource_booking');
-add_action('wp_ajax_nopriv_resource_booking', 'resource_booking');
 
 add_action('restrict_manage_posts', function () {
     global $wpdb;
@@ -402,14 +480,14 @@ add_action('restrict_manage_posts', function () {
                 if (isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] == $post->ID) {
                     ?>
                     <option value="<?php
-                    echo $post->ID ?>" selected><?php
-                        echo $post->post_title ?></option>
+                    echo (int)$post->ID ?>" selected><?php
+                        echo esc_html($post->post_title) ?></option>
                     <?php
                 } else {
                     ?>
                     <option value="<?php
-                    echo $post->ID ?>"><?php
-                        echo $post->post_title ?></option>
+                    echo (int)$post->ID ?>"><?php
+                        echo esc_html($post->post_title) ?></option>
                     <?php
                 }
             }
@@ -500,33 +578,57 @@ add_filter('post_updated_messages', function ($messages) {
 // AJAX FUNCTION TO GET RESOURCES
 function resource_selected(): void
 {
-    echo xtec_booking_get_events($_REQUEST['data']);
+    xtec_booking_ajax_check();
+
+    $data = wp_unslash($_REQUEST['data'] ?? 'no-events');
+
+    // Either 'no-events' or a list of resource IDs. xtec_booking_get_events() compares the IDs as strings.
+    if ($data !== 'no-events') {
+        $data = array_values(array_filter(array_map(static fn($id) => (string)absint($id), (array)$data)));
+        if (empty($data)) {
+            $data = 'no-events';
+        }
+    }
+
+    echo xtec_booking_get_events($data);
     die();
 }
 
 add_action('wp_ajax_resource_selected', 'resource_selected');
-add_action('wp_ajax_nopriv_resource_selected', 'resource_selected');
 
 // AJAX FUNCTION TO GET RESOURCES EVENT CALENDAR
 function get_event_modal(): void
 {
-    echo xtec_booking_get_event($_REQUEST['data']);
+    xtec_booking_ajax_check();
+
+    $event = xtec_booking_get_event(xtec_booking_ajax_get_id());
+
+    if ($event === null) {
+        wp_die('', '', ['response' => 404]);
+    }
+
+    echo $event;
     die();
 }
 
 add_action('wp_ajax_get_event_modal', 'get_event_modal');
-add_action('wp_ajax_nopriv_get_event_modal', 'get_event_modal');
 
 // AJAX FUNCTION TO GET RESOURCES EVENT CALENDAR
 function get_thumbnail_resource(): void
 {
-    $requests = xtec_booking_get_thumbnail_resource($_REQUEST['data']);
-    print_r($requests);
+    xtec_booking_ajax_check();
+
+    $resource_id = xtec_booking_ajax_get_id();
+
+    if (!xtec_booking_user_can_see_resource($resource_id)) {
+        wp_die('', '', ['response' => 404]);
+    }
+
+    echo xtec_booking_get_thumbnail_resource($resource_id);
     die();
 }
 
 add_action('wp_ajax_get_thumbnail_resource', 'get_thumbnail_resource');
-add_action('wp_ajax_nopriv_get_thumbnail_resource', 'get_thumbnail_resource');
 
 // REMOVE EDIT IN LINE ACTION
 add_filter('post_row_actions', function ($actions, $post) {

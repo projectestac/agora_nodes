@@ -45,6 +45,7 @@ function get_booking_content(events) {
         {
             'action': 'get_event_modal',
             'data': events.id,
+            'nonce': (window.xtecBookingAjax || {}).nonce,
         })
         .done(function (response) {
 
@@ -166,12 +167,17 @@ function xtec_change_button() {
         }
     });
 
+    // The texts are only defined in the calendar page. In the booking page (calendar widget) they don't exist, and an
+    // exception here would leave the calendar blocked behind the wait overlay.
+    const txtSelect = typeof selectResources !== 'undefined' ? selectResources : '';
+    const txtUnselect = typeof unselectResources !== 'undefined' ? unselectResources : '';
+
     if (!option) {
         jQuery('#xtec_selection').attr('data-action', 'select');
-        jQuery('#xtec_selection').attr('value', selectResources);
+        jQuery('#xtec_selection').attr('value', txtSelect);
     } else {
         jQuery('#xtec_selection').attr('data-action', 'unselect');
-        jQuery('#xtec_selection').attr('value', unselectResources);
+        jQuery('#xtec_selection').attr('value', txtUnselect);
     }
 }
 
@@ -188,6 +194,7 @@ function xtec_events(update = false, booking = false) {
             {
                 'action': 'resource_selected',
                 'data': update,
+                'nonce': (window.xtecBookingAjax || {}).nonce,
             })
             .done(function (response) {
 
@@ -540,7 +547,7 @@ function setupResourceTrashEvents() {
         const href = jQuery(this).attr('href');
         const postId = new URLSearchParams(href.split('?')[1]).get('post');
 
-        jQuery.post(ajaxurl, { action: 'resource_booking', data: [postId] }, function (response) {
+        jQuery.post(ajaxurl, { action: 'resource_booking', data: [postId], nonce: (window.xtecBookingAjax || {}).nonce }, function (response) {
             if (response === 'true') {
                 window.location.href = href;
             } else if (typeof xtec_booking_add_message === 'function') {

@@ -11,7 +11,8 @@ function xtec_booking_get_thumbnail(resourceId, resource) {
         ajaxurl,
         {
             'action': 'get_thumbnail_resource',
-            'data': resourceId
+            'data': resourceId,
+            'nonce': (window.xtecBookingAjax || {}).nonce
         })
         .done(function (response) {
             jQuery('#resource_wait').css('display', 'none');

@@ -31,7 +31,7 @@ function xtec_add_metabox_status_resources($post)
     <?php
     if ($data['status'] !== '') { ?>
         <script>
-            jQuery('select[name="_xtec_resources_status"] option[value="<?php echo $data['status']; ?>"').prop('selected', true);
+            jQuery('select[name="_xtec_resources_status"] option[value="<?php echo esc_js($data['status']); ?>"').prop('selected', true);
         </script>
     <?php
     } ?>
@@ -54,7 +54,7 @@ function xtec_add_metabox_status_resources($post)
     <?php
     if ($data['color'] !== '') { ?>
         <script>
-            jQuery('select[name="_xtec_resources_color"] option[value="<?php echo $data['color']; ?>"').prop('selected', true);
+            jQuery('select[name="_xtec_resources_color"] option[value="<?php echo esc_js($data['color']); ?>"').prop('selected', true);
         </script>
     <?php
     } ?>

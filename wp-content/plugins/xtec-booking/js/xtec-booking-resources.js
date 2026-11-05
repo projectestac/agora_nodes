@@ -15,6 +15,7 @@ jQuery( document ).ready( function() {
 			    {
 			        'action': 'resource_booking',
 			        'data':   post,
+			        'nonce':  (window.xtecBookingAjax || {}).nonce,
 			    },
 			    function(response){
 			        if(response != "true"){

@@ -100,7 +100,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                     if (count($data['results']) > 0) {
                         foreach ($data['results'] as $resources) {
                             ?>
-                            <option value="<?php echo $resources->ID; ?>"><?php echo $resources->post_title; ?></option>
+                            <option value="<?php echo (int)$resources->ID; ?>"><?php echo esc_html($resources->post_title); ?></option>
                             <?php
                         }
                     }
@@ -109,7 +109,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                 <script>
                     jQuery('select[name="_xtec-booking-resource"] option[value="<?php
                             if (isset($data['parameters']['_xtec-booking-resource'][0])) {
-                                echo $data['parameters']['_xtec-booking-resource'][0];
+                                echo (int)$data['parameters']['_xtec-booking-resource'][0];
                             }
                             ?>"').prop('selected', true);
                 </script>
@@ -124,7 +124,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                     <input id="xtec-booking-start-date" name="_xtec-booking-start-date" type="text"
                            class="xtec-booking-input-datetime"
                            style="width:246px; margin-bottom:5px;"
-                           value="<?php echo $xtec_booking_data_start_date; ?>"
+                           value="<?php echo esc_attr($xtec_booking_data_start_date); ?>"
                            required>
                     <span id="xtec-booking-before-date" class="style_message display_message_date">
                         <?php _e('Date before at actual date', 'xtec-booking'); ?>
@@ -138,7 +138,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                     <input id="xtec-booking-start-time"
                            name="_xtec-booking-start-time"
                            class="xtec-booking-input-time xtec-booking-input-datetime"
-                           value="<?php echo $xtec_booking_data_start_time; ?>"
+                           value="<?php echo esc_attr($xtec_booking_data_start_time); ?>"
                            type="text" required>
                 </div>
                 <div class="xtec-booking-datetime">
@@ -146,7 +146,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                     <br>
                     <input id="xtec-booking-finish-time" name="_xtec-booking-finish-time"
                            class="xtec-booking-input-time xtec-booking-input-datetime"
-                           value="<?php echo $xtec_booking_data_finish_time; ?>"
+                           value="<?php echo esc_attr($xtec_booking_data_finish_time); ?>"
                            type="text"
                            <?php if (empty($xtec_booking_data_finish_time)) { ?> disabled <?php } ?> required>
                 </div>
@@ -163,7 +163,7 @@ function xtec_add_metabox_parameters_booking_show_common_fields(
                            type="text"
                            class="xtec-booking-input-datetime"
                            style="width:246px; margin-bottom:4px;"
-                           value="<?php echo $xtec_booking_data_finish_date ?>"
+                           value="<?php echo esc_attr($xtec_booking_data_finish_date); ?>"
                            <?php if (!empty($xtec_booking_data) && $xtec_booking_data_finish_date === ''){ ?> disabled <?php } ?>
                            required>
                         <span id="xtec-booking-before-date-finish" class="style_message display_message_date">

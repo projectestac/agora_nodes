@@ -33,9 +33,9 @@ function xtec_booking_calendar_libraries($shortcode = false): void
         wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     } else {
         // CUSTOM JS AND CSS TO CALENDAR
-        wp_register_script('booking-calendar-js', plugins_url() . '/xtec-booking/js/xtec-booking-calendar.js', ['jquery'], '1.1', true);
+        wp_register_script('booking-calendar-js', plugins_url() . '/xtec-booking/js/xtec-booking-calendar.js', ['jquery'], XTEC_BOOKING_ASSETS_VERSION, true);
         wp_enqueue_script('booking-calendar-js');
-        wp_enqueue_style('calendar-booking-css', plugins_url() . '/xtec-booking/css/xtec-booking-calendar.css');
+        wp_enqueue_style('calendar-booking-css', plugins_url() . '/xtec-booking/css/xtec-booking-calendar.css', [], XTEC_BOOKING_ASSETS_VERSION);
     }
 
     // UNDERSCORE
@@ -65,29 +65,83 @@ function xtec_booking_calendar_libraries($shortcode = false): void
     wp_enqueue_style('calendar-css', plugins_url() . '/xtec-booking/includes/vendor/calendar/css/calendar.min.css');
 }
 
-function xtec_booking_get_event($eventID)
+/**
+ * Check whether the current user can see a resource: it must be a published resource, or a private one and the user
+ * is an administrator or an editor.
+ */
+function xtec_booking_user_can_see_resource(int $resource_id): bool
 {
-    //GET POST BOOKING
+    $resource = get_post($resource_id);
+
+    if (!$resource || $resource->post_type !== 'calendar_resources') {
+        return false;
+    }
+
+    $roles = wp_get_current_user()->roles ?? [];
+    $is_admin_or_editor = in_array('administrator', $roles, true) || in_array('editor', $roles, true);
+
+    return $resource->post_status === 'publish' || ($resource->post_status === 'private' && $is_admin_or_editor);
+}
+
+/**
+ * Check whether the current user can book a resource: the user can see it, it is not inactive and, if it is
+ * restricted to administrators, the user is an administrator or an editor.
+ */
+function xtec_booking_user_can_book_resource(int $resource_id): bool
+{
+    if (!xtec_booking_user_can_see_resource($resource_id)) {
+        return false;
+    }
+
+    $status = get_post_meta($resource_id, XTEC_RESOURCES_STATUS, true);
+
+    if ($status === 'inactive') {
+        return false;
+    }
+
+    $roles = wp_get_current_user()->roles ?? [];
+
+    return $status !== 'admin_users' || in_array('administrator', $roles, true) || in_array('editor', $roles, true);
+}
+
+/**
+ * Get the data of a booking to show in the calendar modal. Returns null if the post is not a published booking or the
+ * current user is not allowed to see it (same rules as the calendar events).
+ */
+function xtec_booking_get_event(int $eventID): ?string
+{
     $post = get_post($eventID);
 
-    // GET AUTHOR BOOKING
+    if (!$post || $post->post_type !== 'calendar_booking' || $post->post_status !== 'publish') {
+        return null;
+    }
+
+    $roles = wp_get_current_user()->roles ?? [];
+    $is_admin = in_array('administrator', $roles, true);
+    $is_editor = in_array('editor', $roles, true);
+
+    if (xtec_booking_get_events_check_post_fail($post, $is_admin, $is_editor, [])) {
+        return null;
+    }
+
     $user = get_userdata($post->post_author);
+    $data = get_post_meta($eventID, '_xtec-booking-data', true);
 
-    // GET POST META
-    $post_meta = get_post_meta($eventID, '_xtec-booking-data');
+    if (!is_array($data)) {
+        return null;
+    }
 
-    // GET RESOURCE
-    $resource = get_post($post_meta[0][XTEC_BOOKING_RESOURCE]);
+    $resource = get_post($data[XTEC_BOOKING_RESOURCE] ?? 0);
 
     $request = [
         'title' => $post->post_title,
-        'content' => $post->post_content,
-        'resource' => $resource->post_title,
-        'startDate' => $post_meta[0][XTEC_BOOKING_START_DATE],
-        'endDate' => $post_meta[0][XTEC_BOOKING_FINISH_DATE],
-        'startHour' => $post_meta[0][XTEC_BOOKING_START_TIME],
-        'endHour' => $post_meta[0][XTEC_BOOKING_FINISH_TIME],
-        'by' => $user->user_nicename,
+        'content' => wp_kses_post($post->post_content),
+        'resource' => $resource ? $resource->post_title : '',
+        'startDate' => $data[XTEC_BOOKING_START_DATE] ?? '',
+        'endDate' => $data[XTEC_BOOKING_FINISH_DATE] ?? '',
+        'startHour' => $data[XTEC_BOOKING_START_TIME] ?? '',
+        'endHour' => $data[XTEC_BOOKING_FINISH_TIME] ?? '',
+        'by' => $user ? $user->display_name : '',
     ];
 
     return json_encode($request);
@@ -242,7 +296,8 @@ function xtec_booking_add_event(int|WP_Post $post, array|WP_Post|null $resource,
 
     return [
         'id' => $post->ID,
-        'title' => $inactive_resource . ' ' . $data[XTEC_BOOKING_START_TIME] . '-' . $data[XTEC_BOOKING_FINISH_TIME] . ' ' . ucfirst($resource->post_title) . '/' . $post->post_title . ': ' . $description . ' (' . $user . ')',
+        // The title is rendered as HTML by the calendar templates, so every part must be escaped.
+        'title' => esc_html($inactive_resource . ' ' . $data[XTEC_BOOKING_START_TIME] . '-' . $data[XTEC_BOOKING_FINISH_TIME] . ' ' . ucfirst($resource->post_title) . '/' . $post->post_title . ': ') . $description . esc_html(' (' . $user . ')'),
         'class' => $color,
         'start' => ($startDateTime * 1000),
         'end' => ($startEndDateTime * 1000),
@@ -460,7 +515,7 @@ function xtec_display_calendar_process_post(mixed $post, $shortcode, string $cal
                             <a href="javascript:void(0)"
                                data-event-class="' . $color . '"
                                class="pull-left event ' . $color . ' xtec-bullet-resource-list" title=""></a>
-                               &nbsp;' . $post->post_title . '
+                               &nbsp;' . esc_html($post->post_title) . '
                         </div>
                     </div>
                     ';
@@ -472,7 +527,7 @@ function xtec_display_calendar_process_post(mixed $post, $shortcode, string $cal
                             <a href="javascript:void(0)"
                                data-event-class="' . $color . '"
                                class="pull-left event ' . $color . ' xtec-bullet-resource-list" title=""></a>
-                            &nbsp;' . $post->post_title . '
+                            &nbsp;' . esc_html($post->post_title) . '
                         </div>
                     </div>
                     ';
