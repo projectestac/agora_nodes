@@ -18,7 +18,7 @@ class WP_Customize_Font_Icon_Picker_Control extends WP_Customize_Control {
                         "' . content_url('mu-plugins/astra-nodes/lib/universal-icon-picker/assets/icons-libraries/font-awesome-solid.min.json') . '"
                     ],
                     iconLibrariesCss: [
-                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                        "' . content_url('mu-plugins/astra-nodes/vendor/fontawesome-free-6.5.1/css/all.min.css') . '"
                     ],
                     onSelect: function(jsonIconData) {
                         var iconField = document.querySelector("#_customize-input-astra_nodes_customizer_header_icon_' . $this->i . '_classes");

@@ -12,7 +12,14 @@ require_once __DIR__ . '/common/lib.php';
 load_muplugin_textdomain('common-functions', '/common/languages');
 
 function xtec_enqueue_style() {
-    wp_enqueue_style('common-functions', get_site_url() . '/wp-content/mu-plugins/common/styles/common-functions.css');
+    // The file is very small (< 1 KB), so it is added inline to save a render-blocking request.
+    $css = file_get_contents(__DIR__ . '/common/styles/common-functions.css');
+
+    if ($css !== false) {
+        wp_register_style('common-functions', false);
+        wp_enqueue_style('common-functions');
+        wp_add_inline_style('common-functions', $css);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'xtec_enqueue_style');

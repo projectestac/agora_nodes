@@ -67,21 +67,38 @@ load_muplugin_textdomain('astra-nodes', '/astra-nodes/languages/');
 
 // Load styles to customize Astra theme.
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('astra-functions', plugins_url('/astra-nodes/styles/style.css', __FILE__));
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', [], '6.5.1');
+    wp_enqueue_style('astra-functions', plugins_url('/astra-nodes/styles/style.css', __FILE__), [],
+        agora_asset_version(__DIR__ . '/astra-nodes/styles/style.css'));
+    // Local copy of Font Awesome (see astra-nodes/vendor/fontawesome-free-6.5.1/README.md).
+    wp_enqueue_style('font-awesome', plugins_url('/astra-nodes/vendor/fontawesome-free-6.5.1/css/all.min.css', __FILE__), [], '6.5.1');
     if (is_plugin_active('getwid/getwid.php')) {
         wp_enqueue_script('slick', getwid_get_plugin_url('vendors/slick/slick/slick.min.js'), ['jquery'], '1.9.0', true);
     }
 });
 
+// Preload the solid font of Font Awesome, used by the icons of the header, so they are shown as soon as possible. Fonts
+// are always requested in CORS mode, so the preload needs the attribute crossorigin to be reused. Font Awesome is
+// always enqueued in the front end (see above).
+// The filter wp_preload_resources can't be used: Koko Analytics adds a callback to wp_head with priority 1 while
+// wp_head is running that priority (from wp_enqueue_scripts), and WordPress then skips the next callback, which is
+// wp_preload_resources(). So the link is printed directly, before the callbacks with priority 1.
+add_action('wp_head', function () {
+    printf(
+        "<link rel='preload' href='%s' as='font' type='font/woff2' crossorigin='anonymous' />\n",
+        esc_url(plugins_url('/astra-nodes/vendor/fontawesome-free-6.5.1/webfonts/fa-solid-900.woff2', __FILE__))
+    );
+}, 0);
+
 // Load styles for the login page.
 add_action('login_enqueue_scripts', function () {
-    wp_enqueue_style('astra-functions-login', plugins_url('/astra-nodes/styles/login-style.css', __FILE__));
+    wp_enqueue_style('astra-functions-login', plugins_url('/astra-nodes/styles/login-style.css', __FILE__), [],
+        agora_asset_version(__DIR__ . '/astra-nodes/styles/login-style.css'));
 });
 
 // Load styles for the admin area.
 add_action('admin_enqueue_scripts', function () {
-    wp_enqueue_style('astra-functions-admin', plugins_url('/astra-nodes/styles/admin-style.css', __FILE__));
+    wp_enqueue_style('astra-functions-admin', plugins_url('/astra-nodes/styles/admin-style.css', __FILE__), [],
+        agora_asset_version(__DIR__ . '/astra-nodes/styles/admin-style.css'));
 });
 
 // Welcome panel: Remove the default welcome panel and add a custom one.
