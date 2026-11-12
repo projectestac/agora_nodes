@@ -180,7 +180,6 @@ function unregister_default_widgets() {
 	unregister_widget('BBP_Login_Widget');
 	unregister_widget('BBP_Search_Widget');
 	unregister_widget('BBP_Stats_Widget');
-	unregister_widget('InviteAnyoneWidget');
 	unregister_widget('BP_Core_Whos_Online_Widget');
 	unregister_widget('BP_Core_Login_Widget');
 	unregister_widget('BP_Messages_Sitewide_Notices_Widget');
@@ -255,7 +254,6 @@ function bp_options_page() {
 			<p><a href="admin.php?page=bp-settings"><?php _e('Paràmetres', 'reactor'); ?></a></p>
 			<p><a href="admin.php?page=bp-groups"><?php _e('Groups', 'buddypress'); ?></a></p>
 			<p><a href="tools.php?page=xtec_stats"><?php _e('Logs', 'xtec-stats'); ?></a></p>
-			<p><a href="admin.php?page=ass_admin_options"><?php _e('Group Email Options', 'bp-ass'); ?></a></p>
 		</div>
 
 		<div style="width:160px; height:250px; padding:20px; float:left;">
@@ -266,15 +264,6 @@ function bp_options_page() {
 			<p><a href="edit-tags.php?taxonomy=bp_docs_tag&post_type=bp_doc"><?php _e('Docs Tags', 'bp-docs' ); ?></a></p>
 			<p><a href="edit.php?post_type=bp_doc&page=bp-docs-settings"><?php _e('Settings', 'bp-docs'); ?></a></p>
 		</div>
-
-        <div style="width:160px; height:250px; padding:20px; float:left;">
-            <h3 style="height:40px;"><?php _e('BuddyPress Invitations', 'invite-anyone'); ?></h3>
-            <p><a href="admin.php?page=invite-anyone"><?php _e('Invite Anyone', 'invite-anyone'); ?></a></p>
-            <p><a href="edit.php?post_type=ia_invites"><?php _e('Manage Invitations', 'invite-anyone'); ?></a></p>
-            <p><a href="post-new.php?post_type=ia_invites"><?php _e('Add New Invitation', 'invite-anyone'); ?></a></p>
-            <p><a href="edit-tags.php?taxonomy=ia_invitees&post_type=ia_invites"><?php _e('Invitees', 'invite-anyone'); ?></a></p>
-            <p><a href="edit-tags.php?taxonomy=ia_invited_groups&post_type=ia_invites"><?php _e('Invited Groups', 'invite-anyone'); ?></a></p>
-        </div>
 
         <div style="width:160px; height:250px; padding:20px; float:left;">
             <h3 style="height:40px;"><?php _e( 'Reports', 'agora-functions' ); ?></h3>
@@ -315,20 +304,10 @@ function rebuild_bp_menus_step_2() {
 
 	remove_submenu_page('options-general.php', 'bp-components'); // Tab in BuddyPress
 	remove_submenu_page('options-general.php', 'bp-settings'); // Tab in BuddyPress
-	remove_submenu_page('bp-general-settings', 'ass_admin_options'); // Group Email
 	remove_submenu_page('options-general.php', 'slideshare');
 
 	add_submenu_page('xtec-bp-options', __('Components', 'buddypress'), __('Components', 'buddypress'), 'manage_options', 'bp-components', 'bp_core_admin_components_settings');
 	add_submenu_page('xtec-bp-options', __('Groups', 'buddypress'), __('Groups', 'buddypress'), 'manage_options', 'bp-groups');
-	add_submenu_page('xtec-bp-options', __('Group Email Options', 'bp-ass'), __('Group Email Options', 'bp-ass'), 'manage_options', 'ass_admin_options', 'ass_admin_options');
-
-    // Don't load Invite Anyone menu
-    remove_action('admin_menu', 'invite_anyone_admin_add', 80);
-
-    // Reproduce the actions in the function previously cancelled
-    $plugin_page = add_submenu_page('xtec-bp-options', __('Invite Anyone', 'invite-anyone'), __('Invite Anyone', 'invite-anyone'), 'manage_options', 'invite-anyone', 'invite_anyone_admin_panel');
-    add_action("admin_print_scripts-$plugin_page", 'invite_anyone_admin_scripts');
-    add_action("admin_print_styles-$plugin_page", 'invite_anyone_admin_styles');
 
     add_submenu_page('xtec-bp-options', __('Configuració', 'reactor'), __('Configuració', 'reactor'), 'manage_options', 'bp-settings', 'bp_core_admin_settings');
 
@@ -728,7 +707,7 @@ function tinymce_custom( $in ) {
 	if (!empty($in['selector']) && ($in['selector'] === '#whats-new')) {
 		$in['menubar'] = false;
 		$in['toolbar'] = '';
-		$in['toolbar1'] = 'bold wp_add_media link code sep_emoji giphypresswizard gifmaster_new ';
+		$in['toolbar1'] = 'bold wp_add_media link code gifmaster_new';
 		$in['toolbar2'] = '';
 		$in['statusbar'] = true;
 	}

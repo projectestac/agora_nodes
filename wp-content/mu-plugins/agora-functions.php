@@ -598,34 +598,6 @@ function get_category_image (){
 }
 
 /**
- * To change accept link (because register page is disabled)
- * @param  string $accept_link accept URL
- * @return string Replaced accept_link for groups link
- * @author Sara Arjona
- */
-function change_invite_anyone_accept_url($accept_link) {
-    if (! get_option('users_can_register')){
-        return site_url('wp-login.php').'?redirect_to='.bp_get_root_domain(). '/' .bp_get_groups_root_slug(). '/';
-    }
-    return $accept_link;
-}
-add_filter('invite_anyone_accept_url', 'change_invite_anyone_accept_url');
-
-/**
- * To remove out link (because register page is disabled)
- * @param  string $msg Message with the text and the link
- * @return string New message text to replace the original one
- * @author Sara Arjona
- */
-function remove_invite_anyone_opt_out_footer_message($msg) {
-    if (! get_option('users_can_register')){
-        return '';
-    }
-    return $msg;
-}
-add_filter('invite_anyone_opt_out_footer_message', 'remove_invite_anyone_opt_out_footer_message');
-
-/**
  * Fixed upload of images in bbpress using fancy upload when user is not admin nor mod.
  * Taken from: https://bbpress.org/forums/topic/solved-only-keymasters-admin-can-upload-images/
  * @author: aginard
@@ -1375,7 +1347,6 @@ function xtec_polylang_check() {
         load_plugin_textdomain( 'xtec-stats', false, 'xtec-stats/languages' );
         load_plugin_textdomain( 'buddypress', false, 'buddypress/bp-languages' );
         load_plugin_textdomain( 'bp-docs', false, 'buddypress-docs/languages' );
-        load_plugin_textdomain( 'invite-anyone', false, 'invite-anyone/languages' );
         load_plugin_textdomain( 'email-subscribers', false, 'email-subscribers/languages' );
         load_plugin_textdomain( 'grup-classe', false, 'grup-classe/languages' );
         load_plugin_textdomain( 'add-to-any', false, 'add-to-any/languages' );
